@@ -24,37 +24,37 @@ def motor(adaptador=None, pistas=PISTAS):
 
 def test_guardrail_confirmar_sin_evidencia_es_rechazado():
     m = motor()
-    hid = m.proponer("P2", "kit cepillos laterales robot X200", "complemento", "test")
+    hid = m.proponer_hipotesis("P2", "kit cepillos laterales robot X200", "complemento", "test")
     with pytest.raises(Rechazo):
-        m.veredicto(hid, "confirmar", [], "sin probar nada")
+        m.dar_veredicto(hid, "confirmar", [], "sin probar nada")
     assert hid not in m.veredictos
 
 
 def test_guardrail_no_acepta_evidencia_de_otra_hipotesis():
     m = motor()
-    h1 = m.proponer("P2", "kit cepillos laterales robot X200", "complemento", "a")
-    h2 = m.proponer("P3", "termo acero 1L premium", "precio", "b")
-    ev = m.ejecutar("contar_oferta", h1)
+    h1 = m.proponer_hipotesis("P2", "kit cepillos laterales robot X200", "complemento", "a")
+    h2 = m.proponer_hipotesis("P3", "termo acero 1L premium", "precio", "b")
+    ev = m.verificar("contar_oferta", h1)
     with pytest.raises(Rechazo):
-        m.veredicto(h2, "confirmar", [ev["id"]], "evidencia prestada")
+        m.dar_veredicto(h2, "confirmar", [ev["id"]], "evidencia prestada")
 
 
 def test_guardrail_no_acepta_evidencia_fallida():
     m = motor(adaptador=AdaptadorMercadoLibre(token=None))
-    hid = m.proponer("P2", "algo", "ausencia", "x")
-    ev = m.ejecutar("contar_oferta", hid)
+    hid = m.proponer_hipotesis("P2", "algo", "ausencia", "x")
+    ev = m.verificar("contar_oferta", hid)
     assert not ev["ok"] and ev["error"] == "sin_credenciales"
     with pytest.raises(Rechazo):
-        m.veredicto(hid, "confirmar", [ev["id"]], "con evidencia fallida")
-    m.veredicto(hid, "insuficiente", [ev["id"]], "no se pudo verificar")  # esto sí se acepta
+        m.dar_veredicto(hid, "confirmar", [ev["id"]], "con evidencia fallida")
+    m.dar_veredicto(hid, "insuficiente", [ev["id"]], "no se pudo verificar")  # esto sí se acepta
 
 
 def test_cache_evita_segunda_llamada_a_la_fuente():
     m = motor()
-    h1 = m.proponer("P2", "kit cepillos laterales robot X200", "complemento", "a")
-    h2 = m.proponer("P2", "kit cepillos laterales robot X200", "ausencia", "b")
-    m.ejecutar("contar_oferta", h1)
-    ev = m.ejecutar("contar_oferta", h2)
+    h1 = m.proponer_hipotesis("P2", "kit cepillos laterales robot X200", "complemento", "a")
+    h2 = m.proponer_hipotesis("P2", "kit cepillos laterales robot X200", "ausencia", "b")
+    m.verificar("contar_oferta", h1)
+    ev = m.verificar("contar_oferta", h2)
     assert ev["cache"] and m.llamadas_fuente == 1
 
 
@@ -96,11 +96,11 @@ def test_react_rechaza_veredicto_sin_evidencia_y_se_recupera():
     guion = [
         [_tool(1, "proponer_hipotesis", {"pista_id": "P2", "producto": "cepillos laterales robot X200",
                                          "tipo": "complemento", "razonamiento": "usado a precio de nuevo"})],
-        [_tool(2, "veredicto", {"hipotesis_id": "H1", "decision": "confirmar", "evidencias": [],
+        [_tool(2, "dar_veredicto", {"hipotesis_id": "H1", "decision": "confirmar", "evidencias": [],
                                 "justificacion": "obvio"})],                       # debe rebotar
         [_tool(3, "terminar", {})],                                                 # debe rebotar
-        [_tool(4, "ejecutar_skill", {"skill": "contar_oferta", "hipotesis_id": "H1"})],
-        [_tool(5, "veredicto", {"hipotesis_id": "H1", "decision": "confirmar", "evidencias": ["E1"],
+        [_tool(4, "verificar", {"skill": "contar_oferta", "hipotesis_id": "H1"})],
+        [_tool(5, "dar_veredicto", {"hipotesis_id": "H1", "decision": "confirmar", "evidencias": ["E1"],
                                 "justificacion": "2 vendedores"})],
         [_tool(6, "terminar", {})],
     ]

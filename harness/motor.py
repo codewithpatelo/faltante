@@ -1,13 +1,19 @@
-"""El motor del harness: estado, skills, caché, guardrails y traza.
+"""El motor del harness. Ejecuta lo que el agente pide y controla que respete las reglas.
+No decide nada: las decisiones son de la política (el LLM o un baseline sin LLM).
 
-Las políticas (fija, heurística, LLM) no tocan datos ni estado directamente: solo
-llaman a cuatro operaciones del motor. Eso hace que las tres se comparen en igualdad
-de condiciones y que todos los controles vivan en un solo lugar.
+Las cuatro operaciones que el agente puede pedir:
 
-    proponer(pista_id, producto, tipo, razonamiento) -> hipotesis_id
-    ejecutar(skill, hipotesis_id, producto)          -> observación (con evidencia_id)
-    veredicto(hipotesis_id, decision, evidencias, justificacion)
-    leer_skill(nombre)                               -> texto del SKILL.md
+    proponer_hipotesis(pista, producto, tipo, razonamiento) -> H1
+        "Detrás de esta pista creo que hay demanda de ESTE producto, por ESTA razón."
+    verificar(skill, H1, producto)                          -> E1 con el dato
+        "Poné a prueba H1 con esta skill." Corre la skill sobre el adaptador de datos.
+    dar_veredicto(H1, confirmar|descartar|insuficiente, [E1, E2], justificacion)
+        "Con esta evidencia, cierro H1 así."
+    leer_skill(nombre)                                      -> instrucciones de la skill
+        "No sé interpretar esta verificación: mostrame su SKILL.md."
+
+Cada regla que se viola devuelve un Rechazo, que vuelve al agente como error para que
+corrija, y queda registrado en la traza.
 """
 
 from __future__ import annotations
@@ -93,7 +99,7 @@ class Motor:
         self._log("leer_skill", skill=nombre)
         return self.skills[nombre]["cuerpo"]
 
-    def proponer(self, pista_id: str, producto: str, tipo: str, razonamiento: str) -> str:
+    def proponer_hipotesis(self, pista_id: str, producto: str, tipo: str, razonamiento: str) -> str:
         self._paso()
         if pista_id not in self._pista_ids:
             raise Rechazo(f"pista inexistente '{pista_id}'")
@@ -104,11 +110,11 @@ class Motor:
         hid = f"H{len(self.hipotesis) + 1}"
         self.hipotesis[hid] = {"id": hid, "pista_id": pista_id, "producto": producto.strip(),
                                "tipo": tipo, "razonamiento": razonamiento, "evidencias": []}
-        self._log("proponer", hipotesis=hid, pista_id=pista_id, producto=producto, tipo=tipo,
+        self._log("proponer_hipotesis", hipotesis=hid, pista_id=pista_id, producto=producto, tipo=tipo,
                   razonamiento=razonamiento)
         return hid
 
-    def ejecutar(self, skill: str, hipotesis_id: str, producto: str | None = None) -> dict:
+    def verificar(self, skill: str, hipotesis_id: str, producto: str | None = None) -> dict:
         self._paso()
         if skill not in self.skills:
             raise Rechazo(f"skill desconocida '{skill}'. Disponibles: {sorted(self.skills)}")
@@ -139,11 +145,11 @@ class Motor:
               "cache": desde_cache, **res}
         self.evidencias[eid] = ev
         h["evidencias"].append(eid)
-        self._log("ejecutar", evidencia=eid, hipotesis=hipotesis_id, skill=skill, producto=producto,
+        self._log("verificar", evidencia=eid, hipotesis=hipotesis_id, skill=skill, producto=producto,
                   cache=desde_cache, resultado=res)
         return ev
 
-    def veredicto(self, hipotesis_id: str, decision: str, evidencias: list[str], justificacion: str):
+    def dar_veredicto(self, hipotesis_id: str, decision: str, evidencias: list[str], justificacion: str):
         self._paso()
         h = self.hipotesis.get(hipotesis_id)
         if h is None:
@@ -172,7 +178,7 @@ class Motor:
                                          "decision": decision, "evidencias": validas,
                                          "evidencias_descartadas": invalidas,
                                          "justificacion": justificacion}
-        self._log("veredicto", hipotesis=hipotesis_id, decision=decision, evidencias=validas,
+        self._log("dar_veredicto", hipotesis=hipotesis_id, decision=decision, evidencias=validas,
                   justificacion=justificacion)
 
     # ---------- cierre ----------

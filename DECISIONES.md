@@ -7,7 +7,7 @@ El loop son ~150 líneas. La defensa es individual y cada uno tiene que poder ex
 arquitectura por debajo; un framework ahorra dos días y deja una caja negra.
 
 **Guardrails en código, no en el prompt.**
-"No confirmes sin evidencia" escrito en el prompt es una sugerencia. En `motor.veredicto`
+"No confirmes sin evidencia" escrito en el prompt es una sugerencia. En `motor.dar_veredicto`
 es una regla: el veredicto sin evidencia válida se rechaza y vuelve al modelo como error.
 
 **Políticas intercambiables sobre el mismo motor.**

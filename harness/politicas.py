@@ -64,14 +64,14 @@ class _Base:
 
     def _hipotesis(self, m: Motor, p: dict) -> str:
         tipo = TIPO_POR_SENAL.get(p["senal"], "ausencia")
-        return m.proponer(p["id"], p["producto_mencionado"], tipo, f"tipado por señal '{p['senal']}'")
+        return m.proponer_hipotesis(p["id"], p["producto_mencionado"], tipo, f"tipado por señal '{p['senal']}'")
 
     def _cerrar(self, m: Motor, hid: str, r: dict, evs: list[str], fallo: str | None):
         if fallo:
-            m.veredicto(hid, "insuficiente", [], fallo)
+            m.dar_veredicto(hid, "insuficiente", [], fallo)
             return
         decision, motivo = evaluar(r)
-        m.veredicto(hid, decision or "insuficiente", evs, motivo)
+        m.dar_veredicto(hid, decision or "insuficiente", evs, motivo)
 
 
 class PoliticaFija(_Base):
@@ -82,7 +82,7 @@ class PoliticaFija(_Base):
             hid = self._hipotesis(m, p)
             r, evs, fallo = {}, [], None
             for s in ("contar_oferta", "ratio_precio", "persistencia", "voto_manos", "viabilidad"):
-                ev = m.ejecutar(s, hid)
+                ev = m.verificar(s, hid)
                 if ev["ok"]:
                     r[s], _ = ev["datos"], evs.append(ev["id"])
                 elif fallo is None:
@@ -99,7 +99,7 @@ class PoliticaHeuristica(_Base):
             r, evs, fallo = {}, [], None
             while (s := siguiente_skill(r)) is not None:
                 try:
-                    ev = m.ejecutar(s, hid)
+                    ev = m.verificar(s, hid)
                 except Rechazo:
                     break
                 if not ev["ok"]:

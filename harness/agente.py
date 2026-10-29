@@ -35,7 +35,7 @@ HERRAMIENTAS = [
          "tipo": {"type": "string", "enum": ["ausencia", "precio", "complemento"]},
          "razonamiento": {"type": "string"}},
          "required": ["pista_id", "producto", "tipo", "razonamiento"]}},
-    {"name": "ejecutar_skill",
+    {"name": "verificar",
      "description": "Fase convergente. Corre una skill de verificación sobre una hipótesis. Devuelve datos y un evidencia_id. "
                     "Si la fuente no encuentra el producto, podés reintentar con otro nombre en 'producto'.",
      "input_schema": {"type": "object", "properties": {
@@ -43,7 +43,7 @@ HERRAMIENTAS = [
          "hipotesis_id": {"type": "string"},
          "producto": {"type": "string", "description": "opcional: nombre alternativo para buscar"}},
          "required": ["skill", "hipotesis_id"]}},
-    {"name": "veredicto",
+    {"name": "dar_veredicto",
      "description": "Cierra una hipótesis. confirmar/descartar exigen citar evidencias exitosas de esa hipótesis. "
                     "Si no se pudo verificar, usar 'insuficiente'.",
      "input_schema": {"type": "object", "properties": {
@@ -117,13 +117,13 @@ class PoliticaReAct:
             if nombre == "leer_skill":
                 return m.leer_skill(args["nombre"]), False
             if nombre == "proponer_hipotesis":
-                hid = m.proponer(args["pista_id"], args["producto"], args["tipo"], args["razonamiento"])
+                hid = m.proponer_hipotesis(args["pista_id"], args["producto"], args["tipo"], args["razonamiento"])
                 return json.dumps({"hipotesis_id": hid}), False
-            if nombre == "ejecutar_skill":
-                ev = m.ejecutar(args["skill"], args["hipotesis_id"], args.get("producto"))
+            if nombre == "verificar":
+                ev = m.verificar(args["skill"], args["hipotesis_id"], args.get("producto"))
                 return json.dumps({k: v for k, v in ev.items() if k != "cache"}, ensure_ascii=False), False
-            if nombre == "veredicto":
-                m.veredicto(args["hipotesis_id"], args["decision"], args.get("evidencias", []), args["justificacion"])
+            if nombre == "dar_veredicto":
+                m.dar_veredicto(args["hipotesis_id"], args["decision"], args.get("evidencias", []), args["justificacion"])
                 return "ok", False
             if nombre == "terminar":
                 faltan = m.pistas_sin_veredicto()

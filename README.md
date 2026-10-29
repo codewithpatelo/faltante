@@ -32,7 +32,7 @@ POLÍTICA ─── decide qué hacer ──►  MOTOR ─── guardrails, cac
 ```
 
 - **`harness/motor.py`** — estado y las cuatro operaciones: `proponer`, `ejecutar`,
-  `veredicto`, `leer_skill`. Todos los controles viven acá.
+  `verificar`, `dar_veredicto`, `leer_skill`. Todos los controles viven acá.
 - **`harness/agente.py`** — el loop ReAct sobre la API de Anthropic, sin framework.
 - **`harness/politicas.py`** — los baselines: fija (todas las skills sobre todo) y
   heurística (corta apenas refuta).

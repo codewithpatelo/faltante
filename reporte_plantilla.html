@@ -47,7 +47,12 @@ code { font: 0.88em var(--mono); background: var(--surface); border: 1px solid v
 
 .scroll { overflow-x: auto; }
 .diag { margin: 0; display: grid; gap: 10px; }
-.diag svg { display: block; width: 100%; min-width: 620px; height: auto; color: var(--fg); }
+.diag svg { display: block; width: 100%; max-width: 760px; min-width: 560px; height: auto; color: var(--fg); }
+tbody th { font-weight: 600; }
+tbody th code { white-space: nowrap; }
+.pasoapaso td.n { color: var(--accent); font-weight: 500; }
+.pasoapaso td:nth-child(3) { white-space: nowrap; }
+td.rech { color: var(--bad); }
 .diag figcaption { color: var(--dim); font-size: 0.92rem; max-width: 68ch; }
 table { border-collapse: collapse; width: 100%; font-size: 0.92rem; }
 th, td { text-align: left; padding: 9px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
@@ -95,22 +100,60 @@ q { font-family: var(--body); font-style: italic; color: var(--dim); }
   {{AVISO}}
 
   <section>
-    <h2>Cómo decide</h2>
-    <div class="flujo">
-      <div><b>Pistas</b><span>Comportamientos: compras courier, usado a precio de nuevo, adaptadores caseros.</span></div>
-      <div><b>Divergente</b><span>De cada pista, qué producto se demanda y de qué tipo es la oportunidad.</span></div>
-      <div><b>Convergente</b><span>Skills que intentan refutarla, de la más barata a la más cara.</span></div>
-      <div><b>Veredicto</b><span>Confirmar, descartar o insuficiente. Nunca sin evidencia.</span></div>
-    </div>
-    <p class="dim">La regla de la última caja vive en código: un veredicto sin evidencia propia y exitosa se rechaza y vuelve al agente como error.</p>
+    <h2>Arquitectura</h2>
+    <p><b>El agente decide; el harness ejecuta y controla.</b> El agente es el LLM: no toca datos ni guarda nada. Todo lo que hace lo pide al motor, y el motor lo ejecuta solo si respeta las reglas.</p>
+    <figure class="diag">
+      <div class="scroll">{{DIAGRAMA}}</div>
+      <figcaption>Los datos bajan como pedidos y suben como respuestas. Cambiar el agente por un baseline, o Mercado Libre por otra fuente, no toca el motor.</figcaption>
+    </figure>
   </section>
 
   <section>
-    <h2>Arquitectura del harness</h2>
-    <figure class="diag">
-      <div class="scroll">{{DIAGRAMA}}</div>
-      <figcaption>La política solo habla con el motor. Elige qué operación llamar; el motor aplica los guardrails, el presupuesto y la caché, ejecuta la skill sobre el adaptador de datos que corresponda y devuelve la observación. Si una operación viola una regla, vuelve como rechazo y queda en la traza. Cambiar de política o de fuente no toca el motor.</figcaption>
-    </figure>
+    <h2>Qué decide el agente, paso a paso</h2>
+    <p class="dim">Recorrido esperado de la pista P1. Es ilustrativo: el agente con LLM todavía no corrió.</p>
+    <div class="scroll"><table class="pasoapaso">
+      <thead><tr><th>#</th><th>El agente decide</th><th>Pide</th><th>El motor hace</th></tr></thead>
+      <tbody>
+        <tr><td class="n">1</td><td>«Nut milk maker» es una <b>máquina de leche vegetal</b>. Como no aparece en comercios locales, la oportunidad es de <b>ausencia</b>.</td><td><code>proponer_hipotesis</code></td><td>Registra la hipótesis H1.</td></tr>
+        <tr><td class="n">2</td><td>Probar primero lo más barato y lo que más refuta: ¿ya se vende acá?</td><td><code>verificar</code> con <code>contar_oferta</code></td><td>Consulta la fuente. Devuelve E1: <b>1 vendedor</b>.</td></tr>
+        <tr><td class="n">3</td><td>Un vendedor no refuta la ausencia, pero no sabe si alcanza. Lee el instructivo de la skill que sigue.</td><td><code>leer_skill</code> con <code>persistencia</code></td><td>Devuelve el SKILL.md: cuándo es pico y cuándo es tendencia.</td></tr>
+        <tr><td class="n">4</td><td>¿Es una moda de una semana o una demanda sostenida?</td><td><code>verificar</code> con <code>persistencia</code></td><td>Devuelve E2: señal en <b>10 de 12 meses</b>, subiendo.</td></tr>
+        <tr><td class="n">5</td><td>Si el hueco es real, ¿se puede llenar?</td><td><code>verificar</code> con <code>viabilidad</code></td><td>Devuelve E3: certificación eléctrica, <b>no bloqueante</b>.</td></tr>
+        <tr><td class="n">6</td><td>Alcanza. Confirma, pero se olvida de citar la evidencia.</td><td><code>dar_veredicto</code> sin evidencias</td><td class="rech"><b>Rechaza.</b> Vuelve como error: confirmar exige evidencia.</td></tr>
+        <tr><td class="n">7</td><td>Confirma citando E1, E2 y E3.</td><td><code>dar_veredicto</code></td><td>Acepta y lo escribe en el expediente.</td></tr>
+      </tbody>
+    </table></div>
+    <p>La política heurística, sin LLM, busca «nut milk maker» tal cual, no lo encuentra en la fuente y termina en <i>insuficiente</i>. El paso 1 es lo que el LLM tiene que aportar.</p>
+  </section>
+
+  <section>
+    <h2>Las operaciones del motor</h2>
+    <div class="scroll"><table>
+      <thead><tr><th>Operación</th><th>Qué hace</th><th>Cuándo la usa el agente</th></tr></thead>
+      <tbody>
+        <tr><th scope="row"><code>proponer_hipotesis</code></th><td>Convierte una pista en una apuesta concreta: qué producto, qué tipo de oportunidad (ausencia, precio, complemento) y por qué.</td><td>Al empezar cada pista. Puede proponer más de una si la pista es ambigua.</td></tr>
+        <tr><th scope="row"><code>verificar</code></th><td>Corre una skill sobre una hipótesis y devuelve el dato con un número de evidencia (E1, E2…).</td><td>Cada vez que quiere poner a prueba la hipótesis. Elige cuál según lo que ya sabe.</td></tr>
+        <tr><th scope="row"><code>dar_veredicto</code></th><td>Cierra la hipótesis como confirmada, descartada o insuficiente, citando las evidencias que la sostienen.</td><td>Cuando ya tiene datos para decidir, o cuando la fuente no respondió.</td></tr>
+        <tr><th scope="row"><code>leer_skill</code></th><td>Devuelve el instructivo completo de una skill: qué pregunta responde y cómo leer su resultado.</td><td>Antes de usar una skill que no sabe interpretar. De entrada solo ve el nombre y una línea de cada una, para no cargar el contexto.</td></tr>
+        <tr><th scope="row"><code>terminar</code></th><td>Cierra la corrida.</td><td>Cuando todas las pistas tienen veredicto.</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section>
+    <h2>Las reglas (guardrails)</h2>
+    <p>Viven en código, no en el prompt. Si el agente viola una, el pedido se rechaza, vuelve como error para que corrija y queda en la traza.</p>
+    <div class="scroll"><table>
+      <thead><tr><th>Regla</th><th>Qué chequea</th><th>Por qué</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Sin evidencia no hay veredicto</th><td>Confirmar o descartar exige al menos una evidencia de esa hipótesis que haya salido bien y venga de datos.</td><td>Sin esto, el modelo puede confirmar porque la idea suena bien. Es lo que separa un argumento de una opinión.</td></tr>
+        <tr><th scope="row">La evidencia no se presta</th><td>Las evidencias citadas tienen que ser de esa misma hipótesis.</td><td>Evita confirmar un producto con los datos de otro.</td></tr>
+        <tr><th scope="row">Una fuente caída no es un dato</th><td>Una verificación que falló (403, producto no encontrado) no cuenta como evidencia.</td><td>Si Mercado Libre no responde, la salida honesta es <i>insuficiente</i>, no un número inventado.</td></tr>
+        <tr><th scope="row">Presupuesto</th><td>Hasta 6 verificaciones por hipótesis y 80 pasos por corrida.</td><td>Acota el costo y corta al agente si gira en círculos.</td></tr>
+        <tr><th scope="row">Nada queda abierto</th><td>No se puede terminar si alguna pista no tiene veredicto.</td><td>Que no saltee las pistas difíciles.</td></tr>
+        <tr><th scope="row">Lo cerrado no se reabre</th><td>Una hipótesis con veredicto no se puede seguir verificando ni volver a decidir.</td><td>El expediente no se reescribe después.</td></tr>
+      </tbody>
+    </table></div>
   </section>
 
   <section>
