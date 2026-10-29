@@ -41,3 +41,17 @@ fuente (20 contra 40). Las dos fallan en las mismas pistas: P1 (nombre en inglé
 exactamente los casos que requieren interpretación semántica.
 **Qué decidimos:** esas dos pistas son la hipótesis concreta para el agente con LLM.
 Si no las resuelve, el LLM no aporta sobre la heurística.
+
+## 2026-10-29 — Prueba mínima de datos (la que faltaba)
+
+**Qué probamos:** obtener de verdad, sin credenciales y desde código, los datos que el
+sistema necesita. Criterios fijados antes de mirar: `data/prueba_datos/CRITERIOS.md`.
+**Qué esperábamos:** habíamos diseñado el harness asumiendo que los datos se conseguían.
+**Qué pasó:** el precio exterior se consigue (Tiendamia, Amazon). La oferta local en
+Mercado Libre, que es la verificación central, no: 403 en todos los intentos. Los "más
+vendidos" de Mercado Libre responden la mitad de las veces. El ranking de Tiendamia
+necesita navegador. Además, Mercado Libre ya vende por Compra Internacional los
+repuestos que suponíamos faltantes. Detalle en `data/prueba_datos/RESULTADOS.md`.
+**Qué decidimos:** no-go para el diseño actual hasta repetir la prueba con un token de
+Mercado Libre. Error de proceso que reconocemos: construimos el harness antes de probar
+los datos.
