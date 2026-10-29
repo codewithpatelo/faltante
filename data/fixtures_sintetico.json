@@ -1,0 +1,69 @@
+{
+  "_aviso": "DATOS SINTÉTICOS. Respuestas inventadas de las skills, para probar el harness sin red ni credenciales.",
+  "productos": {
+    "máquina de leche vegetal": {
+      "alias": ["maquina leche de almendras", "leche vegetal automática", "extractor de leche vegetal"],
+      "contar_oferta": {"publicaciones": 3, "vendedores": 1},
+      "ratio_precio": {"precio_local_usd": null, "precio_exterior_usd": 89.0, "ratio": null},
+      "persistencia": {"meses_con_senal": 10, "de_meses": 12, "tendencia": "sube"},
+      "voto_manos": {"menciones": 4, "ejemplos": [{"texto": "¿Alguien sabe dónde conseguir la máquina para hacer leche de almendras? Acá no la venden.", "fuente": "foro (sintético)"}]},
+      "viabilidad": {"barreras": ["certificación de seguridad eléctrica"], "bloqueante": false}
+    },
+    "cepillos laterales robot X200": {
+      "alias": ["kit cepillos laterales robot X200", "repuesto cepillo robot aspirador X200"],
+      "contar_oferta": {"publicaciones": 2, "vendedores": 2},
+      "ratio_precio": {"precio_local_usd": 41.0, "precio_exterior_usd": 12.0, "ratio": 3.42},
+      "persistencia": {"meses_con_senal": 9, "de_meses": 12, "tendencia": "estable"},
+      "voto_manos": {"menciones": 7, "ejemplos": [{"texto": "Compré el X200 y ahora no consigo los cepillos de repuesto en ningún lado.", "fuente": "reseña (sintético)"}]},
+      "viabilidad": {"barreras": [], "bloqueante": false}
+    },
+    "termo de acero 1 litro premium": {
+      "alias": ["termo acero 1L premium", "termo 1 litro acero inoxidable"],
+      "contar_oferta": {"publicaciones": 140, "vendedores": 60},
+      "ratio_precio": {"precio_local_usd": 76.0, "precio_exterior_usd": 40.0, "ratio": 1.9},
+      "persistencia": {"meses_con_senal": 12, "de_meses": 12, "tendencia": "estable"},
+      "voto_manos": {"menciones": 2, "ejemplos": [{"texto": "Lo traje de afuera, acá sale el doble.", "fuente": "foro (sintético)"}]},
+      "viabilidad": {"barreras": [], "bloqueante": false}
+    },
+    "figura parlante de personaje": {
+      "alias": ["figura parlante personaje", "muñeco que habla"],
+      "contar_oferta": {"publicaciones": 55, "vendedores": 25},
+      "ratio_precio": {"precio_local_usd": 38.0, "precio_exterior_usd": 25.0, "ratio": 1.52},
+      "persistencia": {"meses_con_senal": 2, "de_meses": 12, "tendencia": "baja"},
+      "voto_manos": {"menciones": 0, "ejemplos": []},
+      "viabilidad": {"barreras": ["licencia de personaje"], "bloqueante": false}
+    },
+    "suplemento de omega-3": {
+      "alias": ["suplemento omega-3 importado", "aceite de pescado en cápsulas"],
+      "contar_oferta": {"publicaciones": 6, "vendedores": 4},
+      "ratio_precio": {"precio_local_usd": 52.0, "precio_exterior_usd": 22.0, "ratio": 2.36},
+      "persistencia": {"meses_con_senal": 11, "de_meses": 12, "tendencia": "sube"},
+      "voto_manos": {"menciones": 3, "ejemplos": [{"texto": "El omega 3 de afuera es mucho más barato.", "fuente": "foro (sintético)"}]},
+      "viabilidad": {"barreras": ["registro ANMAT para comercialización"], "bloqueante": true}
+    },
+    "cápsulas recargables para cafetera Y": {
+      "alias": ["capsula recargable cafetera Y", "cápsulas reutilizables modelo Y"],
+      "contar_oferta": {"publicaciones": 5, "vendedores": 4},
+      "ratio_precio": {"precio_local_usd": 29.0, "precio_exterior_usd": 12.0, "ratio": 2.42},
+      "persistencia": {"meses_con_senal": 8, "de_meses": 12, "tendencia": "sube"},
+      "voto_manos": {"menciones": 12, "ejemplos": [{"texto": "Me cansé de comprar cápsulas, ¿hay recargables para la Y?", "fuente": "preguntas de compradores (sintético)"}]},
+      "viabilidad": {"barreras": [], "bloqueante": false}
+    },
+    "filtros para purificador Z": {
+      "alias": ["filtros purificador Z", "filtro HEPA purificador Z"],
+      "contar_oferta": {"publicaciones": 80, "vendedores": 30},
+      "ratio_precio": {"precio_local_usd": 24.0, "precio_exterior_usd": 19.0, "ratio": 1.26},
+      "persistencia": {"meses_con_senal": 12, "de_meses": 12, "tendencia": "estable"},
+      "voto_manos": {"menciones": 15, "ejemplos": [{"texto": "No consigo los filtros del purificador Z.", "fuente": "foro (sintético)"}]},
+      "viabilidad": {"barreras": [], "bloqueante": false}
+    },
+    "micrófono inalámbrico mini": {
+      "alias": ["micrófono inalámbrico para celular", "micro corbatero inalámbrico"],
+      "contar_oferta": {"publicaciones": 95, "vendedores": 40},
+      "ratio_precio": {"precio_local_usd": 69.0, "precio_exterior_usd": 60.0, "ratio": 1.15},
+      "persistencia": {"meses_con_senal": 12, "de_meses": 12, "tendencia": "estable"},
+      "voto_manos": {"menciones": 1, "ejemplos": [{"texto": "Conviene traerlo de afuera.", "fuente": "foro (sintético)"}]},
+      "viabilidad": {"barreras": [], "bloqueante": false}
+    }
+  }
+}

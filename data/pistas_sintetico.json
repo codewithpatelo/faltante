@@ -1,0 +1,69 @@
+{
+  "_aviso": "DATOS SINTÉTICOS. Sirven para probar el harness de punta a punta, no son resultados. Ningún número de este archivo sale de una fuente real.",
+  "pistas": [
+    {
+      "id": "P1",
+      "senal": "ranking_courier",
+      "texto": "Aparece en el top 50 de hogar de un marketplace cross-border: 'nut milk maker 1L automatic'.",
+      "producto_mencionado": "nut milk maker",
+      "verdad": "confirmar",
+      "verdad_tipo": "ausencia"
+    },
+    {
+      "id": "P2",
+      "senal": "usado_a_precio_de_nuevo",
+      "texto": "Publicación usada de 'kit cepillos laterales robot X200' vendida al 95% del precio del kit nuevo importado.",
+      "producto_mencionado": "kit cepillos laterales robot X200",
+      "verdad": "confirmar",
+      "verdad_tipo": "complemento"
+    },
+    {
+      "id": "P3",
+      "senal": "ranking_courier",
+      "texto": "Termo de acero de 1 litro de una marca premium figura todos los meses en el ranking courier.",
+      "producto_mencionado": "termo acero 1L premium",
+      "verdad": "confirmar",
+      "verdad_tipo": "precio"
+    },
+    {
+      "id": "P4",
+      "senal": "pico_courier",
+      "texto": "Salto de envíos courier de 'figura parlante de personaje' en la semana de un estreno de cine.",
+      "producto_mencionado": "figura parlante personaje",
+      "verdad": "descartar",
+      "verdad_tipo": "pico"
+    },
+    {
+      "id": "P5",
+      "senal": "ranking_courier",
+      "texto": "Suplemento de omega-3 de una marca importada entre los más pedidos por courier.",
+      "producto_mencionado": "suplemento omega-3 importado",
+      "verdad": "descartar",
+      "verdad_tipo": "inviable"
+    },
+    {
+      "id": "P6",
+      "senal": "workaround",
+      "texto": "Particulares venden adaptadores impresos en 3D para recargar las cápsulas de la cafetera modelo Y.",
+      "producto_mencionado": "adaptador 3D cafetera Y",
+      "verdad": "confirmar",
+      "verdad_tipo": "complemento"
+    },
+    {
+      "id": "P7",
+      "senal": "quejas_texto",
+      "texto": "Varias quejas en foros: 'no consigo los filtros del purificador Z'.",
+      "producto_mencionado": "filtros purificador Z",
+      "verdad": "descartar",
+      "verdad_tipo": "hay_oferta"
+    },
+    {
+      "id": "P8",
+      "senal": "ranking_courier",
+      "texto": "Micrófono inalámbrico mini para celular entre los más vendidos de un marketplace cross-border.",
+      "producto_mencionado": "micrófono inalámbrico mini",
+      "verdad": "descartar",
+      "verdad_tipo": "sin_arbitraje"
+    }
+  ]
+}

@@ -1,0 +1,139 @@
+<title>Faltante — corrida del harness</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:wght@500;600&family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: una columna de lectura; arriba el estado y la comparación, abajo los expedientes como fichas de aduana. */
+:root {
+  --bg: #f3f5f6; --surface: #ffffff; --fg: #1b2328; --dim: #5b6870; --line: #d6dde1;
+  --accent: #0f5f6e;
+  --ok: #1f7a46; --bad: #b23a2e; --warn: #9a6a00;
+  --ok-bg: #e3f2e9; --bad-bg: #f8e4e1; --warn-bg: #fbf0d6;
+  --display: "IBM Plex Sans Condensed", "Arial Narrow", system-ui, sans-serif;
+  --body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #111619; --surface: #182024; --fg: #e3e9ec; --dim: #93a1a9; --line: #2b363c;
+  --accent: #5cb8c8; --ok: #6fcf97; --bad: #f08a7d; --warn: #e6b54a;
+  --ok-bg: #16301f; --bad-bg: #3a1c18; --warn-bg: #33290f; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #111619; --surface: #182024; --fg: #e3e9ec; --dim: #93a1a9; --line: #2b363c;
+  --accent: #5cb8c8; --ok: #6fcf97; --bad: #f08a7d; --warn: #e6b54a;
+  --ok-bg: #16301f; --bad-bg: #3a1c18; --warn-bg: #33290f; color-scheme: dark }
+
+body { background: var(--bg); color: var(--fg); font: 15px/1.6 var(--body); }
+.wrap { max-width: 860px; margin: 0 auto; padding-block: 40px 64px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+  display: grid; gap: 36px; }
+h1, h2 { font-family: var(--display); font-weight: 600; text-wrap: balance; margin: 0; line-height: 1.15; }
+h1 { font-size: 2.2rem; letter-spacing: -0.01em; }
+h2 { font-size: 1.35rem; }
+p { margin: 0; max-width: 68ch; }
+section { display: grid; gap: 14px; }
+.eyebrow { font: 500 0.75rem var(--mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); }
+.lead { color: var(--dim); font-size: 1.05rem; }
+code { font: 0.88em var(--mono); background: var(--surface); border: 1px solid var(--line); padding: 1px 5px; border-radius: 3px; }
+.dim { color: var(--dim); }
+
+.aviso { border: 1px dashed var(--warn); background: var(--warn-bg); color: var(--fg); padding: 12px 16px; border-radius: 4px; }
+.aviso b { color: var(--warn); }
+
+.flujo { display: flex; flex-wrap: wrap; gap: 8px; align-items: stretch; }
+.flujo div { flex: 1 1 150px; min-width: 0; background: var(--surface); border: 1px solid var(--line); border-radius: 4px; padding: 10px 12px; }
+.flujo b { display: block; font-family: var(--display); font-weight: 600; }
+.flujo span { color: var(--dim); font-size: 0.88rem; }
+
+.scroll { overflow-x: auto; }
+.diag { margin: 0; display: grid; gap: 10px; }
+.diag svg { display: block; width: 100%; min-width: 620px; height: auto; color: var(--fg); }
+.diag figcaption { color: var(--dim); font-size: 0.92rem; max-width: 68ch; }
+table { border-collapse: collapse; width: 100%; font-size: 0.92rem; }
+th, td { text-align: left; padding: 9px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+thead th { font: 500 0.72rem var(--mono); letter-spacing: 0.06em; text-transform: uppercase; color: var(--dim); }
+td.n { font-variant-numeric: tabular-nums; font-family: var(--mono); }
+tr.pend td { color: var(--dim); }
+
+.datos li { margin-bottom: 6px; }
+.datos { margin: 0; padding-left: 20px; max-width: 68ch; }
+.st { font: 500 0.78rem var(--mono); padding: 1px 6px; border-radius: 3px; }
+.st.no { color: var(--bad); background: var(--bad-bg); }
+.st.si { color: var(--ok); background: var(--ok-bg); }
+
+.exps { display: grid; gap: 14px; }
+.exp { background: var(--surface); border: 1px solid var(--line); border-radius: 4px; padding: 14px 16px; display: grid; gap: 10px; min-width: 0; }
+.exp header { display: flex; flex-wrap: wrap; gap: 10px; align-items: baseline; }
+.pid { font: 600 1rem var(--mono); color: var(--accent); }
+.senal { font: 500 0.75rem var(--mono); text-transform: uppercase; letter-spacing: 0.06em; color: var(--dim); }
+.vs { margin-left: auto; font-size: 0.82rem; }
+.vs.ok { color: var(--ok); } .vs.bad { color: var(--bad); }
+.texto { color: var(--fg); }
+.hip { border-top: 1px solid var(--line); padding-top: 10px; display: grid; gap: 8px; min-width: 0; }
+.hline { font-size: 0.92rem; }
+.tipo { font: 500 0.75rem var(--mono); border: 1px solid var(--accent); color: var(--accent); padding: 0 5px; border-radius: 3px; }
+.pasos { margin: 0; padding-left: 22px; font: 0.82rem/1.55 var(--mono); color: var(--fg); display: grid; gap: 4px; overflow-wrap: anywhere; }
+.skill { font-weight: 500; margin-right: 6px; }
+.eid { color: var(--dim); margin-right: 6px; }
+.k { color: var(--dim); }
+.err { color: var(--bad); font-weight: 500; }
+q { font-family: var(--body); font-style: italic; color: var(--dim); }
+.just { font-size: 0.92rem; display: flex; gap: 10px; align-items: baseline; flex-wrap: wrap; }
+.sello { font: 600 0.72rem var(--mono); text-transform: uppercase; letter-spacing: 0.08em; padding: 3px 8px; border-radius: 3px; border: 1.5px solid currentColor; }
+.s-confirmar { color: var(--ok); background: var(--ok-bg); }
+.s-descartar { color: var(--bad); background: var(--bad-bg); }
+.s-insuficiente, .s-sin_veredicto { color: var(--warn); background: var(--warn-bg); }
+</style>
+
+<div class="wrap">
+  <header style="display:grid;gap:10px">
+    <span class="eyebrow">TP IA Agéntica · MVP del harness</span>
+    <h1>Faltante</h1>
+    <p class="lead">Un agente que parte de votos con los pies, propone qué producto conviene importar y trata de refutar cada hipótesis contra datos antes de confirmarla.</p>
+  </header>
+
+  {{AVISO}}
+
+  <section>
+    <h2>Cómo decide</h2>
+    <div class="flujo">
+      <div><b>Pistas</b><span>Comportamientos: compras courier, usado a precio de nuevo, adaptadores caseros.</span></div>
+      <div><b>Divergente</b><span>De cada pista, qué producto se demanda y de qué tipo es la oportunidad.</span></div>
+      <div><b>Convergente</b><span>Skills que intentan refutarla, de la más barata a la más cara.</span></div>
+      <div><b>Veredicto</b><span>Confirmar, descartar o insuficiente. Nunca sin evidencia.</span></div>
+    </div>
+    <p class="dim">La regla de la última caja vive en código: un veredicto sin evidencia propia y exitosa se rechaza y vuelve al agente como error.</p>
+  </section>
+
+  <section>
+    <h2>Arquitectura del harness</h2>
+    <figure class="diag">
+      <div class="scroll">{{DIAGRAMA}}</div>
+      <figcaption>La política solo habla con el motor. Elige qué operación llamar; el motor aplica los guardrails, el presupuesto y la caché, ejecuta la skill sobre el adaptador de datos que corresponda y devuelve la observación. Si una operación viola una regla, vuelve como rechazo y queda en la traza. Cambiar de política o de fuente no toca el motor.</figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <h2>Políticas comparadas</h2>
+    <p>Las tres corren sobre el mismo motor, las mismas skills y las mismas 8 pistas con verdad etiquetada.</p>
+    {{TABLA}}
+    <p>Fija y heurística aciertan lo mismo, pero la heurística consulta la fuente la mitad de las veces. Las dos fallan en P1 y P6: un nombre en inglés y un adaptador casero que apunta a otro producto. Son los casos que necesitan interpretar el texto, y la prueba concreta para el agente con LLM.</p>
+  </section>
+
+  <section>
+    <h2>Acceso a datos, probado el 29/10</h2>
+    <ul class="datos">
+      <li><span class="st no">403</span> API de Mercado Libre, búsqueda sin access token.</li>
+      <li><span class="st no">login</span> Listado web de Mercado Libre: muro de login para tráfico no autenticado.</li>
+      <li><span class="st no">bloqueado</span> Tiendamia, Google Trends y Reddit desde el entorno en la nube, por política de red.</li>
+      <li><span class="st si">accesible</span> Rankings courier publicados en prensa, vía búsqueda web.</li>
+    </ul>
+    <p>Contra la fuente en vivo y sin credenciales, el sistema devuelve <i>insuficiente</i> en las 8 pistas en vez de inventar números. Para correrlo en serio hace falta registrar una app en Mercado Libre y cargar <code>ML_ACCESS_TOKEN</code>.</p>
+  </section>
+
+  <section>
+    <h2>Expedientes</h2>
+    <p class="dim">Corrida de la política: {{EXP_POL}}. Cada ficha muestra la hipótesis, las verificaciones en orden y por qué se decidió.</p>
+    <div class="exps">{{EXPEDIENTES}}</div>
+  </section>
+</div>
