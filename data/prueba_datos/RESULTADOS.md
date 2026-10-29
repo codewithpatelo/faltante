@@ -46,3 +46,14 @@ por persona, 3 unidades iguales por compra y clave fiscal nivel 2 (según el blo
 de Mercado Libre). Un producto que la gente compra repetidamente por cross-border, sin
 vendedor local, es candidato a que un importador lo traiga en volumen. Esa es una
 hipótesis nueva, y también hay que probar que sus datos se consiguen.
+
+## Confirmación independiente (Devin, 29/10/2026, otra máquina)
+
+| Endpoint | HTTP | Respuesta |
+|---|---|---|
+| `GET /sites/MLA/search` sin token | 403 | `{"message":"forbidden","error":"forbidden","status":403}` |
+| `GET /highlights/MLA/category/MLA1574` sin token | 401 | `{"error":"unauthorized","message":"unspecified_token"}` |
+
+La diferencia importa: el ranking pide un token (401); la búsqueda dice "prohibido"
+(403), lo que es compatible con que esté cerrada aun con token. Pendiente: repetir con
+la app registrada.
