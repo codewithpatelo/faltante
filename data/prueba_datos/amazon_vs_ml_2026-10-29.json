@@ -1,0 +1,66 @@
+{
+ "fecha": "2026-10-29",
+ "metodo": "Amazon Best Sellers Home & Kitchen (vía Exa) -> búsqueda en listado.mercadolibre.com.ar desde el navegador del usuario. 'internacional' = publicaciones de la primera página que muestran Compra Internacional; 'llega_ya' = llega hoy o mañana.",
+ "candidatos": [
+  {
+   "busqueda": "owala freesip",
+   "origen": "Amazon #7 Home & Kitchen",
+   "total": 832,
+   "items": 48,
+   "internacional": 43,
+   "llega_ya": 4,
+   "top": "Botella Owala Freesip Stainless Steel 24 Oz Original 710 Ml",
+   "match_ok": true
+  },
+  {
+   "busqueda": "zevo trampa insectos",
+   "origen": "Amazon #9 (repuestos de la trampa)",
+   "total": 954,
+   "items": 60,
+   "internacional": 27,
+   "llega_ya": 14,
+   "top": "Trampa Voladora Para Insectos Zevo",
+   "match_ok": true
+  },
+  {
+   "busqueda": "zevo",
+   "origen": "control de ruido",
+   "total": ">9999",
+   "items": 60,
+   "internacional": 6,
+   "llega_ya": 33,
+   "top": "Cámara Instantánea Fujifilm Instax Mini Evo Híbrida Negro",
+   "match_ok": false
+  },
+  {
+   "busqueda": "bedsure",
+   "origen": "Amazon #12",
+   "total": 7381,
+   "items": 56,
+   "internacional": 42,
+   "llega_ya": 9,
+   "top": "Juego De Sábanas Homiest Queen, 4 Piezas, Rayón Y Bambú",
+   "match_ok": false
+  },
+  {
+   "busqueda": "upsimples",
+   "origen": "Amazon #6",
+   "total": 2520,
+   "items": 60,
+   "internacional": 10,
+   "llega_ya": 46,
+   "top": "Billetera Y Tarjetero Para 7 Tarjetas Minimalista Rfid",
+   "match_ok": false
+  },
+  {
+   "busqueda": "barossa design cortina",
+   "origen": "Amazon #1",
+   "total": 228,
+   "items": 52,
+   "internacional": 40,
+   "llega_ya": 4,
+   "top": "Cortina De Ducha Barossa Design Peva, Color Amarillo",
+   "match_ok": true
+  }
+ ]
+}

@@ -65,3 +65,15 @@ usábamos como ejemplos de ausencia (máquina de leche vegetal: 434 publicacione
 **Qué decidimos:** el acceso a datos tiene salida (navegador, escala chica, declarado).
 La hipótesis de "productos que faltan" pierde sustento con los ejemplos obvios: hay que
 definir de dónde salen candidatos donde la ausencia sea plausible antes de seguir.
+
+## 2026-10-29 — La señal no es "falta", es "solo llega por cross-border"
+
+**Qué probamos:** 6 búsquedas en Mercado Libre de productos del ranking de más vendidos
+de Amazon (Home & Kitchen). Datos en `data/prueba_datos/amazon_vs_ml_2026-10-29.json`.
+**Qué pasó:** ninguno falta, pero en los que la búsqueda encuentra el producto correcto,
+la oferta es casi toda Compra Internacional: Owala FreeSip 43 de 48 publicaciones, cortina
+Barossa 40 de 52. Llegan hoy o mañana solo 4. Y en 3 de 6 búsquedas Mercado Libre devuelve
+otra cosa ("zevo" trae cámaras Instax Evo; "upsimples", billeteras).
+**Qué decidimos:** proponer al grupo reformular: medir qué parte de la demanda se atiende
+solo por cross-border (con sus límites de 5 envíos al año y 3 unidades), y usar el LLM para
+saber si dos publicaciones son el mismo producto, que es donde la búsqueda falla.
