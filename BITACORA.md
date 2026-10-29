@@ -77,3 +77,15 @@ otra cosa ("zevo" trae cámaras Instax Evo; "upsimples", billeteras).
 **Qué decidimos:** proponer al grupo reformular: medir qué parte de la demanda se atiende
 solo por cross-border (con sus límites de 5 envíos al año y 3 unidades), y usar el LLM para
 saber si dos publicaciones son el mismo producto, que es donde la búsqueda falla.
+
+## 2026-10-29 — El voto con los pies desmiente la lectura anterior
+
+**Qué probamos:** separar las ventas ("+N vendidos" visibles en el listado) entre
+publicaciones de Compra Internacional y publicaciones locales, en 6 productos. Datos en
+`data/prueba_datos/votos_pies_ml_2026-10-29.json`. Tiendamia ya no publica ranking.
+**Qué pasó:** la oferta es mayormente internacional (27 a 43 publicaciones por página),
+pero casi no vende: 0 a 4 publicaciones internacionales con ventas, contra 2 a 11 locales.
+En los 6 productos, las ventas visibles se concentran en un puñado de publicaciones locales.
+**Qué decidimos:** la lectura de la entrada anterior ("solo llega por cross-border") miraba
+la oferta, no los votos. Los compradores eligen stock local y no esperan. La señal candidata
+pasa a ser: demanda probada (ventas) concentrada en pocos vendedores locales.

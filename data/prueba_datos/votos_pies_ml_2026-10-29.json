@@ -1,0 +1,67 @@
+{
+ "fecha": "2026-10-29",
+ "metodo": "Primera página de listado.mercadolibre.com.ar renderizada en el navegador del usuario. 'vendidos_min' suma el piso de los contadores visibles ('+100 vendidos' cuenta 100). Las publicaciones sin contador cuentan 0.",
+ "fuente_descartada": "tiendamia.com/ar/mas-vendidos redirige a una página de ofertas sin ranking de productos",
+ "datos": [
+  {
+   "busqueda": "owala freesip",
+   "items": 48,
+   "intl_publicaciones": 43,
+   "intl_con_ventas": 4,
+   "intl_vendidos_min": 200,
+   "local_publicaciones": 5,
+   "local_con_ventas": 3,
+   "local_vendidos_min": 225
+  },
+  {
+   "busqueda": "barossa design cortina",
+   "items": 52,
+   "intl_publicaciones": 40,
+   "intl_con_ventas": 0,
+   "intl_vendidos_min": 0,
+   "local_publicaciones": 12,
+   "local_con_ventas": 4,
+   "local_vendidos_min": 1225
+  },
+  {
+   "busqueda": "zevo trampa insectos",
+   "items": 60,
+   "intl_publicaciones": 27,
+   "intl_con_ventas": 0,
+   "intl_vendidos_min": 0,
+   "local_publicaciones": 33,
+   "local_con_ventas": 11,
+   "local_vendidos_min": 2300
+  },
+  {
+   "busqueda": "maquina leche vegetal",
+   "items": 52,
+   "intl_publicaciones": 27,
+   "intl_con_ventas": 1,
+   "intl_vendidos_min": 25,
+   "local_publicaciones": 25,
+   "local_con_ventas": 3,
+   "local_vendidos_min": 200
+  },
+  {
+   "busqueda": "nut milk maker",
+   "items": 52,
+   "intl_publicaciones": 37,
+   "intl_con_ventas": 1,
+   "intl_vendidos_min": 50,
+   "local_publicaciones": 15,
+   "local_con_ventas": 4,
+   "local_vendidos_min": 625
+  },
+  {
+   "busqueda": "cepillo lateral roborock",
+   "items": 52,
+   "intl_publicaciones": 39,
+   "intl_con_ventas": 0,
+   "intl_vendidos_min": 0,
+   "local_publicaciones": 13,
+   "local_con_ventas": 2,
+   "local_vendidos_min": 125
+  }
+ ]
+}
