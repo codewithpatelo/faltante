@@ -103,3 +103,23 @@ probable y dudoso) y habría dado por atendidos 4 productos que no lo están.
 (emparejar). Falta: una medida de competencia mejor que el volumen (las balanzas dominan el
 ranking por ser masivas), un segundo anotador, y validar con alguien del rubro si la marca
 pesa en la decisión de compra.
+
+## 2026-10-29 — Cuatro chequeos para "¿por qué no se vende?" y corrección del MVP
+
+**Qué probamos:** el MVP anterior suponía que "no se vende acá pero venden parecidos"
+significaba demanda insatisfecha. Lo desafiamos con cuatro explicaciones que compiten:
+precio, espera, preferencia por otras opciones y falta de demanda. Las sumamos al harness
+como skills (`chequear_*`) con una política de diagnóstico, y las corrimos sobre una foto
+nueva de las 23 búsquedas (1.372 publicaciones, todos los precios). Datos y resultados en
+`data/diagnostico/`.
+**Qué pasó:** 16 de 23 no compiten en precio (cuestan 2,3 a 8 veces lo que se vende);
+4 ya se venden acá; 1 sin demanda; 2 candidatos a probar. De 387 publicaciones
+internacionales de estos productos, ninguna tiene ventas visibles (verificamos que el
+contador sí aparece en otras internacionales). En los 4 productos que están en los dos
+canales, la gente compra el local aunque el internacional cueste igual o menos: la espera
+pesa. Primera versión de la política tenía un error de orden: daba como "oportunidad" a
+productos que ya se venden; lo corregimos.
+**Qué decidimos:** la conclusión del MVP anterior era incorrecta y la reemplazamos. El
+único candidato sólido es el mixer Turelar (más barato que los Oster que se venden, y no
+vende): separar espera de marca requiere otro dato. Pendientes: elegir mejor los
+sustitutos (hoy entra ruido como la cinta Gorilla Tape) y comparar contra gama parecida.

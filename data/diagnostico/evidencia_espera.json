@@ -1,0 +1,182 @@
+{
+ "ambos_canales": [
+  {
+   "busqueda": "owala freesip",
+   "local_pubs": 8,
+   "local_con_ventas": 5,
+   "local_ventas": 425,
+   "intl_pubs": 25,
+   "intl_con_ventas": 0,
+   "precio_local": 159000,
+   "precio_intl": 125000,
+   "intl_vs_local": 0.79
+  },
+  {
+   "busqueda": "hydrojug traveler",
+   "local_pubs": 5,
+   "local_con_ventas": 0,
+   "local_ventas": 0,
+   "intl_pubs": 37,
+   "intl_con_ventas": 0,
+   "precio_local": 145000,
+   "precio_intl": 140000,
+   "intl_vs_local": 0.97
+  },
+  {
+   "busqueda": "balanza cocina etekcity",
+   "local_pubs": 18,
+   "local_con_ventas": 0,
+   "local_ventas": 0,
+   "intl_pubs": 16,
+   "intl_con_ventas": 0,
+   "precio_local": 135500,
+   "precio_intl": 86500,
+   "intl_vs_local": 0.64
+  },
+  {
+   "busqueda": "abrelatas kitchenaid",
+   "local_pubs": 7,
+   "local_con_ventas": 1,
+   "local_ventas": 25,
+   "intl_pubs": 8,
+   "intl_con_ventas": 0,
+   "precio_local": 75000,
+   "precio_intl": 81500,
+   "intl_vs_local": 1.09
+  },
+  {
+   "busqueda": "stanley quencher",
+   "local_pubs": 55,
+   "local_con_ventas": 38,
+   "local_ventas": 5375,
+   "intl_pubs": 1,
+   "intl_con_ventas": 0,
+   "precio_local": 135000,
+   "precio_intl": 142000,
+   "intl_vs_local": 1.05
+  },
+  {
+   "busqueda": "tostadora bella fits anywhere",
+   "local_pubs": 9,
+   "local_con_ventas": 0,
+   "local_ventas": 0,
+   "intl_pubs": 17,
+   "intl_con_ventas": 0,
+   "precio_local": 240000,
+   "precio_intl": 147000,
+   "intl_vs_local": 0.61
+  },
+  {
+   "busqueda": "tijeras cocina kitchenaid",
+   "local_pubs": 7,
+   "local_con_ventas": 1,
+   "local_ventas": 100,
+   "intl_pubs": 26,
+   "intl_con_ventas": 0,
+   "precio_local": 91000,
+   "precio_intl": 71500,
+   "intl_vs_local": 0.79
+  },
+  {
+   "busqueda": "bolsas olla lenta reynolds",
+   "local_pubs": 2,
+   "local_con_ventas": 0,
+   "local_ventas": 0,
+   "intl_pubs": 6,
+   "intl_con_ventas": 0,
+   "precio_local": 269000,
+   "precio_intl": 80500,
+   "intl_vs_local": 0.3
+  },
+  {
+   "busqueda": "abrelatas gorilla grip",
+   "local_pubs": 1,
+   "local_con_ventas": 0,
+   "local_ventas": 0,
+   "intl_pubs": 4,
+   "intl_con_ventas": 0,
+   "precio_local": 86000,
+   "precio_intl": 73000,
+   "intl_vs_local": 0.85
+  },
+  {
+   "busqueda": "papel manteca reynolds",
+   "local_pubs": 4,
+   "local_con_ventas": 0,
+   "local_ventas": 0,
+   "intl_pubs": 6,
+   "intl_con_ventas": 0,
+   "precio_local": 72000,
+   "precio_intl": 55000,
+   "intl_vs_local": 0.76
+  },
+  {
+   "busqueda": "rociador aceite yarramate",
+   "local_pubs": 11,
+   "local_con_ventas": 0,
+   "local_ventas": 0,
+   "intl_pubs": 5,
+   "intl_con_ventas": 0,
+   "precio_local": 103000,
+   "precio_intl": 57000,
+   "intl_vs_local": 0.55
+  },
+  {
+   "busqueda": "rubbermaid brilliance",
+   "local_pubs": 2,
+   "local_con_ventas": 0,
+   "local_ventas": 0,
+   "intl_pubs": 34,
+   "intl_con_ventas": 0,
+   "precio_local": 199000,
+   "precio_intl": 114000,
+   "intl_vs_local": 0.57
+  },
+  {
+   "busqueda": "rociador aceite trendplain",
+   "local_pubs": 7,
+   "local_con_ventas": 0,
+   "local_ventas": 0,
+   "intl_pubs": 3,
+   "intl_con_ventas": 0,
+   "precio_local": 91000,
+   "precio_intl": 75000,
+   "intl_vs_local": 0.82
+  },
+  {
+   "busqueda": "balanza cocina ultrean",
+   "local_pubs": 7,
+   "local_con_ventas": 0,
+   "local_ventas": 0,
+   "intl_pubs": 6,
+   "intl_con_ventas": 0,
+   "precio_local": 95000,
+   "precio_intl": 113500,
+   "intl_vs_local": 1.19
+  },
+  {
+   "busqueda": "yeti rambler",
+   "local_pubs": 5,
+   "local_con_ventas": 0,
+   "local_ventas": 0,
+   "intl_pubs": 37,
+   "intl_con_ventas": 0,
+   "precio_local": 146000,
+   "precio_intl": 131000,
+   "intl_vs_local": 0.9
+  },
+  {
+   "busqueda": "organizador esponja cisily",
+   "local_pubs": 1,
+   "local_con_ventas": 0,
+   "local_ventas": 0,
+   "intl_pubs": 12,
+   "intl_con_ventas": 0,
+   "precio_local": 194000,
+   "precio_intl": 82000,
+   "intl_vs_local": 0.42
+  }
+ ],
+ "publicaciones_internacionales_del_producto": 387,
+ "de_esas_con_ventas": 0
+}

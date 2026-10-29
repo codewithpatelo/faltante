@@ -111,3 +111,50 @@ class PoliticaHeuristica(_Base):
                 if decision == "descartar":
                     break
             self._cerrar(m, hid, r, evs, fallo)
+
+
+class PoliticaDiagnostico:
+    """Corre los cuatro chequeos sobre cada producto, en orden de costo, y corta cuando uno
+    ya decide. Es el baseline sin LLM del diagnóstico; el agente elige el orden por su cuenta.
+
+    Pistas esperadas: {"id", "busqueda"} (la búsqueda es el nombre de la foto capturada).
+    """
+
+    nombre = "diagnostico"
+    ORDEN = ("chequear_demanda", "chequear_espera", "chequear_precio", "chequear_preferencia_local")
+
+    def correr(self, m: Motor):
+        for p in m.pistas:
+            hid = m.proponer_hipotesis(p["id"], p["busqueda"], "ausencia",
+                                       "producto con demanda afuera que acá no vende: ¿por qué?")
+            r, evs = {}, []
+            for s in self.ORDEN:
+                ev = m.verificar(s, hid)
+                if not ev["ok"]:
+                    continue
+                r[s] = ev["datos"]
+                evs.append(ev["id"])
+                if s == "chequear_demanda" and ev["datos"]["resultado"] == "explica":
+                    break
+                if s == "chequear_espera" and (ev["datos"]["resultado"] == "explica" or ev["datos"].get("voto_con_friccion")):
+                    break
+            decision, motivo = self._decidir(r)
+            m.dar_veredicto(hid, decision, evs if decision != "insuficiente" else [], motivo)
+
+    @staticmethod
+    def _decidir(r: dict) -> tuple[str, str]:
+        dem, esp = r.get("chequear_demanda", {}), r.get("chequear_espera", {})
+        pre, pref = r.get("chequear_precio", {}), r.get("chequear_preferencia_local", {})
+        res = (dem.get("resumen") or esp.get("resumen") or {})
+        if res.get("producto_local_vende", 0) > 0:
+            extra = " (la espera explica por qué el internacional no vende)" if esp.get("resultado") == "explica" else ""
+            return "descartar", "ya se vende acá con stock local" + extra
+        if dem.get("resultado") == "explica":
+            return "descartar", "sin demanda: " + dem["motivo"]
+        if esp.get("voto_con_friccion"):
+            return "confirmar", "compran aunque esperen: " + esp["motivo"]
+        if pre.get("resultado") == "explica":
+            return "descartar", "no compite en precio: " + pre["motivo"]
+        if pref.get("resultado") == "explica":
+            return "descartar", "prefieren otras opciones: " + pref["motivo"]
+        return "insuficiente", "candidato a probar: sin stock local, precio comparable; no se puede separar espera de preferencia"

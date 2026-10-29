@@ -1,0 +1,875 @@
+[
+ {
+  "busqueda": "owala freesip",
+  "veredicto": "descartar",
+  "motivo": "ya se vende acá con stock local (la espera explica por qué el internacional no vende)",
+  "chequeos_corridos": 2,
+  "conclusion": "ya_atendido",
+  "resumen": {
+   "producto_local": 8,
+   "producto_local_vende": 5,
+   "producto_intl": 25,
+   "producto_intl_vende": 0,
+   "precio_producto_local": 159000,
+   "precio_producto_intl": 125000,
+   "sustitutos_que_venden": 4,
+   "precio_sustitutos_que_venden": 22000,
+   "ventas_visibles_total": 700,
+   "ventas_producto": 425
+  },
+  "chequeos": {
+   "demanda": {
+    "resultado": "descarta",
+    "motivo": "700 ventas visibles en la búsqueda"
+   },
+   "precio": {
+    "resultado": "explica",
+    "ratio": 5.68,
+    "motivo": "el producto cuesta 5.68x lo que se compra ($125,000 vs $22,000)"
+   },
+   "espera": {
+    "resultado": "explica",
+    "motivo": "el local vende y el internacional no, aun costando $125,000 contra $159,000"
+   },
+   "preferencia_local": {
+    "resultado": "descarta",
+    "motivo": "el producto en stock local vende, o es más caro (lo explica el precio)"
+   }
+  }
+ },
+ {
+  "busqueda": "owala smoothsip",
+  "veredicto": "insuficiente",
+  "motivo": "candidato a probar: sin stock local, precio comparable; no se puede separar espera de preferencia",
+  "chequeos_corridos": 4,
+  "conclusion": "candidato_a_probar",
+  "resumen": {
+   "producto_local": 0,
+   "producto_local_vende": 0,
+   "producto_intl": 29,
+   "producto_intl_vende": 0,
+   "precio_producto_local": null,
+   "precio_producto_intl": 113000,
+   "sustitutos_que_venden": 3,
+   "precio_sustitutos_que_venden": 159000,
+   "ventas_visibles_total": 225,
+   "ventas_producto": 0
+  },
+  "chequeos": {
+   "demanda": {
+    "resultado": "descarta",
+    "motivo": "225 ventas visibles en la búsqueda"
+   },
+   "precio": {
+    "resultado": "descarta",
+    "ratio": 0.71,
+    "motivo": "precio parecido o menor (0.71x: $113,000 vs $159,000)"
+   },
+   "espera": {
+    "resultado": "no_se_puede_saber",
+    "motivo": "no está a la vez en stock local con ventas y por internacional"
+   },
+   "preferencia_local": {
+    "resultado": "no_se_puede_saber",
+    "motivo": "el producto no está en stock local: no se puede separar de la espera"
+   }
+  }
+ },
+ {
+  "busqueda": "hydrojug traveler",
+  "veredicto": "descartar",
+  "motivo": "no compite en precio: el producto cuesta 3.78x lo que se compra ($140,000 vs $37,000)",
+  "chequeos_corridos": 4,
+  "conclusion": "no_compite_en_precio",
+  "resumen": {
+   "producto_local": 5,
+   "producto_local_vende": 0,
+   "producto_intl": 37,
+   "producto_intl_vende": 0,
+   "precio_producto_local": 145000,
+   "precio_producto_intl": 140000,
+   "sustitutos_que_venden": 8,
+   "precio_sustitutos_que_venden": 37000,
+   "ventas_visibles_total": 1475,
+   "ventas_producto": 0
+  },
+  "chequeos": {
+   "demanda": {
+    "resultado": "descarta",
+    "motivo": "1475 ventas visibles en la búsqueda"
+   },
+   "precio": {
+    "resultado": "explica",
+    "ratio": 3.78,
+    "motivo": "el producto cuesta 3.78x lo que se compra ($140,000 vs $37,000)"
+   },
+   "espera": {
+    "resultado": "no_se_puede_saber",
+    "motivo": "no está a la vez en stock local con ventas y por internacional"
+   },
+   "preferencia_local": {
+    "resultado": "descarta",
+    "motivo": "el producto en stock local vende, o es más caro (lo explica el precio)"
+   }
+  }
+ },
+ {
+  "busqueda": "balanza cocina etekcity",
+  "veredicto": "descartar",
+  "motivo": "no compite en precio: el producto cuesta 2.7x lo que se compra ($86,500 vs $32,000)",
+  "chequeos_corridos": 4,
+  "conclusion": "no_compite_en_precio",
+  "resumen": {
+   "producto_local": 18,
+   "producto_local_vende": 0,
+   "producto_intl": 16,
+   "producto_intl_vende": 0,
+   "precio_producto_local": 135500,
+   "precio_producto_intl": 86500,
+   "sustitutos_que_venden": 11,
+   "precio_sustitutos_que_venden": 32000,
+   "ventas_visibles_total": 64675,
+   "ventas_producto": 0
+  },
+  "chequeos": {
+   "demanda": {
+    "resultado": "descarta",
+    "motivo": "64675 ventas visibles en la búsqueda"
+   },
+   "precio": {
+    "resultado": "explica",
+    "ratio": 2.7,
+    "motivo": "el producto cuesta 2.7x lo que se compra ($86,500 vs $32,000)"
+   },
+   "espera": {
+    "resultado": "no_se_puede_saber",
+    "motivo": "no está a la vez en stock local con ventas y por internacional"
+   },
+   "preferencia_local": {
+    "resultado": "descarta",
+    "motivo": "el producto en stock local vende, o es más caro (lo explica el precio)"
+   }
+  }
+ },
+ {
+  "busqueda": "abrelatas kitchenaid",
+  "veredicto": "descartar",
+  "motivo": "ya se vende acá con stock local (la espera explica por qué el internacional no vende)",
+  "chequeos_corridos": 2,
+  "conclusion": "ya_atendido",
+  "resumen": {
+   "producto_local": 7,
+   "producto_local_vende": 1,
+   "producto_intl": 8,
+   "producto_intl_vende": 0,
+   "precio_producto_local": 75000,
+   "precio_producto_intl": 81500,
+   "sustitutos_que_venden": 6,
+   "precio_sustitutos_que_venden": 16500,
+   "ventas_visibles_total": 1700,
+   "ventas_producto": 25
+  },
+  "chequeos": {
+   "demanda": {
+    "resultado": "descarta",
+    "motivo": "1700 ventas visibles en la búsqueda"
+   },
+   "precio": {
+    "resultado": "explica",
+    "ratio": 4.94,
+    "motivo": "el producto cuesta 4.94x lo que se compra ($81,500 vs $16,500)"
+   },
+   "espera": {
+    "resultado": "explica",
+    "motivo": "el local vende y el internacional no, aun costando $81,500 contra $75,000"
+   },
+   "preferencia_local": {
+    "resultado": "descarta",
+    "motivo": "el producto en stock local vende, o es más caro (lo explica el precio)"
+   }
+  }
+ },
+ {
+  "busqueda": "stanley quencher",
+  "veredicto": "descartar",
+  "motivo": "ya se vende acá con stock local (la espera explica por qué el internacional no vende)",
+  "chequeos_corridos": 2,
+  "conclusion": "ya_atendido",
+  "resumen": {
+   "producto_local": 55,
+   "producto_local_vende": 38,
+   "producto_intl": 1,
+   "producto_intl_vende": 0,
+   "precio_producto_local": 135000,
+   "precio_producto_intl": 142000,
+   "sustitutos_que_venden": 9,
+   "precio_sustitutos_que_venden": 139000,
+   "ventas_visibles_total": 13150,
+   "ventas_producto": 5375
+  },
+  "chequeos": {
+   "demanda": {
+    "resultado": "descarta",
+    "motivo": "13150 ventas visibles en la búsqueda"
+   },
+   "precio": {
+    "resultado": "descarta",
+    "ratio": 1.02,
+    "motivo": "precio parecido o menor (1.02x: $142,000 vs $139,000)"
+   },
+   "espera": {
+    "resultado": "explica",
+    "motivo": "el local vende y el internacional no, aun costando $142,000 contra $135,000"
+   },
+   "preferencia_local": {
+    "resultado": "descarta",
+    "motivo": "el producto en stock local vende, o es más caro (lo explica el precio)"
+   }
+  }
+ },
+ {
+  "busqueda": "olla lenta crock pot",
+  "veredicto": "descartar",
+  "motivo": "no compite en precio: el producto cuesta 2.92x lo que se compra ($245,000 vs $84,000)",
+  "chequeos_corridos": 4,
+  "conclusion": "no_compite_en_precio",
+  "resumen": {
+   "producto_local": 0,
+   "producto_local_vende": 0,
+   "producto_intl": 21,
+   "producto_intl_vende": 0,
+   "precio_producto_local": null,
+   "precio_producto_intl": 245000,
+   "sustitutos_que_venden": 9,
+   "precio_sustitutos_que_venden": 84000,
+   "ventas_visibles_total": 14225,
+   "ventas_producto": 0
+  },
+  "chequeos": {
+   "demanda": {
+    "resultado": "descarta",
+    "motivo": "14225 ventas visibles en la búsqueda"
+   },
+   "precio": {
+    "resultado": "explica",
+    "ratio": 2.92,
+    "motivo": "el producto cuesta 2.92x lo que se compra ($245,000 vs $84,000)"
+   },
+   "espera": {
+    "resultado": "no_se_puede_saber",
+    "motivo": "no está a la vez en stock local con ventas y por internacional"
+   },
+   "preferencia_local": {
+    "resultado": "no_se_puede_saber",
+    "motivo": "el producto no está en stock local: no se puede separar de la espera"
+   }
+  }
+ },
+ {
+  "busqueda": "tostadora bella fits anywhere",
+  "veredicto": "descartar",
+  "motivo": "no compite en precio: el producto cuesta 2.62x lo que se compra ($147,000 vs $56,000)",
+  "chequeos_corridos": 4,
+  "conclusion": "no_compite_en_precio",
+  "resumen": {
+   "producto_local": 9,
+   "producto_local_vende": 0,
+   "producto_intl": 17,
+   "producto_intl_vende": 0,
+   "precio_producto_local": 240000,
+   "precio_producto_intl": 147000,
+   "sustitutos_que_venden": 23,
+   "precio_sustitutos_que_venden": 56000,
+   "ventas_visibles_total": 50700,
+   "ventas_producto": 0
+  },
+  "chequeos": {
+   "demanda": {
+    "resultado": "descarta",
+    "motivo": "50700 ventas visibles en la búsqueda"
+   },
+   "precio": {
+    "resultado": "explica",
+    "ratio": 2.62,
+    "motivo": "el producto cuesta 2.62x lo que se compra ($147,000 vs $56,000)"
+   },
+   "espera": {
+    "resultado": "no_se_puede_saber",
+    "motivo": "no está a la vez en stock local con ventas y por internacional"
+   },
+   "preferencia_local": {
+    "resultado": "descarta",
+    "motivo": "el producto en stock local vende, o es más caro (lo explica el precio)"
+   }
+  }
+ },
+ {
+  "busqueda": "tijeras cocina kitchenaid",
+  "veredicto": "descartar",
+  "motivo": "ya se vende acá con stock local (la espera explica por qué el internacional no vende)",
+  "chequeos_corridos": 2,
+  "conclusion": "ya_atendido",
+  "resumen": {
+   "producto_local": 7,
+   "producto_local_vende": 1,
+   "producto_intl": 26,
+   "producto_intl_vende": 0,
+   "precio_producto_local": 91000,
+   "precio_producto_intl": 71500,
+   "sustitutos_que_venden": 5,
+   "precio_sustitutos_que_venden": 16000,
+   "ventas_visibles_total": 1350,
+   "ventas_producto": 100
+  },
+  "chequeos": {
+   "demanda": {
+    "resultado": "descarta",
+    "motivo": "1350 ventas visibles en la búsqueda"
+   },
+   "precio": {
+    "resultado": "explica",
+    "ratio": 4.47,
+    "motivo": "el producto cuesta 4.47x lo que se compra ($71,500 vs $16,000)"
+   },
+   "espera": {
+    "resultado": "explica",
+    "motivo": "el local vende y el internacional no, aun costando $71,500 contra $91,000"
+   },
+   "preferencia_local": {
+    "resultado": "descarta",
+    "motivo": "el producto en stock local vende, o es más caro (lo explica el precio)"
+   }
+  }
+ },
+ {
+  "busqueda": "bolsas olla lenta reynolds",
+  "veredicto": "descartar",
+  "motivo": "no compite en precio: el producto cuesta 3.29x lo que se compra ($80,500 vs $24,500)",
+  "chequeos_corridos": 4,
+  "conclusion": "no_compite_en_precio",
+  "resumen": {
+   "producto_local": 2,
+   "producto_local_vende": 0,
+   "producto_intl": 6,
+   "producto_intl_vende": 0,
+   "precio_producto_local": 269000,
+   "precio_producto_intl": 80500,
+   "sustitutos_que_venden": 14,
+   "precio_sustitutos_que_venden": 24500,
+   "ventas_visibles_total": 5400,
+   "ventas_producto": 0
+  },
+  "chequeos": {
+   "demanda": {
+    "resultado": "descarta",
+    "motivo": "5400 ventas visibles en la búsqueda"
+   },
+   "precio": {
+    "resultado": "explica",
+    "ratio": 3.29,
+    "motivo": "el producto cuesta 3.29x lo que se compra ($80,500 vs $24,500)"
+   },
+   "espera": {
+    "resultado": "no_se_puede_saber",
+    "motivo": "no está a la vez en stock local con ventas y por internacional"
+   },
+   "preferencia_local": {
+    "resultado": "descarta",
+    "motivo": "el producto en stock local vende, o es más caro (lo explica el precio)"
+   }
+  }
+ },
+ {
+  "busqueda": "abrelatas gorilla grip",
+  "veredicto": "descartar",
+  "motivo": "no compite en precio: el producto cuesta 8.11x lo que se compra ($73,000 vs $9,000)",
+  "chequeos_corridos": 4,
+  "conclusion": "no_compite_en_precio",
+  "resumen": {
+   "producto_local": 1,
+   "producto_local_vende": 0,
+   "producto_intl": 4,
+   "producto_intl_vende": 0,
+   "precio_producto_local": 86000,
+   "precio_producto_intl": 73000,
+   "sustitutos_que_venden": 16,
+   "precio_sustitutos_que_venden": 9000,
+   "ventas_visibles_total": 12700,
+   "ventas_producto": 0
+  },
+  "chequeos": {
+   "demanda": {
+    "resultado": "descarta",
+    "motivo": "12700 ventas visibles en la búsqueda"
+   },
+   "precio": {
+    "resultado": "explica",
+    "ratio": 8.11,
+    "motivo": "el producto cuesta 8.11x lo que se compra ($73,000 vs $9,000)"
+   },
+   "espera": {
+    "resultado": "no_se_puede_saber",
+    "motivo": "no está a la vez en stock local con ventas y por internacional"
+   },
+   "preferencia_local": {
+    "resultado": "descarta",
+    "motivo": "el producto en stock local vende, o es más caro (lo explica el precio)"
+   }
+  }
+ },
+ {
+  "busqueda": "papel manteca reynolds",
+  "veredicto": "descartar",
+  "motivo": "no compite en precio: el producto cuesta 3.93x lo que se compra ($55,000 vs $14,000)",
+  "chequeos_corridos": 4,
+  "conclusion": "no_compite_en_precio",
+  "resumen": {
+   "producto_local": 4,
+   "producto_local_vende": 0,
+   "producto_intl": 6,
+   "producto_intl_vende": 0,
+   "precio_producto_local": 72000,
+   "precio_producto_intl": 55000,
+   "sustitutos_que_venden": 23,
+   "precio_sustitutos_que_venden": 14000,
+   "ventas_visibles_total": 21550,
+   "ventas_producto": 0
+  },
+  "chequeos": {
+   "demanda": {
+    "resultado": "descarta",
+    "motivo": "21550 ventas visibles en la búsqueda"
+   },
+   "precio": {
+    "resultado": "explica",
+    "ratio": 3.93,
+    "motivo": "el producto cuesta 3.93x lo que se compra ($55,000 vs $14,000)"
+   },
+   "espera": {
+    "resultado": "no_se_puede_saber",
+    "motivo": "no está a la vez en stock local con ventas y por internacional"
+   },
+   "preferencia_local": {
+    "resultado": "descarta",
+    "motivo": "el producto en stock local vende, o es más caro (lo explica el precio)"
+   }
+  }
+ },
+ {
+  "busqueda": "rociador aceite yarramate",
+  "veredicto": "descartar",
+  "motivo": "no compite en precio: el producto cuesta 4.07x lo que se compra ($57,000 vs $14,000)",
+  "chequeos_corridos": 4,
+  "conclusion": "no_compite_en_precio",
+  "resumen": {
+   "producto_local": 11,
+   "producto_local_vende": 0,
+   "producto_intl": 5,
+   "producto_intl_vende": 0,
+   "precio_producto_local": 103000,
+   "precio_producto_intl": 57000,
+   "sustitutos_que_venden": 32,
+   "precio_sustitutos_que_venden": 14000,
+   "ventas_visibles_total": 33500,
+   "ventas_producto": 0
+  },
+  "chequeos": {
+   "demanda": {
+    "resultado": "descarta",
+    "motivo": "33500 ventas visibles en la búsqueda"
+   },
+   "precio": {
+    "resultado": "explica",
+    "ratio": 4.07,
+    "motivo": "el producto cuesta 4.07x lo que se compra ($57,000 vs $14,000)"
+   },
+   "espera": {
+    "resultado": "no_se_puede_saber",
+    "motivo": "no está a la vez en stock local con ventas y por internacional"
+   },
+   "preferencia_local": {
+    "resultado": "descarta",
+    "motivo": "el producto en stock local vende, o es más caro (lo explica el precio)"
+   }
+  }
+ },
+ {
+  "busqueda": "balanza cocina amazon basics",
+  "veredicto": "descartar",
+  "motivo": "no compite en precio: el producto cuesta 2.33x lo que se compra ($64,000 vs $27,500)",
+  "chequeos_corridos": 4,
+  "conclusion": "no_compite_en_precio",
+  "resumen": {
+   "producto_local": 0,
+   "producto_local_vende": 0,
+   "producto_intl": 3,
+   "producto_intl_vende": 0,
+   "precio_producto_local": null,
+   "precio_producto_intl": 64000,
+   "sustitutos_que_venden": 20,
+   "precio_sustitutos_que_venden": 27500,
+   "ventas_visibles_total": 70050,
+   "ventas_producto": 0
+  },
+  "chequeos": {
+   "demanda": {
+    "resultado": "descarta",
+    "motivo": "70050 ventas visibles en la búsqueda"
+   },
+   "precio": {
+    "resultado": "explica",
+    "ratio": 2.33,
+    "motivo": "el producto cuesta 2.33x lo que se compra ($64,000 vs $27,500)"
+   },
+   "espera": {
+    "resultado": "no_se_puede_saber",
+    "motivo": "no está a la vez en stock local con ventas y por internacional"
+   },
+   "preferencia_local": {
+    "resultado": "no_se_puede_saber",
+    "motivo": "el producto no está en stock local: no se puede separar de la espera"
+   }
+  }
+ },
+ {
+  "busqueda": "lonchera termica hotor",
+  "veredicto": "descartar",
+  "motivo": "no compite en precio: el producto cuesta 3.22x lo que se compra ($80,500 vs $25,000)",
+  "chequeos_corridos": 4,
+  "conclusion": "no_compite_en_precio",
+  "resumen": {
+   "producto_local": 0,
+   "producto_local_vende": 0,
+   "producto_intl": 14,
+   "producto_intl_vende": 0,
+   "precio_producto_local": null,
+   "precio_producto_intl": 80500,
+   "sustitutos_que_venden": 22,
+   "precio_sustitutos_que_venden": 25000,
+   "ventas_visibles_total": 4800,
+   "ventas_producto": 0
+  },
+  "chequeos": {
+   "demanda": {
+    "resultado": "descarta",
+    "motivo": "4800 ventas visibles en la búsqueda"
+   },
+   "precio": {
+    "resultado": "explica",
+    "ratio": 3.22,
+    "motivo": "el producto cuesta 3.22x lo que se compra ($80,500 vs $25,000)"
+   },
+   "espera": {
+    "resultado": "no_se_puede_saber",
+    "motivo": "no está a la vez en stock local con ventas y por internacional"
+   },
+   "preferencia_local": {
+    "resultado": "no_se_puede_saber",
+    "motivo": "el producto no está en stock local: no se puede separar de la espera"
+   }
+  }
+ },
+ {
+  "busqueda": "lonchera lifewit",
+  "veredicto": "descartar",
+  "motivo": "no compite en precio: el producto cuesta 2.89x lo que se compra ($78,000 vs $27,000)",
+  "chequeos_corridos": 4,
+  "conclusion": "no_compite_en_precio",
+  "resumen": {
+   "producto_local": 0,
+   "producto_local_vende": 0,
+   "producto_intl": 29,
+   "producto_intl_vende": 0,
+   "precio_producto_local": null,
+   "precio_producto_intl": 78000,
+   "sustitutos_que_venden": 17,
+   "precio_sustitutos_que_venden": 27000,
+   "ventas_visibles_total": 6975,
+   "ventas_producto": 0
+  },
+  "chequeos": {
+   "demanda": {
+    "resultado": "descarta",
+    "motivo": "6975 ventas visibles en la búsqueda"
+   },
+   "precio": {
+    "resultado": "explica",
+    "ratio": 2.89,
+    "motivo": "el producto cuesta 2.89x lo que se compra ($78,000 vs $27,000)"
+   },
+   "espera": {
+    "resultado": "no_se_puede_saber",
+    "motivo": "no está a la vez en stock local con ventas y por internacional"
+   },
+   "preferencia_local": {
+    "resultado": "no_se_puede_saber",
+    "motivo": "el producto no está en stock local: no se puede separar de la espera"
+   }
+  }
+ },
+ {
+  "busqueda": "repasadores homaxy",
+  "veredicto": "descartar",
+  "motivo": "no compite en precio: el producto cuesta 4.97x lo que se compra ($97,000 vs $19,500)",
+  "chequeos_corridos": 4,
+  "conclusion": "no_compite_en_precio",
+  "resumen": {
+   "producto_local": 0,
+   "producto_local_vende": 0,
+   "producto_intl": 38,
+   "producto_intl_vende": 0,
+   "precio_producto_local": null,
+   "precio_producto_intl": 97000,
+   "sustitutos_que_venden": 14,
+   "precio_sustitutos_que_venden": 19500,
+   "ventas_visibles_total": 18900,
+   "ventas_producto": 0
+  },
+  "chequeos": {
+   "demanda": {
+    "resultado": "descarta",
+    "motivo": "18900 ventas visibles en la búsqueda"
+   },
+   "precio": {
+    "resultado": "explica",
+    "ratio": 4.97,
+    "motivo": "el producto cuesta 4.97x lo que se compra ($97,000 vs $19,500)"
+   },
+   "espera": {
+    "resultado": "no_se_puede_saber",
+    "motivo": "no está a la vez en stock local con ventas y por internacional"
+   },
+   "preferencia_local": {
+    "resultado": "no_se_puede_saber",
+    "motivo": "el producto no está en stock local: no se puede separar de la espera"
+   }
+  }
+ },
+ {
+  "busqueda": "mixer inmersion turelar",
+  "veredicto": "insuficiente",
+  "motivo": "candidato a probar: sin stock local, precio comparable; no se puede separar espera de preferencia",
+  "chequeos_corridos": 4,
+  "conclusion": "candidato_a_probar",
+  "resumen": {
+   "producto_local": 0,
+   "producto_local_vende": 0,
+   "producto_intl": 10,
+   "producto_intl_vende": 0,
+   "precio_producto_local": null,
+   "precio_producto_intl": 105500,
+   "sustitutos_que_venden": 23,
+   "precio_sustitutos_que_venden": 99000,
+   "ventas_visibles_total": 86125,
+   "ventas_producto": 0
+  },
+  "chequeos": {
+   "demanda": {
+    "resultado": "descarta",
+    "motivo": "86125 ventas visibles en la búsqueda"
+   },
+   "precio": {
+    "resultado": "descarta",
+    "ratio": 1.07,
+    "motivo": "precio parecido o menor (1.07x: $105,500 vs $99,000)"
+   },
+   "espera": {
+    "resultado": "no_se_puede_saber",
+    "motivo": "no está a la vez en stock local con ventas y por internacional"
+   },
+   "preferencia_local": {
+    "resultado": "no_se_puede_saber",
+    "motivo": "el producto no está en stock local: no se puede separar de la espera"
+   }
+  }
+ },
+ {
+  "busqueda": "rubbermaid brilliance",
+  "veredicto": "descartar",
+  "motivo": "no compite en precio: el producto cuesta 4.75x lo que se compra ($114,000 vs $24,000)",
+  "chequeos_corridos": 4,
+  "conclusion": "no_compite_en_precio",
+  "resumen": {
+   "producto_local": 2,
+   "producto_local_vende": 0,
+   "producto_intl": 34,
+   "producto_intl_vende": 0,
+   "precio_producto_local": 199000,
+   "precio_producto_intl": 114000,
+   "sustitutos_que_venden": 9,
+   "precio_sustitutos_que_venden": 24000,
+   "ventas_visibles_total": 1625,
+   "ventas_producto": 0
+  },
+  "chequeos": {
+   "demanda": {
+    "resultado": "descarta",
+    "motivo": "1625 ventas visibles en la búsqueda"
+   },
+   "precio": {
+    "resultado": "explica",
+    "ratio": 4.75,
+    "motivo": "el producto cuesta 4.75x lo que se compra ($114,000 vs $24,000)"
+   },
+   "espera": {
+    "resultado": "no_se_puede_saber",
+    "motivo": "no está a la vez en stock local con ventas y por internacional"
+   },
+   "preferencia_local": {
+    "resultado": "descarta",
+    "motivo": "el producto en stock local vende, o es más caro (lo explica el precio)"
+   }
+  }
+ },
+ {
+  "busqueda": "rociador aceite trendplain",
+  "veredicto": "descartar",
+  "motivo": "no compite en precio: el producto cuesta 3.95x lo que se compra ($75,000 vs $19,000)",
+  "chequeos_corridos": 4,
+  "conclusion": "no_compite_en_precio",
+  "resumen": {
+   "producto_local": 7,
+   "producto_local_vende": 0,
+   "producto_intl": 3,
+   "producto_intl_vende": 0,
+   "precio_producto_local": 91000,
+   "precio_producto_intl": 75000,
+   "sustitutos_que_venden": 28,
+   "precio_sustitutos_que_venden": 19000,
+   "ventas_visibles_total": 21350,
+   "ventas_producto": 0
+  },
+  "chequeos": {
+   "demanda": {
+    "resultado": "descarta",
+    "motivo": "21350 ventas visibles en la búsqueda"
+   },
+   "precio": {
+    "resultado": "explica",
+    "ratio": 3.95,
+    "motivo": "el producto cuesta 3.95x lo que se compra ($75,000 vs $19,000)"
+   },
+   "espera": {
+    "resultado": "no_se_puede_saber",
+    "motivo": "no está a la vez en stock local con ventas y por internacional"
+   },
+   "preferencia_local": {
+    "resultado": "descarta",
+    "motivo": "el producto en stock local vende, o es más caro (lo explica el precio)"
+   }
+  }
+ },
+ {
+  "busqueda": "balanza cocina ultrean",
+  "veredicto": "descartar",
+  "motivo": "no compite en precio: el producto cuesta 4.37x lo que se compra ($113,500 vs $26,000)",
+  "chequeos_corridos": 4,
+  "conclusion": "no_compite_en_precio",
+  "resumen": {
+   "producto_local": 7,
+   "producto_local_vende": 0,
+   "producto_intl": 6,
+   "producto_intl_vende": 0,
+   "precio_producto_local": 95000,
+   "precio_producto_intl": 113500,
+   "sustitutos_que_venden": 29,
+   "precio_sustitutos_que_venden": 26000,
+   "ventas_visibles_total": 97125,
+   "ventas_producto": 0
+  },
+  "chequeos": {
+   "demanda": {
+    "resultado": "descarta",
+    "motivo": "97125 ventas visibles en la búsqueda"
+   },
+   "precio": {
+    "resultado": "explica",
+    "ratio": 4.37,
+    "motivo": "el producto cuesta 4.37x lo que se compra ($113,500 vs $26,000)"
+   },
+   "espera": {
+    "resultado": "no_se_puede_saber",
+    "motivo": "no está a la vez en stock local con ventas y por internacional"
+   },
+   "preferencia_local": {
+    "resultado": "descarta",
+    "motivo": "el producto en stock local vende, o es más caro (lo explica el precio)"
+   }
+  }
+ },
+ {
+  "busqueda": "yeti rambler",
+  "veredicto": "descartar",
+  "motivo": "sin demanda: solo 0 ventas visibles en toda la búsqueda",
+  "chequeos_corridos": 1,
+  "conclusion": "sin_demanda",
+  "resumen": {
+   "producto_local": 5,
+   "producto_local_vende": 0,
+   "producto_intl": 37,
+   "producto_intl_vende": 0,
+   "precio_producto_local": 146000,
+   "precio_producto_intl": 131000,
+   "sustitutos_que_venden": 0,
+   "precio_sustitutos_que_venden": null,
+   "ventas_visibles_total": 0,
+   "ventas_producto": 0
+  },
+  "chequeos": {
+   "demanda": {
+    "resultado": "explica",
+    "motivo": "solo 0 ventas visibles en toda la búsqueda"
+   },
+   "precio": {
+    "resultado": "no_se_puede_saber",
+    "motivo": "falta precio del producto o de sustitutos que venden"
+   },
+   "espera": {
+    "resultado": "no_se_puede_saber",
+    "motivo": "no está a la vez en stock local con ventas y por internacional"
+   },
+   "preferencia_local": {
+    "resultado": "descarta",
+    "motivo": "el producto en stock local vende, o es más caro (lo explica el precio)"
+   }
+  }
+ },
+ {
+  "busqueda": "organizador esponja cisily",
+  "veredicto": "descartar",
+  "motivo": "no compite en precio: el producto cuesta 4.32x lo que se compra ($82,000 vs $19,000)",
+  "chequeos_corridos": 4,
+  "conclusion": "no_compite_en_precio",
+  "resumen": {
+   "producto_local": 1,
+   "producto_local_vende": 0,
+   "producto_intl": 12,
+   "producto_intl_vende": 0,
+   "precio_producto_local": 194000,
+   "precio_producto_intl": 82000,
+   "sustitutos_que_venden": 26,
+   "precio_sustitutos_que_venden": 19000,
+   "ventas_visibles_total": 14850,
+   "ventas_producto": 0
+  },
+  "chequeos": {
+   "demanda": {
+    "resultado": "descarta",
+    "motivo": "14850 ventas visibles en la búsqueda"
+   },
+   "precio": {
+    "resultado": "explica",
+    "ratio": 4.32,
+    "motivo": "el producto cuesta 4.32x lo que se compra ($82,000 vs $19,000)"
+   },
+   "espera": {
+    "resultado": "no_se_puede_saber",
+    "motivo": "no está a la vez en stock local con ventas y por internacional"
+   },
+   "preferencia_local": {
+    "resultado": "descarta",
+    "motivo": "el producto en stock local vende, o es más caro (lo explica el precio)"
+   }
+  }
+ }
+]
