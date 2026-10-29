@@ -55,3 +55,13 @@ repuestos que suponíamos faltantes. Detalle en `data/prueba_datos/RESULTADOS.md
 **Qué decidimos:** no-go para el diseño actual hasta repetir la prueba con un token de
 Mercado Libre. Error de proceso que reconocemos: construimos el harness antes de probar
 los datos.
+
+## 2026-10-29 — Scraping desde el navegador: los datos se consiguen, la hipótesis no
+
+**Qué probamos:** los 10 productos de la prueba en el listado de Mercado Libre, desde el
+navegador real con sesión iniciada.
+**Qué pasó:** 10 de 10 respondieron. Y los 10 tienen oferta local, incluidos los que
+usábamos como ejemplos de ausencia (máquina de leche vegetal: 434 publicaciones).
+**Qué decidimos:** el acceso a datos tiene salida (navegador, escala chica, declarado).
+La hipótesis de "productos que faltan" pierde sustento con los ejemplos obvios: hay que
+definir de dónde salen candidatos donde la ausencia sea plausible antes de seguir.

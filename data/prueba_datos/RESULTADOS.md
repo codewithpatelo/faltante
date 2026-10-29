@@ -57,3 +57,39 @@ hipótesis nueva, y también hay que probar que sus datos se consiguen.
 La diferencia importa: el ranking pide un token (401); la búsqueda dice "prohibido"
 (403), lo que es compatible con que esté cerrada aun con token. Pendiente: repetir con
 la app registrada.
+
+## Segunda vuelta: scraping desde el navegador del usuario (29/10/2026)
+
+Mismos 10 productos, leídos desde el listado renderizado en el navegador real del usuario
+(Edge, con sesión de Mercado Libre iniciada), un pedido cada ~1,5 s. Datos en
+`ml_navegador_2026-10-29.json`.
+
+| Producto | Publicaciones | Precio mediano (ARS) |
+|---|---|---|
+| termo stanley classic 1.2 | 83 | 183.498 |
+| dji mic mini | 550 | 223.000 |
+| roku streaming stick | 56 | 119.999 |
+| sports research omega 3 | 259 | 105.000 |
+| cepillo lateral roborock | 255 | 26.000 |
+| filtro purificador xiaomi | 980 | 139.924 |
+| capsulas recargables nespresso | 193 | 32.800 |
+| maquina leche vegetal | 434 | 160.074 |
+| freidora de aire (control) | 8.045 | 199.999 |
+| nut milk maker | 156 | 170.403 |
+
+**T2 pasa, pero solo desde un navegador real.** 10 de 10 consultas devolvieron datos.
+Desde servidor (API sin token o crawler) siguen bloqueadas.
+
+**Calidad:** el total cuenta publicaciones que matchean la búsqueda, no el producto exacto.
+"termo stanley classic 1.2" trae termos de 1,4 L, 1,5 L y 950 ml. Sirve como orden de
+magnitud, no como conteo de oferta de un SKU.
+
+**T5 sigue condicional:** depende de una sesión humana en un navegador. Los términos de
+Mercado Libre restringen el acceso automatizado; para el TP se declara como limitación y
+se mantiene en escala chica.
+
+**Hallazgo central: ninguno de los 10 productos falta.** Ni los del ranking courier, ni
+los complementos, ni "nut milk maker", que en los datos sintéticos figuraba con 1
+vendedor y tiene 156 publicaciones reales. La máquina de leche vegetal, que usamos como
+ejemplo de ausencia en la página del harness, tiene 434. Los datos sintéticos estaban
+construidos sobre una intuición que la realidad desmiente.

@@ -1,0 +1,115 @@
+{
+ "fecha": "2026-10-29",
+ "metodo": "navegador real del usuario (Edge con sesión iniciada), página de listado renderizada; un pedido cada ~1,5 s",
+ "fuente": "listado.mercadolibre.com.ar/<producto>",
+ "busqueda": [
+  {
+   "producto": "termo stanley classic 1.2",
+   "total_publicaciones": 83,
+   "items_leidos": 52,
+   "precio_mediana_ars": 183498,
+   "titulos_ejemplo": [
+    "Termo Stanley Classic Legendary 1.5 (1.42 Litros) 40h Calor Color Hammerton Gree",
+    "Termo Stanley Clásico 1.4lts Negro",
+    "Termo Stanley Classic Legendary 1 Qt (950 Ml) 28h Caliente Color Dried Pine"
+   ]
+  },
+  {
+   "producto": "dji mic mini",
+   "total_publicaciones": 550,
+   "items_leidos": 48,
+   "precio_mediana_ars": 223000,
+   "titulos_ejemplo": [
+    "Micrófono Dji Mic Mini Dji Mic Mini 1 Tx 1 Rx",
+    "DJI Mic Mini 2 para Smartphone Micrófono (1Tx + 1Rx)",
+    "Microfono Inalambrico DJI MIC MINI Mobile Receptor USB-C para iOS y Android"
+   ]
+  },
+  {
+   "producto": "roku streaming stick",
+   "total_publicaciones": 56,
+   "items_leidos": 48,
+   "precio_mediana_ars": 119999,
+   "titulos_ejemplo": [
+    "Roku Streaming Stick Plus 2025 4k Hdr Control Voz Tv En Vivo",
+    "Roku Streaming Stick 4k Hdr 3820 Negro Voz",
+    "Roku stick plus 4k | Streaming tv | Convertidor smart tv | tv magic | Google TV"
+   ]
+  },
+  {
+   "producto": "sports research omega 3",
+   "total_publicaciones": 259,
+   "items_leidos": 52,
+   "precio_mediana_ars": 105000,
+   "titulos_ejemplo": [
+    "Omega 3 Capsulas 1250mg Epa Y Dha Sports Research Ifos X30",
+    "Omega 3 Sports Research en cápsula Sin sabor de 150 un",
+    "Omega 3 Capsulas X 90 Aceite Pescado 1250mg Sports Research"
+   ]
+  },
+  {
+   "producto": "cepillo lateral roborock",
+   "total_publicaciones": 255,
+   "items_leidos": 52,
+   "precio_mediana_ars": 26000,
+   "titulos_ejemplo": [
+    "Para Roborock P10/q Revo, Cepillo Principal, Cepillo Lateral",
+    "Motor Cepillo Lateral Para Roborock Serie S8 / Q Revo",
+    "Motor Del Cepillo Lateral Para  Para Roborock  Ultra"
+   ]
+  },
+  {
+   "producto": "filtro purificador xiaomi",
+   "total_publicaciones": 980,
+   "items_leidos": 48,
+   "precio_mediana_ars": 139924,
+   "titulos_ejemplo": [
+    "Filtro Original Xiaomi Para El Purificador Xiaomi 4 Lite",
+    "For Reemplazo De Filtro Xiaomi Pro/1/2/3/2h/2c/2s/3h/3c",
+    "Filtro Purificador De Aire Xiaomi Smart Air Purifier 4 Pro Color Gris"
+   ]
+  },
+  {
+   "producto": "capsulas recargables nespresso",
+   "total_publicaciones": 193,
+   "items_leidos": 52,
+   "precio_mediana_ars": 32800,
+   "titulos_ejemplo": [
+    "Capsulas Nespresso Recargables Caffettino X 4 + Café Brasil",
+    "Cápsulas Recargables Caffettino Para Nespresso X4",
+    "Cápsulas Recargables Caffettino Para Nespresso X12"
+   ]
+  },
+  {
+   "producto": "maquina leche vegetal",
+   "total_publicaciones": 434,
+   "items_leidos": 60,
+   "precio_mediana_ars": 160074,
+   "titulos_ejemplo": [
+    "Nutrify - Máquina Para Leche Vegetal, Sopas Y Yogur",
+    "Bear Máquina Para Leche Vegetal 1.2l Acero Inoxidable 8-en-1 Negro",
+    "Maquina Leche Vegetal Sunvivi 60 Oz (1774 Ml) 8 En 1"
+   ]
+  },
+  {
+   "producto": "freidora de aire",
+   "total_publicaciones": 8045,
+   "items_leidos": 68,
+   "precio_mediana_ars": 199999,
+   "titulos_ejemplo": [
+    "Freidora de Aire Airfryer 9 Lts Suono Edge Pantalla Digital 12 Programas Acero I",
+    "Freidora De Aire Oster Digital 10 L Con Ventana",
+    "Freidora de Aire Novohome 4.5 Litros Airfryer Display Pantalla Digital Sin Aceit"
+   ]
+  },
+  {
+   "producto": "nut milk maker",
+   "total_publicaciones": 156,
+   "items_leidos": 52,
+   "precio_mediana_ars": 170403,
+   "titulos_ejemplo": [
+    "The Multifunción Nut Milk Maker 2026 Automatic Nut Milk Make…"
+   ]
+  }
+ ]
+}
