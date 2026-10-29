@@ -31,8 +31,8 @@ POLÍTICA ─── decide qué hacer ──►  MOTOR ─── guardrails, cac
                                SKILLS ──► ADAPTADORES (fixtures | Mercado Libre | …)
 ```
 
-- **`harness/motor.py`** — estado y las cuatro operaciones: `proponer`, `ejecutar`,
-  `verificar`, `dar_veredicto`, `leer_skill`. Todos los controles viven acá.
+- **`harness/motor.py`** — ejecuta lo que el agente pide y controla las reglas; no decide.
+  Cuatro operaciones: `proponer_hipotesis`, `verificar`, `dar_veredicto`, `leer_skill`.
 - **`harness/agente.py`** — el loop ReAct sobre la API de Anthropic, sin framework.
 - **`harness/politicas.py`** — los baselines: fija (todas las skills sobre todo) y
   heurística (corta apenas refuta).
