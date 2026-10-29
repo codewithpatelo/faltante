@@ -1,6 +1,6 @@
 PY ?= python3
 
-.PHONY: setup test demo agente vivo reporte limpiar
+.PHONY: setup test demo agente vivo diagnostico reporte limpiar
 
 setup:
 	$(PY) -m pip install -r requirements.txt
@@ -19,6 +19,9 @@ agente:
 
 vivo:
 	$(PY) run.py --politica heuristica --fuente ml --salida out_ml
+
+diagnostico:
+	$(PY) diagnostico_run.py
 
 reporte:
 	$(PY) reporte.py
