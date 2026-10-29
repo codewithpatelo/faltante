@@ -1,0 +1,20 @@
+{
+ "_nota": "Publicaciones de Mercado Libre CON VENTAS que el baseline marcó como 'menciona la marca o el modelo'. El juicio 'es_el_producto' lo hizo Claude en el chat (paso LLM hecho a mano), comparando con el título de Amazon. Una sola persona juzgó: no hay acuerdo inter-anotador. Stanley Quencher se excluye: 46 publicaciones con ventas mencionan la marca y se juzgó a nivel de línea de producto (atendido localmente).",
+ "juicios": [
+  {"busqueda": "owala freesip", "idx": 0, "titulo_ml": "Botella Owala Freesip Stainless Steel 24 Oz Original 710 Ml", "vendidos_min": 100, "baseline": true, "es_el_producto": "si", "motivo": "Mismo modelo y capacidad (24 oz)."},
+  {"busqueda": "owala freesip", "idx": 2, "titulo_ml": "Botella Owala Freesip De Acero Inoxidable 710 Ml Con Sorbete", "vendidos_min": 100, "baseline": true, "es_el_producto": "si", "motivo": "Mismo modelo, 710 ml = 24 oz."},
+  {"busqueda": "owala freesip", "idx": 11, "titulo_ml": "Botella Termo Owala Freesip Térmica Owala Freesip 709ml Day", "vendidos_min": 25, "baseline": true, "es_el_producto": "si", "motivo": "Mismo modelo."},
+  {"busqueda": "owala smoothsip", "idx": 12, "titulo_ml": "Botella Owala Freesip Stainless Steel 24 Oz Original 710 Ml", "vendidos_min": 100, "baseline": true, "es_el_producto": "no", "motivo": "Es la FreeSip (botella), no la SmoothSip Slider (vaso de café). Misma marca, otro producto."},
+  {"busqueda": "owala smoothsip", "idx": 13, "titulo_ml": "Botella Owala Freesip Stainless Steel 24 Oz Original 710 Ml", "vendidos_min": 100, "baseline": true, "es_el_producto": "no", "motivo": "Ídem anterior."},
+  {"busqueda": "abrelatas kitchenaid", "idx": 37, "titulo_ml": "Abrelatas KitchenAid de Mariposa y Abridor de Botellas", "vendidos_min": 25, "baseline": true, "es_el_producto": "probable", "motivo": "Misma marca y tipo (abrelatas con abrebotellas); el título no confirma que sea el modelo clásico multifunción."},
+  {"busqueda": "tijeras cocina kitchenaid", "idx": 0, "titulo_ml": "Tijeras De Cocina Multiusos Kitchenaid Con Funda", "vendidos_min": 100, "baseline": true, "es_el_producto": "si", "motivo": "Mismo producto: tijeras multiuso con funda."},
+  {"busqueda": "bolsas olla lenta reynolds", "idx": 16, "titulo_ml": "Bolsas para Congelar Reynolds Resellables Median", "vendidos_min": 100, "baseline": true, "es_el_producto": "no", "motivo": "Bolsas de freezer, no revestimientos para olla lenta."},
+  {"busqueda": "abrelatas gorilla grip", "idx": 56, "titulo_ml": "Cinta Tubeless Encore Gorilla Tape 25mm X 9,14m", "vendidos_min": 1000, "baseline": true, "es_el_producto": "no", "motivo": "Cinta de otra marca (Gorilla Tape) y otra categoría."},
+  {"busqueda": "papel manteca reynolds", "idx": 0, "titulo_ml": "Papel Antiadherente Reynolds Horno Y Coc. 5 Mts", "vendidos_min": 100, "baseline": true, "es_el_producto": "dudoso", "motivo": "Misma marca; 'papel antiadherente' puede ser papel manteca o papel aluminio antiadherente. El título no alcanza."},
+  {"busqueda": "rubbermaid brilliance", "idx": 4, "titulo_ml": "3 Contenedores Rubbermaid Easy Find Lids 473 Ml", "vendidos_min": 100, "baseline": true, "es_el_producto": "no", "motivo": "Línea Easy Find Lids, no Brilliance."},
+  {"busqueda": "rubbermaid brilliance", "idx": 5, "titulo_ml": "Pack X2 Taper Contenedor Vianda Rubbermaid 2.1l", "vendidos_min": 50, "baseline": true, "es_el_producto": "no", "motivo": "No es la línea Brilliance."},
+  {"busqueda": "rubbermaid brilliance", "idx": 6, "titulo_ml": "X2 Taper Contenedor Para Snacks Rubbermaid Take", "vendidos_min": 100, "baseline": true, "es_el_producto": "no", "motivo": "Línea TakeAlongs, no Brilliance."},
+  {"busqueda": "rubbermaid brilliance", "idx": 7, "titulo_ml": "Hermético Rubbermaid 2.1 L Easy Find Lids", "vendidos_min": 100, "baseline": true, "es_el_producto": "no", "motivo": "Línea Easy Find Lids."},
+  {"busqueda": "rubbermaid brilliance", "idx": 49, "titulo_ml": "Contenedor Multiuso Hermetico Sandwich 875ml Rub", "vendidos_min": 500, "baseline": true, "es_el_producto": "no", "motivo": "No es la línea Brilliance."}
+ ]
+}

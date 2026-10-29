@@ -89,3 +89,17 @@ En los 6 productos, las ventas visibles se concentran en un puñado de publicaci
 **Qué decidimos:** la lectura de la entrada anterior ("solo llega por cross-border") miraba
 la oferta, no los votos. Los compradores eligen stock local y no esperan. La señal candidata
 pasa a ser: demanda probada (ventas) concentrada en pocos vendedores locales.
+
+## 2026-10-29 — Primera corrida del MVP sobre datos reales
+
+**Qué probamos:** top 30 de Amazon en Cocina → 23 con marca → búsqueda en Mercado Libre →
+emparejamiento → clasificación. El paso LLM lo hizo Claude en el chat (sin API key).
+Datos en `data/mvp/`.
+**Qué pasó:** 17 de 23 no se venden en Mercado Libre con stock local, y la demanda de la
+búsqueda la toman sustitutos locales; 4 ya se venden; 1 dudoso; 1 sin demanda visible. El
+baseline "menciona la marca" acertó 4 de 15 publicaciones con ventas (6 si se cuentan
+probable y dudoso) y habría dado por atendidos 4 productos que no lo están.
+**Qué decidimos:** el método produce una salida con sentido y el LLM tiene un trabajo medible
+(emparejar). Falta: una medida de competencia mejor que el volumen (las balanzas dominan el
+ranking por ser masivas), un segundo anotador, y validar con alguien del rubro si la marca
+pesa en la decisión de compra.

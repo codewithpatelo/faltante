@@ -1,0 +1,167 @@
+{
+ "fuente": "amazon.com Best Sellers Kitchen & Dining, leído el 2026-10-29 desde el navegador del usuario",
+ "nota": "'busqueda_ml' fue generada por Claude en el chat (paso LLM hecho a mano, Wizard of Oz). Se excluyeron 6 productos sin marca identificable (#6, #7, #12, #15, #18, #20, #29).",
+ "candidatos": [
+  {
+   "rank": 1,
+   "asin": "B0BZYCJK89",
+   "titulo_amazon": "Owala - Botella de agua FreeSip de acero inoxidable con aislamiento",
+   "marca": "Owala",
+   "busqueda_ml": "owala freesip"
+  },
+  {
+   "rank": 2,
+   "asin": "B0GWCSHM8Y",
+   "titulo_amazon": "Owala SmoothSip Slider - Vaso de café de acero inoxidable con aislamiento",
+   "marca": "Owala",
+   "busqueda_ml": "owala smoothsip"
+  },
+  {
+   "rank": 3,
+   "asin": "B0H2FQ5FV1",
+   "titulo_amazon": "HydroJug Polka Dot Traveler - Vaso aislado de 32 onzas",
+   "marca": "HydroJug",
+   "busqueda_ml": "hydrojug traveler"
+  },
+  {
+   "rank": 4,
+   "asin": "B0113UZJE2",
+   "titulo_amazon": "Báscula de cocina digital multifunción Etekcity, 11 lbs",
+   "marca": "Etekcity",
+   "busqueda_ml": "balanza cocina etekcity"
+  },
+  {
+   "rank": 5,
+   "asin": "B07YP2VH4B",
+   "titulo_amazon": "KitchenAid - Abrelatas multifunción clásico y abrebotellas",
+   "marca": "KitchenAid",
+   "busqueda_ml": "abrelatas kitchenaid"
+  },
+  {
+   "rank": 8,
+   "asin": "B0CRMP3RQT",
+   "titulo_amazon": "Stanley Quencher H2.0 - Vaso de acero inoxidable con asa, pajilla y tapa",
+   "marca": "Stanley",
+   "busqueda_ml": "stanley quencher"
+  },
+  {
+   "rank": 9,
+   "asin": "B003OAJGJO",
+   "titulo_amazon": "Crock-Pot Olla de cocción lenta manual de 7 cuartos de galón",
+   "marca": "Crock-Pot",
+   "busqueda_ml": "olla lenta crock pot"
+  },
+  {
+   "rank": 10,
+   "asin": "B0CYJBB2JQ",
+   "titulo_amazon": "bella Fits-Anywhere - Tostadora delgada de 2 rebanadas",
+   "marca": "bella",
+   "busqueda_ml": "tostadora bella fits anywhere"
+  },
+  {
+   "rank": 11,
+   "asin": "B07PZF3QS3",
+   "titulo_amazon": "KitchenAid Tijeras de cocina multiusos con funda protectora",
+   "marca": "KitchenAid",
+   "busqueda_ml": "tijeras cocina kitchenaid"
+  },
+  {
+   "rank": 13,
+   "asin": "B0B6H9JF8N",
+   "titulo_amazon": "Reynolds Kitchens - Revestimientos para olla de cocción lenta",
+   "marca": "Reynolds",
+   "busqueda_ml": "bolsas olla lenta reynolds"
+  },
+  {
+   "rank": 14,
+   "asin": "B0GH9R927H",
+   "titulo_amazon": "GORILLA GRIP Abrelatas manual de acero inoxidable",
+   "marca": "Gorilla Grip",
+   "busqueda_ml": "abrelatas gorilla grip"
+  },
+  {
+   "rank": 16,
+   "asin": "B07PFYT8MC",
+   "titulo_amazon": "Reynolds Kitchens - Rollo de papel pergamino sin blanquear",
+   "marca": "Reynolds",
+   "busqueda_ml": "papel manteca reynolds"
+  },
+  {
+   "rank": 17,
+   "asin": "B0CP4XY9QC",
+   "titulo_amazon": "YARRAMATE Pulverizador de aceite de oliva de vidrio 2 en 1",
+   "marca": "Yarramate",
+   "busqueda_ml": "rociador aceite yarramate"
+  },
+  {
+   "rank": 19,
+   "asin": "B06X9NQ8GX",
+   "titulo_amazon": "Amazon Basics Báscula digital de cocina con pantalla LCD",
+   "marca": "Amazon Basics",
+   "busqueda_ml": "balanza cocina amazon basics"
+  },
+  {
+   "rank": 21,
+   "asin": "B0DBDKT4QC",
+   "titulo_amazon": "HOTOR Lonchera térmica para hombres y mujeres",
+   "marca": "Hotor",
+   "busqueda_ml": "lonchera termica hotor"
+  },
+  {
+   "rank": 22,
+   "asin": "B0B56CHMSC",
+   "titulo_amazon": "Lifewit Bolsa de almuerzo mediana, lonchera aislada",
+   "marca": "Lifewit",
+   "busqueda_ml": "lonchera lifewit"
+  },
+  {
+   "rank": 23,
+   "asin": "B07WMQP4SF",
+   "titulo_amazon": "Homaxy - Paños de cocina de 100 % algodón",
+   "marca": "Homaxy",
+   "busqueda_ml": "repasadores homaxy"
+  },
+  {
+   "rank": 24,
+   "asin": "B0CPLVLFK2",
+   "titulo_amazon": "Turelar Batidora de inmersión de mano con cable, 1100 W",
+   "marca": "Turelar",
+   "busqueda_ml": "mixer inmersion turelar"
+  },
+  {
+   "rank": 25,
+   "asin": "B079M8FPTW",
+   "titulo_amazon": "Rubbermaid Brilliance - Recipientes de plástico Tritan",
+   "marca": "Rubbermaid",
+   "busqueda_ml": "rubbermaid brilliance"
+  },
+  {
+   "rank": 26,
+   "asin": "B0CJF94M8J",
+   "titulo_amazon": "TrendPlain - Pulverizador de aceite de oliva de vidrio",
+   "marca": "TrendPlain",
+   "busqueda_ml": "rociador aceite trendplain"
+  },
+  {
+   "rank": 27,
+   "asin": "B08CZDYNF7",
+   "titulo_amazon": "Ultrean Báscula de alimentos, báscula digital de cocina",
+   "marca": "Ultrean",
+   "busqueda_ml": "balanza cocina ultrean"
+  },
+  {
+   "rank": 28,
+   "asin": "B073WJMKHN",
+   "titulo_amazon": "YETI Rambler - Vaso de acero inoxidable con aislamiento",
+   "marca": "YETI",
+   "busqueda_ml": "yeti rambler"
+  },
+  {
+   "rank": 30,
+   "asin": "B0C3QZ7SNF",
+   "titulo_amazon": "Cisily - Soporte de esponja para fregadero de cocina",
+   "marca": "Cisily",
+   "busqueda_ml": "organizador esponja cisily"
+  }
+ ]
+}
