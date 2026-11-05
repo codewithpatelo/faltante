@@ -1,183 +1,129 @@
 # Faltante
 
-TP de IA Agéntica (UBA, 2026). Tomamos productos que se venden mucho afuera (top de Amazon
-en Cocina) y nos preguntamos **por qué no se venden en Mercado Libre**. Cuatro explicaciones
-compiten: **precio** (cuesta mucho más que lo que la gente compra), **espera** (la gente no
-quiere esperar el envío de afuera), **preferencia** (hay alternativas que gustan más) y
-**falta de demanda**. El sistema corre las cuatro y se queda con la que sostienen los datos.
+**Qué hace:** le dice a un importador chico qué conviene traer para vender en Mercado Libre,
+y por qué. Mira lo que la gente **ya compra** (no lo que dice que compraría), busca dónde
+esa demanda no está bien atendida acá, y calcula cuánto deja traerlo.
 
-Usamos **votos con los pies**: lo que la gente compra ("+N vendidos" en cada publicación),
-no lo que dice que compraría.
+TP de IA Agéntica, Maestría en Explotación de Datos (UBA), 2026.
 
-## Para el equipo: qué hacer ahora (05/11/2026)
+## La idea en un ejemplo
 
-1. `make setup && make todo`: tiene que dar 30 tests en verde y correr el diagnóstico y el piloto divergente.
-2. **Etiquetar 94 equivalencias y juzgar 12 hipótesis a ciegas** (25 minutos): `data/evaluacion/COMO_JUZGAR.md`. Son los primeros
-   juicios humanos: con ellos medimos LLM contra baseline y después calibramos un LLM juez.
-3. Leer `BITACORA.md` de abajo hacia arriba: ahí está el relato del desarrollo que pide la exposición.
-4. **Correr el LLM sin compartir claves:** cargar `ANTHROPIC_API_KEY` como secreto del repo y
-   lanzar el workflow `llm` desde Actions (≈ USD 0,07). Detalle en `CONSIGNA.md`.
-5. **`CONSIGNA.md`**: cada requisito de la consigna, dónde se verifica y qué falta, con el reparto
-   de tareas propuesto.
+Un afilador de cuchillos rodante se vendió **más de 1.000 veces por Compra Internacional** a
+$21.800. Esa gente pagó y esperó semanas para recibirlo: la demanda está probada. Acá, los
+afiladores equivalentes con stock local cuestan entre $43.000 y $135.000. Traído en cantidad,
+el afilador queda puesto en unos $11.400; vendido a $35.000 con stock local, deja 44% sobre
+el costo. Eso es una oportunidad concreta, con números.
 
-## Resultado en una página: [`HALLAZGOS.md`](HALLAZGOS.md)
+## Cómo funciona, paso a paso
 
-Fichas de decisión para un importador ("¿lo traigo?"), con motivo, evidencia y confianza.
-
-## Hallazgo principal: demanda probada por Compra Internacional (05/11/2026)
-
-El voto con los pies más fuerte a favor de importar es comprar por **Compra Internacional**:
-la persona paga y además espera semanas. Tomamos los 74 productos internacionales con +100
-vendidos o más en Cocina, Hogar, Bazar y Organización, y para 15 buscamos si hay un
-equivalente con stock local (`make cross-border`). Quién decide qué es "equivalente" cambia
-todo:
-
-| Cómo se decide la equivalencia | Oportunidades de 15 |
-|---|---|
-| Baseline sin LLM (dos palabras del título) | 10 |
-| Regla de palabras escrita por el LLM | 8 |
-| **LLM juzgando publicación por publicación** (tamaño, gama) | **3** |
-
-Las reglas confunden una tabla de 25x15 con una de 60x30, o un set básico de bowls con
-ensaladeras premium. Las 3 que quedan, con demanda probada:
-- **Afilador de cuchillos rodante**: +1.000 vendidos por Compra Internacional a $21.800; los
-  locales equivalentes que venden cuestan ~2,3 veces más ($43k a $78k).
-- **Set de recipientes herméticos de acero**: +5.000 a $14.000; los sets locales que venden,
-  ~3,4 veces más (hay uno local barato con +100: atención).
-- **Contenedor con colador para heladera**: +1.000 a $17.000; hay 3 locales al mismo precio y
-  ninguno vende (no lo explica la espera: queda abierto).
-
-Esto todavía es el juicio de un LLM. La hipótesis medible es que ese juicio acierta más que
-las reglas: lo verifica el grupo etiquetando `data/evaluacion/planilla_equivalencia.csv`
-(`make equivalencia` da precisión, recall y F1 de cada método). Hay 15 productos de **test**
-fijados sin mirar (`data/cross_border/particion.json`).
-
-## Qué encontramos antes (23 productos de Amazon, fotos del 29/10 y del 05/11/2026)
-
-| Conclusión | Productos | Qué significa |
+| Paso | Qué hace | Quién lo hace |
 |---|---|---|
-| No compite en precio | 16 | cuesta entre 2 y 8 veces lo que se vende en su búsqueda |
-| Ya se vende acá | 4 | hay stock local con ventas (Owala FreeSip, Stanley Quencher, KitchenAid) |
-| Candidato a probar | 2 | precio parecido y nadie lo vende con stock local (mixer Turelar, Owala SmoothSip) |
-| Sin demanda | 1 | nadie compra nada en la búsqueda (YETI Rambler) |
+| 1. Encontrar demanda probada | Junta productos que se venden mucho por Compra Internacional (+100 vendidos) | Código (captura desde el navegador) |
+| 2. Buscar el equivalente local | Para cada uno, busca si alguien ya lo vende con stock en Argentina | **LLM**: decide si dos publicaciones son el mismo producto (tamaño, gama, tipo) |
+| 3. Descartar lo que ya está atendido | Si hay equivalente local barato que vende, no hay hueco | Código, con reglas a la vista |
+| 4. Entender el porqué | En los casos raros, lee para qué dicen usarlo los compradores | **LLM** + código que verifica las citas |
+| 5. Calcular si conviene | Costo puesto (origen + flete + impuestos) contra precio de venta y comisión | Código |
 
-Las dos fotos, tomadas con una semana de diferencia, dan **las mismas 23 conclusiones**.
-De las publicaciones internacionales de estos productos, **ninguna muestra ventas**: en los
-4 productos que están en los dos canales, la gente compra el de stock local aunque el
-internacional cueste igual o menos.
+**Por qué hace falta un LLM:** Mercado Libre mezcla en una misma búsqueda el producto,
+sustitutos, accesorios y cosas que no tienen nada que ver. Decidir que una tabla de 25x15 cm
+no es lo mismo que una de 60x30 cm requiere leer. Con reglas de palabras salen 10
+"oportunidades" de 15; con el LLM leyendo publicación por publicación, 3. Las otras 7 eran
+falsas.
 
-## Etapa divergente (piloto, 05/11/2026)
+**Por qué no se lo cree todo:** cada cosa que afirma el LLM tiene que citar una publicación
+real con un fragmento literal de su título, y el código lo verifica. Y cada hipótesis se
+intenta tirar abajo con datos antes de recomendarla.
 
-El diagnóstico anterior parte de un producto de Amazon y pregunta por qué no se vende. Eso
-es solo la mitad convergente. La etapa divergente **lee los votos**: en cada búsqueda, qué
-eligió la gente y qué dejó pasar (formato, marca, precio, origen, palabras), y abduce
-hipótesis de necesidad que después se intentan refutar.
+## Qué encontramos
 
-- `skills/leer_votos/SKILL.md`: el procedimiento que sigue el LLM.
-- `harness/votos.py`: la vista ganadoras/perdedoras, el **baseline** sin LLM (términos que
-  distinguen lo que vende) y el **guardrail** de citas (cada hipótesis cita publicaciones
-  con un fragmento literal y el voto tiene que coincidir con las ventas).
-- `data/divergente/`: partición fija dev/test, 6 hipótesis piloto y la convergencia de dos.
-- `make divergente` reproduce el piloto.
+Detalle en [`HALLAZGOS.md`](HALLAZGOS.md) (una ficha por producto).
 
-Resultado: 6 hipótesis sobre 6 búsquedas de desarrollo. De las tres que intentamos refutar:
-lenguaje del título **cae**; voltaje 220 V **sigue abierta**; lonchera que calienta: **la necesidad
-se confirma pero ya está atendida** por vendedores locales (no es oportunidad de importación).
-`harness/divergente.py` es la versión con API (proponer → validar en código → reintentar una vez).
+| Producto | ¿Traerlo? | Por qué |
+|---|---|---|
+| Set de 5 herméticos de acero | **Sí** | +5.000 por Compra Internacional; puesto en ~$5.700, a $25.000 deja 73% |
+| Afilador rodante | **Sí, si se consigue a USD 6 o menos** | +1.000 por Compra Internacional; a $35.000 deja 44% |
+| Tostador abierto (carlitero) | No | Parece un hueco, pero importado queda en ~$450.000 contra $242.000 del fabricante local |
+| Olla de cocción lenta (Crock-Pot) | No | La gente compra esa función dentro de ollas multifunción |
+| Lonchera eléctrica | No | La necesidad existe pero ya la atienden muchos vendedores locales |
 
-## Correrlo (sin red ni claves)
+**Tres cosas que aprendimos:**
+1. Partir del top de Amazon no sirve: casi todo es más caro o ya se vende acá. Partir de lo
+   que se compra por Compra Internacional sí.
+2. Lo que viene de afuera **sin stock local casi no se compra**: en 387 publicaciones
+   internacionales del top de Amazon, ninguna mostraba ventas. La espera pesa. Por eso la
+   oportunidad es traer con stock local, no competir por Compra Internacional.
+3. Las explicaciones "culturales" son fáciles de inventar: "la sopladora se compra para el
+   asado" (1 de 175 opiniones lo dice) y "el afilador es para el asado" (0 de 111) eran falsas.
+
+## Correrlo
 
 ```bash
 git clone https://github.com/codewithpatelo/faltante && cd faltante
 python3 -m venv .venv && source .venv/bin/activate
-make setup        # instala dependencias
-make todo         # tests + demo del harness + diagnóstico sobre la foto más reciente
+make setup     # instala dependencias
+make todo      # 31 tests + todo el análisis sobre los datos guardados (no necesita internet ni claves)
 ```
 
-Por separado:
+Pasos sueltos:
 
-```bash
-make test         # 30 tests: guardrails, chequeos, emparejamiento, citas, reintento
-make diagnostico  # cuatro chequeos sobre la foto más reciente de data/diagnostico/
-make demo         # políticas fija y heurística sobre datos sintéticos (prueban el mecanismo)
-make agente       # agente ReAct con LLM (requiere ANTHROPIC_API_KEY)
-```
+| Comando | Qué hace |
+|---|---|
+| `make cross-border` | Pasos 1 a 3: productos internacionales que venden contra equivalentes locales |
+| `make costos` | Paso 5: costo puesto y margen de cada candidata |
+| `make diagnostico` | Por qué no se venden acá los productos del top de Amazon (primer enfoque) |
+| `make divergente` | Hipótesis leídas de los votos, con sus citas verificadas |
+| `make equivalencia` | Precisión del LLM contra reglas, con las etiquetas del grupo |
+| `make divergente-llm` | La lectura con el modelo de verdad (necesita `ANTHROPIC_API_KEY`) |
 
-Con Docker: `docker build -t faltante . && docker run --rm faltante`
+## Cómo medimos si funciona
 
-## Refrescar los datos de Mercado Libre
+**Hipótesis:** para decidir si una publicación local es equivalente a un producto
+importado, el LLM acierta más que una regla de palabras. Se mide con precisión, recall y F1
+contra etiquetas humanas (`data/evaluacion/planilla_equivalencia.csv`). Hay 15 productos de
+prueba separados que no se miraron mientras se armaba el sistema.
 
-La API de búsqueda de Mercado Libre está cerrada: devuelve **403 sin token** (desde la nube y
-desde una conexión hogareña) y **403 con token válido** de una app no certificada
-("At least one policy returned UNAUTHORIZED"; probado el 05/11/2026, ver
-`data/prueba_datos/api_con_token_2026-11-05.json`). La web bloquea scripts comunes. Lo que sí
-funciona es leer el listado desde tu navegador con sesión iniciada:
+**Costo del sistema:** ~USD 0,006 por producto analizado con Claude Haiku 4.5. Detalle en `CONSIGNA.md`.
 
-1. Abrí `https://listado.mercadolibre.com.ar/termo` con tu sesión de Mercado Libre.
-2. Abrí la consola (F12 → Consola), pegá entero `scripts/captura_ml.js` y Enter.
-   Tarda unos 8 minutos y descarga `captura_ml_<fecha>.json`. No toca cookies ni datos de tu cuenta.
-3. Copiá el archivo a `data/capturas/` y corré:
+## De dónde salen los datos
 
-```bash
-make foto CAPTURA=data/capturas/captura_ml_<fecha>.json   # marca producto / sustituto / accesorio
-make diagnostico                                           # usa la foto nueva
-```
+- **Mercado Libre**, leído desde el navegador con sesión iniciada (`scripts/captura_ml.js`):
+  título, precio, "+N vendidos" y si es Compra Internacional. La API de búsqueda está cerrada,
+  incluso con token válido (lo probamos: `data/prueba_datos/`).
+- **Opiniones de compradores**, también desde el navegador (`scripts/voces_ml.js`).
+- **Precios de origen** (Alibaba), **aranceles** (ARCA), **flete** y **comisiones**: fuentes en
+  `harness/costo_puesto.py`.
 
-`make prueba-api` repite la prueba de la API con una app propia (pide Client ID y Secret Key
-sin mostrarlos y no los guarda), por si Mercado Libre la abre o la app se certifica.
+Para refrescar los datos: abrí `https://listado.mercadolibre.com.ar/termo` con tu sesión,
+pegá `scripts/captura_ml.js` en la consola (F12) y seguí las instrucciones del archivo.
 
-## Cómo está armado
+## Mapa del repo
 
-![Arquitectura](docs/arquitectura.svg)
+| Carpeta / archivo | Qué hay |
+|---|---|
+| `HALLAZGOS.md` | El resultado: una ficha por producto |
+| `BITACORA.md` | Qué probamos en cada sesión, qué salió mal y qué decidimos (para la exposición) |
+| `CONSIGNA.md` | Cada requisito del TP, dónde se cumple y qué falta |
+| `harness/` | El sistema: chequeos, emparejamiento, lectura de votos, costos, guardrails |
+| `skills/` | Instrucciones que sigue el LLM en cada tarea (`SKILL.md`) |
+| `scripts/` | Captura desde el navegador y scripts de evaluación |
+| `data/` | Todo lo capturado y los resultados, con fecha |
+| `tests/` | 31 tests: guardrails, chequeos, citas, reintentos, costos |
 
-```
-productos con demanda afuera
-   │
-   ▼
-POLÍTICA ─── decide qué chequear ──►  MOTOR ─── guardrails, caché, traza
-(fija | heurística | diagnóstico | LLM)  │
-                                         ▼
-                                  SKILLS ──► ADAPTADORES (foto de ML | API de ML | sintéticos)
-```
+## Glosario
 
-- **`harness/motor.py`**: ejecuta lo que la política pide y hace cumplir las reglas; no decide.
-  Operaciones: `proponer_hipotesis`, `verificar`, `dar_veredicto`, `leer_skill`.
-- **`harness/diagnostico.py`**: los cuatro chequeos. Los umbrales están arriba del archivo,
-  a la vista, porque son decisiones discutibles.
-- **`harness/agente.py`**: loop ReAct sobre la API de Anthropic, sin framework.
-- **`harness/politicas.py`**: fija, heurística y diagnóstico (los baselines contra los que
-  se compara el agente).
-- **`skills/*/SKILL.md`**: una por verificación: qué pregunta responde, cuándo usarla, cómo
-  leer el resultado.
-- **`adapters/`**: de dónde salen los datos. Cambiar de fuente no toca el harness.
-- **`scripts/`**: captura desde el navegador, emparejamiento por reglas, prueba de la API.
+- **Voto con los pies:** lo que la gente compra de verdad, contra lo que dice que compraría.
+- **Compra Internacional:** publicaciones de Mercado Libre que se envían desde afuera; el
+  comprador espera semanas.
+- **Equivalente:** una publicación local que es el mismo producto o un reemplazo directo
+  (mismo tipo, tamaño y gama).
+- **Costo puesto:** lo que cuesta tener el producto en un depósito en Argentina: precio en
+  origen + flete + aranceles.
+- **Guardrail:** regla en código que el LLM no puede saltear (por ejemplo, no puede citar una
+  publicación que no existe).
 
-### Guardrails (en código)
+## Limitaciones
 
-- No se puede confirmar ni descartar sin al menos una evidencia **propia, exitosa y que haya
-  tocado datos**. Si no se pudo verificar, el veredicto es `insuficiente`.
-- Tope de skills por hipótesis y de pasos totales.
-- No se puede terminar con productos sin veredicto.
-- Todo rechazo vuelve a la política como error y queda en la traza.
-
-## Dónde está el LLM
-
-En **emparejar**: decidir si cada publicación de Mercado Libre es el producto de Amazon, un
-sustituto o un accesorio. La búsqueda de Mercado Libre mezcla todo, y una regla simple
-("menciona la marca") acertó 4 de 15 en la prueba. Hoy el criterio por producto
-(`data/diagnostico/criterios.json`) lo escribió el LLM en el chat y se aplica con reglas
-(`scripts/emparejar.py`). Pendiente: hacer el emparejamiento con el LLM publicación por
-publicación y compararlo contra estas reglas.
-
-## Limitaciones que declaramos
-
-- Primera página de cada búsqueda, 23 productos, una categoría.
-- "+N vendidos" es un piso del contador, no ventas reales.
-- El criterio de emparejamiento tiene errores conocidos (ver `BITACORA.md`).
-- No sabemos si el precio internacional incluye impuestos de importación.
-
-## Archivos para leer primero
-
-- `BITACORA.md`: qué probamos, qué esperábamos, qué pasó, qué decidimos, en orden.
-- `DECISIONES.md`: por qué el diseño es como es.
-- `data/diagnostico/resultado_<fecha>.json`: cada producto con los números de cada chequeo.
+- Miramos la primera página de cada búsqueda y unas pocas categorías (Cocina, Hogar, Bazar).
+- "+N vendidos" es un piso del contador de Mercado Libre, no las ventas exactas.
+- Los costos usan precios y tarifas publicados, no una cotización real de proveedor y despachante.
+- Hasta que el grupo etiquete, el juicio del LLM no está validado por personas.
