@@ -1,6 +1,6 @@
 PY ?= python3
 
-.PHONY: setup test demo agente diagnostico divergente juicios cross-border equivalencia foto reporte todo prueba-api vivo limpiar
+.PHONY: setup test demo agente diagnostico divergente juicios cross-border costos equivalencia foto reporte todo prueba-api vivo limpiar
 
 setup:
 	$(PY) -m pip install -r requirements.txt
@@ -36,6 +36,10 @@ divergente:
 cross-border:
 	$(PY) scripts/cross_border_run.py data/capturas/captura_ml_locales_cross_border_2026-11-05.json
 
+# Costo puesto en Argentina y margen vendiendo en Mercado Libre de las candidatas.
+costos:
+	$(PY) -m harness.costo_puesto
+
 # Precisión/recall/F1 del emparejamiento contra etiquetas humanas.
 equivalencia:
 	$(PY) scripts/calcular_equivalencia.py
@@ -58,7 +62,7 @@ reporte:
 	$(PY) reporte.py
 
 # Todo lo que corre sin red ni claves.
-todo: test demo diagnostico divergente cross-border
+todo: test demo diagnostico divergente cross-border costos
 
 # Prueba la API de Mercado Libre con tu propia app (pide Client ID y Secret, no los guarda).
 prueba-api:

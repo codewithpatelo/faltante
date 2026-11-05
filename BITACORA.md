@@ -233,3 +233,18 @@ con 2-3 fabricantes locales, comprado para panes que no entran en ranura y por n
 **Qué decidimos:** consolidar todo en `HALLAZGOS.md` como fichas de decisión. Lección de
 proceso: las hipótesis situadas son baratas de generar y fáciles de creer; sin refutación
 habríamos presentado dos falsas.
+
+## 2026-11-05 — Costo puesto: de "hueco" a "cuánto deja"
+
+**Qué probamos:** calcular cuánto cuesta traer cada candidata y cuánto deja vendida en
+Mercado Libre (`harness/costo_puesto.py`), con precios de Alibaba, aranceles de ARCA,
+logística consolidada y comisión de Mercado Libre; tres escenarios y lote de prueba.
+**Qué esperábamos:** que las tres candidatas tuvieran margen.
+**Qué pasó:** los herméticos son la más robusta (73% sobre costo a $25.000; aguanta hasta
+con el proveedor caro si se vende al precio local). El afilador funciona si el FOB es de
+USD 6 o menos y el arancel 18% (44% a $35.000); con FOB USD 12 y arancel 35% pierde. El
+tostador abierto, que parecía el hallazgo más interesante, no: puesto acá cuesta ~$450.000
+contra $242.000 del fabricante local. Ninguna conviene vendida al precio de Compra
+Internacional: el que vende por ese canal usa la franquicia courier y un FOB más bajo.
+**Qué decidimos:** las fichas de `HALLAZGOS.md` ahora dicen cuánto deja cada una y con qué
+riesgo. Falta pedir cotización real a un proveedor y a un despachante.

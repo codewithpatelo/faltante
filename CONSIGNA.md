@@ -33,7 +33,7 @@ Métrica secundaria: proporción de hipótesis que sobreviven a la refutación.
 | LLM en el núcleo | `harness/divergente.py`, `skills/leer_votos/` | 🟡 código y tests listos; la corrida con modelo es la del workflow `llm` (ver abajo) |
 | Hipótesis vs baseline, partición fija dev/test | Arriba; `data/cross_border/particion.json`, `data/divergente/particion.json`; baselines en `scripts/cross_border_run.py` y `harness/votos.py` | 🟡 definidas y congeladas; faltan las etiquetas humanas y la corrida en test |
 | Datos verificados | Sección "Datos" abajo; `data/capturas/` | ✅ |
-| Economía (costo, latencia, modelo) | Sección "Costos" abajo; `harness/divergente.py::costo` | 🟡 estimado; la latencia real sale de la traza del workflow |
+| Economía (costo, latencia, modelo) | Sección "Costos" abajo; `harness/divergente.py::costo`; economía del usuario: `harness/costo_puesto.py` | 🟡 costo del sistema estimado (latencia real en el workflow); costo puesto y margen de cada oportunidad calculados con supuestos y fuentes |
 | Git con trabajo distribuido | `git log` | ❌ hoy todos los commits son de Patricio: ver "Reparto" |
 | Antecedentes (mercado y literatura) | Sección "Antecedentes" abajo | 🟡 versión breve |
 | ≥ 2 áreas en profundidad | Sección "Áreas" abajo | 🟡 dos fuertes, una a completar |

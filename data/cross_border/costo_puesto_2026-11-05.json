@@ -1,0 +1,479 @@
+{
+ "supuestos": {
+  "tipo_cambio": 1570,
+  "logistica_usd_m3": 450,
+  "flete_m3_cif": 200,
+  "seguro": 0.01,
+  "tasa_estadistica": 0.03,
+  "comision_ml": 0.14,
+  "iibb": 0.035,
+  "embalaje": 1.15
+ },
+ "fuentes": {
+  "Afilador de cuchillos rodante (rodillo + base magnética)": "Alibaba showroom 'knife sharpener magnetic roller': USD 3,44-12 según proveedor; caja 14,7x12,5x6 cm. DIE: AEC 18% en 8205.51/8205.59 (Marimpex); se prueba 35% por si Argentina tiene excepción.",
+  "Set de 5 recipientes herméticos de acero inoxidable": "Alibaba: USD 0,99-1,58 (5 pcs, silicona), USD 1,69-1,81 (XH-9073, 11x11x18 cm, 0,76 kg), USD 7,02-8,31 (Lekfre, calidad alta). DIE 35% en 7323.93 (ARCA vía Indicator Gateway).",
+  "Tostador abierto de calor superior / salamandra eléctrica de mesada": "Alibaba showroom 'commercial salamander broiler': USD 167-216 (eléctrica, modelo comercial). DIE 20% en 8516.72 (Marimpex, ARCA 20/10/2026). Volumen supuesto 60x45x35 cm."
+ },
+ "resultados": [
+  {
+   "producto": "Afilador de cuchillos rodante (rodillo + base magnética)",
+   "unidades_lote": "lleno (1 m3 o más)",
+   "escenarios": {
+    "optimista": {
+     "costo_puesto_usd": {
+      "fob": 3.44,
+      "logistica": 0.57,
+      "derechos": 0.67,
+      "estadistica": 0.11,
+      "total": 4.79
+     },
+     "costo_puesto_ars": 7520,
+     "igual_a_compra_internacional": {
+      "precio": 21838,
+      "ingreso_neto": 7859,
+      "margen_ars": 339,
+      "margen_pct_sobre_costo": 5
+     },
+     "debajo_de_los_locales": {
+      "precio": 35000,
+      "ingreso_neto": 16513,
+      "margen_ars": 8993,
+      "margen_pct_sobre_costo": 120
+     },
+     "mediana_locales": {
+      "precio": 49800,
+      "ingreso_neto": 26245,
+      "margen_ars": 18724,
+      "margen_pct_sobre_costo": 249
+     }
+    },
+    "base": {
+     "costo_puesto_usd": {
+      "fob": 5.5,
+      "logistica": 0.57,
+      "derechos": 1.05,
+      "estadistica": 0.17,
+      "total": 7.29
+     },
+     "costo_puesto_ars": 11445,
+     "igual_a_compra_internacional": {
+      "precio": 21838,
+      "ingreso_neto": 7859,
+      "margen_ars": -3586,
+      "margen_pct_sobre_costo": -31
+     },
+     "debajo_de_los_locales": {
+      "precio": 35000,
+      "ingreso_neto": 16513,
+      "margen_ars": 5068,
+      "margen_pct_sobre_costo": 44
+     },
+     "mediana_locales": {
+      "precio": 49800,
+      "ingreso_neto": 26245,
+      "margen_ars": 14799,
+      "margen_pct_sobre_costo": 129
+     }
+    },
+    "pesimista": {
+     "costo_puesto_usd": {
+      "fob": 12.0,
+      "logistica": 0.57,
+      "derechos": 4.33,
+      "estadistica": 0.37,
+      "total": 17.27
+     },
+     "costo_puesto_ars": 27114,
+     "igual_a_compra_internacional": {
+      "precio": 21838,
+      "ingreso_neto": 7859,
+      "margen_ars": -19255,
+      "margen_pct_sobre_costo": -71
+     },
+     "debajo_de_los_locales": {
+      "precio": 35000,
+      "ingreso_neto": 16513,
+      "margen_ars": -10601,
+      "margen_pct_sobre_costo": -39
+     },
+     "mediana_locales": {
+      "precio": 49800,
+      "ingreso_neto": 26245,
+      "margen_ars": -869,
+      "margen_pct_sobre_costo": -3
+     }
+    }
+   },
+   "unidades_en_1_m3": 788,
+   "capital_lote_minimo_ars": 9018896
+  },
+  {
+   "producto": "Set de 5 recipientes herméticos de acero inoxidable",
+   "unidades_lote": "lleno (1 m3 o más)",
+   "escenarios": {
+    "optimista": {
+     "costo_puesto_usd": {
+      "fob": 1.04,
+      "logistica": 1.13,
+      "derechos": 0.54,
+      "estadistica": 0.05,
+      "total": 2.76
+     },
+     "costo_puesto_ars": 4333,
+     "igual_a_compra_internacional": {
+      "precio": 14063,
+      "ingreso_neto": 2747,
+      "margen_ars": -1586,
+      "margen_pct_sobre_costo": -37
+     },
+     "intermedio": {
+      "precio": 25000,
+      "ingreso_neto": 9938,
+      "margen_ars": 5605,
+      "margen_pct_sobre_costo": 129
+     },
+     "mediana_locales": {
+      "precio": 48400,
+      "ingreso_neto": 25324,
+      "margen_ars": 20991,
+      "margen_pct_sobre_costo": 484
+     }
+    },
+    "base": {
+     "costo_puesto_usd": {
+      "fob": 1.69,
+      "logistica": 1.13,
+      "derechos": 0.77,
+      "estadistica": 0.07,
+      "total": 3.66
+     },
+     "costo_puesto_ars": 5746,
+     "igual_a_compra_internacional": {
+      "precio": 14063,
+      "ingreso_neto": 2747,
+      "margen_ars": -2999,
+      "margen_pct_sobre_costo": -52
+     },
+     "intermedio": {
+      "precio": 25000,
+      "ingreso_neto": 9938,
+      "margen_ars": 4192,
+      "margen_pct_sobre_costo": 73
+     },
+     "mediana_locales": {
+      "precio": 48400,
+      "ingreso_neto": 25324,
+      "margen_ars": 19578,
+      "margen_pct_sobre_costo": 341
+     }
+    },
+    "pesimista": {
+     "costo_puesto_usd": {
+      "fob": 7.02,
+      "logistica": 1.13,
+      "derechos": 2.66,
+      "estadistica": 0.23,
+      "total": 11.03
+     },
+     "costo_puesto_ars": 17317,
+     "igual_a_compra_internacional": {
+      "precio": 14063,
+      "ingreso_neto": 2747,
+      "margen_ars": -14570,
+      "margen_pct_sobre_costo": -84
+     },
+     "intermedio": {
+      "precio": 25000,
+      "ingreso_neto": 9938,
+      "margen_ars": -7379,
+      "margen_pct_sobre_costo": -43
+     },
+     "mediana_locales": {
+      "precio": 48400,
+      "ingreso_neto": 25324,
+      "margen_ars": 8007,
+      "margen_pct_sobre_costo": 46
+     }
+    }
+   },
+   "unidades_en_1_m3": 399,
+   "capital_lote_minimo_ars": 2292734
+  },
+  {
+   "producto": "Tostador abierto de calor superior / salamandra eléctrica de mesada",
+   "unidades_lote": "lleno (1 m3 o más)",
+   "escenarios": {
+    "optimista": {
+     "costo_puesto_usd": {
+      "fob": 167,
+      "logistica": 48.9,
+      "derechos": 38.08,
+      "estadistica": 5.71,
+      "total": 259.7
+     },
+     "costo_puesto_ars": 407729,
+     "agresivo": {
+      "precio": 120000,
+      "ingreso_neto": 60902,
+      "margen_ars": -346827,
+      "margen_pct_sobre_costo": -85
+     },
+     "debajo_de_speedy_grill": {
+      "precio": 150000,
+      "ingreso_neto": 80628,
+      "margen_ars": -327101,
+      "margen_pct_sobre_costo": -80
+     },
+     "precio_speedy_grill_hoy": {
+      "precio": 242347,
+      "ingreso_neto": 141348,
+      "margen_ars": -266381,
+      "margen_pct_sobre_costo": -65
+     }
+    },
+    "base": {
+     "costo_puesto_usd": {
+      "fob": 190,
+      "logistica": 48.9,
+      "derechos": 42.73,
+      "estadistica": 6.41,
+      "total": 288.04
+     },
+     "costo_puesto_ars": 452223,
+     "agresivo": {
+      "precio": 120000,
+      "ingreso_neto": 60902,
+      "margen_ars": -391320,
+      "margen_pct_sobre_costo": -87
+     },
+     "debajo_de_speedy_grill": {
+      "precio": 150000,
+      "ingreso_neto": 80628,
+      "margen_ars": -371595,
+      "margen_pct_sobre_costo": -82
+     },
+     "precio_speedy_grill_hoy": {
+      "precio": 242347,
+      "ingreso_neto": 141348,
+      "margen_ars": -310875,
+      "margen_pct_sobre_costo": -69
+     }
+    },
+    "pesimista": {
+     "costo_puesto_usd": {
+      "fob": 216,
+      "logistica": 48.9,
+      "derechos": 47.98,
+      "estadistica": 7.2,
+      "total": 320.08
+     },
+     "costo_puesto_ars": 502526,
+     "agresivo": {
+      "precio": 120000,
+      "ingreso_neto": 60902,
+      "margen_ars": -441623,
+      "margen_pct_sobre_costo": -88
+     },
+     "debajo_de_speedy_grill": {
+      "precio": 150000,
+      "ingreso_neto": 80628,
+      "margen_ars": -421898,
+      "margen_pct_sobre_costo": -84
+     },
+     "precio_speedy_grill_hoy": {
+      "precio": 242347,
+      "ingreso_neto": 141348,
+      "margen_ars": -361177,
+      "margen_pct_sobre_costo": -72
+     }
+    }
+   },
+   "unidades_en_1_m3": 9,
+   "capital_lote_minimo_ars": 4070005
+  },
+  {
+   "producto": "Afilador de cuchillos rodante (rodillo + base magnética)",
+   "unidades_lote": 200,
+   "escenarios": {
+    "optimista": {
+     "costo_puesto_usd": {
+      "fob": 3.44,
+      "logistica": 2.25,
+      "derechos": 0.81,
+      "estadistica": 0.13,
+      "total": 6.63
+     },
+     "costo_puesto_ars": 10409,
+     "igual_a_compra_internacional": {
+      "precio": 21838,
+      "ingreso_neto": 7859,
+      "margen_ars": -2550,
+      "margen_pct_sobre_costo": -24
+     },
+     "debajo_de_los_locales": {
+      "precio": 35000,
+      "ingreso_neto": 16513,
+      "margen_ars": 6104,
+      "margen_pct_sobre_costo": 59
+     },
+     "mediana_locales": {
+      "precio": 49800,
+      "ingreso_neto": 26245,
+      "margen_ars": 15835,
+      "margen_pct_sobre_costo": 152
+     }
+    },
+    "base": {
+     "costo_puesto_usd": {
+      "fob": 5.5,
+      "logistica": 2.25,
+      "derechos": 1.18,
+      "estadistica": 0.2,
+      "total": 9.13
+     },
+     "costo_puesto_ars": 14334,
+     "igual_a_compra_internacional": {
+      "precio": 21838,
+      "ingreso_neto": 7859,
+      "margen_ars": -6475,
+      "margen_pct_sobre_costo": -45
+     },
+     "debajo_de_los_locales": {
+      "precio": 35000,
+      "ingreso_neto": 16513,
+      "margen_ars": 2179,
+      "margen_pct_sobre_costo": 15
+     },
+     "mediana_locales": {
+      "precio": 49800,
+      "ingreso_neto": 26245,
+      "margen_ars": 11910,
+      "margen_pct_sobre_costo": 83
+     }
+    },
+    "pesimista": {
+     "costo_puesto_usd": {
+      "fob": 12.0,
+      "logistica": 2.25,
+      "derechos": 4.59,
+      "estadistica": 0.39,
+      "total": 19.24
+     },
+     "costo_puesto_ars": 30207,
+     "igual_a_compra_internacional": {
+      "precio": 21838,
+      "ingreso_neto": 7859,
+      "margen_ars": -22348,
+      "margen_pct_sobre_costo": -74
+     },
+     "debajo_de_los_locales": {
+      "precio": 35000,
+      "ingreso_neto": 16513,
+      "margen_ars": -13694,
+      "margen_pct_sobre_costo": -45
+     },
+     "mediana_locales": {
+      "precio": 49800,
+      "ingreso_neto": 26245,
+      "margen_ars": -3962,
+      "margen_pct_sobre_costo": -13
+     }
+    }
+   },
+   "unidades_en_1_m3": 788,
+   "capital_lote_minimo_ars": 9018896
+  },
+  {
+   "producto": "Set de 5 recipientes herméticos de acero inoxidable",
+   "unidades_lote": 200,
+   "escenarios": {
+    "optimista": {
+     "costo_puesto_usd": {
+      "fob": 1.04,
+      "logistica": 2.25,
+      "derechos": 0.72,
+      "estadistica": 0.06,
+      "total": 4.07
+     },
+     "costo_puesto_ars": 6390,
+     "igual_a_compra_internacional": {
+      "precio": 14063,
+      "ingreso_neto": 2747,
+      "margen_ars": -3643,
+      "margen_pct_sobre_costo": -57
+     },
+     "intermedio": {
+      "precio": 25000,
+      "ingreso_neto": 9938,
+      "margen_ars": 3548,
+      "margen_pct_sobre_costo": 56
+     },
+     "mediana_locales": {
+      "precio": 48400,
+      "ingreso_neto": 25324,
+      "margen_ars": 18934,
+      "margen_pct_sobre_costo": 296
+     }
+    },
+    "base": {
+     "costo_puesto_usd": {
+      "fob": 1.69,
+      "logistica": 2.25,
+      "derechos": 0.95,
+      "estadistica": 0.08,
+      "total": 4.97
+     },
+     "costo_puesto_ars": 7803,
+     "igual_a_compra_internacional": {
+      "precio": 14063,
+      "ingreso_neto": 2747,
+      "margen_ars": -5056,
+      "margen_pct_sobre_costo": -65
+     },
+     "intermedio": {
+      "precio": 25000,
+      "ingreso_neto": 9938,
+      "margen_ars": 2135,
+      "margen_pct_sobre_costo": 27
+     },
+     "mediana_locales": {
+      "precio": 48400,
+      "ingreso_neto": 25324,
+      "margen_ars": 17521,
+      "margen_pct_sobre_costo": 225
+     }
+    },
+    "pesimista": {
+     "costo_puesto_usd": {
+      "fob": 7.02,
+      "logistica": 2.25,
+      "derechos": 2.83,
+      "estadistica": 0.24,
+      "total": 12.34
+     },
+     "costo_puesto_ars": 19374,
+     "igual_a_compra_internacional": {
+      "precio": 14063,
+      "ingreso_neto": 2747,
+      "margen_ars": -16627,
+      "margen_pct_sobre_costo": -86
+     },
+     "intermedio": {
+      "precio": 25000,
+      "ingreso_neto": 9938,
+      "margen_ars": -9436,
+      "margen_pct_sobre_costo": -49
+     },
+     "mediana_locales": {
+      "precio": 48400,
+      "ingreso_neto": 25324,
+      "margen_ars": 5950,
+      "margen_pct_sobre_costo": 31
+     }
+    }
+   },
+   "unidades_en_1_m3": 399,
+   "capital_lote_minimo_ars": 2292734
+  }
+ ]
+}

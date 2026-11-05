@@ -60,3 +60,12 @@ def test_cross_border():
     assert evaluar(intl, [{"vendidos": 100, "precio": 30000}])["veredicto"] == "oportunidad"
     assert evaluar(intl, [{"vendidos": 100, "precio": 21000}])["veredicto"] == "ya_atendido"
     assert evaluar({**intl, "vendidos": 25}, [])["veredicto"] == "insuficiente"
+
+
+def test_costo_puesto_reparte_minimo_de_1_m3():
+    from harness.costo_puesto import costo_puesto_usd, LOGISTICA_M3, EMBALAJE
+    lleno = costo_puesto_usd(5.0, 0.18, 0.001)
+    chico = costo_puesto_usd(5.0, 0.18, 0.001, unidades_lote=100)  # 0,115 m3 -> se cobra 1 m3
+    assert abs(lleno["logistica"] - LOGISTICA_M3 * 0.001 * EMBALAJE) < 0.01
+    assert abs(chico["logistica"] - LOGISTICA_M3 / 100) < 0.01
+    assert chico["total"] > lleno["total"]
