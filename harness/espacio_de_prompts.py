@@ -69,12 +69,17 @@ class Variante:
     def repreguntar(self) -> bool:
         return self.opciones["diversidad"] == "repreguntar"
 
-    def prompt(self, señales: str) -> str:
-        """El prompt completo: rol, skill base, las decisiones de esta variante y las señales."""
+    def instrucciones(self) -> str:
+        """La parte que cambia entre variantes (y la que reescribe el optimizador): rol y cómo trabajar."""
         o = self.opciones
-        extra = [DIMENSIONES[d][o[d]] for d in ("estructura", "abduccion", "evitar_obvio", "razonamiento")]
-        return "\n\n".join(x for x in (DIMENSIONES["rol"][o["rol"]], BASE, "## Cómo trabajar en esta corrida", *extra,
-                                        "---", "SEÑALES VERIFICADAS", señales, "Respondé SOLO con el JSON de la salida.") if x)
+        partes = [DIMENSIONES["rol"][o["rol"]]] + [DIMENSIONES[d][o[d]] for d in ("estructura", "abduccion", "evitar_obvio", "razonamiento")]
+        return "\n\n".join(x for x in partes if x)
+
+    def prompt(self, señales: str, instrucciones: str | None = None) -> str:
+        """El prompt completo: la skill base (qué devolver y qué chequea el programa), las
+        instrucciones de esta variante y las señales."""
+        return "\n\n".join((BASE, "## Cómo trabajar en esta corrida", instrucciones or self.instrucciones(),
+                             "---", "SEÑALES VERIFICADAS", señales, "Respondé SOLO con el JSON de la salida."))
 
 
 def variantes(cantidad: int = CANTIDAD, semilla: int = SEMILLA) -> list[Variante]:

@@ -5,7 +5,7 @@ on:
   workflow_dispatch:
     inputs:
       tarea:
-        description: "serendipia (dos pasos + embudo) o explorar (prueba las 25 variantes del prompt del paso B)"
+        description: "serendipia (dos pasos + embudo), explorar (prueba las 25 variantes del prompt del paso B) u optimizar (mejora la mejor variante)"
         default: "serendipia"
       particion:
         description: "Qué productos leer: test (los 10 primeros) o escala"
@@ -32,9 +32,14 @@ jobs:
         env:
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
         run: python -m harness.explorar_prompts ${{ inputs.particion }}
+      - name: Optimizar la mejor variante (necesita espacio_<particion>.json en el repo)
+        if: inputs.tarea == 'optimizar'
+        env:
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+        run: python -m harness.optimizar_prompt ${{ inputs.particion }}
       - name: Guardar resultados en la rama resultados-llm
         run: |
-          mkdir -p resultados && cp data/serendipia/*_${{ inputs.particion }}_api.json data/serendipia/espacio_${{ inputs.particion }}.json resultados/ 2>/dev/null || true
+          mkdir -p resultados && cp data/serendipia/*_${{ inputs.particion }}_api.json data/serendipia/espacio_${{ inputs.particion }}.json data/serendipia/optimizacion_${{ inputs.particion }}.json resultados/ 2>/dev/null || true
           git config user.name "github-actions" && git config user.email "actions@github.com"
           git checkout -B resultados-llm
           git add -f resultados && git commit -m "Resultados LLM ${GITHUB_SHA::7}" && git push -f origin resultados-llm

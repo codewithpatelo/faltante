@@ -46,12 +46,12 @@ def señales_del_paso_a(cliente, particion: str, capturas: dict, traza: list) ->
     return señales
 
 
-def proponer_con(cliente, variante, verificadas: list[dict], traza: list) -> list[dict]:
+def proponer_con(cliente, variante, verificadas: list[dict], traza: list, instrucciones: str | None = None) -> list[dict]:
     texto = lineas_de_señales(verificadas)
-    ops = cruzar(cliente, verificadas, traza, variante.prompt(texto), f"B {variante.id}")
+    ops = cruzar(cliente, verificadas, traza, variante.prompt(texto, instrucciones), f"B {variante.id}")
     if variante.repreguntar and ops:
         previas = "\n".join(f"- {o.get('que_traer', '')}" for o in ops)
-        otra = variante.prompt(texto) + f"\n\nYa propusiste estas:\n{previas}\nProponé hasta 5 MÁS, distintas de todas estas."
+        otra = variante.prompt(texto, instrucciones) + f"\n\nYa propusiste estas:\n{previas}\nProponé hasta 5 MÁS, distintas de todas estas."
         nuevas = cruzar(cliente, verificadas, traza, otra, f"B {variante.id} otra")
         ops += [{**o, "id": f"{o.get('id', 'O')}b"} for o in nuevas]
     return ops
@@ -94,22 +94,37 @@ def juzgar(cliente, ops: list[dict], señales: dict, todos: dict, traza: list) -
     return {j.get("id"): j for j in d.get("juicios", [])}
 
 
+def medir_variante(cliente, v, verificadas, señales, todos, traza, instrucciones: str | None = None) -> dict:
+    """Propone con la variante y mide: válidas (guardrail y C1 a C3), distintas y no obvias.
+    Devuelve también, por cada propuesta descartada, el motivo: es el feedback del optimizador."""
+    inicio = len(traza)
+    ops = proponer_con(cliente, v, verificadas, traza, instrucciones)
+    validas_ = validas(ops, señales, todos)
+    buenas = sin_repetidas(validas_)
+    juicios = juzgar(cliente, buenas, señales, todos, traza)
+    no_obvias = [o for o in buenas if juicios.get(o["id"], {}).get("obvia") is False]
+    ids_validas, ids_buenas = {id(o) for o in validas_}, {id(o) for o in buenas}
+    feedback = [{"que_traer": o.get("que_traer", ""),
+                 "resultado": ("no pasó el guardrail o C1 a C3 (señales que no existen, de un solo producto, débiles o "
+                               "de productos que venden poco)" if id(o) not in ids_validas else
+                               "repite otra propuesta" if id(o) not in ids_buenas else
+                               f"obvia: {juicios.get(o['id'], {}).get('motivo', '')}" if juicios.get(o["id"], {}).get("obvia")
+                               else "válida, distinta y no obvia")} for o in ops]
+    return {"variante": v.id, "opciones": v.opciones, "propuestas": len(ops), "validas_distintas": len(buenas),
+            "no_obvias": len(no_obvias), "costo": costo(traza[inicio:]), "feedback": feedback,
+            "oportunidades": [{**o, "juicio": juicios.get(o["id"])} for o in buenas]}
+
+
 def explorar(cliente, particion: str, capturas: dict) -> dict:
     todos, traza = productos(), []
     señales = señales_del_paso_a(cliente, particion, capturas, traza)
     verificadas = señales_verificadas(señales, todos)
     resultados = []
     for v in variantes():
-        inicio = len(traza)
-        ops = proponer_con(cliente, v, verificadas, traza)
-        buenas = sin_repetidas(validas(ops, señales, todos))
-        juicios = juzgar(cliente, buenas, señales, todos, traza)
-        no_obvias = [o for o in buenas if juicios.get(o["id"], {}).get("obvia") is False]
-        resultados.append({"variante": v.id, "opciones": v.opciones, "propuestas": len(ops), "validas_distintas": len(buenas),
-                           "no_obvias": len(no_obvias), "costo": costo(traza[inicio:]),
-                           "oportunidades": [{**o, "juicio": juicios.get(o["id"])} for o in buenas]})
-        print(f"{v.id} {len(ops):>2} propuestas, {len(buenas):>2} válidas y distintas, {len(no_obvias):>2} no obvias  {v.opciones}",
-              flush=True)
+        r = medir_variante(cliente, v, verificadas, señales, todos, traza)
+        resultados.append(r)
+        print(f"{v.id} {r['propuestas']:>2} propuestas, {r['validas_distintas']:>2} válidas y distintas, "
+              f"{r['no_obvias']:>2} no obvias  {v.opciones}", flush=True)
     resultados.sort(key=lambda r: (-r["no_obvias"], -r["validas_distintas"]))
     return {"particion": particion, "señales_verificadas": len(verificadas), "costo_total": costo(traza), "variantes": resultados}
 
