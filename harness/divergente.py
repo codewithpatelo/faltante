@@ -68,10 +68,14 @@ def señales_de(cliente, producto: dict, eleccion: str, traza: list) -> list[dic
 
 # --- Paso B: oportunidades que cruzan productos -----------------------------------------------
 
+def lineas_de_señales(verificadas: list[dict]) -> str:
+    return "\n".join(f"[{s['id']}] ({s['busqueda']} · {s['menciones']} textos) {s.get('tipo', '')}: {s['descripcion']}"
+                     f" — \"{s['cita'][:120]}\"" for s in verificadas)
+
+
 def prompt_b(verificadas: list[dict]) -> str:
-    lineas = "\n".join(f"[{s['id']}] ({s['busqueda']} · {s['menciones']} textos) {s.get('tipo', '')}: {s['descripcion']}"
-                       f" — \"{s['cita'][:120]}\"" for s in verificadas)
-    return f"{SKILL_B.read_text(encoding='utf-8')}\n\n---\n\nSEÑALES VERIFICADAS\n{lineas}\n\nRespondé SOLO con el JSON de la salida."
+    return (f"{SKILL_B.read_text(encoding='utf-8')}\n\n---\n\nSEÑALES VERIFICADAS\n{lineas_de_señales(verificadas)}\n\n"
+            "Respondé SOLO con el JSON de la salida.")
 
 
 def errores_de_cruce(oportunidad: dict, ids: set[str]) -> list[str]:
@@ -83,10 +87,11 @@ def errores_de_cruce(oportunidad: dict, ids: set[str]) -> list[str]:
     return errores
 
 
-def cruzar(cliente, verificadas: list[dict], traza: list) -> list[dict]:
+def cruzar(cliente, verificadas: list[dict], traza: list, prompt: str | None = None, etiqueta: str = "B") -> list[dict]:
+    """Paso B. `prompt` permite probar otra variante del prompt (harness/explorar_prompts.py)."""
     ids = {s["id"] for s in verificadas}
     validar = lambda d: {o.get("id"): e for o in d.get("oportunidades", []) if (e := errores_de_cruce(o, ids))}
-    return _con_reintento(cliente, prompt_b(verificadas), validar, traza, "B").get("oportunidades", [])
+    return _con_reintento(cliente, prompt or prompt_b(verificadas), validar, traza, etiqueta).get("oportunidades", [])
 
 
 def señales_verificadas(señales: dict[str, list], todos: dict[str, dict]) -> list[dict]:

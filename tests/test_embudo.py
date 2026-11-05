@@ -151,3 +151,23 @@ def test_cada_propuesta_de_dev_termina_con_estado_y_motivo():
     subprocess.run([sys.executable, "-m", "harness.correr", "dev"], cwd=RAIZ, check=True, capture_output=True)
     for r in json.loads((RAIZ / "data/serendipia/embudo_dev.json").read_text()):
         assert r["estado"] in {"sobrevive", "condicional", "descartada"} and r["motivo"]
+
+
+# --- Espacio de prompts ------------------------------------------------------------------
+
+def test_el_espacio_tiene_25_variantes_distintas_y_balanceadas():
+    from collections import Counter
+    from harness.espacio_de_prompts import DIMENSIONES, variantes
+    vs = variantes()
+    assert len(vs) == 25 and len({tuple(v.opciones.values()) for v in vs}) == 25
+    for d, opciones in DIMENSIONES.items():
+        cuentas = Counter(v.opciones[d] for v in vs)
+        assert set(cuentas) == set(opciones) and max(cuentas.values()) - min(cuentas.values()) <= 2
+
+
+def test_explorar_no_cuenta_dos_veces_la_misma_idea():
+    from harness.explorar_prompts import sin_repetidas
+    ops = [{"que_traer": "Rodillo quita pelos de mascota reutilizable"},
+           {"que_traer": "Rodillo reutilizable quita pelos de mascota para sillones"},
+           {"que_traer": "Base antideslizante de silicona para mesada"}]
+    assert len(sin_repetidas(ops)) == 2
