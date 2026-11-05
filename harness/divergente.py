@@ -24,6 +24,7 @@ MODELO = "deepseek-flash"                                     # DeepSeek-V4.1-Fl
 USD_POR_MILLON_DE_TOKENS = {"entrada": 0.30, "salida": 1.20}  # precio en hora pico (fuera de pico, la mitad); api-docs.deepseek.com
 URL_API = "https://api.deepseek.com/chat/completions"
 OPINIONES_QUE_LEE = 22            # además de todas las preguntas
+MAX_TOKENS_DE_SALIDA = 8000       # con 3.000 las respuestas se cortaban antes de cerrar el JSON
 REINTENTOS = 1
 SKILL = RAIZ / "skills/leer_voces/SKILL.md"
 
@@ -44,13 +45,16 @@ def proponer(cliente, producto: dict, traza: list) -> dict:
     salida = {"señales": [], "oportunidades": []}
     for intento in range(REINTENTOS + 1):
         inicio = time.time()
-        respuesta = cliente.messages.create(model=MODELO, max_tokens=3000, messages=mensajes)
+        respuesta = cliente.messages.create(model=MODELO, max_tokens=MAX_TOKENS_DE_SALIDA, messages=mensajes)
         texto = respuesta.content[0].text
         salida = _json(texto)
+        corte = getattr(respuesta, "stop_reason", None)
+        razonamiento = getattr(respuesta, "razonamiento", 0)
         errores = {s.get("id"): e for s in salida["señales"] if (e := errores_de_citas(s, textos))}
         traza.append({"producto": producto["id"], "intento": intento, "segundos": round(time.time() - inicio, 2),
                       "tokens": {"entrada": respuesta.usage.input_tokens, "salida": respuesta.usage.output_tokens},
-                      "errores": errores})
+                      "errores": errores, "corte": corte, "caracteres_de_razonamiento": razonamiento,
+                      **({"respuesta_ilegible": texto[:1500]} if not salida["señales"] and not salida["oportunidades"] else {})})
         if not errores:
             break
         mensajes += [{"role": "assistant", "content": texto},
@@ -68,12 +72,16 @@ class DeepSeek:
         self.messages = self
 
     def create(self, model: str, max_tokens: int, messages: list[dict]):
-        cuerpo = json.dumps({"model": model, "max_tokens": max_tokens, "messages": messages}).encode()
+        cuerpo = json.dumps({"model": model, "max_tokens": max_tokens, "messages": messages,
+                             "response_format": {"type": "json_object"}}).encode()
         pedido = urllib.request.Request(URL_API, data=cuerpo, headers={
             "Content-Type": "application/json", "Authorization": f"Bearer {self.clave}"})
         with urllib.request.urlopen(pedido, timeout=180) as r:
             d = json.loads(r.read())
-        return SimpleNamespace(content=[SimpleNamespace(text=d["choices"][0]["message"]["content"])],
+        eleccion = d["choices"][0]
+        return SimpleNamespace(content=[SimpleNamespace(text=eleccion["message"].get("content") or "")],
+                               stop_reason=eleccion.get("finish_reason"),
+                               razonamiento=len(eleccion["message"].get("reasoning_content") or ""),
                                usage=SimpleNamespace(input_tokens=d["usage"]["prompt_tokens"],
                                                      output_tokens=d["usage"]["completion_tokens"]))
 
