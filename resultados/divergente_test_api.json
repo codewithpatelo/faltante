@@ -1,0 +1,1863 @@
+{
+ "quien": "deepseek-flash",
+ "costo": {
+  "tokens_entrada": 43127,
+  "tokens_salida": 60739,
+  "usd": 0.0858,
+  "segundos": 312.5
+ },
+ "traza": [
+  {
+   "paso": "A P12",
+   "intento": 0,
+   "segundos": 15.55,
+   "tokens": {
+    "entrada": 2188,
+    "salida": 3091
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "A P13",
+   "intento": 0,
+   "segundos": 31.12,
+   "tokens": {
+    "entrada": 2647,
+    "salida": 5972
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "A P14",
+   "intento": 0,
+   "segundos": 13.86,
+   "tokens": {
+    "entrada": 3156,
+    "salida": 2815
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "A P15",
+   "intento": 0,
+   "segundos": 16.78,
+   "tokens": {
+    "entrada": 2705,
+    "salida": 3369
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "A P16",
+   "intento": 0,
+   "segundos": 25.77,
+   "tokens": {
+    "entrada": 3766,
+    "salida": 5153
+   },
+   "errores": {
+    "S5": [
+     "[o4] el fragmento no está en el texto"
+    ]
+   },
+   "corte": "stop"
+  },
+  {
+   "paso": "A P16",
+   "intento": 1,
+   "segundos": 5.72,
+   "tokens": {
+    "entrada": 4585,
+    "salida": 1392
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "A P17",
+   "intento": 0,
+   "segundos": 15.84,
+   "tokens": {
+    "entrada": 3533,
+    "salida": 3173
+   },
+   "errores": {
+    "S1": [
+     "[o11] el fragmento no está en el texto"
+    ]
+   },
+   "corte": "stop"
+  },
+  {
+   "paso": "A P17",
+   "intento": 1,
+   "segundos": 5.18,
+   "tokens": {
+    "entrada": 4654,
+    "salida": 1266
+   },
+   "errores": {
+    "S1": [
+     "[o11] el fragmento no está en el texto"
+    ]
+   },
+   "corte": "stop"
+  },
+  {
+   "paso": "A P18",
+   "intento": 0,
+   "segundos": 44.43,
+   "tokens": {
+    "entrada": 3397,
+    "salida": 8533
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "A P19",
+   "intento": 0,
+   "segundos": 22.19,
+   "tokens": {
+    "entrada": 2762,
+    "salida": 4616
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "A P20",
+   "intento": 0,
+   "segundos": 17.43,
+   "tokens": {
+    "entrada": 2186,
+    "salida": 3406
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "A P21",
+   "intento": 0,
+   "segundos": 46.28,
+   "tokens": {
+    "entrada": 2682,
+    "salida": 9423
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B",
+   "intento": 0,
+   "segundos": 52.38,
+   "tokens": {
+    "entrada": 4866,
+    "salida": 8530
+   },
+   "errores": {},
+   "corte": "stop"
+  }
+ ],
+ "señales": {
+  "P12": [
+   {
+    "id": "S1",
+    "tipo": "queja",
+    "descripcion": "quiere que la pieza venga terminada y segura al tacto: bordes pulidos, sin rebarbas ni filos que lastimen las manos",
+    "palabras_clave": [
+     "bordes",
+     "filosos",
+     "rebarba",
+     "lijar",
+     "pulir"
+    ],
+    "citas": [
+     {
+      "texto": "o82",
+      "fragmento": "ambas me vinieron con los bordes irregulares/filosos"
+     },
+     {
+      "texto": "o80",
+      "fragmento": "Es muy áspera en las orillas, medio peligrosa de cortarte las manos"
+     },
+     {
+      "texto": "o75",
+      "fragmento": "tuve que lijar los bordes porque tenía tanta rebarba que lastimaba"
+     },
+     {
+      "texto": "o89",
+      "fragmento": "Los bordes son filosos, los lime con una lija para acero"
+     },
+     {
+      "texto": "o79",
+      "fragmento": "le faltaría pulir algunos bordes porque quedaron con filo"
+     }
+    ]
+   },
+   {
+    "id": "S2",
+    "tipo": "concesion",
+    "descripcion": "acepta que la superficie se marque con el cuchillo a cambio de higiene y facilidad de lavado: prefiere el desgaste visible antes que un material poroso",
+    "palabras_clave": [
+     "ralla",
+     "raya",
+     "rayar"
+    ],
+    "citas": [
+     {
+      "texto": "o1",
+      "fragmento": "Me da pena que se raya al cortar"
+     },
+     {
+      "texto": "o47",
+      "fragmento": "Si, se ralla como cualquier tabla para picar gente"
+     },
+     {
+      "texto": "o6",
+      "fragmento": "Bordes un poco filosos y se ralla igual"
+     },
+     {
+      "texto": "o2",
+      "fragmento": "Se raya mucho pero es funcional e higiénico"
+     }
+    ]
+   },
+   {
+    "id": "S3",
+    "tipo": "queja",
+    "descripcion": "quiere cortar sin arruinar el cuchillo: teme que el metal se levante y le saque el filo a los cuchillos",
+    "palabras_clave": [
+     "filo",
+     "cuchillo",
+     "desafila"
+    ],
+    "citas": [
+     {
+      "texto": "o85",
+      "fragmento": "se levanta el metal por la cuchilla y aparte le saca el filo a los cuchillos"
+     },
+     {
+      "texto": "p3",
+      "fragmento": "El acero no desafíos los cuchillos?"
+     },
+     {
+      "texto": "o79",
+      "fragmento": "quedaron con filo"
+     }
+    ]
+   },
+   {
+    "id": "S4",
+    "tipo": "duda",
+    "descripcion": "necesita elegir la medida y el espesor exactos según el espacio donde la va a usar y guardar",
+    "palabras_clave": [
+     "tamaño",
+     "espesor",
+     "medidas"
+    ],
+    "citas": [
+     {
+      "texto": "p5",
+      "fragmento": "Tenés 50x 40?"
+     },
+     {
+      "texto": "p8",
+      "fragmento": "tenes de este tamaño en 1,5 de espesor?"
+     },
+     {
+      "texto": "o76",
+      "fragmento": "Un poco grande para mi mesada"
+     },
+     {
+      "texto": "o48",
+      "fragmento": "es más grande de lo que esperaba"
+     }
+    ]
+   },
+   {
+    "id": "S5",
+    "tipo": "preferencia",
+    "descripcion": "elige el metal por higiene: quiere una superficie que se lave fácil y se seque rápido, a diferencia de la madera y el plástico",
+    "palabras_clave": [
+     "limpiar",
+     "lavado",
+     "higiénica",
+     "higiénico"
+    ],
+    "citas": [
+     {
+      "texto": "o12",
+      "fragmento": "las tablas de plástico no se terminan de limpiar bien"
+     },
+     {
+      "texto": "o59",
+      "fragmento": "Mejor que madera o plastico fácil lavado liviano"
+     },
+     {
+      "texto": "o43",
+      "fragmento": "Muy higiénica para cortar alimentos"
+     },
+     {
+      "texto": "o1",
+      "fragmento": "Fácil de limpiar, tamaño ideal"
+     }
+    ]
+   }
+  ],
+  "P13": [
+   {
+    "id": "S1",
+    "tipo": "faltante",
+    "descripcion": "Necesita la tabla en la medida exacta de su mesada o para cortes grandes: antes de comprar pregunta por versiones más grandes y por medidas hechas a pedido.",
+    "palabras_clave": [
+     "medida",
+     "medidas",
+     "a medida",
+     "hacen a medida"
+    ],
+    "citas": [
+     {
+      "texto": "p3",
+      "fragmento": "Estoy buscando una que tenga de profundidad 45 cm y de ancho 47cm hacen a medida precio ?"
+     },
+     {
+      "texto": "p17",
+      "fragmento": "Hola hacen a medida? por eejemplo 50x40 graciasss"
+     },
+     {
+      "texto": "p5",
+      "fragmento": "necesito una igual pero de 50 x 65 cm, tenes?"
+     },
+     {
+      "texto": "p12",
+      "fragmento": "Estoy buscando pero con las medidas que mencione antes"
+     }
+    ]
+   },
+   {
+    "id": "S2",
+    "tipo": "preferencia",
+    "descripcion": "Prioriza una superficie que no junte olor ni bacterias y que se desinfecte fácil, para no cruzar contaminación entre carne y vegetales.",
+    "palabras_clave": [
+     "higien",
+     "contamina",
+     "bacteria",
+     "bromatológic",
+     "estéril"
+    ],
+    "citas": [
+     {
+      "texto": "o7",
+      "fragmento": "me resolvió el problema de las tablas contaminadas, sean de madera o de plástico"
+     },
+     {
+      "texto": "o41",
+      "fragmento": "No se contaminan como las de plástico que se forman rayaduras junta bacterias"
+     },
+     {
+      "texto": "o30",
+      "fragmento": "mil veces más limpia que una tabla de plástico, no junta olor y se desinfecta fácil"
+     },
+     {
+      "texto": "o12",
+      "fragmento": "de mantener una superficie estéril luego de usarla para carne, evitando contaminación cruzada"
+     }
+    ]
+   },
+   {
+    "id": "S3",
+    "tipo": "queja",
+    "descripcion": "Quiere una superficie que no se raye ni se marque rápido con los cortes: el rayado es la queja más repetida y la aceptan a regañadientes.",
+    "palabras_clave": [
+     "raya",
+     "rayó",
+     "marca",
+     "marcado",
+     "cortes dejan"
+    ],
+    "citas": [
+     {
+      "texto": "o30",
+      "fragmento": "estéticamente dura poco impecable porque los cortes dejan marcas y se raya rápido"
+     },
+     {
+      "texto": "o10",
+      "fragmento": "ya se rayo donde realice cortes"
+     },
+     {
+      "texto": "o85",
+      "fragmento": "cuando corto quedó todo marcado"
+     },
+     {
+      "texto": "o80",
+      "fragmento": "Es muy buena, se marca un poco pero es lógico"
+     }
+    ]
+   },
+   {
+    "id": "S4",
+    "tipo": "duda",
+    "descripcion": "Duda de que el material sea realmente el declarado (acero que no se oxida ni se imanta), por experiencias previas de haber recibido otro acero.",
+    "palabras_clave": [
+     "304",
+     "430",
+     "iman",
+     "imán",
+     "acero"
+    ],
+    "citas": [
+     {
+      "texto": "p9",
+      "fragmento": "Es de acero 304 o 430? Gracias!"
+     },
+     {
+      "texto": "p10",
+      "fragmento": "no se le pega el Iman como la de acero 430? T consulto xq me vendieron 430 como 304 y se oxida"
+     }
+    ]
+   },
+   {
+    "id": "S5",
+    "tipo": "preferencia",
+    "descripcion": "Quiere poder apoyarla sobre cualquier superficie (mesada, mesa, patio) sin que se corra y sin que ocupe lugar, y usarla como base fija de corte.",
+    "palabras_clave": [
+     "mesada",
+     "superficie",
+     "corre",
+     "cualquier lado",
+     "ocupa"
+    ],
+    "citas": [
+     {
+      "texto": "o12",
+      "fragmento": "Se adhiere perfectamente sobre la mesada, sin correrse y sin estorbar"
+     },
+     {
+      "texto": "o22",
+      "fragmento": "se puede poner en cualquier lado, mesa, mesada, afuera adentro"
+     },
+     {
+      "texto": "o33",
+      "fragmento": "Te da posibilidad de apoyarla sobre cualquier superficie y picar"
+     },
+     {
+      "texto": "o83",
+      "fragmento": "no ocupa mucho lugar"
+     }
+    ]
+   },
+   {
+    "id": "S6",
+    "tipo": "deseo",
+    "descripcion": "Quiere más superficie útil de corte (más ancho) para picar varias cosas a la vez, sin salirse del ancho que le permite su mesada.",
+    "palabras_clave": [
+     "ancha",
+     "ancho",
+     "amplia",
+     "superficie"
+    ],
+    "citas": [
+     {
+      "texto": "o83",
+      "fragmento": "Me gustaría que fuera más ancha su superficie. El largo está bien."
+     },
+     {
+      "texto": "o71",
+      "fragmento": "súper cómoda y amplia para cortar varias cosas"
+     },
+     {
+      "texto": "p4",
+      "fragmento": "Hola de 50 x 50 tenes ?"
+     }
+    ]
+   }
+  ],
+  "P14": [
+   {
+    "id": "S1",
+    "tipo": "duda",
+    "descripcion": "Antes de comprar necesita saber la capacidad y las medidas exactas de cada pieza, porque el tamaño no se entiende desde la publicación",
+    "palabras_clave": [
+     "capacidad",
+     "medidas",
+     "tamaño"
+    ],
+    "citas": [
+     {
+      "texto": "p3",
+      "fragmento": "Que capacidad tiene cada uno"
+     },
+     {
+      "texto": "p8",
+      "fragmento": "qué capacidad tiene cada uno?"
+     },
+     {
+      "texto": "p9",
+      "fragmento": "Medidas de cada bowls"
+     },
+     {
+      "texto": "o134",
+      "fragmento": "Mirar bien las medidas porque son chicos"
+     }
+    ]
+   },
+   {
+    "id": "S2",
+    "tipo": "queja",
+    "descripcion": "El tamaño real resulta más chico de lo que esperaba; quiere piezas más grandes o sets de tamaño homogéneo para porciones completas",
+    "palabras_clave": [
+     "pequeño",
+     "chico",
+     "grande"
+    ],
+    "citas": [
+     {
+      "texto": "o13",
+      "fragmento": "Muy pequeños. Una banana chica no entra"
+     },
+     {
+      "texto": "o6",
+      "fragmento": "Son pequeños ( puse la mano y el encendedor como escala"
+     },
+     {
+      "texto": "o134",
+      "fragmento": "son chicos"
+     },
+     {
+      "texto": "p18",
+      "fragmento": "Tenes tamaños mas grandes?"
+     }
+    ]
+   },
+   {
+    "id": "S3",
+    "tipo": "queja",
+    "descripcion": "Quiere que la tapa cierre de verdad hermético y resista el uso: las tapas se sienten endebles, flojas o se parten",
+    "palabras_clave": [
+     "tapa",
+     "hermetico"
+    ],
+    "citas": [
+     {
+      "texto": "o33",
+      "fragmento": "las tapas que son de un plástico muy endeble"
+     },
+     {
+      "texto": "o42",
+      "fragmento": "el plástico de la tapa es frágil y se parte con facilidad"
+     },
+     {
+      "texto": "o93",
+      "fragmento": "La tapa de uno de los envases no cerraba herméticament"
+     },
+     {
+      "texto": "p6",
+      "fragmento": "Son hermeticos?"
+     }
+    ]
+   },
+   {
+    "id": "S4",
+    "tipo": "queja",
+    "descripcion": "Necesita un acero con cuerpo, que no se deforme al desmoldar ni con los golpes de uso diario",
+    "palabras_clave": [
+     "fino",
+     "abolla",
+     "delgado"
+    ],
+    "citas": [
+     {
+      "texto": "o33",
+      "fragmento": "es extremadamente fino"
+     },
+     {
+      "texto": "o6",
+      "fragmento": "de abollan fácil"
+     },
+     {
+      "texto": "o17",
+      "fragmento": "a tratar con cuidado porque se pueden aboyar"
+     },
+     {
+      "texto": "o26",
+      "fragmento": "son de acero inoxidable pero muy delgado"
+     }
+    ]
+   },
+   {
+    "id": "S5",
+    "tipo": "preferencia",
+    "descripcion": "Busca reemplazar el plástico por un material inoxidable por higiene y para no guardar comida en envases plásticos, y quiere saber si las tapas son libres de BPA",
+    "palabras_clave": [
+     "bpa",
+     "plástico"
+    ],
+    "citas": [
+     {
+      "texto": "p13",
+      "fragmento": "Son libre de bpa?"
+     },
+     {
+      "texto": "o36",
+      "fragmento": "buscaba algo sin bpa. Y no usar más plástico"
+     },
+     {
+      "texto": "o47",
+      "fragmento": "10 veces mejor que los plásticos por higiene"
+     },
+     {
+      "texto": "o65",
+      "fragmento": "Desterre el plástico"
+     }
+    ]
+   },
+   {
+    "id": "S6",
+    "tipo": "uso_no_previsto",
+    "descripcion": "Lo usa para cocinar y calentar, no solo para guardar: horno, convección, freidora de aire y comida caliente, y necesita que el conjunto aguante el calor",
+    "palabras_clave": [
+     "horno",
+     "freidora",
+     "calentar",
+     "caliente"
+    ],
+    "citas": [
+     {
+      "texto": "p10",
+      "fragmento": "Se puede usar para cocinar en la freidora airfly?"
+     },
+     {
+      "texto": "o42",
+      "fragmento": "Sirven bien para calentar vianda en el horno eléctrico o por convección"
+     },
+     {
+      "texto": "o80",
+      "fragmento": "yo que los uso para llevar cosas calientes por ahí la presion del vapor hace que se escape un poco"
+     }
+    ]
+   }
+  ],
+  "P15": [
+   {
+    "id": "S1",
+    "tipo": "duda",
+    "descripcion": "Quiere saber con exactitud las medidas y si los tres bowls son de tamaños distintos antes de comprar; la falta de medidas claras es la duda más repetida.",
+    "palabras_clave": [
+     "medidas",
+     "tamaño",
+     "diámetro",
+     "tamaños"
+    ],
+    "citas": [
+     {
+      "texto": "p20",
+      "fragmento": "Cuales son las medidas"
+     },
+     {
+      "texto": "p16",
+      "fragmento": "Podrías decirme el diámetro de las dos más chicas?"
+     },
+     {
+      "texto": "p19",
+      "fragmento": "Son tres tamaños diferentes?"
+     },
+     {
+      "texto": "p18",
+      "fragmento": "Los tres son iguales?"
+     },
+     {
+      "texto": "p5",
+      "fragmento": "Cuando coloco los tres tamaños me pone 2 L"
+     }
+    ]
+   },
+   {
+    "id": "S2",
+    "tipo": "faltante",
+    "descripcion": "Quiere saber si el bowl tolera calor directo: horno, air fryer, fuego o baño maría, porque necesita usarlo también para cocinar y no solo para servir.",
+    "palabras_clave": [
+     "horno",
+     "fuego",
+     "temperatura",
+     "calor"
+    ],
+    "citas": [
+     {
+      "texto": "p1",
+      "fragmento": "apto para el fuego?"
+     },
+     {
+      "texto": "p3",
+      "fragmento": "Se puede poner al horno o air fryer"
+     },
+     {
+      "texto": "p10",
+      "fragmento": "son aptas para temperaturas como baño maría ?"
+     },
+     {
+      "texto": "o24",
+      "fragmento": "Toman la temperatura muy rápido"
+     }
+    ]
+   },
+   {
+    "id": "S3",
+    "tipo": "queja",
+    "descripcion": "La etiqueta adhesiva pegada en el interior de la base deja resto pegajoso y es difícil de quitar; piden que venga afuera o que se despegue limpio.",
+    "palabras_clave": [
+     "etiqueta",
+     "pegamento",
+     "stickers",
+     "pegajoso"
+    ],
+    "citas": [
+     {
+      "texto": "o24",
+      "fragmento": "tienen una etiqueta en el fondo del bowl y se me dificultó sacarla y quedo medio pegajoso"
+     },
+     {
+      "texto": "o11",
+      "fragmento": "sería buenísimo que la etiqueta vaya en la parte de abajo en la base pero por afuera, y no en la base del bols por dentro"
+     },
+     {
+      "texto": "o5",
+      "fragmento": "Vienen con stickers en la base que son una pesadilla"
+     },
+     {
+      "texto": "o93",
+      "fragmento": "me molesta que las etiquetas no sean fáciles de sacar"
+     },
+     {
+      "texto": "o34",
+      "fragmento": "tratar de etiquetar por debajo,ya que tenía mucho pegamento,."
+     }
+    ]
+   },
+   {
+    "id": "S4",
+    "tipo": "deseo",
+    "descripcion": "Quiere que el bowl no se desplace sobre la mesada: piden una base antideslizante, aunque lo aceptan como detalle menor.",
+    "palabras_clave": [
+     "antideslizante",
+     "base"
+    ],
+    "citas": [
+     {
+      "texto": "o35",
+      "fragmento": "por ahí sería bueno que cuenten con algún antideslizante abajo"
+     },
+     {
+      "texto": "o76",
+      "fragmento": "No tiene base antideslizante pero es un detalle nomás."
+     }
+    ]
+   },
+   {
+    "id": "S5",
+    "tipo": "queja",
+    "descripcion": "Espera que el espesor y la dureza del acero coincidan con lo que promete la publicación; algunos sienten el metal más fino o menos duro de lo anunciado.",
+    "palabras_clave": [
+     "fino",
+     "duro",
+     "dureza"
+    ],
+    "citas": [
+     {
+      "texto": "o94",
+      "fragmento": "no son tan duros como indica la foto y lo publicado"
+     },
+     {
+      "texto": "o32",
+      "fragmento": "capaz un poco fino el metal pero bancan"
+     },
+     {
+      "texto": "o37",
+      "fragmento": "son finos, bastante grandes, para el precio que tienen están bien"
+     },
+     {
+      "texto": "o12",
+      "fragmento": "La calidad/dureza es mejor de lo que esperaba"
+     }
+    ]
+   },
+   {
+    "id": "S6",
+    "tipo": "uso_no_previsto",
+    "descripcion": "Lo usa para todo: ensaladera, repostería, preparaciones dulces y saladas e incluso bebedero de mascotas; valora un bowl versátil más que uno especializado.",
+    "palabras_clave": [
+     "ensaladera",
+     "reposteria",
+     "preparaciones"
+    ],
+    "citas": [
+     {
+      "texto": "o50",
+      "fragmento": "lo uso como ensaladera y también para repostería"
+     },
+     {
+      "texto": "o20",
+      "fragmento": "Para usar tanto en preparaciones dulces como saladas"
+     },
+     {
+      "texto": "o78",
+      "fragmento": "ideal para usar como ensaladera o preparaciones"
+     },
+     {
+      "texto": "o7",
+      "fragmento": "lo uso como bebedero para mis gatos"
+     }
+    ]
+   }
+  ],
+  "P16": [
+   {
+    "id": "S1",
+    "tipo": "faltante",
+    "descripcion": "poder reponer el filtro o consumible con facilidad y encontrarlo a la venta por separado",
+    "palabras_clave": [
+     "filtro",
+     "filtros"
+    ],
+    "citas": [
+     {
+      "texto": "p3",
+      "fragmento": "no venden el filtro solo"
+     },
+     {
+      "texto": "p9",
+      "fragmento": "Necesito comprar el filtro"
+     },
+     {
+      "texto": "p19",
+      "fragmento": "Venden los filtros de repuesto?"
+     }
+    ]
+   },
+   {
+    "id": "S2",
+    "tipo": "queja",
+    "descripcion": "conocer y obtener mayor autonomía de batería para limpiezas rápidas",
+    "palabras_clave": [
+     "batería",
+     "bateria",
+     "dura"
+    ],
+    "citas": [
+     {
+      "texto": "p5",
+      "fragmento": "capacidad de la batería en mAh"
+     },
+     {
+      "texto": "o56",
+      "fragmento": "autonomia de la bateria"
+     },
+     {
+      "texto": "o103",
+      "fragmento": "no va a durar media hora la bateria"
+     }
+    ]
+   },
+   {
+    "id": "S3",
+    "tipo": "queja",
+    "descripcion": "potencia de succión sostenida, especialmente al usar boquillas o cepillos",
+    "palabras_clave": [
+     "potencia",
+     "succión",
+     "aspirado"
+    ],
+    "citas": [
+     {
+      "texto": "o17",
+      "fragmento": "pierde el 80% de la fuerza de aspirado"
+     },
+     {
+      "texto": "o16",
+      "fragmento": "La aspiradora tiene una potencia baja"
+     },
+     {
+      "texto": "o42",
+      "fragmento": "no sirve para mucho más"
+     }
+    ]
+   },
+   {
+    "id": "S4",
+    "tipo": "duda",
+    "descripcion": "claridad sobre el estándar de carga y que el cable o adaptador compatible venga incluido",
+    "palabras_clave": [
+     "usb",
+     "cable",
+     "carga"
+    ],
+    "citas": [
+     {
+      "texto": "p10",
+      "fragmento": "La entrada de carga es tipo C ?"
+     },
+     {
+      "texto": "p7",
+      "fragmento": "No trae cable USB para cargarla ??"
+     },
+     {
+      "texto": "p2",
+      "fragmento": "el cargador es usb a o usb c"
+     }
+    ]
+   },
+   {
+    "id": "S5",
+    "tipo": "uso_no_previsto",
+    "descripcion": "resolver limpiezas puntuales de pelos de mascotas y rincones finos sin sacar la aspiradora grande",
+    "palabras_clave": [
+     "pelos",
+     "gato",
+     "mascotas",
+     "rincones"
+    ],
+    "citas": [
+     {
+      "texto": "o4",
+      "fragmento": "pelos del gato"
+     },
+     {
+      "texto": "o12",
+      "fragmento": "levanta los pelos del perro"
+     },
+     {
+      "texto": "o131",
+      "fragmento": "pelusas, pelos de gato"
+     }
+    ]
+   },
+   {
+    "id": "S6",
+    "tipo": "concesion",
+    "descripcion": "aceptar un equipo liviano e inalámbrico con límites de potencia o autonomía a cambio de practicidad y precio, sin pretender reemplazar la aspiradora grande",
+    "palabras_clave": [
+     "eléctrica",
+     "práctica",
+     "casa"
+    ],
+    "citas": [
+     {
+      "texto": "o13",
+      "fragmento": "no como la eléctrica"
+     },
+     {
+      "texto": "o60",
+      "fragmento": "No es para limpiar toda tu casa"
+     },
+     {
+      "texto": "o103",
+      "fragmento": "obvio que no va a durar media hora la bateria"
+     }
+    ]
+   }
+  ],
+  "P17": [
+   {
+    "id": "S1",
+    "tipo": "queja",
+    "descripcion": "Quiere una autonomía que rinda de verdad: le molesta que el tiempo de carga (varias horas) sea mucho mayor que los minutos de uso y tener que recargar varias veces para terminar una limpieza.",
+    "palabras_clave": [
+     "carga",
+     "bateria",
+     "dura"
+    ],
+    "citas": [
+     {
+      "texto": "o25",
+      "fragmento": "tarda 4 horas en cargar y dura 20 a 25 min"
+     },
+     {
+      "texto": "o35",
+      "fragmento": "dura 30' en uso y se carga durante 4 hs"
+     },
+     {
+      "texto": "o11",
+      "fragmento": "no dura nada"
+     },
+     {
+      "texto": "o114",
+      "fragmento": "es necesario cargarlo más de una vez"
+     }
+    ]
+   },
+   {
+    "id": "S2",
+    "tipo": "faltante",
+    "descripcion": "Quiere poder seguir usando el equipo mientras se carga o resolver la autonomía con una batería de repuesto intercambiable, y saber si funciona enchufado o con cargador de auto.",
+    "palabras_clave": [
+     "enchufada",
+     "bateria",
+     "cargador",
+     "cable"
+    ],
+    "citas": [
+     {
+      "texto": "p1",
+      "fragmento": "Se le puede comprar aparte otra batería"
+     },
+     {
+      "texto": "p4",
+      "fragmento": "Se puede usar enchufada?"
+     },
+     {
+      "texto": "p19",
+      "fragmento": "Solo funciona a bateria?"
+     },
+     {
+      "texto": "o114",
+      "fragmento": "Me hubiese gustado que tuviese la opción de ap"
+     }
+    ]
+   },
+   {
+    "id": "S3",
+    "tipo": "deseo",
+    "descripcion": "Prefiere un equipo 2 en 1 que además sople, para despejar polvo de rincones, teclados y equipos donde aspirar no alcanza.",
+    "palabras_clave": [
+     "soplado",
+     "sopladora"
+    ],
+    "citas": [
+     {
+      "texto": "p5",
+      "fragmento": "aspiradora y sopladora"
+     },
+     {
+      "texto": "p16",
+      "fragmento": "Necesito una función de soplado para limpiar PCs"
+     },
+     {
+      "texto": "p17",
+      "fragmento": "Tiene función de soplado?"
+     }
+    ]
+   },
+   {
+    "id": "S4",
+    "tipo": "duda",
+    "descripcion": "Quiere potencia declarada confiable y regulable: duda de los vatios o pascales anunciados y de que la succión se sostenga, porque la percibe justa o dependiente de la carga.",
+    "palabras_clave": [
+     "potencia",
+     "succion",
+     "succión"
+    ],
+    "citas": [
+     {
+      "texto": "p2",
+      "fragmento": "Cuál es la potencia real?"
+     },
+     {
+      "texto": "p14",
+      "fragmento": "Tiene velocidad de aspiración variable ?"
+     },
+     {
+      "texto": "o69",
+      "fragmento": "No tiene la succión o no tiene la potencia indicada"
+     },
+     {
+      "texto": "o116",
+      "fragmento": "No me parece que tenga gran poder de succión"
+     }
+    ]
+   },
+   {
+    "id": "S5",
+    "tipo": "uso_no_previsto",
+    "descripcion": "La usa como herramienta específica para pelos de mascota y pelusa en textiles (ropa, sillones, tapizados), no solo para polvo del piso.",
+    "palabras_clave": [
+     "pelos",
+     "mascota",
+     "pelusa"
+    ],
+    "citas": [
+     {
+      "texto": "p12",
+      "fragmento": "Funciona para sacar los pelos de mascota?"
+     },
+     {
+      "texto": "o116",
+      "fragmento": "pelos del perro"
+     },
+     {
+      "texto": "o95",
+      "fragmento": "pelos que hayan en la ropa"
+     },
+     {
+      "texto": "o67",
+      "fragmento": "aspiraba los pelos y la pelusa"
+     }
+    ]
+   },
+   {
+    "id": "S6",
+    "tipo": "preferencia",
+    "descripcion": "Valora la luz integrada en el cabezal porque le permite ver la mugre en lugares bajos u oscuros (auto, rincones, zócalos).",
+    "palabras_clave": [
+     "luz",
+     "led"
+    ],
+    "citas": [
+     {
+      "texto": "o18",
+      "fragmento": "La luz que tiene es útil"
+     },
+     {
+      "texto": "o107",
+      "fragmento": "Tiene una luz led"
+     },
+     {
+      "texto": "o25",
+      "fragmento": "tiene luz para ver"
+     }
+    ]
+   }
+  ],
+  "P18": [
+   {
+    "id": "S1",
+    "tipo": "faltante",
+    "descripcion": "Necesita poder reponer los cepillos y accesorios que se desgastan con el uso, y conseguir boquillas o cepillos adicionales sueltos.",
+    "palabras_clave": [
+     "repuesto",
+     "cepillo",
+     "accesorio"
+    ],
+    "citas": [
+     {
+      "texto": "p10",
+      "fragmento": "hay algún lugar para hacerlo"
+     },
+     {
+      "texto": "p19",
+      "fragmento": "necesito más del cepillo de acero"
+     },
+     {
+      "texto": "o38",
+      "fragmento": "no hay repuestos"
+     },
+     {
+      "texto": "o68",
+      "fragmento": "se torcieron en el primer uso"
+     }
+    ]
+   },
+   {
+    "id": "S2",
+    "tipo": "queja",
+    "descripcion": "Espera que el vapor solo saque la grasa más pegada; en la práctica debe fregar o sumar desengrasante, y pide más presión.",
+    "palabras_clave": [
+     "grasa",
+     "presión"
+    ],
+    "citas": [
+     {
+      "texto": "o15",
+      "fragmento": "no es mágica"
+     },
+     {
+      "texto": "o31",
+      "fragmento": "Me gustaría más presión"
+     },
+     {
+      "texto": "o73",
+      "fragmento": "no esperen sacar grasa muy pegada"
+     }
+    ]
+   },
+   {
+    "id": "S3",
+    "tipo": "deseo",
+    "descripcion": "Quiere limpiar tapizados, telas y colchones sin dejarlos mojados y que las manchas viejas salgan solo con vapor.",
+    "palabras_clave": [
+     "tapizado",
+     "tela",
+     "colchón"
+    ],
+    "citas": [
+     {
+      "texto": "p13",
+      "fragmento": "sin dejarlos mojados"
+     },
+     {
+      "texto": "o83",
+      "fragmento": "no las saca del todo"
+     },
+     {
+      "texto": "o36",
+      "fragmento": "No me parece que resulte muy bien en telas y tapizados"
+     }
+    ]
+   },
+   {
+    "id": "S4",
+    "tipo": "duda",
+    "descripcion": "Duda cuánto tiempo puede trabajar sostenidamente sin que caiga la presión, para saber si le alcanza en trabajos largos.",
+    "palabras_clave": [
+     "tiempo"
+    ],
+    "citas": [
+     {
+      "texto": "p9",
+      "fragmento": "Cuanto tiempo se mantiene trabajando a 5 Bar"
+     },
+     {
+      "texto": "o87",
+      "fragmento": "Dura casi una hora de uso continuo"
+     },
+     {
+      "texto": "o18",
+      "fragmento": "al tirarle por poco tiempo el vapor aflojó"
+     }
+    ]
+   },
+   {
+    "id": "S5",
+    "tipo": "preferencia",
+    "descripcion": "Prefiere una máquina que venga como kit completo, con todos los accesorios incluidos, y valora la variedad.",
+    "palabras_clave": [
+     "accesorio",
+     "cepillo"
+    ],
+    "citas": [
+     {
+      "texto": "o107",
+      "fragmento": "trae todos los accesorios que dice la publicación"
+     },
+     {
+      "texto": "o24",
+      "fragmento": "Los accesorios son excelentes"
+     },
+     {
+      "texto": "o34",
+      "fragmento": "prolongadores muy bueno"
+     }
+    ]
+   }
+  ],
+  "P19": [
+   {
+    "id": "S1",
+    "tipo": "queja",
+    "descripcion": "Quiere autonomía de agua suficiente para no estar rellenando el tanque cada dos por tres: la capacidad es el primer dato que pregunta y el primero que reprocha.",
+    "palabras_clave": [
+     "agua",
+     "litros",
+     "capacidad",
+     "tanque"
+    ],
+    "citas": [
+     {
+      "texto": "o108",
+      "fragmento": "no tiene mucha capacidad de agua tenés que estar rellenándolo continuamente"
+     },
+     {
+      "texto": "p1",
+      "fragmento": "y cuanto dura con esa cantidad de agua"
+     },
+     {
+      "texto": "p12",
+      "fragmento": "cuál es la capacidad del tanquecito de agua"
+     },
+     {
+      "texto": "p18",
+      "fragmento": "Autonomia a máxima potencia???"
+     }
+    ]
+   },
+   {
+    "id": "S2",
+    "tipo": "queja",
+    "descripcion": "Quiere vapor regulado que no empape la superficie: el exceso de agua limita los usos delicados y obliga a esperar el secado.",
+    "palabras_clave": [
+     "agua",
+     "mojado",
+     "seque",
+     "larga"
+    ],
+    "citas": [
+     {
+      "texto": "o8",
+      "fragmento": "Larga bastante agua, lo que hace que su uso para desinfectar almohadas o colchones sea limitada"
+     },
+     {
+      "texto": "o31",
+      "fragmento": "tira bastante agua pero es mínimo"
+     },
+     {
+      "texto": "p3",
+      "fragmento": "Los comentarios dicen que deja todo mojado"
+     },
+     {
+      "texto": "p8",
+      "fragmento": "Cuanto tiempo debo dejar para que seque la superficie limpiada"
+     }
+    ]
+   },
+   {
+    "id": "S3",
+    "tipo": "queja",
+    "descripcion": "Quiere potencia real para grasa cocinada y sarro viejo: sirve para mantenimiento liviano, pero decepciona cuando la suciedad está pegada.",
+    "palabras_clave": [
+     "grasa",
+     "potencia",
+     "sarro"
+    ],
+    "citas": [
+     {
+      "texto": "o106",
+      "fragmento": "Le falta potencia para limpiar bien"
+     },
+     {
+      "texto": "o45",
+      "fragmento": "no saca la grasa como dice tan fácilmente"
+     },
+     {
+      "texto": "o7",
+      "fragmento": "Me cuesta un poco más el sarro"
+     },
+     {
+      "texto": "p9",
+      "fragmento": "se puede limpiar la grasa del horno de la cocina"
+     }
+    ]
+   },
+   {
+    "id": "S4",
+    "tipo": "uso_no_previsto",
+    "descripcion": "Quiere limpiar motor e interior del auto: es el uso que más se consulta y el que más se reclama por tamaño y potencia.",
+    "palabras_clave": [
+     "auto",
+     "motor",
+     "vehiculos"
+    ],
+    "citas": [
+     {
+      "texto": "o28",
+      "fragmento": "es un equipo chico para lavar el motor de un auto"
+     },
+     {
+      "texto": "p20",
+      "fragmento": "Limpian motores de auto"
+     },
+     {
+      "texto": "p7",
+      "fragmento": "puede sacar la grasa del motor de auto"
+     },
+     {
+      "texto": "o52",
+      "fragmento": "tbn grasa de vehiculos"
+     }
+    ]
+   },
+   {
+    "id": "S5",
+    "tipo": "queja",
+    "descripcion": "Quiere usar el equipo sin riesgo de quemarse ni de que se corte por calentamiento: manguera, conexiones y tiempo de uso continuo generan desconfianza.",
+    "palabras_clave": [
+     "manguera",
+     "caliente",
+     "calentamiento",
+     "quemaduras",
+     "recaliente"
+    ],
+    "citas": [
+     {
+      "texto": "o108",
+      "fragmento": "la manguera que se pone bien caliente y te quema si te toca"
+     },
+     {
+      "texto": "o106",
+      "fragmento": "no advierten sobre el calentamiento que puede provocar quemaduras"
+     },
+     {
+      "texto": "p4",
+      "fragmento": "sin que se recaliente el motor"
+     },
+     {
+      "texto": "p2",
+      "fragmento": "si la tapa cierra bien porque floja me da miedo"
+     }
+    ]
+   },
+   {
+    "id": "S6",
+    "tipo": "faltante",
+    "descripcion": "Quiere el kit completo y con repuestos: cepillos que aguanten y accesorios para tapizados o vidrios, que son lo que se pide y no viene.",
+    "palabras_clave": [
+     "cepillos",
+     "cepillo",
+     "accesorio",
+     "orring"
+    ],
+    "citas": [
+     {
+      "texto": "o50",
+      "fragmento": "que busque la opción que tiene varios cepillos porque si se los usa para limpieza muy agresiva"
+     },
+     {
+      "texto": "o106",
+      "fragmento": "vino con falta de orring compensadores"
+     },
+     {
+      "texto": "p11",
+      "fragmento": "Viene con el accesorio para limpiar tapizados?"
+     },
+     {
+      "texto": "o4",
+      "fragmento": "los cepillos que trae ayudan un montón a la limpieza de sarro"
+     }
+    ]
+   }
+  ],
+  "P20": [
+   {
+    "id": "S1",
+    "tipo": "queja",
+    "descripcion": "el calor no llega parejo: se concentra en la base y hay que mover la comida para que se caliente toda",
+    "palabras_clave": [
+     "calienta",
+     "abajo",
+     "uniforme",
+     "mover",
+     "revolver"
+    ],
+    "citas": [
+     {
+      "texto": "o47",
+      "fragmento": "sino solo calienta abajo"
+     },
+     {
+      "texto": "o49",
+      "fragmento": "Solo la parte de abajo apenas calentó. La parte de arriba seguía frío"
+     },
+     {
+      "texto": "o3",
+      "fragmento": "el calor no es uniforme en toda el area de cocción"
+     },
+     {
+      "texto": "o1",
+      "fragmento": "recomiendo mover el arroz o fideos ya que hay zonas que calientan más"
+     }
+    ]
+   },
+   {
+    "id": "S2",
+    "tipo": "queja",
+    "descripcion": "calentar lleva mucho tiempo y es impredecible: hay que enchufarlo con una hora de anticipación y el resultado varía según la comida",
+    "palabras_clave": [
+     "tarda",
+     "minutos",
+     "hora",
+     "tiempo",
+     "demora"
+    ],
+    "citas": [
+     {
+      "texto": "o47",
+      "fragmento": "tenes que enchufarla 1 hora antes"
+     },
+     {
+      "texto": "o46",
+      "fragmento": "tarda mucho en calentar, la probé una hora y apenas entibia"
+     },
+     {
+      "texto": "o16",
+      "fragmento": "teniendo en cuenta el tiempo tipo 40/50 min"
+     },
+     {
+      "texto": "p2",
+      "fragmento": "en cuanto tiempo calienta"
+     }
+    ]
+   },
+   {
+    "id": "S3",
+    "tipo": "duda",
+    "descripcion": "no queda claro cómo se alimenta ni si puede usarse sin enchufe (batería, powerbank): la autonomía es un requisito antes de comprar",
+    "palabras_clave": [
+     "enchufada",
+     "powerbank",
+     "cargar",
+     "enchufarla"
+    ],
+    "citas": [
+     {
+      "texto": "p5",
+      "fragmento": "tiene que estar enchufada para que caliente la comida"
+     },
+     {
+      "texto": "p4",
+      "fragmento": "Se puede cargar con powerbank?"
+     },
+     {
+      "texto": "o47",
+      "fragmento": "si queres comer la comida caliente tenes que enchufarla"
+     }
+    ]
+   },
+   {
+    "id": "S4",
+    "tipo": "queja",
+    "descripcion": "la capacidad y los compartimentos quedan chicos para una comida completa; el tamaño condiciona el uso diario",
+    "palabras_clave": [
+     "chica",
+     "pequeña",
+     "chicos",
+     "espacios",
+     "grande"
+    ],
+    "citas": [
+     {
+      "texto": "o47",
+      "fragmento": "Los espacios que trae para la comida son muy chicos"
+     },
+     {
+      "texto": "o33",
+      "fragmento": "es algo pequeña pero para una sola persona está perfecto"
+     },
+     {
+      "texto": "o37",
+      "fragmento": "Algo chica pero cumple su funcion"
+     },
+     {
+      "texto": "o46",
+      "fragmento": "es bastante grande"
+     }
+    ]
+   },
+   {
+    "id": "S5",
+    "tipo": "queja",
+    "descripcion": "el equipo entibia más que calentar: se espera temperatura de comida caliente real, no tibia",
+    "palabras_clave": [
+     "entibia",
+     "caliente",
+     "calor",
+     "temperatura"
+    ],
+    "citas": [
+     {
+      "texto": "o19",
+      "fragmento": "entibia no calienta mucho"
+     },
+     {
+      "texto": "o46",
+      "fragmento": "la probé una hora y apenas entibia, no me sirve"
+     },
+     {
+      "texto": "o16",
+      "fragmento": "cumple con el objetivo de comer comida caliente"
+     },
+     {
+      "texto": "o33",
+      "fragmento": "Levanta y mantiene la temperatura"
+     }
+    ]
+   },
+   {
+    "id": "S6",
+    "tipo": "uso_no_previsto",
+    "descripcion": "se usa en jornadas largas fuera de casa (y se regala a quien trabaja afuera): se necesita que sostenga la comida caliente muchas horas",
+    "palabras_clave": [
+     "trabajo",
+     "regalo",
+     "horas",
+     "fuera"
+    ],
+    "citas": [
+     {
+      "texto": "o11",
+      "fragmento": "para los que trabajamos fuera de casa"
+     },
+     {
+      "texto": "o6",
+      "fragmento": "se lo regale a mi pareja para que pueda calentar su comida ya q hace muchas hora de trabajo"
+     },
+     {
+      "texto": "o24",
+      "fragmento": "La compre para regalo y hoy encargue otra más"
+     }
+    ]
+   }
+  ],
+  "P21": [
+   {
+    "id": "S1",
+    "tipo": "deseo",
+    "descripcion": "Quiere comprar varios vasos iguales en cantidad, con opción de personalización o grabado para empresas, eventos o regalos.",
+    "palabras_clave": [
+     "vasos"
+    ],
+    "citas": [
+     {
+      "texto": "p6",
+      "fragmento": "22 vasos iguales"
+     },
+     {
+      "texto": "p10",
+      "fragmento": "28 vasos personalizados"
+     },
+     {
+      "texto": "p1",
+      "fragmento": "grabar un logo"
+     }
+    ]
+   },
+   {
+    "id": "S2",
+    "tipo": "preferencia",
+    "descripcion": "Quiere poder elegir el color del vaso, por ejemplo negro, y recibirlo liso, sin logo ni grabado.",
+    "palabras_clave": [
+     "color",
+     "negro"
+    ],
+    "citas": [
+     {
+      "texto": "p12",
+      "fragmento": "completamente liso en negro"
+     },
+     {
+      "texto": "p20",
+      "fragmento": "confundi el color"
+     },
+     {
+      "texto": "p13",
+      "fragmento": "liso negro"
+     }
+    ]
+   },
+   {
+    "id": "S3",
+    "tipo": "queja",
+    "descripcion": "Quiere que el vaso conserve la temperatura por muchas horas, tanto para bebidas frías como calientes.",
+    "palabras_clave": [
+     "frío",
+     "caliente",
+     "horas"
+    ],
+    "citas": [
+     {
+      "texto": "o87",
+      "fragmento": "No mantiene mucho el calor"
+     },
+     {
+      "texto": "o34",
+      "fragmento": "Agua caliente aguanta 3 horas nomas"
+     },
+     {
+      "texto": "o26",
+      "fragmento": "El agua aguanta mucho fría"
+     }
+    ]
+   },
+   {
+    "id": "S4",
+    "tipo": "deseo",
+    "descripcion": "Quiere que el producto llegue listo para regalar, con presentación cuidada y detalles como una nota.",
+    "palabras_clave": [
+     "regalo"
+    ],
+    "citas": [
+     {
+      "texto": "o152",
+      "fragmento": "faltó la nota que pedí"
+     },
+     {
+      "texto": "o93",
+      "fragmento": "ideal para hacer un buen regalo"
+     },
+     {
+      "texto": "o115",
+      "fragmento": "Lo compré para regalo"
+     }
+    ]
+   },
+   {
+    "id": "S5",
+    "tipo": "uso_no_previsto",
+    "descripcion": "Lo usa en movimiento, para trabajo, estudio o actividades con niños, y valora que sea práctico y seguro para transportar.",
+    "palabras_clave": [
+     "uso"
+    ],
+    "citas": [
+     {
+      "texto": "o21",
+      "fragmento": "lo uso para el trabajo"
+     },
+     {
+      "texto": "o2",
+      "fragmento": "lo uso para llevar a la universidad"
+     },
+     {
+      "texto": "o65",
+      "fragmento": "muy práctico para mí niño"
+     }
+    ]
+   },
+   {
+    "id": "S6",
+    "tipo": "faltante",
+    "descripcion": "Busca repuestos y accesorios para el vaso, como tapas de recambio o bases de silicona.",
+    "palabras_clave": [
+     "vaso"
+    ],
+    "citas": [
+     {
+      "texto": "p14",
+      "fragmento": "repuesto la tapa"
+     },
+     {
+      "texto": "p18",
+      "fragmento": "base de silicona"
+     }
+    ]
+   }
+  ]
+ },
+ "oportunidades": [
+  {
+   "id": "O1",
+   "que_traer": "Lonchera / fiambrera térmica de acero inoxidable doble pared (aislamiento al vacío), gran capacidad y con 2-3 compartimentos internos, tapa hermética, sin electricidad",
+   "por_que": "Las señales de la lonchera eléctrica muestran que la gente la usa en jornadas largas fuera de casa y necesita comida caliente de verdad, pero el equipo entibia desparejo y obliga a estar enchufado (sin opción de batería ni powerbank). En paralelo, los usuarios de vaso térmico exigen horas de retención de temperatura y transporte seguro, y los de bowls quieren salir del plástico y acceder a porciones completas. La necesidad de fondo es la misma: conservar comida caliente muchas horas, en material inoxidable, con capacidad real y sin depender de un enchufe. El mercado local parte eso en dos: loncheras eléctricas (dependientes de la corriente, calor desigual) o bolsos térmicos plásticos que no retienen. Nadie ofrece el contenedor de acero doble pared con compartimentos que resuelve las dos cosas a la vez.",
+   "señales": [
+    "P20.S3",
+    "P20.S6",
+    "P21.S3",
+    "P14.S5",
+    "P14.S2"
+   ],
+   "busqueda_ml": "lonchera termica acero inoxidable doble pared",
+   "criterio_equivalencia": {
+    "empieza_con": [
+     "lonchera",
+     "fiambrera",
+     "contenedor",
+     "termodo",
+     "vianda"
+    ],
+    "todos": [
+     [
+      "acero",
+      "inoxidable"
+     ],
+     [
+      "termic",
+      "termo"
+     ]
+    ],
+    "excluir": [
+     "electrica",
+     "electrico",
+     "bateria",
+     "microondas"
+    ]
+   }
+  },
+  {
+   "id": "O2",
+   "que_traer": "Base / estera antideslizante de silicona para mesada (plancha con borde, apta para apoyar tablas de cortar, bowls y tablas de servir), pack de 1-2 unidades",
+   "por_que": "Tres productos distintos chocan con el mismo problema físico: la tabla de acero se corre sobre la mesada y el usuario valora que quede fija; los bowls de acero no tienen base antideslizante y se desplazan al batir; y los usuarios de vaso térmico buscan bases de silicona como accesorio. Hoy la estabilidad se resuelve como detalle suelto de cada producto (una tabla con patitas, un bowl sin nada) y no como accesorio universal. Una estera de silicona que frena tabla y bowl a la vez, protege la mesada de rayones y se limpia fácil no se ofrece como categoría propia con stock local: se vende el producto y se deja al usuario improvisando con repasadores o goma.",
+   "señales": [
+    "P13.S5",
+    "P15.S4",
+    "P21.S6"
+   ],
+   "busqueda_ml": "base antideslizante silicona para tabla y bowls",
+   "criterio_equivalencia": {
+    "empieza_con": [
+     "base",
+     "estera",
+     "alfombra",
+     "plancha",
+     "pad"
+    ],
+    "todos": [
+     [
+      "silicona"
+     ]
+    ],
+    "excluir": [
+     "celular",
+     "mouse",
+     "auto",
+     "baño",
+     "ducha"
+    ]
+   }
+  },
+  {
+   "id": "O3",
+   "que_traer": "Kit de repuestos para limpiadora a vapor: cepillos de nylon de distinta dureza, boquillas de precisión, cepillo para tapicería y paños de microfibra, vendido suelto como set",
+   "por_que": "La señal más repetida de las limpiadoras a vapor no es sobre la máquina sino sobre lo que se gasta: los cepillos se desgastan y no hay dónde comprarlos sueltos, y el kit que viene es corto. A la vez, los usos que más se consultan son los que necesitan accesorios específicos: motor e interior del auto (boquilla angosta y cepillo duro) y tapizados/colchones (cepillo suave y paño que no deje mojado). La necesidad de fondo es 'quiero seguir usando mi máquina para estos dos trabajos', y la industria vende la máquina completa, no el consumible. Un kit de accesorios compatible, con la variedad que promete la publicación, atiende a todos los que ya tienen el equipo y no encuentran con qué continuar.",
+   "señales": [
+    "P18.S1",
+    "P19.S6",
+    "P19.S4",
+    "P18.S3"
+   ],
+   "busqueda_ml": "kit cepillos repuesto limpiadora a vapor tapizado auto",
+   "criterio_equivalencia": {
+    "empieza_con": [
+     "kit",
+     "set",
+     "cepillo",
+     "boquilla",
+     "paño"
+    ],
+    "todos": [
+     [
+      "vapor"
+     ]
+    ],
+    "excluir": [
+     "aspiradora",
+     "hidrolavadora"
+    ]
+   }
+  },
+  {
+   "id": "O4",
+   "que_traer": "Rodillo / cepillo de goma reutilizable quita-pelos de mascota para textiles (sillones, tapizados, ropa, alfombras y butacas de auto), pack de 2 unidades",
+   "por_que": "El uso no previsto que más aparece en aspiradoras de mano es pelos de mascota en textiles, no polvo del piso, y lo mismo pasa en limpiadoras a vapor cuando se apunta a tapizados y colchones: se pide no dejarlos mojados. Pero la aspiradora de mano pierde succión justo cuando se le pone cepillo, y el vapor moja la tela. La necesidad de fondo es una herramienta seca, sin motor ni batería, que levante el pelo de la tela sin aspirar ni mojar. Ese objeto no se ofrece como categoría: el usuario compra una aspiradora que rinde mal para ese trabajo o un rodillo adhesivo que se agota en dos pasadas. El de goma reutilizable, que se enjuaga y vuelve a servir, resuelve el ciclo completo y viaja bien en pack.",
+   "señales": [
+    "P16.S5",
+    "P17.S5",
+    "P18.S3",
+    "P16.S3"
+   ],
+   "busqueda_ml": "rodillo quita pelos mascota reutilizable tapizado",
+   "criterio_equivalencia": {
+    "empieza_con": [
+     "rodillo",
+     "cepillo",
+     "guante",
+     "esponja",
+     "rascador"
+    ],
+    "todos": [
+     [
+      "pelo",
+      "pelos",
+      "mascota"
+     ]
+    ],
+    "excluir": [
+     "aspiradora",
+     "electrico",
+     "electric",
+     "adhesivo",
+     "cinta"
+    ]
+   }
+  }
+ ]
+}
