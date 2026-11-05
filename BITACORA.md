@@ -199,3 +199,21 @@ grupo juzgue LLM contra baseline (`data/evaluacion/`). Limitación conocida: los
 LLM y del baseline se distinguen por el estilo, así que la ceguera es parcial.
 Idea anotada para después (de una conversación previa sobre serendipia computacional):
 explorar a propósito la cola de búsquedas poco vendidas, no solo el top de Amazon.
+
+## 2026-11-05 — Cambio de fuente: lo que se compra por Compra Internacional
+
+**Qué probamos:** dejamos de partir del top de Amazon (encontraba productos ya atendidos o
+caros) y partimos del voto con más fricción: lo que la gente compra por Compra
+Internacional, pagando y esperando. Capturamos el listado filtrado por envío internacional
+en Cocina, Hogar, Bazar y Organización (74 productos con +100 vendidos), y para 15 buscamos
+equivalentes con stock local.
+**Qué esperábamos:** encontrar demanda probada que hoy solo se atiende desde afuera.
+**Qué pasó:** con un baseline de palabras salían 10 "oportunidades"; con la regla escrita por
+el LLM, 8; con el LLM juzgando equivalencia publicación por publicación, 3. Revisando a mano,
+las reglas confundían tamaños y gamas (tabla 25x15 contra 60x30; set básico de bowls contra
+ensaladeras premium; mini aspiradora USB contra aspiradoras de 120 W). Quedan: afilador
+rodante (2,3x más caro local), set de herméticos de acero (3,4x) y contenedor con colador
+(locales al mismo precio que no venden: abierto).
+**Qué decidimos:** esta es la hipótesis medible principal del TP: el juicio de equivalencia del
+LLM contra reglas y baseline, con precisión/recall/F1 sobre etiquetas humanas. Fijamos 15
+productos de test sin mirar. Pendiente: etiquetas del grupo y corrida con la API.

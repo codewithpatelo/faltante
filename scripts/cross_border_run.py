@@ -4,9 +4,11 @@
 
 Para cada producto de data/cross_border/emparejamiento.json toma la búsqueda local, marca
 como equivalentes las publicaciones LOCALES que cumplen el criterio, y decide con
-harness/cross_border.py. Lo corre dos veces:
-- con el criterio del LLM (búsqueda y palabras elegidas para ese producto);
-- con un baseline sin LLM: las dos primeras palabras de contenido del título internacional.
+harness/cross_border.py. Lo corre tres veces:
+- `baseline`: sin LLM, las dos primeras palabras de contenido del título internacional;
+- `regla_llm`: búsqueda y palabras elegidas por el LLM para ese producto;
+- `equivalencia_llm`: el LLM juzga publicación por publicación cuáles son equivalentes de
+  verdad (tamaño, gama), en data/cross_border/equivalencia_llm.json, si existe para ese producto.
 Escribe data/cross_border/resultado_<fecha>.json.
 """
 import json
@@ -27,6 +29,8 @@ def cumple(titulo: str, criterio: list[list[str]]) -> bool:
 def main(ruta_captura: Path) -> list[dict]:
     cap = json.loads(ruta_captura.read_text(encoding="utf-8"))
     emp = json.loads((RAIZ / "data/cross_border/emparejamiento.json").read_text(encoding="utf-8"))["productos"]
+    ruta_eq = RAIZ / "data/cross_border/equivalencia_llm.json"
+    equiv = json.loads(ruta_eq.read_text(encoding="utf-8"))["productos"] if ruta_eq.exists() else {}
     salida = []
     for p in emp:
         pubs = cap["busquedas"][p["busqueda"]]["publicaciones"]
@@ -35,9 +39,16 @@ def main(ruta_captura: Path) -> list[dict]:
         crit_base = [[w] for w in tokens(p["intl"])[:2]]
         fila = {"id": p["id"], "producto_intl": p["intl"], "intl_vendidos": p["vendidos"], "intl_precio": p["precio"],
                 "busqueda": p["busqueda"], "locales_en_pagina": len(locales)}
-        for nombre, crit in (("llm", p["criterio"]), ("baseline", crit_base)):
-            eq = [x for x in locales if cumple(x["titulo"], crit)]
-            fila[nombre] = {"criterio": crit, "equivalentes_locales": len(eq),
+        variantes = [("baseline", crit_base, None), ("regla_llm", p["criterio"], None)]
+        if p["id"] in equiv:
+            variantes.append(("equivalencia_llm", None, equiv[p["id"]]["equivalentes"]))
+        for nombre, crit, indices in variantes:
+            if indices is not None:
+                assert all(not pubs[i]["internacional"] for i in indices), f"{p['id']}: equivalencia cita una internacional"
+                eq = [pubs[i] for i in indices]
+            else:
+                eq = [x for x in locales if cumple(x["titulo"], crit)]
+            fila[nombre] = {"criterio": crit, "indices": indices, "equivalentes_locales": len(eq),
                             "equivalentes_que_venden": sum(1 for x in eq if x["vendidos"] > 0),
                             "ventas_visibles_equivalentes": sum(x["vendidos"] for x in eq), **evaluar(intl, eq)}
         salida.append(fila)
@@ -48,7 +59,7 @@ def main(ruta_captura: Path) -> list[dict]:
 
 if __name__ == "__main__":
     for f in main(Path(sys.argv[1])):
-        l, b = f["llm"], f["baseline"]
-        print(f"{f['id']} {f['producto_intl'][:48]:<48} +{f['intl_vendidos']:<5} ${f['intl_precio']//1000}k | "
-              f"LLM: {l['veredicto']:<12} ({l['equivalentes_que_venden']}/{l['equivalentes_locales']} venden, ratio {l.get('ratio_local_intl')}) | "
-              f"base: {b['veredicto']}")
+        e = f.get("equivalencia_llm")
+        extra = f" | equivalencia LLM: {e['veredicto']:<12} ({e['equivalentes_que_venden']}/{e['equivalentes_locales']} venden, ratio {e.get('ratio_local_intl')})" if e else ""
+        print(f"{f['id']} {f['producto_intl'][:44]:<44} +{f['intl_vendidos']:<5} ${f['intl_precio']//1000}k | "
+              f"base: {f['baseline']['veredicto']:<12} | regla LLM: {f['regla_llm']['veredicto']:<12}{extra}")

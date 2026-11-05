@@ -12,7 +12,7 @@ no lo que dice que compraría.
 ## Para el equipo: qué hacer ahora (05/11/2026)
 
 1. `make setup && make todo`: tiene que dar 29 tests en verde y correr el diagnóstico y el piloto divergente.
-2. **Juzgar las 12 hipótesis a ciegas** (10 minutos): `data/evaluacion/COMO_JUZGAR.md`. Son los primeros
+2. **Etiquetar 94 equivalencias y juzgar 12 hipótesis a ciegas** (25 minutos): `data/evaluacion/COMO_JUZGAR.md`. Son los primeros
    juicios humanos: con ellos medimos LLM contra baseline y después calibramos un LLM juez.
 3. Leer `BITACORA.md` de abajo hacia arriba: ahí está el relato del desarrollo que pide la exposición.
 4. **Correr el LLM sin compartir claves:** cargar `ANTHROPIC_API_KEY` como secreto del repo y
@@ -20,7 +20,35 @@ no lo que dice que compraría.
 5. **`CONSIGNA.md`**: cada requisito de la consigna, dónde se verifica y qué falta, con el reparto
    de tareas propuesto.
 
-## Qué encontramos (23 productos, fotos del 29/10 y del 05/11/2026)
+## Hallazgo principal: demanda probada por Compra Internacional (05/11/2026)
+
+El voto con los pies más fuerte a favor de importar es comprar por **Compra Internacional**:
+la persona paga y además espera semanas. Tomamos los 74 productos internacionales con +100
+vendidos o más en Cocina, Hogar, Bazar y Organización, y para 15 buscamos si hay un
+equivalente con stock local (`make cross-border`). Quién decide qué es "equivalente" cambia
+todo:
+
+| Cómo se decide la equivalencia | Oportunidades de 15 |
+|---|---|
+| Baseline sin LLM (dos palabras del título) | 10 |
+| Regla de palabras escrita por el LLM | 8 |
+| **LLM juzgando publicación por publicación** (tamaño, gama) | **3** |
+
+Las reglas confunden una tabla de 25x15 con una de 60x30, o un set básico de bowls con
+ensaladeras premium. Las 3 que quedan, con demanda probada:
+- **Afilador de cuchillos rodante**: +1.000 vendidos por Compra Internacional a $21.800; los
+  locales equivalentes que venden cuestan ~2,3 veces más ($43k a $78k).
+- **Set de recipientes herméticos de acero**: +5.000 a $14.000; los sets locales que venden,
+  ~3,4 veces más (hay uno local barato con +100: atención).
+- **Contenedor con colador para heladera**: +1.000 a $17.000; hay 3 locales al mismo precio y
+  ninguno vende (no lo explica la espera: queda abierto).
+
+Esto todavía es el juicio de un LLM. La hipótesis medible es que ese juicio acierta más que
+las reglas: lo verifica el grupo etiquetando `data/evaluacion/planilla_equivalencia.csv`
+(`make equivalencia` da precisión, recall y F1 de cada método). Hay 15 productos de **test**
+fijados sin mirar (`data/cross_border/particion.json`).
+
+## Qué encontramos antes (23 productos de Amazon, fotos del 29/10 y del 05/11/2026)
 
 | Conclusión | Productos | Qué significa |
 |---|---|---|

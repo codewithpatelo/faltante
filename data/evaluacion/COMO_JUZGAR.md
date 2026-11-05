@@ -10,3 +10,12 @@
 5. `make juicios` calcula promedios por fuente (LLM vs baseline) y el acuerdo entre jueces (kappa de Cohen).
 
 Con los juicios humanos después se calibra un LLM juez (clase de IR: kappa contra expertos).
+
+# Etiquetar equivalencias (15 minutos por persona)
+
+1. Copiá `planilla_equivalencia.csv` a `equivalencia_<tu_nombre>.csv`.
+2. Para cada fila: ¿la publicación local es **el mismo producto o un reemplazo directo** del
+   internacional (mismo tipo, tamaño y gama parecidos)? Escribí `si` o `no` y tu nombre.
+3. No abras `clave_equivalencia.json`.
+4. `make equivalencia` calcula precisión, recall y F1 del baseline, de la regla y del juicio del LLM
+   contra la mayoría de las etiquetas humanas.

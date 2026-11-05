@@ -10,7 +10,15 @@ Cada requisito de la consigna oficial, dónde se verifica en el repo y qué falt
 pasar en cada búsqueda), proponer hipótesis de necesidad u oportunidad, y tratar de
 refutarlas con datos antes de recomendar.
 
-**Hipótesis medible (del sistema):** sobre las 11 búsquedas de **test**, las hipótesis que
+**Hipótesis medible principal (emparejamiento):** para decidir si una publicación local es
+equivalente a un producto que se vende por Compra Internacional, el juicio del LLM
+publicación por publicación tiene mayor F1 que (a) una regla de palabras escrita por el LLM
+y (b) un baseline sin LLM (dos palabras del título), medido contra etiquetas humanas
+(`data/evaluacion/planilla_equivalencia.csv`, `make equivalencia`). En dev ya cambia el
+resultado: 10 oportunidades con el baseline, 8 con la regla, 3 con el juicio del LLM.
+Test: 15 productos fijados sin mirar (`data/cross_border/particion.json`).
+
+**Hipótesis medible secundaria (etapa divergente):** sobre las 11 búsquedas de **test**, las hipótesis que
 produce el LLM con la skill `leer_votos` obtienen mayor puntaje humano (promedio de
 *sostenida*, *no obvia* y *accionable*, escala 1 a 3) que el **baseline** sin LLM
 (log-odds de términos del título en lo que vende contra lo que no), sin perder
@@ -23,7 +31,7 @@ Métrica secundaria: proporción de hipótesis que sobreviven a la refutación.
 |---|---|---|
 | Utilidad real | Este archivo (usuario y tarea); `README.md` | 🟡 falta validar con 1 o 2 importadores reales |
 | LLM en el núcleo | `harness/divergente.py`, `skills/leer_votos/` | 🟡 código y tests listos; la corrida con modelo es la del workflow `llm` (ver abajo) |
-| Hipótesis vs baseline, partición fija dev/test | Arriba; `data/divergente/particion.json`; `harness/votos.py::contraste_terminos` | 🟡 definida y congelada; falta la corrida en test y los juicios |
+| Hipótesis vs baseline, partición fija dev/test | Arriba; `data/cross_border/particion.json`, `data/divergente/particion.json`; baselines en `scripts/cross_border_run.py` y `harness/votos.py` | 🟡 definidas y congeladas; faltan las etiquetas humanas y la corrida en test |
 | Datos verificados | Sección "Datos" abajo; `data/capturas/` | ✅ |
 | Economía (costo, latencia, modelo) | Sección "Costos" abajo; `harness/divergente.py::costo` | 🟡 estimado; la latencia real sale de la traza del workflow |
 | Git con trabajo distribuido | `git log` | ❌ hoy todos los commits son de Patricio: ver "Reparto" |

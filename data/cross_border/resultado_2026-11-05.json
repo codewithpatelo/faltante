@@ -1,0 +1,851 @@
+[
+ {
+  "id": "C01",
+  "producto_intl": "Set 5 Recipientes Herméticos Acero Inoxidable Para Heladera Variation",
+  "intl_vendidos": 5000,
+  "intl_precio": 14063,
+  "busqueda": "recipientes hermeticos acero inoxidable",
+  "locales_en_pagina": 49,
+  "baseline": {
+   "criterio": [
+    [
+     "set"
+    ],
+    [
+     "recipientes"
+    ]
+   ],
+   "indices": null,
+   "equivalentes_locales": 3,
+   "equivalentes_que_venden": 0,
+   "ventas_visibles_equivalentes": 0,
+   "veredicto": "oportunidad",
+   "motivo": "+5000 por Compra Internacional y ningún equivalente local que venda (3 publicados)"
+  },
+  "regla_llm": {
+   "criterio": [
+    [
+     "hermetic"
+    ],
+    [
+     "acero",
+     "inox"
+    ]
+   ],
+   "indices": null,
+   "equivalentes_locales": 30,
+   "equivalentes_que_venden": 14,
+   "ventas_visibles_equivalentes": 1450,
+   "veredicto": "oportunidad",
+   "ratio_local_intl": 3.09,
+   "motivo": "el local que vende cuesta 3.09x el internacional ($43,500 vs $14,063)"
+  },
+  "equivalencia_llm": {
+   "criterio": null,
+   "indices": [
+    2,
+    4,
+    11,
+    31,
+    34,
+    37,
+    39,
+    46,
+    48,
+    57,
+    63
+   ],
+   "equivalentes_locales": 11,
+   "equivalentes_que_venden": 6,
+   "ventas_visibles_equivalentes": 450,
+   "veredicto": "oportunidad",
+   "ratio_local_intl": 3.44,
+   "motivo": "el local que vende cuesta 3.44x el internacional ($48,354 vs $14,063)"
+  }
+ },
+ {
+  "id": "C02",
+  "producto_intl": "Pack 20 Paños De Microfibra Multiuso Limpieza Hogar Auto",
+  "intl_vendidos": 5000,
+  "intl_precio": 12802,
+  "busqueda": "paños microfibra pack",
+  "locales_en_pagina": 65,
+  "baseline": {
+   "criterio": [
+    [
+     "pack"
+    ],
+    [
+     "panos"
+    ]
+   ],
+   "indices": null,
+   "equivalentes_locales": 21,
+   "equivalentes_que_venden": 13,
+   "ventas_visibles_equivalentes": 64075,
+   "veredicto": "ya_atendido",
+   "ratio_local_intl": 0.55,
+   "motivo": "13 equivalentes locales venden a $6,980 (ratio 0.55)"
+  },
+  "regla_llm": {
+   "criterio": [
+    [
+     "microfibra"
+    ],
+    [
+     "pano",
+     "panos",
+     "pack",
+     "set"
+    ]
+   ],
+   "indices": null,
+   "equivalentes_locales": 53,
+   "equivalentes_que_venden": 28,
+   "ventas_visibles_equivalentes": 69225,
+   "veredicto": "ya_atendido",
+   "ratio_local_intl": 1.23,
+   "motivo": "28 equivalentes locales venden a $15,734 (ratio 1.23)"
+  }
+ },
+ {
+  "id": "C03",
+  "producto_intl": "Tabla De Cocina Acero Inoxidable Doble Cara 25x15 Cm",
+  "intl_vendidos": 1000,
+  "intl_precio": 16672,
+  "busqueda": "tabla de cortar acero inoxidable",
+  "locales_en_pagina": 65,
+  "baseline": {
+   "criterio": [
+    [
+     "tabla"
+    ],
+    [
+     "cocina"
+    ]
+   ],
+   "indices": null,
+   "equivalentes_locales": 35,
+   "equivalentes_que_venden": 32,
+   "ventas_visibles_equivalentes": 11250,
+   "veredicto": "oportunidad",
+   "ratio_local_intl": 1.88,
+   "motivo": "el local que vende cuesta 1.88x el internacional ($31,349 vs $16,672)"
+  },
+  "regla_llm": {
+   "criterio": [
+    [
+     "tabla"
+    ],
+    [
+     "acero",
+     "inox",
+     "titanio"
+    ]
+   ],
+   "indices": null,
+   "equivalentes_locales": 65,
+   "equivalentes_que_venden": 56,
+   "ventas_visibles_equivalentes": 16900,
+   "veredicto": "oportunidad",
+   "ratio_local_intl": 1.98,
+   "motivo": "el local que vende cuesta 1.98x el internacional ($32,939 vs $16,672)"
+  },
+  "equivalencia_llm": {
+   "criterio": null,
+   "indices": [
+    4,
+    5,
+    7,
+    11,
+    16,
+    21,
+    30,
+    40,
+    41,
+    44,
+    45,
+    57,
+    67
+   ],
+   "equivalentes_locales": 13,
+   "equivalentes_que_venden": 13,
+   "ventas_visibles_equivalentes": 3300,
+   "veredicto": "ya_atendido",
+   "ratio_local_intl": 1.17,
+   "motivo": "13 equivalentes locales venden a $19,543 (ratio 1.17)"
+  }
+ },
+ {
+  "id": "C04",
+  "producto_intl": "Set 3 Bandejas Rectangulares Acero Inoxidable Para Freezer Negro",
+  "intl_vendidos": 1000,
+  "intl_precio": 29700,
+  "busqueda": "bandejas acero inoxidable freezer",
+  "locales_en_pagina": 39,
+  "baseline": {
+   "criterio": [
+    [
+     "set"
+    ],
+    [
+     "bandejas"
+    ]
+   ],
+   "indices": null,
+   "equivalentes_locales": 0,
+   "equivalentes_que_venden": 0,
+   "ventas_visibles_equivalentes": 0,
+   "veredicto": "oportunidad",
+   "motivo": "+1000 por Compra Internacional y ningún equivalente local que venda (0 publicados)"
+  },
+  "regla_llm": {
+   "criterio": [
+    [
+     "bandeja"
+    ],
+    [
+     "acero",
+     "inox"
+    ]
+   ],
+   "indices": null,
+   "equivalentes_locales": 26,
+   "equivalentes_que_venden": 19,
+   "ventas_visibles_equivalentes": 10025,
+   "veredicto": "ya_atendido",
+   "ratio_local_intl": 0.97,
+   "motivo": "19 equivalentes locales venden a $28,950 (ratio 0.97)"
+  }
+ },
+ {
+  "id": "C05",
+  "producto_intl": "Juego De Contenedores Colador Cocina Y Nevera",
+  "intl_vendidos": 1000,
+  "intl_precio": 17191,
+  "busqueda": "contenedor con colador heladera",
+  "locales_en_pagina": 30,
+  "baseline": {
+   "criterio": [
+    [
+     "juego"
+    ],
+    [
+     "contenedores"
+    ]
+   ],
+   "indices": null,
+   "equivalentes_locales": 0,
+   "equivalentes_que_venden": 0,
+   "ventas_visibles_equivalentes": 0,
+   "veredicto": "oportunidad",
+   "motivo": "+1000 por Compra Internacional y ningún equivalente local que venda (0 publicados)"
+  },
+  "regla_llm": {
+   "criterio": [
+    [
+     "colador",
+     "escurridor"
+    ],
+    [
+     "contenedor",
+     "recipiente",
+     "heladera",
+     "nevera"
+    ]
+   ],
+   "indices": null,
+   "equivalentes_locales": 5,
+   "equivalentes_que_venden": 0,
+   "ventas_visibles_equivalentes": 0,
+   "veredicto": "oportunidad",
+   "motivo": "+1000 por Compra Internacional y ningún equivalente local que venda (5 publicados)"
+  },
+  "equivalencia_llm": {
+   "criterio": null,
+   "indices": [
+    13,
+    14,
+    15
+   ],
+   "equivalentes_locales": 3,
+   "equivalentes_que_venden": 0,
+   "ventas_visibles_equivalentes": 0,
+   "veredicto": "oportunidad",
+   "motivo": "+1000 por Compra Internacional y ningún equivalente local que venda (3 publicados)"
+  }
+ },
+ {
+  "id": "C06",
+  "producto_intl": "Afilador De Cuchillos Rodante Profesional 2 Piezas",
+  "intl_vendidos": 1000,
+  "intl_precio": 21838,
+  "busqueda": "afilador cuchillos rodante",
+  "locales_en_pagina": 59,
+  "baseline": {
+   "criterio": [
+    [
+     "afilador"
+    ],
+    [
+     "cuchillos"
+    ]
+   ],
+   "indices": null,
+   "equivalentes_locales": 57,
+   "equivalentes_que_venden": 27,
+   "ventas_visibles_equivalentes": 22675,
+   "veredicto": "oportunidad",
+   "ratio_local_intl": 2.11,
+   "motivo": "el local que vende cuesta 2.11x el internacional ($46,110 vs $21,838)"
+  },
+  "regla_llm": {
+   "criterio": [
+    [
+     "afilador"
+    ],
+    [
+     "rodante",
+     "rodillo",
+     "rolling",
+     "magnetic",
+     "magnetico"
+    ]
+   ],
+   "indices": null,
+   "equivalentes_locales": 42,
+   "equivalentes_que_venden": 18,
+   "ventas_visibles_equivalentes": 9825,
+   "veredicto": "oportunidad",
+   "ratio_local_intl": 2.44,
+   "motivo": "el local que vende cuesta 2.44x el internacional ($53,340 vs $21,838)"
+  },
+  "equivalencia_llm": {
+   "criterio": null,
+   "indices": [
+    0,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    21,
+    23,
+    25,
+    26,
+    28,
+    29,
+    30,
+    31,
+    33,
+    34,
+    37,
+    41,
+    43,
+    51,
+    53,
+    54,
+    56,
+    58,
+    59,
+    60,
+    62,
+    63
+   ],
+   "equivalentes_locales": 38,
+   "equivalentes_que_venden": 15,
+   "ventas_visibles_equivalentes": 8800,
+   "veredicto": "oportunidad",
+   "ratio_local_intl": 2.28,
+   "motivo": "el local que vende cuesta 2.28x el internacional ($49,699 vs $21,838)"
+  }
+ },
+ {
+  "id": "C07",
+  "producto_intl": "Máquina De Limpieza A Vapor De 2500w, Adecuada Para .. Rojo",
+  "intl_vendidos": 1000,
+  "intl_precio": 86716,
+  "busqueda": "limpiadora a vapor",
+  "locales_en_pagina": 59,
+  "baseline": {
+   "criterio": [
+    [
+     "maquina"
+    ],
+    [
+     "limpieza"
+    ]
+   ],
+   "indices": null,
+   "equivalentes_locales": 1,
+   "equivalentes_que_venden": 1,
+   "ventas_visibles_equivalentes": 500,
+   "veredicto": "ya_atendido",
+   "ratio_local_intl": 0.97,
+   "motivo": "1 equivalentes locales venden a $83,990 (ratio 0.97)"
+  },
+  "regla_llm": {
+   "criterio": [
+    [
+     "vapor"
+    ],
+    [
+     "limpi",
+     "vaporizador"
+    ]
+   ],
+   "indices": null,
+   "equivalentes_locales": 56,
+   "equivalentes_que_venden": 38,
+   "ventas_visibles_equivalentes": 15900,
+   "veredicto": "ya_atendido",
+   "ratio_local_intl": 1.08,
+   "motivo": "38 equivalentes locales venden a $94,069 (ratio 1.08)"
+  }
+ },
+ {
+  "id": "C08",
+  "producto_intl": "Bowls Mezcladores De Acero Inoxidable Con Medidas Plateado",
+  "intl_vendidos": 1000,
+  "intl_precio": 13943,
+  "busqueda": "bowls acero inoxidable set",
+  "locales_en_pagina": 61,
+  "baseline": {
+   "criterio": [
+    [
+     "bowls"
+    ],
+    [
+     "mezcladores"
+    ]
+   ],
+   "indices": null,
+   "equivalentes_locales": 0,
+   "equivalentes_que_venden": 0,
+   "ventas_visibles_equivalentes": 0,
+   "veredicto": "oportunidad",
+   "motivo": "+1000 por Compra Internacional y ningún equivalente local que venda (0 publicados)"
+  },
+  "regla_llm": {
+   "criterio": [
+    [
+     "bowl"
+    ],
+    [
+     "acero",
+     "inox"
+    ]
+   ],
+   "indices": null,
+   "equivalentes_locales": 57,
+   "equivalentes_que_venden": 40,
+   "ventas_visibles_equivalentes": 31075,
+   "veredicto": "oportunidad",
+   "ratio_local_intl": 2.19,
+   "motivo": "el local que vende cuesta 2.19x el internacional ($30,578 vs $13,943)"
+  },
+  "equivalencia_llm": {
+   "criterio": null,
+   "indices": [
+    4,
+    5,
+    6,
+    7,
+    12,
+    16,
+    17,
+    22,
+    28,
+    44,
+    47,
+    54,
+    55,
+    56,
+    57,
+    62,
+    41,
+    59
+   ],
+   "equivalentes_locales": 18,
+   "equivalentes_que_venden": 13,
+   "ventas_visibles_equivalentes": 12325,
+   "veredicto": "ya_atendido",
+   "ratio_local_intl": 0.97,
+   "motivo": "13 equivalentes locales venden a $13,467 (ratio 0.97)"
+  }
+ },
+ {
+  "id": "C09",
+  "producto_intl": "Aspiradora Portátil Inalámbrica Para Auto Y Hogar",
+  "intl_vendidos": 1000,
+  "intl_precio": 14426,
+  "busqueda": "aspiradora portatil inalambrica auto",
+  "locales_en_pagina": 62,
+  "baseline": {
+   "criterio": [
+    [
+     "aspiradora"
+    ],
+    [
+     "portatil"
+    ]
+   ],
+   "indices": null,
+   "equivalentes_locales": 36,
+   "equivalentes_que_venden": 25,
+   "ventas_visibles_equivalentes": 11900,
+   "veredicto": "oportunidad",
+   "ratio_local_intl": 2.45,
+   "motivo": "el local que vende cuesta 2.45x el internacional ($35,399 vs $14,426)"
+  },
+  "regla_llm": {
+   "criterio": [
+    [
+     "aspiradora"
+    ],
+    [
+     "portatil",
+     "inalambrica",
+     "de mano",
+     "recargable"
+    ]
+   ],
+   "indices": null,
+   "equivalentes_locales": 60,
+   "equivalentes_que_venden": 49,
+   "ventas_visibles_equivalentes": 40450,
+   "veredicto": "oportunidad",
+   "ratio_local_intl": 2.93,
+   "motivo": "el local que vende cuesta 2.93x el internacional ($42,247 vs $14,426)"
+  },
+  "equivalencia_llm": {
+   "criterio": null,
+   "indices": [
+    5,
+    6,
+    10,
+    18,
+    19,
+    20,
+    33,
+    34,
+    42,
+    50,
+    52,
+    54,
+    58,
+    63
+   ],
+   "equivalentes_locales": 14,
+   "equivalentes_que_venden": 13,
+   "ventas_visibles_equivalentes": 1900,
+   "veredicto": "ya_atendido",
+   "ratio_local_intl": 1.04,
+   "motivo": "13 equivalentes locales venden a $14,950 (ratio 1.04)"
+  }
+ },
+ {
+  "id": "C10",
+  "producto_intl": "Organizador De Ropa Plegable Para Placard X3 Unidades Gris",
+  "intl_vendidos": 1000,
+  "intl_precio": 17588,
+  "busqueda": "organizador de ropa plegable placard",
+  "locales_en_pagina": 64,
+  "baseline": {
+   "criterio": [
+    [
+     "organizador"
+    ],
+    [
+     "ropa"
+    ]
+   ],
+   "indices": null,
+   "equivalentes_locales": 52,
+   "equivalentes_que_venden": 46,
+   "ventas_visibles_equivalentes": 36575,
+   "veredicto": "oportunidad",
+   "ratio_local_intl": 1.48,
+   "motivo": "el local que vende cuesta 1.48x el internacional ($25,990 vs $17,588)"
+  },
+  "regla_llm": {
+   "criterio": [
+    [
+     "organizador",
+     "caja"
+    ],
+    [
+     "ropa",
+     "placard"
+    ]
+   ],
+   "indices": null,
+   "equivalentes_locales": 58,
+   "equivalentes_que_venden": 50,
+   "ventas_visibles_equivalentes": 42775,
+   "veredicto": "oportunidad",
+   "ratio_local_intl": 1.47,
+   "motivo": "el local que vende cuesta 1.47x el internacional ($25,774 vs $17,588)"
+  },
+  "equivalencia_llm": {
+   "criterio": null,
+   "indices": [
+    3,
+    7,
+    11,
+    14,
+    17,
+    19,
+    20,
+    22,
+    33,
+    42,
+    43,
+    44,
+    54,
+    56,
+    57,
+    59,
+    60
+   ],
+   "equivalentes_locales": 17,
+   "equivalentes_que_venden": 16,
+   "ventas_visibles_equivalentes": 14125,
+   "veredicto": "ya_atendido",
+   "ratio_local_intl": 1.22,
+   "motivo": "16 equivalentes locales venden a $21,494 (ratio 1.22)"
+  }
+ },
+ {
+  "id": "C11",
+  "producto_intl": "Estante Organizador De Baño Metálico Con Ventosa",
+  "intl_vendidos": 1000,
+  "intl_precio": 17398,
+  "busqueda": "estante baño sin taladro",
+  "locales_en_pagina": 52,
+  "baseline": {
+   "criterio": [
+    [
+     "estante"
+    ],
+    [
+     "organizador"
+    ]
+   ],
+   "indices": null,
+   "equivalentes_locales": 33,
+   "equivalentes_que_venden": 31,
+   "ventas_visibles_equivalentes": 52925,
+   "veredicto": "ya_atendido",
+   "ratio_local_intl": 1.29,
+   "motivo": "31 equivalentes locales venden a $22,500 (ratio 1.29)"
+  },
+  "regla_llm": {
+   "criterio": [
+    [
+     "estante",
+     "repisa",
+     "esquinero"
+    ],
+    [
+     "ventosa",
+     "sin taladro",
+     "adhesiv",
+     "sin agujer"
+    ]
+   ],
+   "indices": null,
+   "equivalentes_locales": 39,
+   "equivalentes_que_venden": 36,
+   "ventas_visibles_equivalentes": 57350,
+   "veredicto": "ya_atendido",
+   "ratio_local_intl": 1.19,
+   "motivo": "36 equivalentes locales venden a $20,701 (ratio 1.19)"
+  }
+ },
+ {
+  "id": "C12",
+  "producto_intl": "Balanza De Cocina Digital 10 Kg 1 G Con Pantalla Lcd Plateado 10 Kg",
+  "intl_vendidos": 500,
+  "intl_precio": 19454,
+  "busqueda": "balanza de cocina digital 10 kg",
+  "locales_en_pagina": 61,
+  "baseline": {
+   "criterio": [
+    [
+     "balanza"
+    ],
+    [
+     "cocina"
+    ]
+   ],
+   "indices": null,
+   "equivalentes_locales": 56,
+   "equivalentes_que_venden": 49,
+   "ventas_visibles_equivalentes": 283500,
+   "veredicto": "ya_atendido",
+   "ratio_local_intl": 0.58,
+   "motivo": "49 equivalentes locales venden a $11,252 (ratio 0.58)"
+  },
+  "regla_llm": {
+   "criterio": [
+    [
+     "balanza",
+     "bascula"
+    ],
+    [
+     "10 kg",
+     "10kg"
+    ]
+   ],
+   "indices": null,
+   "equivalentes_locales": 44,
+   "equivalentes_que_venden": 39,
+   "ventas_visibles_equivalentes": 269100,
+   "veredicto": "ya_atendido",
+   "ratio_local_intl": 0.54,
+   "motivo": "39 equivalentes locales venden a $10,549 (ratio 0.54)"
+  }
+ },
+ {
+  "id": "C13",
+  "producto_intl": "Bowl Con Rallador De Acero Inoxidable Para Cocina Silver",
+  "intl_vendidos": 500,
+  "intl_precio": 15411,
+  "busqueda": "bowl con rallador",
+  "locales_en_pagina": 56,
+  "baseline": {
+   "criterio": [
+    [
+     "bowl"
+    ],
+    [
+     "rallador"
+    ]
+   ],
+   "indices": null,
+   "equivalentes_locales": 34,
+   "equivalentes_que_venden": 6,
+   "ventas_visibles_equivalentes": 700,
+   "veredicto": "ya_atendido",
+   "ratio_local_intl": 0.85,
+   "motivo": "6 equivalentes locales venden a $13,147 (ratio 0.85)"
+  },
+  "regla_llm": {
+   "criterio": [
+    [
+     "rallador"
+    ],
+    [
+     "bowl",
+     "recipiente",
+     "contenedor"
+    ]
+   ],
+   "indices": null,
+   "equivalentes_locales": 34,
+   "equivalentes_que_venden": 6,
+   "ventas_visibles_equivalentes": 700,
+   "veredicto": "ya_atendido",
+   "ratio_local_intl": 0.85,
+   "motivo": "6 equivalentes locales venden a $13,147 (ratio 0.85)"
+  }
+ },
+ {
+  "id": "C14",
+  "producto_intl": "Molde Bandeja De Silicona Para Congelador Con Tapa Para Alim Blue",
+  "intl_vendidos": 500,
+  "intl_precio": 15826,
+  "busqueda": "bandeja silicona congelador con tapa",
+  "locales_en_pagina": 24,
+  "baseline": {
+   "criterio": [
+    [
+     "molde"
+    ],
+    [
+     "bandeja"
+    ]
+   ],
+   "indices": null,
+   "equivalentes_locales": 2,
+   "equivalentes_que_venden": 2,
+   "ventas_visibles_equivalentes": 2000,
+   "veredicto": "ya_atendido",
+   "ratio_local_intl": 0.47,
+   "motivo": "2 equivalentes locales venden a $7,359 (ratio 0.47)"
+  },
+  "regla_llm": {
+   "criterio": [
+    [
+     "silicona"
+    ],
+    [
+     "congel",
+     "freezer"
+    ]
+   ],
+   "indices": null,
+   "equivalentes_locales": 4,
+   "equivalentes_que_venden": 2,
+   "ventas_visibles_equivalentes": 1500,
+   "veredicto": "ya_atendido",
+   "ratio_local_intl": 0.4,
+   "motivo": "2 equivalentes locales venden a $6,404 (ratio 0.4)"
+  }
+ },
+ {
+  "id": "C15",
+  "producto_intl": "Ventilador E27 Silencioso Para Hogar",
+  "intl_vendidos": 500,
+  "intl_precio": 27039,
+  "busqueda": "ventilador e27",
+  "locales_en_pagina": 45,
+  "baseline": {
+   "criterio": [
+    [
+     "ventilador"
+    ],
+    [
+     "e27"
+    ]
+   ],
+   "indices": null,
+   "equivalentes_locales": 29,
+   "equivalentes_que_venden": 13,
+   "ventas_visibles_equivalentes": 6750,
+   "veredicto": "ya_atendido",
+   "ratio_local_intl": 1.1,
+   "motivo": "13 equivalentes locales venden a $29,850 (ratio 1.1)"
+  },
+  "regla_llm": {
+   "criterio": [
+    [
+     "ventilador"
+    ],
+    [
+     "e27",
+     "rosca",
+     "portalampara"
+    ]
+   ],
+   "indices": null,
+   "equivalentes_locales": 29,
+   "equivalentes_que_venden": 13,
+   "ventas_visibles_equivalentes": 6750,
+   "veredicto": "ya_atendido",
+   "ratio_local_intl": 1.1,
+   "motivo": "13 equivalentes locales venden a $29,850 (ratio 1.1)"
+  }
+ }
+]

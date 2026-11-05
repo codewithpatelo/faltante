@@ -1,0 +1,13 @@
+{
+ "quien": "Claude (Opus 5.5) en el chat, paso LLM a mano y declarado. Para cada producto internacional, qué publicaciones LOCALES de la búsqueda son equivalentes de verdad (mismo tipo, tamaño y gama comparables), leyendo títulos. Índices sobre data/capturas/captura_ml_locales_cross_border_2026-11-05.json",
+ "por_que": "La regla de palabras (emparejamiento.json -> criterio) no ve tamaño ni gama: marcó como equivalentes tablas de 60x30 contra una de 25x15, o bowls de ensaladera premium contra un set básico.",
+ "productos": {
+  "C01": {"equivalentes": [2, 4, 11, 31, 34, 37, 39, 46, 48, 57, 63], "nota": "sets de recipientes herméticos de acero; [46] es casi el mismo producto (6 unidades, $11k) y vende +100"},
+  "C03": {"equivalentes": [4, 5, 7, 11, 16, 21, 30, 40, 41, 44, 45, 57, 67], "nota": "solo tablas chicas (hasta ~35x25); las de 40x30 o más son otro producto"},
+  "C05": {"equivalentes": [13, 14, 15], "nota": "contenedores con colador para heladera; [25] (pepinillos) y [42] (frutas, $122k) no son equivalentes"},
+  "C06": {"equivalentes": [0, 3, 4, 5, 6, 7, 8, 9, 10, 11, 13, 14, 15, 16, 17, 18, 21, 23, 25, 26, 28, 29, 30, 31, 33, 34, 37, 41, 43, 51, 53, 54, 56, 58, 59, 60, 62, 63], "nota": "afiladores rodantes de rodillo con base; se excluyen [12] y [19] (kits con más discos) y [52] (otro tipo)"},
+  "C08": {"equivalentes": [4, 5, 6, 7, 12, 16, 17, 22, 28, 44, 47, 54, 55, 56, 57, 62, 41, 59], "nota": "sets de bowls de acero básicos; se excluyen packs gastronómicos x10, ensaladeras premium y bowls sueltos"},
+  "C09": {"equivalentes": [5, 6, 10, 18, 19, 20, 33, 34, 42, 50, 52, 54, 58, 63], "nota": "mini aspiradoras de mano USB para auto/hogar; se excluyen verticales, robots y de 120 W o más"},
+  "C10": {"equivalentes": [3, 7, 11, 14, 17, 19, 20, 22, 33, 42, 43, 44, 54, 56, 57, 59, 60], "nota": "canastos/cajas plegables de tela para ropa; se excluyen armarios, colgantes y organizadores de cajón"}
+ }
+}

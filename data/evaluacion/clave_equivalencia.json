@@ -1,0 +1,660 @@
+{
+"1": {
+"producto": "C01",
+"i": 57,
+"baseline": false,
+"regla_llm": true,
+"equivalencia_llm": true
+},
+"2": {
+"producto": "C01",
+"i": 56,
+"baseline": false,
+"regla_llm": false,
+"equivalencia_llm": false
+},
+"3": {
+"producto": "C01",
+"i": 36,
+"baseline": false,
+"regla_llm": true,
+"equivalencia_llm": false
+},
+"4": {
+"producto": "C01",
+"i": 54,
+"baseline": false,
+"regla_llm": false,
+"equivalencia_llm": false
+},
+"5": {
+"producto": "C01",
+"i": 34,
+"baseline": false,
+"regla_llm": true,
+"equivalencia_llm": true
+},
+"6": {
+"producto": "C01",
+"i": 15,
+"baseline": false,
+"regla_llm": true,
+"equivalencia_llm": false
+},
+"7": {
+"producto": "C01",
+"i": 39,
+"baseline": true,
+"regla_llm": true,
+"equivalencia_llm": true
+},
+"8": {
+"producto": "C01",
+"i": 20,
+"baseline": false,
+"regla_llm": false,
+"equivalencia_llm": false
+},
+"9": {
+"producto": "C01",
+"i": 4,
+"baseline": true,
+"regla_llm": true,
+"equivalencia_llm": true
+},
+"10": {
+"producto": "C01",
+"i": 46,
+"baseline": false,
+"regla_llm": true,
+"equivalencia_llm": true
+},
+"11": {
+"producto": "C01",
+"i": 67,
+"baseline": false,
+"regla_llm": false,
+"equivalencia_llm": false
+},
+"12": {
+"producto": "C01",
+"i": 61,
+"baseline": false,
+"regla_llm": false,
+"equivalencia_llm": false
+},
+"13": {
+"producto": "C01",
+"i": 48,
+"baseline": false,
+"regla_llm": true,
+"equivalencia_llm": true
+},
+"14": {
+"producto": "C01",
+"i": 63,
+"baseline": false,
+"regla_llm": true,
+"equivalencia_llm": true
+},
+"15": {
+"producto": "C03",
+"i": 39,
+"baseline": true,
+"regla_llm": true,
+"equivalencia_llm": false
+},
+"16": {
+"producto": "C03",
+"i": 17,
+"baseline": true,
+"regla_llm": true,
+"equivalencia_llm": false
+},
+"17": {
+"producto": "C03",
+"i": 38,
+"baseline": false,
+"regla_llm": true,
+"equivalencia_llm": false
+},
+"18": {
+"producto": "C03",
+"i": 16,
+"baseline": true,
+"regla_llm": true,
+"equivalencia_llm": true
+},
+"19": {
+"producto": "C03",
+"i": 4,
+"baseline": false,
+"regla_llm": true,
+"equivalencia_llm": true
+},
+"20": {
+"producto": "C03",
+"i": 67,
+"baseline": false,
+"regla_llm": true,
+"equivalencia_llm": true
+},
+"21": {
+"producto": "C03",
+"i": 51,
+"baseline": true,
+"regla_llm": true,
+"equivalencia_llm": false
+},
+"22": {
+"producto": "C03",
+"i": 5,
+"baseline": true,
+"regla_llm": true,
+"equivalencia_llm": true
+},
+"23": {
+"producto": "C03",
+"i": 41,
+"baseline": false,
+"regla_llm": true,
+"equivalencia_llm": true
+},
+"24": {
+"producto": "C03",
+"i": 1,
+"baseline": true,
+"regla_llm": true,
+"equivalencia_llm": false
+},
+"25": {
+"producto": "C03",
+"i": 11,
+"baseline": true,
+"regla_llm": true,
+"equivalencia_llm": true
+},
+"26": {
+"producto": "C03",
+"i": 27,
+"baseline": false,
+"regla_llm": true,
+"equivalencia_llm": false
+},
+"27": {
+"producto": "C03",
+"i": 45,
+"baseline": true,
+"regla_llm": true,
+"equivalencia_llm": true
+},
+"28": {
+"producto": "C03",
+"i": 64,
+"baseline": false,
+"regla_llm": true,
+"equivalencia_llm": false
+},
+"29": {
+"producto": "C05",
+"i": 4,
+"baseline": false,
+"regla_llm": false,
+"equivalencia_llm": false
+},
+"30": {
+"producto": "C05",
+"i": 31,
+"baseline": false,
+"regla_llm": false,
+"equivalencia_llm": false
+},
+"31": {
+"producto": "C05",
+"i": 19,
+"baseline": false,
+"regla_llm": false,
+"equivalencia_llm": false
+},
+"32": {
+"producto": "C05",
+"i": 15,
+"baseline": false,
+"regla_llm": true,
+"equivalencia_llm": true
+},
+"33": {
+"producto": "C05",
+"i": 48,
+"baseline": false,
+"regla_llm": false,
+"equivalencia_llm": false
+},
+"34": {
+"producto": "C05",
+"i": 13,
+"baseline": false,
+"regla_llm": true,
+"equivalencia_llm": true
+},
+"35": {
+"producto": "C05",
+"i": 6,
+"baseline": false,
+"regla_llm": false,
+"equivalencia_llm": false
+},
+"36": {
+"producto": "C05",
+"i": 33,
+"baseline": false,
+"regla_llm": false,
+"equivalencia_llm": false
+},
+"37": {
+"producto": "C05",
+"i": 23,
+"baseline": false,
+"regla_llm": false,
+"equivalencia_llm": false
+},
+"38": {
+"producto": "C05",
+"i": 14,
+"baseline": false,
+"regla_llm": true,
+"equivalencia_llm": true
+},
+"39": {
+"producto": "C06",
+"i": 12,
+"baseline": false,
+"regla_llm": true,
+"equivalencia_llm": false
+},
+"40": {
+"producto": "C06",
+"i": 24,
+"baseline": true,
+"regla_llm": false,
+"equivalencia_llm": false
+},
+"41": {
+"producto": "C06",
+"i": 20,
+"baseline": true,
+"regla_llm": false,
+"equivalencia_llm": false
+},
+"42": {
+"producto": "C06",
+"i": 33,
+"baseline": true,
+"regla_llm": true,
+"equivalencia_llm": true
+},
+"43": {
+"producto": "C06",
+"i": 49,
+"baseline": true,
+"regla_llm": false,
+"equivalencia_llm": false
+},
+"44": {
+"producto": "C06",
+"i": 39,
+"baseline": true,
+"regla_llm": false,
+"equivalencia_llm": false
+},
+"45": {
+"producto": "C06",
+"i": 52,
+"baseline": true,
+"regla_llm": true,
+"equivalencia_llm": false
+},
+"46": {
+"producto": "C06",
+"i": 35,
+"baseline": true,
+"regla_llm": false,
+"equivalencia_llm": false
+},
+"47": {
+"producto": "C06",
+"i": 53,
+"baseline": true,
+"regla_llm": true,
+"equivalencia_llm": true
+},
+"48": {
+"producto": "C06",
+"i": 5,
+"baseline": true,
+"regla_llm": true,
+"equivalencia_llm": true
+},
+"49": {
+"producto": "C06",
+"i": 63,
+"baseline": true,
+"regla_llm": true,
+"equivalencia_llm": true
+},
+"50": {
+"producto": "C06",
+"i": 37,
+"baseline": true,
+"regla_llm": true,
+"equivalencia_llm": true
+},
+"51": {
+"producto": "C06",
+"i": 16,
+"baseline": true,
+"regla_llm": true,
+"equivalencia_llm": true
+},
+"52": {
+"producto": "C06",
+"i": 34,
+"baseline": true,
+"regla_llm": true,
+"equivalencia_llm": true
+},
+"53": {
+"producto": "C08",
+"i": 59,
+"baseline": false,
+"regla_llm": true,
+"equivalencia_llm": true
+},
+"54": {
+"producto": "C08",
+"i": 66,
+"baseline": false,
+"regla_llm": false,
+"equivalencia_llm": false
+},
+"55": {
+"producto": "C08",
+"i": 57,
+"baseline": false,
+"regla_llm": true,
+"equivalencia_llm": true
+},
+"56": {
+"producto": "C08",
+"i": 37,
+"baseline": false,
+"regla_llm": true,
+"equivalencia_llm": false
+},
+"57": {
+"producto": "C08",
+"i": 6,
+"baseline": false,
+"regla_llm": true,
+"equivalencia_llm": true
+},
+"58": {
+"producto": "C08",
+"i": 36,
+"baseline": false,
+"regla_llm": true,
+"equivalencia_llm": false
+},
+"59": {
+"producto": "C08",
+"i": 34,
+"baseline": false,
+"regla_llm": true,
+"equivalencia_llm": false
+},
+"60": {
+"producto": "C08",
+"i": 17,
+"baseline": false,
+"regla_llm": true,
+"equivalencia_llm": true
+},
+"61": {
+"producto": "C08",
+"i": 47,
+"baseline": false,
+"regla_llm": true,
+"equivalencia_llm": true
+},
+"62": {
+"producto": "C08",
+"i": 56,
+"baseline": false,
+"regla_llm": true,
+"equivalencia_llm": true
+},
+"63": {
+"producto": "C08",
+"i": 0,
+"baseline": false,
+"regla_llm": true,
+"equivalencia_llm": false
+},
+"64": {
+"producto": "C08",
+"i": 11,
+"baseline": false,
+"regla_llm": true,
+"equivalencia_llm": false
+},
+"65": {
+"producto": "C08",
+"i": 20,
+"baseline": false,
+"regla_llm": true,
+"equivalencia_llm": false
+},
+"66": {
+"producto": "C08",
+"i": 54,
+"baseline": false,
+"regla_llm": true,
+"equivalencia_llm": true
+},
+"67": {
+"producto": "C09",
+"i": 4,
+"baseline": true,
+"regla_llm": true,
+"equivalencia_llm": false
+},
+"68": {
+"producto": "C09",
+"i": 48,
+"baseline": false,
+"regla_llm": true,
+"equivalencia_llm": false
+},
+"69": {
+"producto": "C09",
+"i": 16,
+"baseline": false,
+"regla_llm": true,
+"equivalencia_llm": false
+},
+"70": {
+"producto": "C09",
+"i": 34,
+"baseline": false,
+"regla_llm": true,
+"equivalencia_llm": true
+},
+"71": {
+"producto": "C09",
+"i": 54,
+"baseline": true,
+"regla_llm": true,
+"equivalencia_llm": true
+},
+"72": {
+"producto": "C09",
+"i": 53,
+"baseline": true,
+"regla_llm": true,
+"equivalencia_llm": false
+},
+"73": {
+"producto": "C09",
+"i": 50,
+"baseline": false,
+"regla_llm": true,
+"equivalencia_llm": true
+},
+"74": {
+"producto": "C09",
+"i": 19,
+"baseline": true,
+"regla_llm": true,
+"equivalencia_llm": true
+},
+"75": {
+"producto": "C09",
+"i": 30,
+"baseline": true,
+"regla_llm": true,
+"equivalencia_llm": false
+},
+"76": {
+"producto": "C09",
+"i": 7,
+"baseline": true,
+"regla_llm": true,
+"equivalencia_llm": false
+},
+"77": {
+"producto": "C09",
+"i": 20,
+"baseline": true,
+"regla_llm": true,
+"equivalencia_llm": true
+},
+"78": {
+"producto": "C09",
+"i": 61,
+"baseline": true,
+"regla_llm": true,
+"equivalencia_llm": false
+},
+"79": {
+"producto": "C09",
+"i": 18,
+"baseline": true,
+"regla_llm": true,
+"equivalencia_llm": true
+},
+"80": {
+"producto": "C09",
+"i": 5,
+"baseline": true,
+"regla_llm": true,
+"equivalencia_llm": true
+},
+"81": {
+"producto": "C10",
+"i": 58,
+"baseline": true,
+"regla_llm": true,
+"equivalencia_llm": false
+},
+"82": {
+"producto": "C10",
+"i": 16,
+"baseline": true,
+"regla_llm": true,
+"equivalencia_llm": false
+},
+"83": {
+"producto": "C10",
+"i": 45,
+"baseline": false,
+"regla_llm": false,
+"equivalencia_llm": false
+},
+"84": {
+"producto": "C10",
+"i": 57,
+"baseline": true,
+"regla_llm": true,
+"equivalencia_llm": true
+},
+"85": {
+"producto": "C10",
+"i": 14,
+"baseline": true,
+"regla_llm": true,
+"equivalencia_llm": true
+},
+"86": {
+"producto": "C10",
+"i": 56,
+"baseline": true,
+"regla_llm": true,
+"equivalencia_llm": true
+},
+"87": {
+"producto": "C10",
+"i": 50,
+"baseline": true,
+"regla_llm": true,
+"equivalencia_llm": false
+},
+"88": {
+"producto": "C10",
+"i": 59,
+"baseline": true,
+"regla_llm": true,
+"equivalencia_llm": true
+},
+"89": {
+"producto": "C10",
+"i": 36,
+"baseline": false,
+"regla_llm": false,
+"equivalencia_llm": false
+},
+"90": {
+"producto": "C10",
+"i": 21,
+"baseline": true,
+"regla_llm": true,
+"equivalencia_llm": false
+},
+"91": {
+"producto": "C10",
+"i": 53,
+"baseline": true,
+"regla_llm": true,
+"equivalencia_llm": false
+},
+"92": {
+"producto": "C10",
+"i": 17,
+"baseline": true,
+"regla_llm": true,
+"equivalencia_llm": true
+},
+"93": {
+"producto": "C10",
+"i": 44,
+"baseline": true,
+"regla_llm": true,
+"equivalencia_llm": true
+},
+"94": {
+"producto": "C10",
+"i": 42,
+"baseline": true,
+"regla_llm": true,
+"equivalencia_llm": true
+}
+}

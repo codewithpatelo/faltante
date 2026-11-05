@@ -1,0 +1,97 @@
+{
+ "dev": [
+  "C01",
+  "C02",
+  "C03",
+  "C04",
+  "C05",
+  "C06",
+  "C07",
+  "C08",
+  "C09",
+  "C10",
+  "C11",
+  "C12",
+  "C13",
+  "C14",
+  "C15"
+ ],
+ "test": [
+  {
+   "vendidos": 100,
+   "precio": 71511,
+   "intl": "Grifo Eléctrico De Agua Caliente Y Fría 220v"
+  },
+  {
+   "vendidos": 100,
+   "precio": 17795,
+   "intl": "Zapatero Organizador De 4 Niveles Para Dormitorio"
+  },
+  {
+   "vendidos": 100,
+   "precio": 16741,
+   "intl": "Pelapapas Metal De Cocina Acero Inoxidable Multifuncional"
+  },
+  {
+   "vendidos": 100,
+   "precio": 96046,
+   "intl": "Deshumidificador Portátil Silencioso Para Hogar"
+  },
+  {
+   "vendidos": 500,
+   "precio": 14063,
+   "intl": "Estante Esquinero Organizador De Baño Adhesivo Sin Taladro"
+  },
+  {
+   "vendidos": 100,
+   "precio": 20508,
+   "intl": "Set 3 Bowls De Acero Inoxidable Para Ensalada Cocina Dorado"
+  },
+  {
+   "vendidos": 100,
+   "precio": 11316,
+   "intl": "Pack X2 Cajas Organizadoras De Ropa Plegables 80l Hogar Gris Liso"
+  },
+  {
+   "vendidos": 100,
+   "precio": 11748,
+   "intl": "Cepillo Para Fregar Pisos, Mango Largo, Rasqueta Para Ventan"
+  },
+  {
+   "vendidos": 100,
+   "precio": 14167,
+   "intl": "Set 3 Contenedores Plásticos Organizadores Para Heladera"
+  },
+  {
+   "vendidos": 100,
+   "precio": 20473,
+   "intl": "Enfriador De Vino 4 En 1 Para Botella Y Decantador"
+  },
+  {
+   "vendidos": 100,
+   "precio": 15169,
+   "intl": "Dispensador Viaje 4 En 1 Con 4 Frascos Blanco"
+  },
+  {
+   "vendidos": 100,
+   "precio": 15463,
+   "intl": "Almohada De Viaje Cervical De Espuma Viscoelástica Gris"
+  },
+  {
+   "vendidos": 100,
+   "precio": 16586,
+   "intl": "6 Set De Refrigeradores Y Cajas Frescas En La Cocina"
+  },
+  {
+   "vendidos": 100,
+   "precio": 20854,
+   "intl": "Bowl Colador De Acero Inoxidable Para Lavar Arroz Plateado"
+  },
+  {
+   "vendidos": 100,
+   "precio": 11144,
+   "intl": "Prensa Manual Para Ajo Y Jengibre Utensilio De Cocina"
+  }
+ ],
+ "nota": "dev: los 15 productos sobre los que se iteró el emparejamiento y la equivalencia. test: 15 elegidos al azar (semilla 20261105) del resto de la lista, sin computadoras, juguetes ni kits médicos; no se miraron sus búsquedas locales"
+}
