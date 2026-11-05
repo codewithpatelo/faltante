@@ -51,3 +51,12 @@ def test_solo_intl_a_precio_parecido_es_candidato_a_probar():
 def test_ya_atendido():
     f = Foto("x", [P("prod local", False, 500, 10000, True)] + sust(3))
     assert diagnosticar(f)["conclusion"] == "ya_atendido"
+
+
+def test_cross_border():
+    from harness.cross_border import evaluar
+    intl = {"titulo": "x", "vendidos": 500, "precio": 20000}
+    assert evaluar(intl, [])["veredicto"] == "oportunidad"
+    assert evaluar(intl, [{"vendidos": 100, "precio": 30000}])["veredicto"] == "oportunidad"
+    assert evaluar(intl, [{"vendidos": 100, "precio": 21000}])["veredicto"] == "ya_atendido"
+    assert evaluar({**intl, "vendidos": 25}, [])["veredicto"] == "insuficiente"

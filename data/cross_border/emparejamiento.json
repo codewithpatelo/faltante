@@ -1,0 +1,20 @@
+{
+ "quien": "Claude (Opus 5.5) en el chat, paso LLM a mano y declarado: para cada producto internacional que vende, la búsqueda con la que un comprador lo buscaría acá y el criterio de equivalencia (todas las listas deben tener al menos una palabra en el título)",
+ "productos": [
+  {"id": "C01", "intl": "Set 5 Recipientes Herméticos Acero Inoxidable Para Heladera Variation", "vendidos": 5000, "precio": 14063, "busqueda": "recipientes hermeticos acero inoxidable", "criterio": [["hermetic"], ["acero", "inox"]]},
+  {"id": "C02", "intl": "Pack 20 Paños De Microfibra Multiuso Limpieza Hogar Auto", "vendidos": 5000, "precio": 12802, "busqueda": "paños microfibra pack", "criterio": [["microfibra"], ["pano", "panos", "pack", "set"]]},
+  {"id": "C03", "intl": "Tabla De Cocina Acero Inoxidable Doble Cara 25x15 Cm", "vendidos": 1000, "precio": 16672, "busqueda": "tabla de cortar acero inoxidable", "criterio": [["tabla"], ["acero", "inox", "titanio"]]},
+  {"id": "C04", "intl": "Set 3 Bandejas Rectangulares Acero Inoxidable Para Freezer Negro", "vendidos": 1000, "precio": 29700, "busqueda": "bandejas acero inoxidable freezer", "criterio": [["bandeja"], ["acero", "inox"]]},
+  {"id": "C05", "intl": "Juego De Contenedores Colador Cocina Y Nevera", "vendidos": 1000, "precio": 17191, "busqueda": "contenedor con colador heladera", "criterio": [["colador", "escurridor"], ["contenedor", "recipiente", "heladera", "nevera"]]},
+  {"id": "C06", "intl": "Afilador De Cuchillos Rodante Profesional 2 Piezas", "vendidos": 1000, "precio": 21838, "busqueda": "afilador cuchillos rodante", "criterio": [["afilador"], ["rodante", "rodillo", "rolling", "magnetic", "magnetico"]]},
+  {"id": "C07", "intl": "Máquina De Limpieza A Vapor De 2500w, Adecuada Para .. Rojo", "vendidos": 1000, "precio": 86716, "busqueda": "limpiadora a vapor", "criterio": [["vapor"], ["limpi", "vaporizador"]]},
+  {"id": "C08", "intl": "Bowls Mezcladores De Acero Inoxidable Con Medidas Plateado", "vendidos": 1000, "precio": 13943, "busqueda": "bowls acero inoxidable set", "criterio": [["bowl"], ["acero", "inox"]]},
+  {"id": "C09", "intl": "Aspiradora Portátil Inalámbrica Para Auto Y Hogar", "vendidos": 1000, "precio": 14426, "busqueda": "aspiradora portatil inalambrica auto", "criterio": [["aspiradora"], ["portatil", "inalambrica", "de mano", "recargable"]]},
+  {"id": "C10", "intl": "Organizador De Ropa Plegable Para Placard X3 Unidades Gris", "vendidos": 1000, "precio": 17588, "busqueda": "organizador de ropa plegable placard", "criterio": [["organizador", "caja"], ["ropa", "placard"]]},
+  {"id": "C11", "intl": "Estante Organizador De Baño Metálico Con Ventosa", "vendidos": 1000, "precio": 17398, "busqueda": "estante baño sin taladro", "criterio": [["estante", "repisa", "esquinero"], ["ventosa", "sin taladro", "adhesiv", "sin agujer"]]},
+  {"id": "C12", "intl": "Balanza De Cocina Digital 10 Kg 1 G Con Pantalla Lcd Plateado 10 Kg", "vendidos": 500, "precio": 19454, "busqueda": "balanza de cocina digital 10 kg", "criterio": [["balanza", "bascula"], ["10 kg", "10kg"]]},
+  {"id": "C13", "intl": "Bowl Con Rallador De Acero Inoxidable Para Cocina Silver", "vendidos": 500, "precio": 15411, "busqueda": "bowl con rallador", "criterio": [["rallador"], ["bowl", "recipiente", "contenedor"]]},
+  {"id": "C14", "intl": "Molde Bandeja De Silicona Para Congelador Con Tapa Para Alim Blue", "vendidos": 500, "precio": 15826, "busqueda": "bandeja silicona congelador con tapa", "criterio": [["silicona"], ["congel", "freezer"]]},
+  {"id": "C15", "intl": "Ventilador E27 Silencioso Para Hogar", "vendidos": 500, "precio": 27039, "busqueda": "ventilador e27", "criterio": [["ventilador"], ["e27", "rosca", "portalampara"]]}
+ ]
+}
