@@ -15,7 +15,9 @@
 // (título, precio, "+N vendidos", "Compra Internacional").
 
 (async () => {
-  const BUSQUEDAS = [
+  // Para capturar otras búsquedas, antes de pegar el script:
+  //   window.__capturaBusquedas = ["lonchera electrica", "vianda electrica"];
+  const BUSQUEDAS = window.__capturaBusquedas || [
     "owala freesip", "owala smoothsip", "hydrojug traveler", "balanza cocina etekcity",
     "abrelatas kitchenaid", "stanley quencher", "olla lenta crock pot",
     "tostadora bella fits anywhere", "tijeras cocina kitchenaid", "bolsas olla lenta reynolds",

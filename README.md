@@ -9,6 +9,16 @@ quiere esperar el envío de afuera), **preferencia** (hay alternativas que gusta
 Usamos **votos con los pies**: lo que la gente compra ("+N vendidos" en cada publicación),
 no lo que dice que compraría.
 
+## Para el equipo: qué hacer ahora (05/11/2026)
+
+1. `make setup && make todo`: tiene que dar 28 tests en verde y correr el diagnóstico y el piloto divergente.
+2. **Juzgar las 12 hipótesis a ciegas** (10 minutos): `data/evaluacion/COMO_JUZGAR.md`. Son los primeros
+   juicios humanos: con ellos medimos LLM contra baseline y después calibramos un LLM juez.
+3. Leer `BITACORA.md` de abajo hacia arriba: ahí está el relato del desarrollo que pide la exposición.
+4. Quien tenga `ANTHROPIC_API_KEY`: `make divergente-llm` corre la etapa divergente con el modelo sobre
+   las 11 búsquedas de test (Haiku 4.5, del orden de centavos de dólar). Las hipótesis pasan por el guardrail y,
+   si alguna cita está mal, el modelo tiene un reintento con los errores.
+
 ## Qué encontramos (23 productos, fotos del 29/10 y del 05/11/2026)
 
 | Conclusión | Productos | Qué significa |
@@ -37,8 +47,10 @@ hipótesis de necesidad que después se intentan refutar.
 - `data/divergente/`: partición fija dev/test, 6 hipótesis piloto y la convergencia de dos.
 - `make divergente` reproduce el piloto.
 
-Resultado: 6 hipótesis sobre 6 búsquedas de desarrollo; de las dos que intentamos refutar,
-una cae (lenguaje del título) y otra sigue abierta (voltaje 220 V). Detalle en `BITACORA.md`.
+Resultado: 6 hipótesis sobre 6 búsquedas de desarrollo. De las tres que intentamos refutar:
+lenguaje del título **cae**; voltaje 220 V **sigue abierta**; lonchera que calienta: **la necesidad
+se confirma pero ya está atendida** por vendedores locales (no es oportunidad de importación).
+`harness/divergente.py` es la versión con API (proponer → validar en código → reintentar una vez).
 
 ## Correrlo (sin red ni claves)
 
@@ -52,7 +64,7 @@ make todo         # tests + demo del harness + diagnóstico sobre la foto más r
 Por separado:
 
 ```bash
-make test         # 25 tests: guardrails, chequeos, emparejamiento, citas
+make test         # 28 tests: guardrails, chequeos, emparejamiento, citas, reintento
 make diagnostico  # cuatro chequeos sobre la foto más reciente de data/diagnostico/
 make demo         # políticas fija y heurística sobre datos sintéticos (prueban el mecanismo)
 make agente       # agente ReAct con LLM (requiere ANTHROPIC_API_KEY)

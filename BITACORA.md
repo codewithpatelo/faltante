@@ -184,3 +184,18 @@ El baseline de términos ya muestra parte de lo mismo (en tostadoras pierden "de
 Siguiente: (1) refutar H3 con una captura de "lonchera eléctrica"; (2) que el grupo juzgue
 las hipótesis (sostenida, no obvia, accionable) para tener los primeros juicios humanos;
 (3) correr la misma skill con la API y comparar contra el baseline en test.
+
+## 2026-11-05 — H3 refutada como oportunidad; divergente con API y planilla de juicios
+
+**Qué probamos:** capturamos "lonchera eléctrica", "vianda eléctrica" y "lunchera eléctrica
+calienta comida" (`data/divergente/h3_lonchera_electrica_2026-11-05.json`).
+**Qué pasó:** la necesidad existe (unas 4.500 ventas visibles; 34 de 53 locales venden),
+pero está repartida entre muchos vendedores locales a ~$48k (ninguna publicación pasa +500)
+y lo internacional cuesta 1,4 a 2,3 veces más y casi no vende. Necesidad confirmada,
+oportunidad de importación refutada: `ya_atendido`.
+**Qué decidimos:** sumamos `harness/divergente.py` (LLM propone, el guardrail valida, un
+reintento con los errores; costo y latencia en la traza) y una planilla ciega para que el
+grupo juzgue LLM contra baseline (`data/evaluacion/`). Limitación conocida: los textos del
+LLM y del baseline se distinguen por el estilo, así que la ceguera es parcial.
+Idea anotada para después (de una conversación previa sobre serendipia computacional):
+explorar a propósito la cola de búsquedas poco vendidas, no solo el top de Amazon.

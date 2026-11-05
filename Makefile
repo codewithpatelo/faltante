@@ -1,6 +1,6 @@
 PY ?= python3
 
-.PHONY: setup test demo agente diagnostico divergente foto reporte todo prueba-api vivo limpiar
+.PHONY: setup test demo agente diagnostico divergente juicios foto reporte todo prueba-api vivo limpiar
 
 setup:
 	$(PY) -m pip install -r requirements.txt
@@ -31,6 +31,14 @@ divergente:
 	$(PY) scripts/vista_votos.py $(CAPTURA_DIV) --dev > out/vista_dev.txt
 	$(PY) scripts/validar_hipotesis.py data/divergente/hipotesis_piloto.json
 	$(PY) scripts/convergencia_piloto.py > /dev/null && echo "convergencia -> data/divergente/convergencia_piloto.json"
+
+# Resultados de la evaluación humana (ver data/evaluacion/COMO_JUZGAR.md).
+juicios:
+	$(PY) scripts/calcular_juicios.py
+
+# Etapa divergente con LLM sobre test (requiere ANTHROPIC_API_KEY).
+divergente-llm:
+	$(PY) -m harness.divergente $(CAPTURA_DIV) --test
 
 # Convierte una captura hecha con scripts/captura_ml.js en una foto para el diagnóstico.
 #   make foto CAPTURA=~/Downloads/captura_ml_2026-11-05.json

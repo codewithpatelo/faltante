@@ -1,0 +1,11 @@
+{
+ "hipotesis": "H3: la lonchera se compra para calentar la vianda; candidata a importar",
+ "fecha": "2026-11-05",
+ "como": "scripts/captura_ml.js con window.__capturaBusquedas = 3 búsquedas; agregados calculados en el navegador",
+ "busquedas": {
+  "lonchera electrica": {"total": "8.795 resultados", "n": 68, "locales": 53, "locales_venden": 34, "intl": 15, "intl_venden": 1, "ventas_visibles": 4500, "max_una_publicacion": 500, "mediana_precio_que_vende": 48498, "mediana_precio_intl": 110213},
+  "vianda electrica": {"total": "171 resultados", "n": 68, "locales": 56, "locales_venden": 33, "intl": 12, "intl_venden": 3, "ventas_visibles": 3675, "max_una_publicacion": 500, "mediana_precio_que_vende": 47670, "mediana_precio_intl": 68747},
+  "lunchera electrica calienta comida": {"total": "130 resultados", "n": 68, "locales": 40, "locales_venden": 26, "intl": 28, "intl_venden": 3, "ventas_visibles": 3725, "max_una_publicacion": 500, "mediana_precio_que_vende": 45749, "mediana_precio_intl": 102801}
+ },
+ "veredicto": "Necesidad confirmada, oportunidad de importación refutada: la demanda existe (miles de ventas visibles) pero está repartida entre muchos vendedores locales (ninguna publicación pasa +500) a ~$48k; lo internacional cuesta 1,4 a 2,3 veces más y casi no vende. Conclusión: ya_atendido."
+}
