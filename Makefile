@@ -8,17 +8,17 @@ setup:
 test:
 	$(PY) -m pytest -q tests
 
-# El embudo en dev y test sobre los datos guardados: LLM contra los baselines B1 y B2.
-# Escribe data/serendipia/embudo_<particion>.json; el resumen está en OPORTUNIDADES.md.
+# Pasa por el embudo las propuestas del LLM y de los baselines, en dev y en test.
+# Escribe data/serendipia/embudo_<particion>.json; el resumen para leer está en OPORTUNIDADES.md.
 serendipia:
-	$(PY) scripts/serendipia_run.py dev
-	$(PY) scripts/serendipia_run.py test
+	$(PY) -m harness.correr dev
+	$(PY) -m harness.correr test
 
-# El paso del LLM hecho por la API sobre test (requiere ANTHROPIC_API_KEY). Las búsquedas
-# nuevas que proponga el modelo hay que capturarlas con scripts/captura_ml.js para C4.
+# Igual, pero las propuestas del LLM las hace la API sobre test (requiere ANTHROPIC_API_KEY).
+# Si el modelo propone búsquedas nuevas, hay que capturarlas con scripts/captura_ml.js para C4.
 serendipia-api:
-	$(PY) -m harness.serendipia test
-	$(PY) scripts/serendipia_run.py test_api
+	$(PY) -m harness.divergente test
+	$(PY) -m harness.correr test_api
 
 # Todo lo que corre sin red ni claves.
 todo: test serendipia

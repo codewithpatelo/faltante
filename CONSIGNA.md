@@ -32,10 +32,10 @@ recolección; B2 se escribió después de leer dev.
 | Requisito | Dónde se ve | Estado |
 |---|---|---|
 | Utilidad real | Este archivo; `OPORTUNIDADES.md` (cada oportunidad con el experimento siguiente) | 🟡 falta mostrárselo a 1 o 2 importadores |
-| LLM en el núcleo | `harness/serendipia.py` (`leer_voces_llm`), `skills/leer_voces/` | 🟡 corrido en el chat; la corrida con la API es el workflow `llm` |
-| Hipótesis vs baseline, partición fija dev/test | Arriba; `scripts/serendipia_run.py`; `data/serendipia/embudo_*.json` | ✅ corrida en test; 🟡 falta el juicio humano de las propuestas |
+| LLM en el núcleo | `harness/divergente.py`, `skills/leer_voces/` | 🟡 corrido en el chat; la corrida con la API es el workflow `llm` |
+| Hipótesis vs baseline, partición fija dev/test | Arriba; `harness/baselines.py`, `harness/correr.py`; `data/serendipia/embudo_*.json` | ✅ corrida en test; 🟡 falta el juicio humano de las propuestas |
 | Datos verificados | Sección "Datos" | ✅ |
-| Economía (costo, latencia, modelo) | Sección "Costos"; `harness/serendipia.py::costo`; economía del usuario: C5 y `harness/costo_puesto.py` | 🟡 costo del sistema estimado; el real sale del workflow |
+| Economía (costo, latencia, modelo) | Sección "Costos"; `harness/divergente.py::costo`; economía del usuario: C5 y `harness/costo_puesto.py` | 🟡 costo del sistema estimado; el real sale del workflow |
 | Git con trabajo distribuido | `git log` | ❌ hoy todos los commits son de Patricio: ver "Reparto" |
 | Antecedentes (mercado y literatura) | Sección "Antecedentes" | 🟡 versión breve |
 | ≥ 2 áreas en profundidad | Sección "Áreas" | 🟡 dos fuertes |
@@ -74,7 +74,7 @@ Alternativa local: `ANTHROPIC_API_KEY=... make serendipia-api`.
 
 1. **Orquestación y guardrails:** divergente (LLM) → guardrail en código que verifica cada
    cita → reintento con los errores → convergente con cinco chequeos en código, cada muerte
-   con su motivo (`harness/serendipia.py`, `scripts/serendipia_run.py`).
+   con su motivo (`harness/embudo.py`: la lista de chequeos; `harness/chequeos.py`: qué hace cada uno).
 2. **Evaluación:** partición fija por producto, dos baselines sin LLM por el mismo embudo,
    una sola corrida en test, umbrales a la vista; pendiente el juicio humano a ciegas de las
    propuestas (¿no obvia? ¿accionable?).

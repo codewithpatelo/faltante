@@ -104,7 +104,7 @@ Sin compartir claves: cargar `ANTHROPIC_API_KEY` como secreto del repo y correr 
 | Preguntas de indecisos con su respuesta | 334 | Página de preguntas de cada publicación |
 | Búsquedas para C4 | 30 | `data/capturas/captura_ml_serendipia_*.json` (`scripts/captura_ml.js`) |
 | Precios de origen | 9 productos | Catálogo de Alibaba, con el ID de cada publicación: `data/serendipia/fob_2026-11-05.json` |
-| Aranceles, flete, comisiones y envío | — | Con fuente en `harness/costo_puesto.py` y `harness/serendipia.py` |
+| Aranceles, flete, comisiones y envío | — | Con fuente en `harness/costo_puesto.py` y `harness/umbrales.py` |
 
 Opiniones y preguntas juntas: `data/voces/corpus_2026-11-05.json`. Se leen desde un
 navegador con sesión iniciada porque la API de búsqueda de Mercado Libre está cerrada aun
@@ -112,19 +112,25 @@ con token válido.
 
 ## Mapa
 
-| Archivo | Qué hay |
+Un archivo por etapa, en el orden en que corren:
+
+| Archivo | Qué hace |
 |---|---|
-| `OPORTUNIDADES.md` | El resultado: qué sobrevivió, qué murió y por qué, LLM contra baselines |
-| `harness/serendipia.py` | Filtro, guardrail, C1 a C5 y el paso del LLM con la API |
+| `harness/voces.py` | Carga los productos y sus textos, les pone ID (`o12`, `p3`) y elige los que lee el LLM |
+| `harness/divergente.py` | El paso del LLM: arma el prompt con `skills/leer_voces/SKILL.md`, propone y reintenta si el guardrail rechaza citas |
+| `harness/baselines.py` | B1 y B2: proponer sin LLM, para comparar |
+| `harness/embudo.py` | **La lista de chequeos**, en orden, cada uno con su pregunta; y cómo se recorre |
+| `harness/chequeos.py` | Qué hace cada chequeo (guardrail, C1 a C5) |
+| `harness/umbrales.py` | Todos los umbrales, con qué mide cada uno |
 | `harness/costo_puesto.py` | Costo puesto en Argentina e ingreso neto vendiendo en Mercado Libre |
-| `scripts/serendipia_run.py` | Corre el embudo para el LLM y los baselines |
+| `harness/correr.py` | Junta las propuestas, las pasa por el embudo y escribe el resultado |
 | `scripts/captura_ml.js` | Captura de búsquedas desde el navegador (para C4) |
-| `skills/leer_voces/SKILL.md` | Lo que sigue el LLM para leer y proponer |
-| `data/serendipia/` | Lo que propuso el LLM y el recorrido de cada propuesta por el embudo |
-| `tests/test_serendipia.py` | Guardrail, conteos, equivalencia, costos, reintento del LLM, embudo |
-| `CONSIGNA.md` | Cada requisito del TP, dónde se cumple y qué falta |
-| `DECISIONES.md` | Qué elegimos y por qué |
-| `BITACORA.md` | Cómo llegamos acá, incluidos los enfoques que descartamos (su código está en el historial de git; sus datos, en el resto de `data/`) |
+| `scripts/unir_voces.py` | Une productos, opiniones y preguntas en `data/voces/corpus_<fecha>.json` |
+| `tests/test_embudo.py` | Lo que tiene que cumplir cada etapa |
+| `data/serendipia/` | Propuestas del LLM, precios de proveedor y el recorrido de cada propuesta |
+| `OPORTUNIDADES.md` | El resultado, para leer |
+| `CONSIGNA.md` · `DECISIONES.md` | Requisitos del TP y dónde se cumplen · qué elegimos y por qué |
+| `BITACORA.md` | Cómo llegamos acá, incluidos los enfoques descartados (su código está en el historial de git; sus datos, en el resto de `data/`) |
 
 ## Glosario
 
