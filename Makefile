@@ -14,7 +14,7 @@ serendipia:
 	$(PY) -m harness.correr dev
 	$(PY) -m harness.correr test
 
-# Igual, pero las propuestas del LLM las hace la API sobre test (requiere ANTHROPIC_API_KEY).
+# Igual, pero las propuestas del LLM las hace la API sobre test (requiere DEEPSEEK_API_KEY).
 # Si el modelo propone búsquedas nuevas, hay que capturarlas con scripts/captura_ml.js para C4.
 serendipia-api:
 	$(PY) -m harness.divergente test

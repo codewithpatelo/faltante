@@ -47,12 +47,12 @@ recolección; B2 se escribió después de leer dev.
 ## Cómo correr el LLM sin compartir claves
 
 1. En GitHub: Settings → Secrets and variables → Actions → *New repository secret*:
-   `ANTHROPIC_API_KEY`.
+   `DEEPSEEK_API_KEY` (ya está cargada).
 2. Pestaña Actions → workflow **llm** → *Run workflow*.
-3. Corre los tests y `make serendipia-api` (paso del LLM sobre test con Haiku, guardrail con
+3. Corre los tests y `make serendipia-api` (paso del LLM sobre test con DeepSeek Flash, guardrail con
    reintento, embudo) y deja propuestas, costo, latencia y traza en la rama `resultados-llm`.
 
-Alternativa local: `ANTHROPIC_API_KEY=... make serendipia-api`.
+Alternativa local: `DEEPSEEK_API_KEY=... make serendipia-api`.
 
 ## Datos
 
@@ -63,14 +63,15 @@ Alternativa local: `ANTHROPIC_API_KEY=... make serendipia-api`.
 | Precios de origen (catálogo Alibaba) | 9 productos, con ID de publicación | 05/11/2026 | públicos; referencia, no cotización |
 | API de Mercado Libre | no usable: búsqueda 403 con y sin token | — | — |
 
-## Costos (Haiku 4.5: USD 1 / 5 por millón de tokens de entrada / salida)
+## Costos (DeepSeek Flash: USD 0,30 / 1,20 por millón de tokens de entrada / salida en hora pico; la mitad fuera de pico)
 
 - Por producto: ~4.000 tokens de entrada (skill + ~45 textos filtrados) y ~1.200 de salida
-  ≈ **USD 0,01**; los 10 de test ≈ USD 0,10 (el doble si todos reintentan).
-- Con Sonnet (USD 3 / 15) ≈ USD 0,03 por producto. Se elige Haiku porque la tarea es leer
-  ~45 textos cortos y citar; si el juicio humano muestra que no alcanza, se compara.
-- Recolección: gratis, ~1 minuto por producto en el navegador. C4: ~20 s por búsqueda.
-- El costo y la latencia reales quedan en `divergente_test_api.json` al correr el workflow.
+  ≈ **USD 0,003**; 1.000 productos ≈ USD 3 (el doble si todos reintentan).
+- Se elige DeepSeek Flash por costo: la escala que hace falta (cientos o miles de productos)
+  cuesta centavos. Si el juicio humano muestra que no alcanza, se compara con DeepSeek V4 Pro
+  (USD 1,32 / 3,96).
+- Recolección: gratis, ~1 minuto por producto en el navegador. C4 y C5: ~20 s por búsqueda.
+- El costo y la latencia reales quedan en `divergente_<particion>_api.json` al correr el workflow.
 
 ## Áreas en profundidad
 

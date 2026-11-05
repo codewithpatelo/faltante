@@ -1,4 +1,4 @@
-# Corre el paso del LLM con la API sobre test usando el secreto ANTHROPIC_API_KEY del repo,
+# Corre el paso del LLM con la API sobre test usando el secreto DEEPSEEK_API_KEY del repo (Actions),
 # y guarda los resultados en la rama `resultados-llm`. Se dispara a mano desde Actions.
 name: llm
 on:
@@ -17,7 +17,7 @@ jobs:
       - run: make test
       - name: Paso del LLM con la API sobre test y embudo
         env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
         run: make serendipia-api
       - name: Guardar resultados en la rama resultados-llm
         run: |

@@ -52,6 +52,7 @@ la sesión del usuario es lo único que funciona; se guarda solo el texto visibl
 El embudo es una lista de siete supuestos críticos con nombre (`harness/embudo.py`). La defensa es
 individual y cada uno tiene que poder explicarlo por dentro; un framework deja una caja negra.
 
-**Haiku 4.5.**
-Leer ~45 textos cortos y citar es una tarea chica y estructurada. Se compara con un modelo
-más grande solo si el juicio humano muestra que no alcanza.
+**DeepSeek Flash.**
+Leer ~45 textos cortos y citar es una tarea chica y estructurada, y lo que falta es escala: a
+~USD 0,003 por producto, 1.000 productos cuestan ~USD 3. Se compara con un modelo más grande
+(DeepSeek V4 Pro) solo si el juicio humano muestra que no alcanza.

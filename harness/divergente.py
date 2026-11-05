@@ -4,21 +4,25 @@ Patrón evaluador-optimizador: el LLM propone, el guardrail (código) revisa las
 hay errores se los devuelve una vez para que corrija. Lo que sigue mal no se descarta acá:
 llega al embudo y se descarta en el guardrail, con el motivo a la vista.
 
-    ANTHROPIC_API_KEY=... python -m harness.divergente test   -> data/serendipia/divergente_test_api.json
+    DEEPSEEK_API_KEY=... python -m harness.divergente test   -> data/serendipia/divergente_test_api.json
 """
 
 from __future__ import annotations
 
 import json
+import os
 import re
 import sys
 import time
+import urllib.request
+from types import SimpleNamespace
 
 from harness.chequeos import errores_de_citas
 from harness.voces import RAIZ, los_mas_informativos, productos, textos_con_id
 
-MODELO = "claude-haiku-4-5"
-USD_POR_MILLON_DE_TOKENS = {"entrada": 1.0, "salida": 5.0}   # Haiku 4.5
+MODELO = "deepseek-flash"                                     # DeepSeek-V4.1-Flash
+USD_POR_MILLON_DE_TOKENS = {"entrada": 0.30, "salida": 1.20}  # precio en hora pico (fuera de pico, la mitad); api-docs.deepseek.com
+URL_API = "https://api.deepseek.com/chat/completions"
 OPINIONES_QUE_LEE = 22            # además de todas las preguntas
 REINTENTOS = 1
 SKILL = RAIZ / "skills/leer_voces/SKILL.md"
@@ -55,6 +59,25 @@ def proponer(cliente, producto: dict, traza: list) -> dict:
     return salida
 
 
+class DeepSeek:
+    """Cliente mínimo de la API de DeepSeek (formato OpenAI). Devuelve la respuesta con la
+    misma forma que usa `proponer` (texto y tokens), así el resto del programa no cambia."""
+
+    def __init__(self, clave: str):
+        self.clave = clave
+        self.messages = self
+
+    def create(self, model: str, max_tokens: int, messages: list[dict]):
+        cuerpo = json.dumps({"model": model, "max_tokens": max_tokens, "messages": messages}).encode()
+        pedido = urllib.request.Request(URL_API, data=cuerpo, headers={
+            "Content-Type": "application/json", "Authorization": f"Bearer {self.clave}"})
+        with urllib.request.urlopen(pedido, timeout=180) as r:
+            d = json.loads(r.read())
+        return SimpleNamespace(content=[SimpleNamespace(text=d["choices"][0]["message"]["content"])],
+                               usage=SimpleNamespace(input_tokens=d["usage"]["prompt_tokens"],
+                                                     output_tokens=d["usage"]["completion_tokens"]))
+
+
 def costo(traza: list) -> dict:
     entrada = sum(t["tokens"]["entrada"] for t in traza)
     salida = sum(t["tokens"]["salida"] for t in traza)
@@ -73,9 +96,8 @@ def _json(texto: str) -> dict:
 
 
 if __name__ == "__main__":
-    import anthropic
     particion = sys.argv[1] if len(sys.argv) > 1 else "test"
-    cliente, traza = anthropic.Anthropic(), []
+    cliente, traza = DeepSeek(os.environ["DEEPSEEK_API_KEY"]), []
     por_producto = {pid: proponer(cliente, p, traza) for pid, p in productos(particion).items()}
     destino = RAIZ / f"data/serendipia/divergente_{particion}_api.json"
     destino.write_text(json.dumps({"quien": MODELO, "costo": costo(traza), "traza": traza, "por_producto": por_producto},

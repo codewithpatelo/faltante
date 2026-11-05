@@ -145,8 +145,9 @@ def test_si_el_llm_insiste_con_una_cita_falsa_la_propuesta_se_descarta_en_el_gua
 
 
 def test_costo_del_llm_por_tokens():
+    from harness.divergente import USD_POR_MILLON_DE_TOKENS as P
     r = costo([{"tokens": {"entrada": 1_000_000, "salida": 200_000}, "segundos": 2.0}])
-    assert r["usd"] == 2.0 and r["segundos"] == 2.0
+    assert r["usd"] == round(P["entrada"] + 0.2 * P["salida"], 4) and r["segundos"] == 2.0
 
 
 # --- De punta a punta --------------------------------------------------------------------

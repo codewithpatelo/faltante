@@ -106,13 +106,14 @@ make todo      # tests + el embudo en dev y test sobre los datos guardados (sin 
 | Comando | Qué hace |
 |---|---|
 | `make serendipia` | Prueba las propuestas del LLM y de los dos baselines, en dev y en test |
-| `make serendipia-api` | Lo mismo con el paso del LLM hecho por la API (necesita `ANTHROPIC_API_KEY`) |
+| `make serendipia-api` | Lo mismo con el paso del LLM hecho por la API (necesita `DEEPSEEK_API_KEY`) |
 
-**Costo:** ~USD 0,01 por producto con Claude Haiku 4.5 (estimado; `CONSIGNA.md`). La
-recolección en el navegador lleva ~1 minuto por producto.
+**Costo:** ~USD 0,003 por producto con DeepSeek Flash (estimado; `CONSIGNA.md`): 1.000
+productos, ~USD 3. La recolección en el navegador lleva ~1 minuto por producto.
 
-Sin compartir claves: cargar `ANTHROPIC_API_KEY` como secreto del repo y correr el workflow
-**llm** desde la pestaña Actions; los resultados quedan en la rama `resultados-llm`.
+Sin compartir claves: `DEEPSEEK_API_KEY` está cargada como secreto del repo (Actions). Se
+corre el workflow **llm** desde la pestaña Actions y los resultados quedan en la rama
+`resultados-llm`.
 
 ## Datos
 
