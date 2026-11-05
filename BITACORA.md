@@ -312,4 +312,8 @@ cross-border, sus skills, scripts y tests): está en el historial de git hasta e
 las entradas anteriores. Los tests de piezas que siguen vivas (costo puesto, costo del LLM,
 cita falsa persistente) se pasaron a `tests/test_embudo.py`. La reorganización no cambió
 ningún resultado: las 44 propuestas de dev y test terminan igual. AGENTS suma la regla de
-no duplicar programas ni parchear documentos.
+no duplicar programas ni parchear documentos. Se precisó el lenguaje: el voto con los pies
+no es "lo que se compra" sino qué se elige frente a las alternativas y qué se deja pasar.
+Eso dejó a la vista una brecha, ahora en las limitaciones del README: el LLM ve el producto
+elegido y sus voces, pero no las alternativas descartadas de la búsqueda (entran en C4). El
+skill decía que las veía; se corrigió esa línea, sin cambiar el procedimiento.

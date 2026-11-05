@@ -1,17 +1,31 @@
 # Faltante
 
-Serendipia computacional para importar: encuentra **qué conviene traer** para vender en
-Mercado Libre leyendo lo que la gente compra y lo que dice, y solo recomienda lo que
-sobrevive a un intento serio de refutarlo.
+**Qué hace:** encuentra productos que conviene importar para vender en Mercado Libre y que
+nadie está trayendo. No parte de una lista de productos: parte de las **elecciones** de la
+gente, que se ven de dos maneras.
+
+- **Voto con los pies, lo que la gente hace:** frente a las opciones de una búsqueda, qué
+  elige y qué deja pasar. Que algo se venda, solo, no dice nada; dice algo que se venda *en
+  lugar de* otra cosa.
+- **Voto con las manos, lo que la gente dice:** por qué eligió y qué le faltó. Opiniones de
+  quienes compraron y preguntas de quienes todavía dudan.
+
+Un LLM cruza las dos cosas y propone qué traer (por ejemplo, algo que los compradores piden y
+nadie ofrece). Después el programa intenta tirar abajo cada propuesta con datos: ¿es una queja
+aislada?, ¿ya lo vende alguien?, ¿deja plata? Solo recomienda lo que sobrevive.
+
+A eso le decimos *serendipia computacional*: dar con oportunidades que nadie estaba buscando,
+porque solo aparecen al juntar información dispersa.
 
 TP de IA Agéntica, Maestría en Explotación de Datos (UBA), 2026.
 
 ## Un ejemplo
 
-Dos tablas de picar de acero venden **más de 1.000 unidades cada una**. En sus opiniones, 21
-textos repiten lo mismo: las eligen por higiene, pero **rayan y desafilan los cuchillos**.
-El LLM propone traer una tabla **doble faz** (acero de un lado, polipropileno del otro).
-El programa la intenta tirar abajo:
+En la búsqueda "tabla de cortar acero inoxidable", las dos tablas más elegidas venden **más de
+1.000 unidades cada una**. Sus compradores dicen por qué las eligieron y qué les falta: 21
+textos repiten que las prefieren a la madera y al plástico por higiene, pero que **rayan y
+desafilan los cuchillos**. El LLM propone traer una tabla **doble faz** (acero de un lado,
+polipropileno del otro). El programa la intenta tirar abajo:
 
 - ¿La queja es real o anecdótica? Aparece en 21 textos, la mayoría como queja. **Pasa.**
 - ¿Alguien ya la vende? Hay 18 publicaciones parecidas y solo una vendió más de 100. **Pasa.**
@@ -23,22 +37,23 @@ falta leer que la gente quiere dos cosas a la vez.
 ## Cómo funciona
 
 ```
-voto con los pies  ─┐
-(ventas, precios)   ├─► LLM propone ──► el programa intenta matar ──► OPORTUNIDADES.md
-voto con las manos ─┘   (divergente)     (convergente: guardrail + C1..C5)
+voto con los pies ─────┐
+(qué se elige y qué    │
+ se deja pasar)        ├─► LLM propone ──► el programa intenta matar ──► OPORTUNIDADES.md
+voto con las manos ────┘   (divergente)     (convergente: guardrail + C1..C5)
 (opiniones, preguntas)
 ```
 
 | Etapa | Qué hace | Quién |
 |---|---|---|
-| Datos | Productos que venden mucho, con sus opiniones y las preguntas de los indecisos | Captura desde el navegador |
+| Datos | Los 1 o 2 productos más elegidos de cada búsqueda, con sus opiniones y las preguntas de los indecisos | Captura desde el navegador |
 | Filtro | Todas las preguntas + las opiniones más informativas (como Timoshenko y Hauser, 2019) | Código |
 | Divergente | Lee y propone señales (quejas, faltantes, deseos, usos raros) y qué traer, citando textos | **LLM** (`skills/leer_voces`) |
 | Guardrail | Cada cita existe, es literal y viene de al menos 2 textos distintos; si no, se le devuelven los errores al LLM una vez | Código |
 | C1 verificada | Las palabras de la señal aparecen en 3 o más textos (cuenta en *todos*, no solo los que leyó el LLM) | Código |
 | C2 sub-atendida | Puntaje de oportunidad de Ulwick: importa y está mal resuelto | Código |
 | C3 demanda | El producto donde aparece vende +500 | Código |
-| C4 hueco | En la búsqueda de lo propuesto, 2 o menos equivalentes venden +100 | Código + captura |
+| C4 hueco | En la búsqueda de lo propuesto, 2 o menos equivalentes venden +100: o no se ofrece, o lo que se ofrece la gente lo deja pasar | Código + captura |
 | C5 margen | 30% o más sobre costo puesto, al precio de lo que se vendió; si no llega, cuánto tendría que costar en origen | Código |
 
 **Por qué un LLM:** lo valioso está en texto desordenado ("¿venden los discos de repuesto?",
@@ -134,7 +149,8 @@ Un archivo por etapa, en el orden en que corren:
 
 ## Glosario
 
-- **Voto con los pies / con las manos:** lo que la gente compra / lo que dice (opiniones y preguntas).
+- **Voto con los pies:** lo que la gente hace: entre las opciones que tiene, qué elige y qué deja pasar.
+- **Voto con las manos:** lo que la gente dice: por qué eligió y qué le faltó (opiniones y preguntas).
 - **Divergente / convergente:** primero abrir hipótesis (LLM), después intentar refutarlas (programa).
 - **Abducción:** proponer lo que haría que lo observado tenga sentido.
 - **Puntaje de oportunidad (Ulwick):** importancia + (importancia − satisfacción); alto = importa y está mal resuelto.
@@ -145,6 +161,8 @@ Un archivo por etapa, en el orden en que corren:
 
 ## Limitaciones
 
+- El LLM ve el producto elegido y lo que dicen sus compradores e indecisos, pero no las
+  alternativas que la gente dejó pasar en esa búsqueda: esas entran recién en C4.
 - El paso del LLM en dev y test lo hizo Claude en el chat siguiendo el skill, porque no
   había clave de API en el entorno; `make serendipia-api` lo repite con el modelo.
 - Algunas preguntas de test se vieron durante la recolección. Después de correr test no se

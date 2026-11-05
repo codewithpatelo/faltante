@@ -1,17 +1,18 @@
 ---
 name: leer_voces
-description: Etapa divergente. Cruza el voto con los pies (qué se compra y qué no) con el voto con las manos (opiniones de compradores y preguntas de indecisos) de un producto que vende, y propone oportunidades de importación citando textos reales.
+description: Etapa divergente. Cruza el voto con los pies (qué se elige entre las opciones de una búsqueda y qué se deja pasar) con el voto con las manos (opiniones de compradores y preguntas de indecisos) de un producto que vende, y propone oportunidades de importación citando textos reales.
 toca_datos: true
 ---
 
 # leer_voces
 
-**Pregunta:** ¿qué necesidad no resuelta aparece cuando se cruza lo que la gente compra con
+**Pregunta:** ¿qué necesidad no resuelta aparece cuando se cruza lo que la gente elige con
 lo que dice antes y después de comprar?
 
 ## Entrada
 
-- **Pies:** el producto ancla (título, precio, "+N vendidos") y su búsqueda: qué vende y qué no.
+- **Pies:** el producto ancla, uno de los 1 o 2 más elegidos de su búsqueda (título, precio,
+  "+N vendidos").
 - **Manos, compradores:** opiniones, numeradas `[o12]`.
 - **Manos, indecisos:** preguntas al vendedor con su respuesta, numeradas `[p3]`. Son las más
   valiosas: muestran por qué alguien duda o no compra.

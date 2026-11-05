@@ -6,9 +6,10 @@ Cada requisito de la consigna oficial, dónde se verifica en el repo y qué falt
 ## El caso
 
 **Usuario:** importadores y vendedores chicos de Mercado Libre que deciden qué traer.
-**Tarea:** cruzar lo que la gente compra (voto con los pies) con lo que dice (opiniones de
-compradores y preguntas de indecisos), proponer qué traer, y tratar de refutarlo con datos
-antes de recomendarlo.
+**Tarea:** cruzar lo que la gente hace (voto con los pies: entre las opciones de una búsqueda,
+qué elige y qué deja pasar) con lo que dice (voto con las manos: opiniones de compradores y
+preguntas de indecisos), proponer qué traer, y tratar de refutarlo con datos antes de
+recomendarlo.
 
 **Hipótesis:** con el mismo embudo convergente en código (guardrail de citas, C1
 verificada, C2 Ulwick, C3 demanda, C4 hueco local, C5 margen), el LLM produce **más
@@ -95,7 +96,7 @@ encontró todas las necesidades que hallaron los analistas. Ulwick (*Outcome-Dri
 Innovation*): puntaje de oportunidad = importancia + máx(importancia − satisfacción, 0).
 Zhou et al. (2024, *Hypothesis Generation with Large Language Models*, arXiv 2404.04326): un
 LLM genera hipótesis desde datos y las refina contra evidencia. Base conceptual: preferencia
-revelada (lo que se compra, no lo que se declara).
+revelada (lo que se elige frente a las alternativas, no lo que se declara).
 
 ## Reparto propuesto (para que el git refleje a todos)
 
