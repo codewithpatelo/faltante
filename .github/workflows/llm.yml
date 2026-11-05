@@ -3,6 +3,10 @@
 name: llm
 on:
   workflow_dispatch:
+    inputs:
+      particion:
+        description: "Qué productos leer: test (los 10 primeros) o escala"
+        default: "test"
 permissions:
   contents: write
 jobs:
@@ -18,10 +22,10 @@ jobs:
       - name: Paso del LLM con la API sobre test y embudo
         env:
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
-        run: make serendipia-api
+        run: make serendipia-api PARTICION=${{ inputs.particion }}
       - name: Guardar resultados en la rama resultados-llm
         run: |
-          mkdir -p resultados && cp data/serendipia/divergente_test_api.json data/serendipia/embudo_test_api.json resultados/
+          mkdir -p resultados && cp data/serendipia/divergente_${{ inputs.particion }}_api.json data/serendipia/embudo_${{ inputs.particion }}_api.json resultados/
           git config user.name "github-actions" && git config user.email "actions@github.com"
           git checkout -B resultados-llm
           git add -f resultados && git commit -m "Resultados LLM ${GITHUB_SHA::7}" && git push -f origin resultados-llm

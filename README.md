@@ -76,7 +76,8 @@ voto con las manos ────┘   (divergente)     críticos y mata el humo (
 |---|---|---|---|
 | Datos | — | Los 1 o 2 productos más elegidos de cada búsqueda, con opiniones y preguntas de indecisos | Captura desde el navegador |
 | Filtro | — | Todas las preguntas + las opiniones más informativas (como Timoshenko y Hauser, 2019) | Código |
-| Divergente | — | Propone señales (quejas, faltantes, deseos, usos raros) y qué traer, citando textos | **LLM** (`skills/leer_voces`) |
+| Divergente A | — | Por producto: lee qué se eligió y qué se dejó pasar en su búsqueda, y las voces; devuelve señales (quejas, faltantes, deseos, usos raros) citando textos | **LLM** (`skills/leer_voces`) |
+| Divergente B | — | Entre todos los productos: propone qué traer conectando señales de al menos 2 productos distintos (lo no obvio sale de cruzar) | **LLM** (`skills/cruzar_senales`) |
 | Guardrail | Lo que dice el LLM está en los textos | Cita un texto que no existe, un fragmento que no está, o un solo texto (se le devuelve el error una vez) | Código |
 | C1 verificada | La necesidad no es un caso aislado | Aparece en menos de 3 textos, contando todos y no solo los que leyó el LLM | Código |
 | C2 sub-atendida | Importa y está mal resuelta | Puntaje de oportunidad de Ulwick: pocos la mencionan o la mayoría está conforme | Código |
@@ -137,7 +138,7 @@ Un archivo por etapa, en el orden en que corren:
 | Archivo | Qué hace |
 |---|---|
 | `harness/voces.py` | Carga los productos y sus textos, les pone ID (`o12`, `p3`) y elige los que lee el LLM |
-| `harness/divergente.py` | El paso del LLM: arma el prompt con `skills/leer_voces/SKILL.md`, propone y reintenta si el guardrail rechaza citas |
+| `harness/divergente.py` | Los dos pasos del LLM (DeepSeek): A, señales por producto (`skills/leer_voces`); B, oportunidades que cruzan productos (`skills/cruzar_senales`); reintenta si el guardrail rechaza algo |
 | `harness/baselines.py` | B1 y B2: proponer sin LLM, para comparar |
 | `harness/embudo.py` | **La lista de supuestos críticos**, en orden, cada uno con el dato que lo refuta; y cómo se recorre |
 | `harness/chequeos.py` | Cómo se prueba cada supuesto (guardrail, C1 a C6) |
@@ -146,7 +147,9 @@ Un archivo por etapa, en el orden en que corren:
 | `harness/costo_puesto.py` | Costo puesto en Argentina e ingreso neto vendiendo en Mercado Libre |
 | `harness/correr.py` | Junta las propuestas, las pasa por el embudo y escribe el resultado |
 | `scripts/captura_ml.js` | Captura de búsquedas desde el navegador (para C4) |
-| `scripts/unir_voces.py` | Une productos, opiniones y preguntas en `data/voces/corpus_<fecha>.json` |
+| `scripts/voces_ml.js` | Junta opiniones y preguntas desde el navegador, en dos pasadas |
+| `scripts/elegir_anclas.py` · `scripts/unir_escala.py` | Eligen los productos ancla de cada búsqueda y arman `data/escala/corpus_<fecha>.json` |
+| `scripts/unir_voces.py` | Armó el primer corpus (`data/voces/corpus_2026-11-05.json`, 21 productos) |
 | `tests/test_embudo.py` | Lo que tiene que cumplir cada etapa |
 | `data/serendipia/` | Propuestas del LLM, precios de proveedor y el recorrido de cada propuesta |
 | `OPORTUNIDADES.md` | El resultado, para leer: qué pasó las pruebas, qué se descartó y por qué |

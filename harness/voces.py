@@ -12,7 +12,9 @@ import unicodedata
 from pathlib import Path
 
 RAIZ = Path(__file__).resolve().parent.parent
-CORPUS = RAIZ / "data/voces/corpus_2026-11-05.json"
+# Cada corpus es una tanda de productos con sus voces: data/voces/ (los 21 primeros, P01..P21)
+# y data/escala/ (los de la recolección a escala, E001...).
+CORPUS = sorted(RAIZ.glob("data/voces/corpus_*.json")) + sorted(RAIZ.glob("data/escala/corpus_*.json"))
 
 # Un texto expresa insatisfacción si tiene alguna de estas marcas: queja, deseo, duda o
 # faltante. Es una decisión discutible y por eso está a la vista; el LLM no la toca.
@@ -40,7 +42,7 @@ def sin_acentos(texto: str) -> str:
 
 def productos(particion: str | None = None) -> dict[str, dict]:
     """Los productos ancla del corpus ({"P01": {...}}), opcionalmente de una sola partición."""
-    todos = json.loads(CORPUS.read_text(encoding="utf-8"))["productos"]
+    todos = [p for f in CORPUS for p in json.loads(f.read_text(encoding="utf-8"))["productos"]]
     return {p["id"]: p for p in todos if particion is None or p["particion"] == particion}
 
 

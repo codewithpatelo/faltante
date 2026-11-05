@@ -39,6 +39,9 @@
         li.querySelector(".andes-money-amount__fraction");
       return {
         titulo: (li.querySelector(".poly-component__title")?.textContent || "").trim(),
+        // dirección de la publicación, sin parámetros; las publicidades pasan por un contador de clics y no se guardan
+        url: (() => { const h = (li.querySelector("a.poly-component__title") || li.querySelector("a"))?.href || "";
+                      return /mclics|click1\./.test(h) ? null : h.split("#")[0].split("?")[0]; })(),
         internacional: /internacional/i.test(txt) ? 1 : 0,
         vendidos: m ? parseInt(m[1], 10) * (m[2] ? 1000 : 1) : 0,
         precio: precioEl ? parseInt(precioEl.textContent.replace(/\./g, ""), 10) : null,

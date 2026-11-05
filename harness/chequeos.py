@@ -86,7 +86,7 @@ def c2_subatendida(p) -> Resultado:
 
 
 def c3_demanda(p) -> Resultado:
-    v = p.producto["vendidos"]
+    v = p.vendidos_del_ancla
     return Resultado(v >= U.MIN_VENDIDOS_DEL_ANCLA, f"el producto ancla vende +{v} (mínimo {U.MIN_VENDIDOS_DEL_ANCLA})")
 
 
@@ -119,7 +119,7 @@ def c5_la_eligen(p) -> Resultado:
     techo = precios[len(precios) // 2] * U.PRECIO_COMPARABLE_HASTA
     comparables = [x for x in locales if x["precio"] <= techo]
     ventas = sum(x["vendidos"] for x in comparables)
-    del_ancla = p.producto["vendidos"]
+    del_ancla = p.vendidos_del_ancla
     datos = {"comparables": len(comparables), "ventas_comparables": ventas, "ventas_del_ancla": del_ancla}
     if len(comparables) >= U.MIN_ALTERNATIVAS_OFRECIDAS and ventas < U.MIN_VENTAS_VS_ANCLA * del_ancla:
         return Resultado(False, f"la gente la deja pasar: {len(comparables)} alternativas con stock local a precio "

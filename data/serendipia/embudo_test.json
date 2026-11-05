@@ -1,8 +1,14 @@
 [
  {
   "metodo": "llm",
-  "producto": "P12",
-  "ancla": "Tabla De Picar Acero Inoxidable 40x30 Cortar Servir Cocinar",
+  "productos": [
+   "P12",
+   "P13"
+  ],
+  "anclas": [
+   "Tabla De Picar Acero Inoxidable 40x30 Cortar Servir Cocinar",
+   "Tabla De Cortar Picar Acero Inoxidable 304 Con Tope 50x35 Cm"
+  ],
   "id": "O7",
   "que_traer": "Tabla de picar doble faz: una cara de acero inoxidable (carne cruda, higiene) y otra de polipropileno o fibra para cortar sin desafilar",
   "busqueda_ml": "tabla de picar doble faz acero inoxidable",
@@ -11,7 +17,7 @@
   "motivo": "la gente la deja pasar: 6 alternativas con stock local a precio comparable suman +125 ventas contra +1000 del producto de origen",
   "señales": [
    {
-    "id": "S2",
+    "id": "P12.S2",
     "descripcion": "Se raya y desafila los cuchillos",
     "errores": [],
     "medida": {
@@ -21,6 +27,19 @@
      "importancia": 10.0,
      "satisfaccion": 3.6,
      "puntaje_oportunidad": 16.4
+    }
+   },
+   {
+    "id": "P13.S2",
+    "descripcion": "Se marca con los cortes y desafila los cuchillos",
+    "errores": [],
+    "medida": {
+     "menciones": 10,
+     "insatisfechas": 7,
+     "de_textos": 106,
+     "importancia": 9.4,
+     "satisfaccion": 3.0,
+     "puntaje_oportunidad": 15.8
     }
    }
   ],
@@ -78,225 +97,13 @@
   ]
  },
  {
-  "metodo": "B1",
-  "producto": "P12",
-  "ancla": "Tabla De Picar Acero Inoxidable 40x30 Cortar Servir Cocinar",
-  "id": "B1",
-  "que_traer": "versión del producto ancla que resuelva la queja 'bordes'",
-  "busqueda_ml": "tabla de cortar acero inoxidable",
-  "estado": "descartada",
-  "se_detiene_en": "C4 hueco",
-  "motivo": "ya atendido: 34 equivalentes venden +100",
-  "señales": [
-   {
-    "id": "B1",
-    "descripcion": "queja más frecuente: 'bordes'",
-    "errores": [],
-    "medida": {
-     "menciones": 14,
-     "insatisfechas": 7,
-     "de_textos": 102,
-     "importancia": 10.0,
-     "satisfaccion": 5.0,
-     "puntaje_oportunidad": 15.0
-    }
-   }
-  ],
-  "recorrido": [
-   {
-    "chequeo": "guardrail",
-    "supuesto": "Lo que dice el LLM está en los textos",
-    "pasa": true,
-    "motivo": "los baselines no citan textos"
-   },
-   {
-    "chequeo": "C1 verificada",
-    "supuesto": "La necesidad no es un caso aislado",
-    "pasa": true,
-    "motivo": "la señal aparece en 14 textos (mínimo 3)"
-   },
-   {
-    "chequeo": "C2 sub-atendida",
-    "supuesto": "La necesidad importa y está mal resuelta",
-    "pasa": true,
-    "motivo": "importancia 10.0, satisfacción 5.0 (hace falta ≥ 3.0 y ≤ 5.0)"
-   },
-   {
-    "chequeo": "C3 demanda",
-    "supuesto": "Hay gente eligiendo el producto de origen",
-    "pasa": true,
-    "motivo": "el producto ancla vende +1000 (mínimo 500)"
-   },
-   {
-    "chequeo": "C4 hueco",
-    "supuesto": "Nadie la atiende todavía",
-    "pasa": false,
-    "motivo": "ya atendido: 34 equivalentes venden +100",
-    "datos": {
-     "equivalentes": 62,
-     "venden": 34,
-     "con_alguna_venta": 46,
-     "ventas_visibles": 9350,
-     "ejemplos_que_venden": [
-      "Tabla De Corte Acero Inoxidable 304 Esmerilado 60x30 Cocina (+1000, $42,602)",
-      "Tabla De Picar Acero Inoxidable 35x25 Cortar Servir Cocinar (+1000, $19,543)",
-      "Tabla De Picar Acero Inox 40x30 Cortar Servir Cocina Tope (+1000, $31,349)"
-     ]
-    }
-   }
-  ]
- },
- {
   "metodo": "llm",
-  "producto": "P13",
-  "ancla": "Tabla De Cortar Picar Acero Inoxidable 304 Con Tope 50x35 Cm",
-  "id": "O7",
-  "que_traer": "Tabla de picar doble faz: una cara de acero inoxidable (carne cruda, higiene) y otra de polipropileno o fibra para cortar sin desafilar",
-  "busqueda_ml": "tabla de picar doble faz acero inoxidable",
-  "estado": "descartada",
-  "se_detiene_en": "C5 la eligen",
-  "motivo": "la gente la deja pasar: 6 alternativas con stock local a precio comparable suman +125 ventas contra +1000 del producto de origen",
-  "señales": [
-   {
-    "id": "S2",
-    "descripcion": "Se marca con los cortes y desafila los cuchillos",
-    "errores": [],
-    "medida": {
-     "menciones": 10,
-     "insatisfechas": 7,
-     "de_textos": 106,
-     "importancia": 9.4,
-     "satisfaccion": 3.0,
-     "puntaje_oportunidad": 15.8
-    }
-   }
+  "productos": [
+   "P14"
   ],
-  "recorrido": [
-   {
-    "chequeo": "guardrail",
-    "supuesto": "Lo que dice el LLM está en los textos",
-    "pasa": true,
-    "motivo": "citas verificadas"
-   },
-   {
-    "chequeo": "C1 verificada",
-    "supuesto": "La necesidad no es un caso aislado",
-    "pasa": true,
-    "motivo": "la señal aparece en 10 textos (mínimo 3)"
-   },
-   {
-    "chequeo": "C2 sub-atendida",
-    "supuesto": "La necesidad importa y está mal resuelta",
-    "pasa": true,
-    "motivo": "importancia 9.4, satisfacción 3.0 (hace falta ≥ 3.0 y ≤ 5.0)"
-   },
-   {
-    "chequeo": "C3 demanda",
-    "supuesto": "Hay gente eligiendo el producto de origen",
-    "pasa": true,
-    "motivo": "el producto ancla vende +1000 (mínimo 500)"
-   },
-   {
-    "chequeo": "C4 hueco",
-    "supuesto": "Nadie la atiende todavía",
-    "pasa": true,
-    "motivo": "18 equivalentes, 1 venden +100",
-    "datos": {
-     "equivalentes": 18,
-     "venden": 1,
-     "con_alguna_venta": 4,
-     "ventas_visibles": 225,
-     "ejemplos_que_venden": [
-      "Tabla De Corte Doble Faz De Acero Inoxidable Gruesa (+100, $14,184)"
-     ]
-    }
-   },
-   {
-    "chequeo": "C5 la eligen",
-    "supuesto": "Si se ofrece, la gente la elige",
-    "pasa": false,
-    "motivo": "la gente la deja pasar: 6 alternativas con stock local a precio comparable suman +125 ventas contra +1000 del producto de origen",
-    "datos": {
-     "comparables": 6,
-     "ventas_comparables": 125,
-     "ventas_del_ancla": 1000
-    }
-   }
-  ]
- },
- {
-  "metodo": "B1",
-  "producto": "P13",
-  "ancla": "Tabla De Cortar Picar Acero Inoxidable 304 Con Tope 50x35 Cm",
-  "id": "B1",
-  "que_traer": "versión del producto ancla que resuelva la queja 'hola'",
-  "busqueda_ml": "tabla de cortar acero inoxidable",
-  "estado": "descartada",
-  "se_detiene_en": "C4 hueco",
-  "motivo": "ya atendido: 34 equivalentes venden +100",
-  "señales": [
-   {
-    "id": "B1",
-    "descripcion": "queja más frecuente: 'hola'",
-    "errores": [],
-    "medida": {
-     "menciones": 8,
-     "insatisfechas": 8,
-     "de_textos": 106,
-     "importancia": 7.5,
-     "satisfaccion": 0.0,
-     "puntaje_oportunidad": 15.0
-    }
-   }
+  "anclas": [
+   "Set 5 Bowls Tapers De Acero Inoxidable Liviano Con Tapa"
   ],
-  "recorrido": [
-   {
-    "chequeo": "guardrail",
-    "supuesto": "Lo que dice el LLM está en los textos",
-    "pasa": true,
-    "motivo": "los baselines no citan textos"
-   },
-   {
-    "chequeo": "C1 verificada",
-    "supuesto": "La necesidad no es un caso aislado",
-    "pasa": true,
-    "motivo": "la señal aparece en 8 textos (mínimo 3)"
-   },
-   {
-    "chequeo": "C2 sub-atendida",
-    "supuesto": "La necesidad importa y está mal resuelta",
-    "pasa": true,
-    "motivo": "importancia 7.5, satisfacción 0.0 (hace falta ≥ 3.0 y ≤ 5.0)"
-   },
-   {
-    "chequeo": "C3 demanda",
-    "supuesto": "Hay gente eligiendo el producto de origen",
-    "pasa": true,
-    "motivo": "el producto ancla vende +1000 (mínimo 500)"
-   },
-   {
-    "chequeo": "C4 hueco",
-    "supuesto": "Nadie la atiende todavía",
-    "pasa": false,
-    "motivo": "ya atendido: 34 equivalentes venden +100",
-    "datos": {
-     "equivalentes": 62,
-     "venden": 34,
-     "con_alguna_venta": 46,
-     "ventas_visibles": 9350,
-     "ejemplos_que_venden": [
-      "Tabla De Corte Acero Inoxidable 304 Esmerilado 60x30 Cocina (+1000, $42,602)",
-      "Tabla De Picar Acero Inoxidable 35x25 Cortar Servir Cocinar (+1000, $19,543)",
-      "Tabla De Picar Acero Inox 40x30 Cortar Servir Cocina Tope (+1000, $31,349)"
-     ]
-    }
-   }
-  ]
- },
- {
-  "metodo": "llm",
-  "producto": "P14",
-  "ancla": "Set 5 Bowls Tapers De Acero Inoxidable Liviano Con Tapa",
   "id": "O8",
   "que_traer": "Set de 4 recipientes de acero del mismo tamaño (800 ml a 1 L) para viandas, con tapa de silicona",
   "busqueda_ml": "set tapers acero inoxidable viandas",
@@ -305,7 +112,7 @@
   "motivo": "ya atendido: 6 equivalentes venden +100",
   "señales": [
    {
-    "id": "S1",
+    "id": "P14.S1",
     "descripcion": "Son muy chicos; piden tamaños más grandes o iguales para viandas",
     "errores": [],
     "medida": {
@@ -318,7 +125,7 @@
     }
    },
    {
-    "id": "S2",
+    "id": "P14.S2",
     "descripcion": "La tapa de plástico es frágil y preguntan si es libre de BPA",
     "errores": [],
     "medida": {
@@ -376,78 +183,13 @@
   ]
  },
  {
-  "metodo": "B1",
-  "producto": "P14",
-  "ancla": "Set 5 Bowls Tapers De Acero Inoxidable Liviano Con Tapa",
-  "id": "B1",
-  "que_traer": "versión del producto ancla que resuelva la queja 'precio'",
-  "busqueda_ml": "bowls acero inoxidable",
-  "estado": "descartada",
-  "se_detiene_en": "C4 hueco",
-  "motivo": "ya atendido: 16 equivalentes venden +100",
-  "señales": [
-   {
-    "id": "B1",
-    "descripcion": "queja más frecuente: 'precio'",
-    "errores": [],
-    "medida": {
-     "menciones": 34,
-     "insatisfechas": 19,
-     "de_textos": 168,
-     "importancia": 10.0,
-     "satisfaccion": 4.4,
-     "puntaje_oportunidad": 15.6
-    }
-   }
-  ],
-  "recorrido": [
-   {
-    "chequeo": "guardrail",
-    "supuesto": "Lo que dice el LLM está en los textos",
-    "pasa": true,
-    "motivo": "los baselines no citan textos"
-   },
-   {
-    "chequeo": "C1 verificada",
-    "supuesto": "La necesidad no es un caso aislado",
-    "pasa": true,
-    "motivo": "la señal aparece en 34 textos (mínimo 3)"
-   },
-   {
-    "chequeo": "C2 sub-atendida",
-    "supuesto": "La necesidad importa y está mal resuelta",
-    "pasa": true,
-    "motivo": "importancia 10.0, satisfacción 4.4 (hace falta ≥ 3.0 y ≤ 5.0)"
-   },
-   {
-    "chequeo": "C3 demanda",
-    "supuesto": "Hay gente eligiendo el producto de origen",
-    "pasa": true,
-    "motivo": "el producto ancla vende +10000 (mínimo 500)"
-   },
-   {
-    "chequeo": "C4 hueco",
-    "supuesto": "Nadie la atiende todavía",
-    "pasa": false,
-    "motivo": "ya atendido: 16 equivalentes venden +100",
-    "datos": {
-     "equivalentes": 30,
-     "venden": 16,
-     "con_alguna_venta": 25,
-     "ventas_visibles": 25675,
-     "ejemplos_que_venden": [
-      "Set 5 Bowls Tapers De Acero Inoxidable Liviano Con Tapa Recipientes Co (+10000, $9,399)",
-      "Set X3 Bowls Cocina Acero Inoxidable Batidor Para Batir Reforzado Repo (+10000, $20,199)",
-      "Juego 3 Bowls Acero Inoxidable Crystal Rock Plateado (+1000, $21,579)"
-     ]
-    }
-   }
-  ]
- },
- {
   "metodo": "llm",
-  "producto": "P15",
-  "ancla": "Set X3 Bowls Cocina Acero Inoxidable Batidor Reforzado",
+  "productos": [
+   "P15"
+  ],
+  "anclas": [
+   "Set X3 Bowls Cocina Acero Inoxidable Batidor Reforzado"
+  ],
   "id": "O9",
   "que_traer": "Set de bowls de acero con base de silicona antideslizante",
   "busqueda_ml": "bowls acero inoxidable base antideslizante",
@@ -456,7 +198,7 @@
   "motivo": "la señal aparece en 2 textos (mínimo 3)",
   "señales": [
    {
-    "id": "S1",
+    "id": "P15.S1",
     "descripcion": "Les falta base antideslizante",
     "errores": [],
     "medida": {
@@ -485,78 +227,15 @@
   ]
  },
  {
-  "metodo": "B1",
-  "producto": "P15",
-  "ancla": "Set X3 Bowls Cocina Acero Inoxidable Batidor Reforzado",
-  "id": "B1",
-  "que_traer": "versión del producto ancla que resuelva la queja 'hola'",
-  "busqueda_ml": "bowls acero inoxidable",
-  "estado": "descartada",
-  "se_detiene_en": "C4 hueco",
-  "motivo": "ya atendido: 16 equivalentes venden +100",
-  "señales": [
-   {
-    "id": "B1",
-    "descripcion": "queja más frecuente: 'hola'",
-    "errores": [],
-    "medida": {
-     "menciones": 7,
-     "insatisfechas": 7,
-     "de_textos": 116,
-     "importancia": 6.0,
-     "satisfaccion": 0.0,
-     "puntaje_oportunidad": 12.0
-    }
-   }
-  ],
-  "recorrido": [
-   {
-    "chequeo": "guardrail",
-    "supuesto": "Lo que dice el LLM está en los textos",
-    "pasa": true,
-    "motivo": "los baselines no citan textos"
-   },
-   {
-    "chequeo": "C1 verificada",
-    "supuesto": "La necesidad no es un caso aislado",
-    "pasa": true,
-    "motivo": "la señal aparece en 7 textos (mínimo 3)"
-   },
-   {
-    "chequeo": "C2 sub-atendida",
-    "supuesto": "La necesidad importa y está mal resuelta",
-    "pasa": true,
-    "motivo": "importancia 6.0, satisfacción 0.0 (hace falta ≥ 3.0 y ≤ 5.0)"
-   },
-   {
-    "chequeo": "C3 demanda",
-    "supuesto": "Hay gente eligiendo el producto de origen",
-    "pasa": true,
-    "motivo": "el producto ancla vende +10000 (mínimo 500)"
-   },
-   {
-    "chequeo": "C4 hueco",
-    "supuesto": "Nadie la atiende todavía",
-    "pasa": false,
-    "motivo": "ya atendido: 16 equivalentes venden +100",
-    "datos": {
-     "equivalentes": 30,
-     "venden": 16,
-     "con_alguna_venta": 25,
-     "ventas_visibles": 25675,
-     "ejemplos_que_venden": [
-      "Set 5 Bowls Tapers De Acero Inoxidable Liviano Con Tapa Recipientes Co (+10000, $9,399)",
-      "Set X3 Bowls Cocina Acero Inoxidable Batidor Para Batir Reforzado Repo (+10000, $20,199)",
-      "Juego 3 Bowls Acero Inoxidable Crystal Rock Plateado (+1000, $21,579)"
-     ]
-    }
-   }
-  ]
- },
- {
   "metodo": "llm",
-  "producto": "P16",
-  "ancla": "Yelmo As-3240 Aspiradora Para Auto Recargable Usb Color Gris",
+  "productos": [
+   "P16",
+   "P17"
+  ],
+  "anclas": [
+   "Yelmo As-3240 Aspiradora Para Auto Recargable Usb Color Gris",
+   "Aspiradora De Mano Gadnic Inalambrica 120W"
+  ],
   "id": "O10",
   "que_traer": "Pack de 3 filtros de repuesto (HEPA lavable) para aspiradoras de mano de auto",
   "busqueda_ml": "filtro repuesto aspiradora de mano",
@@ -565,7 +244,7 @@
   "motivo": "ya atendido: 3 equivalentes venden +100",
   "señales": [
    {
-    "id": "S1",
+    "id": "P16.S1",
     "descripcion": "Piden el filtro de repuesto y no se consigue",
     "errores": [],
     "medida": {
@@ -575,6 +254,19 @@
      "importancia": 10.0,
      "satisfaccion": 2.5,
      "puntaje_oportunidad": 17.5
+    }
+   },
+   {
+    "id": "P17.S1",
+    "descripcion": "Piden filtro y batería de repuesto",
+    "errores": [],
+    "medida": {
+     "menciones": 7,
+     "insatisfechas": 5,
+     "de_textos": 175,
+     "importancia": 4.0,
+     "satisfaccion": 2.9,
+     "puntaje_oportunidad": 5.1
     }
    }
   ],
@@ -623,193 +315,13 @@
   ]
  },
  {
-  "metodo": "B1",
-  "producto": "P16",
-  "ancla": "Yelmo As-3240 Aspiradora Para Auto Recargable Usb Color Gris",
-  "id": "B1",
-  "que_traer": "versión del producto ancla que resuelva la queja 'aspiradora'",
-  "busqueda_ml": "aspiradora de mano inalambrica",
-  "estado": "descartada",
-  "se_detiene_en": "C4 hueco",
-  "motivo": "ya atendido: 45 equivalentes venden +100",
-  "señales": [
-   {
-    "id": "B1",
-    "descripcion": "queja más frecuente: 'aspiradora'",
-    "errores": [],
-    "medida": {
-     "menciones": 58,
-     "insatisfechas": 38,
-     "de_textos": 181,
-     "importancia": 10.0,
-     "satisfaccion": 3.4,
-     "puntaje_oportunidad": 16.6
-    }
-   }
-  ],
-  "recorrido": [
-   {
-    "chequeo": "guardrail",
-    "supuesto": "Lo que dice el LLM está en los textos",
-    "pasa": true,
-    "motivo": "los baselines no citan textos"
-   },
-   {
-    "chequeo": "C1 verificada",
-    "supuesto": "La necesidad no es un caso aislado",
-    "pasa": true,
-    "motivo": "la señal aparece en 58 textos (mínimo 3)"
-   },
-   {
-    "chequeo": "C2 sub-atendida",
-    "supuesto": "La necesidad importa y está mal resuelta",
-    "pasa": true,
-    "motivo": "importancia 10.0, satisfacción 3.4 (hace falta ≥ 3.0 y ≤ 5.0)"
-   },
-   {
-    "chequeo": "C3 demanda",
-    "supuesto": "Hay gente eligiendo el producto de origen",
-    "pasa": true,
-    "motivo": "el producto ancla vende +50000 (mínimo 500)"
-   },
-   {
-    "chequeo": "C4 hueco",
-    "supuesto": "Nadie la atiende todavía",
-    "pasa": false,
-    "motivo": "ya atendido: 45 equivalentes venden +100",
-    "datos": {
-     "equivalentes": 54,
-     "venden": 45,
-     "con_alguna_venta": 47,
-     "ventas_visibles": 70650,
-     "ejemplos_que_venden": [
-      "Aspiradora De Mano Gadnic Inalambrica 120W Succion 9000Pa Bateria 2000 (+10000, $52,399)",
-      "Aspiradora de mano Laffitte inalámbrica 120W sin bolsa para autos (+10000, $32,099)",
-      "Aspiradora inalámbrica De mano Black+Decker HWVI225J01 177ml azul 50Hz (+10000, $79,999)"
-     ]
-    }
-   }
-  ]
- },
- {
-  "metodo": "B2",
-  "producto": "P16",
-  "ancla": "Yelmo As-3240 Aspiradora Para Auto Recargable Usb Color Gris",
-  "id": "B2",
-  "que_traer": "repuesto de aspiradora de mano inalambrica",
-  "busqueda_ml": "repuesto aspiradora de mano inalambrica",
-  "estado": "descartada",
-  "se_detiene_en": "C2 sub-atendida",
-  "motivo": "importancia 1.7, satisfacción 0.0 (hace falta ≥ 3.0 y ≤ 5.0)",
-  "señales": [
-   {
-    "id": "B2",
-    "descripcion": "preguntas que piden repuesto",
-    "errores": [],
-    "medida": {
-     "menciones": 3,
-     "insatisfechas": 3,
-     "de_textos": 181,
-     "importancia": 1.7,
-     "satisfaccion": 0.0,
-     "puntaje_oportunidad": 3.4
-    }
-   }
-  ],
-  "recorrido": [
-   {
-    "chequeo": "guardrail",
-    "supuesto": "Lo que dice el LLM está en los textos",
-    "pasa": true,
-    "motivo": "los baselines no citan textos"
-   },
-   {
-    "chequeo": "C1 verificada",
-    "supuesto": "La necesidad no es un caso aislado",
-    "pasa": true,
-    "motivo": "la señal aparece en 3 textos (mínimo 3)"
-   },
-   {
-    "chequeo": "C2 sub-atendida",
-    "supuesto": "La necesidad importa y está mal resuelta",
-    "pasa": false,
-    "motivo": "importancia 1.7, satisfacción 0.0 (hace falta ≥ 3.0 y ≤ 5.0)"
-   }
-  ]
- },
- {
   "metodo": "llm",
-  "producto": "P17",
-  "ancla": "Aspiradora De Mano Gadnic Inalambrica 120W",
-  "id": "O10",
-  "que_traer": "Pack de 3 filtros de repuesto (HEPA lavable) para aspiradoras de mano de auto",
-  "busqueda_ml": "filtro repuesto aspiradora de mano",
-  "estado": "descartada",
-  "se_detiene_en": "C4 hueco",
-  "motivo": "ya atendido: 3 equivalentes venden +100",
-  "señales": [
-   {
-    "id": "S1",
-    "descripcion": "Piden filtro y batería de repuesto",
-    "errores": [],
-    "medida": {
-     "menciones": 7,
-     "insatisfechas": 5,
-     "de_textos": 175,
-     "importancia": 4.0,
-     "satisfaccion": 2.9,
-     "puntaje_oportunidad": 5.1
-    }
-   }
+  "productos": [
+   "P17"
   ],
-  "recorrido": [
-   {
-    "chequeo": "guardrail",
-    "supuesto": "Lo que dice el LLM está en los textos",
-    "pasa": true,
-    "motivo": "citas verificadas"
-   },
-   {
-    "chequeo": "C1 verificada",
-    "supuesto": "La necesidad no es un caso aislado",
-    "pasa": true,
-    "motivo": "la señal aparece en 7 textos (mínimo 3)"
-   },
-   {
-    "chequeo": "C2 sub-atendida",
-    "supuesto": "La necesidad importa y está mal resuelta",
-    "pasa": true,
-    "motivo": "importancia 4.0, satisfacción 2.9 (hace falta ≥ 3.0 y ≤ 5.0)"
-   },
-   {
-    "chequeo": "C3 demanda",
-    "supuesto": "Hay gente eligiendo el producto de origen",
-    "pasa": true,
-    "motivo": "el producto ancla vende +10000 (mínimo 500)"
-   },
-   {
-    "chequeo": "C4 hueco",
-    "supuesto": "Nadie la atiende todavía",
-    "pasa": false,
-    "motivo": "ya atendido: 3 equivalentes venden +100",
-    "datos": {
-     "equivalentes": 14,
-     "venden": 3,
-     "con_alguna_venta": 4,
-     "ventas_visibles": 350,
-     "ejemplos_que_venden": [
-      "Filtros Hepa De Aspiradora Inalámbrica De Mano Voltra X3 (+100, $50,000)",
-      "Kit 4 Filtros Repuestos Aspiradora De Mano Set Reutilizable (+100, $14,249)",
-      "Filtro Hepa Repuesto Aspiradora Sopladora Portatil Auto Casa (+100, $12,965)"
-     ]
-    }
-   }
-  ]
- },
- {
-  "metodo": "llm",
-  "producto": "P17",
-  "ancla": "Aspiradora De Mano Gadnic Inalambrica 120W",
+  "anclas": [
+   "Aspiradora De Mano Gadnic Inalambrica 120W"
+  ],
   "id": "O11",
   "que_traer": "Aspiradora de mano inalámbrica con función sopladora (para PC y teclados)",
   "busqueda_ml": "aspiradora sopladora inalambrica de mano",
@@ -818,7 +330,7 @@
   "motivo": "importancia 1.7, satisfacción 6.7 (hace falta ≥ 3.0 y ≤ 5.0)",
   "señales": [
    {
-    "id": "S2",
+    "id": "P17.S2",
     "descripcion": "Quieren función de soplado (PC, polvo)",
     "errores": [],
     "medida": {
@@ -853,55 +365,13 @@
   ]
  },
  {
-  "metodo": "B1",
-  "producto": "P17",
-  "ancla": "Aspiradora De Mano Gadnic Inalambrica 120W",
-  "id": "B1",
-  "que_traer": "versión del producto ancla que resuelva la queja 'potencia'",
-  "busqueda_ml": "aspiradora de mano inalambrica",
-  "estado": "descartada",
-  "se_detiene_en": "C2 sub-atendida",
-  "motivo": "importancia 10.0, satisfacción 5.5 (hace falta ≥ 3.0 y ≤ 5.0)",
-  "señales": [
-   {
-    "id": "B1",
-    "descripcion": "queja más frecuente: 'potencia'",
-    "errores": [],
-    "medida": {
-     "menciones": 51,
-     "insatisfechas": 23,
-     "de_textos": 175,
-     "importancia": 10.0,
-     "satisfaccion": 5.5,
-     "puntaje_oportunidad": 14.5
-    }
-   }
-  ],
-  "recorrido": [
-   {
-    "chequeo": "guardrail",
-    "supuesto": "Lo que dice el LLM está en los textos",
-    "pasa": true,
-    "motivo": "los baselines no citan textos"
-   },
-   {
-    "chequeo": "C1 verificada",
-    "supuesto": "La necesidad no es un caso aislado",
-    "pasa": true,
-    "motivo": "la señal aparece en 51 textos (mínimo 3)"
-   },
-   {
-    "chequeo": "C2 sub-atendida",
-    "supuesto": "La necesidad importa y está mal resuelta",
-    "pasa": false,
-    "motivo": "importancia 10.0, satisfacción 5.5 (hace falta ≥ 3.0 y ≤ 5.0)"
-   }
-  ]
- },
- {
   "metodo": "llm",
-  "producto": "P18",
-  "ancla": "Limpiadora A Vapor Upper 2l 2000 W 106° + 15 Accesorios",
+  "productos": [
+   "P18"
+  ],
+  "anclas": [
+   "Limpiadora A Vapor Upper 2l 2000 W 106° + 15 Accesorios"
+  ],
   "id": "O12",
   "que_traer": "Kit de cepillos de repuesto para limpiadoras a vapor (acero, nylon y cerdas blandas para tela)",
   "busqueda_ml": "cepillos repuesto limpiadora a vapor",
@@ -910,7 +380,7 @@
   "motivo": "la gente la deja pasar: 4 alternativas con stock local a precio comparable suman +1150 ventas contra +5000 del producto de origen",
   "señales": [
    {
-    "id": "S1",
+    "id": "P18.S1",
     "descripcion": "Los cepillos se gastan y no hay repuestos",
     "errores": [],
     "medida": {
@@ -923,7 +393,7 @@
     }
    },
    {
-    "id": "S2",
+    "id": "P18.S2",
     "descripcion": "Quieren cepillos blandos para telas y tapizados",
     "errores": [],
     "medida": {
@@ -991,147 +461,13 @@
   ]
  },
  {
-  "metodo": "B1",
-  "producto": "P18",
-  "ancla": "Limpiadora A Vapor Upper 2l 2000 W 106° + 15 Accesorios",
-  "id": "B1",
-  "que_traer": "versión del producto ancla que resuelva la queja 'poco'",
-  "busqueda_ml": "limpiadora a vapor",
-  "estado": "descartada",
-  "se_detiene_en": "C4 hueco",
-  "motivo": "ya atendido: 17 equivalentes venden +100",
-  "señales": [
-   {
-    "id": "B1",
-    "descripcion": "queja más frecuente: 'poco'",
-    "errores": [],
-    "medida": {
-     "menciones": 12,
-     "insatisfechas": 11,
-     "de_textos": 161,
-     "importancia": 7.5,
-     "satisfaccion": 0.8,
-     "puntaje_oportunidad": 14.2
-    }
-   }
-  ],
-  "recorrido": [
-   {
-    "chequeo": "guardrail",
-    "supuesto": "Lo que dice el LLM está en los textos",
-    "pasa": true,
-    "motivo": "los baselines no citan textos"
-   },
-   {
-    "chequeo": "C1 verificada",
-    "supuesto": "La necesidad no es un caso aislado",
-    "pasa": true,
-    "motivo": "la señal aparece en 12 textos (mínimo 3)"
-   },
-   {
-    "chequeo": "C2 sub-atendida",
-    "supuesto": "La necesidad importa y está mal resuelta",
-    "pasa": true,
-    "motivo": "importancia 7.5, satisfacción 0.8 (hace falta ≥ 3.0 y ≤ 5.0)"
-   },
-   {
-    "chequeo": "C3 demanda",
-    "supuesto": "Hay gente eligiendo el producto de origen",
-    "pasa": true,
-    "motivo": "el producto ancla vende +5000 (mínimo 500)"
-   },
-   {
-    "chequeo": "C4 hueco",
-    "supuesto": "Nadie la atiende todavía",
-    "pasa": false,
-    "motivo": "ya atendido: 17 equivalentes venden +100",
-    "datos": {
-     "equivalentes": 32,
-     "venden": 17,
-     "con_alguna_venta": 27,
-     "ventas_visibles": 9600,
-     "ejemplos_que_venden": [
-      "Limpiadora A Vapor Upper 2l 2000 W 106° + 15 Accesorios Limpieza Profu (+5000, $211,103)",
-      "Limpiadora a Vapor KLD de Mano 1050W con Accesorios (+1000, $54,621)",
-      "Limpiadora a Vapor Slx 1050w 3 bar Slxvp01 accesorios color naranja (+1000, $62,248)"
-     ]
-    }
-   }
-  ]
- },
- {
-  "metodo": "B1",
-  "producto": "P19",
-  "ancla": "Limpiador A Vapor Portatil Presion Alta Limpieza - Rojo",
-  "id": "B1",
-  "que_traer": "versión del producto ancla que resuelva la queja 'limpiar'",
-  "busqueda_ml": "limpiadora a vapor",
-  "estado": "descartada",
-  "se_detiene_en": "C4 hueco",
-  "motivo": "ya atendido: 17 equivalentes venden +100",
-  "señales": [
-   {
-    "id": "B1",
-    "descripcion": "queja más frecuente: 'limpiar'",
-    "errores": [],
-    "medida": {
-     "menciones": 15,
-     "insatisfechas": 9,
-     "de_textos": 140,
-     "importancia": 10.0,
-     "satisfaccion": 4.0,
-     "puntaje_oportunidad": 16.0
-    }
-   }
-  ],
-  "recorrido": [
-   {
-    "chequeo": "guardrail",
-    "supuesto": "Lo que dice el LLM está en los textos",
-    "pasa": true,
-    "motivo": "los baselines no citan textos"
-   },
-   {
-    "chequeo": "C1 verificada",
-    "supuesto": "La necesidad no es un caso aislado",
-    "pasa": true,
-    "motivo": "la señal aparece en 15 textos (mínimo 3)"
-   },
-   {
-    "chequeo": "C2 sub-atendida",
-    "supuesto": "La necesidad importa y está mal resuelta",
-    "pasa": true,
-    "motivo": "importancia 10.0, satisfacción 4.0 (hace falta ≥ 3.0 y ≤ 5.0)"
-   },
-   {
-    "chequeo": "C3 demanda",
-    "supuesto": "Hay gente eligiendo el producto de origen",
-    "pasa": true,
-    "motivo": "el producto ancla vende +1000 (mínimo 500)"
-   },
-   {
-    "chequeo": "C4 hueco",
-    "supuesto": "Nadie la atiende todavía",
-    "pasa": false,
-    "motivo": "ya atendido: 17 equivalentes venden +100",
-    "datos": {
-     "equivalentes": 32,
-     "venden": 17,
-     "con_alguna_venta": 27,
-     "ventas_visibles": 9600,
-     "ejemplos_que_venden": [
-      "Limpiadora A Vapor Upper 2l 2000 W 106° + 15 Accesorios Limpieza Profu (+5000, $211,103)",
-      "Limpiadora a Vapor KLD de Mano 1050W con Accesorios (+1000, $54,621)",
-      "Limpiadora a Vapor Slx 1050w 3 bar Slxvp01 accesorios color naranja (+1000, $62,248)"
-     ]
-    }
-   }
-  ]
- },
- {
   "metodo": "llm",
-  "producto": "P20",
-  "ancla": "Lonchera Eléctrica Portátil Tipo Vianda Auto Y Pared",
+  "productos": [
+   "P20"
+  ],
+  "anclas": [
+   "Lonchera Eléctrica Portátil Tipo Vianda Auto Y Pared"
+  ],
   "id": "O13",
   "que_traer": "Lonchera eléctrica 12/24 V para camioneros",
   "busqueda_ml": "lonchera electrica 24v",
@@ -1140,7 +476,7 @@
   "motivo": "tiene que citar al menos 2 textos distintos",
   "señales": [
    {
-    "id": "S2",
+    "id": "P20.S2",
     "descripcion": "Camioneros preguntan por 24 V",
     "errores": [
      "tiene que citar al menos 2 textos distintos"
@@ -1165,78 +501,13 @@
   ]
  },
  {
-  "metodo": "B1",
-  "producto": "P20",
-  "ancla": "Lonchera Eléctrica Portátil Tipo Vianda Auto Y Pared",
-  "id": "B1",
-  "que_traer": "versión del producto ancla que resuelva la queja 'caliente'",
-  "busqueda_ml": "lonchera electrica",
-  "estado": "descartada",
-  "se_detiene_en": "C4 hueco",
-  "motivo": "ya atendido: 17 equivalentes venden +100",
-  "señales": [
-   {
-    "id": "B1",
-    "descripcion": "queja más frecuente: 'caliente'",
-    "errores": [],
-    "medida": {
-     "menciones": 5,
-     "insatisfechas": 3,
-     "de_textos": 54,
-     "importancia": 9.3,
-     "satisfaccion": 4.0,
-     "puntaje_oportunidad": 14.6
-    }
-   }
-  ],
-  "recorrido": [
-   {
-    "chequeo": "guardrail",
-    "supuesto": "Lo que dice el LLM está en los textos",
-    "pasa": true,
-    "motivo": "los baselines no citan textos"
-   },
-   {
-    "chequeo": "C1 verificada",
-    "supuesto": "La necesidad no es un caso aislado",
-    "pasa": true,
-    "motivo": "la señal aparece en 5 textos (mínimo 3)"
-   },
-   {
-    "chequeo": "C2 sub-atendida",
-    "supuesto": "La necesidad importa y está mal resuelta",
-    "pasa": true,
-    "motivo": "importancia 9.3, satisfacción 4.0 (hace falta ≥ 3.0 y ≤ 5.0)"
-   },
-   {
-    "chequeo": "C3 demanda",
-    "supuesto": "Hay gente eligiendo el producto de origen",
-    "pasa": true,
-    "motivo": "el producto ancla vende +500 (mínimo 500)"
-   },
-   {
-    "chequeo": "C4 hueco",
-    "supuesto": "Nadie la atiende todavía",
-    "pasa": false,
-    "motivo": "ya atendido: 17 equivalentes venden +100",
-    "datos": {
-     "equivalentes": 41,
-     "venden": 17,
-     "con_alguna_venta": 23,
-     "ventas_visibles": 1950,
-     "ejemplos_que_venden": [
-      "Lonchera Electrica Portátil A12v Auto 220 (+100, $48,171)",
-      "Lonchera Eléctrica Portátil 220v 12v Auto Vianda 1.5l 40w (+100, $50,000)",
-      "Lonchera Electrica Portátil Vianda Hermetica Auto Acero Inox (+100, $43,051)"
-     ]
-    }
-   }
-  ]
- },
- {
   "metodo": "llm",
-  "producto": "P21",
-  "ancla": "Vaso Térmico 900ml Acero Inox Antiderrame Manija Y Sorbete",
+  "productos": [
+   "P21"
+  ],
+  "anclas": [
+   "Vaso Térmico 900ml Acero Inox Antiderrame Manija Y Sorbete"
+  ],
   "id": "O14",
   "que_traer": "Vasos térmicos de 900 ml lisos por caja, para empresas que los personalizan (regalo corporativo)",
   "busqueda_ml": "vaso termico 900ml por mayor",
@@ -1245,7 +516,7 @@
   "motivo": "ya atendido: 16 equivalentes venden +100",
   "señales": [
    {
-    "id": "S1",
+    "id": "P21.S1",
     "descripcion": "Empresas piden cantidades para personalizar con logo",
     "errores": [],
     "medida": {
@@ -1304,8 +575,696 @@
  },
  {
   "metodo": "B1",
-  "producto": "P21",
-  "ancla": "Vaso Térmico 900ml Acero Inox Antiderrame Manija Y Sorbete",
+  "productos": [
+   "P12"
+  ],
+  "anclas": [
+   "Tabla De Picar Acero Inoxidable 40x30 Cortar Servir Cocinar"
+  ],
+  "id": "B1",
+  "que_traer": "versión del producto ancla que resuelva la queja 'bordes'",
+  "busqueda_ml": "tabla de cortar acero inoxidable",
+  "estado": "descartada",
+  "se_detiene_en": "C4 hueco",
+  "motivo": "ya atendido: 34 equivalentes venden +100",
+  "señales": [
+   {
+    "id": "P12.B1",
+    "descripcion": "queja más frecuente: 'bordes'",
+    "errores": [],
+    "medida": {
+     "menciones": 14,
+     "insatisfechas": 7,
+     "de_textos": 102,
+     "importancia": 10.0,
+     "satisfaccion": 5.0,
+     "puntaje_oportunidad": 15.0
+    }
+   }
+  ],
+  "recorrido": [
+   {
+    "chequeo": "guardrail",
+    "supuesto": "Lo que dice el LLM está en los textos",
+    "pasa": true,
+    "motivo": "los baselines no citan textos"
+   },
+   {
+    "chequeo": "C1 verificada",
+    "supuesto": "La necesidad no es un caso aislado",
+    "pasa": true,
+    "motivo": "la señal aparece en 14 textos (mínimo 3)"
+   },
+   {
+    "chequeo": "C2 sub-atendida",
+    "supuesto": "La necesidad importa y está mal resuelta",
+    "pasa": true,
+    "motivo": "importancia 10.0, satisfacción 5.0 (hace falta ≥ 3.0 y ≤ 5.0)"
+   },
+   {
+    "chequeo": "C3 demanda",
+    "supuesto": "Hay gente eligiendo el producto de origen",
+    "pasa": true,
+    "motivo": "el producto ancla vende +1000 (mínimo 500)"
+   },
+   {
+    "chequeo": "C4 hueco",
+    "supuesto": "Nadie la atiende todavía",
+    "pasa": false,
+    "motivo": "ya atendido: 34 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 62,
+     "venden": 34,
+     "con_alguna_venta": 46,
+     "ventas_visibles": 9350,
+     "ejemplos_que_venden": [
+      "Tabla De Corte Acero Inoxidable 304 Esmerilado 60x30 Cocina (+1000, $42,602)",
+      "Tabla De Picar Acero Inoxidable 35x25 Cortar Servir Cocinar (+1000, $19,543)",
+      "Tabla De Picar Acero Inox 40x30 Cortar Servir Cocina Tope (+1000, $31,349)"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "metodo": "B1",
+  "productos": [
+   "P13"
+  ],
+  "anclas": [
+   "Tabla De Cortar Picar Acero Inoxidable 304 Con Tope 50x35 Cm"
+  ],
+  "id": "B1",
+  "que_traer": "versión del producto ancla que resuelva la queja 'hola'",
+  "busqueda_ml": "tabla de cortar acero inoxidable",
+  "estado": "descartada",
+  "se_detiene_en": "C4 hueco",
+  "motivo": "ya atendido: 34 equivalentes venden +100",
+  "señales": [
+   {
+    "id": "P13.B1",
+    "descripcion": "queja más frecuente: 'hola'",
+    "errores": [],
+    "medida": {
+     "menciones": 8,
+     "insatisfechas": 8,
+     "de_textos": 106,
+     "importancia": 7.5,
+     "satisfaccion": 0.0,
+     "puntaje_oportunidad": 15.0
+    }
+   }
+  ],
+  "recorrido": [
+   {
+    "chequeo": "guardrail",
+    "supuesto": "Lo que dice el LLM está en los textos",
+    "pasa": true,
+    "motivo": "los baselines no citan textos"
+   },
+   {
+    "chequeo": "C1 verificada",
+    "supuesto": "La necesidad no es un caso aislado",
+    "pasa": true,
+    "motivo": "la señal aparece en 8 textos (mínimo 3)"
+   },
+   {
+    "chequeo": "C2 sub-atendida",
+    "supuesto": "La necesidad importa y está mal resuelta",
+    "pasa": true,
+    "motivo": "importancia 7.5, satisfacción 0.0 (hace falta ≥ 3.0 y ≤ 5.0)"
+   },
+   {
+    "chequeo": "C3 demanda",
+    "supuesto": "Hay gente eligiendo el producto de origen",
+    "pasa": true,
+    "motivo": "el producto ancla vende +1000 (mínimo 500)"
+   },
+   {
+    "chequeo": "C4 hueco",
+    "supuesto": "Nadie la atiende todavía",
+    "pasa": false,
+    "motivo": "ya atendido: 34 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 62,
+     "venden": 34,
+     "con_alguna_venta": 46,
+     "ventas_visibles": 9350,
+     "ejemplos_que_venden": [
+      "Tabla De Corte Acero Inoxidable 304 Esmerilado 60x30 Cocina (+1000, $42,602)",
+      "Tabla De Picar Acero Inoxidable 35x25 Cortar Servir Cocinar (+1000, $19,543)",
+      "Tabla De Picar Acero Inox 40x30 Cortar Servir Cocina Tope (+1000, $31,349)"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "metodo": "B1",
+  "productos": [
+   "P14"
+  ],
+  "anclas": [
+   "Set 5 Bowls Tapers De Acero Inoxidable Liviano Con Tapa"
+  ],
+  "id": "B1",
+  "que_traer": "versión del producto ancla que resuelva la queja 'precio'",
+  "busqueda_ml": "bowls acero inoxidable",
+  "estado": "descartada",
+  "se_detiene_en": "C4 hueco",
+  "motivo": "ya atendido: 16 equivalentes venden +100",
+  "señales": [
+   {
+    "id": "P14.B1",
+    "descripcion": "queja más frecuente: 'precio'",
+    "errores": [],
+    "medida": {
+     "menciones": 34,
+     "insatisfechas": 19,
+     "de_textos": 168,
+     "importancia": 10.0,
+     "satisfaccion": 4.4,
+     "puntaje_oportunidad": 15.6
+    }
+   }
+  ],
+  "recorrido": [
+   {
+    "chequeo": "guardrail",
+    "supuesto": "Lo que dice el LLM está en los textos",
+    "pasa": true,
+    "motivo": "los baselines no citan textos"
+   },
+   {
+    "chequeo": "C1 verificada",
+    "supuesto": "La necesidad no es un caso aislado",
+    "pasa": true,
+    "motivo": "la señal aparece en 34 textos (mínimo 3)"
+   },
+   {
+    "chequeo": "C2 sub-atendida",
+    "supuesto": "La necesidad importa y está mal resuelta",
+    "pasa": true,
+    "motivo": "importancia 10.0, satisfacción 4.4 (hace falta ≥ 3.0 y ≤ 5.0)"
+   },
+   {
+    "chequeo": "C3 demanda",
+    "supuesto": "Hay gente eligiendo el producto de origen",
+    "pasa": true,
+    "motivo": "el producto ancla vende +10000 (mínimo 500)"
+   },
+   {
+    "chequeo": "C4 hueco",
+    "supuesto": "Nadie la atiende todavía",
+    "pasa": false,
+    "motivo": "ya atendido: 16 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 30,
+     "venden": 16,
+     "con_alguna_venta": 25,
+     "ventas_visibles": 25675,
+     "ejemplos_que_venden": [
+      "Set 5 Bowls Tapers De Acero Inoxidable Liviano Con Tapa Recipientes Co (+10000, $9,399)",
+      "Set X3 Bowls Cocina Acero Inoxidable Batidor Para Batir Reforzado Repo (+10000, $20,199)",
+      "Juego 3 Bowls Acero Inoxidable Crystal Rock Plateado (+1000, $21,579)"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "metodo": "B1",
+  "productos": [
+   "P15"
+  ],
+  "anclas": [
+   "Set X3 Bowls Cocina Acero Inoxidable Batidor Reforzado"
+  ],
+  "id": "B1",
+  "que_traer": "versión del producto ancla que resuelva la queja 'hola'",
+  "busqueda_ml": "bowls acero inoxidable",
+  "estado": "descartada",
+  "se_detiene_en": "C4 hueco",
+  "motivo": "ya atendido: 16 equivalentes venden +100",
+  "señales": [
+   {
+    "id": "P15.B1",
+    "descripcion": "queja más frecuente: 'hola'",
+    "errores": [],
+    "medida": {
+     "menciones": 7,
+     "insatisfechas": 7,
+     "de_textos": 116,
+     "importancia": 6.0,
+     "satisfaccion": 0.0,
+     "puntaje_oportunidad": 12.0
+    }
+   }
+  ],
+  "recorrido": [
+   {
+    "chequeo": "guardrail",
+    "supuesto": "Lo que dice el LLM está en los textos",
+    "pasa": true,
+    "motivo": "los baselines no citan textos"
+   },
+   {
+    "chequeo": "C1 verificada",
+    "supuesto": "La necesidad no es un caso aislado",
+    "pasa": true,
+    "motivo": "la señal aparece en 7 textos (mínimo 3)"
+   },
+   {
+    "chequeo": "C2 sub-atendida",
+    "supuesto": "La necesidad importa y está mal resuelta",
+    "pasa": true,
+    "motivo": "importancia 6.0, satisfacción 0.0 (hace falta ≥ 3.0 y ≤ 5.0)"
+   },
+   {
+    "chequeo": "C3 demanda",
+    "supuesto": "Hay gente eligiendo el producto de origen",
+    "pasa": true,
+    "motivo": "el producto ancla vende +10000 (mínimo 500)"
+   },
+   {
+    "chequeo": "C4 hueco",
+    "supuesto": "Nadie la atiende todavía",
+    "pasa": false,
+    "motivo": "ya atendido: 16 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 30,
+     "venden": 16,
+     "con_alguna_venta": 25,
+     "ventas_visibles": 25675,
+     "ejemplos_que_venden": [
+      "Set 5 Bowls Tapers De Acero Inoxidable Liviano Con Tapa Recipientes Co (+10000, $9,399)",
+      "Set X3 Bowls Cocina Acero Inoxidable Batidor Para Batir Reforzado Repo (+10000, $20,199)",
+      "Juego 3 Bowls Acero Inoxidable Crystal Rock Plateado (+1000, $21,579)"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "metodo": "B1",
+  "productos": [
+   "P16"
+  ],
+  "anclas": [
+   "Yelmo As-3240 Aspiradora Para Auto Recargable Usb Color Gris"
+  ],
+  "id": "B1",
+  "que_traer": "versión del producto ancla que resuelva la queja 'aspiradora'",
+  "busqueda_ml": "aspiradora de mano inalambrica",
+  "estado": "descartada",
+  "se_detiene_en": "C4 hueco",
+  "motivo": "ya atendido: 45 equivalentes venden +100",
+  "señales": [
+   {
+    "id": "P16.B1",
+    "descripcion": "queja más frecuente: 'aspiradora'",
+    "errores": [],
+    "medida": {
+     "menciones": 58,
+     "insatisfechas": 38,
+     "de_textos": 181,
+     "importancia": 10.0,
+     "satisfaccion": 3.4,
+     "puntaje_oportunidad": 16.6
+    }
+   }
+  ],
+  "recorrido": [
+   {
+    "chequeo": "guardrail",
+    "supuesto": "Lo que dice el LLM está en los textos",
+    "pasa": true,
+    "motivo": "los baselines no citan textos"
+   },
+   {
+    "chequeo": "C1 verificada",
+    "supuesto": "La necesidad no es un caso aislado",
+    "pasa": true,
+    "motivo": "la señal aparece en 58 textos (mínimo 3)"
+   },
+   {
+    "chequeo": "C2 sub-atendida",
+    "supuesto": "La necesidad importa y está mal resuelta",
+    "pasa": true,
+    "motivo": "importancia 10.0, satisfacción 3.4 (hace falta ≥ 3.0 y ≤ 5.0)"
+   },
+   {
+    "chequeo": "C3 demanda",
+    "supuesto": "Hay gente eligiendo el producto de origen",
+    "pasa": true,
+    "motivo": "el producto ancla vende +50000 (mínimo 500)"
+   },
+   {
+    "chequeo": "C4 hueco",
+    "supuesto": "Nadie la atiende todavía",
+    "pasa": false,
+    "motivo": "ya atendido: 45 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 54,
+     "venden": 45,
+     "con_alguna_venta": 47,
+     "ventas_visibles": 70650,
+     "ejemplos_que_venden": [
+      "Aspiradora De Mano Gadnic Inalambrica 120W Succion 9000Pa Bateria 2000 (+10000, $52,399)",
+      "Aspiradora de mano Laffitte inalámbrica 120W sin bolsa para autos (+10000, $32,099)",
+      "Aspiradora inalámbrica De mano Black+Decker HWVI225J01 177ml azul 50Hz (+10000, $79,999)"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "metodo": "B2",
+  "productos": [
+   "P16"
+  ],
+  "anclas": [
+   "Yelmo As-3240 Aspiradora Para Auto Recargable Usb Color Gris"
+  ],
+  "id": "B2",
+  "que_traer": "repuesto de aspiradora de mano inalambrica",
+  "busqueda_ml": "repuesto aspiradora de mano inalambrica",
+  "estado": "descartada",
+  "se_detiene_en": "C2 sub-atendida",
+  "motivo": "importancia 1.7, satisfacción 0.0 (hace falta ≥ 3.0 y ≤ 5.0)",
+  "señales": [
+   {
+    "id": "P16.B2",
+    "descripcion": "preguntas que piden repuesto",
+    "errores": [],
+    "medida": {
+     "menciones": 3,
+     "insatisfechas": 3,
+     "de_textos": 181,
+     "importancia": 1.7,
+     "satisfaccion": 0.0,
+     "puntaje_oportunidad": 3.4
+    }
+   }
+  ],
+  "recorrido": [
+   {
+    "chequeo": "guardrail",
+    "supuesto": "Lo que dice el LLM está en los textos",
+    "pasa": true,
+    "motivo": "los baselines no citan textos"
+   },
+   {
+    "chequeo": "C1 verificada",
+    "supuesto": "La necesidad no es un caso aislado",
+    "pasa": true,
+    "motivo": "la señal aparece en 3 textos (mínimo 3)"
+   },
+   {
+    "chequeo": "C2 sub-atendida",
+    "supuesto": "La necesidad importa y está mal resuelta",
+    "pasa": false,
+    "motivo": "importancia 1.7, satisfacción 0.0 (hace falta ≥ 3.0 y ≤ 5.0)"
+   }
+  ]
+ },
+ {
+  "metodo": "B1",
+  "productos": [
+   "P17"
+  ],
+  "anclas": [
+   "Aspiradora De Mano Gadnic Inalambrica 120W"
+  ],
+  "id": "B1",
+  "que_traer": "versión del producto ancla que resuelva la queja 'potencia'",
+  "busqueda_ml": "aspiradora de mano inalambrica",
+  "estado": "descartada",
+  "se_detiene_en": "C2 sub-atendida",
+  "motivo": "importancia 10.0, satisfacción 5.5 (hace falta ≥ 3.0 y ≤ 5.0)",
+  "señales": [
+   {
+    "id": "P17.B1",
+    "descripcion": "queja más frecuente: 'potencia'",
+    "errores": [],
+    "medida": {
+     "menciones": 51,
+     "insatisfechas": 23,
+     "de_textos": 175,
+     "importancia": 10.0,
+     "satisfaccion": 5.5,
+     "puntaje_oportunidad": 14.5
+    }
+   }
+  ],
+  "recorrido": [
+   {
+    "chequeo": "guardrail",
+    "supuesto": "Lo que dice el LLM está en los textos",
+    "pasa": true,
+    "motivo": "los baselines no citan textos"
+   },
+   {
+    "chequeo": "C1 verificada",
+    "supuesto": "La necesidad no es un caso aislado",
+    "pasa": true,
+    "motivo": "la señal aparece en 51 textos (mínimo 3)"
+   },
+   {
+    "chequeo": "C2 sub-atendida",
+    "supuesto": "La necesidad importa y está mal resuelta",
+    "pasa": false,
+    "motivo": "importancia 10.0, satisfacción 5.5 (hace falta ≥ 3.0 y ≤ 5.0)"
+   }
+  ]
+ },
+ {
+  "metodo": "B1",
+  "productos": [
+   "P18"
+  ],
+  "anclas": [
+   "Limpiadora A Vapor Upper 2l 2000 W 106° + 15 Accesorios"
+  ],
+  "id": "B1",
+  "que_traer": "versión del producto ancla que resuelva la queja 'poco'",
+  "busqueda_ml": "limpiadora a vapor",
+  "estado": "descartada",
+  "se_detiene_en": "C4 hueco",
+  "motivo": "ya atendido: 17 equivalentes venden +100",
+  "señales": [
+   {
+    "id": "P18.B1",
+    "descripcion": "queja más frecuente: 'poco'",
+    "errores": [],
+    "medida": {
+     "menciones": 12,
+     "insatisfechas": 11,
+     "de_textos": 161,
+     "importancia": 7.5,
+     "satisfaccion": 0.8,
+     "puntaje_oportunidad": 14.2
+    }
+   }
+  ],
+  "recorrido": [
+   {
+    "chequeo": "guardrail",
+    "supuesto": "Lo que dice el LLM está en los textos",
+    "pasa": true,
+    "motivo": "los baselines no citan textos"
+   },
+   {
+    "chequeo": "C1 verificada",
+    "supuesto": "La necesidad no es un caso aislado",
+    "pasa": true,
+    "motivo": "la señal aparece en 12 textos (mínimo 3)"
+   },
+   {
+    "chequeo": "C2 sub-atendida",
+    "supuesto": "La necesidad importa y está mal resuelta",
+    "pasa": true,
+    "motivo": "importancia 7.5, satisfacción 0.8 (hace falta ≥ 3.0 y ≤ 5.0)"
+   },
+   {
+    "chequeo": "C3 demanda",
+    "supuesto": "Hay gente eligiendo el producto de origen",
+    "pasa": true,
+    "motivo": "el producto ancla vende +5000 (mínimo 500)"
+   },
+   {
+    "chequeo": "C4 hueco",
+    "supuesto": "Nadie la atiende todavía",
+    "pasa": false,
+    "motivo": "ya atendido: 17 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 32,
+     "venden": 17,
+     "con_alguna_venta": 27,
+     "ventas_visibles": 9600,
+     "ejemplos_que_venden": [
+      "Limpiadora A Vapor Upper 2l 2000 W 106° + 15 Accesorios Limpieza Profu (+5000, $211,103)",
+      "Limpiadora a Vapor KLD de Mano 1050W con Accesorios (+1000, $54,621)",
+      "Limpiadora a Vapor Slx 1050w 3 bar Slxvp01 accesorios color naranja (+1000, $62,248)"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "metodo": "B1",
+  "productos": [
+   "P19"
+  ],
+  "anclas": [
+   "Limpiador A Vapor Portatil Presion Alta Limpieza - Rojo"
+  ],
+  "id": "B1",
+  "que_traer": "versión del producto ancla que resuelva la queja 'limpiar'",
+  "busqueda_ml": "limpiadora a vapor",
+  "estado": "descartada",
+  "se_detiene_en": "C4 hueco",
+  "motivo": "ya atendido: 17 equivalentes venden +100",
+  "señales": [
+   {
+    "id": "P19.B1",
+    "descripcion": "queja más frecuente: 'limpiar'",
+    "errores": [],
+    "medida": {
+     "menciones": 15,
+     "insatisfechas": 9,
+     "de_textos": 140,
+     "importancia": 10.0,
+     "satisfaccion": 4.0,
+     "puntaje_oportunidad": 16.0
+    }
+   }
+  ],
+  "recorrido": [
+   {
+    "chequeo": "guardrail",
+    "supuesto": "Lo que dice el LLM está en los textos",
+    "pasa": true,
+    "motivo": "los baselines no citan textos"
+   },
+   {
+    "chequeo": "C1 verificada",
+    "supuesto": "La necesidad no es un caso aislado",
+    "pasa": true,
+    "motivo": "la señal aparece en 15 textos (mínimo 3)"
+   },
+   {
+    "chequeo": "C2 sub-atendida",
+    "supuesto": "La necesidad importa y está mal resuelta",
+    "pasa": true,
+    "motivo": "importancia 10.0, satisfacción 4.0 (hace falta ≥ 3.0 y ≤ 5.0)"
+   },
+   {
+    "chequeo": "C3 demanda",
+    "supuesto": "Hay gente eligiendo el producto de origen",
+    "pasa": true,
+    "motivo": "el producto ancla vende +1000 (mínimo 500)"
+   },
+   {
+    "chequeo": "C4 hueco",
+    "supuesto": "Nadie la atiende todavía",
+    "pasa": false,
+    "motivo": "ya atendido: 17 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 32,
+     "venden": 17,
+     "con_alguna_venta": 27,
+     "ventas_visibles": 9600,
+     "ejemplos_que_venden": [
+      "Limpiadora A Vapor Upper 2l 2000 W 106° + 15 Accesorios Limpieza Profu (+5000, $211,103)",
+      "Limpiadora a Vapor KLD de Mano 1050W con Accesorios (+1000, $54,621)",
+      "Limpiadora a Vapor Slx 1050w 3 bar Slxvp01 accesorios color naranja (+1000, $62,248)"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "metodo": "B1",
+  "productos": [
+   "P20"
+  ],
+  "anclas": [
+   "Lonchera Eléctrica Portátil Tipo Vianda Auto Y Pared"
+  ],
+  "id": "B1",
+  "que_traer": "versión del producto ancla que resuelva la queja 'caliente'",
+  "busqueda_ml": "lonchera electrica",
+  "estado": "descartada",
+  "se_detiene_en": "C4 hueco",
+  "motivo": "ya atendido: 17 equivalentes venden +100",
+  "señales": [
+   {
+    "id": "P20.B1",
+    "descripcion": "queja más frecuente: 'caliente'",
+    "errores": [],
+    "medida": {
+     "menciones": 5,
+     "insatisfechas": 3,
+     "de_textos": 54,
+     "importancia": 9.3,
+     "satisfaccion": 4.0,
+     "puntaje_oportunidad": 14.6
+    }
+   }
+  ],
+  "recorrido": [
+   {
+    "chequeo": "guardrail",
+    "supuesto": "Lo que dice el LLM está en los textos",
+    "pasa": true,
+    "motivo": "los baselines no citan textos"
+   },
+   {
+    "chequeo": "C1 verificada",
+    "supuesto": "La necesidad no es un caso aislado",
+    "pasa": true,
+    "motivo": "la señal aparece en 5 textos (mínimo 3)"
+   },
+   {
+    "chequeo": "C2 sub-atendida",
+    "supuesto": "La necesidad importa y está mal resuelta",
+    "pasa": true,
+    "motivo": "importancia 9.3, satisfacción 4.0 (hace falta ≥ 3.0 y ≤ 5.0)"
+   },
+   {
+    "chequeo": "C3 demanda",
+    "supuesto": "Hay gente eligiendo el producto de origen",
+    "pasa": true,
+    "motivo": "el producto ancla vende +500 (mínimo 500)"
+   },
+   {
+    "chequeo": "C4 hueco",
+    "supuesto": "Nadie la atiende todavía",
+    "pasa": false,
+    "motivo": "ya atendido: 17 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 41,
+     "venden": 17,
+     "con_alguna_venta": 23,
+     "ventas_visibles": 1950,
+     "ejemplos_que_venden": [
+      "Lonchera Electrica Portátil A12v Auto 220 (+100, $48,171)",
+      "Lonchera Eléctrica Portátil 220v 12v Auto Vianda 1.5l 40w (+100, $50,000)",
+      "Lonchera Electrica Portátil Vianda Hermetica Auto Acero Inox (+100, $43,051)"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "metodo": "B1",
+  "productos": [
+   "P21"
+  ],
+  "anclas": [
+   "Vaso Térmico 900ml Acero Inox Antiderrame Manija Y Sorbete"
+  ],
   "id": "B1",
   "que_traer": "versión del producto ancla que resuelva la queja 'hola'",
   "busqueda_ml": "vaso termico",
@@ -1314,7 +1273,7 @@
   "motivo": "ya atendido: 41 equivalentes venden +100",
   "señales": [
    {
-    "id": "B1",
+    "id": "P21.B1",
     "descripcion": "queja más frecuente: 'hola'",
     "errores": [],
     "medida": {

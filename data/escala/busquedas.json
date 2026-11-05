@@ -1,0 +1,15 @@
+{
+ "como": "Búsquedas de productos de consumo masivo que se pueden importar (no alimentos, no medicamentos, no electrónica con homologación), 10 categorías x 6 búsquedas. La lista la eligió Claude el 05/11/2026; de cada búsqueda se toman los 2 más elegidos como productos ancla (scripts/elegir_anclas.py).",
+ "busquedas": {
+  "cocina": ["mate de acero termico", "molinillo de cafe manual", "rallador de cocina", "tupper vidrio hermetico", "sarten antiadherente", "espatula de silicona"],
+  "hogar": ["organizador de placard", "cortina blackout", "perchero de pie", "alfombra de baño", "cesto de ropa sucia", "almohada viscoelastica"],
+  "limpieza": ["mopa giratoria con balde", "escobilla de baño", "secador de piso", "rociador de vidrios", "cepillo para limpiar zapatillas", "pano microfibra auto"],
+  "mascotas": ["comedero automatico gato", "rascador para gato", "cama para perro", "correa extensible perro", "bebedero fuente gato", "juguete para perro"],
+  "bebes": ["mochila portabebe", "cambiador portatil", "vaso antiderrame bebe", "monitor de bebe", "organizador de pañales", "termometro infrarrojo"],
+  "deportes": ["botella de agua deportiva", "colchoneta yoga", "banda elastica ejercicio", "soga para saltar", "mancuernas ajustables", "rodillo masajeador"],
+  "herramientas": ["set de destornilladores", "cinta metrica", "nivel laser", "pistola de silicona", "organizador de tornillos", "linterna recargable"],
+  "auto": ["soporte celular auto", "aspiradora para auto", "organizador baul auto", "funda asiento auto", "cargador usb auto", "parasol auto"],
+  "belleza": ["cepillo alisador", "organizador de maquillaje", "espejo con luz", "rizador de pestañas", "neceser de viaje", "cortapelo recargable"],
+  "oficina": ["soporte para notebook", "organizador de escritorio", "lampara de escritorio led", "apoya pies ergonomico", "mouse pad grande", "portalapices"]
+ }
+}

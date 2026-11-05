@@ -1,8 +1,14 @@
 [
  {
   "metodo": "llm",
-  "producto": "P01",
-  "ancla": "Afilador De Cuchillos Rodante Rodillo De Diamante Filoshark ",
+  "productos": [
+   "P01",
+   "P02"
+  ],
+  "anclas": [
+   "Afilador De Cuchillos Rodante Rodillo De Diamante Filoshark ",
+   "Afilador Refilo Cuchillos Manual Rodillo Profesional Marrón"
+  ],
   "id": "O1",
   "que_traer": "Disco de repuesto para afiladores rodantes (diamante 400/1000 o grano fino 3000/6000), vendido suelto",
   "busqueda_ml": "discos repuesto afilador rodante",
@@ -11,7 +17,7 @@
   "motivo": "margen base 27% a $17,416; pasa si el FOB es ≤ USD 3.21",
   "señales": [
    {
-    "id": "S1",
+    "id": "P01.S1",
     "descripcion": "Piden discos/piedras de repuesto y el vendedor no los tiene",
     "errores": [],
     "medida": {
@@ -24,7 +30,7 @@
     }
    },
    {
-    "id": "S2",
+    "id": "P01.S2",
     "descripcion": "Quieren granos más finos para terminar el filo",
     "errores": [],
     "medida": {
@@ -34,6 +40,32 @@
      "importancia": 3.5,
      "satisfaccion": 2.5,
      "puntaje_oportunidad": 4.5
+    }
+   },
+   {
+    "id": "P02.S1",
+    "descripcion": "Piden repuestos de discos para el Refilo",
+    "errores": [],
+    "medida": {
+     "menciones": 10,
+     "insatisfechas": 8,
+     "de_textos": 138,
+     "importancia": 7.2,
+     "satisfaccion": 2.0,
+     "puntaje_oportunidad": 12.4
+    }
+   },
+   {
+    "id": "P02.S2",
+    "descripcion": "Esperaban el cuero para asentar el filo y no viene",
+    "errores": [],
+    "medida": {
+     "menciones": 7,
+     "insatisfechas": 7,
+     "de_textos": 138,
+     "importancia": 5.1,
+     "satisfaccion": 0.0,
+     "puntaje_oportunidad": 10.2
     }
    }
   ],
@@ -139,9 +171,452 @@
   }
  },
  {
+  "metodo": "llm",
+  "productos": [
+   "P03"
+  ],
+  "anclas": [
+   "Set 5 Recipientes Herméticos Acero Inoxidable Para Heladera "
+  ],
+  "id": "O2",
+  "que_traer": "Set de recipientes herméticos de acero de tamaño real (500 ml a 1,5 L) con tapa con burlete, a precio intermedio entre el set chino de $14k y el Tramontina de $28k por unidad",
+  "busqueda_ml": "set recipientes hermeticos acero inoxidable",
+  "estado": "descartada",
+  "se_detiene_en": "C4 hueco",
+  "motivo": "ya atendido: 5 equivalentes venden +100",
+  "señales": [
+   {
+    "id": "P03.S1",
+    "descripcion": "No son herméticos y el material es finito, aunque se venden +5.000",
+    "errores": [],
+    "medida": {
+     "menciones": 48,
+     "insatisfechas": 22,
+     "de_textos": 172,
+     "importancia": 10.0,
+     "satisfaccion": 5.4,
+     "puntaje_oportunidad": 14.6
+    }
+   },
+   {
+    "id": "P03.S2",
+    "descripcion": "Son mucho más chicos que en la foto y la publicación no dice las medidas",
+    "errores": [],
+    "medida": {
+     "menciones": 71,
+     "insatisfechas": 38,
+     "de_textos": 172,
+     "importancia": 10.0,
+     "satisfaccion": 4.6,
+     "puntaje_oportunidad": 15.4
+    }
+   }
+  ],
+  "recorrido": [
+   {
+    "chequeo": "guardrail",
+    "supuesto": "Lo que dice el LLM está en los textos",
+    "pasa": true,
+    "motivo": "citas verificadas"
+   },
+   {
+    "chequeo": "C1 verificada",
+    "supuesto": "La necesidad no es un caso aislado",
+    "pasa": true,
+    "motivo": "la señal aparece en 71 textos (mínimo 3)"
+   },
+   {
+    "chequeo": "C2 sub-atendida",
+    "supuesto": "La necesidad importa y está mal resuelta",
+    "pasa": true,
+    "motivo": "importancia 10.0, satisfacción 4.6 (hace falta ≥ 3.0 y ≤ 5.0)"
+   },
+   {
+    "chequeo": "C3 demanda",
+    "supuesto": "Hay gente eligiendo el producto de origen",
+    "pasa": true,
+    "motivo": "el producto ancla vende +5000 (mínimo 500)"
+   },
+   {
+    "chequeo": "C4 hueco",
+    "supuesto": "Nadie la atiende todavía",
+    "pasa": false,
+    "motivo": "ya atendido: 5 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 37,
+     "venden": 5,
+     "con_alguna_venta": 15,
+     "ventas_visibles": 975,
+     "ejemplos_que_venden": [
+      "Set 3 Recipientes Herméticos De Acero Inoxidable Blanco (+100, $13,597)",
+      "X7 Contenedor Taper Acero Inoxidable Hermetico Con Tapa Plateado (+100, $84,854)",
+      "Lunchera Contenedor Taper Gastronomía 1200ml Acero Inoxidable Hermétic (+100, $44,935)"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "metodo": "llm",
+  "productos": [
+   "P07"
+  ],
+  "anclas": [
+   "Minipimer Mixer Licuadora Batidora De Mano 4 En 1 Accesorios"
+  ],
+  "id": "O3",
+  "que_traer": "Espumador de leche de mano (batidor de café a pilas o USB)",
+  "busqueda_ml": "espumador de leche electrico",
+  "estado": "descartada",
+  "se_detiene_en": "C4 hueco",
+  "motivo": "ya atendido: 12 equivalentes venden +100",
+  "señales": [
+   {
+    "id": "P07.S1",
+    "descripcion": "Preguntan una y otra vez si trae el batidor/espumador de café de la foto",
+    "errores": [],
+    "medida": {
+     "menciones": 10,
+     "insatisfechas": 8,
+     "de_textos": 133,
+     "importancia": 7.5,
+     "satisfaccion": 2.0,
+     "puntaje_oportunidad": 13.0
+    }
+   }
+  ],
+  "recorrido": [
+   {
+    "chequeo": "guardrail",
+    "supuesto": "Lo que dice el LLM está en los textos",
+    "pasa": true,
+    "motivo": "citas verificadas"
+   },
+   {
+    "chequeo": "C1 verificada",
+    "supuesto": "La necesidad no es un caso aislado",
+    "pasa": true,
+    "motivo": "la señal aparece en 10 textos (mínimo 3)"
+   },
+   {
+    "chequeo": "C2 sub-atendida",
+    "supuesto": "La necesidad importa y está mal resuelta",
+    "pasa": true,
+    "motivo": "importancia 7.5, satisfacción 2.0 (hace falta ≥ 3.0 y ≤ 5.0)"
+   },
+   {
+    "chequeo": "C3 demanda",
+    "supuesto": "Hay gente eligiendo el producto de origen",
+    "pasa": true,
+    "motivo": "el producto ancla vende +10000 (mínimo 500)"
+   },
+   {
+    "chequeo": "C4 hueco",
+    "supuesto": "Nadie la atiende todavía",
+    "pasa": false,
+    "motivo": "ya atendido: 12 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 25,
+     "venden": 12,
+     "con_alguna_venta": 19,
+     "ventas_visibles": 5425,
+     "ejemplos_que_venden": [
+      "Batidor Espumador Leche Cafe Electrico Recargable Usb Inalam Color Neg (+1000, $11,304)",
+      "Batidor Espumador Leche Cafe Electrico Recargable Usb Inalam (+1000, $10,087)",
+      "Batidor Eléctrico Usb Inalámbrico Espumadora Café Leche (+1000, $10,499)"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "metodo": "llm",
+  "productos": [
+   "P08"
+  ],
+  "anclas": [
+   "Mixer Minipimer Multiprocesadora Spica Sp-640 Batidora Color"
+  ],
+  "id": "O4",
+  "que_traer": "Repuestos de minipimer (vaso picador, pie/varilla, acoples) compatibles con los modelos más vendidos",
+  "busqueda_ml": "repuesto minipimer picador",
+  "estado": "descartada",
+  "se_detiene_en": "C4 hueco",
+  "motivo": "ya atendido: 7 equivalentes venden +100",
+  "señales": [
+   {
+    "id": "P08.S1",
+    "descripcion": "Piden repuestos (picador, pie, encastres) que no se consiguen",
+    "errores": [],
+    "medida": {
+     "menciones": 10,
+     "insatisfechas": 9,
+     "de_textos": 159,
+     "importancia": 6.3,
+     "satisfaccion": 1.0,
+     "puntaje_oportunidad": 11.6
+    }
+   },
+   {
+    "id": "P08.S2",
+    "descripcion": "El encastre de plástico se afloja o se rompe",
+    "errores": [],
+    "medida": {
+     "menciones": 10,
+     "insatisfechas": 8,
+     "de_textos": 159,
+     "importancia": 6.3,
+     "satisfaccion": 2.0,
+     "puntaje_oportunidad": 10.6
+    }
+   }
+  ],
+  "recorrido": [
+   {
+    "chequeo": "guardrail",
+    "supuesto": "Lo que dice el LLM está en los textos",
+    "pasa": true,
+    "motivo": "citas verificadas"
+   },
+   {
+    "chequeo": "C1 verificada",
+    "supuesto": "La necesidad no es un caso aislado",
+    "pasa": true,
+    "motivo": "la señal aparece en 10 textos (mínimo 3)"
+   },
+   {
+    "chequeo": "C2 sub-atendida",
+    "supuesto": "La necesidad importa y está mal resuelta",
+    "pasa": true,
+    "motivo": "importancia 6.3, satisfacción 1.0 (hace falta ≥ 3.0 y ≤ 5.0)"
+   },
+   {
+    "chequeo": "C3 demanda",
+    "supuesto": "Hay gente eligiendo el producto de origen",
+    "pasa": true,
+    "motivo": "el producto ancla vende +10000 (mínimo 500)"
+   },
+   {
+    "chequeo": "C4 hueco",
+    "supuesto": "Nadie la atiende todavía",
+    "pasa": false,
+    "motivo": "ya atendido: 7 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 29,
+     "venden": 7,
+     "con_alguna_venta": 13,
+     "ventas_visibles": 2275,
+     "ejemplos_que_venden": [
+      "Repuesto Pie/brazo/varilla Mixer Minipimer Liliana Original (+1000, $14,999)",
+      "Repuesto Brazo Pie Mixer Black+Decker, Electrolux, Top House, Liliana  (+500, $16,999)",
+      "Pie Picador Cuchilla Minipimer Black Decker Hb1003wc-ar (+100, $28,900)"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "metodo": "llm",
+  "productos": [
+   "P09"
+  ],
+  "anclas": [
+   "Organizadores Ropa Plegable Premium Canasto Con Manijas!!!"
+  ],
+  "id": "O5",
+  "que_traer": "Organizadores de ropa plegables con armazón metálico",
+  "busqueda_ml": "organizador ropa plegable estructura metalica",
+  "estado": "descartada",
+  "se_detiene_en": "C4 hueco",
+  "motivo": "ya atendido: 7 equivalentes venden +100",
+  "señales": [
+   {
+    "id": "P09.S1",
+    "descripcion": "No trae el armazón o las varillas y se desarma con peso",
+    "errores": [],
+    "medida": {
+     "menciones": 6,
+     "insatisfechas": 5,
+     "de_textos": 140,
+     "importancia": 4.3,
+     "satisfaccion": 1.7,
+     "puntaje_oportunidad": 6.9
+    }
+   }
+  ],
+  "recorrido": [
+   {
+    "chequeo": "guardrail",
+    "supuesto": "Lo que dice el LLM está en los textos",
+    "pasa": true,
+    "motivo": "citas verificadas"
+   },
+   {
+    "chequeo": "C1 verificada",
+    "supuesto": "La necesidad no es un caso aislado",
+    "pasa": true,
+    "motivo": "la señal aparece en 6 textos (mínimo 3)"
+   },
+   {
+    "chequeo": "C2 sub-atendida",
+    "supuesto": "La necesidad importa y está mal resuelta",
+    "pasa": true,
+    "motivo": "importancia 4.3, satisfacción 1.7 (hace falta ≥ 3.0 y ≤ 5.0)"
+   },
+   {
+    "chequeo": "C3 demanda",
+    "supuesto": "Hay gente eligiendo el producto de origen",
+    "pasa": true,
+    "motivo": "el producto ancla vende +5000 (mínimo 500)"
+   },
+   {
+    "chequeo": "C4 hueco",
+    "supuesto": "Nadie la atiende todavía",
+    "pasa": false,
+    "motivo": "ya atendido: 7 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 17,
+     "venden": 7,
+     "con_alguna_venta": 11,
+     "ventas_visibles": 13250,
+     "ejemplos_que_venden": [
+      "X2 Organizador Canasto Caja De Tela Plegable Estructura Metalica Ideal (+5000, $14,520)",
+      "Organizador Caja De Tela Plegable Con Estructura Metalica (+5000, $10,830)",
+      "X4 Organizador Canasto Caja De Tela Premium Antidesgaste Cationica | P (+1000, $29,039)"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "metodo": "llm",
+  "productos": [
+   "P10",
+   "P11"
+  ],
+  "anclas": [
+   "Pack x2 Estantes Repisas Con Adhesivos Para Ducha, Baño y Co",
+   "Estante Repisa Organizador Ducha Baño Esquinero Adhesivo"
+  ],
+  "id": "O6",
+  "que_traer": "Pack de adhesivos de repuesto (pegatinas transparentes resistentes al agua) para estantes de ducha sin perforar",
+  "busqueda_ml": "adhesivo repuesto estante ducha",
+  "estado": "descartada",
+  "se_detiene_en": "C5 la eligen",
+  "motivo": "la gente la deja pasar: 8 alternativas con stock local a precio comparable suman +125 ventas contra +10000 del producto de origen",
+  "señales": [
+   {
+    "id": "P10.S1",
+    "descripcion": "Piden los adhesivos de repuesto por separado",
+    "errores": [],
+    "medida": {
+     "menciones": 7,
+     "insatisfechas": 5,
+     "de_textos": 200,
+     "importancia": 3.5,
+     "satisfaccion": 2.9,
+     "puntaje_oportunidad": 4.1
+    }
+   },
+   {
+    "id": "P10.S2",
+    "descripcion": "Quisieran pegatinas extra en la caja",
+    "errores": [],
+    "medida": {
+     "menciones": 11,
+     "insatisfechas": 8,
+     "de_textos": 200,
+     "importancia": 5.5,
+     "satisfaccion": 2.7,
+     "puntaje_oportunidad": 8.3
+    }
+   },
+   {
+    "id": "P11.S1",
+    "descripcion": "Piden adhesivos extra porque el original se despegó",
+    "errores": [],
+    "medida": {
+     "menciones": 26,
+     "insatisfechas": 20,
+     "de_textos": 172,
+     "importancia": 10.0,
+     "satisfaccion": 2.3,
+     "puntaje_oportunidad": 17.7
+    }
+   },
+   {
+    "id": "P11.S2",
+    "descripcion": "El vapor del baño despega los ganchos",
+    "errores": [],
+    "medida": {
+     "menciones": 7,
+     "insatisfechas": 7,
+     "de_textos": 172,
+     "importancia": 4.1,
+     "satisfaccion": 0.0,
+     "puntaje_oportunidad": 8.2
+    }
+   }
+  ],
+  "recorrido": [
+   {
+    "chequeo": "guardrail",
+    "supuesto": "Lo que dice el LLM está en los textos",
+    "pasa": true,
+    "motivo": "citas verificadas"
+   },
+   {
+    "chequeo": "C1 verificada",
+    "supuesto": "La necesidad no es un caso aislado",
+    "pasa": true,
+    "motivo": "la señal aparece en 26 textos (mínimo 3)"
+   },
+   {
+    "chequeo": "C2 sub-atendida",
+    "supuesto": "La necesidad importa y está mal resuelta",
+    "pasa": true,
+    "motivo": "importancia 3.5, satisfacción 2.9 (hace falta ≥ 3.0 y ≤ 5.0)"
+   },
+   {
+    "chequeo": "C3 demanda",
+    "supuesto": "Hay gente eligiendo el producto de origen",
+    "pasa": true,
+    "motivo": "el producto ancla vende +10000 (mínimo 500)"
+   },
+   {
+    "chequeo": "C4 hueco",
+    "supuesto": "Nadie la atiende todavía",
+    "pasa": true,
+    "motivo": "20 equivalentes, 0 venden +100",
+    "datos": {
+     "equivalentes": 20,
+     "venden": 0,
+     "con_alguna_venta": 3,
+     "ventas_visibles": 125,
+     "ejemplos_que_venden": []
+    }
+   },
+   {
+    "chequeo": "C5 la eligen",
+    "supuesto": "Si se ofrece, la gente la elige",
+    "pasa": false,
+    "motivo": "la gente la deja pasar: 8 alternativas con stock local a precio comparable suman +125 ventas contra +10000 del producto de origen",
+    "datos": {
+     "comparables": 8,
+     "ventas_comparables": 125,
+     "ventas_del_ancla": 10000
+    }
+   }
+  ]
+ },
+ {
   "metodo": "B1",
-  "producto": "P01",
-  "ancla": "Afilador De Cuchillos Rodante Rodillo De Diamante Filoshark ",
+  "productos": [
+   "P01"
+  ],
+  "anclas": [
+   "Afilador De Cuchillos Rodante Rodillo De Diamante Filoshark "
+  ],
   "id": "B1",
   "que_traer": "versión del producto ancla que resuelva la queja 'filo'",
   "busqueda_ml": "afilador cuchillos rodante",
@@ -150,7 +625,7 @@
   "motivo": "ya atendido: 15 equivalentes venden +100",
   "señales": [
    {
-    "id": "B1",
+    "id": "P01.B1",
     "descripcion": "queja más frecuente: 'filo'",
     "errores": [],
     "medida": {
@@ -209,8 +684,12 @@
  },
  {
   "metodo": "B2",
-  "producto": "P01",
-  "ancla": "Afilador De Cuchillos Rodante Rodillo De Diamante Filoshark ",
+  "productos": [
+   "P01"
+  ],
+  "anclas": [
+   "Afilador De Cuchillos Rodante Rodillo De Diamante Filoshark "
+  ],
   "id": "B2",
   "que_traer": "repuesto de afilador cuchillos rodante",
   "busqueda_ml": "repuesto afilador cuchillos rodante",
@@ -219,7 +698,7 @@
   "motivo": "margen base 24% a $17,107; pasa si el FOB es ≤ USD 3.13",
   "señales": [
    {
-    "id": "B2",
+    "id": "P01.B2",
     "descripcion": "preguntas que piden repuesto",
     "errores": [],
     "medida": {
@@ -333,148 +812,13 @@
   }
  },
  {
-  "metodo": "llm",
-  "producto": "P02",
-  "ancla": "Afilador Refilo Cuchillos Manual Rodillo Profesional Marrón",
-  "id": "O1",
-  "que_traer": "Disco de repuesto para afiladores rodantes (diamante 400/1000 o grano fino 3000/6000), vendido suelto",
-  "busqueda_ml": "discos repuesto afilador rodante",
-  "estado": "condicional",
-  "se_detiene_en": "C6 margen",
-  "motivo": "margen base 27% a $17,416; pasa si el FOB es ≤ USD 3.21",
-  "señales": [
-   {
-    "id": "S1",
-    "descripcion": "Piden repuestos de discos para el Refilo",
-    "errores": [],
-    "medida": {
-     "menciones": 10,
-     "insatisfechas": 8,
-     "de_textos": 138,
-     "importancia": 7.2,
-     "satisfaccion": 2.0,
-     "puntaje_oportunidad": 12.4
-    }
-   },
-   {
-    "id": "S2",
-    "descripcion": "Esperaban el cuero para asentar el filo y no viene",
-    "errores": [],
-    "medida": {
-     "menciones": 7,
-     "insatisfechas": 7,
-     "de_textos": 138,
-     "importancia": 5.1,
-     "satisfaccion": 0.0,
-     "puntaje_oportunidad": 10.2
-    }
-   }
-  ],
-  "recorrido": [
-   {
-    "chequeo": "guardrail",
-    "supuesto": "Lo que dice el LLM está en los textos",
-    "pasa": true,
-    "motivo": "citas verificadas"
-   },
-   {
-    "chequeo": "C1 verificada",
-    "supuesto": "La necesidad no es un caso aislado",
-    "pasa": true,
-    "motivo": "la señal aparece en 10 textos (mínimo 3)"
-   },
-   {
-    "chequeo": "C2 sub-atendida",
-    "supuesto": "La necesidad importa y está mal resuelta",
-    "pasa": true,
-    "motivo": "importancia 7.2, satisfacción 2.0 (hace falta ≥ 3.0 y ≤ 5.0)"
-   },
-   {
-    "chequeo": "C3 demanda",
-    "supuesto": "Hay gente eligiendo el producto de origen",
-    "pasa": true,
-    "motivo": "el producto ancla vende +1000 (mínimo 500)"
-   },
-   {
-    "chequeo": "C4 hueco",
-    "supuesto": "Nadie la atiende todavía",
-    "pasa": true,
-    "motivo": "2 equivalentes, 2 venden +100",
-    "datos": {
-     "equivalentes": 2,
-     "venden": 2,
-     "con_alguna_venta": 2,
-     "ventas_visibles": 200,
-     "ejemplos_que_venden": [
-      "Disco Diamante 240/800/1200 Grit Afilador Rodante Smarta (+100, $17,416)",
-      "Disco Diamante 240/800/1200 Grit Afilador Rodante Smarta (+100, $17,415)"
-     ]
-    }
-   },
-   {
-    "chequeo": "C5 la eligen",
-    "supuesto": "Si se ofrece, la gente la elige",
-    "pasa": true,
-    "motivo": "2 alternativas comparables suman +200 ventas (producto de origen: +1000)",
-    "datos": {
-     "comparables": 2,
-     "ventas_comparables": 200,
-     "ventas_del_ancla": 1000
-    }
-   },
-   {
-    "chequeo": "C6 margen",
-    "supuesto": "Deja plata al precio que la gente paga",
-    "pasa": false,
-    "motivo": "margen base 27% a $17,416; pasa si el FOB es ≤ USD 3.21",
-    "datos": {
-     "precio_ars": 17416,
-     "ingreso_neto_ars": 8951,
-     "lote": 1000,
-     "envio_ars": 2500,
-     "escenarios": {
-      "optimista": {
-       "costo_puesto_ars": 5715,
-       "margen_pct": 57
-      },
-      "base": {
-       "costo_puesto_ars": 7049,
-       "margen_pct": 27
-      },
-      "pesimista": {
-       "costo_puesto_ars": 16030,
-       "margen_pct": -44
-      }
-     },
-     "fob_maximo_usd": 3.21
-    }
-   }
-  ],
-  "confianza": {
-   "nivel": "baja",
-   "factores_que_se_cumplen": "2 de 5",
-   "a_favor": [
-    "la misma necesidad aparece en 2 o más productos distintos",
-    "la mencionan 10 o más textos"
-   ],
-   "en_contra": [
-    "los equivalentes casi no se venden: puede que no lo quiera tanta gente",
-    "el precio de referencia sale de pocas publicaciones",
-    "en el escenario pesimista no deja el margen mínimo"
-   ],
-   "evidencia": {
-    "anclas": 2,
-    "max_menciones": 11,
-    "ventas_de_equivalentes": 200,
-    "publicaciones_con_precio": 2,
-    "margen_pesimista_pct": -44
-   }
-  }
- },
- {
   "metodo": "B1",
-  "producto": "P02",
-  "ancla": "Afilador Refilo Cuchillos Manual Rodillo Profesional Marrón",
+  "productos": [
+   "P02"
+  ],
+  "anclas": [
+   "Afilador Refilo Cuchillos Manual Rodillo Profesional Marrón"
+  ],
   "id": "B1",
   "que_traer": "versión del producto ancla que resuelva la queja 'filo'",
   "busqueda_ml": "afilador cuchillos rodante",
@@ -483,7 +827,7 @@
   "motivo": "importancia 10.0, satisfacción 5.2 (hace falta ≥ 3.0 y ≤ 5.0)",
   "señales": [
    {
-    "id": "B1",
+    "id": "P02.B1",
     "descripcion": "queja más frecuente: 'filo'",
     "errores": [],
     "medida": {
@@ -519,8 +863,12 @@
  },
  {
   "metodo": "B2",
-  "producto": "P02",
-  "ancla": "Afilador Refilo Cuchillos Manual Rodillo Profesional Marrón",
+  "productos": [
+   "P02"
+  ],
+  "anclas": [
+   "Afilador Refilo Cuchillos Manual Rodillo Profesional Marrón"
+  ],
   "id": "B2",
   "que_traer": "repuesto de afilador cuchillos rodante",
   "busqueda_ml": "repuesto afilador cuchillos rodante",
@@ -529,7 +877,7 @@
   "motivo": "margen base 24% a $17,107; pasa si el FOB es ≤ USD 3.13",
   "señales": [
    {
-    "id": "B2",
+    "id": "P02.B2",
     "descripcion": "preguntas que piden repuesto",
     "errores": [],
     "medida": {
@@ -643,91 +991,13 @@
   }
  },
  {
-  "metodo": "llm",
-  "producto": "P03",
-  "ancla": "Set 5 Recipientes Herméticos Acero Inoxidable Para Heladera ",
-  "id": "O2",
-  "que_traer": "Set de recipientes herméticos de acero de tamaño real (500 ml a 1,5 L) con tapa con burlete, a precio intermedio entre el set chino de $14k y el Tramontina de $28k por unidad",
-  "busqueda_ml": "set recipientes hermeticos acero inoxidable",
-  "estado": "descartada",
-  "se_detiene_en": "C4 hueco",
-  "motivo": "ya atendido: 5 equivalentes venden +100",
-  "señales": [
-   {
-    "id": "S1",
-    "descripcion": "No son herméticos y el material es finito, aunque se venden +5.000",
-    "errores": [],
-    "medida": {
-     "menciones": 48,
-     "insatisfechas": 22,
-     "de_textos": 172,
-     "importancia": 10.0,
-     "satisfaccion": 5.4,
-     "puntaje_oportunidad": 14.6
-    }
-   },
-   {
-    "id": "S2",
-    "descripcion": "Son mucho más chicos que en la foto y la publicación no dice las medidas",
-    "errores": [],
-    "medida": {
-     "menciones": 71,
-     "insatisfechas": 38,
-     "de_textos": 172,
-     "importancia": 10.0,
-     "satisfaccion": 4.6,
-     "puntaje_oportunidad": 15.4
-    }
-   }
-  ],
-  "recorrido": [
-   {
-    "chequeo": "guardrail",
-    "supuesto": "Lo que dice el LLM está en los textos",
-    "pasa": true,
-    "motivo": "citas verificadas"
-   },
-   {
-    "chequeo": "C1 verificada",
-    "supuesto": "La necesidad no es un caso aislado",
-    "pasa": true,
-    "motivo": "la señal aparece en 71 textos (mínimo 3)"
-   },
-   {
-    "chequeo": "C2 sub-atendida",
-    "supuesto": "La necesidad importa y está mal resuelta",
-    "pasa": true,
-    "motivo": "importancia 10.0, satisfacción 4.6 (hace falta ≥ 3.0 y ≤ 5.0)"
-   },
-   {
-    "chequeo": "C3 demanda",
-    "supuesto": "Hay gente eligiendo el producto de origen",
-    "pasa": true,
-    "motivo": "el producto ancla vende +5000 (mínimo 500)"
-   },
-   {
-    "chequeo": "C4 hueco",
-    "supuesto": "Nadie la atiende todavía",
-    "pasa": false,
-    "motivo": "ya atendido: 5 equivalentes venden +100",
-    "datos": {
-     "equivalentes": 37,
-     "venden": 5,
-     "con_alguna_venta": 15,
-     "ventas_visibles": 975,
-     "ejemplos_que_venden": [
-      "Set 3 Recipientes Herméticos De Acero Inoxidable Blanco (+100, $13,597)",
-      "X7 Contenedor Taper Acero Inoxidable Hermetico Con Tapa Plateado (+100, $84,854)",
-      "Lunchera Contenedor Taper Gastronomía 1200ml Acero Inoxidable Hermétic (+100, $44,935)"
-     ]
-    }
-   }
-  ]
- },
- {
   "metodo": "B1",
-  "producto": "P03",
-  "ancla": "Set 5 Recipientes Herméticos Acero Inoxidable Para Heladera ",
+  "productos": [
+   "P03"
+  ],
+  "anclas": [
+   "Set 5 Recipientes Herméticos Acero Inoxidable Para Heladera "
+  ],
   "id": "B1",
   "que_traer": "versión del producto ancla que resuelva la queja 'material'",
   "busqueda_ml": "recipientes hermeticos acero inoxidable",
@@ -736,7 +1006,7 @@
   "motivo": "sin precio de proveedor o sin precio de mercado",
   "señales": [
    {
-    "id": "B1",
+    "id": "P03.B1",
     "descripcion": "queja más frecuente: 'material'",
     "errores": [],
     "medida": {
@@ -811,8 +1081,12 @@
  },
  {
   "metodo": "B1",
-  "producto": "P04",
-  "ancla": "Hermetico recipiente cuadrado freezinox Tramontina 61223730 ",
+  "productos": [
+   "P04"
+  ],
+  "anclas": [
+   "Hermetico recipiente cuadrado freezinox Tramontina 61223730 "
+  ],
   "id": "B1",
   "que_traer": "versión del producto ancla que resuelva la queja 'cierra'",
   "busqueda_ml": "recipientes hermeticos acero inoxidable",
@@ -821,7 +1095,7 @@
   "motivo": "sin precio de proveedor o sin precio de mercado",
   "señales": [
    {
-    "id": "B1",
+    "id": "P04.B1",
     "descripcion": "queja más frecuente: 'cierra'",
     "errores": [],
     "medida": {
@@ -896,8 +1170,12 @@
  },
  {
   "metodo": "B1",
-  "producto": "P05",
-  "ancla": "Balanza De Cocina Digital Blanco 10 Kg",
+  "productos": [
+   "P05"
+  ],
+  "anclas": [
+   "Balanza De Cocina Digital Blanco 10 Kg"
+  ],
   "id": "B1",
   "que_traer": "versión del producto ancla que resuelva la queja 'precio'",
   "busqueda_ml": "balanza de cocina digital",
@@ -906,7 +1184,7 @@
   "motivo": "importancia 10.0, satisfacción 7.0 (hace falta ≥ 3.0 y ≤ 5.0)",
   "señales": [
    {
-    "id": "B1",
+    "id": "P05.B1",
     "descripcion": "queja más frecuente: 'precio'",
     "errores": [],
     "medida": {
@@ -942,8 +1220,12 @@
  },
  {
   "metodo": "B1",
-  "producto": "P06",
-  "ancla": "Balanza De Cocina Digital Tara Electronica Multiuso Portatil",
+  "productos": [
+   "P06"
+  ],
+  "anclas": [
+   "Balanza De Cocina Digital Tara Electronica Multiuso Portatil"
+  ],
   "id": "B1",
   "que_traer": "versión del producto ancla que resuelva la queja 'precio'",
   "busqueda_ml": "balanza de cocina digital",
@@ -952,7 +1234,7 @@
   "motivo": "importancia 10.0, satisfacción 7.6 (hace falta ≥ 3.0 y ≤ 5.0)",
   "señales": [
    {
-    "id": "B1",
+    "id": "P06.B1",
     "descripcion": "queja más frecuente: 'precio'",
     "errores": [],
     "medida": {
@@ -987,78 +1269,13 @@
   ]
  },
  {
-  "metodo": "llm",
-  "producto": "P07",
-  "ancla": "Minipimer Mixer Licuadora Batidora De Mano 4 En 1 Accesorios",
-  "id": "O3",
-  "que_traer": "Espumador de leche de mano (batidor de café a pilas o USB)",
-  "busqueda_ml": "espumador de leche electrico",
-  "estado": "descartada",
-  "se_detiene_en": "C4 hueco",
-  "motivo": "ya atendido: 12 equivalentes venden +100",
-  "señales": [
-   {
-    "id": "S1",
-    "descripcion": "Preguntan una y otra vez si trae el batidor/espumador de café de la foto",
-    "errores": [],
-    "medida": {
-     "menciones": 10,
-     "insatisfechas": 8,
-     "de_textos": 133,
-     "importancia": 7.5,
-     "satisfaccion": 2.0,
-     "puntaje_oportunidad": 13.0
-    }
-   }
-  ],
-  "recorrido": [
-   {
-    "chequeo": "guardrail",
-    "supuesto": "Lo que dice el LLM está en los textos",
-    "pasa": true,
-    "motivo": "citas verificadas"
-   },
-   {
-    "chequeo": "C1 verificada",
-    "supuesto": "La necesidad no es un caso aislado",
-    "pasa": true,
-    "motivo": "la señal aparece en 10 textos (mínimo 3)"
-   },
-   {
-    "chequeo": "C2 sub-atendida",
-    "supuesto": "La necesidad importa y está mal resuelta",
-    "pasa": true,
-    "motivo": "importancia 7.5, satisfacción 2.0 (hace falta ≥ 3.0 y ≤ 5.0)"
-   },
-   {
-    "chequeo": "C3 demanda",
-    "supuesto": "Hay gente eligiendo el producto de origen",
-    "pasa": true,
-    "motivo": "el producto ancla vende +10000 (mínimo 500)"
-   },
-   {
-    "chequeo": "C4 hueco",
-    "supuesto": "Nadie la atiende todavía",
-    "pasa": false,
-    "motivo": "ya atendido: 12 equivalentes venden +100",
-    "datos": {
-     "equivalentes": 25,
-     "venden": 12,
-     "con_alguna_venta": 19,
-     "ventas_visibles": 5425,
-     "ejemplos_que_venden": [
-      "Batidor Espumador Leche Cafe Electrico Recargable Usb Inalam Color Neg (+1000, $11,304)",
-      "Batidor Espumador Leche Cafe Electrico Recargable Usb Inalam (+1000, $10,087)",
-      "Batidor Eléctrico Usb Inalámbrico Espumadora Café Leche (+1000, $10,499)"
-     ]
-    }
-   }
-  ]
- },
- {
   "metodo": "B1",
-  "producto": "P07",
-  "ancla": "Minipimer Mixer Licuadora Batidora De Mano 4 En 1 Accesorios",
+  "productos": [
+   "P07"
+  ],
+  "anclas": [
+   "Minipimer Mixer Licuadora Batidora De Mano 4 En 1 Accesorios"
+  ],
   "id": "B1",
   "que_traer": "versión del producto ancla que resuelva la queja 'precio'",
   "busqueda_ml": "minipimer",
@@ -1067,7 +1284,7 @@
   "motivo": "importancia 10.0, satisfacción 6.3 (hace falta ≥ 3.0 y ≤ 5.0)",
   "señales": [
    {
-    "id": "B1",
+    "id": "P07.B1",
     "descripcion": "queja más frecuente: 'precio'",
     "errores": [],
     "medida": {
@@ -1102,91 +1319,13 @@
   ]
  },
  {
-  "metodo": "llm",
-  "producto": "P08",
-  "ancla": "Mixer Minipimer Multiprocesadora Spica Sp-640 Batidora Color",
-  "id": "O4",
-  "que_traer": "Repuestos de minipimer (vaso picador, pie/varilla, acoples) compatibles con los modelos más vendidos",
-  "busqueda_ml": "repuesto minipimer picador",
-  "estado": "descartada",
-  "se_detiene_en": "C4 hueco",
-  "motivo": "ya atendido: 7 equivalentes venden +100",
-  "señales": [
-   {
-    "id": "S1",
-    "descripcion": "Piden repuestos (picador, pie, encastres) que no se consiguen",
-    "errores": [],
-    "medida": {
-     "menciones": 10,
-     "insatisfechas": 9,
-     "de_textos": 159,
-     "importancia": 6.3,
-     "satisfaccion": 1.0,
-     "puntaje_oportunidad": 11.6
-    }
-   },
-   {
-    "id": "S2",
-    "descripcion": "El encastre de plástico se afloja o se rompe",
-    "errores": [],
-    "medida": {
-     "menciones": 10,
-     "insatisfechas": 8,
-     "de_textos": 159,
-     "importancia": 6.3,
-     "satisfaccion": 2.0,
-     "puntaje_oportunidad": 10.6
-    }
-   }
-  ],
-  "recorrido": [
-   {
-    "chequeo": "guardrail",
-    "supuesto": "Lo que dice el LLM está en los textos",
-    "pasa": true,
-    "motivo": "citas verificadas"
-   },
-   {
-    "chequeo": "C1 verificada",
-    "supuesto": "La necesidad no es un caso aislado",
-    "pasa": true,
-    "motivo": "la señal aparece en 10 textos (mínimo 3)"
-   },
-   {
-    "chequeo": "C2 sub-atendida",
-    "supuesto": "La necesidad importa y está mal resuelta",
-    "pasa": true,
-    "motivo": "importancia 6.3, satisfacción 1.0 (hace falta ≥ 3.0 y ≤ 5.0)"
-   },
-   {
-    "chequeo": "C3 demanda",
-    "supuesto": "Hay gente eligiendo el producto de origen",
-    "pasa": true,
-    "motivo": "el producto ancla vende +10000 (mínimo 500)"
-   },
-   {
-    "chequeo": "C4 hueco",
-    "supuesto": "Nadie la atiende todavía",
-    "pasa": false,
-    "motivo": "ya atendido: 7 equivalentes venden +100",
-    "datos": {
-     "equivalentes": 29,
-     "venden": 7,
-     "con_alguna_venta": 13,
-     "ventas_visibles": 2275,
-     "ejemplos_que_venden": [
-      "Repuesto Pie/brazo/varilla Mixer Minipimer Liliana Original (+1000, $14,999)",
-      "Repuesto Brazo Pie Mixer Black+Decker, Electrolux, Top House, Liliana  (+500, $16,999)",
-      "Pie Picador Cuchilla Minipimer Black Decker Hb1003wc-ar (+100, $28,900)"
-     ]
-    }
-   }
-  ]
- },
- {
   "metodo": "B1",
-  "producto": "P08",
-  "ancla": "Mixer Minipimer Multiprocesadora Spica Sp-640 Batidora Color",
+  "productos": [
+   "P08"
+  ],
+  "anclas": [
+   "Mixer Minipimer Multiprocesadora Spica Sp-640 Batidora Color"
+  ],
   "id": "B1",
   "que_traer": "versión del producto ancla que resuelva la queja 'buena'",
   "busqueda_ml": "minipimer",
@@ -1195,7 +1334,7 @@
   "motivo": "importancia 10.0, satisfacción 5.9 (hace falta ≥ 3.0 y ≤ 5.0)",
   "señales": [
    {
-    "id": "B1",
+    "id": "P08.B1",
     "descripcion": "queja más frecuente: 'buena'",
     "errores": [],
     "medida": {
@@ -1231,8 +1370,12 @@
  },
  {
   "metodo": "B2",
-  "producto": "P08",
-  "ancla": "Mixer Minipimer Multiprocesadora Spica Sp-640 Batidora Color",
+  "productos": [
+   "P08"
+  ],
+  "anclas": [
+   "Mixer Minipimer Multiprocesadora Spica Sp-640 Batidora Color"
+  ],
   "id": "B2",
   "que_traer": "repuesto de minipimer",
   "busqueda_ml": "repuesto minipimer",
@@ -1241,7 +1384,7 @@
   "motivo": "importancia 1.9, satisfacción 0.0 (hace falta ≥ 3.0 y ≤ 5.0)",
   "señales": [
    {
-    "id": "B2",
+    "id": "P08.B2",
     "descripcion": "preguntas que piden repuesto",
     "errores": [],
     "medida": {
@@ -1276,78 +1419,13 @@
   ]
  },
  {
-  "metodo": "llm",
-  "producto": "P09",
-  "ancla": "Organizadores Ropa Plegable Premium Canasto Con Manijas!!!",
-  "id": "O5",
-  "que_traer": "Organizadores de ropa plegables con armazón metálico",
-  "busqueda_ml": "organizador ropa plegable estructura metalica",
-  "estado": "descartada",
-  "se_detiene_en": "C4 hueco",
-  "motivo": "ya atendido: 7 equivalentes venden +100",
-  "señales": [
-   {
-    "id": "S1",
-    "descripcion": "No trae el armazón o las varillas y se desarma con peso",
-    "errores": [],
-    "medida": {
-     "menciones": 6,
-     "insatisfechas": 5,
-     "de_textos": 140,
-     "importancia": 4.3,
-     "satisfaccion": 1.7,
-     "puntaje_oportunidad": 6.9
-    }
-   }
-  ],
-  "recorrido": [
-   {
-    "chequeo": "guardrail",
-    "supuesto": "Lo que dice el LLM está en los textos",
-    "pasa": true,
-    "motivo": "citas verificadas"
-   },
-   {
-    "chequeo": "C1 verificada",
-    "supuesto": "La necesidad no es un caso aislado",
-    "pasa": true,
-    "motivo": "la señal aparece en 6 textos (mínimo 3)"
-   },
-   {
-    "chequeo": "C2 sub-atendida",
-    "supuesto": "La necesidad importa y está mal resuelta",
-    "pasa": true,
-    "motivo": "importancia 4.3, satisfacción 1.7 (hace falta ≥ 3.0 y ≤ 5.0)"
-   },
-   {
-    "chequeo": "C3 demanda",
-    "supuesto": "Hay gente eligiendo el producto de origen",
-    "pasa": true,
-    "motivo": "el producto ancla vende +5000 (mínimo 500)"
-   },
-   {
-    "chequeo": "C4 hueco",
-    "supuesto": "Nadie la atiende todavía",
-    "pasa": false,
-    "motivo": "ya atendido: 7 equivalentes venden +100",
-    "datos": {
-     "equivalentes": 17,
-     "venden": 7,
-     "con_alguna_venta": 11,
-     "ventas_visibles": 13250,
-     "ejemplos_que_venden": [
-      "X2 Organizador Canasto Caja De Tela Plegable Estructura Metalica Ideal (+5000, $14,520)",
-      "Organizador Caja De Tela Plegable Con Estructura Metalica (+5000, $10,830)",
-      "X4 Organizador Canasto Caja De Tela Premium Antidesgaste Cationica | P (+1000, $29,039)"
-     ]
-    }
-   }
-  ]
- },
- {
   "metodo": "B1",
-  "producto": "P09",
-  "ancla": "Organizadores Ropa Plegable Premium Canasto Con Manijas!!!",
+  "productos": [
+   "P09"
+  ],
+  "anclas": [
+   "Organizadores Ropa Plegable Premium Canasto Con Manijas!!!"
+  ],
   "id": "B1",
   "que_traer": "versión del producto ancla que resuelva la queja 'color'",
   "busqueda_ml": "organizador de ropa plegable",
@@ -1356,7 +1434,7 @@
   "motivo": "ya atendido: 43 equivalentes venden +100",
   "señales": [
    {
-    "id": "B1",
+    "id": "P09.B1",
     "descripcion": "queja más frecuente: 'color'",
     "errores": [],
     "medida": {
@@ -1414,98 +1492,13 @@
   ]
  },
  {
-  "metodo": "llm",
-  "producto": "P10",
-  "ancla": "Pack x2 Estantes Repisas Con Adhesivos Para Ducha, Baño y Co",
-  "id": "O6",
-  "que_traer": "Pack de adhesivos de repuesto (pegatinas transparentes resistentes al agua) para estantes de ducha sin perforar",
-  "busqueda_ml": "adhesivo repuesto estante ducha",
-  "estado": "descartada",
-  "se_detiene_en": "C5 la eligen",
-  "motivo": "la gente la deja pasar: 8 alternativas con stock local a precio comparable suman +125 ventas contra +10000 del producto de origen",
-  "señales": [
-   {
-    "id": "S1",
-    "descripcion": "Piden los adhesivos de repuesto por separado",
-    "errores": [],
-    "medida": {
-     "menciones": 7,
-     "insatisfechas": 5,
-     "de_textos": 200,
-     "importancia": 3.5,
-     "satisfaccion": 2.9,
-     "puntaje_oportunidad": 4.1
-    }
-   },
-   {
-    "id": "S2",
-    "descripcion": "Quisieran pegatinas extra en la caja",
-    "errores": [],
-    "medida": {
-     "menciones": 11,
-     "insatisfechas": 8,
-     "de_textos": 200,
-     "importancia": 5.5,
-     "satisfaccion": 2.7,
-     "puntaje_oportunidad": 8.3
-    }
-   }
-  ],
-  "recorrido": [
-   {
-    "chequeo": "guardrail",
-    "supuesto": "Lo que dice el LLM está en los textos",
-    "pasa": true,
-    "motivo": "citas verificadas"
-   },
-   {
-    "chequeo": "C1 verificada",
-    "supuesto": "La necesidad no es un caso aislado",
-    "pasa": true,
-    "motivo": "la señal aparece en 11 textos (mínimo 3)"
-   },
-   {
-    "chequeo": "C2 sub-atendida",
-    "supuesto": "La necesidad importa y está mal resuelta",
-    "pasa": true,
-    "motivo": "importancia 3.5, satisfacción 2.9 (hace falta ≥ 3.0 y ≤ 5.0)"
-   },
-   {
-    "chequeo": "C3 demanda",
-    "supuesto": "Hay gente eligiendo el producto de origen",
-    "pasa": true,
-    "motivo": "el producto ancla vende +10000 (mínimo 500)"
-   },
-   {
-    "chequeo": "C4 hueco",
-    "supuesto": "Nadie la atiende todavía",
-    "pasa": true,
-    "motivo": "20 equivalentes, 0 venden +100",
-    "datos": {
-     "equivalentes": 20,
-     "venden": 0,
-     "con_alguna_venta": 3,
-     "ventas_visibles": 125,
-     "ejemplos_que_venden": []
-    }
-   },
-   {
-    "chequeo": "C5 la eligen",
-    "supuesto": "Si se ofrece, la gente la elige",
-    "pasa": false,
-    "motivo": "la gente la deja pasar: 8 alternativas con stock local a precio comparable suman +125 ventas contra +10000 del producto de origen",
-    "datos": {
-     "comparables": 8,
-     "ventas_comparables": 125,
-     "ventas_del_ancla": 10000
-    }
-   }
-  ]
- },
- {
   "metodo": "B1",
-  "producto": "P10",
-  "ancla": "Pack x2 Estantes Repisas Con Adhesivos Para Ducha, Baño y Co",
+  "productos": [
+   "P10"
+  ],
+  "anclas": [
+   "Pack x2 Estantes Repisas Con Adhesivos Para Ducha, Baño y Co"
+  ],
   "id": "B1",
   "que_traer": "versión del producto ancla que resuelva la queja 'hola'",
   "busqueda_ml": "estante baño sin taladro",
@@ -1514,7 +1507,7 @@
   "motivo": "ya atendido: 30 equivalentes venden +100",
   "señales": [
    {
-    "id": "B1",
+    "id": "P10.B1",
     "descripcion": "queja más frecuente: 'hola'",
     "errores": [],
     "medida": {
@@ -1573,8 +1566,12 @@
  },
  {
   "metodo": "B2",
-  "producto": "P10",
-  "ancla": "Pack x2 Estantes Repisas Con Adhesivos Para Ducha, Baño y Co",
+  "productos": [
+   "P10"
+  ],
+  "anclas": [
+   "Pack x2 Estantes Repisas Con Adhesivos Para Ducha, Baño y Co"
+  ],
   "id": "B2",
   "que_traer": "repuesto de estante baño sin taladro",
   "busqueda_ml": "repuesto estante baño sin taladro",
@@ -1583,7 +1580,7 @@
   "motivo": "importancia 2.0, satisfacción 0.0 (hace falta ≥ 3.0 y ≤ 5.0)",
   "señales": [
    {
-    "id": "B2",
+    "id": "P10.B2",
     "descripcion": "preguntas que piden repuesto",
     "errores": [],
     "medida": {
@@ -1618,98 +1615,13 @@
   ]
  },
  {
-  "metodo": "llm",
-  "producto": "P11",
-  "ancla": "Estante Repisa Organizador Ducha Baño Esquinero Adhesivo",
-  "id": "O6",
-  "que_traer": "Pack de adhesivos de repuesto (pegatinas transparentes resistentes al agua) para estantes de ducha sin perforar",
-  "busqueda_ml": "adhesivo repuesto estante ducha",
-  "estado": "descartada",
-  "se_detiene_en": "C5 la eligen",
-  "motivo": "la gente la deja pasar: 8 alternativas con stock local a precio comparable suman +125 ventas contra +10000 del producto de origen",
-  "señales": [
-   {
-    "id": "S1",
-    "descripcion": "Piden adhesivos extra porque el original se despegó",
-    "errores": [],
-    "medida": {
-     "menciones": 26,
-     "insatisfechas": 20,
-     "de_textos": 172,
-     "importancia": 10.0,
-     "satisfaccion": 2.3,
-     "puntaje_oportunidad": 17.7
-    }
-   },
-   {
-    "id": "S2",
-    "descripcion": "El vapor del baño despega los ganchos",
-    "errores": [],
-    "medida": {
-     "menciones": 7,
-     "insatisfechas": 7,
-     "de_textos": 172,
-     "importancia": 4.1,
-     "satisfaccion": 0.0,
-     "puntaje_oportunidad": 8.2
-    }
-   }
-  ],
-  "recorrido": [
-   {
-    "chequeo": "guardrail",
-    "supuesto": "Lo que dice el LLM está en los textos",
-    "pasa": true,
-    "motivo": "citas verificadas"
-   },
-   {
-    "chequeo": "C1 verificada",
-    "supuesto": "La necesidad no es un caso aislado",
-    "pasa": true,
-    "motivo": "la señal aparece en 26 textos (mínimo 3)"
-   },
-   {
-    "chequeo": "C2 sub-atendida",
-    "supuesto": "La necesidad importa y está mal resuelta",
-    "pasa": true,
-    "motivo": "importancia 10.0, satisfacción 2.3 (hace falta ≥ 3.0 y ≤ 5.0)"
-   },
-   {
-    "chequeo": "C3 demanda",
-    "supuesto": "Hay gente eligiendo el producto de origen",
-    "pasa": true,
-    "motivo": "el producto ancla vende +10000 (mínimo 500)"
-   },
-   {
-    "chequeo": "C4 hueco",
-    "supuesto": "Nadie la atiende todavía",
-    "pasa": true,
-    "motivo": "20 equivalentes, 0 venden +100",
-    "datos": {
-     "equivalentes": 20,
-     "venden": 0,
-     "con_alguna_venta": 3,
-     "ventas_visibles": 125,
-     "ejemplos_que_venden": []
-    }
-   },
-   {
-    "chequeo": "C5 la eligen",
-    "supuesto": "Si se ofrece, la gente la elige",
-    "pasa": false,
-    "motivo": "la gente la deja pasar: 8 alternativas con stock local a precio comparable suman +125 ventas contra +10000 del producto de origen",
-    "datos": {
-     "comparables": 8,
-     "ventas_comparables": 125,
-     "ventas_del_ancla": 10000
-    }
-   }
-  ]
- },
- {
   "metodo": "B1",
-  "producto": "P11",
-  "ancla": "Estante Repisa Organizador Ducha Baño Esquinero Adhesivo",
+  "productos": [
+   "P11"
+  ],
+  "anclas": [
+   "Estante Repisa Organizador Ducha Baño Esquinero Adhesivo"
+  ],
   "id": "B1",
   "que_traer": "versión del producto ancla que resuelva la queja 'adhesivo'",
   "busqueda_ml": "estante baño sin taladro",
@@ -1718,7 +1630,7 @@
   "motivo": "ya atendido: 30 equivalentes venden +100",
   "señales": [
    {
-    "id": "B1",
+    "id": "P11.B1",
     "descripcion": "queja más frecuente: 'adhesivo'",
     "errores": [],
     "medida": {

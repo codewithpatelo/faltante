@@ -23,28 +23,32 @@ METODOS = ["llm", "B1", "B2"]
 
 
 def propuestas(particion: str) -> list[Propuesta]:
-    del_llm = json.loads((SERENDIPIA / f"divergente_{particion}.json").read_text(encoding="utf-8"))["por_producto"]
-    capturas = _busquedas_capturadas()
+    del_llm = json.loads((SERENDIPIA / f"divergente_{particion}.json").read_text(encoding="utf-8"))
+    capturas = busquedas_capturadas()
     fobs = json.loads((SERENDIPIA / "fob_2026-11-05.json").read_text(encoding="utf-8"))
     todos = productos()
-    anclas = {sin_acentos(p["titulo"]) for p in todos.values()}
+    titulos_ancla = {sin_acentos(p["titulo"]) for p in todos.values()}
 
-    def armar(metodo, producto, oportunidad, señales, fob_ref, verifica_citas):
-        return Propuesta(metodo, producto, oportunidad, señales, verifica_citas,
+    def armar(metodo, anclas, oportunidad, señales, fob_ref, verifica_citas):
+        return Propuesta(metodo, anclas, oportunidad, señales, verifica_citas,
                          fob=fobs.get(fob_ref) if fob_ref else None,
-                         captura=capturas.get(oportunidad["busqueda_ml"]), titulos_ancla=anclas)
+                         captura=capturas.get(oportunidad["busqueda_ml"]), titulos_ancla=titulos_ancla)
 
+    # LLM: cada oportunidad cita señales "P12.S2" de uno o más productos
+    señales = {f"{pid}.{s['id']}": {**s, "producto": pid} for pid, lista in del_llm["señales"].items() for s in lista}
     salida = []
-    for pid, leido in del_llm.items():
-        producto = todos[pid]
-        señales = {s["id"]: s for s in leido["señales"]}
-        for o in leido["oportunidades"]:
-            salida.append(armar("llm", producto, o, [señales[i] for i in o["señales"] if i in señales], o["id"], True))
+    for o in del_llm["oportunidades"]:
+        citadas = [señales[i] for i in o["señales"] if i in señales]
+        anclas = [todos[pid] for pid in dict.fromkeys(s["producto"] for s in citadas)]
+        if anclas:
+            salida.append(armar("llm", anclas, o, citadas, o["id"], True))
+    # Baselines: una propuesta por producto
+    for pid in del_llm["señales"]:
         for metodo, baseline in (("B1", b1_queja_mas_frecuente), ("B2", b2_pedidos_de_repuesto)):
-            propuesta = baseline(producto)
+            propuesta = baseline(todos[pid])
             if propuesta:
                 señal, oportunidad, fob_ref = propuesta
-                salida.append(armar(metodo, producto, oportunidad, [señal], fob_ref, False))
+                salida.append(armar(metodo, [todos[pid]], oportunidad, [{**señal, "producto": pid}], fob_ref, False))
     return salida
 
 
@@ -76,7 +80,7 @@ def con_confianza(recorridos: list[dict]) -> list[dict]:
     return recorridos
 
 
-def _busquedas_capturadas() -> dict:
+def busquedas_capturadas() -> dict:
     busquedas = {}
     for f in sorted((RAIZ / "data/capturas").glob("captura_ml_serendipia_*.json")):
         busquedas.update(json.loads(f.read_text(encoding="utf-8"))["busquedas"])
@@ -90,4 +94,4 @@ if __name__ == "__main__":
     print(f"## {particion}\n{tabla(recorridos)}\n")
     for r in recorridos:
         nivel = f"confianza {r['confianza']['nivel']}" if "confianza" in r else ""
-        print(f"  {r['metodo']:<3} {r['producto']} {r['estado']:<11} {r['se_detiene_en'] or '':<15} {r['que_traer'][:55]:<55} {r['motivo']} {nivel}")
+        print(f"  {r['metodo']:<3} {','.join(r['productos']):<7} {r['estado']:<11} {r['se_detiene_en'] or '':<15} {r['que_traer'][:55]:<55} {r['motivo']} {nivel}")

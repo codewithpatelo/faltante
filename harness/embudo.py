@@ -42,23 +42,28 @@ EMBUDO = [
 
 @dataclass
 class Propuesta:
-    """Qué traer, quién lo propuso, a partir de qué producto y con qué señales."""
+    """Qué traer, quién lo propuso, y de qué productos y señales sale."""
     metodo: str                    # "llm", "B1" o "B2"
-    producto: dict                 # el producto ancla, con sus opiniones y preguntas
-    oportunidad: dict              # que_traer, busqueda_ml, criterio_equivalencia, señales
-    señales_citadas: list[dict]    # las señales que la sostienen, como las escribió quien propone
+    anclas: list[dict]             # los productos donde aparecen sus señales, con opiniones y preguntas
+    oportunidad: dict              # que_traer, busqueda_ml, criterio_equivalencia
+    señales_citadas: list[dict]    # cada una con "producto" (el ID del ancla donde apareció)
     verifica_citas: bool = True    # los baselines no citan textos
     fob: dict | None = None        # precio de proveedor (data/serendipia/fob_*.json), si lo hay
-    captura: dict | None = None    # la búsqueda de Mercado Libre de lo propuesto, para C4 y C5
+    captura: dict | None = None    # la búsqueda de Mercado Libre de lo propuesto, para C4, C5 y C6
     titulos_ancla: set = field(default_factory=set)
+
+    @property
+    def vendidos_del_ancla(self) -> int:
+        """El producto de origen más elegido entre los que sostienen la propuesta."""
+        return max(a["vendidos"] for a in self.anclas)
 
     @cached_property
     def señales(self) -> list[dict]:
-        """Cada señal con los errores de sus citas y su medición sobre todos los textos."""
-        textos = textos_con_id(self.producto)
-        return [{"id": s["id"], "descripcion": s["descripcion"],
-                 "errores": c.errores_de_citas(s, textos) if self.verifica_citas else [],
-                 "medida": c.medir(s, textos)} for s in self.señales_citadas]
+        """Cada señal con los errores de sus citas y su medición sobre todos los textos de su producto."""
+        textos = {a["id"]: textos_con_id(a) for a in self.anclas}
+        return [{"id": f"{s['producto']}.{s['id']}", "descripcion": s["descripcion"],
+                 "errores": c.errores_de_citas(s, textos[s["producto"]]) if self.verifica_citas else [],
+                 "medida": c.medir(s, textos[s["producto"]])} for s in self.señales_citadas]
 
     @property
     def señales_validas(self) -> list[dict]:
@@ -79,6 +84,6 @@ def recorrer(p: Propuesta) -> dict:
 
 
 def _resultado(p: Propuesta, estado: str, donde: str | None, motivo: str, recorrido: list) -> dict:
-    return {"metodo": p.metodo, "producto": p.producto["id"], "ancla": p.producto["titulo"][:60],
+    return {"metodo": p.metodo, "productos": [a["id"] for a in p.anclas], "anclas": [a["titulo"][:60] for a in p.anclas],
             "id": p.oportunidad["id"], "que_traer": p.oportunidad["que_traer"], "busqueda_ml": p.oportunidad["busqueda_ml"],
             "estado": estado, "se_detiene_en": donde, "motivo": motivo, "señales": p.señales, "recorrido": recorrido}

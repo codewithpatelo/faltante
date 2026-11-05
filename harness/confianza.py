@@ -43,7 +43,7 @@ def evidencia(recorridos: list[dict]) -> dict:
     def datos(r, chequeo):
         return next((x.get("datos", {}) for x in r["recorrido"] if x["chequeo"] == chequeo), {})
     c4, c5 = datos(recorridos[0], "C4 hueco"), datos(recorridos[0], "C6 margen")
-    return {"anclas": len({r["producto"] for r in recorridos}),
+    return {"anclas": len({pid for r in recorridos for pid in r["productos"]}),
             "max_menciones": max((s["medida"]["menciones"] for r in recorridos for s in r["señales"] if not s["errores"]), default=0),
             "ventas_de_equivalentes": c4.get("ventas_visibles", 0),
             "publicaciones_con_precio": c4.get("con_alguna_venta", 0),

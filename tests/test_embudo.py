@@ -8,7 +8,7 @@ from types import SimpleNamespace
 from harness import chequeos as c
 from harness import umbrales as U
 from harness.costo_puesto import EMBALAJE, LOGISTICA_M3, TIPO_CAMBIO, costo_puesto_usd, ingreso_neto_ars
-from harness.divergente import costo, proponer
+from harness.divergente import costo, errores_de_cruce, señales_de
 from harness.embudo import Propuesta, recorrer
 from harness.voces import RAIZ, textos_con_id
 
@@ -51,9 +51,9 @@ def test_equivalente_es_lo_que_el_titulo_dice_que_se_vende():
 
 def _disco(captura):
     oportunidad = {"id": "O1", "que_traer": "disco", "busqueda_ml": "disco", "criterio_equivalencia": {"empieza_con": ["disco"]}}
-    señal = {"id": "S1", "descripcion": "piden discos", "palabras_clave": ["repuesto"],
+    señal = {"id": "S1", "producto": "PX", "descripcion": "piden discos", "palabras_clave": ["repuesto"],
              "citas": [{"texto": "p1", "fragmento": "discos de repuesto"}, {"texto": "o1", "fragmento": "no trae el repuesto"}]}
-    return Propuesta("llm", AFILADOR, oportunidad, [señal], captura={"publicaciones": captura},
+    return Propuesta("llm", [AFILADOR], oportunidad, [señal], captura={"publicaciones": captura},
                      titulos_ancla={"disco rodante ancla"})
 
 
@@ -101,47 +101,42 @@ def test_la_logistica_cobra_al_menos_1_m3_por_embarque():
     assert chico["total"] > lleno["total"]
 
 
-# --- El paso del LLM ---------------------------------------------------------------------
+# --- La divergencia (paso A y paso B) ------------------------------------------------------
 
 class LLMQueCorrige:
-    """Primero inventa una cita; cuando el guardrail se la devuelve, la corrige."""
-    def __init__(self):
-        self.llamadas = 0
-        self.messages = self
+    """Paso A: primero inventa una cita; cuando el guardrail se la devuelve, la corrige."""
+    def __init__(self, fragmentos=("inventado", "no trae el repuesto")):
+        self.llamadas, self.fragmentos, self.messages = 0, fragmentos, self
 
     def create(self, **kw):
+        frag = self.fragmentos[min(self.llamadas, len(self.fragmentos) - 1)]
         self.llamadas += 1
-        return self._respuesta("inventado" if self.llamadas == 1 else "no trae el repuesto")
-
-    def _respuesta(self, fragmento):
-        d = {"señales": [{"id": "S1", "palabras_clave": ["repuesto"],
-                          "citas": [{"texto": "p1", "fragmento": "discos de repuesto"}, {"texto": "o1", "fragmento": fragmento}]}],
-             "oportunidades": []}
+        d = {"señales": [{"id": "S1", "descripcion": "piden discos", "palabras_clave": ["repuesto"],
+                          "citas": [{"texto": "p1", "fragmento": "discos de repuesto"}, {"texto": "o1", "fragmento": frag}]}]}
         return SimpleNamespace(content=[SimpleNamespace(text=json.dumps(d))], usage=SimpleNamespace(input_tokens=1000, output_tokens=200))
 
 
-class LLMQueInsiste(LLMQueCorrige):
-    """Inventa la cita las dos veces."""
-    def create(self, **kw):
-        self.llamadas += 1
-        return self._respuesta("inventado")
-
-
-def test_el_llm_recibe_los_errores_del_guardrail_y_corrige():
+def test_paso_a_el_llm_recibe_los_errores_del_guardrail_y_corrige():
     llm, traza = LLMQueCorrige(), []
-    salida = proponer(llm, AFILADOR, traza)
+    señales = señales_de(llm, AFILADOR, "(sin captura)", traza)
     assert llm.llamadas == 2 and traza[0]["errores"] and not traza[1]["errores"]
-    assert c.errores_de_citas(salida["señales"][0], textos_con_id(AFILADOR)) == []
+    assert c.errores_de_citas(señales[0], textos_con_id(AFILADOR)) == []
 
 
-def test_si_el_llm_insiste_con_una_cita_falsa_la_propuesta_se_descarta_en_el_guardrail():
-    llm, traza = LLMQueInsiste(), []
-    salida = proponer(llm, AFILADOR, traza)
+def test_paso_a_si_el_llm_insiste_con_una_cita_falsa_la_propuesta_se_descarta_en_el_guardrail():
+    llm, traza = LLMQueCorrige(fragmentos=("inventado",)), []
+    señales = señales_de(llm, AFILADOR, "(sin captura)", traza)
     assert llm.llamadas == 2 and all(t["errores"] for t in traza)
     oportunidad = {"id": "O1", "que_traer": "disco", "busqueda_ml": "disco", "criterio_equivalencia": {}}
-    señal = {**salida["señales"][0], "descripcion": "piden discos"}
-    r = recorrer(Propuesta("llm", AFILADOR, oportunidad, [señal]))
+    r = recorrer(Propuesta("llm", [AFILADOR], oportunidad, [{**señales[0], "producto": "PX"}]))
     assert r["estado"] == "descartada" and r["se_detiene_en"] == "guardrail"
+
+
+def test_paso_b_exige_señales_que_existan_y_de_dos_productos_distintos():
+    ids = {"P01.S1", "P01.S2", "P12.S1"}
+    assert errores_de_cruce({"señales": ["P01.S1", "P12.S1"]}, ids) == []
+    assert any("2 productos" in e for e in errores_de_cruce({"señales": ["P01.S1", "P01.S2"]}, ids))
+    assert any("no existe" in e for e in errores_de_cruce({"señales": ["P01.S1", "P99.S9"]}, ids))
 
 
 def test_costo_del_llm_por_tokens():
