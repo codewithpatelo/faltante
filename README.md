@@ -45,8 +45,10 @@ Con Docker: `docker build -t faltante . && docker run --rm faltante`
 
 ## Refrescar los datos de Mercado Libre
 
-La API de búsqueda de Mercado Libre devuelve **403 sin token**, desde la nube y desde una
-conexión hogareña (probado el 05/11/2026), y la web bloquea scripts comunes. Lo que sí
+La API de búsqueda de Mercado Libre está cerrada: devuelve **403 sin token** (desde la nube y
+desde una conexión hogareña) y **403 con token válido** de una app no certificada
+("At least one policy returned UNAUTHORIZED"; probado el 05/11/2026, ver
+`data/prueba_datos/api_con_token_2026-11-05.json`). La web bloquea scripts comunes. Lo que sí
 funciona es leer el listado desde tu navegador con sesión iniciada:
 
 1. Abrí `https://listado.mercadolibre.com.ar/termo` con tu sesión de Mercado Libre.
@@ -59,9 +61,8 @@ make foto CAPTURA=data/capturas/captura_ml_<fecha>.json   # marca producto / sus
 make diagnostico                                           # usa la foto nueva
 ```
 
-Para probar la API con una app propia de Mercado Libre: `make prueba-api` (pide Client ID y
-Secret Key sin mostrarlos y no los guarda). Si con token la búsqueda responde, `make vivo`
-corre el harness contra la API.
+`make prueba-api` repite la prueba de la API con una app propia (pide Client ID y Secret Key
+sin mostrarlos y no los guarda), por si Mercado Libre la abre o la app se certifica.
 
 ## Cómo está armado
 

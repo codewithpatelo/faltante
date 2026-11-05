@@ -1,0 +1,16 @@
+{
+ "fecha": "2026-11-05T20:28:02Z",
+ "app": "tp-iaa (Client ID 7541481022525581), no certificada",
+ "como": "token por authorization_code; el usuario cargó código y Secret Key en una pantalla en su navegador; acá solo quedan códigos de respuesta",
+ "token": {"status": 200, "ok": true},
+ "pruebas": {
+  "busqueda_texto      /sites/MLA/search?q=owala freesip": {"status": 403, "error": "At least one policy returned UNAUTHORIZED."},
+  "busqueda_texto_2    /sites/MLA/search?q=mixer inmersion turelar": {"status": 403, "error": "At least one policy returned UNAUTHORIZED."},
+  "busqueda_categoria  /sites/MLA/search?category=MLA1574": {"status": 403, "error": "At least one policy returned UNAUTHORIZED."},
+  "mas_vendidos_hogar  /highlights/MLA/category/MLA1574": {"status": 403, "error": "At least one policy returned UNAUTHORIZED."},
+  "catalogo_productos  /products/search?site_id=MLA&q=owala freesip": {"status": 403, "error": "At least one policy returned UNAUTHORIZED."},
+  "tendencias          /trends/MLA": {"status": 403, "error": "At least one policy returned UNAUTHORIZED."},
+  "usuario             /users/me": {"status": 200}
+ },
+ "lectura": "El token es válido (/users/me responde) pero la búsqueda, los más vendidos, el catálogo y las tendencias están cerrados por política para esta app. No es falta de token ni de IP."
+}

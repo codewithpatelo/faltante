@@ -144,3 +144,15 @@ se vende; KitchenAid sigue "ya se vende acá"). En la foto nueva el rango de pre
 **Qué decidimos:** la fuente de datos es la captura desde el navegador, declarada como
 limitación. La API queda para quien tenga una app con token (`make prueba-api`). Siguiente
 paso: emparejamiento con LLM contra estas reglas, empezando por los errores conocidos.
+
+## 2026-11-05 — API de Mercado Libre con token: cerrada igual
+
+**Qué probamos:** sacar un token válido con la app tp-iaa (authorization_code) y repetir las
+llamadas. El usuario cargó el código y la Secret Key en su navegador; guardamos solo códigos
+de respuesta en `data/prueba_datos/api_con_token_2026-11-05.json`.
+**Qué esperábamos:** que con token la búsqueda respondiera.
+**Qué pasó:** el token es válido (`/users/me` responde 200), pero búsqueda por texto, por
+categoría, más vendidos, catálogo y tendencias dan 403 "At least one policy returned
+UNAUTHORIZED". Están cerradas por política para una app no certificada, con o sin token.
+**Qué decidimos:** la API de búsqueda queda descartada como fuente. La fuente es la captura
+desde el navegador (`scripts/captura_ml.js`), declarada como limitación.
