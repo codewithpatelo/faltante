@@ -1,6 +1,6 @@
 PY ?= python3
 
-.PHONY: setup test demo agente diagnostico foto reporte todo prueba-api vivo limpiar
+.PHONY: setup test demo agente diagnostico divergente foto reporte todo prueba-api vivo limpiar
 
 setup:
 	$(PY) -m pip install -r requirements.txt
@@ -23,6 +23,15 @@ agente:
 diagnostico:
 	$(PY) diagnostico_run.py $(FOTO)
 
+# Etapa divergente (piloto): vista de votos de las búsquedas de desarrollo, guardrail sobre
+# las hipótesis y chequeos convergentes de H1 y H2.
+CAPTURA_DIV ?= data/capturas/captura_ml_2026-11-05.json
+divergente:
+	@mkdir -p out
+	$(PY) scripts/vista_votos.py $(CAPTURA_DIV) --dev > out/vista_dev.txt
+	$(PY) scripts/validar_hipotesis.py data/divergente/hipotesis_piloto.json
+	$(PY) scripts/convergencia_piloto.py > /dev/null && echo "convergencia -> data/divergente/convergencia_piloto.json"
+
 # Convierte una captura hecha con scripts/captura_ml.js en una foto para el diagnóstico.
 #   make foto CAPTURA=~/Downloads/captura_ml_2026-11-05.json
 foto:
@@ -33,7 +42,7 @@ reporte:
 	$(PY) reporte.py
 
 # Todo lo que corre sin red ni claves.
-todo: test demo diagnostico
+todo: test demo diagnostico divergente
 
 # Prueba la API de Mercado Libre con tu propia app (pide Client ID y Secret, no los guarda).
 prueba-api:

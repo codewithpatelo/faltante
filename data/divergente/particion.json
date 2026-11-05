@@ -1,0 +1,34 @@
+{
+ "semilla": 20261105,
+ "nota": "partición fija; test no se mira hasta la evaluación final; 'tostadora bella fits anywhere' (test) se usó de ejemplo en el chat antes de fijar la partición: queda marcada como contaminada",
+ "dev": [
+  "abrelatas gorilla grip",
+  "abrelatas kitchenaid",
+  "hydrojug traveler",
+  "lonchera lifewit",
+  "lonchera termica hotor",
+  "mixer inmersion turelar",
+  "olla lenta crock pot",
+  "organizador esponja cisily",
+  "owala freesip",
+  "papel manteca reynolds",
+  "rociador aceite trendplain",
+  "rubbermaid brilliance"
+ ],
+ "test": [
+  "balanza cocina amazon basics",
+  "balanza cocina etekcity",
+  "balanza cocina ultrean",
+  "bolsas olla lenta reynolds",
+  "owala smoothsip",
+  "repasadores homaxy",
+  "rociador aceite yarramate",
+  "stanley quencher",
+  "tijeras cocina kitchenaid",
+  "tostadora bella fits anywhere",
+  "yeti rambler"
+ ],
+ "contaminadas": [
+  "tostadora bella fits anywhere"
+ ]
+}

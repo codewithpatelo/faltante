@@ -156,3 +156,31 @@ categoría, más vendidos, catálogo y tendencias dan 403 "At least one policy r
 UNAUTHORIZED". Están cerradas por política para una app no certificada, con o sin token.
 **Qué decidimos:** la API de búsqueda queda descartada como fuente. La fuente es la captura
 desde el navegador (`scripts/captura_ml.js`), declarada como limitación.
+
+## 2026-11-05 — Reencuadre: leer los votos, no contarlos (piloto divergente)
+
+**Qué probamos:** el MVP hacía solo la mitad convergente: partía de un producto de Amazon y
+preguntaba por qué no se vende. El voto con los pies lo usaba como contador. Reencuadre
+(fundamento Cyberseren: automatizar la función empresarial): leer **qué eligió la gente y
+qué dejó pasar** en cada búsqueda, abducir hipótesis de necesidad, y recién ahí refutar.
+Fijamos una partición dev/test de las 23 búsquedas (semilla 20261105; la tostadora quedó en
+test pero la habíamos usado de ejemplo: marcada como contaminada). Sobre 6 búsquedas de dev,
+Claude leyó la vista de votos (paso LLM a mano, sin API key) y escribió 6 hipótesis con
+citas; el guardrail en código (`harness/votos.py`) verifica cada cita. Baseline sin LLM:
+log-odds de términos del título en lo que vende contra lo que no.
+**Qué esperábamos:** que salieran explicaciones que el chequeo de precio no ve.
+**Qué pasó:** salieron seis (voltaje, lenguaje del título, lonchera que calienta, sustitución
+por multifunción, silicona reutilizable, formato chico para regalar). Las 6 pasan el
+guardrail. Intentamos refutar dos con datos de dev (`scripts/convergencia_piloto.py`):
+- H2 (lenguaje) **refutada en el mixer**: entre publicaciones locales, "licuadora/batidora
+  de inmersión" vende 5 de 8 y "minipimer" 9 de 15. En el organizador no se puede separar
+  del precio (las locales con "fregadero" son 2 y cuestan 6 veces más).
+- H1 (voltaje) **sigue abierta**: las que declaran 220 V o 50 Hz venden 7 de 9 contra 48 de
+  166 las que no lo mencionan, pero son pocas y se confunde con marca. Los títulos no
+  alcanzan; hace falta la ficha técnica.
+El baseline de términos ya muestra parte de lo mismo (en tostadoras pierden "delgada",
+"larga"), pero no arma la necesidad ni las rivales.
+**Qué decidimos:** la etapa divergente produce hipótesis que el MVP anterior no podía ver.
+Siguiente: (1) refutar H3 con una captura de "lonchera eléctrica"; (2) que el grupo juzgue
+las hipótesis (sostenida, no obvia, accionable) para tener los primeros juicios humanos;
+(3) correr la misma skill con la API y comparar contra el baseline en test.

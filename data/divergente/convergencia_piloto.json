@@ -1,0 +1,81 @@
+{
+ "H1_voltaje": {
+  "mixer inmersion turelar": {
+   "declara_220_o_50hz": {
+    "publicaciones": 6,
+    "venden": 4,
+    "mediana_precio": 214900
+   },
+   "declara_110_120v": {
+    "publicaciones": 1,
+    "venden": 0,
+    "mediana_precio": 90102
+   },
+   "no_menciona": {
+    "publicaciones": 53,
+    "venden": 21,
+    "mediana_precio": 99799
+   }
+  },
+  "olla lenta crock pot": {
+   "declara_220_o_50hz": {
+    "publicaciones": 2,
+    "venden": 2,
+    "mediana_precio": 174449
+   },
+   "declara_110_120v": {
+    "publicaciones": 0,
+    "venden": 0,
+    "mediana_precio": null
+   },
+   "no_menciona": {
+    "publicaciones": 46,
+    "venden": 6,
+    "mediana_precio": 189595
+   }
+  },
+  "lonchera termica hotor": {
+   "declara_220_o_50hz": {
+    "publicaciones": 1,
+    "venden": 1,
+    "mediana_precio": 64999
+   },
+   "declara_110_120v": {
+    "publicaciones": 0,
+    "venden": 0,
+    "mediana_precio": null
+   },
+   "no_menciona": {
+    "publicaciones": 67,
+    "venden": 21,
+    "mediana_precio": 31999
+   }
+  }
+ },
+ "H2_lenguaje": {
+  "organizador esponja cisily": {
+   "local con 'bacha'": {
+    "publicaciones": 22,
+    "venden": 10,
+    "mediana_precio": 24399
+   },
+   "local con 'fregadero'": {
+    "publicaciones": 2,
+    "venden": 0,
+    "mediana_precio": 147419
+   }
+  },
+  "mixer inmersion turelar": {
+   "local con 'minipimer|mini pimer|pimer'": {
+    "publicaciones": 15,
+    "venden": 9,
+    "mediana_precio": 71875
+   },
+   "local con 'licuadora de inmersion|batidora de inmersion'": {
+    "publicaciones": 8,
+    "venden": 5,
+    "mediana_precio": 145299
+   }
+  }
+ }
+}

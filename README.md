@@ -23,6 +23,23 @@ De las publicaciones internacionales de estos productos, **ninguna muestra venta
 4 productos que están en los dos canales, la gente compra el de stock local aunque el
 internacional cueste igual o menos.
 
+## Etapa divergente (piloto, 05/11/2026)
+
+El diagnóstico anterior parte de un producto de Amazon y pregunta por qué no se vende. Eso
+es solo la mitad convergente. La etapa divergente **lee los votos**: en cada búsqueda, qué
+eligió la gente y qué dejó pasar (formato, marca, precio, origen, palabras), y abduce
+hipótesis de necesidad que después se intentan refutar.
+
+- `skills/leer_votos/SKILL.md`: el procedimiento que sigue el LLM.
+- `harness/votos.py`: la vista ganadoras/perdedoras, el **baseline** sin LLM (términos que
+  distinguen lo que vende) y el **guardrail** de citas (cada hipótesis cita publicaciones
+  con un fragmento literal y el voto tiene que coincidir con las ventas).
+- `data/divergente/`: partición fija dev/test, 6 hipótesis piloto y la convergencia de dos.
+- `make divergente` reproduce el piloto.
+
+Resultado: 6 hipótesis sobre 6 búsquedas de desarrollo; de las dos que intentamos refutar,
+una cae (lenguaje del título) y otra sigue abierta (voltaje 220 V). Detalle en `BITACORA.md`.
+
 ## Correrlo (sin red ni claves)
 
 ```bash
@@ -35,7 +52,7 @@ make todo         # tests + demo del harness + diagnóstico sobre la foto más r
 Por separado:
 
 ```bash
-make test         # 18 tests: guardrails, chequeos, emparejamiento
+make test         # 25 tests: guardrails, chequeos, emparejamiento, citas
 make diagnostico  # cuatro chequeos sobre la foto más reciente de data/diagnostico/
 make demo         # políticas fija y heurística sobre datos sintéticos (prueban el mecanismo)
 make agente       # agente ReAct con LLM (requiere ANTHROPIC_API_KEY)

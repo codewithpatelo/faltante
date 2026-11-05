@@ -1,0 +1,102 @@
+{
+ "quien": "Claude (Opus 5.5) en el chat, leyendo la vista de scripts/vista_votos.py; sin API key en el entorno, paso LLM hecho a mano y declarado (Wizard of Oz)",
+ "fecha": "2026-11-05",
+ "captura": "data/capturas/captura_ml_2026-11-05.json",
+ "busquedas_leidas": ["hydrojug traveler", "mixer inmersion turelar", "olla lenta crock pot", "lonchera termica hotor", "papel manteca reynolds", "organizador esponja cisily"],
+ "hipotesis": [
+  {
+   "id": "H1",
+   "busquedas": ["mixer inmersion turelar", "olla lenta crock pot"],
+   "tipo": "barrera_situada",
+   "necesidad": "Los electrodomésticos que venden avisan que funcionan con la red argentina (50 Hz, 220 V); los del top de Amazon vienen para 120 V.",
+   "oportunidad": "Un electrodoméstico del top de Amazon solo es importable en su versión 220 V/50 Hz. Explica parte del 'no se vende' que el chequeo de precio atribuía al precio.",
+   "evidencia": [
+    {"busqueda": "olla lenta crock pot", "i": 13, "vota": "gana", "fragmento": "50hz"},
+    {"busqueda": "olla lenta crock pot", "i": 14, "vota": "gana", "fragmento": "Frecuencia 50/60 Hz"},
+    {"busqueda": "mixer inmersion turelar", "i": 45, "vota": "gana", "fragmento": "50 Hz"},
+    {"busqueda": "mixer inmersion turelar", "i": 55, "vota": "pierde", "fragmento": "120v"},
+    {"busqueda": "olla lenta crock pot", "i": 1, "vota": "pierde", "fragmento": "Crock-pot Scv700-s-br"}
+   ],
+   "rivales": ["precio: los importados cuestan 2 a 5 veces más", "espera: casi todos son Compra Internacional", "el '50 Hz' en el título puede ser una costumbre de los vendedores grandes, no algo que mire el comprador"],
+   "como_refutarla": "Contar en las 23 búsquedas de electro cuántas publicaciones que venden declaran 220 V o 50 Hz y cuántas importadas declaran 110/120 V; leer preguntas de compradores en publicaciones importadas buscando 'voltaje' o '220'."
+  },
+  {
+   "id": "H2",
+   "busquedas": ["organizador esponja cisily", "mixer inmersion turelar"],
+   "tipo": "lenguaje",
+   "necesidad": "Lo que vende está escrito con palabras de acá ('bacha', 'minipimer'); lo importado está traducido ('fregadero', 'licuadora de inmersión').",
+   "oportunidad": "Parte del hueco no es de producto sino de cómo se publica: un vendedor que localiza el título podría capturar demanda que hoy no encuentra lo importado.",
+   "evidencia": [
+    {"busqueda": "organizador esponja cisily", "i": 13, "vota": "gana", "fragmento": "Bacha Cocina"},
+    {"busqueda": "organizador esponja cisily", "i": 21, "vota": "gana", "fragmento": "Organizador Cocina Bacha"},
+    {"busqueda": "organizador esponja cisily", "i": 6, "vota": "pierde", "fragmento": "Para Fregadero De Cocina"},
+    {"busqueda": "mixer inmersion turelar", "i": 22, "vota": "gana", "fragmento": "Minipimer"},
+    {"busqueda": "mixer inmersion turelar", "i": 1, "vota": "pierde", "fragmento": "Licuadora De Inmersión Turelar"}
+   ],
+   "rivales": ["precio: los Cisily cuestan 3 a 8 veces más que los que venden", "marca: Oster, Atma y Liliana se conocen acá y Turelar no", "es correlación: los que publican en 'fregadero' son justo los internacionales, que ya no venden por espera"],
+   "como_refutarla": "Comparar ventas de publicaciones LOCALES con término traducido contra LOCALES con término de acá, a precio parecido (así se saca la espera del medio)."
+  },
+  {
+   "id": "H3",
+   "busquedas": ["lonchera termica hotor"],
+   "tipo": "necesidad_latente",
+   "necesidad": "Lo que se compra para llevar comida es para calentarla después ('vianda', 'para horno', lonchera eléctrica 220 V y 12 V de auto), no solo para mantenerla fría o caliente.",
+   "oportunidad": "Loncheras eléctricas que calientan la comida: hay ventas locales a $41k-64k y Amazon tiene muchas variantes. Candidato a importar si la oferta local es poca.",
+   "evidencia": [
+    {"busqueda": "lonchera termica hotor", "i": 12, "vota": "gana", "fragmento": "Lonchera Eléctrica Portátil 220v 12v Auto Vianda"},
+    {"busqueda": "lonchera termica hotor", "i": 17, "vota": "gana", "fragmento": "Lonchera Hermetica Eléctrica"},
+    {"busqueda": "lonchera termica hotor", "i": 27, "vota": "gana", "fragmento": "Para Horno Vianda"},
+    {"busqueda": "lonchera termica hotor", "i": 6, "vota": "pierde", "fragmento": "Lonchera Térmica Hotor 10l"},
+    {"busqueda": "lonchera termica hotor", "i": 47, "vota": "pierde", "fragmento": "Hotor 27l Doble Piso"}
+   ],
+   "rivales": ["sin demanda real: son 2 publicaciones con +100 y +50", "ya atendido: puede haber mucha oferta local de loncheras eléctricas que esta búsqueda no muestra", "precio: las Hotor pierden por caras, no porque no calienten"],
+   "como_refutarla": "Buscar 'lonchera eléctrica' en Mercado Libre: si las ventas están repartidas entre muchos vendedores locales, está atendido; si están concentradas en pocos, o solo hay importadas que no venden, es candidato."
+  },
+  {
+   "id": "H4",
+   "busquedas": ["olla lenta crock pot"],
+   "tipo": "sustitucion_funcional",
+   "necesidad": "La gente compra la función (cocinar sin vigilar) dentro de una olla multifunción o a presión, no un aparato dedicado a cocción lenta.",
+   "oportunidad": "Ninguna para la Crock-Pot. Si algo, multifunción con modo cocción lenta, que ya se vende local.",
+   "evidencia": [
+    {"busqueda": "olla lenta crock pot", "i": 15, "vota": "gana", "fragmento": "Olla Digital Multifunción"},
+    {"busqueda": "olla lenta crock pot", "i": 39, "vota": "gana", "fragmento": "Cocción Lenta Estofado"},
+    {"busqueda": "olla lenta crock pot", "i": 13, "vota": "gana", "fragmento": "Olla Eléctrica A Presión"},
+    {"busqueda": "olla lenta crock pot", "i": 0, "vota": "pierde", "fragmento": "Olla De Cocción Lenta Manual Crock Pot"}
+   ],
+   "rivales": ["precio: las Crock-Pot cuestan 2 a 4 veces más", "voltaje (H1)", "espera: todas internacionales"],
+   "como_refutarla": "Si una Crock-Pot local, a precio de multifunción, tampoco vende, gana la sustitución; hoy la única local ([6], $250k) no vende pero es cara."
+  },
+  {
+   "id": "H5",
+   "busquedas": ["papel manteca reynolds"],
+   "tipo": "sustitucion_funcional",
+   "necesidad": "Para no pegar en el horno se elige lo reutilizable (placa de silicona) o el rollo genérico barato; lo descartable premium importado no se compra.",
+   "oportunidad": "Ninguna para Reynolds. A explorar: accesorios reutilizables de silicona para freidora de aire, que en esta búsqueda aparecen solo como descartables importados sin ventas.",
+   "evidencia": [
+    {"busqueda": "papel manteca reynolds", "i": 53, "vota": "gana", "fragmento": "Placa Silicona Tipo Silpa"},
+    {"busqueda": "papel manteca reynolds", "i": 15, "vota": "gana", "fragmento": "Rollo Papel Manteca Familiar"},
+    {"busqueda": "papel manteca reynolds", "i": 10, "vota": "pierde", "fragmento": "Air Fryer Liners"},
+    {"busqueda": "papel manteca reynolds", "i": 48, "vota": "pierde", "fragmento": "Papel Descartable Para Freidora De Aire"}
+   ],
+   "rivales": ["precio: Reynolds cuesta 5 a 20 veces más", "la búsqueda 'papel manteca' no es donde se buscan accesorios de freidora"],
+   "como_refutarla": "Buscar 'accesorios silicona freidora de aire' y ver si lo que vende es local y repartido (atendido) o escaso."
+  },
+  {
+   "id": "H6",
+   "busquedas": ["hydrojug traveler"],
+   "tipo": "formato",
+   "necesidad": "Se compra el vaso térmico chico (470-530 ml) de marca conocida, muchas veces para regalar; el botellón de 1 litro o más no se elige ni local ni barato.",
+   "oportunidad": "Baja para HydroJug. El hábito del botellón grande de hidratación no aparece en los votos.",
+   "evidencia": [
+    {"busqueda": "hydrojug traveler", "i": 6, "vota": "gana", "fragmento": "Contigo Huron 473ml"},
+    {"busqueda": "hydrojug traveler", "i": 6, "vota": "gana", "fragmento": "Con Bolsa Regalo"},
+    {"busqueda": "hydrojug traveler", "i": 7, "vota": "gana", "fragmento": "530 Ml"},
+    {"busqueda": "hydrojug traveler", "i": 4, "vota": "pierde", "fragmento": "Chug Bottle 1,06 Lts"},
+    {"busqueda": "hydrojug traveler", "i": 1, "vota": "pierde", "fragmento": "Hydrojug Traveler 1,18 L"}
+   ],
+   "rivales": ["el Hydro Flask de 1,2 L sí vende (+50): el tamaño no descarta solo", "precio y espera explican HydroJug sin necesidad del formato"],
+   "como_refutarla": "Comparar ventas por tamaño en una búsqueda genérica ('vaso térmico', 'botella térmica') con stock local."
+  }
+ ]
+}
