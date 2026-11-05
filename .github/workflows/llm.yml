@@ -1,0 +1,32 @@
+# Corre las partes con LLM (etapa divergente sobre test y LLM juez) usando el secreto
+# ANTHROPIC_API_KEY del repo, y guarda los resultados en la rama `resultados-llm`.
+# Se dispara a mano desde la pestaña Actions ("Run workflow").
+name: llm
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  correr:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - run: make test
+      - name: Etapa divergente con LLM sobre test
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: make divergente-llm
+      - name: LLM juez sobre la planilla
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python scripts/juez_llm.py
+      - name: Guardar resultados en la rama resultados-llm
+        run: |
+          mkdir -p resultados && cp out/divergente_llm.json data/evaluacion/juicios_juez_llm.csv resultados/
+          git config user.name "github-actions" && git config user.email "actions@github.com"
+          git checkout -B resultados-llm
+          git add -f resultados && git commit -m "Resultados LLM ${GITHUB_SHA::7}" && git push -f origin resultados-llm

@@ -51,3 +51,20 @@ def test_si_sigue_mal_se_descarta():
 def test_costo_por_tokens():
     c = costo([{"tokens": {"entrada": 1_000_000, "salida": 100_000}, "segundos": 1.0}])
     assert c["usd"] == 1.5
+
+
+def test_juez_llm_devuelve_puntajes():
+    sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
+    from juez_llm import juzgar
+
+    class Cli:
+        def __init__(self):
+            self.messages = self
+
+        def create(self, **kw):
+            assert "Ítem a juzgar" in kw["messages"][0]["content"]
+            return NS(content=[NS(text='{"sostenida_1a3": 3, "no_obvia_1a3": 2, "accionable_1a3": 1, "comentario": "ok"}')])
+
+    cap = {"mixer": {"publicaciones": PUBS}}
+    j = juzgar(Cli(), {"busqueda": "mixer", "texto": "algo"}, cap)
+    assert (j["sostenida_1a3"], j["no_obvia_1a3"], j["accionable_1a3"]) == (3, 2, 1)

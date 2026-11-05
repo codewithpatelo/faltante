@@ -11,13 +11,14 @@ no lo que dice que compraría.
 
 ## Para el equipo: qué hacer ahora (05/11/2026)
 
-1. `make setup && make todo`: tiene que dar 28 tests en verde y correr el diagnóstico y el piloto divergente.
+1. `make setup && make todo`: tiene que dar 29 tests en verde y correr el diagnóstico y el piloto divergente.
 2. **Juzgar las 12 hipótesis a ciegas** (10 minutos): `data/evaluacion/COMO_JUZGAR.md`. Son los primeros
    juicios humanos: con ellos medimos LLM contra baseline y después calibramos un LLM juez.
 3. Leer `BITACORA.md` de abajo hacia arriba: ahí está el relato del desarrollo que pide la exposición.
-4. Quien tenga `ANTHROPIC_API_KEY`: `make divergente-llm` corre la etapa divergente con el modelo sobre
-   las 11 búsquedas de test (Haiku 4.5, del orden de centavos de dólar). Las hipótesis pasan por el guardrail y,
-   si alguna cita está mal, el modelo tiene un reintento con los errores.
+4. **Correr el LLM sin compartir claves:** cargar `ANTHROPIC_API_KEY` como secreto del repo y
+   lanzar el workflow `llm` desde Actions (≈ USD 0,07). Detalle en `CONSIGNA.md`.
+5. **`CONSIGNA.md`**: cada requisito de la consigna, dónde se verifica y qué falta, con el reparto
+   de tareas propuesto.
 
 ## Qué encontramos (23 productos, fotos del 29/10 y del 05/11/2026)
 
@@ -64,7 +65,7 @@ make todo         # tests + demo del harness + diagnóstico sobre la foto más r
 Por separado:
 
 ```bash
-make test         # 28 tests: guardrails, chequeos, emparejamiento, citas, reintento
+make test         # 29 tests: guardrails, chequeos, emparejamiento, citas, reintento
 make diagnostico  # cuatro chequeos sobre la foto más reciente de data/diagnostico/
 make demo         # políticas fija y heurística sobre datos sintéticos (prueban el mecanismo)
 make agente       # agente ReAct con LLM (requiere ANTHROPIC_API_KEY)
