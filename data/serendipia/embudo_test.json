@@ -1,0 +1,878 @@
+{
+ "llm": [
+  {
+   "metodo": "llm",
+   "producto": "P12",
+   "ancla": "Tabla De Picar Acero Inoxidable 40x30 Cortar Servir Cocinar",
+   "vendidos_ancla": 1000,
+   "id": "O7",
+   "que_traer": "Tabla de picar doble faz: una cara de acero inoxidable (carne cruda, higiene) y otra de polipropileno o fibra para cortar sin desafilar",
+   "busqueda_ml": "tabla de picar doble faz acero inoxidable",
+   "señales": [
+    {
+     "descripcion": "Se raya y desafila los cuchillos",
+     "errores": [],
+     "menciones": 11,
+     "insatisfechas": 7,
+     "de_textos": 102,
+     "importancia": 10.0,
+     "satisfaccion": 3.6,
+     "puntaje_oportunidad": 16.4,
+     "C1_verificada": true,
+     "C2_subatendida": true
+    }
+   ],
+   "guardrail": true,
+   "C1": true,
+   "C2": true,
+   "C3": true,
+   "muere_en": null,
+   "C4_detalle": {
+    "equivalentes": 18,
+    "venden": 1,
+    "ejemplos_que_venden": [
+     "Tabla De Corte Doble Faz De Acero Inoxidable Gruesa (+100, $14,184)"
+    ],
+    "precio_mediano_equivalentes_que_vendieron": 32800,
+    "C4_hueco": true
+   },
+   "C5_detalle": {
+    "precio_ars": 32800,
+    "ingreso_neto_ars": 19067,
+    "lote": 621,
+    "envio_ars": 2500,
+    "escenarios": {
+     "optimista": {
+      "costo_puesto_ars": 8290,
+      "margen_pct": 130
+     },
+     "base": {
+      "costo_puesto_ars": 10676,
+      "margen_pct": 79
+     },
+     "pesimista": {
+      "costo_puesto_ars": 15449,
+      "margen_pct": 23
+     }
+    },
+    "fob_maximo_usd": 6.14,
+    "C5_margen": true,
+    "C5_condicional": false
+   },
+   "sobrevive": true
+  },
+  {
+   "metodo": "llm",
+   "producto": "P13",
+   "ancla": "Tabla De Cortar Picar Acero Inoxidable 304 Con Tope 50x35 Cm",
+   "vendidos_ancla": 1000,
+   "id": "O7",
+   "que_traer": "Tabla de picar doble faz: una cara de acero inoxidable (carne cruda, higiene) y otra de polipropileno o fibra para cortar sin desafilar",
+   "busqueda_ml": "tabla de picar doble faz acero inoxidable",
+   "señales": [
+    {
+     "descripcion": "Se marca con los cortes y desafila los cuchillos",
+     "errores": [],
+     "menciones": 10,
+     "insatisfechas": 7,
+     "de_textos": 106,
+     "importancia": 9.4,
+     "satisfaccion": 3.0,
+     "puntaje_oportunidad": 15.8,
+     "C1_verificada": true,
+     "C2_subatendida": true
+    }
+   ],
+   "guardrail": true,
+   "C1": true,
+   "C2": true,
+   "C3": true,
+   "muere_en": null,
+   "C4_detalle": {
+    "equivalentes": 18,
+    "venden": 1,
+    "ejemplos_que_venden": [
+     "Tabla De Corte Doble Faz De Acero Inoxidable Gruesa (+100, $14,184)"
+    ],
+    "precio_mediano_equivalentes_que_vendieron": 32800,
+    "C4_hueco": true
+   },
+   "C5_detalle": {
+    "precio_ars": 32800,
+    "ingreso_neto_ars": 19067,
+    "lote": 621,
+    "envio_ars": 2500,
+    "escenarios": {
+     "optimista": {
+      "costo_puesto_ars": 8290,
+      "margen_pct": 130
+     },
+     "base": {
+      "costo_puesto_ars": 10676,
+      "margen_pct": 79
+     },
+     "pesimista": {
+      "costo_puesto_ars": 15449,
+      "margen_pct": 23
+     }
+    },
+    "fob_maximo_usd": 6.14,
+    "C5_margen": true,
+    "C5_condicional": false
+   },
+   "sobrevive": true
+  },
+  {
+   "metodo": "llm",
+   "producto": "P14",
+   "ancla": "Set 5 Bowls Tapers De Acero Inoxidable Liviano Con Tapa",
+   "vendidos_ancla": 10000,
+   "id": "O8",
+   "que_traer": "Set de 4 recipientes de acero del mismo tamaño (800 ml a 1 L) para viandas, con tapa de silicona",
+   "busqueda_ml": "set tapers acero inoxidable viandas",
+   "señales": [
+    {
+     "descripcion": "Son muy chicos; piden tamaños más grandes o iguales para viandas",
+     "errores": [],
+     "menciones": 36,
+     "insatisfechas": 24,
+     "de_textos": 168,
+     "importancia": 10.0,
+     "satisfaccion": 3.3,
+     "puntaje_oportunidad": 16.7,
+     "C1_verificada": true,
+     "C2_subatendida": true
+    },
+    {
+     "descripcion": "La tapa de plástico es frágil y preguntan si es libre de BPA",
+     "errores": [],
+     "menciones": 38,
+     "insatisfechas": 24,
+     "de_textos": 168,
+     "importancia": 10.0,
+     "satisfaccion": 3.7,
+     "puntaje_oportunidad": 16.3,
+     "C1_verificada": true,
+     "C2_subatendida": true
+    }
+   ],
+   "guardrail": true,
+   "C1": true,
+   "C2": true,
+   "C3": true,
+   "muere_en": "C4",
+   "C4_detalle": {
+    "equivalentes": 22,
+    "venden": 6,
+    "ejemplos_que_venden": [
+     "Set 5 Bowls Tapers De Acero Inoxidable Liviano Con Tapa Recipientes Co (+10000, $9,399)",
+     "Set 10 Tapers Bowls De Acero Inoxidable Liviano Con Tapa Recipientes A (+500, $18,299)",
+     "Set X5 Bowls De Acero Inoxidable Con Tapa Plastica Rory Tapers Recipie (+100, $9,359)"
+    ],
+    "precio_mediano_equivalentes_que_vendieron": 16050,
+    "C4_hueco": false
+   },
+   "motivo": "ya atendido: 6 equivalentes venden +100"
+  },
+  {
+   "metodo": "llm",
+   "producto": "P15",
+   "ancla": "Set X3 Bowls Cocina Acero Inoxidable Batidor Reforzado",
+   "vendidos_ancla": 10000,
+   "id": "O9",
+   "que_traer": "Set de bowls de acero con base de silicona antideslizante",
+   "busqueda_ml": "bowls acero inoxidable base antideslizante",
+   "señales": [
+    {
+     "descripcion": "Les falta base antideslizante",
+     "errores": [],
+     "menciones": 2,
+     "insatisfechas": 2,
+     "de_textos": 116,
+     "importancia": 1.7,
+     "satisfaccion": 0.0,
+     "puntaje_oportunidad": 3.4,
+     "C1_verificada": false,
+     "C2_subatendida": false
+    }
+   ],
+   "guardrail": true,
+   "C1": false,
+   "C2": false,
+   "C3": true,
+   "muere_en": "C1"
+  },
+  {
+   "metodo": "llm",
+   "producto": "P16",
+   "ancla": "Yelmo As-3240 Aspiradora Para Auto Recargable Usb Color Gris",
+   "vendidos_ancla": 50000,
+   "id": "O10",
+   "que_traer": "Pack de 3 filtros de repuesto (HEPA lavable) para aspiradoras de mano de auto",
+   "busqueda_ml": "filtro repuesto aspiradora de mano",
+   "señales": [
+    {
+     "descripcion": "Piden el filtro de repuesto y no se consigue",
+     "errores": [],
+     "menciones": 20,
+     "insatisfechas": 15,
+     "de_textos": 181,
+     "importancia": 10.0,
+     "satisfaccion": 2.5,
+     "puntaje_oportunidad": 17.5,
+     "C1_verificada": true,
+     "C2_subatendida": true
+    }
+   ],
+   "guardrail": true,
+   "C1": true,
+   "C2": true,
+   "C3": true,
+   "muere_en": "C4",
+   "C4_detalle": {
+    "equivalentes": 14,
+    "venden": 3,
+    "ejemplos_que_venden": [
+     "Filtros Hepa De Aspiradora Inalámbrica De Mano Voltra X3 (+100, $50,000)",
+     "Kit 4 Filtros Repuestos Aspiradora De Mano Set Reutilizable (+100, $14,249)",
+     "Filtro Hepa Repuesto Aspiradora Sopladora Portatil Auto Casa (+100, $12,965)"
+    ],
+    "precio_mediano_equivalentes_que_vendieron": 14249,
+    "C4_hueco": false
+   },
+   "motivo": "ya atendido: 3 equivalentes venden +100"
+  },
+  {
+   "metodo": "llm",
+   "producto": "P17",
+   "ancla": "Aspiradora De Mano Gadnic Inalambrica 120W",
+   "vendidos_ancla": 10000,
+   "id": "O10",
+   "que_traer": "Pack de 3 filtros de repuesto (HEPA lavable) para aspiradoras de mano de auto",
+   "busqueda_ml": "filtro repuesto aspiradora de mano",
+   "señales": [
+    {
+     "descripcion": "Piden filtro y batería de repuesto",
+     "errores": [],
+     "menciones": 7,
+     "insatisfechas": 5,
+     "de_textos": 175,
+     "importancia": 4.0,
+     "satisfaccion": 2.9,
+     "puntaje_oportunidad": 5.1,
+     "C1_verificada": true,
+     "C2_subatendida": true
+    }
+   ],
+   "guardrail": true,
+   "C1": true,
+   "C2": true,
+   "C3": true,
+   "muere_en": "C4",
+   "C4_detalle": {
+    "equivalentes": 14,
+    "venden": 3,
+    "ejemplos_que_venden": [
+     "Filtros Hepa De Aspiradora Inalámbrica De Mano Voltra X3 (+100, $50,000)",
+     "Kit 4 Filtros Repuestos Aspiradora De Mano Set Reutilizable (+100, $14,249)",
+     "Filtro Hepa Repuesto Aspiradora Sopladora Portatil Auto Casa (+100, $12,965)"
+    ],
+    "precio_mediano_equivalentes_que_vendieron": 14249,
+    "C4_hueco": false
+   },
+   "motivo": "ya atendido: 3 equivalentes venden +100"
+  },
+  {
+   "metodo": "llm",
+   "producto": "P17",
+   "ancla": "Aspiradora De Mano Gadnic Inalambrica 120W",
+   "vendidos_ancla": 10000,
+   "id": "O11",
+   "que_traer": "Aspiradora de mano inalámbrica con función sopladora (para PC y teclados)",
+   "busqueda_ml": "aspiradora sopladora inalambrica de mano",
+   "señales": [
+    {
+     "descripcion": "Quieren función de soplado (PC, polvo)",
+     "errores": [],
+     "menciones": 3,
+     "insatisfechas": 1,
+     "de_textos": 175,
+     "importancia": 1.7,
+     "satisfaccion": 6.7,
+     "puntaje_oportunidad": 1.7,
+     "C1_verificada": true,
+     "C2_subatendida": false
+    }
+   ],
+   "guardrail": true,
+   "C1": true,
+   "C2": false,
+   "C3": true,
+   "muere_en": "C2"
+  },
+  {
+   "metodo": "llm",
+   "producto": "P18",
+   "ancla": "Limpiadora A Vapor Upper 2l 2000 W 106° + 15 Accesorios",
+   "vendidos_ancla": 5000,
+   "id": "O12",
+   "que_traer": "Kit de cepillos de repuesto para limpiadoras a vapor (acero, nylon y cerdas blandas para tela)",
+   "busqueda_ml": "cepillos repuesto limpiadora a vapor",
+   "señales": [
+    {
+     "descripcion": "Los cepillos se gastan y no hay repuestos",
+     "errores": [],
+     "menciones": 44,
+     "insatisfechas": 16,
+     "de_textos": 161,
+     "importancia": 10.0,
+     "satisfaccion": 6.4,
+     "puntaje_oportunidad": 13.6,
+     "C1_verificada": true,
+     "C2_subatendida": false
+    },
+    {
+     "descripcion": "Quieren cepillos blandos para telas y tapizados",
+     "errores": [],
+     "menciones": 12,
+     "insatisfechas": 7,
+     "de_textos": 161,
+     "importancia": 7.5,
+     "satisfaccion": 4.2,
+     "puntaje_oportunidad": 10.8,
+     "C1_verificada": true,
+     "C2_subatendida": true
+    }
+   ],
+   "guardrail": true,
+   "C1": true,
+   "C2": true,
+   "C3": true,
+   "muere_en": "C5",
+   "C4_detalle": {
+    "equivalentes": 19,
+    "venden": 2,
+    "ejemplos_que_venden": [
+     "Cepillo Automático A Vapor Quita Pelos Perros Gatos Mascotas Beige (+1000, $4,800)",
+     "Cepillo Vapor Masajeador Perro Gato Silicona Blanco Crema (+100, $4,999)"
+    ],
+    "precio_mediano_equivalentes_que_vendieron": 4999,
+    "C4_hueco": true
+   },
+   "C5_detalle": {
+    "precio_ars": 4999,
+    "ingreso_neto_ars": 787,
+    "lote": 1000,
+    "envio_ars": 2500,
+    "escenarios": {
+     "optimista": {
+      "costo_puesto_ars": 6390,
+      "margen_pct": -88
+     },
+     "base": {
+      "costo_puesto_ars": 8761,
+      "margen_pct": -91
+     },
+     "pesimista": {
+      "costo_puesto_ars": 14397,
+      "margen_pct": -95
+     }
+    },
+    "fob_maximo_usd": -0.09,
+    "C5_margen": false,
+    "C5_condicional": false
+   },
+   "motivo": "margen base -91% a $4,999 (haría falta FOB <= USD -0.09)"
+  },
+  {
+   "metodo": "llm",
+   "producto": "P20",
+   "ancla": "Lonchera Eléctrica Portátil Tipo Vianda Auto Y Pared",
+   "vendidos_ancla": 500,
+   "id": "O13",
+   "que_traer": "Lonchera eléctrica 12/24 V para camioneros",
+   "busqueda_ml": "lonchera electrica 24v",
+   "señales": [
+    {
+     "descripcion": "Camioneros preguntan por 24 V",
+     "errores": [
+      "tiene que citar al menos 2 textos distintos"
+     ],
+     "menciones": 1,
+     "insatisfechas": 1,
+     "de_textos": 54,
+     "importancia": 1.9,
+     "satisfaccion": 0.0,
+     "puntaje_oportunidad": 3.8,
+     "C1_verificada": false,
+     "C2_subatendida": false
+    }
+   ],
+   "guardrail": false,
+   "C1": false,
+   "C2": false,
+   "C3": true,
+   "muere_en": "guardrail"
+  },
+  {
+   "metodo": "llm",
+   "producto": "P21",
+   "ancla": "Vaso Térmico 900ml Acero Inox Antiderrame Manija Y Sorbete",
+   "vendidos_ancla": 1000,
+   "id": "O14",
+   "que_traer": "Vasos térmicos de 900 ml lisos por caja, para empresas que los personalizan (regalo corporativo)",
+   "busqueda_ml": "vaso termico 900ml por mayor",
+   "señales": [
+    {
+     "descripcion": "Empresas piden cantidades para personalizar con logo",
+     "errores": [],
+     "menciones": 8,
+     "insatisfechas": 6,
+     "de_textos": 193,
+     "importancia": 4.1,
+     "satisfaccion": 2.5,
+     "puntaje_oportunidad": 5.7,
+     "C1_verificada": true,
+     "C2_subatendida": true
+    }
+   ],
+   "guardrail": true,
+   "C1": true,
+   "C2": true,
+   "C3": true,
+   "muere_en": "C4",
+   "C4_detalle": {
+    "equivalentes": 43,
+    "venden": 16,
+    "ejemplos_que_venden": [
+     "Vaso Térmico Ozz 900ml Antiderrame De Acero Lila 30-cup (+1000, $18,999)",
+     "Vasos Termicos Discovery Acero Inox Grande 900ml Con Manija Color Negr (+1000, $25,640)",
+     "Vaso Térmico Waterdog Zumo 900ml Doble Pico Acero Y Manija (+1000, $58,890)"
+    ],
+    "precio_mediano_equivalentes_que_vendieron": 28000,
+    "C4_hueco": false
+   },
+   "motivo": "ya atendido: 16 equivalentes venden +100"
+  }
+ ],
+ "B1": [
+  {
+   "metodo": "B1",
+   "producto": "P12",
+   "ancla": "Tabla De Picar Acero Inoxidable 40x30 Cortar Servir Cocinar",
+   "vendidos_ancla": 1000,
+   "id": "B1",
+   "que_traer": "versión del producto ancla que resuelva la queja 'bordes'",
+   "busqueda_ml": "tabla de cortar acero inoxidable",
+   "señales": [
+    {
+     "descripcion": "queja más frecuente: 'bordes'",
+     "errores": [],
+     "menciones": 14,
+     "insatisfechas": 7,
+     "de_textos": 102,
+     "importancia": 10.0,
+     "satisfaccion": 5.0,
+     "puntaje_oportunidad": 15.0,
+     "C1_verificada": true,
+     "C2_subatendida": true
+    }
+   ],
+   "guardrail": true,
+   "C1": true,
+   "C2": true,
+   "C3": true,
+   "muere_en": "C4",
+   "C4_detalle": {
+    "equivalentes": 62,
+    "venden": 34,
+    "ejemplos_que_venden": [
+     "Tabla De Corte Acero Inoxidable 304 Esmerilado 60x30 Cocina (+1000, $42,602)",
+     "Tabla De Picar Acero Inoxidable 35x25 Cortar Servir Cocinar (+1000, $19,543)",
+     "Tabla De Picar Acero Inox 40x30 Cortar Servir Cocina Tope (+1000, $31,349)"
+    ],
+    "precio_mediano_equivalentes_que_vendieron": 31349,
+    "C4_hueco": false
+   },
+   "motivo": "ya atendido: 34 equivalentes venden +100"
+  },
+  {
+   "metodo": "B1",
+   "producto": "P13",
+   "ancla": "Tabla De Cortar Picar Acero Inoxidable 304 Con Tope 50x35 Cm",
+   "vendidos_ancla": 1000,
+   "id": "B1",
+   "que_traer": "versión del producto ancla que resuelva la queja 'hola'",
+   "busqueda_ml": "tabla de cortar acero inoxidable",
+   "señales": [
+    {
+     "descripcion": "queja más frecuente: 'hola'",
+     "errores": [],
+     "menciones": 8,
+     "insatisfechas": 8,
+     "de_textos": 106,
+     "importancia": 7.5,
+     "satisfaccion": 0.0,
+     "puntaje_oportunidad": 15.0,
+     "C1_verificada": true,
+     "C2_subatendida": true
+    }
+   ],
+   "guardrail": true,
+   "C1": true,
+   "C2": true,
+   "C3": true,
+   "muere_en": "C4",
+   "C4_detalle": {
+    "equivalentes": 62,
+    "venden": 34,
+    "ejemplos_que_venden": [
+     "Tabla De Corte Acero Inoxidable 304 Esmerilado 60x30 Cocina (+1000, $42,602)",
+     "Tabla De Picar Acero Inoxidable 35x25 Cortar Servir Cocinar (+1000, $19,543)",
+     "Tabla De Picar Acero Inox 40x30 Cortar Servir Cocina Tope (+1000, $31,349)"
+    ],
+    "precio_mediano_equivalentes_que_vendieron": 31349,
+    "C4_hueco": false
+   },
+   "motivo": "ya atendido: 34 equivalentes venden +100"
+  },
+  {
+   "metodo": "B1",
+   "producto": "P14",
+   "ancla": "Set 5 Bowls Tapers De Acero Inoxidable Liviano Con Tapa",
+   "vendidos_ancla": 10000,
+   "id": "B1",
+   "que_traer": "versión del producto ancla que resuelva la queja 'precio'",
+   "busqueda_ml": "bowls acero inoxidable",
+   "señales": [
+    {
+     "descripcion": "queja más frecuente: 'precio'",
+     "errores": [],
+     "menciones": 34,
+     "insatisfechas": 19,
+     "de_textos": 168,
+     "importancia": 10.0,
+     "satisfaccion": 4.4,
+     "puntaje_oportunidad": 15.6,
+     "C1_verificada": true,
+     "C2_subatendida": true
+    }
+   ],
+   "guardrail": true,
+   "C1": true,
+   "C2": true,
+   "C3": true,
+   "muere_en": "C4",
+   "C4_detalle": {
+    "equivalentes": 30,
+    "venden": 16,
+    "ejemplos_que_venden": [
+     "Set 5 Bowls Tapers De Acero Inoxidable Liviano Con Tapa Recipientes Co (+10000, $9,399)",
+     "Set X3 Bowls Cocina Acero Inoxidable Batidor Para Batir Reforzado Repo (+10000, $20,199)",
+     "Juego 3 Bowls Acero Inoxidable Crystal Rock Plateado (+1000, $21,579)"
+    ],
+    "precio_mediano_equivalentes_que_vendieron": 27158,
+    "C4_hueco": false
+   },
+   "motivo": "ya atendido: 16 equivalentes venden +100"
+  },
+  {
+   "metodo": "B1",
+   "producto": "P15",
+   "ancla": "Set X3 Bowls Cocina Acero Inoxidable Batidor Reforzado",
+   "vendidos_ancla": 10000,
+   "id": "B1",
+   "que_traer": "versión del producto ancla que resuelva la queja 'hola'",
+   "busqueda_ml": "bowls acero inoxidable",
+   "señales": [
+    {
+     "descripcion": "queja más frecuente: 'hola'",
+     "errores": [],
+     "menciones": 7,
+     "insatisfechas": 7,
+     "de_textos": 116,
+     "importancia": 6.0,
+     "satisfaccion": 0.0,
+     "puntaje_oportunidad": 12.0,
+     "C1_verificada": true,
+     "C2_subatendida": true
+    }
+   ],
+   "guardrail": true,
+   "C1": true,
+   "C2": true,
+   "C3": true,
+   "muere_en": "C4",
+   "C4_detalle": {
+    "equivalentes": 30,
+    "venden": 16,
+    "ejemplos_que_venden": [
+     "Set 5 Bowls Tapers De Acero Inoxidable Liviano Con Tapa Recipientes Co (+10000, $9,399)",
+     "Set X3 Bowls Cocina Acero Inoxidable Batidor Para Batir Reforzado Repo (+10000, $20,199)",
+     "Juego 3 Bowls Acero Inoxidable Crystal Rock Plateado (+1000, $21,579)"
+    ],
+    "precio_mediano_equivalentes_que_vendieron": 27158,
+    "C4_hueco": false
+   },
+   "motivo": "ya atendido: 16 equivalentes venden +100"
+  },
+  {
+   "metodo": "B1",
+   "producto": "P16",
+   "ancla": "Yelmo As-3240 Aspiradora Para Auto Recargable Usb Color Gris",
+   "vendidos_ancla": 50000,
+   "id": "B1",
+   "que_traer": "versión del producto ancla que resuelva la queja 'aspiradora'",
+   "busqueda_ml": "aspiradora de mano inalambrica",
+   "señales": [
+    {
+     "descripcion": "queja más frecuente: 'aspiradora'",
+     "errores": [],
+     "menciones": 58,
+     "insatisfechas": 38,
+     "de_textos": 181,
+     "importancia": 10.0,
+     "satisfaccion": 3.4,
+     "puntaje_oportunidad": 16.6,
+     "C1_verificada": true,
+     "C2_subatendida": true
+    }
+   ],
+   "guardrail": true,
+   "C1": true,
+   "C2": true,
+   "C3": true,
+   "muere_en": "C4",
+   "C4_detalle": {
+    "equivalentes": 54,
+    "venden": 45,
+    "ejemplos_que_venden": [
+     "Aspiradora De Mano Gadnic Inalambrica 120W Succion 9000Pa Bateria 2000 (+10000, $52,399)",
+     "Aspiradora de mano Laffitte inalámbrica 120W sin bolsa para autos (+10000, $32,099)",
+     "Aspiradora inalámbrica De mano Black+Decker HWVI225J01 177ml azul 50Hz (+10000, $79,999)"
+    ],
+    "precio_mediano_equivalentes_que_vendieron": 74689,
+    "C4_hueco": false
+   },
+   "motivo": "ya atendido: 45 equivalentes venden +100"
+  },
+  {
+   "metodo": "B1",
+   "producto": "P17",
+   "ancla": "Aspiradora De Mano Gadnic Inalambrica 120W",
+   "vendidos_ancla": 10000,
+   "id": "B1",
+   "que_traer": "versión del producto ancla que resuelva la queja 'potencia'",
+   "busqueda_ml": "aspiradora de mano inalambrica",
+   "señales": [
+    {
+     "descripcion": "queja más frecuente: 'potencia'",
+     "errores": [],
+     "menciones": 51,
+     "insatisfechas": 23,
+     "de_textos": 175,
+     "importancia": 10.0,
+     "satisfaccion": 5.5,
+     "puntaje_oportunidad": 14.5,
+     "C1_verificada": true,
+     "C2_subatendida": false
+    }
+   ],
+   "guardrail": true,
+   "C1": true,
+   "C2": false,
+   "C3": true,
+   "muere_en": "C2"
+  },
+  {
+   "metodo": "B1",
+   "producto": "P18",
+   "ancla": "Limpiadora A Vapor Upper 2l 2000 W 106° + 15 Accesorios",
+   "vendidos_ancla": 5000,
+   "id": "B1",
+   "que_traer": "versión del producto ancla que resuelva la queja 'poco'",
+   "busqueda_ml": "limpiadora a vapor",
+   "señales": [
+    {
+     "descripcion": "queja más frecuente: 'poco'",
+     "errores": [],
+     "menciones": 12,
+     "insatisfechas": 11,
+     "de_textos": 161,
+     "importancia": 7.5,
+     "satisfaccion": 0.8,
+     "puntaje_oportunidad": 14.2,
+     "C1_verificada": true,
+     "C2_subatendida": true
+    }
+   ],
+   "guardrail": true,
+   "C1": true,
+   "C2": true,
+   "C3": true,
+   "muere_en": "C4",
+   "C4_detalle": {
+    "equivalentes": 32,
+    "venden": 17,
+    "ejemplos_que_venden": [
+     "Limpiadora A Vapor Upper 2l 2000 W 106° + 15 Accesorios Limpieza Profu (+5000, $211,103)",
+     "Limpiadora a Vapor KLD de Mano 1050W con Accesorios (+1000, $54,621)",
+     "Limpiadora a Vapor Slx 1050w 3 bar Slxvp01 accesorios color naranja (+1000, $62,248)"
+    ],
+    "precio_mediano_equivalentes_que_vendieron": 113999,
+    "C4_hueco": false
+   },
+   "motivo": "ya atendido: 17 equivalentes venden +100"
+  },
+  {
+   "metodo": "B1",
+   "producto": "P19",
+   "ancla": "Limpiador A Vapor Portatil Presion Alta Limpieza - Rojo",
+   "vendidos_ancla": 1000,
+   "id": "B1",
+   "que_traer": "versión del producto ancla que resuelva la queja 'limpiar'",
+   "busqueda_ml": "limpiadora a vapor",
+   "señales": [
+    {
+     "descripcion": "queja más frecuente: 'limpiar'",
+     "errores": [],
+     "menciones": 15,
+     "insatisfechas": 9,
+     "de_textos": 140,
+     "importancia": 10.0,
+     "satisfaccion": 4.0,
+     "puntaje_oportunidad": 16.0,
+     "C1_verificada": true,
+     "C2_subatendida": true
+    }
+   ],
+   "guardrail": true,
+   "C1": true,
+   "C2": true,
+   "C3": true,
+   "muere_en": "C4",
+   "C4_detalle": {
+    "equivalentes": 32,
+    "venden": 17,
+    "ejemplos_que_venden": [
+     "Limpiadora A Vapor Upper 2l 2000 W 106° + 15 Accesorios Limpieza Profu (+5000, $211,103)",
+     "Limpiadora a Vapor KLD de Mano 1050W con Accesorios (+1000, $54,621)",
+     "Limpiadora a Vapor Slx 1050w 3 bar Slxvp01 accesorios color naranja (+1000, $62,248)"
+    ],
+    "precio_mediano_equivalentes_que_vendieron": 113999,
+    "C4_hueco": false
+   },
+   "motivo": "ya atendido: 17 equivalentes venden +100"
+  },
+  {
+   "metodo": "B1",
+   "producto": "P20",
+   "ancla": "Lonchera Eléctrica Portátil Tipo Vianda Auto Y Pared",
+   "vendidos_ancla": 500,
+   "id": "B1",
+   "que_traer": "versión del producto ancla que resuelva la queja 'caliente'",
+   "busqueda_ml": "lonchera electrica",
+   "señales": [
+    {
+     "descripcion": "queja más frecuente: 'caliente'",
+     "errores": [],
+     "menciones": 5,
+     "insatisfechas": 3,
+     "de_textos": 54,
+     "importancia": 9.3,
+     "satisfaccion": 4.0,
+     "puntaje_oportunidad": 14.6,
+     "C1_verificada": true,
+     "C2_subatendida": true
+    }
+   ],
+   "guardrail": true,
+   "C1": true,
+   "C2": true,
+   "C3": true,
+   "muere_en": "C4",
+   "C4_detalle": {
+    "equivalentes": 41,
+    "venden": 17,
+    "ejemplos_que_venden": [
+     "Lonchera Electrica Portátil A12v Auto 220 (+100, $48,171)",
+     "Lonchera Eléctrica Portátil 220v 12v Auto Vianda 1.5l 40w (+100, $50,000)",
+     "Lonchera Electrica Portátil Vianda Hermetica Auto Acero Inox (+100, $43,051)"
+    ],
+    "precio_mediano_equivalentes_que_vendieron": 47500,
+    "C4_hueco": false
+   },
+   "motivo": "ya atendido: 17 equivalentes venden +100"
+  },
+  {
+   "metodo": "B1",
+   "producto": "P21",
+   "ancla": "Vaso Térmico 900ml Acero Inox Antiderrame Manija Y Sorbete",
+   "vendidos_ancla": 1000,
+   "id": "B1",
+   "que_traer": "versión del producto ancla que resuelva la queja 'hola'",
+   "busqueda_ml": "vaso termico",
+   "señales": [
+    {
+     "descripcion": "queja más frecuente: 'hola'",
+     "errores": [],
+     "menciones": 13,
+     "insatisfechas": 8,
+     "de_textos": 193,
+     "importancia": 6.7,
+     "satisfaccion": 3.8,
+     "puntaje_oportunidad": 9.6,
+     "C1_verificada": true,
+     "C2_subatendida": true
+    }
+   ],
+   "guardrail": true,
+   "C1": true,
+   "C2": true,
+   "C3": true,
+   "muere_en": "C4",
+   "C4_detalle": {
+    "equivalentes": 63,
+    "venden": 41,
+    "ejemplos_que_venden": [
+     "Vaso Térmico De Acero Inoxidable 590ml Con Tapa Y Sorbete (+10000, $14,439)",
+     "Vaso Térmico con sensor de temperatura (+5000, $11,990)",
+     "Vaso térmico Contigo Huron 473mL Licorice (+5000, $30,078)"
+    ],
+    "precio_mediano_equivalentes_que_vendieron": 19293,
+    "C4_hueco": false
+   },
+   "motivo": "ya atendido: 41 equivalentes venden +100"
+  }
+ ],
+ "B2": [
+  {
+   "metodo": "B2",
+   "producto": "P16",
+   "ancla": "Yelmo As-3240 Aspiradora Para Auto Recargable Usb Color Gris",
+   "vendidos_ancla": 50000,
+   "id": "B2",
+   "que_traer": "repuesto de aspiradora de mano inalambrica",
+   "busqueda_ml": "repuesto aspiradora de mano inalambrica",
+   "señales": [
+    {
+     "descripcion": "preguntas que piden repuesto",
+     "errores": [],
+     "menciones": 3,
+     "insatisfechas": 3,
+     "de_textos": 181,
+     "importancia": 1.7,
+     "satisfaccion": 0.0,
+     "puntaje_oportunidad": 3.4,
+     "C1_verificada": true,
+     "C2_subatendida": false
+    }
+   ],
+   "guardrail": true,
+   "C1": true,
+   "C2": false,
+   "C3": true,
+   "muere_en": "C2"
+  }
+ ]
+}

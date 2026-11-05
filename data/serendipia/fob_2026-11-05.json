@@ -1,0 +1,129 @@
+{
+ "nota": "Referencias de proveedor (FOB China) por oportunidad. Precios de catálogo de Alibaba, no cotizaciones: la cotización real es un pendiente. DIE: base y alto (se prueba 35% por si no aplica el arancel menor).",
+ "O1": {
+  "nombre": "Disco de repuesto para afilador rodante, suelto",
+  "fob": [
+   2.6,
+   3.3,
+   7.0
+  ],
+  "die": [
+   0.18,
+   0.35
+  ],
+  "volumen_m3": 0.00015,
+  "fuentes": "Alibaba 'Roller Sharpener Replacement Head' US$2,60-3,30 por disco, MOQ 5 (alibaba.fr 1601685282876); alto: kit discos + asentador EUR 9,64-12,26 / 2 (alibaba.fr 1601894546322). Caja 10x5x3 cm. Unidad = 1 disco, igual que el equivalente que vende en ML (Smarta)."
+ },
+ "O2": {
+  "nombre": "Set de recipientes herméticos de acero con burlete",
+  "fob": [
+   1.69,
+   7.02,
+   8.31
+  ],
+  "die": [
+   0.35,
+   0.35
+  ],
+  "volumen_m3": 0.0022,
+  "fuentes": "Alibaba XH-9073 US$1,69-1,81; Lekfre calidad alta US$7,02-8,31 (ver costo_puesto.py). DIE 35% 7323.93."
+ },
+ "O3": {
+  "nombre": "Espumador de leche de mano a pilas",
+  "fob": [
+   3.5,
+   3.8,
+   10.0
+  ],
+  "die": [
+   0.2,
+   0.35
+  ],
+  "volumen_m3": 0.000625,
+  "fuentes": "Alibaba 'Battery Operated Handheld Milk Frother' US$3,50-4 (100-499 u.) (alibaba.com 1600924738694). Caja 25x5x5 cm."
+ },
+ "O4": {
+  "nombre": "Vaso picador de repuesto para minipimer",
+  "fob": [
+   3.45,
+   4.55,
+   5.5
+  ],
+  "die": [
+   0.18,
+   0.35
+  ],
+  "volumen_m3": 0.0034,
+  "fuentes": "Alibaba 'Chopper Spare Part Bowl' US$3,45-3,60 (1600956476571); 'Blender Chopper Spare Part' US$4,55-5,50 (alibaba.co.uk 1601334754904). Caja 15x15x15 cm."
+ },
+ "O5": {
+  "nombre": "Organizador de ropa plegable con estructura metálica",
+  "fob": [
+   1.33,
+   2.13,
+   2.61
+  ],
+  "die": [
+   0.35,
+   0.35
+  ],
+  "volumen_m3": 0.0044,
+  "fuentes": "Alibaba 'Foldable Clothes Storage Box with Reinforced Steel Frame' US$1,53-2,61 (alibaba.co.uk 1601876401473); 'Steel Frame Folding Storage Box' US$1,93-2,53 (1600877214402), caja 52x42x2 cm."
+ },
+ "O6": {
+  "nombre": "Pack de 8 adhesivos de repuesto transparentes para estantes de ducha",
+  "fob": [
+   0.76,
+   1.4,
+   2.6
+  ],
+  "die": [
+   0.18,
+   0.35
+  ],
+  "volumen_m3": 0.0001,
+  "fuentes": "Alibaba ganchos adhesivos transparentes US$0,07-0,15 (alibaba.fr 1601807739731), US$0,28-0,32 (alibaba.co.uk 1600459668105); Bossgoo US$0,25-0,30. 8 piezas + US$0,20 de blíster. Caja 10x10x1 cm."
+ },
+ "O7": {
+  "nombre": "Tabla de picar doble faz acero 304 + PP fibra de trigo (36x25 cm)",
+  "fob": [
+   3.2,
+   4.3,
+   6.5
+  ],
+  "die": [
+   0.35,
+   0.35
+  ],
+  "volumen_m3": 0.0014,
+  "fuentes": "Alibaba STELLAR PATH US$3,20 MOQ 100 (alibaba.fr 1601779515419); GBP 3,42 100-999 u. (~US$4,3) (alibaba.co.uk 1601779579039); Ningbo Homecrest EUR 6,05 (alibaba.com 1601416171208). 36,5x25x1,5 cm. DIE 35% 7323.93."
+ },
+ "O10": {
+  "nombre": "Pack de 3 filtros HEPA lavables para aspiradora de mano",
+  "fob": [
+   1.7,
+   3.56,
+   7.67
+  ],
+  "die": [
+   0.18,
+   0.35
+  ],
+  "volumen_m3": 0.0007,
+  "fuentes": "Alibaba filtro HEPA aspiradora de mano US$0,50-0,67 (alibaba.co.th 1601455250202), US$0,88-1,45 (alibaba.fr 1601804786798), US$1,20-2,49 (alibaba.fr 1601267636022). 3 filtros + US$0,20 de blíster; caja 9x6x4 cm por filtro."
+ },
+ "O12": {
+  "nombre": "Kit de 5 cepillos de repuesto para limpiadora a vapor",
+  "fob": [
+   2.95,
+   4.2,
+   6.25
+  ],
+  "die": [
+   0.18,
+   0.35
+  ],
+  "volumen_m3": 0.0005,
+  "fuentes": "Alibaba cepillo nylon+bronce para vaporeras US$0,55-0,75 (alibaba.fr 1601154117454); set cepillos nylon US$0,80-1,21 (alibaba.co.uk 1601846412382). 5 cepillos + US$0,20 de blíster."
+ }
+}

@@ -10,7 +10,26 @@ Cada requisito de la consigna oficial, dónde se verifica en el repo y qué falt
 pasar en cada búsqueda), proponer hipótesis de necesidad u oportunidad, y tratar de
 refutarlas con datos antes de recomendar.
 
-**Hipótesis medible principal (emparejamiento):** para decidir si una publicación local es
+**Hipótesis medible de serendipia (la vía principal desde el 05/11):** sobre productos que
+venden mucho, cruzar pies (ventas, precio) y manos (opiniones y preguntas) con un LLM que
+abduce oportunidades, y pasarlas por el mismo embudo convergente en código (guardrail de
+citas, C1 verificada, C2 Ulwick, C3 demanda, C4 hueco local, C5 margen), produce **más
+oportunidades distintas que sobreviven** que dos baselines sin LLM: B1 queja más frecuente y
+B2 regla de pedidos de repuesto. Partición fija por producto (`data/voces/productos_2026-11-05.json`:
+11 dev, 10 test). Resultado (`make serendipia`, `OPORTUNIDADES.md`):
+
+| | LLM | B1 | B2 |
+|---|---|---|---|
+| dev: sobreviven + condicionales distintas | 1 | 0 | 1 |
+| test: sobreviven + condicionales distintas | **1** | 0 | 0 |
+
+Con 21 productos no hay potencia estadística; lo que se muestra es el mecanismo y el tipo de
+hallazgo que solo aparece leyendo (una combinación de dos deseos, no un repuesto). Límites:
+el paso divergente de dev/test lo hizo Claude en el chat con el skill congelado (sin clave de
+API en el entorno; `make serendipia-api` lo repite con Haiku); algunas preguntas de test se
+vieron durante la recolección.
+
+**Hipótesis medible de emparejamiento (vía cross-border):** para decidir si una publicación local es
 equivalente a un producto que se vende por Compra Internacional, el juicio del LLM
 publicación por publicación tiene mayor F1 que (a) una regla de palabras escrita por el LLM
 y (b) un baseline sin LLM (dos palabras del título), medido contra etiquetas humanas
@@ -30,7 +49,7 @@ Métrica secundaria: proporción de hipótesis que sobreviven a la refutación.
 | Requisito | Dónde se ve | Estado |
 |---|---|---|
 | Utilidad real | Este archivo (usuario y tarea); `README.md` | 🟡 falta validar con 1 o 2 importadores reales |
-| LLM en el núcleo | `harness/divergente.py`, `skills/leer_votos/` | 🟡 código y tests listos; la corrida con modelo es la del workflow `llm` (ver abajo) |
+| LLM en el núcleo | `harness/serendipia.py`, `skills/leer_voces/`, `harness/divergente.py`, `skills/leer_votos/` | 🟡 código y tests listos; la corrida con modelo es la del workflow `llm` (ver abajo) |
 | Hipótesis vs baseline, partición fija dev/test | Arriba; `data/cross_border/particion.json`, `data/divergente/particion.json`; baselines en `scripts/cross_border_run.py` y `harness/votos.py` | 🟡 definidas y congeladas; faltan las etiquetas humanas y la corrida en test |
 | Datos verificados | Sección "Datos" abajo; `data/capturas/` | ✅ |
 | Economía (costo, latencia, modelo) | Sección "Costos" abajo; `harness/divergente.py::costo`; economía del usuario: `harness/costo_puesto.py` | 🟡 costo del sistema estimado (latencia real en el workflow); costo puesto y margen de cada oportunidad calculados con supuestos y fuentes |
@@ -65,12 +84,18 @@ Alternativa local: `ANTHROPIC_API_KEY=... make divergente-llm && python scripts/
 - Con Sonnet 4.5 (USD 3 / 15): ≈ USD 0,02 por búsqueda. Se elige Haiku porque la tarea es
   leer ~60 títulos y citar; si los juicios muestran que no alcanza, se compara con Sonnet.
 - Captura: gratis, ~25 s por búsqueda en el navegador.
+- **Serendipia** (`harness/serendipia.py::costo`): por producto, ~4.000 tokens de entrada
+  (skill + ~45 textos filtrados) y ~1.200 de salida ≈ **USD 0,01 por producto** con Haiku;
+  los 10 de test ≈ USD 0,10 (el doble si todos reintentan). El costo real queda en
+  `divergente_test_api.json` cuando corre el workflow. Recolección de voces: ~1 min por
+  producto en el navegador.
 
 ## Áreas en profundidad
 
 1. **Orquestación y guardrails:** etapa divergente (LLM) → *gate* en código que verifica
    cada cita → reintento con los errores → etapa convergente con chequeos en código y
-   motor con topes y traza (`harness/motor.py`, `harness/votos.py`, `harness/divergente.py`).
+   motor con topes y traza (`harness/motor.py`, `harness/votos.py`, `harness/divergente.py`,
+   `harness/serendipia.py`: embudo C1-C5 con el motivo de cada muerte).
 2. **Evaluación:** partición fija, baseline sin LLM, juicios humanos a ciegas con rúbrica,
    acuerdo entre jueces (kappa ponderado) y LLM juez calibrado contra humanos
    (`data/evaluacion/`, `scripts/calcular_juicios.py`, `scripts/juez_llm.py`).

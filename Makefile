@@ -61,8 +61,19 @@ foto:
 reporte:
 	$(PY) reporte.py
 
+# Serendipia: voces (opiniones + preguntas) -> LLM propone -> embudo C1..C5 -> OPORTUNIDADES.md
+serendipia:
+	$(PY) scripts/serendipia_run.py dev
+	$(PY) scripts/serendipia_run.py test
+
+# Lo mismo pero el paso divergente lo hace la API (requiere ANTHROPIC_API_KEY). Las búsquedas
+# nuevas que proponga el modelo hay que capturarlas desde el navegador para C4.
+serendipia-api:
+	$(PY) -m harness.serendipia test
+	$(PY) scripts/serendipia_run.py test_api
+
 # Todo lo que corre sin red ni claves.
-todo: test demo diagnostico divergente cross-border costos
+todo: test demo diagnostico divergente cross-border costos serendipia
 
 # Prueba la API de Mercado Libre con tu propia app (pide Client ID y Secret, no los guarda).
 prueba-api:

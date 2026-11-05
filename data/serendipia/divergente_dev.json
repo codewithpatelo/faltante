@@ -1,0 +1,672 @@
+{
+ "quien": "Claude (Opus 5.5) en el chat siguiendo skills/leer_voces/SKILL.md sobre la vista filtrada (todas las preguntas + 22 opiniones más informativas por producto). Sin API key en el entorno: paso LLM hecho a mano y declarado. harness/serendipia.py hace lo mismo con la API.",
+ "voces": "data/voces/corpus_2026-11-05.json",
+ "por_producto": {
+  "P01": {
+   "señales": [
+    {
+     "id": "S1",
+     "tipo": "faltante",
+     "descripcion": "Piden discos/piedras de repuesto y el vendedor no los tiene",
+     "palabras_clave": [
+      "repuesto",
+      "respuesto",
+      "los discos",
+      "las piedras"
+     ],
+     "citas": [
+      {
+       "texto": "p1",
+       "fragmento": "los discos de diamantes Uds también los comercializan"
+      },
+      {
+       "texto": "p3",
+       "fragmento": "Venden los discos de repuesto"
+      }
+     ]
+    },
+    {
+     "id": "S2",
+     "tipo": "deseo",
+     "descripcion": "Quieren granos más finos para terminar el filo",
+     "palabras_clave": [
+      "mas fina",
+      "más fina",
+      "granos más finos",
+      "granos mas finos",
+      "piedra mas fina"
+     ],
+     "citas": [
+      {
+       "texto": "o6",
+       "fragmento": "Lo único q me hubiese gustado es que venga con una piedra mas fina"
+      },
+      {
+       "texto": "o11",
+       "fragmento": "más variedad de piedras con granos más finos"
+      }
+     ]
+    }
+   ],
+   "oportunidades": [
+    {
+     "id": "O1",
+     "que_traer": "Disco de repuesto para afiladores rodantes (diamante 400/1000 o grano fino 3000/6000), vendido suelto",
+     "por_que": "El afilador vende +1.000 por publicación y se gasta: los compradores preguntan dónde comprar discos y el vendedor no los tiene. Demanda probada del producto principal, consumible sin oferta.",
+     "señales": [
+      "S1",
+      "S2"
+     ],
+     "busqueda_ml": "discos repuesto afilador rodante",
+     "criterio_equivalencia": {
+      "empieza_con": [
+       "disco",
+       "discos",
+       "piedra",
+       "piedras",
+       "repuesto",
+       "rueda",
+       "kit de discos",
+       "juego de discos",
+       "set de discos"
+      ],
+      "todos": [
+       [
+        "rodante",
+        "rodillo"
+       ]
+      ],
+      "excluir": [
+       "cadena",
+       "motosierra",
+       "amoladora",
+       "mecha"
+      ]
+     }
+    }
+   ]
+  },
+  "P02": {
+   "señales": [
+    {
+     "id": "S1",
+     "tipo": "faltante",
+     "descripcion": "Piden repuestos de discos para el Refilo",
+     "palabras_clave": [
+      "repuesto",
+      "respuesto",
+      "los discos",
+      "las piedras"
+     ],
+     "citas": [
+      {
+       "texto": "p2",
+       "fragmento": "Donde venden los discos"
+      },
+      {
+       "texto": "p7",
+       "fragmento": "se consigue repuestos cuando se gastan las piedras"
+      },
+      {
+       "texto": "p17",
+       "fragmento": "Venden discos de respuesto para el afilador Refilo"
+      }
+     ]
+    },
+    {
+     "id": "S2",
+     "tipo": "queja",
+     "descripcion": "Esperaban el cuero para asentar el filo y no viene",
+     "palabras_clave": [
+      "cuero",
+      "asentador",
+      "asentar"
+     ],
+     "citas": [
+      {
+       "texto": "o11",
+       "fragmento": "deberia venir con el cuero para finalizar el afilado"
+      },
+      {
+       "texto": "o50",
+       "fragmento": "Falta el cuero para asentar"
+      }
+     ]
+    },
+    {
+     "id": "S3",
+     "tipo": "duda",
+     "descripcion": "La base es muy alta para cuchillos de hoja chica",
+     "palabras_clave": [
+      "hoja chica",
+      "base es muy alta",
+      "cuchillo de oficio"
+     ],
+     "citas": [
+      {
+       "texto": "p8",
+       "fragmento": "la base es muy alta"
+      },
+      {
+       "texto": "p9",
+       "fragmento": "Sirve para cuchillo de oficio"
+      }
+     ]
+    }
+   ],
+   "oportunidades": [
+    {
+     "id": "O1",
+     "que_traer": "Disco de repuesto para afiladores rodantes (diamante 400/1000 o grano fino 3000/6000), vendido suelto",
+     "por_que": "Misma necesidad que en P01, en otra marca: el consumible no se consigue y el cuero que esperan no viene.",
+     "señales": [
+      "S1",
+      "S2"
+     ],
+     "busqueda_ml": "discos repuesto afilador rodante",
+     "criterio_equivalencia": {
+      "empieza_con": [
+       "disco",
+       "discos",
+       "piedra",
+       "piedras",
+       "repuesto",
+       "rueda",
+       "kit de discos",
+       "juego de discos",
+       "set de discos"
+      ],
+      "todos": [
+       [
+        "rodante",
+        "rodillo"
+       ]
+      ],
+      "excluir": [
+       "cadena",
+       "motosierra",
+       "amoladora",
+       "mecha"
+      ]
+     }
+    }
+   ]
+  },
+  "P03": {
+   "señales": [
+    {
+     "id": "S1",
+     "tipo": "queja",
+     "descripcion": "No son herméticos y el material es finito, aunque se venden +5.000",
+     "palabras_clave": [
+      "hermetic",
+      "finit",
+      "abolla",
+      "endeble"
+     ],
+     "citas": [
+      {
+       "texto": "o98",
+       "fragmento": "el cierre no es hermético"
+      },
+      {
+       "texto": "o72",
+       "fragmento": "no son tan herméticas"
+      },
+      {
+       "texto": "o2",
+       "fragmento": "se abolla con mucha facilidad"
+      }
+     ]
+    },
+    {
+     "id": "S2",
+     "tipo": "queja",
+     "descripcion": "Son mucho más chicos que en la foto y la publicación no dice las medidas",
+     "palabras_clave": [
+      "chic",
+      "pequeñ",
+      "medidas",
+      "tamaño"
+     ],
+     "citas": [
+      {
+       "texto": "o152",
+       "fragmento": "en la publicación parecen más grandes"
+      },
+      {
+       "texto": "p19",
+       "fragmento": "Qué medidas tienen"
+      },
+      {
+       "texto": "o104",
+       "fragmento": "Son más chicos de lo que esperaba"
+      }
+     ]
+    }
+   ],
+   "oportunidades": [
+    {
+     "id": "O2",
+     "que_traer": "Set de recipientes herméticos de acero de tamaño real (500 ml a 1,5 L) con tapa con burlete, a precio intermedio entre el set chino de $14k y el Tramontina de $28k por unidad",
+     "por_que": "Contradicción pies-manos: se venden +5.000 con 3,8 estrellas y quejas de que no cierran y son chicos; el Tramontina, hermético y grande, tiene 4,9 estrellas pero cuesta el doble por un solo pote. La gente compra lo barato porque no hay intermedio.",
+     "señales": [
+      "S1",
+      "S2"
+     ],
+     "busqueda_ml": "set recipientes hermeticos acero inoxidable",
+     "criterio_equivalencia": {
+      "todos": [
+       [
+        "hermetic"
+       ],
+       [
+        "acero",
+        "inox"
+       ]
+      ],
+      "excluir": [
+       "vidrio"
+      ]
+     }
+    }
+   ]
+  },
+  "P04": {
+   "señales": [],
+   "oportunidades": [],
+   "nota": "Opiniones muy positivas (4,9) y sin preguntas: no hay brecha que leer."
+  },
+  "P05": {
+   "señales": [
+    {
+     "id": "S1",
+     "tipo": "queja",
+     "descripcion": "Se apaga sola mientras se usa",
+     "palabras_clave": [
+      "se apaga"
+     ],
+     "citas": [
+      {
+       "texto": "o7",
+       "fragmento": "se apaga sola después de x minutos"
+      },
+      {
+       "texto": "o13",
+       "fragmento": "se apaga sola"
+      }
+     ]
+    }
+   ],
+   "oportunidades": [],
+   "nota": "La balanza cuesta $3.192 y vende +100.000: no hay hueco de importación; las preguntas son de logística y mayoristas."
+  },
+  "P06": {
+   "señales": [],
+   "oportunidades": [],
+   "nota": "Quejas menores (no trae pilas, plástico); a $6k no hay hueco."
+  },
+  "P07": {
+   "señales": [
+    {
+     "id": "S1",
+     "tipo": "duda",
+     "descripcion": "Preguntan una y otra vez si trae el batidor/espumador de café de la foto",
+     "palabras_clave": [
+      "cafe",
+      "café",
+      "espumar",
+      "espumador"
+     ],
+     "citas": [
+      {
+       "texto": "p5",
+       "fragmento": "Tiene batidor / espumador de café"
+      },
+      {
+       "texto": "p9",
+       "fragmento": "Trae el batidor para espumar leche"
+      },
+      {
+       "texto": "p14",
+       "fragmento": "Viene con un batidor de café"
+      }
+     ]
+    }
+   ],
+   "oportunidades": [
+    {
+     "id": "O3",
+     "que_traer": "Espumador de leche de mano (batidor de café a pilas o USB)",
+     "por_que": "Los indecisos de una minipimer que vende +10.000 preguntan por el espumador de café más que por cualquier otra cosa: el accesorio que buscan no es la minipimer.",
+     "señales": [
+      "S1"
+     ],
+     "busqueda_ml": "espumador de leche electrico",
+     "criterio_equivalencia": {
+      "todos": [
+       [
+        "espuma"
+       ],
+       [
+        "batidor",
+        "usb",
+        "pila",
+        "recargable",
+        "mano"
+       ]
+      ],
+      "excluir": [
+       "jarra",
+       "calentador",
+       "500w",
+       "600w",
+       "lechera"
+      ]
+     }
+    }
+   ]
+  },
+  "P08": {
+   "señales": [
+    {
+     "id": "S1",
+     "tipo": "faltante",
+     "descripcion": "Piden repuestos (picador, pie, encastres) que no se consiguen",
+     "palabras_clave": [
+      "repuesto",
+      "respuesto",
+      "encastre",
+      "por separado"
+     ],
+     "citas": [
+      {
+       "texto": "p13",
+       "fragmento": "Se consigue el repuesto picador"
+      },
+      {
+       "texto": "p20",
+       "fragmento": "necesito el pie de la mixera ustedes tienen el respuesto"
+      },
+      {
+       "texto": "p14",
+       "fragmento": "no venden por separado un kit de los encastres"
+      }
+     ]
+    },
+    {
+     "id": "S2",
+     "tipo": "queja",
+     "descripcion": "El encastre de plástico se afloja o se rompe",
+     "palabras_clave": [
+      "encastre",
+      "engranaje",
+      "se afloja"
+     ],
+     "citas": [
+      {
+       "texto": "o3",
+       "fragmento": "El encastre se la batidora se afloja un poco"
+      },
+      {
+       "texto": "o9",
+       "fragmento": "ya se rompió el engranaje del batidor"
+      }
+     ]
+    }
+   ],
+   "oportunidades": [
+    {
+     "id": "O4",
+     "que_traer": "Repuestos de minipimer (vaso picador, pie/varilla, acoples) compatibles con los modelos más vendidos",
+     "por_que": "Una minipimer que vende +10.000 tiene encastres de plástico que se rompen y los compradores no consiguen el repuesto: la máquina anda pero no se puede usar.",
+     "señales": [
+      "S1",
+      "S2"
+     ],
+     "busqueda_ml": "repuesto minipimer picador",
+     "criterio_equivalencia": {
+      "empieza_con": [
+       "repuesto",
+       "vaso",
+       "bowl",
+       "bol ",
+       "pie ",
+       "brazo",
+       "cuchilla",
+       "tapa",
+       "acople",
+       "cardan",
+       "recipiente"
+      ],
+      "todos": [
+       [
+        "minipimer",
+        "mixer",
+        "batidora de mano"
+       ]
+      ]
+     }
+    }
+   ]
+  },
+  "P09": {
+   "señales": [
+    {
+     "id": "S1",
+     "tipo": "queja",
+     "descripcion": "No trae el armazón o las varillas y se desarma con peso",
+     "palabras_clave": [
+      "armazon",
+      "armazón",
+      "varillas",
+      "alambres",
+      "estructura"
+     ],
+     "citas": [
+      {
+       "texto": "p18",
+       "fragmento": "no trae el armazon de metal"
+      },
+      {
+       "texto": "o4",
+       "fragmento": "no tiene los alambres duros para el armado"
+      },
+      {
+       "texto": "o36",
+       "fragmento": "no tiene nada de estructura"
+      }
+     ]
+    }
+   ],
+   "oportunidades": [
+    {
+     "id": "O5",
+     "que_traer": "Organizadores de ropa plegables con armazón metálico",
+     "por_que": "El canasto barato vende +5.000 pero se desarma; los compradores esperaban estructura.",
+     "señales": [
+      "S1"
+     ],
+     "busqueda_ml": "organizador ropa plegable estructura metalica",
+     "criterio_equivalencia": {
+      "todos": [
+       [
+        "plegable"
+       ],
+       [
+        "metal",
+        "estructura",
+        "armazon",
+        "alambre"
+       ]
+      ],
+      "excluir": [
+       "armario",
+       "perchero",
+       "estanteria"
+      ]
+     }
+    }
+   ]
+  },
+  "P10": {
+   "señales": [
+    {
+     "id": "S1",
+     "tipo": "faltante",
+     "descripcion": "Piden los adhesivos de repuesto por separado",
+     "palabras_clave": [
+      "repuesto",
+      "solo el adhesivo",
+      "por separado",
+      "parches"
+     ],
+     "citas": [
+      {
+       "texto": "p9",
+       "fragmento": "venden repuestos de los adhesivos"
+      },
+      {
+       "texto": "p16",
+       "fragmento": "vendes solo el adhesivo"
+      },
+      {
+       "texto": "p18",
+       "fragmento": "Necesito comprar esos parches de pegamento"
+      }
+     ]
+    },
+    {
+     "id": "S2",
+     "tipo": "deseo",
+     "descripcion": "Quisieran pegatinas extra en la caja",
+     "palabras_clave": [
+      "pegatinas",
+      "pegatina"
+     ],
+     "citas": [
+      {
+       "texto": "o142",
+       "fragmento": "Estaría bueno que vengan unas pega"
+      },
+      {
+       "texto": "o31",
+       "fragmento": "limpiar bien la zona de las pegatinas"
+      }
+     ]
+    }
+   ],
+   "oportunidades": [
+    {
+     "id": "O6",
+     "que_traer": "Pack de adhesivos de repuesto (pegatinas transparentes resistentes al agua) para estantes de ducha sin perforar",
+     "por_que": "Los estantes adhesivos venden +10.000 cada uno; el adhesivo es lo que falla con el vapor y los compradores no lo consiguen por separado.",
+     "señales": [
+      "S1",
+      "S2"
+     ],
+     "busqueda_ml": "adhesivo repuesto estante ducha",
+     "criterio_equivalencia": {
+      "todos": [
+       [
+        "adhesiv",
+        "pegatina",
+        "parche",
+        "sticker",
+        "calcomania"
+       ],
+       [
+        "repuesto"
+       ]
+      ],
+      "no_empieza_con": [
+       "canasta",
+       "estante",
+       "esquinero",
+       "set organizador",
+       "organizador"
+      ]
+     }
+    }
+   ]
+  },
+  "P11": {
+   "señales": [
+    {
+     "id": "S1",
+     "tipo": "faltante",
+     "descripcion": "Piden adhesivos extra porque el original se despegó",
+     "palabras_clave": [
+      "adhesivos extras",
+      "se despeg",
+      "adhesivo"
+     ],
+     "citas": [
+      {
+       "texto": "p6",
+       "fragmento": "Tenés adhesivos extras para vender"
+      },
+      {
+       "texto": "p18",
+       "fragmento": "el adhesivo se despegó. Donde se podrían comprar"
+      }
+     ]
+    },
+    {
+     "id": "S2",
+     "tipo": "queja",
+     "descripcion": "El vapor del baño despega los ganchos",
+     "palabras_clave": [
+      "vapor",
+      "se despeg",
+      "me duró"
+     ],
+     "citas": [
+      {
+       "texto": "o23",
+       "fragmento": "el vapor del baño hace q se despeguen"
+      },
+      {
+       "texto": "o18",
+       "fragmento": "el adhesivo me duró dos días"
+      }
+     ]
+    }
+   ],
+   "oportunidades": [
+    {
+     "id": "O6",
+     "que_traer": "Pack de adhesivos de repuesto (pegatinas transparentes resistentes al agua) para estantes de ducha sin perforar",
+     "por_que": "Mismo patrón que P10 en otro producto: el adhesivo es el consumible que falla y no se vende aparte.",
+     "señales": [
+      "S1",
+      "S2"
+     ],
+     "busqueda_ml": "adhesivo repuesto estante ducha",
+     "criterio_equivalencia": {
+      "todos": [
+       [
+        "adhesiv",
+        "pegatina",
+        "parche",
+        "sticker",
+        "calcomania"
+       ],
+       [
+        "repuesto"
+       ]
+      ],
+      "no_empieza_con": [
+       "canasta",
+       "estante",
+       "esquinero",
+       "set organizador",
+       "organizador"
+      ]
+     }
+    }
+   ]
+  }
+ },
+ "nota_criterios": "Los criterios de equivalencia (empieza_con / todos / excluir) se ajustaron en dev después de ver la captura de las búsquedas: la primera versión contaba afiladores completos y discos de motosierra como 'discos de repuesto'. En test quedan congelados."
+}

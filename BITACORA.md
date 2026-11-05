@@ -248,3 +248,52 @@ contra $242.000 del fabricante local. Ninguna conviene vendida al precio de Comp
 Internacional: el que vende por ese canal usa la franquicia courier y un FOB más bajo.
 **Qué decidimos:** las fichas de `HALLAZGOS.md` ahora dicen cuánto deja cada una y con qué
 riesgo. Falta pedir cotización real a un proveedor y a un despachante.
+
+## 2026-11-05 — Serendipia: pies + manos, LLM que abduce, embudo que mata
+
+**Qué probamos.** Volver a la idea original (Cyberseren): descubrir desfasajes que solo
+aparecen en información dispersa. Para 21 productos que venden mucho (2 por búsqueda,
+partición dev/test fijada antes de leer) juntamos 2.647 opiniones y ~330 preguntas de
+indecisos. El LLM lee (filtro de textos informativos de Timoshenko y Hauser, 2019) y propone
+señales y oportunidades citando textos; el programa las pasa por un embudo: guardrail de
+citas, C1 (las palabras aparecen en 3+ textos), C2 (puntaje de oportunidad de Ulwick), C3
+(el ancla vende +500), C4 (en la búsqueda de lo propuesto no hay más de 2 equivalentes que
+vendan +100) y C5 (30% sobre costo puesto al precio de lo que se vendió). Dos baselines sin
+LLM pasan por el mismo embudo: la queja más frecuente (B1) y una regla de pedidos de
+repuesto (B2, escrita después de leer dev: test la juzga).
+
+**Qué esperábamos.** Que los repuestos (discos de afilador, adhesivos de estantes, picador
+de minipimer) salieran como oportunidades claras.
+
+**Qué pasó en dev.** Todas las propuestas pasaron C1-C3; C4 mató cuatro (espumador,
+repuestos de minipimer, organizador con estructura, herméticos de calidad: ya los venden
+varios). C5 mató los adhesivos: lo que se vende cuesta ~$6.000 y el costo fijo de envío de
+Mercado Libre (~$2.500) se come todo. Los discos quedaron **condicionales**: 27% de margen,
+sobreviven si el proveedor cotiza ≤ USD 3,21 (catálogo 2,60-3,30). B2 encontró lo mismo; B1,
+nada. Tres correcciones en dev, antes de test: (1) el precio de referencia era la mediana de
+*todas* las equivalentes y una importada sin ventas a $164.000 inflaba el margen de los
+adhesivos a 699%: ahora es la mediana de las que vendieron; (2) los criterios de
+equivalencia contaban afiladores completos y discos de motosierra como "discos de repuesto":
+ahora miran el comienzo del título; (3) la unidad del disco no coincidía con la del
+mercado. Lo aprendido se escribió en el skill y se congeló.
+
+**Qué pasó en test (una sola corrida).** Sobrevivió una: **tabla de picar doble faz**. Dos
+tablas de acero venden +1.000; 21 textos dicen que rayan y desafilan los cuchillos; de 18
+equivalentes en Mercado Libre solo una vendió +100; margen base 79%. B1 y B2: cero. El
+guardrail atajó una cita repetida (lonchera 24 V). Una muerte fue falsa: el criterio de
+equivalencia contó cepillos a vapor para mascotas como repuestos de limpiadora.
+
+**Qué decidimos.** Serendipia pasa a ser la vía principal (`make serendipia`,
+`OPORTUNIDADES.md`). Pendientes: equivalencia de C4 con el LLM (como en cross-border) en
+vez de palabras; correr `make serendipia-api` desde el workflow para tener el paso
+divergente con el modelo real y su costo medido; pedir cotizaciones de la tabla doble faz y
+de los discos.
+
+**Declaraciones.** (1) El paso divergente de dev y test lo hizo Claude en el chat siguiendo
+el skill: no había clave de API en el entorno. (2) Durante la recolección se imprimieron
+algunas preguntas de test; el skill, los umbrales y el código no se tocaron después de
+correr test. (3) El commit `4f59338` quedó con un mensaje generado por Copilot ("Update
+print statement from 'Hello' to 'Goodbye'") cuando en realidad sube
+`data/voces/opiniones_2026-11-05.json`; no se reescribe la historia para corregirlo.
+(4) El archivo unido de voces se llama `data/voces/corpus_2026-11-05.json` para no pisar
+`voces_2026-11-05.json`, que sigue siendo la evidencia de las fichas de `HALLAZGOS.md`.

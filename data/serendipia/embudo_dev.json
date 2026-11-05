@@ -1,0 +1,1042 @@
+{
+ "llm": [
+  {
+   "metodo": "llm",
+   "producto": "P01",
+   "ancla": "Afilador De Cuchillos Rodante Rodillo De Diamante Filoshark ",
+   "vendidos_ancla": 1000,
+   "id": "O1",
+   "que_traer": "Disco de repuesto para afiladores rodantes (diamante 400/1000 o grano fino 3000/6000), vendido suelto",
+   "busqueda_ml": "discos repuesto afilador rodante",
+   "señales": [
+    {
+     "descripcion": "Piden discos/piedras de repuesto y el vendedor no los tiene",
+     "errores": [],
+     "menciones": 11,
+     "insatisfechas": 7,
+     "de_textos": 115,
+     "importancia": 9.6,
+     "satisfaccion": 3.6,
+     "puntaje_oportunidad": 15.6,
+     "C1_verificada": true,
+     "C2_subatendida": true
+    },
+    {
+     "descripcion": "Quieren granos más finos para terminar el filo",
+     "errores": [],
+     "menciones": 4,
+     "insatisfechas": 3,
+     "de_textos": 115,
+     "importancia": 3.5,
+     "satisfaccion": 2.5,
+     "puntaje_oportunidad": 4.5,
+     "C1_verificada": true,
+     "C2_subatendida": true
+    }
+   ],
+   "guardrail": true,
+   "C1": true,
+   "C2": true,
+   "C3": true,
+   "muere_en": null,
+   "C4_detalle": {
+    "equivalentes": 2,
+    "venden": 2,
+    "ejemplos_que_venden": [
+     "Disco Diamante 240/800/1200 Grit Afilador Rodante Smarta (+100, $17,416)",
+     "Disco Diamante 240/800/1200 Grit Afilador Rodante Smarta (+100, $17,415)"
+    ],
+    "precio_mediano_equivalentes_que_vendieron": 17416,
+    "C4_hueco": true
+   },
+   "C5_detalle": {
+    "precio_ars": 17416,
+    "ingreso_neto_ars": 8951,
+    "lote": 1000,
+    "envio_ars": 2500,
+    "escenarios": {
+     "optimista": {
+      "costo_puesto_ars": 5715,
+      "margen_pct": 57
+     },
+     "base": {
+      "costo_puesto_ars": 7049,
+      "margen_pct": 27
+     },
+     "pesimista": {
+      "costo_puesto_ars": 16030,
+      "margen_pct": -44
+     }
+    },
+    "fob_maximo_usd": 3.21,
+    "C5_margen": false,
+    "C5_condicional": true
+   },
+   "condicional": true,
+   "motivo": "margen base 27% a $17,416; sobrevive si el FOB es <= USD 3.21"
+  },
+  {
+   "metodo": "llm",
+   "producto": "P02",
+   "ancla": "Afilador Refilo Cuchillos Manual Rodillo Profesional Marrón",
+   "vendidos_ancla": 1000,
+   "id": "O1",
+   "que_traer": "Disco de repuesto para afiladores rodantes (diamante 400/1000 o grano fino 3000/6000), vendido suelto",
+   "busqueda_ml": "discos repuesto afilador rodante",
+   "señales": [
+    {
+     "descripcion": "Piden repuestos de discos para el Refilo",
+     "errores": [],
+     "menciones": 10,
+     "insatisfechas": 8,
+     "de_textos": 138,
+     "importancia": 7.2,
+     "satisfaccion": 2.0,
+     "puntaje_oportunidad": 12.4,
+     "C1_verificada": true,
+     "C2_subatendida": true
+    },
+    {
+     "descripcion": "Esperaban el cuero para asentar el filo y no viene",
+     "errores": [],
+     "menciones": 7,
+     "insatisfechas": 7,
+     "de_textos": 138,
+     "importancia": 5.1,
+     "satisfaccion": 0.0,
+     "puntaje_oportunidad": 10.2,
+     "C1_verificada": true,
+     "C2_subatendida": true
+    }
+   ],
+   "guardrail": true,
+   "C1": true,
+   "C2": true,
+   "C3": true,
+   "muere_en": null,
+   "C4_detalle": {
+    "equivalentes": 2,
+    "venden": 2,
+    "ejemplos_que_venden": [
+     "Disco Diamante 240/800/1200 Grit Afilador Rodante Smarta (+100, $17,416)",
+     "Disco Diamante 240/800/1200 Grit Afilador Rodante Smarta (+100, $17,415)"
+    ],
+    "precio_mediano_equivalentes_que_vendieron": 17416,
+    "C4_hueco": true
+   },
+   "C5_detalle": {
+    "precio_ars": 17416,
+    "ingreso_neto_ars": 8951,
+    "lote": 1000,
+    "envio_ars": 2500,
+    "escenarios": {
+     "optimista": {
+      "costo_puesto_ars": 5715,
+      "margen_pct": 57
+     },
+     "base": {
+      "costo_puesto_ars": 7049,
+      "margen_pct": 27
+     },
+     "pesimista": {
+      "costo_puesto_ars": 16030,
+      "margen_pct": -44
+     }
+    },
+    "fob_maximo_usd": 3.21,
+    "C5_margen": false,
+    "C5_condicional": true
+   },
+   "condicional": true,
+   "motivo": "margen base 27% a $17,416; sobrevive si el FOB es <= USD 3.21"
+  },
+  {
+   "metodo": "llm",
+   "producto": "P03",
+   "ancla": "Set 5 Recipientes Herméticos Acero Inoxidable Para Heladera ",
+   "vendidos_ancla": 5000,
+   "id": "O2",
+   "que_traer": "Set de recipientes herméticos de acero de tamaño real (500 ml a 1,5 L) con tapa con burlete, a precio intermedio entre el set chino de $14k y el Tramontina de $28k por unidad",
+   "busqueda_ml": "set recipientes hermeticos acero inoxidable",
+   "señales": [
+    {
+     "descripcion": "No son herméticos y el material es finito, aunque se venden +5.000",
+     "errores": [],
+     "menciones": 48,
+     "insatisfechas": 22,
+     "de_textos": 172,
+     "importancia": 10.0,
+     "satisfaccion": 5.4,
+     "puntaje_oportunidad": 14.6,
+     "C1_verificada": true,
+     "C2_subatendida": false
+    },
+    {
+     "descripcion": "Son mucho más chicos que en la foto y la publicación no dice las medidas",
+     "errores": [],
+     "menciones": 71,
+     "insatisfechas": 38,
+     "de_textos": 172,
+     "importancia": 10.0,
+     "satisfaccion": 4.6,
+     "puntaje_oportunidad": 15.4,
+     "C1_verificada": true,
+     "C2_subatendida": true
+    }
+   ],
+   "guardrail": true,
+   "C1": true,
+   "C2": true,
+   "C3": true,
+   "muere_en": "C4",
+   "C4_detalle": {
+    "equivalentes": 37,
+    "venden": 5,
+    "ejemplos_que_venden": [
+     "Set 3 Recipientes Herméticos De Acero Inoxidable Blanco (+100, $13,597)",
+     "X7 Contenedor Taper Acero Inoxidable Hermetico Con Tapa Plateado (+100, $84,854)",
+     "Lunchera Contenedor Taper Gastronomía 1200ml Acero Inoxidable Hermétic (+100, $44,935)"
+    ],
+    "precio_mediano_equivalentes_que_vendieron": 42065,
+    "C4_hueco": false
+   },
+   "motivo": "ya atendido: 5 equivalentes venden +100"
+  },
+  {
+   "metodo": "llm",
+   "producto": "P07",
+   "ancla": "Minipimer Mixer Licuadora Batidora De Mano 4 En 1 Accesorios",
+   "vendidos_ancla": 10000,
+   "id": "O3",
+   "que_traer": "Espumador de leche de mano (batidor de café a pilas o USB)",
+   "busqueda_ml": "espumador de leche electrico",
+   "señales": [
+    {
+     "descripcion": "Preguntan una y otra vez si trae el batidor/espumador de café de la foto",
+     "errores": [],
+     "menciones": 10,
+     "insatisfechas": 8,
+     "de_textos": 133,
+     "importancia": 7.5,
+     "satisfaccion": 2.0,
+     "puntaje_oportunidad": 13.0,
+     "C1_verificada": true,
+     "C2_subatendida": true
+    }
+   ],
+   "guardrail": true,
+   "C1": true,
+   "C2": true,
+   "C3": true,
+   "muere_en": "C4",
+   "C4_detalle": {
+    "equivalentes": 25,
+    "venden": 12,
+    "ejemplos_que_venden": [
+     "Batidor Espumador Leche Cafe Electrico Recargable Usb Inalam Color Neg (+1000, $11,304)",
+     "Batidor Espumador Leche Cafe Electrico Recargable Usb Inalam (+1000, $10,087)",
+     "Batidor Eléctrico Usb Inalámbrico Espumadora Café Leche (+1000, $10,499)"
+    ],
+    "precio_mediano_equivalentes_que_vendieron": 11605,
+    "C4_hueco": false
+   },
+   "motivo": "ya atendido: 12 equivalentes venden +100"
+  },
+  {
+   "metodo": "llm",
+   "producto": "P08",
+   "ancla": "Mixer Minipimer Multiprocesadora Spica Sp-640 Batidora Color",
+   "vendidos_ancla": 10000,
+   "id": "O4",
+   "que_traer": "Repuestos de minipimer (vaso picador, pie/varilla, acoples) compatibles con los modelos más vendidos",
+   "busqueda_ml": "repuesto minipimer picador",
+   "señales": [
+    {
+     "descripcion": "Piden repuestos (picador, pie, encastres) que no se consiguen",
+     "errores": [],
+     "menciones": 10,
+     "insatisfechas": 9,
+     "de_textos": 159,
+     "importancia": 6.3,
+     "satisfaccion": 1.0,
+     "puntaje_oportunidad": 11.6,
+     "C1_verificada": true,
+     "C2_subatendida": true
+    },
+    {
+     "descripcion": "El encastre de plástico se afloja o se rompe",
+     "errores": [],
+     "menciones": 10,
+     "insatisfechas": 8,
+     "de_textos": 159,
+     "importancia": 6.3,
+     "satisfaccion": 2.0,
+     "puntaje_oportunidad": 10.6,
+     "C1_verificada": true,
+     "C2_subatendida": true
+    }
+   ],
+   "guardrail": true,
+   "C1": true,
+   "C2": true,
+   "C3": true,
+   "muere_en": "C4",
+   "C4_detalle": {
+    "equivalentes": 29,
+    "venden": 7,
+    "ejemplos_que_venden": [
+     "Repuesto Pie/brazo/varilla Mixer Minipimer Liliana Original (+1000, $14,999)",
+     "Repuesto Brazo Pie Mixer Black+Decker, Electrolux, Top House, Liliana  (+500, $16,999)",
+     "Pie Picador Cuchilla Minipimer Black Decker Hb1003wc-ar (+100, $28,900)"
+    ],
+    "precio_mediano_equivalentes_que_vendieron": 14999,
+    "C4_hueco": false
+   },
+   "motivo": "ya atendido: 7 equivalentes venden +100"
+  },
+  {
+   "metodo": "llm",
+   "producto": "P09",
+   "ancla": "Organizadores Ropa Plegable Premium Canasto Con Manijas!!!",
+   "vendidos_ancla": 5000,
+   "id": "O5",
+   "que_traer": "Organizadores de ropa plegables con armazón metálico",
+   "busqueda_ml": "organizador ropa plegable estructura metalica",
+   "señales": [
+    {
+     "descripcion": "No trae el armazón o las varillas y se desarma con peso",
+     "errores": [],
+     "menciones": 6,
+     "insatisfechas": 5,
+     "de_textos": 140,
+     "importancia": 4.3,
+     "satisfaccion": 1.7,
+     "puntaje_oportunidad": 6.9,
+     "C1_verificada": true,
+     "C2_subatendida": true
+    }
+   ],
+   "guardrail": true,
+   "C1": true,
+   "C2": true,
+   "C3": true,
+   "muere_en": "C4",
+   "C4_detalle": {
+    "equivalentes": 17,
+    "venden": 7,
+    "ejemplos_que_venden": [
+     "X2 Organizador Canasto Caja De Tela Plegable Estructura Metalica Ideal (+5000, $14,520)",
+     "Organizador Caja De Tela Plegable Con Estructura Metalica (+5000, $10,830)",
+     "X4 Organizador Canasto Caja De Tela Premium Antidesgaste Cationica | P (+1000, $29,039)"
+    ],
+    "precio_mediano_equivalentes_que_vendieron": 16999,
+    "C4_hueco": false
+   },
+   "motivo": "ya atendido: 7 equivalentes venden +100"
+  },
+  {
+   "metodo": "llm",
+   "producto": "P10",
+   "ancla": "Pack x2 Estantes Repisas Con Adhesivos Para Ducha, Baño y Co",
+   "vendidos_ancla": 10000,
+   "id": "O6",
+   "que_traer": "Pack de adhesivos de repuesto (pegatinas transparentes resistentes al agua) para estantes de ducha sin perforar",
+   "busqueda_ml": "adhesivo repuesto estante ducha",
+   "señales": [
+    {
+     "descripcion": "Piden los adhesivos de repuesto por separado",
+     "errores": [],
+     "menciones": 7,
+     "insatisfechas": 5,
+     "de_textos": 200,
+     "importancia": 3.5,
+     "satisfaccion": 2.9,
+     "puntaje_oportunidad": 4.1,
+     "C1_verificada": true,
+     "C2_subatendida": true
+    },
+    {
+     "descripcion": "Quisieran pegatinas extra en la caja",
+     "errores": [],
+     "menciones": 11,
+     "insatisfechas": 8,
+     "de_textos": 200,
+     "importancia": 5.5,
+     "satisfaccion": 2.7,
+     "puntaje_oportunidad": 8.3,
+     "C1_verificada": true,
+     "C2_subatendida": true
+    }
+   ],
+   "guardrail": true,
+   "C1": true,
+   "C2": true,
+   "C3": true,
+   "muere_en": "C5",
+   "C4_detalle": {
+    "equivalentes": 20,
+    "venden": 0,
+    "ejemplos_que_venden": [],
+    "precio_mediano_equivalentes_que_vendieron": 5999,
+    "C4_hueco": true
+   },
+   "C5_detalle": {
+    "precio_ars": 5999,
+    "ingreso_neto_ars": 1444,
+    "lote": 1000,
+    "envio_ars": 2500,
+    "escenarios": {
+     "optimista": {
+      "costo_puesto_ars": 2214,
+      "margen_pct": -35
+     },
+     "base": {
+      "costo_puesto_ars": 3438,
+      "margen_pct": -58
+     },
+     "pesimista": {
+      "costo_puesto_ars": 6468,
+      "margen_pct": -78
+     }
+    },
+    "fob_maximo_usd": 0.18,
+    "C5_margen": false,
+    "C5_condicional": false
+   },
+   "motivo": "margen base -58% a $5,999 (haría falta FOB <= USD 0.18)"
+  },
+  {
+   "metodo": "llm",
+   "producto": "P11",
+   "ancla": "Estante Repisa Organizador Ducha Baño Esquinero Adhesivo",
+   "vendidos_ancla": 10000,
+   "id": "O6",
+   "que_traer": "Pack de adhesivos de repuesto (pegatinas transparentes resistentes al agua) para estantes de ducha sin perforar",
+   "busqueda_ml": "adhesivo repuesto estante ducha",
+   "señales": [
+    {
+     "descripcion": "Piden adhesivos extra porque el original se despegó",
+     "errores": [],
+     "menciones": 26,
+     "insatisfechas": 20,
+     "de_textos": 172,
+     "importancia": 10.0,
+     "satisfaccion": 2.3,
+     "puntaje_oportunidad": 17.7,
+     "C1_verificada": true,
+     "C2_subatendida": true
+    },
+    {
+     "descripcion": "El vapor del baño despega los ganchos",
+     "errores": [],
+     "menciones": 7,
+     "insatisfechas": 7,
+     "de_textos": 172,
+     "importancia": 4.1,
+     "satisfaccion": 0.0,
+     "puntaje_oportunidad": 8.2,
+     "C1_verificada": true,
+     "C2_subatendida": true
+    }
+   ],
+   "guardrail": true,
+   "C1": true,
+   "C2": true,
+   "C3": true,
+   "muere_en": "C5",
+   "C4_detalle": {
+    "equivalentes": 20,
+    "venden": 0,
+    "ejemplos_que_venden": [],
+    "precio_mediano_equivalentes_que_vendieron": 5999,
+    "C4_hueco": true
+   },
+   "C5_detalle": {
+    "precio_ars": 5999,
+    "ingreso_neto_ars": 1444,
+    "lote": 1000,
+    "envio_ars": 2500,
+    "escenarios": {
+     "optimista": {
+      "costo_puesto_ars": 2214,
+      "margen_pct": -35
+     },
+     "base": {
+      "costo_puesto_ars": 3438,
+      "margen_pct": -58
+     },
+     "pesimista": {
+      "costo_puesto_ars": 6468,
+      "margen_pct": -78
+     }
+    },
+    "fob_maximo_usd": 0.18,
+    "C5_margen": false,
+    "C5_condicional": false
+   },
+   "motivo": "margen base -58% a $5,999 (haría falta FOB <= USD 0.18)"
+  }
+ ],
+ "B1": [
+  {
+   "metodo": "B1",
+   "producto": "P01",
+   "ancla": "Afilador De Cuchillos Rodante Rodillo De Diamante Filoshark ",
+   "vendidos_ancla": 1000,
+   "id": "B1",
+   "que_traer": "versión del producto ancla que resuelva la queja 'filo'",
+   "busqueda_ml": "afilador cuchillos rodante",
+   "señales": [
+    {
+     "descripcion": "queja más frecuente: 'filo'",
+     "errores": [],
+     "menciones": 21,
+     "insatisfechas": 11,
+     "de_textos": 115,
+     "importancia": 10.0,
+     "satisfaccion": 4.8,
+     "puntaje_oportunidad": 15.2,
+     "C1_verificada": true,
+     "C2_subatendida": true
+    }
+   ],
+   "guardrail": true,
+   "C1": true,
+   "C2": true,
+   "C3": true,
+   "muere_en": "C4",
+   "C4_detalle": {
+    "equivalentes": 54,
+    "venden": 15,
+    "ejemplos_que_venden": [
+     "Afilador De Cuchillos Profesional De Diamante (+5000, $51,787)",
+     "Afilador Profesional de Cuchillos Sakir con Discos de Diamante y Cerám (+1000, $43,649)",
+     "Kit Afilador Cuchillos Artesanal Rodante Premium Diamante (+1000, $43,649)"
+    ],
+    "precio_mediano_equivalentes_que_vendieron": 43649,
+    "C4_hueco": false
+   },
+   "motivo": "ya atendido: 15 equivalentes venden +100"
+  },
+  {
+   "metodo": "B1",
+   "producto": "P02",
+   "ancla": "Afilador Refilo Cuchillos Manual Rodillo Profesional Marrón",
+   "vendidos_ancla": 1000,
+   "id": "B1",
+   "que_traer": "versión del producto ancla que resuelva la queja 'filo'",
+   "busqueda_ml": "afilador cuchillos rodante",
+   "señales": [
+    {
+     "descripcion": "queja más frecuente: 'filo'",
+     "errores": [],
+     "menciones": 27,
+     "insatisfechas": 13,
+     "de_textos": 138,
+     "importancia": 10.0,
+     "satisfaccion": 5.2,
+     "puntaje_oportunidad": 14.8,
+     "C1_verificada": true,
+     "C2_subatendida": false
+    }
+   ],
+   "guardrail": true,
+   "C1": true,
+   "C2": false,
+   "C3": true,
+   "muere_en": "C2"
+  },
+  {
+   "metodo": "B1",
+   "producto": "P03",
+   "ancla": "Set 5 Recipientes Herméticos Acero Inoxidable Para Heladera ",
+   "vendidos_ancla": 5000,
+   "id": "B1",
+   "que_traer": "versión del producto ancla que resuelva la queja 'material'",
+   "busqueda_ml": "recipientes hermeticos acero inoxidable",
+   "señales": [
+    {
+     "descripcion": "queja más frecuente: 'material'",
+     "errores": [],
+     "menciones": 61,
+     "insatisfechas": 31,
+     "de_textos": 172,
+     "importancia": 10.0,
+     "satisfaccion": 4.9,
+     "puntaje_oportunidad": 15.1,
+     "C1_verificada": true,
+     "C2_subatendida": true
+    }
+   ],
+   "guardrail": true,
+   "C1": true,
+   "C2": true,
+   "C3": true,
+   "muere_en": "C5",
+   "C4_detalle": {
+    "equivalentes": 15,
+    "venden": 2,
+    "ejemplos_que_venden": [
+     "Set 3 Recipientes Herméticos De Acero Inoxidable Blanco (+100, $13,597)",
+     "Recipientes De Acero Inoxidable Para Alimentos Con Tapas X3 Plateado (+100, $13,165)"
+    ],
+    "precio_mediano_equivalentes_que_vendieron": 16154,
+    "C4_hueco": true
+   },
+   "motivo": "sin referencia de proveedor o de precio"
+  },
+  {
+   "metodo": "B1",
+   "producto": "P04",
+   "ancla": "Hermetico recipiente cuadrado freezinox Tramontina 61223730 ",
+   "vendidos_ancla": 500,
+   "id": "B1",
+   "que_traer": "versión del producto ancla que resuelva la queja 'cierra'",
+   "busqueda_ml": "recipientes hermeticos acero inoxidable",
+   "señales": [
+    {
+     "descripcion": "queja más frecuente: 'cierra'",
+     "errores": [],
+     "menciones": 4,
+     "insatisfechas": 2,
+     "de_textos": 62,
+     "importancia": 6.5,
+     "satisfaccion": 5.0,
+     "puntaje_oportunidad": 8.0,
+     "C1_verificada": true,
+     "C2_subatendida": true
+    }
+   ],
+   "guardrail": true,
+   "C1": true,
+   "C2": true,
+   "C3": true,
+   "muere_en": "C5",
+   "C4_detalle": {
+    "equivalentes": 15,
+    "venden": 2,
+    "ejemplos_que_venden": [
+     "Set 3 Recipientes Herméticos De Acero Inoxidable Blanco (+100, $13,597)",
+     "Recipientes De Acero Inoxidable Para Alimentos Con Tapas X3 Plateado (+100, $13,165)"
+    ],
+    "precio_mediano_equivalentes_que_vendieron": 16154,
+    "C4_hueco": true
+   },
+   "motivo": "sin referencia de proveedor o de precio"
+  },
+  {
+   "metodo": "B1",
+   "producto": "P05",
+   "ancla": "Balanza De Cocina Digital Blanco 10 Kg",
+   "vendidos_ancla": 100000,
+   "id": "B1",
+   "que_traer": "versión del producto ancla que resuelva la queja 'precio'",
+   "busqueda_ml": "balanza de cocina digital",
+   "señales": [
+    {
+     "descripcion": "queja más frecuente: 'precio'",
+     "errores": [],
+     "menciones": 37,
+     "insatisfechas": 11,
+     "de_textos": 155,
+     "importancia": 10.0,
+     "satisfaccion": 7.0,
+     "puntaje_oportunidad": 13.0,
+     "C1_verificada": true,
+     "C2_subatendida": false
+    }
+   ],
+   "guardrail": true,
+   "C1": true,
+   "C2": false,
+   "C3": true,
+   "muere_en": "C2"
+  },
+  {
+   "metodo": "B1",
+   "producto": "P06",
+   "ancla": "Balanza De Cocina Digital Tara Electronica Multiuso Portatil",
+   "vendidos_ancla": 10000,
+   "id": "B1",
+   "que_traer": "versión del producto ancla que resuelva la queja 'precio'",
+   "busqueda_ml": "balanza de cocina digital",
+   "señales": [
+    {
+     "descripcion": "queja más frecuente: 'precio'",
+     "errores": [],
+     "menciones": 37,
+     "insatisfechas": 9,
+     "de_textos": 139,
+     "importancia": 10.0,
+     "satisfaccion": 7.6,
+     "puntaje_oportunidad": 12.4,
+     "C1_verificada": true,
+     "C2_subatendida": false
+    }
+   ],
+   "guardrail": true,
+   "C1": true,
+   "C2": false,
+   "C3": true,
+   "muere_en": "C2"
+  },
+  {
+   "metodo": "B1",
+   "producto": "P07",
+   "ancla": "Minipimer Mixer Licuadora Batidora De Mano 4 En 1 Accesorios",
+   "vendidos_ancla": 10000,
+   "id": "B1",
+   "que_traer": "versión del producto ancla que resuelva la queja 'precio'",
+   "busqueda_ml": "minipimer",
+   "señales": [
+    {
+     "descripcion": "queja más frecuente: 'precio'",
+     "errores": [],
+     "menciones": 27,
+     "insatisfechas": 10,
+     "de_textos": 133,
+     "importancia": 10.0,
+     "satisfaccion": 6.3,
+     "puntaje_oportunidad": 13.7,
+     "C1_verificada": true,
+     "C2_subatendida": false
+    }
+   ],
+   "guardrail": true,
+   "C1": true,
+   "C2": false,
+   "C3": true,
+   "muere_en": "C2"
+  },
+  {
+   "metodo": "B1",
+   "producto": "P08",
+   "ancla": "Mixer Minipimer Multiprocesadora Spica Sp-640 Batidora Color",
+   "vendidos_ancla": 10000,
+   "id": "B1",
+   "que_traer": "versión del producto ancla que resuelva la queja 'buena'",
+   "busqueda_ml": "minipimer",
+   "señales": [
+    {
+     "descripcion": "queja más frecuente: 'buena'",
+     "errores": [],
+     "menciones": 32,
+     "insatisfechas": 13,
+     "de_textos": 159,
+     "importancia": 10.0,
+     "satisfaccion": 5.9,
+     "puntaje_oportunidad": 14.1,
+     "C1_verificada": true,
+     "C2_subatendida": false
+    }
+   ],
+   "guardrail": true,
+   "C1": true,
+   "C2": false,
+   "C3": true,
+   "muere_en": "C2"
+  },
+  {
+   "metodo": "B1",
+   "producto": "P09",
+   "ancla": "Organizadores Ropa Plegable Premium Canasto Con Manijas!!!",
+   "vendidos_ancla": 5000,
+   "id": "B1",
+   "que_traer": "versión del producto ancla que resuelva la queja 'estan'",
+   "busqueda_ml": "organizador de ropa plegable",
+   "señales": [
+    {
+     "descripcion": "queja más frecuente: 'estan'",
+     "errores": [],
+     "menciones": 8,
+     "insatisfechas": 7,
+     "de_textos": 140,
+     "importancia": 5.7,
+     "satisfaccion": 1.2,
+     "puntaje_oportunidad": 10.2,
+     "C1_verificada": true,
+     "C2_subatendida": true
+    }
+   ],
+   "guardrail": true,
+   "C1": true,
+   "C2": true,
+   "C3": true,
+   "muere_en": "C4",
+   "C4_detalle": {
+    "equivalentes": 63,
+    "venden": 43,
+    "ejemplos_que_venden": [
+     "Armario Portátil Guardarropa Organizador Gadnic Perchero 168x127x45cm  (+10000, $47,499)",
+     "Canasto Cesto Ropa Sucia Bambu Plegable Asas Organizador Marca Känn Li (+10000, $27,099)",
+     "Set de 4 Organizadores Plegables para Cajones Ropa Interior Beige Wagg (+5000, $10,480)"
+    ],
+    "precio_mediano_equivalentes_que_vendieron": 25990,
+    "C4_hueco": false
+   },
+   "motivo": "ya atendido: 43 equivalentes venden +100"
+  },
+  {
+   "metodo": "B1",
+   "producto": "P10",
+   "ancla": "Pack x2 Estantes Repisas Con Adhesivos Para Ducha, Baño y Co",
+   "vendidos_ancla": 10000,
+   "id": "B1",
+   "que_traer": "versión del producto ancla que resuelva la queja 'hola'",
+   "busqueda_ml": "estante baño sin taladro",
+   "señales": [
+    {
+     "descripcion": "queja más frecuente: 'hola'",
+     "errores": [],
+     "menciones": 10,
+     "insatisfechas": 10,
+     "de_textos": 200,
+     "importancia": 5.0,
+     "satisfaccion": 0.0,
+     "puntaje_oportunidad": 10.0,
+     "C1_verificada": true,
+     "C2_subatendida": true
+    }
+   ],
+   "guardrail": true,
+   "C1": true,
+   "C2": true,
+   "C3": true,
+   "muere_en": "C4",
+   "C4_detalle": {
+    "equivalentes": 47,
+    "venden": 30,
+    "ejemplos_que_venden": [
+     "Pack x2 Estantes Repisas Con Adhesivos Para Ducha, Baño y Cocina – Org (+10000, $19,553)",
+     "Estante Repisa Organizador Baño Ducha Shampoo Con Adhesivo Sin Perfora (+10000, $6,969)",
+     "Pack x2 Estantes Esquineros Adhesivos Para Ducha o Baño – Repisas con  (+5000, $18,999)"
+    ],
+    "precio_mediano_equivalentes_que_vendieron": 20990,
+    "C4_hueco": false
+   },
+   "motivo": "ya atendido: 30 equivalentes venden +100"
+  },
+  {
+   "metodo": "B1",
+   "producto": "P11",
+   "ancla": "Estante Repisa Organizador Ducha Baño Esquinero Adhesivo",
+   "vendidos_ancla": 10000,
+   "id": "B1",
+   "que_traer": "versión del producto ancla que resuelva la queja 'adhesivo'",
+   "busqueda_ml": "estante baño sin taladro",
+   "señales": [
+    {
+     "descripcion": "queja más frecuente: 'adhesivo'",
+     "errores": [],
+     "menciones": 21,
+     "insatisfechas": 15,
+     "de_textos": 172,
+     "importancia": 10.0,
+     "satisfaccion": 2.9,
+     "puntaje_oportunidad": 17.1,
+     "C1_verificada": true,
+     "C2_subatendida": true
+    }
+   ],
+   "guardrail": true,
+   "C1": true,
+   "C2": true,
+   "C3": true,
+   "muere_en": "C4",
+   "C4_detalle": {
+    "equivalentes": 47,
+    "venden": 30,
+    "ejemplos_que_venden": [
+     "Pack x2 Estantes Repisas Con Adhesivos Para Ducha, Baño y Cocina – Org (+10000, $19,553)",
+     "Estante Repisa Organizador Baño Ducha Shampoo Con Adhesivo Sin Perfora (+10000, $6,969)",
+     "Pack x2 Estantes Esquineros Adhesivos Para Ducha o Baño – Repisas con  (+5000, $18,999)"
+    ],
+    "precio_mediano_equivalentes_que_vendieron": 20990,
+    "C4_hueco": false
+   },
+   "motivo": "ya atendido: 30 equivalentes venden +100"
+  }
+ ],
+ "B2": [
+  {
+   "metodo": "B2",
+   "producto": "P01",
+   "ancla": "Afilador De Cuchillos Rodante Rodillo De Diamante Filoshark ",
+   "vendidos_ancla": 1000,
+   "id": "B2",
+   "que_traer": "repuesto de afilador cuchillos rodante",
+   "busqueda_ml": "repuesto afilador cuchillos rodante",
+   "señales": [
+    {
+     "descripcion": "preguntas que piden repuesto",
+     "errores": [],
+     "menciones": 7,
+     "insatisfechas": 5,
+     "de_textos": 115,
+     "importancia": 6.1,
+     "satisfaccion": 2.9,
+     "puntaje_oportunidad": 9.3,
+     "C1_verificada": true,
+     "C2_subatendida": true
+    }
+   ],
+   "guardrail": true,
+   "C1": true,
+   "C2": true,
+   "C3": true,
+   "muere_en": null,
+   "C4_detalle": {
+    "equivalentes": 9,
+    "venden": 1,
+    "ejemplos_que_venden": [
+     "Kit Afilador Cuchillos Artesanal Rodante Premium Diamante (+1000, $43,649)"
+    ],
+    "precio_mediano_equivalentes_que_vendieron": 17107,
+    "C4_hueco": true
+   },
+   "C5_detalle": {
+    "precio_ars": 17107,
+    "ingreso_neto_ars": 8748,
+    "lote": 1000,
+    "envio_ars": 2500,
+    "escenarios": {
+     "optimista": {
+      "costo_puesto_ars": 5715,
+      "margen_pct": 53
+     },
+     "base": {
+      "costo_puesto_ars": 7049,
+      "margen_pct": 24
+     },
+     "pesimista": {
+      "costo_puesto_ars": 16030,
+      "margen_pct": -45
+     }
+    },
+    "fob_maximo_usd": 3.13,
+    "C5_margen": false,
+    "C5_condicional": true
+   },
+   "condicional": true,
+   "motivo": "margen base 24% a $17,107; sobrevive si el FOB es <= USD 3.13"
+  },
+  {
+   "metodo": "B2",
+   "producto": "P02",
+   "ancla": "Afilador Refilo Cuchillos Manual Rodillo Profesional Marrón",
+   "vendidos_ancla": 1000,
+   "id": "B2",
+   "que_traer": "repuesto de afilador cuchillos rodante",
+   "busqueda_ml": "repuesto afilador cuchillos rodante",
+   "señales": [
+    {
+     "descripcion": "preguntas que piden repuesto",
+     "errores": [],
+     "menciones": 6,
+     "insatisfechas": 5,
+     "de_textos": 138,
+     "importancia": 4.3,
+     "satisfaccion": 1.7,
+     "puntaje_oportunidad": 6.9,
+     "C1_verificada": true,
+     "C2_subatendida": true
+    }
+   ],
+   "guardrail": true,
+   "C1": true,
+   "C2": true,
+   "C3": true,
+   "muere_en": null,
+   "C4_detalle": {
+    "equivalentes": 9,
+    "venden": 1,
+    "ejemplos_que_venden": [
+     "Kit Afilador Cuchillos Artesanal Rodante Premium Diamante (+1000, $43,649)"
+    ],
+    "precio_mediano_equivalentes_que_vendieron": 17107,
+    "C4_hueco": true
+   },
+   "C5_detalle": {
+    "precio_ars": 17107,
+    "ingreso_neto_ars": 8748,
+    "lote": 1000,
+    "envio_ars": 2500,
+    "escenarios": {
+     "optimista": {
+      "costo_puesto_ars": 5715,
+      "margen_pct": 53
+     },
+     "base": {
+      "costo_puesto_ars": 7049,
+      "margen_pct": 24
+     },
+     "pesimista": {
+      "costo_puesto_ars": 16030,
+      "margen_pct": -45
+     }
+    },
+    "fob_maximo_usd": 3.13,
+    "C5_margen": false,
+    "C5_condicional": true
+   },
+   "condicional": true,
+   "motivo": "margen base 24% a $17,107; sobrevive si el FOB es <= USD 3.13"
+  },
+  {
+   "metodo": "B2",
+   "producto": "P08",
+   "ancla": "Mixer Minipimer Multiprocesadora Spica Sp-640 Batidora Color",
+   "vendidos_ancla": 10000,
+   "id": "B2",
+   "que_traer": "repuesto de minipimer",
+   "busqueda_ml": "repuesto minipimer",
+   "señales": [
+    {
+     "descripcion": "preguntas que piden repuesto",
+     "errores": [],
+     "menciones": 3,
+     "insatisfechas": 3,
+     "de_textos": 159,
+     "importancia": 1.9,
+     "satisfaccion": 0.0,
+     "puntaje_oportunidad": 3.8,
+     "C1_verificada": true,
+     "C2_subatendida": false
+    }
+   ],
+   "guardrail": true,
+   "C1": true,
+   "C2": false,
+   "C3": true,
+   "muere_en": "C2"
+  },
+  {
+   "metodo": "B2",
+   "producto": "P10",
+   "ancla": "Pack x2 Estantes Repisas Con Adhesivos Para Ducha, Baño y Co",
+   "vendidos_ancla": 10000,
+   "id": "B2",
+   "que_traer": "repuesto de estante baño sin taladro",
+   "busqueda_ml": "repuesto estante baño sin taladro",
+   "señales": [
+    {
+     "descripcion": "preguntas que piden repuesto",
+     "errores": [],
+     "menciones": 4,
+     "insatisfechas": 4,
+     "de_textos": 200,
+     "importancia": 2.0,
+     "satisfaccion": 0.0,
+     "puntaje_oportunidad": 4.0,
+     "C1_verificada": true,
+     "C2_subatendida": false
+    }
+   ],
+   "guardrail": true,
+   "C1": true,
+   "C2": false,
+   "C3": true,
+   "muere_en": "C2"
+  }
+ ]
+}

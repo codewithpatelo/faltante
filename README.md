@@ -4,6 +4,11 @@
 y por qué. Mira lo que la gente **ya compra** (no lo que dice que compraría), busca dónde
 esa demanda no está bien atendida acá, y calcula cuánto deja traerlo.
 
+Tiene dos vías: **cross-border** (lo que ya se compra desde afuera y no tiene equivalente
+local) y **serendipia** (lo que dicen compradores e indecisos de productos que venden mucho,
+leído por un LLM y filtrado por un embudo de cinco chequeos). Resultado de la segunda:
+[`OPORTUNIDADES.md`](OPORTUNIDADES.md).
+
 TP de IA Agéntica, Maestría en Explotación de Datos (UBA), 2026.
 
 ## La idea en un ejemplo
@@ -34,12 +39,39 @@ falsas.
 real con un fragmento literal de su título, y el código lo verifica. Y cada hipótesis se
 intenta tirar abajo con datos antes de recomendarla.
 
+## Serendipia: de lo que dice la gente a qué traer
+
+Cruza el **voto con los pies** (qué se compra: ventas, precio, origen) con el **voto con las
+manos** (opiniones de compradores y, sobre todo, preguntas de indecisos). El LLM diverge:
+abduce necesidades no resueltas. El programa converge: intenta matar cada una.
+
+| Etapa | Qué chequea | Quién |
+|---|---|---|
+| Filtro | Todas las preguntas + las opiniones más informativas (Timoshenko y Hauser, 2019) | Código |
+| Divergente | Señales (quejas, faltantes, deseos, usos) y oportunidades, citando textos | **LLM** (`skills/leer_voces`) |
+| Guardrail | Cada cita existe, es literal y hay al menos 2 textos distintos | Código |
+| C1 verificada | Las palabras clave aparecen en 3+ textos (cuenta en *todos*, no solo los que leyó el LLM) | Código |
+| C2 sub-atendida | Puntaje de oportunidad de Ulwick: importancia alta y satisfacción baja | Código |
+| C3 demanda | El producto donde aparece vende +500 | Código |
+| C4 hueco | En la búsqueda de lo propuesto, 2 o menos equivalentes venden +100 | Código + captura |
+| C5 margen | 30% o más sobre costo puesto, al precio de lo que se vendió; si no, el FOB máximo | Código |
+
+Ejemplo de lo que sale: dos tablas de acero venden +1.000 cada una; los compradores dicen que
+las eligen por higiene pero que **rayan y desafilan los cuchillos**. El LLM propone una tabla
+**doble faz** (acero de un lado, polipropileno del otro). En Mercado Libre hay 18 parecidas y
+solo una vendió +100; puesta en Argentina cuesta ~$10.700 y se vende a $32.800. Una regla que
+busca "repuesto" o la queja más frecuente no la encuentran.
+
 ## Qué encontramos
 
-Detalle en [`HALLAZGOS.md`](HALLAZGOS.md) (una ficha por producto).
+Detalle en [`HALLAZGOS.md`](HALLAZGOS.md) (cross-border, una ficha por producto) y
+[`OPORTUNIDADES.md`](OPORTUNIDADES.md) (serendipia: lo que sobrevivió y lo que murió, con motivo).
 
 | Producto | ¿Traerlo? | Por qué |
 |---|---|---|
+| Tabla de picar doble faz (serendipia) | **Probar** | Necesidad leída en 21 textos; casi nadie la vende con volumen; margen base 79% |
+| Disco de repuesto para afilador rodante (serendipia) | **Sí, si se consigue a USD 3,21 o menos** | Lo piden en las preguntas y nadie lo tiene; a $17.416 el margen base es 27% |
+
 | Set de 5 herméticos de acero | **Sí** | +5.000 por Compra Internacional; puesto en ~$5.700, a $25.000 deja 73% |
 | Afilador rodante | **Sí, si se consigue a USD 6 o menos** | +1.000 por Compra Internacional; a $35.000 deja 44% |
 | Tostador abierto (carlitero) | No | Parece un hueco, pero importado queda en ~$450.000 contra $242.000 del fabricante local |
@@ -61,13 +93,15 @@ Detalle en [`HALLAZGOS.md`](HALLAZGOS.md) (una ficha por producto).
 git clone https://github.com/codewithpatelo/faltante && cd faltante
 python3 -m venv .venv && source .venv/bin/activate
 make setup     # instala dependencias
-make todo      # 31 tests + todo el análisis sobre los datos guardados (no necesita internet ni claves)
+make todo      # 38 tests + todo el análisis sobre los datos guardados (no necesita internet ni claves)
 ```
 
 Pasos sueltos:
 
 | Comando | Qué hace |
 |---|---|
+| `make serendipia` | Embudo de serendipia en dev y test, LLM contra dos baselines |
+| `make serendipia-api` | Lo mismo con el paso divergente hecho por la API (necesita `ANTHROPIC_API_KEY`) |
 | `make cross-border` | Pasos 1 a 3: productos internacionales que venden contra equivalentes locales |
 | `make costos` | Paso 5: costo puesto y margen de cada candidata |
 | `make diagnostico` | Por qué no se venden acá los productos del top de Amazon (primer enfoque) |
@@ -81,6 +115,12 @@ Pasos sueltos:
 importado, el LLM acierta más que una regla de palabras. Se mide con precisión, recall y F1
 contra etiquetas humanas (`data/evaluacion/planilla_equivalencia.csv`). Hay 15 productos de
 prueba separados que no se miraron mientras se armaba el sistema.
+
+**Hipótesis de serendipia:** con el mismo embudo, el LLM produce más oportunidades que
+sobreviven que dos baselines sin LLM (la queja más frecuente; una regla que detecta pedidos
+de repuesto). Resultado: en test, LLM 1 sobreviviente, baselines 0; en dev, LLM y regla
+empatan con 1 condicional. Son 21 productos: muestra el mecanismo, no una diferencia
+estadística. Tabla completa en `OPORTUNIDADES.md`.
 
 **Costo del sistema:** ~USD 0,006 por producto analizado con Claude Haiku 4.5. Detalle en `CONSIGNA.md`.
 
@@ -100,14 +140,15 @@ pegá `scripts/captura_ml.js` en la consola (F12) y seguí las instrucciones del
 
 | Carpeta / archivo | Qué hay |
 |---|---|
-| `HALLAZGOS.md` | El resultado: una ficha por producto |
+| `OPORTUNIDADES.md` | Resultado de serendipia: sobrevivientes, condicionales y muertes con motivo |
+| `HALLAZGOS.md` | Resultado de cross-border: una ficha por producto |
 | `BITACORA.md` | Qué probamos en cada sesión, qué salió mal y qué decidimos (para la exposición) |
 | `CONSIGNA.md` | Cada requisito del TP, dónde se cumple y qué falta |
 | `harness/` | El sistema: chequeos, emparejamiento, lectura de votos, costos, guardrails |
 | `skills/` | Instrucciones que sigue el LLM en cada tarea (`SKILL.md`) |
 | `scripts/` | Captura desde el navegador y scripts de evaluación |
 | `data/` | Todo lo capturado y los resultados, con fecha |
-| `tests/` | 31 tests: guardrails, chequeos, citas, reintentos, costos |
+| `tests/` | 38 tests: guardrails, chequeos, citas, reintentos, costos, embudo |
 
 ## Glosario
 
@@ -118,6 +159,8 @@ pegá `scripts/captura_ml.js` en la consola (F12) y seguí las instrucciones del
   (mismo tipo, tamaño y gama).
 - **Costo puesto:** lo que cuesta tener el producto en un depósito en Argentina: precio en
   origen + flete + aranceles.
+- **Abducción:** proponer la explicación (o el producto) que haría que lo observado tenga sentido.
+- **Puntaje de oportunidad (Ulwick):** importancia + (importancia − satisfacción); alto = importa y está mal resuelto.
 - **Guardrail:** regla en código que el LLM no puede saltear (por ejemplo, no puede citar una
   publicación que no existe).
 
@@ -127,3 +170,9 @@ pegá `scripts/captura_ml.js` en la consola (F12) y seguí las instrucciones del
 - "+N vendidos" es un piso del contador de Mercado Libre, no las ventas exactas.
 - Los costos usan precios y tarifas publicados, no una cotización real de proveedor y despachante.
 - Hasta que el grupo etiquete, el juicio del LLM no está validado por personas.
+- En serendipia, el paso divergente de dev y test lo hizo Claude en el chat siguiendo el skill
+  (no había clave de API en el entorno); `make serendipia-api` lo repite con la API.
+- La equivalencia de C4 es por palabras del título y se equivoca: en test contó cepillos a
+  vapor *para mascotas* como repuestos de limpiadora y mató una propuesta que no debía. El
+  emparejamiento con LLM de cross-border es el arreglo pendiente.
+- C4 necesita capturar cada búsqueda desde el navegador (la API de Mercado Libre está cerrada).
