@@ -742,18 +742,18 @@
    "ancla": "Organizadores Ropa Plegable Premium Canasto Con Manijas!!!",
    "vendidos_ancla": 5000,
    "id": "B1",
-   "que_traer": "versión del producto ancla que resuelva la queja 'estan'",
+   "que_traer": "versión del producto ancla que resuelva la queja 'color'",
    "busqueda_ml": "organizador de ropa plegable",
    "señales": [
     {
-     "descripcion": "queja más frecuente: 'estan'",
+     "descripcion": "queja más frecuente: 'color'",
      "errores": [],
-     "menciones": 8,
-     "insatisfechas": 7,
+     "menciones": 7,
+     "insatisfechas": 6,
      "de_textos": 140,
-     "importancia": 5.7,
-     "satisfaccion": 1.2,
-     "puntaje_oportunidad": 10.2,
+     "importancia": 5.0,
+     "satisfaccion": 1.4,
+     "puntaje_oportunidad": 8.6,
      "C1_verificada": true,
      "C2_subatendida": true
     }

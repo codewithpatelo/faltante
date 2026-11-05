@@ -118,7 +118,8 @@ def baseline_señal(textos: dict[str, str]) -> dict:
         n = norm(t)
         if NEGATIVOS.search(n):
             c.update(w for w in set(re.findall(r"[a-z]{4,}", n)) if w not in vacias)
-    termino = c.most_common(1)[0][0] if c else ""
+    # Desempate alfabético: sin esto el resultado depende del orden de los sets (hash aleatorio).
+    termino = min(c.items(), key=lambda kv: (-kv[1], kv[0]))[0] if c else ""
     return {"id": "B1", "tipo": "queja", "descripcion": f"queja más frecuente: '{termino}'",
             "palabras_clave": [termino] if termino else []}
 
