@@ -1,7 +1,7 @@
 # Oportunidades de importación: lo que sobrevivió al embudo (05/11/2026)
 
 Salida de `make serendipia`. Entrada: 21 productos que se venden mucho en Mercado Libre, con
-sus opiniones (2.647) y las preguntas de los indecisos (~330). El LLM lee y propone; el
+sus opiniones (2.647) y las preguntas de los indecisos (334). El LLM lee y propone; el
 programa intenta matar cada propuesta con datos. Acá quedan las que no pudo matar.
 
 ## Sobrevive (test)

@@ -91,3 +91,36 @@ def test_embudo_dev_corre_y_cada_oportunidad_tiene_destino():
     for lista in res.values():
         for r in lista:
             assert r.get("sobrevive") or r.get("condicional") or r["muere_en"] in {"guardrail", "C1", "C2", "C3", "C4", "C5"}
+
+
+def test_costo_puesto_reparte_minimo_de_1_m3():
+    from harness.costo_puesto import EMBALAJE, LOGISTICA_M3
+    lleno = costo_puesto_usd(5.0, 0.18, 0.001)
+    chico = costo_puesto_usd(5.0, 0.18, 0.001, unidades_lote=100)  # 0,115 m3 -> se cobra 1 m3
+    assert abs(lleno["logistica"] - LOGISTICA_M3 * 0.001 * EMBALAJE) < 0.01
+    assert abs(chico["logistica"] - LOGISTICA_M3 / 100) < 0.01
+    assert chico["total"] > lleno["total"]
+
+
+def test_costo_del_llm_por_tokens():
+    from harness.serendipia import costo
+    c = costo([{"tokens": {"entrada": 1_000_000, "salida": 200_000}, "segundos": 2.0}])
+    assert c["usd"] == 2.0 and c["segundos"] == 2.0
+
+
+class ClienteTerco(ClienteFalso):
+    """Inventa la cita las dos veces: la señal llega al embudo con error y muere en el guardrail."""
+    def create(self, **kw):
+        self.llamadas += 1
+        return self._r({"señales": [{"id": "S1", "palabras_clave": ["repuesto"],
+                                     "citas": [{"texto": "p1", "fragmento": "inventado"}, {"texto": "o1", "fragmento": "otro invento"}]}],
+                        "oportunidades": []})
+
+
+def test_si_el_llm_insiste_con_una_cita_falsa_no_pasa():
+    prod = {"id": "PX", "titulo": "Afilador", "vendidos": 1000, "precio": 50000, "busqueda": "afilador",
+            "opiniones": [TEXTOS["o1"]], "preguntas": [["Venden los discos de repuesto?", "No"]]}
+    cliente, traza = ClienteTerco(), []
+    salida = leer_voces_llm(cliente, prod, traza)
+    assert cliente.llamadas == 2 and all(t["errores"] for t in traza)
+    assert validar_señal(salida["señales"][0], textos_numerados(prod))  # el embudo la mata en "guardrail"

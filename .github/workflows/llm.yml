@@ -1,6 +1,5 @@
-# Corre las partes con LLM (etapa divergente sobre test y LLM juez) usando el secreto
-# ANTHROPIC_API_KEY del repo, y guarda los resultados en la rama `resultados-llm`.
-# Se dispara a mano desde la pestaña Actions ("Run workflow").
+# Corre el paso del LLM con la API sobre test usando el secreto ANTHROPIC_API_KEY del repo,
+# y guarda los resultados en la rama `resultados-llm`. Se dispara a mano desde Actions.
 name: llm
 on:
   workflow_dispatch:
@@ -16,21 +15,13 @@ jobs:
           python-version: "3.12"
       - run: pip install -r requirements.txt
       - run: make test
-      - name: Etapa divergente con LLM sobre test
-        env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-        run: make divergente-llm
-      - name: Serendipia con LLM sobre test (paso divergente con la API)
+      - name: Paso del LLM con la API sobre test y embudo
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: make serendipia-api
-      - name: LLM juez sobre la planilla
-        env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-        run: python scripts/juez_llm.py
       - name: Guardar resultados en la rama resultados-llm
         run: |
-          mkdir -p resultados && cp out/divergente_llm.json data/evaluacion/juicios_juez_llm.csv data/serendipia/divergente_test_api.json data/serendipia/embudo_test_api.json resultados/
+          mkdir -p resultados && cp data/serendipia/divergente_test_api.json data/serendipia/embudo_test_api.json resultados/
           git config user.name "github-actions" && git config user.email "actions@github.com"
           git checkout -B resultados-llm
           git add -f resultados && git commit -m "Resultados LLM ${GITHUB_SHA::7}" && git push -f origin resultados-llm

@@ -2,28 +2,44 @@
 
 Qué elegimos, contra qué, por qué. Para que cualquiera del grupo pueda defenderlas.
 
-**Loop ReAct escrito a mano, no LangGraph ni similares.**
-El loop son ~150 líneas. La defensa es individual y cada uno tiene que poder explicar la
-arquitectura por debajo; un framework ahorra dos días y deja una caja negra.
+**El LLM propone, el código decide.**
+El LLM abre (abduce oportunidades desde texto desordenado); cinco chequeos en código cierran.
+Un LLM que también se juzga a sí mismo confirma lo que propuso.
 
 **Guardrails en código, no en el prompt.**
-"No confirmes sin evidencia" escrito en el prompt es una sugerencia. En `motor.dar_veredicto`
-es una regla: el veredicto sin evidencia válida se rechaza y vuelve al modelo como error.
+"Citá textos reales" en el prompt es una sugerencia. En `validar_señal` es una regla: la
+cita tiene que existir, ser literal y venir de dos textos distintos; si no, el error vuelve
+al modelo una vez y lo que sigue mal muere en el embudo.
 
-**Políticas intercambiables sobre el mismo motor.**
-Fija, heurística y LLM llaman a las mismas cuatro operaciones. Así la comparación es justa
-y los controles viven en un solo lugar.
+**El programa recuenta por su cuenta.**
+El LLM lee una muestra filtrada; C1 y C2 cuentan sus palabras clave en todos los textos. Así
+una señal no pasa por estar bien redactada.
 
-**Baseline principal: el mismo set de skills sin loop (política fija).**
-Si el agente no le gana a correr todo sobre todo, el loop es decoración. Lo que el loop
-puede ganar es eficiencia (menos llamadas) y resolución semántica (nombres, inferencia).
+**Preguntas de indecisos antes que opiniones.**
+Las opiniones dicen qué le pasó a quien ya compró; las preguntas muestran por qué alguien
+duda o no encuentra algo ("¿venden el filtro solo?"). Van todas; de las opiniones, las más
+informativas (Timoshenko y Hauser).
 
-**Adaptadores desacoplados de las skills.**
-El riesgo del proyecto está en el acceso a datos. Cambiar de fuente no toca el harness.
+**Una oportunidad que nadie atiende tiene que dejar plata al precio que la gente paga.**
+C4 mira si ya se vende; C5 calcula el margen con el precio de lo que efectivamente se vendió
+(una publicación sin ventas puede pedir cualquier cosa). Si no llega, calcula el FOB máximo:
+la oportunidad queda condicional y el experimento siguiente es pedir cotización.
 
-**`insuficiente` es un veredicto de primera clase.**
-Cuando la fuente falla, el sistema lo dice. Preferimos no recomendar a recomendar sin datos.
+**Baselines sin LLM por el mismo embudo.**
+B1 (queja más frecuente) es lo que haría un análisis de palabras; B2 (pedidos de repuesto)
+es una regla fuerte escrita después de leer dev. Si el LLM no les gana en test, el LLM sobra.
 
-**Haiku 4.5 para el agente.**
-El trabajo es clasificar, resolver nombres y elegir la próxima verificación: tareas cortas
-y estructuradas. Modelos más grandes se prueban solo si Haiku falla en P1/P6.
+**Partición por producto, decidida antes de leer.**
+Dev para iterar skill, criterios y umbrales; test una sola vez, con todo congelado.
+
+**Captura desde el navegador.**
+La API de búsqueda de Mercado Libre devuelve 403 aun con token válido. Leer la página con
+la sesión del usuario es lo único que funciona; se guarda solo el texto visible.
+
+**Código escrito a mano, sin frameworks de agentes.**
+El programa es un embudo de ~250 líneas. La defensa es individual y cada uno tiene que poder
+explicarlo por dentro; un framework deja una caja negra.
+
+**Haiku 4.5.**
+Leer ~45 textos cortos y citar es una tarea chica y estructurada. Se compara con un modelo
+más grande solo si el juicio humano muestra que no alcanza.

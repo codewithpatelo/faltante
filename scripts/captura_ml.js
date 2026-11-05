@@ -1,4 +1,5 @@
 // Captura de la primera página de búsqueda de Mercado Libre, desde tu propio navegador.
+// La usa C4: para cada oportunidad, ¿ya hay equivalentes que se venden?
 //
 // Por qué así: la API de búsqueda de Mercado Libre devuelve 403 sin token (probado desde la
 // nube y desde una conexión hogareña, 2026-11-05) y la web no se puede leer con un script
@@ -7,26 +8,21 @@
 // Cómo se usa:
 //   1. Con tu sesión iniciada, abrí una búsqueda cualquiera: https://listado.mercadolibre.com.ar/termo
 //      (tiene que ser listado.mercadolibre.com.ar; desde www. el navegador no deja leer el listado).
-//   2. Abrí la consola (F12 → Consola), pegá este archivo entero y Enter.
-//   3. Tarda ~5 s por búsqueda. Al terminar descarga captura_ml_<fecha>.json.
-//   4. En el repo: make foto CAPTURA=~/Downloads/captura_ml_<fecha>.json
+//   2. Abrí la consola (F12 → Consola) y definí las búsquedas (las que el embudo marca como
+//      "falta capturar la búsqueda"): window.__capturaBusquedas = ["tabla de picar doble faz"];
+//   3. Pegá este archivo entero y Enter. Tarda ~20 s por búsqueda; al terminar descarga
+//      captura_ml_<fecha>.json.
+//   4. Guardala como data/capturas/captura_ml_serendipia_<fecha>.json: `make serendipia` la toma sola.
 //
 // No lee ni envía cookies, tokens ni datos de tu cuenta: solo el texto visible del listado
 // (título, precio, "+N vendidos", "Compra Internacional").
 
 (async () => {
-  // Para capturar otras búsquedas, antes de pegar el script:
-  //   window.__capturaBusquedas = ["lonchera electrica", "vianda electrica"];
-  const BUSQUEDAS = window.__capturaBusquedas || [
-    "owala freesip", "owala smoothsip", "hydrojug traveler", "balanza cocina etekcity",
-    "abrelatas kitchenaid", "stanley quencher", "olla lenta crock pot",
-    "tostadora bella fits anywhere", "tijeras cocina kitchenaid", "bolsas olla lenta reynolds",
-    "abrelatas gorilla grip", "papel manteca reynolds", "rociador aceite yarramate",
-    "balanza cocina amazon basics", "lonchera termica hotor", "lonchera lifewit",
-    "repasadores homaxy", "mixer inmersion turelar", "rubbermaid brilliance",
-    "rociador aceite trendplain", "balanza cocina ultrean", "yeti rambler",
-    "organizador esponja cisily",
-  ];
+  const BUSQUEDAS = window.__capturaBusquedas;
+  if (!BUSQUEDAS || !BUSQUEDAS.length) {
+    console.error("[captura] Definí antes window.__capturaBusquedas = [\"...\"] (ver arriba).");
+    return;
+  }
   if (location.hostname !== "listado.mercadolibre.com.ar") {
     console.error("[captura] Abrí primero https://listado.mercadolibre.com.ar/termo y pegá el script ahí.");
     return;

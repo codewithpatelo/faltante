@@ -297,3 +297,17 @@ print statement from 'Hello' to 'Goodbye'") cuando en realidad sube
 `data/voces/opiniones_2026-11-05.json`; no se reescribe la historia para corregirlo.
 (4) El archivo unido de voces se llama `data/voces/corpus_2026-11-05.json` para no pisar
 `voces_2026-11-05.json`, que sigue siendo la evidencia de las fichas de `HALLAZGOS.md`.
+
+## 2026-11-05 — Un solo programa
+
+**Qué pasó.** Serendipia se había armado al lado de los enfoques anteriores en vez de
+iterarlos: el repo tenía varios programas con piezas duplicadas (proponer → validar →
+reintentar, costo del LLM, chequeo de citas, equivalencias) y documentos que se
+contradecían. **Qué decidimos.** Queda un solo programa: `harness/serendipia.py`,
+`scripts/serendipia_run.py`, `skills/leer_voces`. Se borró el código superado (agente
+ReAct, diagnóstico, lectura de títulos, cross-border, sus skills, scripts y tests); está en
+el historial de git hasta el commit `cad44ca`, y sus datos siguen en `data/`. Los tests que
+cubrían piezas que siguen vivas (costo puesto, costo del LLM, cita falsa persistente) se
+pasaron a `tests/test_serendipia.py`. `HALLAZGOS.md` se eliminó: sus fichas están en las
+entradas anteriores. README, CONSIGNA, DECISIONES y AGENTS se reescribieron para describir
+solo este programa; AGENTS suma la regla de no duplicar programas ni parchear documentos.

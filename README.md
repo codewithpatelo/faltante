@@ -1,18 +1,17 @@
 # Faltante
 
-**Qué hace:** le dice a un importador chico qué conviene traer para vender en Mercado Libre,
-y por qué. Lee lo que la gente **compra** (voto con los pies) y lo que **dice** antes y
-después de comprar (voto con las manos), propone oportunidades con un LLM y después intenta
-matarlas con datos. Solo recomienda lo que sobrevive.
+Serendipia computacional para importar: encuentra **qué conviene traer** para vender en
+Mercado Libre leyendo lo que la gente compra y lo que dice, y solo recomienda lo que
+sobrevive a un intento serio de refutarlo.
 
 TP de IA Agéntica, Maestría en Explotación de Datos (UBA), 2026.
 
-## La idea en un ejemplo
+## Un ejemplo
 
 Dos tablas de picar de acero venden **más de 1.000 unidades cada una**. En sus opiniones, 21
 textos repiten lo mismo: las eligen por higiene, pero **rayan y desafilan los cuchillos**.
-El LLM propone una tabla **doble faz** (acero de un lado, polipropileno del otro). El
-programa la intenta tirar abajo:
+El LLM propone traer una tabla **doble faz** (acero de un lado, polipropileno del otro).
+El programa la intenta tirar abajo:
 
 - ¿La queja es real o anecdótica? Aparece en 21 textos, la mayoría como queja. **Pasa.**
 - ¿Alguien ya la vende? Hay 18 publicaciones parecidas y solo una vendió más de 100. **Pasa.**
@@ -24,7 +23,10 @@ falta leer que la gente quiere dos cosas a la vez.
 ## Cómo funciona
 
 ```
-pies + manos ──► LLM propone (divergente) ──► el programa intenta matar (convergente) ──► OPORTUNIDADES.md
+voto con los pies  ─┐
+(ventas, precios)   ├─► LLM propone ──► el programa intenta matar ──► OPORTUNIDADES.md
+voto con las manos ─┘   (divergente)     (convergente: guardrail + C1..C5)
+(opiniones, preguntas)
 ```
 
 | Etapa | Qué hace | Quién |
@@ -32,7 +34,7 @@ pies + manos ──► LLM propone (divergente) ──► el programa intenta ma
 | Datos | Productos que venden mucho, con sus opiniones y las preguntas de los indecisos | Captura desde el navegador |
 | Filtro | Todas las preguntas + las opiniones más informativas (como Timoshenko y Hauser, 2019) | Código |
 | Divergente | Lee y propone señales (quejas, faltantes, deseos, usos raros) y qué traer, citando textos | **LLM** (`skills/leer_voces`) |
-| Guardrail | Cada cita existe, es literal y viene de al menos 2 textos distintos | Código |
+| Guardrail | Cada cita existe, es literal y viene de al menos 2 textos distintos; si no, se le devuelven los errores al LLM una vez | Código |
 | C1 verificada | Las palabras de la señal aparecen en 3 o más textos (cuenta en *todos*, no solo los que leyó el LLM) | Código |
 | C2 sub-atendida | Puntaje de oportunidad de Ulwick: importa y está mal resuelto | Código |
 | C3 demanda | El producto donde aparece vende +500 | Código |
@@ -46,32 +48,18 @@ Proponer *qué traer* requiere leer.
 **Por qué no se lo cree:** el LLM no puede citar un texto que no existe, y el programa
 recuenta todo por su cuenta. Cada propuesta que muere queda registrada con el motivo.
 
-## Qué encontramos
+## Resultado
 
-Detalle en [`OPORTUNIDADES.md`](OPORTUNIDADES.md).
+Detalle, con lo que murió y por qué, en [`OPORTUNIDADES.md`](OPORTUNIDADES.md).
 
 | Oportunidad | ¿Traerla? | Por qué |
 |---|---|---|
 | Tabla de picar doble faz | **Probar** | Necesidad en 21 textos; casi nadie la vende con volumen; margen base 79% (pesimista 23%) |
 | Disco de repuesto para afilador rodante | **Sí, si se consigue a USD 3,21 o menos** | Lo piden en las preguntas y los vendedores no lo tienen; a $17.416 deja 27%, un poco menos de lo pedido |
-| Espumador de leche, repuestos de minipimer, filtros de aspiradora | No | La necesidad es real pero ya la venden varios (murieron en C4) |
-| Adhesivos de repuesto para estantes de ducha | No | Se venden a ~$6.000 y el costo fijo de envío de Mercado Libre se come el margen (C5) |
 
-**Lo que aprendimos:**
-1. Las preguntas de los indecisos valen más que las opiniones: ahí aparece lo que falta
-   ("¿venden el filtro solo?").
-2. Que una necesidad sea real no alcanza: la mayoría muere porque ya la atiende alguien.
-3. En Mercado Libre lo barato no paga el envío: un consumible de menos de ~$10.000 tiene que
-   ir en pack o junto al producto.
-4. Las explicaciones fáciles hay que contarlas: "la sopladora se compra para el asado" lo
-   decía 1 de 175 opiniones.
-
-### La otra vía: cross-border
-
-Antes de serendipia probamos partir de lo que se compra por **Compra Internacional** (la
-gente paga y espera semanas: demanda probada) y buscar si tiene equivalente con stock local.
-Encontró dos candidatas (set de herméticos de acero y afilador rodante), dejó una abierta y
-descartó cinco. Fichas en [`HALLAZGOS.md`](HALLAZGOS.md); se corre con `make cross-border` y `make costos`.
+De 14 propuestas distintas del LLM, 12 murieron: la mayoría porque la necesidad es real pero ya la
+atiende alguien (espumador de leche, repuestos de minipimer, filtros de aspiradora), y otras
+porque no dejan plata (adhesivos de repuesto: lo barato no paga el envío de Mercado Libre).
 
 ## Cómo medimos si funciona
 
@@ -80,15 +68,15 @@ baselines sin LLM: **B1**, la queja más frecuente; **B2**, una regla que detect
 repuesto. Los 21 productos se dividieron en dev (11, para iterar) y test (10, una sola
 corrida) antes de leerlos.
 
-| | LLM | B1 queja más frecuente | B2 regla de repuestos |
+| Oportunidades distintas que sobreviven o quedan condicionales | LLM | B1 | B2 |
 |---|---|---|---|
-| dev: oportunidades distintas que sobreviven o quedan condicionales | 1 | 0 | 1 |
-| test: ídem | **1** | 0 | 0 |
+| dev | 1 | 0 | 1 |
+| test | **1** | 0 | 0 |
 
 Con 21 productos esto muestra el mecanismo, no una diferencia estadística.
 
-**Costo:** ~USD 0,01 por producto con Claude Haiku 4.5 (estimado; detalle en `CONSIGNA.md`).
-La recolección en el navegador lleva ~1 minuto por producto.
+**Costo:** ~USD 0,01 por producto con Claude Haiku 4.5 (estimado; `CONSIGNA.md`). La
+recolección en el navegador lleva ~1 minuto por producto.
 
 ## Correrlo
 
@@ -96,48 +84,47 @@ La recolección en el navegador lleva ~1 minuto por producto.
 git clone https://github.com/codewithpatelo/faltante && cd faltante
 python3 -m venv .venv && source .venv/bin/activate
 make setup     # instala dependencias
-make todo      # 38 tests + todo el análisis sobre los datos guardados (no necesita internet ni claves)
+make todo      # tests + el embudo en dev y test sobre los datos guardados (sin internet ni claves)
 ```
 
 | Comando | Qué hace |
 |---|---|
 | `make serendipia` | El embudo en dev y test, LLM contra los dos baselines |
-| `make serendipia-api` | Lo mismo con el paso divergente hecho por la API (necesita `ANTHROPIC_API_KEY`) |
-| `make cross-border` / `make costos` | La vía cross-border y el costo puesto de sus candidatas |
-| `make equivalencia` | Precisión del LLM contra reglas para decidir si dos publicaciones son lo mismo |
-| `make diagnostico` / `make divergente` | Primeros enfoques (top de Amazon, lectura de títulos) |
+| `make serendipia-api` | Lo mismo con el paso del LLM hecho por la API (necesita `ANTHROPIC_API_KEY`) |
 
-Las partes con LLM también corren desde GitHub sin compartir claves: workflow **llm** en la
-pestaña Actions (ver `CONSIGNA.md`).
+Sin compartir claves: cargar `ANTHROPIC_API_KEY` como secreto del repo y correr el workflow
+**llm** desde la pestaña Actions; los resultados quedan en la rama `resultados-llm`.
 
-## De dónde salen los datos
+## Datos
 
-| Qué | Volumen | Cómo |
+| Qué | Volumen | Dónde |
 |---|---|---|
 | Productos ancla (los 1 o 2 que más venden en cada búsqueda) | 21, en 12 búsquedas de Cocina, Hogar y Bazar | `data/voces/productos_2026-11-05.json` |
-| Opiniones de compradores | 2.647 | Panel "Mostrar todas las opiniones" de cada publicación, leído desde el navegador |
-| Preguntas de indecisos con su respuesta | 334 | Página de preguntas de cada publicación, desde el navegador |
-| Búsquedas para C4 | 30 | `scripts/captura_ml.js` → `data/capturas/captura_ml_serendipia_*.json` |
+| Opiniones de compradores | 2.647 | Panel "Mostrar todas las opiniones" de cada publicación |
+| Preguntas de indecisos con su respuesta | 334 | Página de preguntas de cada publicación |
+| Búsquedas para C4 | 30 | `data/capturas/captura_ml_serendipia_*.json` (`scripts/captura_ml.js`) |
 | Precios de origen | 9 productos | Catálogo de Alibaba, con el ID de cada publicación: `data/serendipia/fob_2026-11-05.json` |
-| Aranceles, flete, comisiones y envío de Mercado Libre | — | Con fuente en `harness/costo_puesto.py` y `harness/serendipia.py` |
+| Aranceles, flete, comisiones y envío | — | Con fuente en `harness/costo_puesto.py` y `harness/serendipia.py` |
 
-Todo junto en `data/voces/corpus_2026-11-05.json`. La API de búsqueda de Mercado Libre está
-cerrada aun con token válido (probado: `data/prueba_datos/`), por eso se lee desde un
-navegador con sesión iniciada.
+Opiniones y preguntas juntas: `data/voces/corpus_2026-11-05.json`. Se leen desde un
+navegador con sesión iniciada porque la API de búsqueda de Mercado Libre está cerrada aun
+con token válido.
 
-## Mapa del repo
+## Mapa
 
-| Carpeta / archivo | Qué hay |
+| Archivo | Qué hay |
 |---|---|
 | `OPORTUNIDADES.md` | El resultado: qué sobrevivió, qué murió y por qué, LLM contra baselines |
-| `HALLAZGOS.md` | Resultado de la vía cross-border |
-| `BITACORA.md` | Qué probamos en cada sesión, qué salió mal y qué decidimos |
-| `CONSIGNA.md` | Cada requisito del TP, dónde se cumple y qué falta |
-| `harness/serendipia.py` | Filtro, guardrail, chequeos C1 a C5 y el paso divergente con la API |
+| `harness/serendipia.py` | Filtro, guardrail, C1 a C5 y el paso del LLM con la API |
+| `harness/costo_puesto.py` | Costo puesto en Argentina e ingreso neto vendiendo en Mercado Libre |
 | `scripts/serendipia_run.py` | Corre el embudo para el LLM y los baselines |
-| `skills/` | Instrucciones que sigue el LLM (`leer_voces` para serendipia) |
-| `data/serendipia/` | Lo que propuso el LLM, el recorrido de cada propuesta por el embudo, precios de origen |
-| `tests/` | 38 tests: guardrails, citas, reintentos, chequeos, costos, embudo |
+| `scripts/captura_ml.js` | Captura de búsquedas desde el navegador (para C4) |
+| `skills/leer_voces/SKILL.md` | Lo que sigue el LLM para leer y proponer |
+| `data/serendipia/` | Lo que propuso el LLM y el recorrido de cada propuesta por el embudo |
+| `tests/test_serendipia.py` | Guardrail, conteos, equivalencia, costos, reintento del LLM, embudo |
+| `CONSIGNA.md` | Cada requisito del TP, dónde se cumple y qué falta |
+| `DECISIONES.md` | Qué elegimos y por qué |
+| `BITACORA.md` | Cómo llegamos acá, incluidos los enfoques que descartamos (su código está en el historial de git; sus datos, en el resto de `data/`) |
 
 ## Glosario
 
@@ -152,13 +139,12 @@ navegador con sesión iniciada.
 
 ## Limitaciones
 
-- El paso divergente de dev y test lo hizo Claude en el chat siguiendo el skill, porque no
+- El paso del LLM en dev y test lo hizo Claude en el chat siguiendo el skill, porque no
   había clave de API en el entorno; `make serendipia-api` lo repite con el modelo.
 - Algunas preguntas de test se vieron durante la recolección. Después de correr test no se
   cambió nada.
 - C4 decide equivalencias por palabras del título y se equivoca: en test contó cepillos a
   vapor *para mascotas* como repuestos de limpiadora y mató una propuesta que no debía.
-  Pendiente: que lo decida el LLM, como en cross-border.
 - Los costos usan precios de catálogo y tarifas publicadas, no cotizaciones reales.
 - "+N vendidos" es un piso del contador de Mercado Libre, no las ventas exactas.
 - El código que recolectó opiniones y preguntas se corrió en la consola del navegador y
