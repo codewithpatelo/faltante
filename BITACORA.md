@@ -217,3 +217,19 @@ rodante (2,3x más caro local), set de herméticos de acero (3,4x) y contenedor 
 **Qué decidimos:** esta es la hipótesis medible principal del TP: el juicio de equivalencia del
 LLM contra reglas y baseline, con precisión/recall/F1 sobre etiquetas humanas. Fijamos 15
 productos de test sin mirar. Pendiente: etiquetas del grupo y corrida con la API.
+
+## 2026-11-05 — Residuos e información situada (opiniones de compradores)
+
+**Qué probamos:** buscar lo que precio, espera, preferencia y demanda NO explican (residuos:
+publicaciones caras que venden mucho), y leer para qué dicen usarlas los compradores
+(`scripts/voces_ml.js`, conteos y citas en `data/voces/`).
+**Qué esperábamos:** prácticas locales escondidas (asado, carlitos, negocios chicos).
+**Qué pasó:** de tres hipótesis situadas, dos cayeron con las opiniones: la sopladora no se
+compra para el asado (1 de 175; 25 de 175 hablan del auto) y el afilador tampoco (0 de 111).
+La tercera ("el pan de acá no entra en ranura, por eso no vende la tostadora de Amazon") la
+sostenían las opiniones del carlitero, pero cayó con datos de ventas: las de ranura baratas
+venden +10.000. Quedó en pie un segundo mercado: el carlitero de calor superior, premium,
+con 2-3 fabricantes locales, comprado para panes que no entran en ranura y por negocios chicos.
+**Qué decidimos:** consolidar todo en `HALLAZGOS.md` como fichas de decisión. Lección de
+proceso: las hipótesis situadas son baratas de generar y fáciles de creer; sin refutación
+habríamos presentado dos falsas.

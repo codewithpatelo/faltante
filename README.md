@@ -20,6 +20,10 @@ no lo que dice que compraría.
 5. **`CONSIGNA.md`**: cada requisito de la consigna, dónde se verifica y qué falta, con el reparto
    de tareas propuesto.
 
+## Resultado en una página: [`HALLAZGOS.md`](HALLAZGOS.md)
+
+Fichas de decisión para un importador ("¿lo traigo?"), con motivo, evidencia y confianza.
+
 ## Hallazgo principal: demanda probada por Compra Internacional (05/11/2026)
 
 El voto con los pies más fuerte a favor de importar es comprar por **Compra Internacional**:
