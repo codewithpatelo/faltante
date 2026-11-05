@@ -81,8 +81,9 @@ Alternativa local: `DEEPSEEK_API_KEY=... make serendipia-api`.
 2. **Evaluación:** partición fija por producto, dos baselines sin LLM por el mismo embudo,
    una sola corrida en test, umbrales a la vista; pendiente el juicio humano a ciegas de las
    propuestas (¿no obvia? ¿accionable?).
-3. **Skills** (complementaria): `skills/leer_voces`, curado por el equipo y ajustado con lo
-   aprendido en dev antes de congelarlo.
+3. **Prompts y skills:** espacio de 25 variantes del prompt del paso B con decisiones tomadas de
+   la literatura, comparadas sobre los mismos datos, y optimización de la mejor al estilo GEPA
+   (`harness/espacio_de_prompts.py`, `harness/explorar_prompts.py`, `harness/optimizar_prompt.py`).
 
 ## Antecedentes (versión breve)
 
@@ -92,7 +93,13 @@ demanda, competencia y calidad de los listados. Las dos miden **cuánto** se ven
 **cuánta** competencia hay. Faltante lee **qué** necesidad queda sin resolver y propone
 **qué traer**, con citas verificables: es complementario.
 
-**Literatura.** Timoshenko y Hauser (2019, *Marketing Science*): filtrar el contenido
+**Literatura.** Generación de hipótesis: MOOSE-Chem (Yang et al., ICLR 2025: antecedente más
+inspiraciones de fuentes no relacionadas, combinadas y refinadas); Si, Yang y Hashimoto (2024:
+las ideas de LLM resultan más novedosas que las de expertos, pero ~5% de 4.000 no se repiten y
+el ranking automático coincide poco con humanos); encuesta de abducción en LLM (2026: generar
+hipótesis que compiten, después seleccionar). Optimización de prompts: GEPA (Agrawal et al.,
+ICLR 2026: reflexión en lenguaje natural sobre los fallos; supera a MIPROv2 y a RL con muchas
+menos corridas). Necesidades del usuario: Timoshenko y Hauser (2019, *Marketing Science*): filtrar el contenido
 generado por usuarios informativo antes de extraer necesidades; su versión con LLM (2025)
 encontró todas las necesidades que hallaron los analistas. Ulwick (*Outcome-Driven
 Innovation*): puntaje de oportunidad = importancia + máx(importancia − satisfacción, 0).

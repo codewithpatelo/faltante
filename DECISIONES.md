@@ -8,6 +8,25 @@ en código cierran (guardrail y C1 a C6). La divergencia trae hipótesis; la con
 el humo.
 Un LLM que también se juzga a sí mismo confirma lo que propuso.
 
+**Divergencia en dos pasos: señales por producto, oportunidades entre productos.**
+Leyendo un producto por vez, el LLM (en el chat y con DeepSeek) propuso lo obvio: el repuesto,
+el accesorio, la versión mejorada. Lo no obvio aparece al conectar necesidades de productos
+distintos. Por eso el paso B solo acepta oportunidades que citen señales de 2 o más productos.
+
+**El prompt del paso B se busca, no se adivina.**
+Un espacio de 25 variantes balanceadas, con decisiones tomadas de la literatura: antecedente
+más inspiraciones lejanas (MOOSE-Chem: las inspiraciones cercanas solo traen lo conocido),
+explicación rival y razonamiento de detective (la abducción es generar hipótesis que compiten
+y después elegir), re-preguntar "otra distinta" (la diversidad colapsa: en Si et al., 2024, ~5%
+de 4.000 ideas no estaban repetidas), evitar lo obvio, rol. La mejor se optimiza al estilo GEPA,
+leyendo el motivo de cada fallo. La medida premia lo distinto y lo no obvio, no solo pasar el
+filtro, para no optimizar "pasar el examen".
+
+**El LLM no juzga lo que se recomienda.**
+Los LLM son malos jueces de ideas: en los estudios citados coinciden poco con expertos. Un juez
+LLM (`skills/juzgar_obviedad`) se usa solo para comparar prompts entre sí; qué se recomienda lo
+deciden los supuestos críticos en código, contra lo que la gente hizo.
+
 **Guardrails en código, no en el prompt.**
 "Citá textos reales" en el prompt es una sugerencia. En `errores_de_citas` (`harness/chequeos.py`)
 es una regla: la cita tiene que existir, ser literal y venir de dos textos distintos; si no,

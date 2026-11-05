@@ -87,6 +87,15 @@ voto con las manos ────┘   (divergente)     críticos y mata el humo (
 | C6 margen | Deja plata al precio que la gente paga | Menos de 30% sobre costo puesto; si alcanza solo con un FOB más bajo, queda condicional | Código |
 | Confianza | — | A lo que sobrevive le pone alta, media o baja según 5 factores de sí o no (`harness/confianza.py`) | Código |
 
+**Cómo se eligió el prompt del paso B:** no a ojo. Se arman 25 variantes que combinan
+decisiones de diseño sacadas de la literatura sobre generación de hipótesis (antecedente más
+inspiraciones lejanas, explicación rival, razonamiento de detective, re-preguntar "otra
+distinta", evitar lo obvio, rol). Se prueban todas sobre los mismos productos de desarrollo
+(`harness/explorar_prompts.py`): cuántas propuestas pasan el guardrail y C1 a C3, cuántas son
+distintas y cuántas no son obvias según un juez auxiliar. La mejor se optimiza al estilo GEPA
+(`harness/optimizar_prompt.py`): el modelo lee por qué falló cada propuesta, reescribe las
+instrucciones, y la versión nueva se queda solo si mejora.
+
 **Por qué un LLM:** lo valioso está en texto desordenado ("¿venden los discos de repuesto?",
 "se raya pero la prefiero a la de madera"). Contar palabras da "filo", "precio", "hola".
 Proponer *qué traer* requiere leer.
@@ -139,6 +148,8 @@ Un archivo por etapa, en el orden en que corren:
 |---|---|
 | `harness/voces.py` | Carga los productos y sus textos, les pone ID (`o12`, `p3`) y elige los que lee el LLM |
 | `harness/divergente.py` | Los dos pasos del LLM (DeepSeek): A, señales por producto (`skills/leer_voces`); B, oportunidades que cruzan productos (`skills/cruzar_senales`); reintenta si el guardrail rechaza algo |
+| `harness/espacio_de_prompts.py` | Las 25 variantes del prompt del paso B, como combinación de decisiones de diseño |
+| `harness/explorar_prompts.py` · `harness/optimizar_prompt.py` | Comparan las 25 variantes y optimizan la mejor (juez auxiliar: `skills/juzgar_obviedad`) |
 | `harness/baselines.py` | B1 y B2: proponer sin LLM, para comparar |
 | `harness/embudo.py` | **La lista de supuestos críticos**, en orden, cada uno con el dato que lo refuta; y cómo se recorre |
 | `harness/chequeos.py` | Cómo se prueba cada supuesto (guardrail, C1 a C6) |
