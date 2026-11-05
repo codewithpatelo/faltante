@@ -123,3 +123,24 @@ productos que ya se venden; lo corregimos.
 único candidato sólido es el mixer Turelar (más barato que los Oster que se venden, y no
 vende): separar espera de marca requiere otro dato. Pendientes: elegir mejor los
 sustitutos (hoy entra ruido como la cinta Gorilla Tape) y comparar contra gama parecida.
+
+## 2026-11-05 — API de Mercado Libre y segunda foto
+
+**Qué probamos:** (1) la API de Mercado Libre sin token desde una conexión hogareña, no desde
+la nube; (2) repetir la captura de las 23 búsquedas una semana después, ahora con un script
+reutilizable (`scripts/captura_ml.js`) que guarda los títulos, y emparejar con reglas
+(`scripts/emparejar.py`).
+**Qué esperábamos:** que el 403 de la búsqueda fuera por la IP de la nube; que la foto nueva
+pudiera cambiar las conclusiones.
+**Qué pasó:** desde la conexión hogareña la API responde igual: búsqueda 403 `forbidden`,
+más vendidos 401, `/products/search` y `/trends` 403; solo responden categorías. La foto
+nueva (1.336 publicaciones) da las **mismas 23 conclusiones** que la del 29/10, y 0
+publicaciones internacionales del producto con ventas. Encontramos un error del criterio:
+para Gorilla Grip y KitchenAid exige "abrelata" en el título y se pierde "Abridor de latas",
+así que subcuenta el producto (Gorilla Grip: 6 marcados, unos 20 reales). No lo corregimos
+para que las dos fotos sean comparables; no cambia la conclusión (Gorilla Grip sigue costando 4 veces lo que
+se vende; KitchenAid sigue "ya se vende acá"). En la foto nueva el rango de precio de los
+16 que no compiten es 1,9 a 6,3 veces (antes 2,3 a 8,1).
+**Qué decidimos:** la fuente de datos es la captura desde el navegador, declarada como
+limitación. La API queda para quien tenga una app con token (`make prueba-api`). Siguiente
+paso: emparejamiento con LLM contra estas reglas, empezando por los errores conocidos.
