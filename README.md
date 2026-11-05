@@ -11,7 +11,7 @@ no lo que dice que compraría.
 
 ## Para el equipo: qué hacer ahora (05/11/2026)
 
-1. `make setup && make todo`: tiene que dar 29 tests en verde y correr el diagnóstico y el piloto divergente.
+1. `make setup && make todo`: tiene que dar 30 tests en verde y correr el diagnóstico y el piloto divergente.
 2. **Etiquetar 94 equivalencias y juzgar 12 hipótesis a ciegas** (25 minutos): `data/evaluacion/COMO_JUZGAR.md`. Son los primeros
    juicios humanos: con ellos medimos LLM contra baseline y después calibramos un LLM juez.
 3. Leer `BITACORA.md` de abajo hacia arriba: ahí está el relato del desarrollo que pide la exposición.
@@ -93,7 +93,7 @@ make todo         # tests + demo del harness + diagnóstico sobre la foto más r
 Por separado:
 
 ```bash
-make test         # 29 tests: guardrails, chequeos, emparejamiento, citas, reintento
+make test         # 30 tests: guardrails, chequeos, emparejamiento, citas, reintento
 make diagnostico  # cuatro chequeos sobre la foto más reciente de data/diagnostico/
 make demo         # políticas fija y heurística sobre datos sintéticos (prueban el mecanismo)
 make agente       # agente ReAct con LLM (requiere ANTHROPIC_API_KEY)
