@@ -43,7 +43,7 @@ lo que dice antes y después de comprar?
 
 - Cada señal cita al menos **2 textos distintos** con un fragmento **literal** (≥ 4 caracteres).
 - Cada señal trae `palabras_clave`: el programa las cuenta en todas las opiniones y preguntas.
-  Si aparecen en menos de 3 textos, la señal es anecdótica y la oportunidad muere.
+  Si aparecen en menos de 3 textos, la señal es anecdótica y la oportunidad se descarta.
 - No inventar ventas, precios ni opiniones.
 
 ## Salida (JSON)

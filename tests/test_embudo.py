@@ -67,12 +67,24 @@ def test_c4_saca_repetidos_y_anclas_y_el_precio_es_el_de_lo_que_se_vendio():
     assert c.precio_de_mercado(p) == 10000
 
 
-def test_c4_mata_si_ya_lo_venden_varios():
+def test_c4_descarta_si_ya_lo_venden_varios():
     p = _disco([{"titulo": f"Disco {i}", "vendidos": 500, "precio": 10000} for i in range(3)])
     assert not c.c4_hueco(p).pasa
 
 
-# --- C5 y costo puesto -------------------------------------------------------------------
+# --- C5: lo que la gente deja pasar ----------------------------------------------------
+
+def test_c5_descarta_si_la_gente_tuvo_la_alternativa_y_la_dejo_pasar():
+    ofrecidas = [{"titulo": f"Disco {i}", "vendidos": 25, "precio": 10000, "internacional": 0} for i in range(3)]
+    assert not c.c5_la_eligen(_disco(ofrecidas)).pasa                        # 75 ventas contra +1000 del afilador
+
+
+def test_c5_no_cuenta_lo_importado_como_alternativa():
+    importadas = [{"titulo": f"Disco {i}", "vendidos": 0, "precio": 10000, "internacional": 1} for i in range(5)]
+    assert c.c5_la_eligen(_disco(importadas)).pasa          # esperar semanas es otra explicación de que no se elijan
+
+
+# --- C6 y costo puesto -------------------------------------------------------------------
 
 def test_el_fob_maximo_deja_justo_el_margen_minimo():
     fob = {"fob": [2.0, 3.3, 7.0], "die": [0.18, 0.35], "volumen_m3": 0.00015}
@@ -122,14 +134,14 @@ def test_el_llm_recibe_los_errores_del_guardrail_y_corrige():
     assert c.errores_de_citas(salida["señales"][0], textos_con_id(AFILADOR)) == []
 
 
-def test_si_el_llm_insiste_con_una_cita_falsa_la_propuesta_muere_en_el_guardrail():
+def test_si_el_llm_insiste_con_una_cita_falsa_la_propuesta_se_descarta_en_el_guardrail():
     llm, traza = LLMQueInsiste(), []
     salida = proponer(llm, AFILADOR, traza)
     assert llm.llamadas == 2 and all(t["errores"] for t in traza)
     oportunidad = {"id": "O1", "que_traer": "disco", "busqueda_ml": "disco", "criterio_equivalencia": {}}
     señal = {**salida["señales"][0], "descripcion": "piden discos"}
     r = recorrer(Propuesta("llm", AFILADOR, oportunidad, [señal]))
-    assert r["estado"] == "muere" and r["se_detiene_en"] == "guardrail"
+    assert r["estado"] == "descartada" and r["se_detiene_en"] == "guardrail"
 
 
 def test_costo_del_llm_por_tokens():
@@ -142,4 +154,4 @@ def test_costo_del_llm_por_tokens():
 def test_cada_propuesta_de_dev_termina_con_estado_y_motivo():
     subprocess.run([sys.executable, "-m", "harness.correr", "dev"], cwd=RAIZ, check=True, capture_output=True)
     for r in json.loads((RAIZ / "data/serendipia/embudo_dev.json").read_text()):
-        assert r["estado"] in {"sobrevive", "condicional", "muere"} and r["motivo"]
+        assert r["estado"] in {"sobrevive", "condicional", "descartada"} and r["motivo"]

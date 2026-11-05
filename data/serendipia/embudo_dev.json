@@ -7,7 +7,7 @@
   "que_traer": "Disco de repuesto para afiladores rodantes (diamante 400/1000 o grano fino 3000/6000), vendido suelto",
   "busqueda_ml": "discos repuesto afilador rodante",
   "estado": "condicional",
-  "se_detiene_en": "C5 margen",
+  "se_detiene_en": "C6 margen",
   "motivo": "margen base 27% a $17,416; pasa si el FOB es ≤ USD 3.21",
   "señales": [
    {
@@ -40,31 +40,38 @@
   "recorrido": [
    {
     "chequeo": "guardrail",
+    "supuesto": "Lo que dice el LLM está en los textos",
     "pasa": true,
     "motivo": "citas verificadas"
    },
    {
     "chequeo": "C1 verificada",
+    "supuesto": "La necesidad no es un caso aislado",
     "pasa": true,
     "motivo": "la señal aparece en 11 textos (mínimo 3)"
    },
    {
     "chequeo": "C2 sub-atendida",
+    "supuesto": "La necesidad importa y está mal resuelta",
     "pasa": true,
     "motivo": "importancia 9.6, satisfacción 3.6 (hace falta ≥ 3.0 y ≤ 5.0)"
    },
    {
     "chequeo": "C3 demanda",
+    "supuesto": "Hay gente eligiendo el producto de origen",
     "pasa": true,
     "motivo": "el producto ancla vende +1000 (mínimo 500)"
    },
    {
     "chequeo": "C4 hueco",
+    "supuesto": "Nadie la atiende todavía",
     "pasa": true,
     "motivo": "2 equivalentes, 2 venden +100",
     "datos": {
      "equivalentes": 2,
      "venden": 2,
+     "con_alguna_venta": 2,
+     "ventas_visibles": 200,
      "ejemplos_que_venden": [
       "Disco Diamante 240/800/1200 Grit Afilador Rodante Smarta (+100, $17,416)",
       "Disco Diamante 240/800/1200 Grit Afilador Rodante Smarta (+100, $17,415)"
@@ -72,7 +79,19 @@
     }
    },
    {
-    "chequeo": "C5 margen",
+    "chequeo": "C5 la eligen",
+    "supuesto": "Si se ofrece, la gente la elige",
+    "pasa": true,
+    "motivo": "2 alternativas comparables suman +200 ventas (producto de origen: +1000)",
+    "datos": {
+     "comparables": 2,
+     "ventas_comparables": 200,
+     "ventas_del_ancla": 1000
+    }
+   },
+   {
+    "chequeo": "C6 margen",
+    "supuesto": "Deja plata al precio que la gente paga",
     "pasa": false,
     "motivo": "margen base 27% a $17,416; pasa si el FOB es ≤ USD 3.21",
     "datos": {
@@ -97,7 +116,27 @@
      "fob_maximo_usd": 3.21
     }
    }
-  ]
+  ],
+  "confianza": {
+   "nivel": "baja",
+   "factores_que_se_cumplen": "2 de 5",
+   "a_favor": [
+    "la misma necesidad aparece en 2 o más productos distintos",
+    "la mencionan 10 o más textos"
+   ],
+   "en_contra": [
+    "los equivalentes casi no se venden: puede que no lo quiera tanta gente",
+    "el precio de referencia sale de pocas publicaciones",
+    "en el escenario pesimista no deja el margen mínimo"
+   ],
+   "evidencia": {
+    "anclas": 2,
+    "max_menciones": 11,
+    "ventas_de_equivalentes": 200,
+    "publicaciones_con_precio": 2,
+    "margen_pesimista_pct": -44
+   }
+  }
  },
  {
   "metodo": "B1",
@@ -106,7 +145,7 @@
   "id": "B1",
   "que_traer": "versión del producto ancla que resuelva la queja 'filo'",
   "busqueda_ml": "afilador cuchillos rodante",
-  "estado": "muere",
+  "estado": "descartada",
   "se_detiene_en": "C4 hueco",
   "motivo": "ya atendido: 15 equivalentes venden +100",
   "señales": [
@@ -127,31 +166,38 @@
   "recorrido": [
    {
     "chequeo": "guardrail",
+    "supuesto": "Lo que dice el LLM está en los textos",
     "pasa": true,
     "motivo": "los baselines no citan textos"
    },
    {
     "chequeo": "C1 verificada",
+    "supuesto": "La necesidad no es un caso aislado",
     "pasa": true,
     "motivo": "la señal aparece en 21 textos (mínimo 3)"
    },
    {
     "chequeo": "C2 sub-atendida",
+    "supuesto": "La necesidad importa y está mal resuelta",
     "pasa": true,
     "motivo": "importancia 10.0, satisfacción 4.8 (hace falta ≥ 3.0 y ≤ 5.0)"
    },
    {
     "chequeo": "C3 demanda",
+    "supuesto": "Hay gente eligiendo el producto de origen",
     "pasa": true,
     "motivo": "el producto ancla vende +1000 (mínimo 500)"
    },
    {
     "chequeo": "C4 hueco",
+    "supuesto": "Nadie la atiende todavía",
     "pasa": false,
     "motivo": "ya atendido: 15 equivalentes venden +100",
     "datos": {
      "equivalentes": 54,
      "venden": 15,
+     "con_alguna_venta": 22,
+     "ventas_visibles": 14600,
      "ejemplos_que_venden": [
       "Afilador De Cuchillos Profesional De Diamante (+5000, $51,787)",
       "Afilador Profesional de Cuchillos Sakir con Discos de Diamante y Cerám (+1000, $43,649)",
@@ -169,7 +215,7 @@
   "que_traer": "repuesto de afilador cuchillos rodante",
   "busqueda_ml": "repuesto afilador cuchillos rodante",
   "estado": "condicional",
-  "se_detiene_en": "C5 margen",
+  "se_detiene_en": "C6 margen",
   "motivo": "margen base 24% a $17,107; pasa si el FOB es ≤ USD 3.13",
   "señales": [
    {
@@ -189,38 +235,57 @@
   "recorrido": [
    {
     "chequeo": "guardrail",
+    "supuesto": "Lo que dice el LLM está en los textos",
     "pasa": true,
     "motivo": "los baselines no citan textos"
    },
    {
     "chequeo": "C1 verificada",
+    "supuesto": "La necesidad no es un caso aislado",
     "pasa": true,
     "motivo": "la señal aparece en 7 textos (mínimo 3)"
    },
    {
     "chequeo": "C2 sub-atendida",
+    "supuesto": "La necesidad importa y está mal resuelta",
     "pasa": true,
     "motivo": "importancia 6.1, satisfacción 2.9 (hace falta ≥ 3.0 y ≤ 5.0)"
    },
    {
     "chequeo": "C3 demanda",
+    "supuesto": "Hay gente eligiendo el producto de origen",
     "pasa": true,
     "motivo": "el producto ancla vende +1000 (mínimo 500)"
    },
    {
     "chequeo": "C4 hueco",
+    "supuesto": "Nadie la atiende todavía",
     "pasa": true,
     "motivo": "9 equivalentes, 1 venden +100",
     "datos": {
      "equivalentes": 9,
      "venden": 1,
+     "con_alguna_venta": 4,
+     "ventas_visibles": 1150,
      "ejemplos_que_venden": [
       "Kit Afilador Cuchillos Artesanal Rodante Premium Diamante (+1000, $43,649)"
      ]
     }
    },
    {
-    "chequeo": "C5 margen",
+    "chequeo": "C5 la eligen",
+    "supuesto": "Si se ofrece, la gente la elige",
+    "pasa": true,
+    "motivo": "7 alternativas comparables suman +1150 ventas (producto de origen: +1000)",
+    "datos": {
+     "comparables": 7,
+     "ventas_comparables": 1150,
+     "ventas_del_ancla": 1000
+    }
+   },
+   {
+    "chequeo": "C6 margen",
+    "supuesto": "Deja plata al precio que la gente paga",
     "pasa": false,
     "motivo": "margen base 24% a $17,107; pasa si el FOB es ≤ USD 3.13",
     "datos": {
@@ -245,7 +310,27 @@
      "fob_maximo_usd": 3.13
     }
    }
-  ]
+  ],
+  "confianza": {
+   "nivel": "media",
+   "factores_que_se_cumplen": "3 de 5",
+   "a_favor": [
+    "la misma necesidad aparece en 2 o más productos distintos",
+    "la gente ya elige este tipo de producto: los equivalentes suman +500 ventas",
+    "el precio de referencia sale de 3 o más publicaciones con ventas"
+   ],
+   "en_contra": [
+    "la mencionan menos de 10 textos",
+    "en el escenario pesimista no deja el margen mínimo"
+   ],
+   "evidencia": {
+    "anclas": 2,
+    "max_menciones": 7,
+    "ventas_de_equivalentes": 1150,
+    "publicaciones_con_precio": 4,
+    "margen_pesimista_pct": -45
+   }
+  }
  },
  {
   "metodo": "llm",
@@ -255,7 +340,7 @@
   "que_traer": "Disco de repuesto para afiladores rodantes (diamante 400/1000 o grano fino 3000/6000), vendido suelto",
   "busqueda_ml": "discos repuesto afilador rodante",
   "estado": "condicional",
-  "se_detiene_en": "C5 margen",
+  "se_detiene_en": "C6 margen",
   "motivo": "margen base 27% a $17,416; pasa si el FOB es ≤ USD 3.21",
   "señales": [
    {
@@ -288,31 +373,38 @@
   "recorrido": [
    {
     "chequeo": "guardrail",
+    "supuesto": "Lo que dice el LLM está en los textos",
     "pasa": true,
     "motivo": "citas verificadas"
    },
    {
     "chequeo": "C1 verificada",
+    "supuesto": "La necesidad no es un caso aislado",
     "pasa": true,
     "motivo": "la señal aparece en 10 textos (mínimo 3)"
    },
    {
     "chequeo": "C2 sub-atendida",
+    "supuesto": "La necesidad importa y está mal resuelta",
     "pasa": true,
     "motivo": "importancia 7.2, satisfacción 2.0 (hace falta ≥ 3.0 y ≤ 5.0)"
    },
    {
     "chequeo": "C3 demanda",
+    "supuesto": "Hay gente eligiendo el producto de origen",
     "pasa": true,
     "motivo": "el producto ancla vende +1000 (mínimo 500)"
    },
    {
     "chequeo": "C4 hueco",
+    "supuesto": "Nadie la atiende todavía",
     "pasa": true,
     "motivo": "2 equivalentes, 2 venden +100",
     "datos": {
      "equivalentes": 2,
      "venden": 2,
+     "con_alguna_venta": 2,
+     "ventas_visibles": 200,
      "ejemplos_que_venden": [
       "Disco Diamante 240/800/1200 Grit Afilador Rodante Smarta (+100, $17,416)",
       "Disco Diamante 240/800/1200 Grit Afilador Rodante Smarta (+100, $17,415)"
@@ -320,7 +412,19 @@
     }
    },
    {
-    "chequeo": "C5 margen",
+    "chequeo": "C5 la eligen",
+    "supuesto": "Si se ofrece, la gente la elige",
+    "pasa": true,
+    "motivo": "2 alternativas comparables suman +200 ventas (producto de origen: +1000)",
+    "datos": {
+     "comparables": 2,
+     "ventas_comparables": 200,
+     "ventas_del_ancla": 1000
+    }
+   },
+   {
+    "chequeo": "C6 margen",
+    "supuesto": "Deja plata al precio que la gente paga",
     "pasa": false,
     "motivo": "margen base 27% a $17,416; pasa si el FOB es ≤ USD 3.21",
     "datos": {
@@ -345,7 +449,27 @@
      "fob_maximo_usd": 3.21
     }
    }
-  ]
+  ],
+  "confianza": {
+   "nivel": "baja",
+   "factores_que_se_cumplen": "2 de 5",
+   "a_favor": [
+    "la misma necesidad aparece en 2 o más productos distintos",
+    "la mencionan 10 o más textos"
+   ],
+   "en_contra": [
+    "los equivalentes casi no se venden: puede que no lo quiera tanta gente",
+    "el precio de referencia sale de pocas publicaciones",
+    "en el escenario pesimista no deja el margen mínimo"
+   ],
+   "evidencia": {
+    "anclas": 2,
+    "max_menciones": 11,
+    "ventas_de_equivalentes": 200,
+    "publicaciones_con_precio": 2,
+    "margen_pesimista_pct": -44
+   }
+  }
  },
  {
   "metodo": "B1",
@@ -354,7 +478,7 @@
   "id": "B1",
   "que_traer": "versión del producto ancla que resuelva la queja 'filo'",
   "busqueda_ml": "afilador cuchillos rodante",
-  "estado": "muere",
+  "estado": "descartada",
   "se_detiene_en": "C2 sub-atendida",
   "motivo": "importancia 10.0, satisfacción 5.2 (hace falta ≥ 3.0 y ≤ 5.0)",
   "señales": [
@@ -375,16 +499,19 @@
   "recorrido": [
    {
     "chequeo": "guardrail",
+    "supuesto": "Lo que dice el LLM está en los textos",
     "pasa": true,
     "motivo": "los baselines no citan textos"
    },
    {
     "chequeo": "C1 verificada",
+    "supuesto": "La necesidad no es un caso aislado",
     "pasa": true,
     "motivo": "la señal aparece en 27 textos (mínimo 3)"
    },
    {
     "chequeo": "C2 sub-atendida",
+    "supuesto": "La necesidad importa y está mal resuelta",
     "pasa": false,
     "motivo": "importancia 10.0, satisfacción 5.2 (hace falta ≥ 3.0 y ≤ 5.0)"
    }
@@ -398,7 +525,7 @@
   "que_traer": "repuesto de afilador cuchillos rodante",
   "busqueda_ml": "repuesto afilador cuchillos rodante",
   "estado": "condicional",
-  "se_detiene_en": "C5 margen",
+  "se_detiene_en": "C6 margen",
   "motivo": "margen base 24% a $17,107; pasa si el FOB es ≤ USD 3.13",
   "señales": [
    {
@@ -418,38 +545,57 @@
   "recorrido": [
    {
     "chequeo": "guardrail",
+    "supuesto": "Lo que dice el LLM está en los textos",
     "pasa": true,
     "motivo": "los baselines no citan textos"
    },
    {
     "chequeo": "C1 verificada",
+    "supuesto": "La necesidad no es un caso aislado",
     "pasa": true,
     "motivo": "la señal aparece en 6 textos (mínimo 3)"
    },
    {
     "chequeo": "C2 sub-atendida",
+    "supuesto": "La necesidad importa y está mal resuelta",
     "pasa": true,
     "motivo": "importancia 4.3, satisfacción 1.7 (hace falta ≥ 3.0 y ≤ 5.0)"
    },
    {
     "chequeo": "C3 demanda",
+    "supuesto": "Hay gente eligiendo el producto de origen",
     "pasa": true,
     "motivo": "el producto ancla vende +1000 (mínimo 500)"
    },
    {
     "chequeo": "C4 hueco",
+    "supuesto": "Nadie la atiende todavía",
     "pasa": true,
     "motivo": "9 equivalentes, 1 venden +100",
     "datos": {
      "equivalentes": 9,
      "venden": 1,
+     "con_alguna_venta": 4,
+     "ventas_visibles": 1150,
      "ejemplos_que_venden": [
       "Kit Afilador Cuchillos Artesanal Rodante Premium Diamante (+1000, $43,649)"
      ]
     }
    },
    {
-    "chequeo": "C5 margen",
+    "chequeo": "C5 la eligen",
+    "supuesto": "Si se ofrece, la gente la elige",
+    "pasa": true,
+    "motivo": "7 alternativas comparables suman +1150 ventas (producto de origen: +1000)",
+    "datos": {
+     "comparables": 7,
+     "ventas_comparables": 1150,
+     "ventas_del_ancla": 1000
+    }
+   },
+   {
+    "chequeo": "C6 margen",
+    "supuesto": "Deja plata al precio que la gente paga",
     "pasa": false,
     "motivo": "margen base 24% a $17,107; pasa si el FOB es ≤ USD 3.13",
     "datos": {
@@ -474,7 +620,27 @@
      "fob_maximo_usd": 3.13
     }
    }
-  ]
+  ],
+  "confianza": {
+   "nivel": "media",
+   "factores_que_se_cumplen": "3 de 5",
+   "a_favor": [
+    "la misma necesidad aparece en 2 o más productos distintos",
+    "la gente ya elige este tipo de producto: los equivalentes suman +500 ventas",
+    "el precio de referencia sale de 3 o más publicaciones con ventas"
+   ],
+   "en_contra": [
+    "la mencionan menos de 10 textos",
+    "en el escenario pesimista no deja el margen mínimo"
+   ],
+   "evidencia": {
+    "anclas": 2,
+    "max_menciones": 7,
+    "ventas_de_equivalentes": 1150,
+    "publicaciones_con_precio": 4,
+    "margen_pesimista_pct": -45
+   }
+  }
  },
  {
   "metodo": "llm",
@@ -483,7 +649,7 @@
   "id": "O2",
   "que_traer": "Set de recipientes herméticos de acero de tamaño real (500 ml a 1,5 L) con tapa con burlete, a precio intermedio entre el set chino de $14k y el Tramontina de $28k por unidad",
   "busqueda_ml": "set recipientes hermeticos acero inoxidable",
-  "estado": "muere",
+  "estado": "descartada",
   "se_detiene_en": "C4 hueco",
   "motivo": "ya atendido: 5 equivalentes venden +100",
   "señales": [
@@ -517,31 +683,38 @@
   "recorrido": [
    {
     "chequeo": "guardrail",
+    "supuesto": "Lo que dice el LLM está en los textos",
     "pasa": true,
     "motivo": "citas verificadas"
    },
    {
     "chequeo": "C1 verificada",
+    "supuesto": "La necesidad no es un caso aislado",
     "pasa": true,
     "motivo": "la señal aparece en 71 textos (mínimo 3)"
    },
    {
     "chequeo": "C2 sub-atendida",
+    "supuesto": "La necesidad importa y está mal resuelta",
     "pasa": true,
     "motivo": "importancia 10.0, satisfacción 4.6 (hace falta ≥ 3.0 y ≤ 5.0)"
    },
    {
     "chequeo": "C3 demanda",
+    "supuesto": "Hay gente eligiendo el producto de origen",
     "pasa": true,
     "motivo": "el producto ancla vende +5000 (mínimo 500)"
    },
    {
     "chequeo": "C4 hueco",
+    "supuesto": "Nadie la atiende todavía",
     "pasa": false,
     "motivo": "ya atendido: 5 equivalentes venden +100",
     "datos": {
      "equivalentes": 37,
      "venden": 5,
+     "con_alguna_venta": 15,
+     "ventas_visibles": 975,
      "ejemplos_que_venden": [
       "Set 3 Recipientes Herméticos De Acero Inoxidable Blanco (+100, $13,597)",
       "X7 Contenedor Taper Acero Inoxidable Hermetico Con Tapa Plateado (+100, $84,854)",
@@ -558,8 +731,8 @@
   "id": "B1",
   "que_traer": "versión del producto ancla que resuelva la queja 'material'",
   "busqueda_ml": "recipientes hermeticos acero inoxidable",
-  "estado": "muere",
-  "se_detiene_en": "C5 margen",
+  "estado": "descartada",
+  "se_detiene_en": "C6 margen",
   "motivo": "sin precio de proveedor o sin precio de mercado",
   "señales": [
    {
@@ -579,31 +752,38 @@
   "recorrido": [
    {
     "chequeo": "guardrail",
+    "supuesto": "Lo que dice el LLM está en los textos",
     "pasa": true,
     "motivo": "los baselines no citan textos"
    },
    {
     "chequeo": "C1 verificada",
+    "supuesto": "La necesidad no es un caso aislado",
     "pasa": true,
     "motivo": "la señal aparece en 61 textos (mínimo 3)"
    },
    {
     "chequeo": "C2 sub-atendida",
+    "supuesto": "La necesidad importa y está mal resuelta",
     "pasa": true,
     "motivo": "importancia 10.0, satisfacción 4.9 (hace falta ≥ 3.0 y ≤ 5.0)"
    },
    {
     "chequeo": "C3 demanda",
+    "supuesto": "Hay gente eligiendo el producto de origen",
     "pasa": true,
     "motivo": "el producto ancla vende +5000 (mínimo 500)"
    },
    {
     "chequeo": "C4 hueco",
+    "supuesto": "Nadie la atiende todavía",
     "pasa": true,
     "motivo": "15 equivalentes, 2 venden +100",
     "datos": {
      "equivalentes": 15,
      "venden": 2,
+     "con_alguna_venta": 6,
+     "ventas_visibles": 350,
      "ejemplos_que_venden": [
       "Set 3 Recipientes Herméticos De Acero Inoxidable Blanco (+100, $13,597)",
       "Recipientes De Acero Inoxidable Para Alimentos Con Tapas X3 Plateado (+100, $13,165)"
@@ -611,7 +791,19 @@
     }
    },
    {
-    "chequeo": "C5 margen",
+    "chequeo": "C5 la eligen",
+    "supuesto": "Si se ofrece, la gente la elige",
+    "pasa": true,
+    "motivo": "2 alternativas comparables suman +0 ventas (producto de origen: +5000)",
+    "datos": {
+     "comparables": 2,
+     "ventas_comparables": 0,
+     "ventas_del_ancla": 5000
+    }
+   },
+   {
+    "chequeo": "C6 margen",
+    "supuesto": "Deja plata al precio que la gente paga",
     "pasa": false,
     "motivo": "sin precio de proveedor o sin precio de mercado"
    }
@@ -624,8 +816,8 @@
   "id": "B1",
   "que_traer": "versión del producto ancla que resuelva la queja 'cierra'",
   "busqueda_ml": "recipientes hermeticos acero inoxidable",
-  "estado": "muere",
-  "se_detiene_en": "C5 margen",
+  "estado": "descartada",
+  "se_detiene_en": "C6 margen",
   "motivo": "sin precio de proveedor o sin precio de mercado",
   "señales": [
    {
@@ -645,31 +837,38 @@
   "recorrido": [
    {
     "chequeo": "guardrail",
+    "supuesto": "Lo que dice el LLM está en los textos",
     "pasa": true,
     "motivo": "los baselines no citan textos"
    },
    {
     "chequeo": "C1 verificada",
+    "supuesto": "La necesidad no es un caso aislado",
     "pasa": true,
     "motivo": "la señal aparece en 4 textos (mínimo 3)"
    },
    {
     "chequeo": "C2 sub-atendida",
+    "supuesto": "La necesidad importa y está mal resuelta",
     "pasa": true,
     "motivo": "importancia 6.5, satisfacción 5.0 (hace falta ≥ 3.0 y ≤ 5.0)"
    },
    {
     "chequeo": "C3 demanda",
+    "supuesto": "Hay gente eligiendo el producto de origen",
     "pasa": true,
     "motivo": "el producto ancla vende +500 (mínimo 500)"
    },
    {
     "chequeo": "C4 hueco",
+    "supuesto": "Nadie la atiende todavía",
     "pasa": true,
     "motivo": "15 equivalentes, 2 venden +100",
     "datos": {
      "equivalentes": 15,
      "venden": 2,
+     "con_alguna_venta": 6,
+     "ventas_visibles": 350,
      "ejemplos_que_venden": [
       "Set 3 Recipientes Herméticos De Acero Inoxidable Blanco (+100, $13,597)",
       "Recipientes De Acero Inoxidable Para Alimentos Con Tapas X3 Plateado (+100, $13,165)"
@@ -677,7 +876,19 @@
     }
    },
    {
-    "chequeo": "C5 margen",
+    "chequeo": "C5 la eligen",
+    "supuesto": "Si se ofrece, la gente la elige",
+    "pasa": true,
+    "motivo": "2 alternativas comparables suman +0 ventas (producto de origen: +500)",
+    "datos": {
+     "comparables": 2,
+     "ventas_comparables": 0,
+     "ventas_del_ancla": 500
+    }
+   },
+   {
+    "chequeo": "C6 margen",
+    "supuesto": "Deja plata al precio que la gente paga",
     "pasa": false,
     "motivo": "sin precio de proveedor o sin precio de mercado"
    }
@@ -690,7 +901,7 @@
   "id": "B1",
   "que_traer": "versión del producto ancla que resuelva la queja 'precio'",
   "busqueda_ml": "balanza de cocina digital",
-  "estado": "muere",
+  "estado": "descartada",
   "se_detiene_en": "C2 sub-atendida",
   "motivo": "importancia 10.0, satisfacción 7.0 (hace falta ≥ 3.0 y ≤ 5.0)",
   "señales": [
@@ -711,16 +922,19 @@
   "recorrido": [
    {
     "chequeo": "guardrail",
+    "supuesto": "Lo que dice el LLM está en los textos",
     "pasa": true,
     "motivo": "los baselines no citan textos"
    },
    {
     "chequeo": "C1 verificada",
+    "supuesto": "La necesidad no es un caso aislado",
     "pasa": true,
     "motivo": "la señal aparece en 37 textos (mínimo 3)"
    },
    {
     "chequeo": "C2 sub-atendida",
+    "supuesto": "La necesidad importa y está mal resuelta",
     "pasa": false,
     "motivo": "importancia 10.0, satisfacción 7.0 (hace falta ≥ 3.0 y ≤ 5.0)"
    }
@@ -733,7 +947,7 @@
   "id": "B1",
   "que_traer": "versión del producto ancla que resuelva la queja 'precio'",
   "busqueda_ml": "balanza de cocina digital",
-  "estado": "muere",
+  "estado": "descartada",
   "se_detiene_en": "C2 sub-atendida",
   "motivo": "importancia 10.0, satisfacción 7.6 (hace falta ≥ 3.0 y ≤ 5.0)",
   "señales": [
@@ -754,16 +968,19 @@
   "recorrido": [
    {
     "chequeo": "guardrail",
+    "supuesto": "Lo que dice el LLM está en los textos",
     "pasa": true,
     "motivo": "los baselines no citan textos"
    },
    {
     "chequeo": "C1 verificada",
+    "supuesto": "La necesidad no es un caso aislado",
     "pasa": true,
     "motivo": "la señal aparece en 37 textos (mínimo 3)"
    },
    {
     "chequeo": "C2 sub-atendida",
+    "supuesto": "La necesidad importa y está mal resuelta",
     "pasa": false,
     "motivo": "importancia 10.0, satisfacción 7.6 (hace falta ≥ 3.0 y ≤ 5.0)"
    }
@@ -776,7 +993,7 @@
   "id": "O3",
   "que_traer": "Espumador de leche de mano (batidor de café a pilas o USB)",
   "busqueda_ml": "espumador de leche electrico",
-  "estado": "muere",
+  "estado": "descartada",
   "se_detiene_en": "C4 hueco",
   "motivo": "ya atendido: 12 equivalentes venden +100",
   "señales": [
@@ -797,31 +1014,38 @@
   "recorrido": [
    {
     "chequeo": "guardrail",
+    "supuesto": "Lo que dice el LLM está en los textos",
     "pasa": true,
     "motivo": "citas verificadas"
    },
    {
     "chequeo": "C1 verificada",
+    "supuesto": "La necesidad no es un caso aislado",
     "pasa": true,
     "motivo": "la señal aparece en 10 textos (mínimo 3)"
    },
    {
     "chequeo": "C2 sub-atendida",
+    "supuesto": "La necesidad importa y está mal resuelta",
     "pasa": true,
     "motivo": "importancia 7.5, satisfacción 2.0 (hace falta ≥ 3.0 y ≤ 5.0)"
    },
    {
     "chequeo": "C3 demanda",
+    "supuesto": "Hay gente eligiendo el producto de origen",
     "pasa": true,
     "motivo": "el producto ancla vende +10000 (mínimo 500)"
    },
    {
     "chequeo": "C4 hueco",
+    "supuesto": "Nadie la atiende todavía",
     "pasa": false,
     "motivo": "ya atendido: 12 equivalentes venden +100",
     "datos": {
      "equivalentes": 25,
      "venden": 12,
+     "con_alguna_venta": 19,
+     "ventas_visibles": 5425,
      "ejemplos_que_venden": [
       "Batidor Espumador Leche Cafe Electrico Recargable Usb Inalam Color Neg (+1000, $11,304)",
       "Batidor Espumador Leche Cafe Electrico Recargable Usb Inalam (+1000, $10,087)",
@@ -838,7 +1062,7 @@
   "id": "B1",
   "que_traer": "versión del producto ancla que resuelva la queja 'precio'",
   "busqueda_ml": "minipimer",
-  "estado": "muere",
+  "estado": "descartada",
   "se_detiene_en": "C2 sub-atendida",
   "motivo": "importancia 10.0, satisfacción 6.3 (hace falta ≥ 3.0 y ≤ 5.0)",
   "señales": [
@@ -859,16 +1083,19 @@
   "recorrido": [
    {
     "chequeo": "guardrail",
+    "supuesto": "Lo que dice el LLM está en los textos",
     "pasa": true,
     "motivo": "los baselines no citan textos"
    },
    {
     "chequeo": "C1 verificada",
+    "supuesto": "La necesidad no es un caso aislado",
     "pasa": true,
     "motivo": "la señal aparece en 27 textos (mínimo 3)"
    },
    {
     "chequeo": "C2 sub-atendida",
+    "supuesto": "La necesidad importa y está mal resuelta",
     "pasa": false,
     "motivo": "importancia 10.0, satisfacción 6.3 (hace falta ≥ 3.0 y ≤ 5.0)"
    }
@@ -881,7 +1108,7 @@
   "id": "O4",
   "que_traer": "Repuestos de minipimer (vaso picador, pie/varilla, acoples) compatibles con los modelos más vendidos",
   "busqueda_ml": "repuesto minipimer picador",
-  "estado": "muere",
+  "estado": "descartada",
   "se_detiene_en": "C4 hueco",
   "motivo": "ya atendido: 7 equivalentes venden +100",
   "señales": [
@@ -915,31 +1142,38 @@
   "recorrido": [
    {
     "chequeo": "guardrail",
+    "supuesto": "Lo que dice el LLM está en los textos",
     "pasa": true,
     "motivo": "citas verificadas"
    },
    {
     "chequeo": "C1 verificada",
+    "supuesto": "La necesidad no es un caso aislado",
     "pasa": true,
     "motivo": "la señal aparece en 10 textos (mínimo 3)"
    },
    {
     "chequeo": "C2 sub-atendida",
+    "supuesto": "La necesidad importa y está mal resuelta",
     "pasa": true,
     "motivo": "importancia 6.3, satisfacción 1.0 (hace falta ≥ 3.0 y ≤ 5.0)"
    },
    {
     "chequeo": "C3 demanda",
+    "supuesto": "Hay gente eligiendo el producto de origen",
     "pasa": true,
     "motivo": "el producto ancla vende +10000 (mínimo 500)"
    },
    {
     "chequeo": "C4 hueco",
+    "supuesto": "Nadie la atiende todavía",
     "pasa": false,
     "motivo": "ya atendido: 7 equivalentes venden +100",
     "datos": {
      "equivalentes": 29,
      "venden": 7,
+     "con_alguna_venta": 13,
+     "ventas_visibles": 2275,
      "ejemplos_que_venden": [
       "Repuesto Pie/brazo/varilla Mixer Minipimer Liliana Original (+1000, $14,999)",
       "Repuesto Brazo Pie Mixer Black+Decker, Electrolux, Top House, Liliana  (+500, $16,999)",
@@ -956,7 +1190,7 @@
   "id": "B1",
   "que_traer": "versión del producto ancla que resuelva la queja 'buena'",
   "busqueda_ml": "minipimer",
-  "estado": "muere",
+  "estado": "descartada",
   "se_detiene_en": "C2 sub-atendida",
   "motivo": "importancia 10.0, satisfacción 5.9 (hace falta ≥ 3.0 y ≤ 5.0)",
   "señales": [
@@ -977,16 +1211,19 @@
   "recorrido": [
    {
     "chequeo": "guardrail",
+    "supuesto": "Lo que dice el LLM está en los textos",
     "pasa": true,
     "motivo": "los baselines no citan textos"
    },
    {
     "chequeo": "C1 verificada",
+    "supuesto": "La necesidad no es un caso aislado",
     "pasa": true,
     "motivo": "la señal aparece en 32 textos (mínimo 3)"
    },
    {
     "chequeo": "C2 sub-atendida",
+    "supuesto": "La necesidad importa y está mal resuelta",
     "pasa": false,
     "motivo": "importancia 10.0, satisfacción 5.9 (hace falta ≥ 3.0 y ≤ 5.0)"
    }
@@ -999,7 +1236,7 @@
   "id": "B2",
   "que_traer": "repuesto de minipimer",
   "busqueda_ml": "repuesto minipimer",
-  "estado": "muere",
+  "estado": "descartada",
   "se_detiene_en": "C2 sub-atendida",
   "motivo": "importancia 1.9, satisfacción 0.0 (hace falta ≥ 3.0 y ≤ 5.0)",
   "señales": [
@@ -1020,16 +1257,19 @@
   "recorrido": [
    {
     "chequeo": "guardrail",
+    "supuesto": "Lo que dice el LLM está en los textos",
     "pasa": true,
     "motivo": "los baselines no citan textos"
    },
    {
     "chequeo": "C1 verificada",
+    "supuesto": "La necesidad no es un caso aislado",
     "pasa": true,
     "motivo": "la señal aparece en 3 textos (mínimo 3)"
    },
    {
     "chequeo": "C2 sub-atendida",
+    "supuesto": "La necesidad importa y está mal resuelta",
     "pasa": false,
     "motivo": "importancia 1.9, satisfacción 0.0 (hace falta ≥ 3.0 y ≤ 5.0)"
    }
@@ -1042,7 +1282,7 @@
   "id": "O5",
   "que_traer": "Organizadores de ropa plegables con armazón metálico",
   "busqueda_ml": "organizador ropa plegable estructura metalica",
-  "estado": "muere",
+  "estado": "descartada",
   "se_detiene_en": "C4 hueco",
   "motivo": "ya atendido: 7 equivalentes venden +100",
   "señales": [
@@ -1063,31 +1303,38 @@
   "recorrido": [
    {
     "chequeo": "guardrail",
+    "supuesto": "Lo que dice el LLM está en los textos",
     "pasa": true,
     "motivo": "citas verificadas"
    },
    {
     "chequeo": "C1 verificada",
+    "supuesto": "La necesidad no es un caso aislado",
     "pasa": true,
     "motivo": "la señal aparece en 6 textos (mínimo 3)"
    },
    {
     "chequeo": "C2 sub-atendida",
+    "supuesto": "La necesidad importa y está mal resuelta",
     "pasa": true,
     "motivo": "importancia 4.3, satisfacción 1.7 (hace falta ≥ 3.0 y ≤ 5.0)"
    },
    {
     "chequeo": "C3 demanda",
+    "supuesto": "Hay gente eligiendo el producto de origen",
     "pasa": true,
     "motivo": "el producto ancla vende +5000 (mínimo 500)"
    },
    {
     "chequeo": "C4 hueco",
+    "supuesto": "Nadie la atiende todavía",
     "pasa": false,
     "motivo": "ya atendido: 7 equivalentes venden +100",
     "datos": {
      "equivalentes": 17,
      "venden": 7,
+     "con_alguna_venta": 11,
+     "ventas_visibles": 13250,
      "ejemplos_que_venden": [
       "X2 Organizador Canasto Caja De Tela Plegable Estructura Metalica Ideal (+5000, $14,520)",
       "Organizador Caja De Tela Plegable Con Estructura Metalica (+5000, $10,830)",
@@ -1104,7 +1351,7 @@
   "id": "B1",
   "que_traer": "versión del producto ancla que resuelva la queja 'color'",
   "busqueda_ml": "organizador de ropa plegable",
-  "estado": "muere",
+  "estado": "descartada",
   "se_detiene_en": "C4 hueco",
   "motivo": "ya atendido: 43 equivalentes venden +100",
   "señales": [
@@ -1125,31 +1372,38 @@
   "recorrido": [
    {
     "chequeo": "guardrail",
+    "supuesto": "Lo que dice el LLM está en los textos",
     "pasa": true,
     "motivo": "los baselines no citan textos"
    },
    {
     "chequeo": "C1 verificada",
+    "supuesto": "La necesidad no es un caso aislado",
     "pasa": true,
     "motivo": "la señal aparece en 7 textos (mínimo 3)"
    },
    {
     "chequeo": "C2 sub-atendida",
+    "supuesto": "La necesidad importa y está mal resuelta",
     "pasa": true,
     "motivo": "importancia 5.0, satisfacción 1.4 (hace falta ≥ 3.0 y ≤ 5.0)"
    },
    {
     "chequeo": "C3 demanda",
+    "supuesto": "Hay gente eligiendo el producto de origen",
     "pasa": true,
     "motivo": "el producto ancla vende +5000 (mínimo 500)"
    },
    {
     "chequeo": "C4 hueco",
+    "supuesto": "Nadie la atiende todavía",
     "pasa": false,
     "motivo": "ya atendido: 43 equivalentes venden +100",
     "datos": {
      "equivalentes": 63,
      "venden": 43,
+     "con_alguna_venta": 48,
+     "ventas_visibles": 53500,
      "ejemplos_que_venden": [
       "Armario Portátil Guardarropa Organizador Gadnic Perchero 168x127x45cm  (+10000, $47,499)",
       "Canasto Cesto Ropa Sucia Bambu Plegable Asas Organizador Marca Känn Li (+10000, $27,099)",
@@ -1166,9 +1420,9 @@
   "id": "O6",
   "que_traer": "Pack de adhesivos de repuesto (pegatinas transparentes resistentes al agua) para estantes de ducha sin perforar",
   "busqueda_ml": "adhesivo repuesto estante ducha",
-  "estado": "muere",
-  "se_detiene_en": "C5 margen",
-  "motivo": "margen base -58% a $5,999 (haría falta FOB ≤ USD 0.18)",
+  "estado": "descartada",
+  "se_detiene_en": "C5 la eligen",
+  "motivo": "la gente la deja pasar: 8 alternativas con stock local a precio comparable suman +125 ventas contra +10000 del producto de origen",
   "señales": [
    {
     "id": "S1",
@@ -1200,58 +1454,50 @@
   "recorrido": [
    {
     "chequeo": "guardrail",
+    "supuesto": "Lo que dice el LLM está en los textos",
     "pasa": true,
     "motivo": "citas verificadas"
    },
    {
     "chequeo": "C1 verificada",
+    "supuesto": "La necesidad no es un caso aislado",
     "pasa": true,
     "motivo": "la señal aparece en 11 textos (mínimo 3)"
    },
    {
     "chequeo": "C2 sub-atendida",
+    "supuesto": "La necesidad importa y está mal resuelta",
     "pasa": true,
     "motivo": "importancia 3.5, satisfacción 2.9 (hace falta ≥ 3.0 y ≤ 5.0)"
    },
    {
     "chequeo": "C3 demanda",
+    "supuesto": "Hay gente eligiendo el producto de origen",
     "pasa": true,
     "motivo": "el producto ancla vende +10000 (mínimo 500)"
    },
    {
     "chequeo": "C4 hueco",
+    "supuesto": "Nadie la atiende todavía",
     "pasa": true,
     "motivo": "20 equivalentes, 0 venden +100",
     "datos": {
      "equivalentes": 20,
      "venden": 0,
+     "con_alguna_venta": 3,
+     "ventas_visibles": 125,
      "ejemplos_que_venden": []
     }
    },
    {
-    "chequeo": "C5 margen",
+    "chequeo": "C5 la eligen",
+    "supuesto": "Si se ofrece, la gente la elige",
     "pasa": false,
-    "motivo": "margen base -58% a $5,999 (haría falta FOB ≤ USD 0.18)",
+    "motivo": "la gente la deja pasar: 8 alternativas con stock local a precio comparable suman +125 ventas contra +10000 del producto de origen",
     "datos": {
-     "precio_ars": 5999,
-     "ingreso_neto_ars": 1444,
-     "lote": 1000,
-     "envio_ars": 2500,
-     "escenarios": {
-      "optimista": {
-       "costo_puesto_ars": 2214,
-       "margen_pct": -35
-      },
-      "base": {
-       "costo_puesto_ars": 3438,
-       "margen_pct": -58
-      },
-      "pesimista": {
-       "costo_puesto_ars": 6468,
-       "margen_pct": -78
-      }
-     },
-     "fob_maximo_usd": 0.18
+     "comparables": 8,
+     "ventas_comparables": 125,
+     "ventas_del_ancla": 10000
     }
    }
   ]
@@ -1263,7 +1509,7 @@
   "id": "B1",
   "que_traer": "versión del producto ancla que resuelva la queja 'hola'",
   "busqueda_ml": "estante baño sin taladro",
-  "estado": "muere",
+  "estado": "descartada",
   "se_detiene_en": "C4 hueco",
   "motivo": "ya atendido: 30 equivalentes venden +100",
   "señales": [
@@ -1284,31 +1530,38 @@
   "recorrido": [
    {
     "chequeo": "guardrail",
+    "supuesto": "Lo que dice el LLM está en los textos",
     "pasa": true,
     "motivo": "los baselines no citan textos"
    },
    {
     "chequeo": "C1 verificada",
+    "supuesto": "La necesidad no es un caso aislado",
     "pasa": true,
     "motivo": "la señal aparece en 10 textos (mínimo 3)"
    },
    {
     "chequeo": "C2 sub-atendida",
+    "supuesto": "La necesidad importa y está mal resuelta",
     "pasa": true,
     "motivo": "importancia 5.0, satisfacción 0.0 (hace falta ≥ 3.0 y ≤ 5.0)"
    },
    {
     "chequeo": "C3 demanda",
+    "supuesto": "Hay gente eligiendo el producto de origen",
     "pasa": true,
     "motivo": "el producto ancla vende +10000 (mínimo 500)"
    },
    {
     "chequeo": "C4 hueco",
+    "supuesto": "Nadie la atiende todavía",
     "pasa": false,
     "motivo": "ya atendido: 30 equivalentes venden +100",
     "datos": {
      "equivalentes": 47,
      "venden": 30,
+     "con_alguna_venta": 37,
+     "ventas_visibles": 45300,
      "ejemplos_que_venden": [
       "Pack x2 Estantes Repisas Con Adhesivos Para Ducha, Baño y Cocina – Org (+10000, $19,553)",
       "Estante Repisa Organizador Baño Ducha Shampoo Con Adhesivo Sin Perfora (+10000, $6,969)",
@@ -1325,7 +1578,7 @@
   "id": "B2",
   "que_traer": "repuesto de estante baño sin taladro",
   "busqueda_ml": "repuesto estante baño sin taladro",
-  "estado": "muere",
+  "estado": "descartada",
   "se_detiene_en": "C2 sub-atendida",
   "motivo": "importancia 2.0, satisfacción 0.0 (hace falta ≥ 3.0 y ≤ 5.0)",
   "señales": [
@@ -1346,16 +1599,19 @@
   "recorrido": [
    {
     "chequeo": "guardrail",
+    "supuesto": "Lo que dice el LLM está en los textos",
     "pasa": true,
     "motivo": "los baselines no citan textos"
    },
    {
     "chequeo": "C1 verificada",
+    "supuesto": "La necesidad no es un caso aislado",
     "pasa": true,
     "motivo": "la señal aparece en 4 textos (mínimo 3)"
    },
    {
     "chequeo": "C2 sub-atendida",
+    "supuesto": "La necesidad importa y está mal resuelta",
     "pasa": false,
     "motivo": "importancia 2.0, satisfacción 0.0 (hace falta ≥ 3.0 y ≤ 5.0)"
    }
@@ -1368,9 +1624,9 @@
   "id": "O6",
   "que_traer": "Pack de adhesivos de repuesto (pegatinas transparentes resistentes al agua) para estantes de ducha sin perforar",
   "busqueda_ml": "adhesivo repuesto estante ducha",
-  "estado": "muere",
-  "se_detiene_en": "C5 margen",
-  "motivo": "margen base -58% a $5,999 (haría falta FOB ≤ USD 0.18)",
+  "estado": "descartada",
+  "se_detiene_en": "C5 la eligen",
+  "motivo": "la gente la deja pasar: 8 alternativas con stock local a precio comparable suman +125 ventas contra +10000 del producto de origen",
   "señales": [
    {
     "id": "S1",
@@ -1402,58 +1658,50 @@
   "recorrido": [
    {
     "chequeo": "guardrail",
+    "supuesto": "Lo que dice el LLM está en los textos",
     "pasa": true,
     "motivo": "citas verificadas"
    },
    {
     "chequeo": "C1 verificada",
+    "supuesto": "La necesidad no es un caso aislado",
     "pasa": true,
     "motivo": "la señal aparece en 26 textos (mínimo 3)"
    },
    {
     "chequeo": "C2 sub-atendida",
+    "supuesto": "La necesidad importa y está mal resuelta",
     "pasa": true,
     "motivo": "importancia 10.0, satisfacción 2.3 (hace falta ≥ 3.0 y ≤ 5.0)"
    },
    {
     "chequeo": "C3 demanda",
+    "supuesto": "Hay gente eligiendo el producto de origen",
     "pasa": true,
     "motivo": "el producto ancla vende +10000 (mínimo 500)"
    },
    {
     "chequeo": "C4 hueco",
+    "supuesto": "Nadie la atiende todavía",
     "pasa": true,
     "motivo": "20 equivalentes, 0 venden +100",
     "datos": {
      "equivalentes": 20,
      "venden": 0,
+     "con_alguna_venta": 3,
+     "ventas_visibles": 125,
      "ejemplos_que_venden": []
     }
    },
    {
-    "chequeo": "C5 margen",
+    "chequeo": "C5 la eligen",
+    "supuesto": "Si se ofrece, la gente la elige",
     "pasa": false,
-    "motivo": "margen base -58% a $5,999 (haría falta FOB ≤ USD 0.18)",
+    "motivo": "la gente la deja pasar: 8 alternativas con stock local a precio comparable suman +125 ventas contra +10000 del producto de origen",
     "datos": {
-     "precio_ars": 5999,
-     "ingreso_neto_ars": 1444,
-     "lote": 1000,
-     "envio_ars": 2500,
-     "escenarios": {
-      "optimista": {
-       "costo_puesto_ars": 2214,
-       "margen_pct": -35
-      },
-      "base": {
-       "costo_puesto_ars": 3438,
-       "margen_pct": -58
-      },
-      "pesimista": {
-       "costo_puesto_ars": 6468,
-       "margen_pct": -78
-      }
-     },
-     "fob_maximo_usd": 0.18
+     "comparables": 8,
+     "ventas_comparables": 125,
+     "ventas_del_ancla": 10000
     }
    }
   ]
@@ -1465,7 +1713,7 @@
   "id": "B1",
   "que_traer": "versión del producto ancla que resuelva la queja 'adhesivo'",
   "busqueda_ml": "estante baño sin taladro",
-  "estado": "muere",
+  "estado": "descartada",
   "se_detiene_en": "C4 hueco",
   "motivo": "ya atendido: 30 equivalentes venden +100",
   "señales": [
@@ -1486,31 +1734,38 @@
   "recorrido": [
    {
     "chequeo": "guardrail",
+    "supuesto": "Lo que dice el LLM está en los textos",
     "pasa": true,
     "motivo": "los baselines no citan textos"
    },
    {
     "chequeo": "C1 verificada",
+    "supuesto": "La necesidad no es un caso aislado",
     "pasa": true,
     "motivo": "la señal aparece en 21 textos (mínimo 3)"
    },
    {
     "chequeo": "C2 sub-atendida",
+    "supuesto": "La necesidad importa y está mal resuelta",
     "pasa": true,
     "motivo": "importancia 10.0, satisfacción 2.9 (hace falta ≥ 3.0 y ≤ 5.0)"
    },
    {
     "chequeo": "C3 demanda",
+    "supuesto": "Hay gente eligiendo el producto de origen",
     "pasa": true,
     "motivo": "el producto ancla vende +10000 (mínimo 500)"
    },
    {
     "chequeo": "C4 hueco",
+    "supuesto": "Nadie la atiende todavía",
     "pasa": false,
     "motivo": "ya atendido: 30 equivalentes venden +100",
     "datos": {
      "equivalentes": 47,
      "venden": 30,
+     "con_alguna_venta": 37,
+     "ventas_visibles": 45300,
      "ejemplos_que_venden": [
       "Pack x2 Estantes Repisas Con Adhesivos Para Ducha, Baño y Cocina – Org (+10000, $19,553)",
       "Estante Repisa Organizador Baño Ducha Shampoo Con Adhesivo Sin Perfora (+10000, $6,969)",

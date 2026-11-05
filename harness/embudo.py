@@ -1,6 +1,6 @@
-"""El embudo convergente: la lista de chequeos que tiene que pasar una propuesta para que la
-recomendemos. Se leen de arriba abajo; la primera que falla, mata la propuesta y queda el
-motivo. El detalle de cada chequeo está en `harness/chequeos.py`; los umbrales, en
+"""El embudo convergente. La divergencia (LLM) trae hipótesis no obvias; la convergencia mata
+el humo. Cada chequeo es un supuesto crítico de la oportunidad y el dato que lo refuta. Se
+leen de arriba abajo; el primer supuesto refutado descarta la propuesta y deja el motivo. El detalle de cada chequeo está en `harness/chequeos.py`; los umbrales, en
 `harness/umbrales.py`.
 """
 
@@ -16,17 +16,27 @@ from harness.voces import textos_con_id
 @dataclass(frozen=True)
 class Chequeo:
     nombre: str
-    pregunta: str
+    supuesto: str       # lo que tiene que ser cierto para que la oportunidad sea real
+    refutacion: str     # el dato que lo tira abajo
     funcion: object
 
 
 EMBUDO = [
-    Chequeo("guardrail", "¿Las citas del LLM existen, son literales y vienen de 2 o más textos?", c.guardrail),
-    Chequeo("C1 verificada", "¿La señal aparece en 3 o más textos, contando todos y no solo los que leyó el LLM?", c.c1_verificada),
-    Chequeo("C2 sub-atendida", "¿Importa y está mal resuelta (puntaje de oportunidad de Ulwick)?", c.c2_subatendida),
-    Chequeo("C3 demanda", "¿El producto donde aparece la señal vende +500?", c.c3_demanda),
-    Chequeo("C4 hueco", "¿Hay 2 o menos equivalentes en Mercado Libre que ya vendan +100?", c.c4_hueco),
-    Chequeo("C5 margen", "¿Deja 30% o más sobre el costo puesto, al precio que la gente paga?", c.c5_margen),
+    Chequeo("guardrail", "Lo que dice el LLM está en los textos",
+            "cita un texto que no existe, un fragmento que no está, o un solo texto", c.guardrail),
+    Chequeo("C1 verificada", "La necesidad no es un caso aislado",
+            "las palabras de la señal aparecen en menos de 3 textos (contando todos)", c.c1_verificada),
+    Chequeo("C2 sub-atendida", "La necesidad importa y está mal resuelta",
+            "puntaje de Ulwick: pocos la mencionan o la mayoría está conforme", c.c2_subatendida),
+    Chequeo("C3 demanda", "Hay gente eligiendo el producto de origen",
+            "el producto donde aparece la señal vende menos de +500", c.c3_demanda),
+    Chequeo("C4 hueco", "Nadie la atiende todavía",
+            "3 o más equivalentes ya venden +100", c.c4_hueco),
+    Chequeo("C5 la eligen", "Si se ofrece, la gente la elige",
+            "3 o más alternativas con stock local y precio comparable venden, entre todas, menos del 25% "
+            "que el producto de origen: la gente las tuvo enfrente y las dejó pasar", c.c5_la_eligen),
+    Chequeo("C6 margen", "Deja plata al precio que la gente paga",
+            "menos de 30% sobre costo puesto; si alcanza solo con un FOB más bajo, queda condicional", c.c6_margen),
 ]
 
 
@@ -57,13 +67,13 @@ class Propuesta:
 
 def recorrer(p: Propuesta) -> dict:
     """Pasa la propuesta por el embudo y devuelve su recorrido: estado final
-    (sobrevive / condicional / muere), dónde murió, por qué, y cada chequeo con sus datos."""
+    (sobrevive / condicional / descartada), dónde se detuvo, por qué, y cada chequeo con sus datos."""
     recorrido = []
     for chequeo in EMBUDO:
         r = chequeo.funcion(p)
-        recorrido.append({"chequeo": chequeo.nombre, "pasa": r.pasa, "motivo": r.motivo, **({"datos": r.datos} if r.datos else {})})
+        recorrido.append({"chequeo": chequeo.nombre, "supuesto": chequeo.supuesto, "pasa": r.pasa, "motivo": r.motivo, **({"datos": r.datos} if r.datos else {})})
         if not r.pasa:
-            estado = "condicional" if r.condicional else "muere"
+            estado = "condicional" if r.condicional else "descartada"
             return _resultado(p, estado, chequeo.nombre, r.motivo, recorrido)
     return _resultado(p, "sobrevive", None, recorrido[-1]["motivo"], recorrido)
 

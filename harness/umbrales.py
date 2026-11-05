@@ -1,6 +1,6 @@
 """Todos los umbrales del embudo, en un solo lugar.
 
-Cambiar un número de acá cambia qué oportunidades sobreviven. Cada uno dice qué mide y de
+Cambiar un número de acá cambia qué oportunidades pasan. Cada uno dice qué mide y de
 dónde sale; los que son decisión nuestra lo dicen.
 """
 
@@ -19,9 +19,22 @@ MIN_VENDIDOS_DEL_ANCLA = 500
 VENDIDOS_PARA_DECIR_QUE_YA_VENDE = 100
 MAX_EQUIVALENTES_QUE_YA_VENDEN = 2    # decisión: con 3 o más vendedores que venden, la necesidad está atendida
 
-# C5 · Deja plata al precio que la gente paga
+# C5 · Si se ofrece, la gente lo elige (voto con los pies: lo que se deja pasar también cuenta)
+MIN_ALTERNATIVAS_OFRECIDAS = 3        # con 3 o más equivalentes a la venta, la gente ya tuvo la opción
+PRECIO_COMPARABLE_HASTA = 1.5         # comparables: con stock local y hasta 1,5 veces la mediana local de precio
+MIN_VENTAS_VS_ANCLA = 0.25            # decisión: si entre todos venden menos del 25% del producto de origen, la dejan pasar
+
+# C6 · Deja plata al precio que la gente paga
 MIN_MARGEN_SOBRE_COSTO = 0.30         # decisión: colchón para devoluciones, publicidad y error de cotización
 UNIDADES_MAX_PRIMER_LOTE = 1000       # el lote llena 1 m3 o llega a este tope, lo que pase primero
+
+# Confianza de una oportunidad que pasó (harness/confianza.py): decisiones nuestras
+MIN_ANCLAS_CON_LA_NECESIDAD = 2       # la misma necesidad aparece en 2 o más productos distintos
+MIN_TEXTOS_PARA_CONFIANZA = 10        # una señal que mencionan 10 o más textos
+MIN_VENTAS_DE_EQUIVALENTES = 500      # la gente ya elige este tipo de producto (suma de "+N vendidos")
+MIN_PUBLICACIONES_PARA_PRECIO = 3     # el precio de referencia sale de 3 o más publicaciones con ventas
+FACTORES_PARA_CONFIANZA_ALTA = 4      # de 5
+FACTORES_PARA_CONFIANZA_MEDIA = 3
 
 # Envío de Mercado Libre a cargo del vendedor (algoritmodigital.com.ar, septiembre 2026)
 PRECIO_DESDE_EL_QUE_EL_ENVIO_ES_GRATIS = 33000   # ARS

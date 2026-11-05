@@ -317,3 +317,22 @@ no es "lo que se compra" sino qué se elige frente a las alternativas y qué se 
 Eso dejó a la vista una brecha, ahora en las limitaciones del README: el LLM ve el producto
 elegido y sus voces, pero no las alternativas descartadas de la búsqueda (entran en C4). El
 skill decía que las veía; se corrigió esa línea, sin cambiar el procedimiento.
+
+## 2026-11-05 — La convergencia mata el humo: C5 y confianza
+
+**Qué pasó.** La tabla doble faz había pasado todo: C4 la daba por hueco porque, de 18
+parecidas, solo una vendía +100. Pero "se ofrece y casi no se vende" no es un hueco: es la
+gente dejando pasar la alternativa. **Qué decidimos.** El embudo se reescribió como supuestos
+críticos con el dato que refuta cada uno, y se agregó **C5: si se ofrece, la gente la elige**
+(3 o más alternativas con stock local y precio comparable que entre todas venden menos del 25%
+del producto de origen la refutan). El margen pasó a C6. A lo que sobrevive se le calcula una
+confianza (alta, media, baja) con cinco factores de sí o no.
+**Qué pasó al correrlo.** La tabla doble faz se cae (6 comparables a ~$32.000 suman +125
+ventas contra +1.000 de la de una cara); los adhesivos de repuesto, también. En test no
+sobrevive nada; en dev queda el disco de repuesto, condicional al FOB y con confianza baja.
+**Declaración:** test se corrió dos veces; la segunda, con C5 agregado después de ver la
+primera. El cambio hace el embudo más exigente, no más fácil. **Conclusión honesta:** la
+convergencia funciona; la divergencia trajo ideas triviales (repuestos, accesorios) porque el
+LLM lee cada producto por separado; y 21 productos es una muestra insignificante. Lo
+siguiente es escala (cientos o miles de productos) y una divergencia que cruce productos y
+vea lo que se deja pasar.

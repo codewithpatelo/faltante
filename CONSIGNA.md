@@ -12,19 +12,20 @@ preguntas de indecisos), proponer qué traer, y tratar de refutarlo con datos an
 recomendarlo.
 
 **Hipótesis:** con el mismo embudo convergente en código (guardrail de citas, C1
-verificada, C2 Ulwick, C3 demanda, C4 hueco local, C5 margen), el LLM produce **más
-oportunidades distintas que sobreviven** que dos baselines sin LLM: B1, la queja más
+verificada, C2 Ulwick, C3 demanda, C4 hueco local, C5 la eligen si se ofrece, C6 margen), el
+LLM produce **más oportunidades distintas que sobreviven** que dos baselines sin LLM: B1, la queja más
 frecuente; B2, una regla que detecta pedidos de repuesto. Partición fija por producto,
 decidida antes de leer las voces (`data/voces/productos_2026-11-05.json`: 11 dev, 10 test).
 
 | Oportunidades distintas que sobreviven o quedan condicionales | LLM | B1 | B2 |
 |---|---|---|---|
 | dev | 1 | 0 | 1 |
-| test | **1** | 0 | 0 |
+| test | 0 | 0 | 0 |
 
-Con 21 productos no hay potencia estadística: se muestra el mecanismo y el tipo de hallazgo
-que solo aparece leyendo (la tabla doble faz combina dos deseos; no es un repuesto). Límites
-declarados: el paso del LLM en dev y test lo hizo Claude en el chat con el skill congelado
+**Veredicto hoy: no se puede evaluar.** Con 21 productos nada sobrevive en test, ni con LLM ni
+sin él; hacen falta cientos o miles. Además, las hipótesis del LLM fueron triviales
+(repuestos, accesorios), porque leyó cada producto por separado. Test se corrió dos veces: la
+segunda, después de agregar C5. Límites declarados: el paso del LLM en dev y test lo hizo Claude en el chat con el skill congelado
 (sin clave de API en el entorno); algunas preguntas de test se vieron durante la
 recolección; B2 se escribió después de leer dev.
 
@@ -74,8 +75,8 @@ Alternativa local: `ANTHROPIC_API_KEY=... make serendipia-api`.
 ## Áreas en profundidad
 
 1. **Orquestación y guardrails:** divergente (LLM) → guardrail en código que verifica cada
-   cita → reintento con los errores → convergente con cinco chequeos en código, cada muerte
-   con su motivo (`harness/embudo.py`: la lista de chequeos; `harness/chequeos.py`: qué hace cada uno).
+   cita → reintento con los errores → convergente: seis supuestos críticos, cada uno con el dato
+   que lo refuta, y cada descarte con su motivo (`harness/embudo.py`: la lista de chequeos; `harness/chequeos.py`: qué hace cada uno).
 2. **Evaluación:** partición fija por producto, dos baselines sin LLM por el mismo embudo,
    una sola corrida en test, umbrales a la vista; pendiente el juicio humano a ciegas de las
    propuestas (¿no obvia? ¿accionable?).
@@ -102,7 +103,7 @@ revelada (lo que se elige frente a las alternativas, no lo que se declara).
 
 | Quién | Qué | Entregable verificable |
 |---|---|---|
-| Dario | Evaluación: juicio humano a ciegas de las propuestas (LLM y baselines mezclados) y etiquetas de equivalencia para C4 | planilla en `data/evaluacion/`, resultado acá |
+| Dario | Evaluación: baseline humano (proponer con los mismos datos) y juicio a ciegas de todas las propuestas mezcladas; etiquetas de equivalencia para C4 | planilla en `data/evaluacion/`, resultado acá |
 | Nilo | Datos: voces de más productos ancla (otras categorías) y guardar en `scripts/` el código de recolección | `data/voces/`, entrada en BITACORA |
 | Victoria | Antecedentes completos y presentación | sección ampliada acá, slides |
-| Patricio | Programa, corrida con la API y cotizaciones de las sobrevivientes | `harness/`, workflow `llm`, `OPORTUNIDADES.md` |
+| Patricio | Programa, corrida con la API y cotizaciones de las que pasaron | `harness/`, workflow `llm`, `OPORTUNIDADES.md` |

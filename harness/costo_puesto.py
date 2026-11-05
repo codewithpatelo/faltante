@@ -4,7 +4,7 @@ Para un importador Responsable Inscripto: el IVA de importación y las percepcio
 crédito fiscal o pago a cuenta (afectan la caja, no el costo). Todos los supuestos están
 acá arriba, con su fuente; los inciertos se prueban en un rango (bajo / base / alto).
 
-Lo usa C5 (harness/chequeos.py). Los FOB de cada oportunidad están en
+Lo usa C6 (harness/chequeos.py). Los FOB de cada oportunidad están en
 data/serendipia/fob_<fecha>.json.
 
 Costo puesto por unidad (USD) = FOB + logística integral por m3 x volumen

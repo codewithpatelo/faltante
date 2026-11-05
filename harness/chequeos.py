@@ -1,4 +1,4 @@
-"""Los chequeos con los que el programa intenta matar cada propuesta.
+"""Las pruebas que tiene que pasar cada propuesta para que la recomendemos.
 
 Cada chequeo recibe una propuesta y devuelve un Resultado: si pasa, por qué, y los datos
 que lo sostienen. El orden y la descripción de cada uno están en `harness/embudo.py`.
@@ -18,7 +18,7 @@ class Resultado:
     pasa: bool
     motivo: str
     datos: dict = field(default_factory=dict)
-    condicional: bool = False   # no pasa del todo, pero pasaría si se cumple una condición (C5: un FOB)
+    condicional: bool = False   # no pasa del todo, pero pasaría si se cumple una condición (C6: un FOB)
 
 
 # --- Sobre las señales que cita la propuesta ---------------------------------------------
@@ -96,6 +96,8 @@ def c4_hueco(p) -> Resultado:
     eq = equivalentes(p)
     venden = [x for x in eq if x["vendidos"] >= U.VENDIDOS_PARA_DECIR_QUE_YA_VENDE]
     datos = {"equivalentes": len(eq), "venden": len(venden),
+             "con_alguna_venta": sum(1 for x in eq if x["vendidos"] > 0),
+             "ventas_visibles": sum(x["vendidos"] for x in eq),
              "ejemplos_que_venden": [f"{x['titulo'][:70]} (+{x['vendidos']}, ${x['precio']:,})"
                                      for x in sorted(venden, key=lambda x: -x["vendidos"])[:3]]}
     if len(venden) > U.MAX_EQUIVALENTES_QUE_YA_VENDEN:
@@ -103,7 +105,30 @@ def c4_hueco(p) -> Resultado:
     return Resultado(True, f"{len(eq)} equivalentes, {len(venden)} venden +{U.VENDIDOS_PARA_DECIR_QUE_YA_VENDE}", datos)
 
 
-def c5_margen(p) -> Resultado:
+def c5_la_eligen(p) -> Resultado:
+    """Si la alternativa ya se ofrece con stock local y a precio razonable, y la gente igual
+    elige el producto de origen, la necesidad no alcanza para que la compren: es humo.
+    Las explicaciones rivales que dejamos afuera (Compra Internacional, precio inflado) se
+    descartan antes de contar."""
+    if p.captura is None:
+        return Resultado(False, "falta capturar la búsqueda (scripts/captura_ml.js)")
+    locales = [x for x in equivalentes(p) if not x.get("internacional") and x.get("precio")]
+    if not locales:
+        return Resultado(True, "no hay alternativas con stock local: nadie la ofreció todavía")
+    precios = sorted(x["precio"] for x in locales)
+    techo = precios[len(precios) // 2] * U.PRECIO_COMPARABLE_HASTA
+    comparables = [x for x in locales if x["precio"] <= techo]
+    ventas = sum(x["vendidos"] for x in comparables)
+    del_ancla = p.producto["vendidos"]
+    datos = {"comparables": len(comparables), "ventas_comparables": ventas, "ventas_del_ancla": del_ancla}
+    if len(comparables) >= U.MIN_ALTERNATIVAS_OFRECIDAS and ventas < U.MIN_VENTAS_VS_ANCLA * del_ancla:
+        return Resultado(False, f"la gente la deja pasar: {len(comparables)} alternativas con stock local a precio "
+                                f"comparable suman +{ventas} ventas contra +{del_ancla} del producto de origen", datos)
+    return Resultado(True, f"{len(comparables)} alternativas comparables suman +{ventas} ventas "
+                           f"(producto de origen: +{del_ancla})", datos)
+
+
+def c6_margen(p) -> Resultado:
     precio = precio_de_mercado(p)
     if p.fob is None or precio is None:
         return Resultado(False, "sin precio de proveedor o sin precio de mercado")
@@ -117,7 +142,7 @@ def c5_margen(p) -> Resultado:
     return Resultado(False, f"margen base {base}% a ${precio:,} (haría falta FOB ≤ USD {m['fob_maximo_usd']})", m)
 
 
-# --- Ayudas de C4 y C5 -----------------------------------------------------------------------
+# --- Ayudas de C4 a C6 -----------------------------------------------------------------------
 
 def es_equivalente(titulo: str, criterio: dict) -> bool:
     """En Mercado Libre el título empieza por lo que se vende ("Disco …" es un disco;

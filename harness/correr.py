@@ -14,6 +14,7 @@ import json
 import sys
 
 from harness.baselines import b1_queja_mas_frecuente, b2_pedidos_de_repuesto
+from harness.confianza import confianza
 from harness.embudo import EMBUDO, Propuesta, recorrer
 from harness.voces import RAIZ, productos, sin_acentos
 
@@ -56,9 +57,23 @@ def tabla(recorridos: list[dict]) -> str:
         rs = [r for r in recorridos if r["metodo"] == metodo]
         pasan = [sum(1 for r in rs if any(x["chequeo"] == n and x["pasa"] for x in r["recorrido"])) for n in nombres]
         cond = sum(1 for r in rs if r["estado"] == "condicional")
-        distintas = len({r["busqueda_ml"] for r in rs if r["estado"] != "muere"})
+        distintas = len({r["busqueda_ml"] for r in rs if r["estado"] != "descartada"})
         filas.append(f"| {metodo} | {len(rs)} | " + " | ".join(map(str, pasan)) + f" | {cond} | {distintas} |")
     return "\n".join(filas)
+
+
+def con_confianza(recorridos: list[dict]) -> list[dict]:
+    """A cada oportunidad que no se descartó le agrega su confianza. Si la misma oportunidad
+    salió de varios productos (misma búsqueda, mismo método), se juzga con todos juntos."""
+    grupos = {}
+    for r in recorridos:
+        if r["estado"] != "descartada":
+            grupos.setdefault((r["metodo"], r["busqueda_ml"]), []).append(r)
+    for grupo in grupos.values():
+        c = confianza(grupo)
+        for r in grupo:
+            r["confianza"] = c
+    return recorridos
 
 
 def _busquedas_capturadas() -> dict:
@@ -70,8 +85,9 @@ def _busquedas_capturadas() -> dict:
 
 if __name__ == "__main__":
     particion = sys.argv[1] if len(sys.argv) > 1 else "dev"
-    recorridos = [recorrer(p) for p in propuestas(particion)]
+    recorridos = con_confianza([recorrer(p) for p in propuestas(particion)])
     (SERENDIPIA / f"embudo_{particion}.json").write_text(json.dumps(recorridos, ensure_ascii=False, indent=1), encoding="utf-8")
     print(f"## {particion}\n{tabla(recorridos)}\n")
     for r in recorridos:
-        print(f"  {r['metodo']:<3} {r['producto']} {r['estado']:<11} {r['se_detiene_en'] or '':<15} {r['que_traer'][:55]:<55} {r['motivo']}")
+        nivel = f"confianza {r['confianza']['nivel']}" if "confianza" in r else ""
+        print(f"  {r['metodo']:<3} {r['producto']} {r['estado']:<11} {r['se_detiene_en'] or '':<15} {r['que_traer'][:55]:<55} {r['motivo']} {nivel}")

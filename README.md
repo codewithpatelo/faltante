@@ -10,88 +10,89 @@ gente, que se ven de dos maneras.
 - **Voto con las manos, lo que la gente dice:** por qué eligió y qué le faltó. Opiniones de
   quienes compraron y preguntas de quienes todavía dudan.
 
-Un LLM cruza las dos cosas y propone qué traer (por ejemplo, algo que los compradores piden y
-nadie ofrece). Después el programa intenta tirar abajo cada propuesta con datos: ¿es una queja
-aislada?, ¿ya lo vende alguien?, ¿deja plata? Solo recomienda lo que sobrevive.
-
-A eso le decimos *serendipia computacional*: dar con oportunidades que nadie estaba buscando,
-porque solo aparecen al juntar información dispersa.
+Funciona como la selección natural. **La divergencia trae hipótesis no obvias:** un LLM cruza
+las dos cosas y propone qué traer. **La convergencia mata el humo:** el programa lista los
+supuestos críticos de cada propuesta (¿la necesidad es real?, ¿nadie la atiende?, ¿si se
+ofrece, la gente la elige?, ¿deja plata?) y busca el dato que la tira abajo. Solo se
+recomienda lo que sobrevive.
 
 TP de IA Agéntica, Maestría en Explotación de Datos (UBA), 2026.
 
-## Un ejemplo
+## ¿Sirve? Estado al 05/11/2026
+
+**Todavía no. La convergencia funciona; la divergencia trae ideas triviales; y la muestra es
+insignificante.**
+
+| Pregunta | Respuesta hoy |
+|---|---|
+| ¿Mata el humo, con un motivo verificable? | **Sí.** De 14 propuestas descartó 13: 7 porque ya las vende alguien, 3 porque la gente tuvo la alternativa enfrente y la dejó pasar, 2 porque la señal era débil y 1 por citas mal hechas. |
+| ¿Encuentra una oportunidad que sobreviva? | **No del todo.** Ninguna pasa todo. El disco de repuesto para afilador pasa solo si el proveedor cotiza ≤ USD 3,21 (catálogo: 2,60 a 3,30), con confianza baja. Detalle en [`OPORTUNIDADES.md`](OPORTUNIDADES.md). |
+| ¿Las hipótesis son no obvias? | **No.** Repuestos, accesorios y versiones mejoradas del mismo producto: a cualquiera que mire el mercado se le ocurren. El LLM leyó cada producto por separado; lo no obvio sale de cruzar información de muchos productos y categorías, y de ver qué se deja pasar, y eso todavía no lo hace. |
+| ¿Es mejor que no usar un LLM? | **No se puede saber.** Con 21 productos, ni el LLM ni los baselines dejan nada en test. Hacen falta cientos de productos, o miles. |
+| ¿Quién propuso? | En esta corrida las propuestas las escribió Claude en el chat siguiendo el skill, no el programa con la API (no había clave). |
+
+**Cómo se comparó:** los 21 productos se dividieron antes de leerlos en dev (11, para
+ajustar) y test (10). Las propuestas del LLM y las de dos baselines sin LLM pasan por las
+mismas pruebas. **B1** propone mejorar el producto por su queja más frecuente; **B2** propone
+el repuesto cuando 2 o más preguntas lo piden (se escribió después de ver dev). Oportunidades
+que pasan o quedan condicionales: en dev, LLM 1, B1 0, B2 1; en test, 0 en los tres. Test se
+corrió dos veces: la segunda, después de agregar C5 (ver `BITACORA.md`).
+
+**Para poder decir que sí sirve falta:**
+1. **Escala:** cientos o miles de productos de muchas categorías. El cuello de botella es la
+   recolección en el navegador; el paso del LLM cuesta ~USD 0,01 por producto.
+2. **Divergencia de verdad:** que el LLM vea el conjunto (qué se elige y qué se deja pasar en
+   cada búsqueda, y la misma necesidad en productos de otras categorías), no un producto aislado.
+3. Que proponga el programa con la API (workflow `llm`), no el chat.
+4. Un baseline humano: que alguien del grupo proponga con los mismos datos, y juzgar a ciegas
+   las propuestas mezcladas (¿no obvia? ¿accionable?).
+
+## Un ejemplo: cómo se mata el humo
 
 En la búsqueda "tabla de cortar acero inoxidable", las dos tablas más elegidas venden **más de
-1.000 unidades cada una**. Sus compradores dicen por qué las eligieron y qué les falta: 21
-textos repiten que las prefieren a la madera y al plástico por higiene, pero que **rayan y
-desafilan los cuchillos**. El LLM propone traer una tabla **doble faz** (acero de un lado,
-polipropileno del otro). El programa la intenta tirar abajo:
+1.000 unidades cada una**. Sus compradores dicen que las eligieron por higiene, pero 21 textos
+se quejan de que **rayan y desafilan los cuchillos**. El LLM propone traer una tabla **doble
+faz** (acero de un lado, polipropileno o bambú del otro). El programa prueba sus supuestos:
 
-- ¿La queja es real o anecdótica? Aparece en 21 textos, la mayoría como queja. **Pasa.**
-- ¿Alguien ya la vende? Hay 18 publicaciones parecidas y solo una vendió más de 100. **Pasa.**
-- ¿Deja plata? Puesta en Argentina cuesta ~$10.700 y se vende a $32.800: 79% sobre el costo. **Pasa.**
+- ¿La necesidad es real? 21 textos, la mayoría como queja. **Pasa.**
+- ¿Nadie la atiende? De 18 publicaciones parecidas, solo una vendió más de 100. **Pasa.**
+- ¿Si se ofrece, la gente la elige? Hay 6 tablas doble faz con stock local y a precio
+  comparable (~$32.000). Entre todas vendieron +125; la de una cara, +1.000. **La gente tuvo la
+  alternativa enfrente y la dejó pasar: es humo. Se descarta.**
 
-Ni la queja más frecuente ni una regla que busca pedidos de "repuesto" la encuentran: hace
-falta leer que la gente quiere dos cosas a la vez.
+Sin la última prueba, el programa la habría recomendado con 79% de margen.
 
 ## Cómo funciona
 
 ```
 voto con los pies ─────┐
 (qué se elige y qué    │
- se deja pasar)        ├─► LLM propone ──► el programa intenta matar ──► OPORTUNIDADES.md
-voto con las manos ────┘   (divergente)     (convergente: guardrail + C1..C5)
+ se deja pasar)        ├─► LLM propone ──► el programa prueba los supuestos ──► OPORTUNIDADES.md
+voto con las manos ────┘   (divergente)     críticos y mata el humo (convergente)
 (opiniones, preguntas)
 ```
 
-| Etapa | Qué hace | Quién |
-|---|---|---|
-| Datos | Los 1 o 2 productos más elegidos de cada búsqueda, con sus opiniones y las preguntas de los indecisos | Captura desde el navegador |
-| Filtro | Todas las preguntas + las opiniones más informativas (como Timoshenko y Hauser, 2019) | Código |
-| Divergente | Lee y propone señales (quejas, faltantes, deseos, usos raros) y qué traer, citando textos | **LLM** (`skills/leer_voces`) |
-| Guardrail | Cada cita existe, es literal y viene de al menos 2 textos distintos; si no, se le devuelven los errores al LLM una vez | Código |
-| C1 verificada | Las palabras de la señal aparecen en 3 o más textos (cuenta en *todos*, no solo los que leyó el LLM) | Código |
-| C2 sub-atendida | Puntaje de oportunidad de Ulwick: importa y está mal resuelto | Código |
-| C3 demanda | El producto donde aparece vende +500 | Código |
-| C4 hueco | En la búsqueda de lo propuesto, 2 o menos equivalentes venden +100: o no se ofrece, o lo que se ofrece la gente lo deja pasar | Código + captura |
-| C5 margen | 30% o más sobre costo puesto, al precio de lo que se vendió; si no llega, cuánto tendría que costar en origen | Código |
+| Etapa | Supuesto crítico que pone a prueba | El dato que lo tira abajo | Quién |
+|---|---|---|---|
+| Datos | — | Los 1 o 2 productos más elegidos de cada búsqueda, con opiniones y preguntas de indecisos | Captura desde el navegador |
+| Filtro | — | Todas las preguntas + las opiniones más informativas (como Timoshenko y Hauser, 2019) | Código |
+| Divergente | — | Propone señales (quejas, faltantes, deseos, usos raros) y qué traer, citando textos | **LLM** (`skills/leer_voces`) |
+| Guardrail | Lo que dice el LLM está en los textos | Cita un texto que no existe, un fragmento que no está, o un solo texto (se le devuelve el error una vez) | Código |
+| C1 verificada | La necesidad no es un caso aislado | Aparece en menos de 3 textos, contando todos y no solo los que leyó el LLM | Código |
+| C2 sub-atendida | Importa y está mal resuelta | Puntaje de oportunidad de Ulwick: pocos la mencionan o la mayoría está conforme | Código |
+| C3 demanda | Hay gente eligiendo el producto de origen | Vende menos de +500 | Código |
+| C4 hueco | Nadie la atiende todavía | 3 o más equivalentes ya venden +100 | Código + captura |
+| C5 la eligen | Si se ofrece, la gente la elige | 3 o más alternativas con stock local y precio comparable venden, entre todas, menos del 25% que el producto de origen | Código + captura |
+| C6 margen | Deja plata al precio que la gente paga | Menos de 30% sobre costo puesto; si alcanza solo con un FOB más bajo, queda condicional | Código |
+| Confianza | — | A lo que sobrevive le pone alta, media o baja según 5 factores de sí o no (`harness/confianza.py`) | Código |
 
 **Por qué un LLM:** lo valioso está en texto desordenado ("¿venden los discos de repuesto?",
 "se raya pero la prefiero a la de madera"). Contar palabras da "filo", "precio", "hola".
 Proponer *qué traer* requiere leer.
 
-**Por qué no se lo cree:** el LLM no puede citar un texto que no existe, y el programa
-recuenta todo por su cuenta. Cada propuesta que muere queda registrada con el motivo.
-
-## Resultado
-
-Detalle, con lo que murió y por qué, en [`OPORTUNIDADES.md`](OPORTUNIDADES.md).
-
-| Oportunidad | ¿Traerla? | Por qué |
-|---|---|---|
-| Tabla de picar doble faz | **Probar** | Necesidad en 21 textos; casi nadie la vende con volumen; margen base 79% (pesimista 23%) |
-| Disco de repuesto para afilador rodante | **Sí, si se consigue a USD 3,21 o menos** | Lo piden en las preguntas y los vendedores no lo tienen; a $17.416 deja 27%, un poco menos de lo pedido |
-
-De 14 propuestas distintas del LLM, 12 murieron: la mayoría porque la necesidad es real pero ya la
-atiende alguien (espumador de leche, repuestos de minipimer, filtros de aspiradora), y otras
-porque no dejan plata (adhesivos de repuesto: lo barato no paga el envío de Mercado Libre).
-
-## Cómo medimos si funciona
-
-**Hipótesis:** con el mismo embudo, el LLM produce más oportunidades que sobreviven que dos
-baselines sin LLM: **B1**, la queja más frecuente; **B2**, una regla que detecta pedidos de
-repuesto. Los 21 productos se dividieron en dev (11, para iterar) y test (10, una sola
-corrida) antes de leerlos.
-
-| Oportunidades distintas que sobreviven o quedan condicionales | LLM | B1 | B2 |
-|---|---|---|---|
-| dev | 1 | 0 | 1 |
-| test | **1** | 0 | 0 |
-
-Con 21 productos esto muestra el mecanismo, no una diferencia estadística.
-
-**Costo:** ~USD 0,01 por producto con Claude Haiku 4.5 (estimado; `CONSIGNA.md`). La
-recolección en el navegador lleva ~1 minuto por producto.
+**Por qué no se lo cree:** el LLM no puede citar un texto que no existe, el programa recuenta
+todo por su cuenta, y cada supuesto se contrasta con lo que la gente hizo. Cada propuesta
+descartada queda registrada con el motivo.
 
 ## Correrlo
 
@@ -104,8 +105,11 @@ make todo      # tests + el embudo en dev y test sobre los datos guardados (sin 
 
 | Comando | Qué hace |
 |---|---|
-| `make serendipia` | El embudo en dev y test, LLM contra los dos baselines |
+| `make serendipia` | Prueba las propuestas del LLM y de los dos baselines, en dev y en test |
 | `make serendipia-api` | Lo mismo con el paso del LLM hecho por la API (necesita `ANTHROPIC_API_KEY`) |
+
+**Costo:** ~USD 0,01 por producto con Claude Haiku 4.5 (estimado; `CONSIGNA.md`). La
+recolección en el navegador lleva ~1 minuto por producto.
 
 Sin compartir claves: cargar `ANTHROPIC_API_KEY` como secreto del repo y correr el workflow
 **llm** desde la pestaña Actions; los resultados quedan en la rama `resultados-llm`.
@@ -134,8 +138,9 @@ Un archivo por etapa, en el orden en que corren:
 | `harness/voces.py` | Carga los productos y sus textos, les pone ID (`o12`, `p3`) y elige los que lee el LLM |
 | `harness/divergente.py` | El paso del LLM: arma el prompt con `skills/leer_voces/SKILL.md`, propone y reintenta si el guardrail rechaza citas |
 | `harness/baselines.py` | B1 y B2: proponer sin LLM, para comparar |
-| `harness/embudo.py` | **La lista de chequeos**, en orden, cada uno con su pregunta; y cómo se recorre |
-| `harness/chequeos.py` | Qué hace cada chequeo (guardrail, C1 a C5) |
+| `harness/embudo.py` | **La lista de supuestos críticos**, en orden, cada uno con el dato que lo refuta; y cómo se recorre |
+| `harness/chequeos.py` | Cómo se prueba cada supuesto (guardrail, C1 a C6) |
+| `harness/confianza.py` | Los 5 factores de confianza de lo que sobrevive |
 | `harness/umbrales.py` | Todos los umbrales, con qué mide cada uno |
 | `harness/costo_puesto.py` | Costo puesto en Argentina e ingreso neto vendiendo en Mercado Libre |
 | `harness/correr.py` | Junta las propuestas, las pasa por el embudo y escribe el resultado |
@@ -143,7 +148,7 @@ Un archivo por etapa, en el orden en que corren:
 | `scripts/unir_voces.py` | Une productos, opiniones y preguntas en `data/voces/corpus_<fecha>.json` |
 | `tests/test_embudo.py` | Lo que tiene que cumplir cada etapa |
 | `data/serendipia/` | Propuestas del LLM, precios de proveedor y el recorrido de cada propuesta |
-| `OPORTUNIDADES.md` | El resultado, para leer |
+| `OPORTUNIDADES.md` | El resultado, para leer: qué pasó las pruebas, qué se descartó y por qué |
 | `CONSIGNA.md` · `DECISIONES.md` | Requisitos del TP y dónde se cumplen · qué elegimos y por qué |
 | `BITACORA.md` | Cómo llegamos acá, incluidos los enfoques descartados (su código está en el historial de git; sus datos, en el resto de `data/`) |
 
@@ -162,13 +167,13 @@ Un archivo por etapa, en el orden en que corren:
 ## Limitaciones
 
 - El LLM ve el producto elegido y lo que dicen sus compradores e indecisos, pero no las
-  alternativas que la gente dejó pasar en esa búsqueda: esas entran recién en C4.
+  alternativas que la gente dejó pasar en esa búsqueda: esas entran recién en C4 y C5.
 - El paso del LLM en dev y test lo hizo Claude en el chat siguiendo el skill, porque no
   había clave de API en el entorno; `make serendipia-api` lo repite con el modelo.
 - Algunas preguntas de test se vieron durante la recolección. Después de correr test no se
   cambió nada.
-- C4 decide equivalencias por palabras del título y se equivoca: en test contó cepillos a
-  vapor *para mascotas* como repuestos de limpiadora y mató una propuesta que no debía.
+- C4 y C5 deciden equivalencias por palabras del título y se equivocan: en test contaron
+  cepillos a vapor *para mascotas* como repuestos de limpiadora.
 - Los costos usan precios de catálogo y tarifas publicadas, no cotizaciones reales.
 - "+N vendidos" es un piso del contador de Mercado Libre, no las ventas exactas.
 - El código que recolectó opiniones y preguntas se corrió en la consola del navegador y

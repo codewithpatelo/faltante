@@ -2,7 +2,7 @@
 
 Patrón evaluador-optimizador: el LLM propone, el guardrail (código) revisa las citas, y si
 hay errores se los devuelve una vez para que corrija. Lo que sigue mal no se descarta acá:
-llega al embudo y muere en el guardrail, con el motivo a la vista.
+llega al embudo y se descarta en el guardrail, con el motivo a la vista.
 
     ANTHROPIC_API_KEY=... python -m harness.divergente test   -> data/serendipia/divergente_test_api.json
 """
