@@ -1,6 +1,6 @@
 {
- "nota": "Referencias de proveedor (FOB China) por oportunidad de escala_dev. Precios de catálogo de Alibaba, no cotizaciones. Los precios en ARS que muestra Alibaba se pasan a USD a 1.570 (harness/costo_puesto.TIPO_CAMBIO); los en EUR, a 1,09. DIE: base y alto (se prueba 35% por si no aplica el arancel menor).",
- "G5.O2": {
+ "nota": "Referencias de proveedor (FOB China) por oportunidad de escala_dev. Precios de catálogo de Alibaba, no cotizaciones. Los precios en ARS que muestra Alibaba se pasan a USD a 1.570 (harness/costo_puesto.TIPO_CAMBIO); los en EUR, a 1,09. DIE: base y alto (se prueba 35% por si no aplica el arancel menor). Las del LLM van por su búsqueda en Mercado Libre (el ID de una propuesta cambia entre corridas).",
+ "estante de pared adhesivo sin taladrar baño": {
   "nombre": "Estantes de esquina adhesivos sin taladrar para baño, pack x2",
   "fob": [
    3.39,
@@ -14,7 +14,7 @@
   "volumen_m3": 0.00625,
   "fuentes": "Alibaba, pack x2 estantes esquineros adhesivos: ARS 5.315,92 MOQ 80 (1601957647795), ARS 5.834,54 MOQ 10 (1601879657837), ARS 9.400,09 MOQ 200 (1601218335417); pesimista redondeado a USD 6. Caja ~25x25x10 cm. Unidad = pack x2, igual que el equivalente que vende en ML."
  },
- "G11.O1b": {
+ "cubre parabrisas exterior auto": {
   "nombre": "Cubre parabrisas exterior con correas a las puertas",
   "fob": [
    2.44,
@@ -28,7 +28,7 @@
   "volumen_m3": 0.005,
   "fuentes": "Alibaba: media cubierta de aluminio US$2,44 200-1.999 u (1600738818174); PEVA con algodón y correas US$3,99 100-499 u (62388907945); Oxford 600D con correas antirrobo 7,18 € 50-499 u (1601727180840). Bolsa 40x25x5 cm."
  },
- "G11.O2b": {
+ "soporte celular auto bomba de vacío": {
   "nombre": "Soporte de celular para auto con sopapa de vacío y brazo",
   "fob": [
    1.78,

@@ -52,7 +52,7 @@ def propuestas_de_un_archivo(archivo) -> list[Propuesta]:
         citadas = [señales[i] for i in o["señales"] if i in señales]
         anclas = [todos[pid] for pid in dict.fromkeys(s["producto"] for s in citadas)]
         if anclas:
-            salida.append(armar("llm", anclas, o, citadas, o["id"], True, o["id"]))
+            salida.append(armar("llm", anclas, o, citadas, o["busqueda_ml"], True, o["id"]))   # el precio de proveedor va por búsqueda: el ID cambia entre corridas
     # Baselines: una propuesta por producto
     for pid in del_llm["señales"]:
         for metodo, baseline in (("B1", b1_queja_mas_frecuente), ("B2", b2_pedidos_de_repuesto)):
