@@ -1,0 +1,3586 @@
+[
+ {
+  "metodo": "llm",
+  "productos": [
+   "E036",
+   "E045",
+   "E061"
+  ],
+  "anclas": [
+   "Bebedero Fuente Para Beber Automático Gadnic Recirculación d",
+   "Baby Monitor Babycall Gadnic Audio Bidireccional Pantalla LC",
+   "Linterna Tactica LED Militar SPICA X-4 Recargable 3 Modos de"
+  ],
+  "id": "O1",
+  "que_traer": "Estación de energía portátil (power station) compacta con salida 220V, USB-C PD y batería de litio, para mantener funcionando equipos que hoy dependen de un enchufe fijo",
+  "busqueda_ml": "estación de energía portátil 220v",
+  "estado": "descartada",
+  "se_detiene_en": "C4 hueco",
+  "motivo": "ya atendido: 4 equivalentes venden +100",
+  "señales": [
+   {
+    "id": "E036.S6",
+    "descripcion": "le preocupa la dependencia eléctrica: quiere saber qué pasa si se queda sin agua o sin enchufe cerca, y poder dejarlo funcionando sin riesgo",
+    "errores": [],
+    "medida": {
+     "menciones": 9,
+     "insatisfechas": 6,
+     "de_textos": 216,
+     "importancia": 4.2,
+     "satisfaccion": 3.3,
+     "puntaje_oportunidad": 5.1
+    }
+   },
+   {
+    "id": "E045.S1",
+    "descripcion": "Quiere poder ubicar la cámara donde no haya enchufe cerca: espera un equipo que funcione con batería y no que la cámara dependa siempre de la corriente.",
+    "errores": [],
+    "medida": {
+     "menciones": 48,
+     "insatisfechas": 29,
+     "de_textos": 220,
+     "importancia": 10.0,
+     "satisfaccion": 4.0,
+     "puntaje_oportunidad": 16.0
+    }
+   },
+   {
+    "id": "E061.S1",
+    "descripcion": "quiere que la autonomía acompañe a la potencia: la batería se agota rápido y obliga a calcular cuánto va a durar la luz",
+    "errores": [],
+    "medida": {
+     "menciones": 73,
+     "insatisfechas": 31,
+     "de_textos": 211,
+     "importancia": 10.0,
+     "satisfaccion": 5.8,
+     "puntaje_oportunidad": 14.2
+    }
+   }
+  ],
+  "recorrido": [
+   {
+    "chequeo": "guardrail",
+    "supuesto": "Lo que dice el LLM está en los textos",
+    "pasa": true,
+    "motivo": "citas verificadas"
+   },
+   {
+    "chequeo": "C1 verificada",
+    "supuesto": "La necesidad no es un caso aislado",
+    "pasa": true,
+    "motivo": "la señal aparece en 73 textos (mínimo 3)"
+   },
+   {
+    "chequeo": "C2 sub-atendida",
+    "supuesto": "La necesidad importa y está mal resuelta",
+    "pasa": true,
+    "motivo": "importancia 4.2, satisfacción 3.3 (hace falta ≥ 3.0 y ≤ 5.0)"
+   },
+   {
+    "chequeo": "C3 demanda",
+    "supuesto": "Hay gente eligiendo el producto de origen",
+    "pasa": true,
+    "motivo": "el producto ancla vende +50000 (mínimo 500)"
+   },
+   {
+    "chequeo": "C4 hueco",
+    "supuesto": "Nadie la atiende todavía",
+    "pasa": false,
+    "motivo": "ya atendido: 4 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 14,
+     "venden": 4,
+     "con_alguna_venta": 4,
+     "ventas_visibles": 1200,
+     "ejemplos_que_venden": [
+      "Generador Portátil Nafta Vohler VHGAE3500 3000W Monofásico 220V (+500, $398,940)",
+      "Generador Portatil Grupo Electrogeno Konan 800w 2hp 2t 220v (+500, $184,799)",
+      "Estación De Energía Portátil Ecoflow Delta 2 Batería LFP (+100, $2,018,913)"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "metodo": "llm",
+  "productos": [
+   "E018",
+   "E020"
+  ],
+  "anclas": [
+   "Alfombra Baño Shaggy Flecos Premium 40 X 60 Blanco",
+   "Canasto Cesto Ropa Sucia Bambu Plegable Asas Organizador Mar"
+  ],
+  "id": "O2",
+  "que_traer": "Deshumidificador pasivo reutilizable: absorbedor de humedad con perlas de sílica que se regeneran al secarse, para baños, lavaderos y placares",
+  "busqueda_ml": "deshumidificador reutilizable para baño",
+  "estado": "descartada",
+  "se_detiene_en": "C4 hueco",
+  "motivo": "ya atendido: 3 equivalentes venden +100",
+  "señales": [
+   {
+    "id": "E018.S6",
+    "descripcion": "Necesita que absorba y seque rápido para no quedar húmeda ni tomar olor, con una tela que aguante el uso diario",
+    "errores": [],
+    "medida": {
+     "menciones": 4,
+     "insatisfechas": 2,
+     "de_textos": 34,
+     "importancia": 10.0,
+     "satisfaccion": 5.0,
+     "puntaje_oportunidad": 15.0
+    }
+   },
+   {
+    "id": "E020.S2",
+    "descripcion": "Antes de comprar quiere saber de qué material es la base y si resiste la humedad.",
+    "errores": [],
+    "medida": {
+     "menciones": 4,
+     "insatisfechas": 4,
+     "de_textos": 29,
+     "importancia": 10.0,
+     "satisfaccion": 0.0,
+     "puntaje_oportunidad": 20.0
+    }
+   }
+  ],
+  "recorrido": [
+   {
+    "chequeo": "guardrail",
+    "supuesto": "Lo que dice el LLM está en los textos",
+    "pasa": true,
+    "motivo": "citas verificadas"
+   },
+   {
+    "chequeo": "C1 verificada",
+    "supuesto": "La necesidad no es un caso aislado",
+    "pasa": true,
+    "motivo": "la señal aparece en 4 textos (mínimo 3)"
+   },
+   {
+    "chequeo": "C2 sub-atendida",
+    "supuesto": "La necesidad importa y está mal resuelta",
+    "pasa": true,
+    "motivo": "importancia 10.0, satisfacción 5.0 (hace falta ≥ 3.0 y ≤ 5.0)"
+   },
+   {
+    "chequeo": "C3 demanda",
+    "supuesto": "Hay gente eligiendo el producto de origen",
+    "pasa": true,
+    "motivo": "el producto ancla vende +10000 (mínimo 500)"
+   },
+   {
+    "chequeo": "C4 hueco",
+    "supuesto": "Nadie la atiende todavía",
+    "pasa": false,
+    "motivo": "ya atendido: 3 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 12,
+     "venden": 3,
+     "con_alguna_venta": 7,
+     "ventas_visibles": 875,
+     "ejemplos_que_venden": [
+      "Deshumidificador De 3.8l Modelo Grande Quitar Humedad Hogar Blanco (+500, $320,100)",
+      "Deshumidificador De Ambiente Humedad 1l Bajo Ruido Led Rgb (+100, $169,600)",
+      "Deshumidificador Maquina Quitar Humedad Fácil Uso 3 Botones (+100, $157,990)"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "metodo": "llm",
+  "productos": [
+   "E067",
+   "E017"
+  ],
+  "anclas": [
+   "Funda Cubre Asiento Para Auto Equip",
+   "Alfombra Shaggy Rectangular Antideslizante 60x40 Cm"
+  ],
+  "id": "O3",
+  "que_traer": "Rodillo quitapelusa reutilizable de goma (sin cinta adhesiva que se gasta) para tapizados, alfombras y fundas con pelo de mascota",
+  "busqueda_ml": "quitapelusa reutilizable para telas",
+  "estado": "descartada",
+  "se_detiene_en": "C5 la eligen",
+  "motivo": "la gente la deja pasar: 3 alternativas con stock local a precio comparable suman +0 ventas contra +10000 del producto de origen",
+  "señales": [
+   {
+    "id": "E067.S3",
+    "descripcion": "Quiere una tela más gruesa y de superficie que no atrape pelos, pelusas ni ropa, especialmente con mascotas",
+    "errores": [],
+    "medida": {
+     "menciones": 18,
+     "insatisfechas": 12,
+     "de_textos": 220,
+     "importancia": 8.2,
+     "satisfaccion": 3.3,
+     "puntaje_oportunidad": 13.1
+    }
+   },
+   {
+    "id": "E017.S2",
+    "descripcion": "Quiere que la alfombra sirva más allá del baño: pie de cama, living/comedor e incluso como base para mascotas",
+    "errores": [],
+    "medida": {
+     "menciones": 3,
+     "insatisfechas": 0,
+     "de_textos": 19,
+     "importancia": 10.0,
+     "satisfaccion": 10.0,
+     "puntaje_oportunidad": 10.0
+    }
+   }
+  ],
+  "recorrido": [
+   {
+    "chequeo": "guardrail",
+    "supuesto": "Lo que dice el LLM está en los textos",
+    "pasa": true,
+    "motivo": "citas verificadas"
+   },
+   {
+    "chequeo": "C1 verificada",
+    "supuesto": "La necesidad no es un caso aislado",
+    "pasa": true,
+    "motivo": "la señal aparece en 18 textos (mínimo 3)"
+   },
+   {
+    "chequeo": "C2 sub-atendida",
+    "supuesto": "La necesidad importa y está mal resuelta",
+    "pasa": true,
+    "motivo": "importancia 8.2, satisfacción 3.3 (hace falta ≥ 3.0 y ≤ 5.0)"
+   },
+   {
+    "chequeo": "C3 demanda",
+    "supuesto": "Hay gente eligiendo el producto de origen",
+    "pasa": true,
+    "motivo": "el producto ancla vende +10000 (mínimo 500)"
+   },
+   {
+    "chequeo": "C4 hueco",
+    "supuesto": "Nadie la atiende todavía",
+    "pasa": true,
+    "motivo": "4 equivalentes, 0 venden +100",
+    "datos": {
+     "equivalentes": 4,
+     "venden": 0,
+     "con_alguna_venta": 0,
+     "ventas_visibles": 0,
+     "ejemplos_que_venden": []
+    }
+   },
+   {
+    "chequeo": "C5 la eligen",
+    "supuesto": "Si se ofrece, la gente la elige",
+    "pasa": false,
+    "motivo": "la gente la deja pasar: 3 alternativas con stock local a precio comparable suman +0 ventas contra +10000 del producto de origen",
+    "datos": {
+     "comparables": 3,
+     "ventas_comparables": 0,
+     "ventas_del_ancla": 10000
+    }
+   }
+  ]
+ },
+ {
+  "metodo": "llm",
+  "productos": [
+   "E049",
+   "E051",
+   "E050"
+  ],
+  "anclas": [
+   "Colchoneta Gimnasia Fitness Gym Yoga con Cierre 1m*40cm*3cm ",
+   "Fit Mark Soga Speed Rope Ajustable Rulemanes Boxeo",
+   "Kit De Bandas Elasticas Pilates Entrenamiento Gym Fitness Ve"
+  ],
+  "id": "O1b",
+  "que_traer": "Piso de goma EVA ensamblable (losetas encastrables) para armar un área de entrenamiento y juego en casa",
+  "busqueda_ml": "piso goma eva encastrable gimnasio casa",
+  "estado": "descartada",
+  "se_detiene_en": "C4 hueco",
+  "motivo": "ya atendido: 19 equivalentes venden +100",
+  "señales": [
+   {
+    "id": "E049.S2",
+    "descripcion": "quiere un relleno más confortable y que no se hunda bajo codos o rodillas; nota que es duro y de baja calidad, pero lo acepta por precio",
+    "errores": [],
+    "medida": {
+     "menciones": 9,
+     "insatisfechas": 7,
+     "de_textos": 214,
+     "importancia": 4.2,
+     "satisfaccion": 2.2,
+     "puntaje_oportunidad": 6.2
+    }
+   },
+   {
+    "id": "E051.S3",
+    "descripcion": "Necesita que la soga aguante el roce con el suelo real donde entrena (cemento, asfalto, pasto) sin pelarse ni desgastarse",
+    "errores": [],
+    "medida": {
+     "menciones": 3,
+     "insatisfechas": 2,
+     "de_textos": 210,
+     "importancia": 1.4,
+     "satisfaccion": 3.3,
+     "puntaje_oportunidad": 1.4
+    }
+   },
+   {
+    "id": "E050.S2",
+    "descripcion": "Necesita agarres y tobilleras que no se suelten al tirar; duda de la seguridad del velcro/abrojo durante el ejercicio.",
+    "errores": [],
+    "medida": {
+     "menciones": 11,
+     "insatisfechas": 6,
+     "de_textos": 220,
+     "importancia": 5.0,
+     "satisfaccion": 4.5,
+     "puntaje_oportunidad": 5.5
+    }
+   }
+  ],
+  "recorrido": [
+   {
+    "chequeo": "guardrail",
+    "supuesto": "Lo que dice el LLM está en los textos",
+    "pasa": true,
+    "motivo": "citas verificadas"
+   },
+   {
+    "chequeo": "C1 verificada",
+    "supuesto": "La necesidad no es un caso aislado",
+    "pasa": true,
+    "motivo": "la señal aparece en 11 textos (mínimo 3)"
+   },
+   {
+    "chequeo": "C2 sub-atendida",
+    "supuesto": "La necesidad importa y está mal resuelta",
+    "pasa": true,
+    "motivo": "importancia 4.2, satisfacción 2.2 (hace falta ≥ 3.0 y ≤ 5.0)"
+   },
+   {
+    "chequeo": "C3 demanda",
+    "supuesto": "Hay gente eligiendo el producto de origen",
+    "pasa": true,
+    "motivo": "el producto ancla vende +10000 (mínimo 500)"
+   },
+   {
+    "chequeo": "C4 hueco",
+    "supuesto": "Nadie la atiende todavía",
+    "pasa": false,
+    "motivo": "ya atendido: 19 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 40,
+     "venden": 19,
+     "con_alguna_venta": 24,
+     "ventas_visibles": 15300,
+     "ejemplos_que_venden": [
+      "Piso Encastrable Goma Eva Con Bordes Fitness 1x1mts X10mm (+5000, $21,290)",
+      "Piso Goma EVA Encastrable 100x100x11mm Negro MW PISOS Antideslizante (+1000, $22,507)",
+      "Piso Goma Eva Encastrable Bebé Gimnasio Gym 60x60 22mm Px4 (+1000, $76,430)"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "metodo": "llm",
+  "productos": [
+   "E010",
+   "E029"
+  ],
+  "anclas": [
+   "Sarten Doble 24 Cm Antiadherente Hudson CP-24 Tortilla Papa ",
+   "Dispensador Rociador X 2 Pulverizador Aceite Spray Oliva Veo"
+  ],
+  "id": "O2b",
+  "que_traer": "Lámina/manta de silicona antiadherente reutilizable para horno y freidora de aire",
+  "busqueda_ml": "lamina silicona horno reutilizable air fryer",
+  "estado": "descartada",
+  "se_detiene_en": "C4 hueco",
+  "motivo": "ya atendido: 3 equivalentes venden +100",
+  "señales": [
+   {
+    "id": "E010.S3",
+    "descripcion": "Busca cocinar con menos grasa y comidas más saludables sin que se pegue",
+    "errores": [],
+    "medida": {
+     "menciones": 3,
+     "insatisfechas": 2,
+     "de_textos": 16,
+     "importancia": 10.0,
+     "satisfaccion": 3.3,
+     "puntaje_oportunidad": 16.7
+    }
+   },
+   {
+    "id": "E029.S4",
+    "descripcion": "Lo usa para mucho más que aceite de oliva: freidora de aire, moldes de repostería y hasta productos cosméticos",
+    "errores": [],
+    "medida": {
+     "menciones": 7,
+     "insatisfechas": 2,
+     "de_textos": 220,
+     "importancia": 3.2,
+     "satisfaccion": 7.1,
+     "puntaje_oportunidad": 3.2
+    }
+   }
+  ],
+  "recorrido": [
+   {
+    "chequeo": "guardrail",
+    "supuesto": "Lo que dice el LLM está en los textos",
+    "pasa": true,
+    "motivo": "citas verificadas"
+   },
+   {
+    "chequeo": "C1 verificada",
+    "supuesto": "La necesidad no es un caso aislado",
+    "pasa": true,
+    "motivo": "la señal aparece en 7 textos (mínimo 3)"
+   },
+   {
+    "chequeo": "C2 sub-atendida",
+    "supuesto": "La necesidad importa y está mal resuelta",
+    "pasa": true,
+    "motivo": "importancia 10.0, satisfacción 3.3 (hace falta ≥ 3.0 y ≤ 5.0)"
+   },
+   {
+    "chequeo": "C3 demanda",
+    "supuesto": "Hay gente eligiendo el producto de origen",
+    "pasa": true,
+    "motivo": "el producto ancla vende +10000 (mínimo 500)"
+   },
+   {
+    "chequeo": "C4 hueco",
+    "supuesto": "Nadie la atiende todavía",
+    "pasa": false,
+    "motivo": "ya atendido: 3 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 6,
+     "venden": 3,
+     "con_alguna_venta": 4,
+     "ventas_visibles": 2025,
+     "ejemplos_que_venden": [
+      "Lámina Antiadherente de Silicona para Hornear, Pack de 2, Veoquiero (+1000, $14,549)",
+      "Lamina Hornear Mat Silicona Set X2 Placa Horno Veoquiero Bordó Redonda (+500, $14,549)",
+      "Lamina Para Hornear Veoquiero Placa Silicona Horno Bordó Redonda Veoqu (+500, $7,759)"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "metodo": "llm",
+  "productos": [
+   "E036",
+   "E038"
+  ],
+  "anclas": [
+   "Bebedero Fuente Para Beber Automático Gadnic Recirculación d",
+   "Plato Perro Gato Alimento Juguete Interactivo Premio Olfato"
+  ],
+  "id": "O3b",
+  "que_traer": "Tapete de forrajeo (snuffle mat) para que perros y gatos trabajen su comida olfateando",
+  "busqueda_ml": "tapete olfativo snuffle mat perro gato",
+  "estado": "descartada",
+  "se_detiene_en": "C2 sub-atendida",
+  "motivo": "importancia 10.0, satisfacción 7.0 (hace falta ≥ 3.0 y ≤ 5.0)",
+  "señales": [
+   {
+    "id": "E036.S5",
+    "descripcion": "prefiere agua en movimiento con caída tipo canilla, porque es la forma en que los animales ya buscan tomar y lo que logra que tomen más",
+    "errores": [],
+    "medida": {
+     "menciones": 23,
+     "insatisfechas": 7,
+     "de_textos": 216,
+     "importancia": 10.0,
+     "satisfaccion": 7.0,
+     "puntaje_oportunidad": 13.0
+    }
+   },
+   {
+    "id": "E038.S6",
+    "descripcion": "quiere que el juguete cumpla una función además de entretener: estimular mentalmente al animal y ayudarlo a bajar la ansiedad cuando queda solo",
+    "errores": [],
+    "medida": {
+     "menciones": 5,
+     "insatisfechas": 3,
+     "de_textos": 180,
+     "importancia": 2.8,
+     "satisfaccion": 4.0,
+     "puntaje_oportunidad": 2.8
+    }
+   }
+  ],
+  "recorrido": [
+   {
+    "chequeo": "guardrail",
+    "supuesto": "Lo que dice el LLM está en los textos",
+    "pasa": true,
+    "motivo": "citas verificadas"
+   },
+   {
+    "chequeo": "C1 verificada",
+    "supuesto": "La necesidad no es un caso aislado",
+    "pasa": true,
+    "motivo": "la señal aparece en 23 textos (mínimo 3)"
+   },
+   {
+    "chequeo": "C2 sub-atendida",
+    "supuesto": "La necesidad importa y está mal resuelta",
+    "pasa": false,
+    "motivo": "importancia 10.0, satisfacción 7.0 (hace falta ≥ 3.0 y ≤ 5.0)"
+   }
+  ]
+ },
+ {
+  "metodo": "B1",
+  "productos": [
+   "E001"
+  ],
+  "anclas": [
+   "Mate Clasico De Acero Inoxidable Uso Extremo Thermio Termico"
+  ],
+  "id": "B1",
+  "que_traer": "versión del producto ancla que resuelva la queja 'mate'",
+  "busqueda_ml": "mate de acero termico",
+  "estado": "descartada",
+  "se_detiene_en": "C2 sub-atendida",
+  "motivo": "importancia 10.0, satisfacción 6.0 (hace falta ≥ 3.0 y ≤ 5.0)",
+  "señales": [
+   {
+    "id": "E001.B1",
+    "descripcion": "queja más frecuente: 'mate'",
+    "errores": [],
+    "medida": {
+     "menciones": 89,
+     "insatisfechas": 36,
+     "de_textos": 206,
+     "importancia": 10.0,
+     "satisfaccion": 6.0,
+     "puntaje_oportunidad": 14.0
+    }
+   }
+  ],
+  "recorrido": [
+   {
+    "chequeo": "guardrail",
+    "supuesto": "Lo que dice el LLM está en los textos",
+    "pasa": true,
+    "motivo": "los baselines no citan textos"
+   },
+   {
+    "chequeo": "C1 verificada",
+    "supuesto": "La necesidad no es un caso aislado",
+    "pasa": true,
+    "motivo": "la señal aparece en 89 textos (mínimo 3)"
+   },
+   {
+    "chequeo": "C2 sub-atendida",
+    "supuesto": "La necesidad importa y está mal resuelta",
+    "pasa": false,
+    "motivo": "importancia 10.0, satisfacción 6.0 (hace falta ≥ 3.0 y ≤ 5.0)"
+   }
+  ]
+ },
+ {
+  "metodo": "B1",
+  "productos": [
+   "E002"
+  ],
+  "anclas": [
+   "Mate Listo Autocebante+termo Acero 500ml Pico Cebador Termic"
+  ],
+  "id": "B1",
+  "que_traer": "versión del producto ancla que resuelva la queja 'agua'",
+  "busqueda_ml": "mate de acero termico",
+  "estado": "descartada",
+  "se_detiene_en": "C2 sub-atendida",
+  "motivo": "importancia 10.0, satisfacción 8.0 (hace falta ≥ 3.0 y ≤ 5.0)",
+  "señales": [
+   {
+    "id": "E002.B1",
+    "descripcion": "queja más frecuente: 'agua'",
+    "errores": [],
+    "medida": {
+     "menciones": 49,
+     "insatisfechas": 10,
+     "de_textos": 201,
+     "importancia": 10.0,
+     "satisfaccion": 8.0,
+     "puntaje_oportunidad": 12.0
+    }
+   }
+  ],
+  "recorrido": [
+   {
+    "chequeo": "guardrail",
+    "supuesto": "Lo que dice el LLM está en los textos",
+    "pasa": true,
+    "motivo": "los baselines no citan textos"
+   },
+   {
+    "chequeo": "C1 verificada",
+    "supuesto": "La necesidad no es un caso aislado",
+    "pasa": true,
+    "motivo": "la señal aparece en 49 textos (mínimo 3)"
+   },
+   {
+    "chequeo": "C2 sub-atendida",
+    "supuesto": "La necesidad importa y está mal resuelta",
+    "pasa": false,
+    "motivo": "importancia 10.0, satisfacción 8.0 (hace falta ≥ 3.0 y ≤ 5.0)"
+   }
+  ]
+ },
+ {
+  "metodo": "B1",
+  "productos": [
+   "E003"
+  ],
+  "anclas": [
+   "Molinillo de café semillas y especias Yelmo Mo-7100 150w Alu"
+  ],
+  "id": "B1",
+  "que_traer": "versión del producto ancla que resuelva la queja 'cafe'",
+  "busqueda_ml": "molinillo de cafe manual",
+  "estado": "descartada",
+  "se_detiene_en": "C4 hueco",
+  "motivo": "ya atendido: 29 equivalentes venden +100",
+  "señales": [
+   {
+    "id": "E003.B1",
+    "descripcion": "queja más frecuente: 'cafe'",
+    "errores": [],
+    "medida": {
+     "menciones": 48,
+     "insatisfechas": 24,
+     "de_textos": 220,
+     "importancia": 10.0,
+     "satisfaccion": 5.0,
+     "puntaje_oportunidad": 15.0
+    }
+   }
+  ],
+  "recorrido": [
+   {
+    "chequeo": "guardrail",
+    "supuesto": "Lo que dice el LLM está en los textos",
+    "pasa": true,
+    "motivo": "los baselines no citan textos"
+   },
+   {
+    "chequeo": "C1 verificada",
+    "supuesto": "La necesidad no es un caso aislado",
+    "pasa": true,
+    "motivo": "la señal aparece en 48 textos (mínimo 3)"
+   },
+   {
+    "chequeo": "C2 sub-atendida",
+    "supuesto": "La necesidad importa y está mal resuelta",
+    "pasa": true,
+    "motivo": "importancia 10.0, satisfacción 5.0 (hace falta ≥ 3.0 y ≤ 5.0)"
+   },
+   {
+    "chequeo": "C3 demanda",
+    "supuesto": "Hay gente eligiendo el producto de origen",
+    "pasa": true,
+    "motivo": "el producto ancla vende +10000 (mínimo 500)"
+   },
+   {
+    "chequeo": "C4 hueco",
+    "supuesto": "Nadie la atiende todavía",
+    "pasa": false,
+    "motivo": "ya atendido: 29 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 55,
+     "venden": 29,
+     "con_alguna_venta": 37,
+     "ventas_visibles": 24525,
+     "ejemplos_que_venden": [
+      "Molinillo de Café Manual Gadnic C10 Con Regulador de Molida (+5000, $65,137)",
+      "Molinillo Electrico Cafe Granos Semillas 150w Acero Inox Color Platead (+5000, $14,549)",
+      "Molinillo Manual De Granos Cafe Semillas Cereales Plateado (+1000, $32,700)"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "metodo": "B1",
+  "productos": [
+   "E004"
+  ],
+  "anclas": [
+   "Molinillo De Cafe Gadnic Manual Acero Inoxidable 40g Compact"
+  ],
+  "id": "B1",
+  "que_traer": "versión del producto ancla que resuelva la queja 'cafe'",
+  "busqueda_ml": "molinillo de cafe manual",
+  "estado": "descartada",
+  "se_detiene_en": "C4 hueco",
+  "motivo": "ya atendido: 29 equivalentes venden +100",
+  "señales": [
+   {
+    "id": "E004.B1",
+    "descripcion": "queja más frecuente: 'cafe'",
+    "errores": [],
+    "medida": {
+     "menciones": 47,
+     "insatisfechas": 24,
+     "de_textos": 117,
+     "importancia": 10.0,
+     "satisfaccion": 4.9,
+     "puntaje_oportunidad": 15.1
+    }
+   }
+  ],
+  "recorrido": [
+   {
+    "chequeo": "guardrail",
+    "supuesto": "Lo que dice el LLM está en los textos",
+    "pasa": true,
+    "motivo": "los baselines no citan textos"
+   },
+   {
+    "chequeo": "C1 verificada",
+    "supuesto": "La necesidad no es un caso aislado",
+    "pasa": true,
+    "motivo": "la señal aparece en 47 textos (mínimo 3)"
+   },
+   {
+    "chequeo": "C2 sub-atendida",
+    "supuesto": "La necesidad importa y está mal resuelta",
+    "pasa": true,
+    "motivo": "importancia 10.0, satisfacción 4.9 (hace falta ≥ 3.0 y ≤ 5.0)"
+   },
+   {
+    "chequeo": "C3 demanda",
+    "supuesto": "Hay gente eligiendo el producto de origen",
+    "pasa": true,
+    "motivo": "el producto ancla vende +5000 (mínimo 500)"
+   },
+   {
+    "chequeo": "C4 hueco",
+    "supuesto": "Nadie la atiende todavía",
+    "pasa": false,
+    "motivo": "ya atendido: 29 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 55,
+     "venden": 29,
+     "con_alguna_venta": 37,
+     "ventas_visibles": 24525,
+     "ejemplos_que_venden": [
+      "Molinillo de Café Manual Gadnic C10 Con Regulador de Molida (+5000, $65,137)",
+      "Molinillo Electrico Cafe Granos Semillas 150w Acero Inox Color Platead (+5000, $14,549)",
+      "Molinillo Manual De Granos Cafe Semillas Cereales Plateado (+1000, $32,700)"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "metodo": "B1",
+  "productos": [
+   "E005"
+  ],
+  "anclas": [
+   "Mandolina Picador Cortador Rallador Vegetales Papa Veoquiero"
+  ],
+  "id": "B1",
+  "que_traer": "versión del producto ancla que resuelva la queja 'hola'",
+  "busqueda_ml": "rallador de cocina",
+  "estado": "descartada",
+  "se_detiene_en": "C4 hueco",
+  "motivo": "ya atendido: 35 equivalentes venden +100",
+  "señales": [
+   {
+    "id": "E005.B1",
+    "descripcion": "queja más frecuente: 'hola'",
+    "errores": [],
+    "medida": {
+     "menciones": 20,
+     "insatisfechas": 10,
+     "de_textos": 35,
+     "importancia": 10.0,
+     "satisfaccion": 5.0,
+     "puntaje_oportunidad": 15.0
+    }
+   }
+  ],
+  "recorrido": [
+   {
+    "chequeo": "guardrail",
+    "supuesto": "Lo que dice el LLM está en los textos",
+    "pasa": true,
+    "motivo": "los baselines no citan textos"
+   },
+   {
+    "chequeo": "C1 verificada",
+    "supuesto": "La necesidad no es un caso aislado",
+    "pasa": true,
+    "motivo": "la señal aparece en 20 textos (mínimo 3)"
+   },
+   {
+    "chequeo": "C2 sub-atendida",
+    "supuesto": "La necesidad importa y está mal resuelta",
+    "pasa": true,
+    "motivo": "importancia 10.0, satisfacción 5.0 (hace falta ≥ 3.0 y ≤ 5.0)"
+   },
+   {
+    "chequeo": "C3 demanda",
+    "supuesto": "Hay gente eligiendo el producto de origen",
+    "pasa": true,
+    "motivo": "el producto ancla vende +10000 (mínimo 500)"
+   },
+   {
+    "chequeo": "C4 hueco",
+    "supuesto": "Nadie la atiende todavía",
+    "pasa": false,
+    "motivo": "ya atendido: 35 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 58,
+     "venden": 35,
+     "con_alguna_venta": 45,
+     "ventas_visibles": 30850,
+     "ejemplos_que_venden": [
+      "Mandolina Filoshark Cortador Picador Verdura Tupper Rallador Color Bla (+5000, $42,999)",
+      "Mandolina Filoshark Premium Picadora Verdura Rallador Color Blanco (+5000, $49,850)",
+      "Cortador Rallador Molinillo Manual Libercam RRAL-01 Queso Verduras Col (+5000, $21,299)"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "metodo": "B1",
+  "productos": [
+   "E006"
+  ],
+  "anclas": [
+   "Cortador Mandolina Rallador Multiples Vegetal+taper+colador"
+  ],
+  "id": "B1",
+  "que_traer": "versión del producto ancla que resuelva la queja 'corta'",
+  "busqueda_ml": "rallador de cocina",
+  "estado": "descartada",
+  "se_detiene_en": "C4 hueco",
+  "motivo": "ya atendido: 35 equivalentes venden +100",
+  "señales": [
+   {
+    "id": "E006.B1",
+    "descripcion": "queja más frecuente: 'corta'",
+    "errores": [],
+    "medida": {
+     "menciones": 9,
+     "insatisfechas": 5,
+     "de_textos": 19,
+     "importancia": 10.0,
+     "satisfaccion": 4.4,
+     "puntaje_oportunidad": 15.6
+    }
+   }
+  ],
+  "recorrido": [
+   {
+    "chequeo": "guardrail",
+    "supuesto": "Lo que dice el LLM está en los textos",
+    "pasa": true,
+    "motivo": "los baselines no citan textos"
+   },
+   {
+    "chequeo": "C1 verificada",
+    "supuesto": "La necesidad no es un caso aislado",
+    "pasa": true,
+    "motivo": "la señal aparece en 9 textos (mínimo 3)"
+   },
+   {
+    "chequeo": "C2 sub-atendida",
+    "supuesto": "La necesidad importa y está mal resuelta",
+    "pasa": true,
+    "motivo": "importancia 10.0, satisfacción 4.4 (hace falta ≥ 3.0 y ≤ 5.0)"
+   },
+   {
+    "chequeo": "C3 demanda",
+    "supuesto": "Hay gente eligiendo el producto de origen",
+    "pasa": true,
+    "motivo": "el producto ancla vende +10000 (mínimo 500)"
+   },
+   {
+    "chequeo": "C4 hueco",
+    "supuesto": "Nadie la atiende todavía",
+    "pasa": false,
+    "motivo": "ya atendido: 35 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 58,
+     "venden": 35,
+     "con_alguna_venta": 45,
+     "ventas_visibles": 30850,
+     "ejemplos_que_venden": [
+      "Mandolina Filoshark Cortador Picador Verdura Tupper Rallador Color Bla (+5000, $42,999)",
+      "Mandolina Filoshark Premium Picadora Verdura Rallador Color Blanco (+5000, $49,850)",
+      "Cortador Rallador Molinillo Manual Libercam RRAL-01 Queso Verduras Col (+5000, $21,299)"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "metodo": "B1",
+  "productos": [
+   "E009"
+  ],
+  "anclas": [
+   "Sarten Doble Tramontina Linea Loreto 20 Cm Color Gris oscuro"
+  ],
+  "id": "B1",
+  "que_traer": "versión del producto ancla que resuelva la queja 'buena'",
+  "busqueda_ml": "sarten antiadherente",
+  "estado": "descartada",
+  "se_detiene_en": "C4 hueco",
+  "motivo": "ya atendido: 40 equivalentes venden +100",
+  "señales": [
+   {
+    "id": "E009.B1",
+    "descripcion": "queja más frecuente: 'buena'",
+    "errores": [],
+    "medida": {
+     "menciones": 9,
+     "insatisfechas": 5,
+     "de_textos": 47,
+     "importancia": 10.0,
+     "satisfaccion": 4.4,
+     "puntaje_oportunidad": 15.6
+    }
+   }
+  ],
+  "recorrido": [
+   {
+    "chequeo": "guardrail",
+    "supuesto": "Lo que dice el LLM está en los textos",
+    "pasa": true,
+    "motivo": "los baselines no citan textos"
+   },
+   {
+    "chequeo": "C1 verificada",
+    "supuesto": "La necesidad no es un caso aislado",
+    "pasa": true,
+    "motivo": "la señal aparece en 9 textos (mínimo 3)"
+   },
+   {
+    "chequeo": "C2 sub-atendida",
+    "supuesto": "La necesidad importa y está mal resuelta",
+    "pasa": true,
+    "motivo": "importancia 10.0, satisfacción 4.4 (hace falta ≥ 3.0 y ≤ 5.0)"
+   },
+   {
+    "chequeo": "C3 demanda",
+    "supuesto": "Hay gente eligiendo el producto de origen",
+    "pasa": true,
+    "motivo": "el producto ancla vende +10000 (mínimo 500)"
+   },
+   {
+    "chequeo": "C4 hueco",
+    "supuesto": "Nadie la atiende todavía",
+    "pasa": false,
+    "motivo": "ya atendido: 40 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 58,
+     "venden": 40,
+     "con_alguna_venta": 54,
+     "ventas_visibles": 37200,
+     "ejemplos_que_venden": [
+      "Juego de sartenes Tramontina Linz 3 Piezas Teflon Antiadherente Color  (+5000, $32,999)",
+      "Set Olla Cacerola Sarten Teflon Hudson Bateria Aluminio Bz3 (+5000, $93,546)",
+      "Sarten Hudson Granito Stone Aluminio Forjado 24cm Inducción Color Gris (+5000, $46,620)"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "metodo": "B1",
+  "productos": [
+   "E010"
+  ],
+  "anclas": [
+   "Sarten Doble 24 Cm Antiadherente Hudson CP-24 Tortilla Papa "
+  ],
+  "id": "B1",
+  "que_traer": "versión del producto ancla que resuelva la queja 'sarten'",
+  "busqueda_ml": "sarten antiadherente",
+  "estado": "descartada",
+  "se_detiene_en": "C4 hueco",
+  "motivo": "ya atendido: 40 equivalentes venden +100",
+  "señales": [
+   {
+    "id": "E010.B1",
+    "descripcion": "queja más frecuente: 'sarten'",
+    "errores": [],
+    "medida": {
+     "menciones": 6,
+     "insatisfechas": 3,
+     "de_textos": 16,
+     "importancia": 10.0,
+     "satisfaccion": 5.0,
+     "puntaje_oportunidad": 15.0
+    }
+   }
+  ],
+  "recorrido": [
+   {
+    "chequeo": "guardrail",
+    "supuesto": "Lo que dice el LLM está en los textos",
+    "pasa": true,
+    "motivo": "los baselines no citan textos"
+   },
+   {
+    "chequeo": "C1 verificada",
+    "supuesto": "La necesidad no es un caso aislado",
+    "pasa": true,
+    "motivo": "la señal aparece en 6 textos (mínimo 3)"
+   },
+   {
+    "chequeo": "C2 sub-atendida",
+    "supuesto": "La necesidad importa y está mal resuelta",
+    "pasa": true,
+    "motivo": "importancia 10.0, satisfacción 5.0 (hace falta ≥ 3.0 y ≤ 5.0)"
+   },
+   {
+    "chequeo": "C3 demanda",
+    "supuesto": "Hay gente eligiendo el producto de origen",
+    "pasa": true,
+    "motivo": "el producto ancla vende +10000 (mínimo 500)"
+   },
+   {
+    "chequeo": "C4 hueco",
+    "supuesto": "Nadie la atiende todavía",
+    "pasa": false,
+    "motivo": "ya atendido: 40 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 58,
+     "venden": 40,
+     "con_alguna_venta": 54,
+     "ventas_visibles": 37200,
+     "ejemplos_que_venden": [
+      "Juego de sartenes Tramontina Linz 3 Piezas Teflon Antiadherente Color  (+5000, $32,999)",
+      "Set Olla Cacerola Sarten Teflon Hudson Bateria Aluminio Bz3 (+5000, $93,546)",
+      "Sarten Hudson Granito Stone Aluminio Forjado 24cm Inducción Color Gris (+5000, $46,620)"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "metodo": "B1",
+  "productos": [
+   "E015"
+  ],
+  "anclas": [
+   "Juego De Cortinas Blackout Textil Presillas Ocultas Oferta!"
+  ],
+  "id": "B1",
+  "que_traer": "versión del producto ancla que resuelva la queja 'tela'",
+  "busqueda_ml": "cortina blackout",
+  "estado": "descartada",
+  "se_detiene_en": "C4 hueco",
+  "motivo": "ya atendido: 49 equivalentes venden +100",
+  "señales": [
+   {
+    "id": "E015.B1",
+    "descripcion": "queja más frecuente: 'tela'",
+    "errores": [],
+    "medida": {
+     "menciones": 24,
+     "insatisfechas": 18,
+     "de_textos": 32,
+     "importancia": 10.0,
+     "satisfaccion": 2.5,
+     "puntaje_oportunidad": 17.5
+    }
+   }
+  ],
+  "recorrido": [
+   {
+    "chequeo": "guardrail",
+    "supuesto": "Lo que dice el LLM está en los textos",
+    "pasa": true,
+    "motivo": "los baselines no citan textos"
+   },
+   {
+    "chequeo": "C1 verificada",
+    "supuesto": "La necesidad no es un caso aislado",
+    "pasa": true,
+    "motivo": "la señal aparece en 24 textos (mínimo 3)"
+   },
+   {
+    "chequeo": "C2 sub-atendida",
+    "supuesto": "La necesidad importa y está mal resuelta",
+    "pasa": true,
+    "motivo": "importancia 10.0, satisfacción 2.5 (hace falta ≥ 3.0 y ≤ 5.0)"
+   },
+   {
+    "chequeo": "C3 demanda",
+    "supuesto": "Hay gente eligiendo el producto de origen",
+    "pasa": true,
+    "motivo": "el producto ancla vende +100000 (mínimo 500)"
+   },
+   {
+    "chequeo": "C4 hueco",
+    "supuesto": "Nadie la atiende todavía",
+    "pasa": false,
+    "motivo": "ya atendido: 49 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 61,
+     "venden": 49,
+     "con_alguna_venta": 57,
+     "ventas_visibles": 183275,
+     "ejemplos_que_venden": [
+      "Cortina Blackout Textil Vinilico 2,10x1,40m 2 Paños P/colgar (+50000, $32,990)",
+      "Cortinas Blackout 100%  Presillas Ocultas 2 Paños Tricapa (+10000, $26,181)",
+      "Cortina Blackout Premium 140x220cm Lisa Tapa Oscuridad 100 % (+10000, $32,823)"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "metodo": "B1",
+  "productos": [
+   "E016"
+  ],
+  "anclas": [
+   "Cortina Blackout Textil 2 Paños 1,40 X 2,20 Presilla Oculta"
+  ],
+  "id": "B1",
+  "que_traer": "versión del producto ancla que resuelva la queja 'compra'",
+  "busqueda_ml": "cortina blackout",
+  "estado": "descartada",
+  "se_detiene_en": "C4 hueco",
+  "motivo": "ya atendido: 49 equivalentes venden +100",
+  "señales": [
+   {
+    "id": "E016.B1",
+    "descripcion": "queja más frecuente: 'compra'",
+    "errores": [],
+    "medida": {
+     "menciones": 22,
+     "insatisfechas": 18,
+     "de_textos": 33,
+     "importancia": 10.0,
+     "satisfaccion": 1.8,
+     "puntaje_oportunidad": 18.2
+    }
+   }
+  ],
+  "recorrido": [
+   {
+    "chequeo": "guardrail",
+    "supuesto": "Lo que dice el LLM está en los textos",
+    "pasa": true,
+    "motivo": "los baselines no citan textos"
+   },
+   {
+    "chequeo": "C1 verificada",
+    "supuesto": "La necesidad no es un caso aislado",
+    "pasa": true,
+    "motivo": "la señal aparece en 22 textos (mínimo 3)"
+   },
+   {
+    "chequeo": "C2 sub-atendida",
+    "supuesto": "La necesidad importa y está mal resuelta",
+    "pasa": true,
+    "motivo": "importancia 10.0, satisfacción 1.8 (hace falta ≥ 3.0 y ≤ 5.0)"
+   },
+   {
+    "chequeo": "C3 demanda",
+    "supuesto": "Hay gente eligiendo el producto de origen",
+    "pasa": true,
+    "motivo": "el producto ancla vende +50000 (mínimo 500)"
+   },
+   {
+    "chequeo": "C4 hueco",
+    "supuesto": "Nadie la atiende todavía",
+    "pasa": false,
+    "motivo": "ya atendido: 49 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 61,
+     "venden": 49,
+     "con_alguna_venta": 57,
+     "ventas_visibles": 183275,
+     "ejemplos_que_venden": [
+      "Cortina Blackout Textil Vinilico 2,10x1,40m 2 Paños P/colgar (+50000, $32,990)",
+      "Cortinas Blackout 100%  Presillas Ocultas 2 Paños Tricapa (+10000, $26,181)",
+      "Cortina Blackout Premium 140x220cm Lisa Tapa Oscuridad 100 % (+10000, $32,823)"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "metodo": "B1",
+  "productos": [
+   "E017"
+  ],
+  "anclas": [
+   "Alfombra Shaggy Rectangular Antideslizante 60x40 Cm"
+  ],
+  "id": "B1",
+  "que_traer": "versión del producto ancla que resuelva la queja 'compradores'",
+  "busqueda_ml": "alfombra de baño",
+  "estado": "descartada",
+  "se_detiene_en": "C4 hueco",
+  "motivo": "ya atendido: 39 equivalentes venden +100",
+  "señales": [
+   {
+    "id": "E017.B1",
+    "descripcion": "queja más frecuente: 'compradores'",
+    "errores": [],
+    "medida": {
+     "menciones": 3,
+     "insatisfechas": 3,
+     "de_textos": 19,
+     "importancia": 10.0,
+     "satisfaccion": 0.0,
+     "puntaje_oportunidad": 20.0
+    }
+   }
+  ],
+  "recorrido": [
+   {
+    "chequeo": "guardrail",
+    "supuesto": "Lo que dice el LLM está en los textos",
+    "pasa": true,
+    "motivo": "los baselines no citan textos"
+   },
+   {
+    "chequeo": "C1 verificada",
+    "supuesto": "La necesidad no es un caso aislado",
+    "pasa": true,
+    "motivo": "la señal aparece en 3 textos (mínimo 3)"
+   },
+   {
+    "chequeo": "C2 sub-atendida",
+    "supuesto": "La necesidad importa y está mal resuelta",
+    "pasa": true,
+    "motivo": "importancia 10.0, satisfacción 0.0 (hace falta ≥ 3.0 y ≤ 5.0)"
+   },
+   {
+    "chequeo": "C3 demanda",
+    "supuesto": "Hay gente eligiendo el producto de origen",
+    "pasa": true,
+    "motivo": "el producto ancla vende +10000 (mínimo 500)"
+   },
+   {
+    "chequeo": "C4 hueco",
+    "supuesto": "Nadie la atiende todavía",
+    "pasa": false,
+    "motivo": "ya atendido: 39 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 58,
+     "venden": 39,
+     "con_alguna_venta": 45,
+     "ventas_visibles": 54875,
+     "ejemplos_que_venden": [
+      "Alfombra De Baño Bañera Antideslizante Para Ducha Grande (+10000, $9,559)",
+      "Alfombra De Baño Antideslizante Memory Foam Suave Absorbente, Conforta (+5000, $7,252)",
+      "Alfombra De Baño Antideslizante Memory Foam Suave Absorbente, Conforta (+5000, $7,799)"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "metodo": "B1",
+  "productos": [
+   "E018"
+  ],
+  "anclas": [
+   "Alfombra Baño Shaggy Flecos Premium 40 X 60 Blanco"
+  ],
+  "id": "B1",
+  "que_traer": "versión del producto ancla que resuelva la queja 'hola'",
+  "busqueda_ml": "alfombra de baño",
+  "estado": "descartada",
+  "se_detiene_en": "C4 hueco",
+  "motivo": "ya atendido: 39 equivalentes venden +100",
+  "señales": [
+   {
+    "id": "E018.B1",
+    "descripcion": "queja más frecuente: 'hola'",
+    "errores": [],
+    "medida": {
+     "menciones": 12,
+     "insatisfechas": 7,
+     "de_textos": 34,
+     "importancia": 10.0,
+     "satisfaccion": 4.2,
+     "puntaje_oportunidad": 15.8
+    }
+   }
+  ],
+  "recorrido": [
+   {
+    "chequeo": "guardrail",
+    "supuesto": "Lo que dice el LLM está en los textos",
+    "pasa": true,
+    "motivo": "los baselines no citan textos"
+   },
+   {
+    "chequeo": "C1 verificada",
+    "supuesto": "La necesidad no es un caso aislado",
+    "pasa": true,
+    "motivo": "la señal aparece en 12 textos (mínimo 3)"
+   },
+   {
+    "chequeo": "C2 sub-atendida",
+    "supuesto": "La necesidad importa y está mal resuelta",
+    "pasa": true,
+    "motivo": "importancia 10.0, satisfacción 4.2 (hace falta ≥ 3.0 y ≤ 5.0)"
+   },
+   {
+    "chequeo": "C3 demanda",
+    "supuesto": "Hay gente eligiendo el producto de origen",
+    "pasa": true,
+    "motivo": "el producto ancla vende +10000 (mínimo 500)"
+   },
+   {
+    "chequeo": "C4 hueco",
+    "supuesto": "Nadie la atiende todavía",
+    "pasa": false,
+    "motivo": "ya atendido: 39 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 58,
+     "venden": 39,
+     "con_alguna_venta": 45,
+     "ventas_visibles": 54875,
+     "ejemplos_que_venden": [
+      "Alfombra De Baño Bañera Antideslizante Para Ducha Grande (+10000, $9,559)",
+      "Alfombra De Baño Antideslizante Memory Foam Suave Absorbente, Conforta (+5000, $7,252)",
+      "Alfombra De Baño Antideslizante Memory Foam Suave Absorbente, Conforta (+5000, $7,799)"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "metodo": "B1",
+  "productos": [
+   "E019"
+  ],
+  "anclas": [
+   "Canasto Cesto Ropa Sucia Plastico Rattan Grande Super Oferta"
+  ],
+  "id": "B1",
+  "que_traer": "versión del producto ancla que resuelva la queja 'aguardamos'",
+  "busqueda_ml": "cesto de ropa sucia",
+  "estado": "descartada",
+  "se_detiene_en": "C4 hueco",
+  "motivo": "ya atendido: 41 equivalentes venden +100",
+  "señales": [
+   {
+    "id": "E019.B1",
+    "descripcion": "queja más frecuente: 'aguardamos'",
+    "errores": [],
+    "medida": {
+     "menciones": 10,
+     "insatisfechas": 9,
+     "de_textos": 31,
+     "importancia": 10.0,
+     "satisfaccion": 1.0,
+     "puntaje_oportunidad": 19.0
+    }
+   }
+  ],
+  "recorrido": [
+   {
+    "chequeo": "guardrail",
+    "supuesto": "Lo que dice el LLM está en los textos",
+    "pasa": true,
+    "motivo": "los baselines no citan textos"
+   },
+   {
+    "chequeo": "C1 verificada",
+    "supuesto": "La necesidad no es un caso aislado",
+    "pasa": true,
+    "motivo": "la señal aparece en 10 textos (mínimo 3)"
+   },
+   {
+    "chequeo": "C2 sub-atendida",
+    "supuesto": "La necesidad importa y está mal resuelta",
+    "pasa": true,
+    "motivo": "importancia 10.0, satisfacción 1.0 (hace falta ≥ 3.0 y ≤ 5.0)"
+   },
+   {
+    "chequeo": "C3 demanda",
+    "supuesto": "Hay gente eligiendo el producto de origen",
+    "pasa": true,
+    "motivo": "el producto ancla vende +10000 (mínimo 500)"
+   },
+   {
+    "chequeo": "C4 hueco",
+    "supuesto": "Nadie la atiende todavía",
+    "pasa": false,
+    "motivo": "ya atendido: 41 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 53,
+     "venden": 41,
+     "con_alguna_venta": 45,
+     "ventas_visibles": 38725,
+     "ejemplos_que_venden": [
+      "Cesto Ropa Sucia Canasto Organizador Plegable Color Gris (+10000, $9,690)",
+      "Cesto Canasto Simple Triple Laundry Ropa Sucia Tela-aluminio Color Tri (+5000, $19,941)",
+      "Canasto Cesto Ropa Sucia Baño Plastico Simil Rattan Grande (+5000, $23,990)"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "metodo": "B1",
+  "productos": [
+   "E020"
+  ],
+  "anclas": [
+   "Canasto Cesto Ropa Sucia Bambu Plegable Asas Organizador Mar"
+  ],
+  "id": "B1",
+  "que_traer": "versión del producto ancla que resuelva la queja 'disposicion'",
+  "busqueda_ml": "cesto de ropa sucia",
+  "estado": "descartada",
+  "se_detiene_en": "C4 hueco",
+  "motivo": "ya atendido: 41 equivalentes venden +100",
+  "señales": [
+   {
+    "id": "E020.B1",
+    "descripcion": "queja más frecuente: 'disposicion'",
+    "errores": [],
+    "medida": {
+     "menciones": 14,
+     "insatisfechas": 14,
+     "de_textos": 29,
+     "importancia": 10.0,
+     "satisfaccion": 0.0,
+     "puntaje_oportunidad": 20.0
+    }
+   }
+  ],
+  "recorrido": [
+   {
+    "chequeo": "guardrail",
+    "supuesto": "Lo que dice el LLM está en los textos",
+    "pasa": true,
+    "motivo": "los baselines no citan textos"
+   },
+   {
+    "chequeo": "C1 verificada",
+    "supuesto": "La necesidad no es un caso aislado",
+    "pasa": true,
+    "motivo": "la señal aparece en 14 textos (mínimo 3)"
+   },
+   {
+    "chequeo": "C2 sub-atendida",
+    "supuesto": "La necesidad importa y está mal resuelta",
+    "pasa": true,
+    "motivo": "importancia 10.0, satisfacción 0.0 (hace falta ≥ 3.0 y ≤ 5.0)"
+   },
+   {
+    "chequeo": "C3 demanda",
+    "supuesto": "Hay gente eligiendo el producto de origen",
+    "pasa": true,
+    "motivo": "el producto ancla vende +10000 (mínimo 500)"
+   },
+   {
+    "chequeo": "C4 hueco",
+    "supuesto": "Nadie la atiende todavía",
+    "pasa": false,
+    "motivo": "ya atendido: 41 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 53,
+     "venden": 41,
+     "con_alguna_venta": 45,
+     "ventas_visibles": 38725,
+     "ejemplos_que_venden": [
+      "Cesto Ropa Sucia Canasto Organizador Plegable Color Gris (+10000, $9,690)",
+      "Cesto Canasto Simple Triple Laundry Ropa Sucia Tela-aluminio Color Tri (+5000, $19,941)",
+      "Canasto Cesto Ropa Sucia Baño Plastico Simil Rattan Grande (+5000, $23,990)"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "metodo": "B1",
+  "productos": [
+   "E028"
+  ],
+  "anclas": [
+   "Botella Rociador Aceite Botella Spray De Vidrio Cocina"
+  ],
+  "id": "B1",
+  "que_traer": "versión del producto ancla que resuelva la queja 'aceite'",
+  "busqueda_ml": "rociador de vidrios",
+  "estado": "descartada",
+  "se_detiene_en": "C2 sub-atendida",
+  "motivo": "importancia 10.0, satisfacción 7.3 (hace falta ≥ 3.0 y ≤ 5.0)",
+  "señales": [
+   {
+    "id": "E028.B1",
+    "descripcion": "queja más frecuente: 'aceite'",
+    "errores": [],
+    "medida": {
+     "menciones": 44,
+     "insatisfechas": 12,
+     "de_textos": 202,
+     "importancia": 10.0,
+     "satisfaccion": 7.3,
+     "puntaje_oportunidad": 12.7
+    }
+   }
+  ],
+  "recorrido": [
+   {
+    "chequeo": "guardrail",
+    "supuesto": "Lo que dice el LLM está en los textos",
+    "pasa": true,
+    "motivo": "los baselines no citan textos"
+   },
+   {
+    "chequeo": "C1 verificada",
+    "supuesto": "La necesidad no es un caso aislado",
+    "pasa": true,
+    "motivo": "la señal aparece en 44 textos (mínimo 3)"
+   },
+   {
+    "chequeo": "C2 sub-atendida",
+    "supuesto": "La necesidad importa y está mal resuelta",
+    "pasa": false,
+    "motivo": "importancia 10.0, satisfacción 7.3 (hace falta ≥ 3.0 y ≤ 5.0)"
+   }
+  ]
+ },
+ {
+  "metodo": "B1",
+  "productos": [
+   "E029"
+  ],
+  "anclas": [
+   "Dispensador Rociador X 2 Pulverizador Aceite Spray Oliva Veo"
+  ],
+  "id": "B1",
+  "que_traer": "versión del producto ancla que resuelva la queja 'hola'",
+  "busqueda_ml": "rociador de vidrios",
+  "estado": "descartada",
+  "se_detiene_en": "C4 hueco",
+  "motivo": "ya atendido: 11 equivalentes venden +100",
+  "señales": [
+   {
+    "id": "E029.B1",
+    "descripcion": "queja más frecuente: 'hola'",
+    "errores": [],
+    "medida": {
+     "menciones": 21,
+     "insatisfechas": 17,
+     "de_textos": 220,
+     "importancia": 9.5,
+     "satisfaccion": 1.9,
+     "puntaje_oportunidad": 17.1
+    }
+   }
+  ],
+  "recorrido": [
+   {
+    "chequeo": "guardrail",
+    "supuesto": "Lo que dice el LLM está en los textos",
+    "pasa": true,
+    "motivo": "los baselines no citan textos"
+   },
+   {
+    "chequeo": "C1 verificada",
+    "supuesto": "La necesidad no es un caso aislado",
+    "pasa": true,
+    "motivo": "la señal aparece en 21 textos (mínimo 3)"
+   },
+   {
+    "chequeo": "C2 sub-atendida",
+    "supuesto": "La necesidad importa y está mal resuelta",
+    "pasa": true,
+    "motivo": "importancia 9.5, satisfacción 1.9 (hace falta ≥ 3.0 y ≤ 5.0)"
+   },
+   {
+    "chequeo": "C3 demanda",
+    "supuesto": "Hay gente eligiendo el producto de origen",
+    "pasa": true,
+    "motivo": "el producto ancla vende +5000 (mínimo 500)"
+   },
+   {
+    "chequeo": "C4 hueco",
+    "supuesto": "Nadie la atiende todavía",
+    "pasa": false,
+    "motivo": "ya atendido: 11 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 37,
+     "venden": 11,
+     "con_alguna_venta": 17,
+     "ventas_visibles": 3125,
+     "ejemplos_que_venden": [
+      "Rociador Aceite De Vidrio Aceitera X2 Doble Pico Veoquiero (+1000, $17,479)",
+      "Dosificador Spray Aceite Vinagre Rociador Para Alimentos (+1000, $5,457)",
+      "Set 2 Rociador Spray Aceite Cocina Vidrio Uso Fácil Recarga (+100, $19,545)"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "metodo": "B1",
+  "productos": [
+   "E032"
+  ],
+  "anclas": [
+   "Rascador Autoadhesivo Premium Sillón Esquinero Gatos 100x50"
+  ],
+  "id": "B1",
+  "que_traer": "versión del producto ancla que resuelva la queja 'sillon'",
+  "busqueda_ml": "rascador para gato",
+  "estado": "descartada",
+  "se_detiene_en": "C2 sub-atendida",
+  "motivo": "importancia 10.0, satisfacción 6.7 (hace falta ≥ 3.0 y ≤ 5.0)",
+  "señales": [
+   {
+    "id": "E032.B1",
+    "descripcion": "queja más frecuente: 'sillon'",
+    "errores": [],
+    "medida": {
+     "menciones": 46,
+     "insatisfechas": 15,
+     "de_textos": 218,
+     "importancia": 10.0,
+     "satisfaccion": 6.7,
+     "puntaje_oportunidad": 13.3
+    }
+   }
+  ],
+  "recorrido": [
+   {
+    "chequeo": "guardrail",
+    "supuesto": "Lo que dice el LLM está en los textos",
+    "pasa": true,
+    "motivo": "los baselines no citan textos"
+   },
+   {
+    "chequeo": "C1 verificada",
+    "supuesto": "La necesidad no es un caso aislado",
+    "pasa": true,
+    "motivo": "la señal aparece en 46 textos (mínimo 3)"
+   },
+   {
+    "chequeo": "C2 sub-atendida",
+    "supuesto": "La necesidad importa y está mal resuelta",
+    "pasa": false,
+    "motivo": "importancia 10.0, satisfacción 6.7 (hace falta ≥ 3.0 y ≤ 5.0)"
+   }
+  ]
+ },
+ {
+  "metodo": "B1",
+  "productos": [
+   "E033"
+  ],
+  "anclas": [
+   "Rascador Gatos Para Sillón Protector Esquinero"
+  ],
+  "id": "B1",
+  "que_traer": "versión del producto ancla que resuelva la queja 'sillon'",
+  "busqueda_ml": "rascador para gato",
+  "estado": "descartada",
+  "se_detiene_en": "C2 sub-atendida",
+  "motivo": "importancia 10.0, satisfacción 6.6 (hace falta ≥ 3.0 y ≤ 5.0)",
+  "señales": [
+   {
+    "id": "E033.B1",
+    "descripcion": "queja más frecuente: 'sillon'",
+    "errores": [],
+    "medida": {
+     "menciones": 64,
+     "insatisfechas": 22,
+     "de_textos": 217,
+     "importancia": 10.0,
+     "satisfaccion": 6.6,
+     "puntaje_oportunidad": 13.4
+    }
+   }
+  ],
+  "recorrido": [
+   {
+    "chequeo": "guardrail",
+    "supuesto": "Lo que dice el LLM está en los textos",
+    "pasa": true,
+    "motivo": "los baselines no citan textos"
+   },
+   {
+    "chequeo": "C1 verificada",
+    "supuesto": "La necesidad no es un caso aislado",
+    "pasa": true,
+    "motivo": "la señal aparece en 64 textos (mínimo 3)"
+   },
+   {
+    "chequeo": "C2 sub-atendida",
+    "supuesto": "La necesidad importa y está mal resuelta",
+    "pasa": false,
+    "motivo": "importancia 10.0, satisfacción 6.6 (hace falta ≥ 3.0 y ≤ 5.0)"
+   }
+  ]
+ },
+ {
+  "metodo": "B1",
+  "productos": [
+   "E036"
+  ],
+  "anclas": [
+   "Bebedero Fuente Para Beber Automático Gadnic Recirculación d"
+  ],
+  "id": "B1",
+  "que_traer": "versión del producto ancla que resuelva la queja 'agua'",
+  "busqueda_ml": "bebedero fuente gato",
+  "estado": "descartada",
+  "se_detiene_en": "C2 sub-atendida",
+  "motivo": "importancia 10.0, satisfacción 5.1 (hace falta ≥ 3.0 y ≤ 5.0)",
+  "señales": [
+   {
+    "id": "E036.B1",
+    "descripcion": "queja más frecuente: 'agua'",
+    "errores": [],
+    "medida": {
+     "menciones": 69,
+     "insatisfechas": 34,
+     "de_textos": 216,
+     "importancia": 10.0,
+     "satisfaccion": 5.1,
+     "puntaje_oportunidad": 14.9
+    }
+   }
+  ],
+  "recorrido": [
+   {
+    "chequeo": "guardrail",
+    "supuesto": "Lo que dice el LLM está en los textos",
+    "pasa": true,
+    "motivo": "los baselines no citan textos"
+   },
+   {
+    "chequeo": "C1 verificada",
+    "supuesto": "La necesidad no es un caso aislado",
+    "pasa": true,
+    "motivo": "la señal aparece en 69 textos (mínimo 3)"
+   },
+   {
+    "chequeo": "C2 sub-atendida",
+    "supuesto": "La necesidad importa y está mal resuelta",
+    "pasa": false,
+    "motivo": "importancia 10.0, satisfacción 5.1 (hace falta ≥ 3.0 y ≤ 5.0)"
+   }
+  ]
+ },
+ {
+  "metodo": "B2",
+  "productos": [
+   "E036"
+  ],
+  "anclas": [
+   "Bebedero Fuente Para Beber Automático Gadnic Recirculación d"
+  ],
+  "id": "B2",
+  "que_traer": "repuesto de bebedero fuente gato",
+  "busqueda_ml": "repuesto bebedero fuente gato",
+  "estado": "descartada",
+  "se_detiene_en": "C4 hueco",
+  "motivo": "ya atendido: 6 equivalentes venden +100",
+  "señales": [
+   {
+    "id": "E036.B2",
+    "descripcion": "preguntas que piden repuesto",
+    "errores": [],
+    "medida": {
+     "menciones": 17,
+     "insatisfechas": 12,
+     "de_textos": 216,
+     "importancia": 7.9,
+     "satisfaccion": 2.9,
+     "puntaje_oportunidad": 12.9
+    }
+   }
+  ],
+  "recorrido": [
+   {
+    "chequeo": "guardrail",
+    "supuesto": "Lo que dice el LLM está en los textos",
+    "pasa": true,
+    "motivo": "los baselines no citan textos"
+   },
+   {
+    "chequeo": "C1 verificada",
+    "supuesto": "La necesidad no es un caso aislado",
+    "pasa": true,
+    "motivo": "la señal aparece en 17 textos (mínimo 3)"
+   },
+   {
+    "chequeo": "C2 sub-atendida",
+    "supuesto": "La necesidad importa y está mal resuelta",
+    "pasa": true,
+    "motivo": "importancia 7.9, satisfacción 2.9 (hace falta ≥ 3.0 y ≤ 5.0)"
+   },
+   {
+    "chequeo": "C3 demanda",
+    "supuesto": "Hay gente eligiendo el producto de origen",
+    "pasa": true,
+    "motivo": "el producto ancla vende +5000 (mínimo 500)"
+   },
+   {
+    "chequeo": "C4 hueco",
+    "supuesto": "Nadie la atiende todavía",
+    "pasa": false,
+    "motivo": "ya atendido: 6 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 8,
+     "venden": 6,
+     "con_alguna_venta": 7,
+     "ventas_visibles": 9550,
+     "ejemplos_que_venden": [
+      "Repuesto Catit Filtros X5u. Triple Accion Bebedero Gatos Color Blanco (+5000, $23,425)",
+      "Repuesto Filtro Bebedero Mascotas Gadnic PETBEB01 PETBEB02 Pack 4 Filt (+1000, $24,697)",
+      "Repuesto Filtros Fuente Flor Bebedero Gatos Carbon X 4 Color Blanco (+1000, $18,700)"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "metodo": "B1",
+  "productos": [
+   "E037"
+  ],
+  "anclas": [
+   "Fuente De Agua Recirculante Gadnic 2.4 L 5v Tres Modos Bomba"
+  ],
+  "id": "B1",
+  "que_traer": "versión del producto ancla que resuelva la queja 'agua'",
+  "busqueda_ml": "bebedero fuente gato",
+  "estado": "descartada",
+  "se_detiene_en": "C2 sub-atendida",
+  "motivo": "importancia 10.0, satisfacción 5.4 (hace falta ≥ 3.0 y ≤ 5.0)",
+  "señales": [
+   {
+    "id": "E037.B1",
+    "descripcion": "queja más frecuente: 'agua'",
+    "errores": [],
+    "medida": {
+     "menciones": 81,
+     "insatisfechas": 37,
+     "de_textos": 204,
+     "importancia": 10.0,
+     "satisfaccion": 5.4,
+     "puntaje_oportunidad": 14.6
+    }
+   }
+  ],
+  "recorrido": [
+   {
+    "chequeo": "guardrail",
+    "supuesto": "Lo que dice el LLM está en los textos",
+    "pasa": true,
+    "motivo": "los baselines no citan textos"
+   },
+   {
+    "chequeo": "C1 verificada",
+    "supuesto": "La necesidad no es un caso aislado",
+    "pasa": true,
+    "motivo": "la señal aparece en 81 textos (mínimo 3)"
+   },
+   {
+    "chequeo": "C2 sub-atendida",
+    "supuesto": "La necesidad importa y está mal resuelta",
+    "pasa": false,
+    "motivo": "importancia 10.0, satisfacción 5.4 (hace falta ≥ 3.0 y ≤ 5.0)"
+   }
+  ]
+ },
+ {
+  "metodo": "B2",
+  "productos": [
+   "E037"
+  ],
+  "anclas": [
+   "Fuente De Agua Recirculante Gadnic 2.4 L 5v Tres Modos Bomba"
+  ],
+  "id": "B2",
+  "que_traer": "repuesto de bebedero fuente gato",
+  "busqueda_ml": "repuesto bebedero fuente gato",
+  "estado": "descartada",
+  "se_detiene_en": "C2 sub-atendida",
+  "motivo": "importancia 2.5, satisfacción 2.0 (hace falta ≥ 3.0 y ≤ 5.0)",
+  "señales": [
+   {
+    "id": "E037.B2",
+    "descripcion": "preguntas que piden repuesto",
+    "errores": [],
+    "medida": {
+     "menciones": 5,
+     "insatisfechas": 4,
+     "de_textos": 204,
+     "importancia": 2.5,
+     "satisfaccion": 2.0,
+     "puntaje_oportunidad": 3.0
+    }
+   }
+  ],
+  "recorrido": [
+   {
+    "chequeo": "guardrail",
+    "supuesto": "Lo que dice el LLM está en los textos",
+    "pasa": true,
+    "motivo": "los baselines no citan textos"
+   },
+   {
+    "chequeo": "C1 verificada",
+    "supuesto": "La necesidad no es un caso aislado",
+    "pasa": true,
+    "motivo": "la señal aparece en 5 textos (mínimo 3)"
+   },
+   {
+    "chequeo": "C2 sub-atendida",
+    "supuesto": "La necesidad importa y está mal resuelta",
+    "pasa": false,
+    "motivo": "importancia 2.5, satisfacción 2.0 (hace falta ≥ 3.0 y ≤ 5.0)"
+   }
+  ]
+ },
+ {
+  "metodo": "B1",
+  "productos": [
+   "E038"
+  ],
+  "anclas": [
+   "Plato Perro Gato Alimento Juguete Interactivo Premio Olfato"
+  ],
+  "id": "B1",
+  "que_traer": "versión del producto ancla que resuelva la queja 'bueno'",
+  "busqueda_ml": "juguete para perro",
+  "estado": "descartada",
+  "se_detiene_en": "C2 sub-atendida",
+  "motivo": "importancia 10.0, satisfacción 7.0 (hace falta ≥ 3.0 y ≤ 5.0)",
+  "señales": [
+   {
+    "id": "E038.B1",
+    "descripcion": "queja más frecuente: 'bueno'",
+    "errores": [],
+    "medida": {
+     "menciones": 33,
+     "insatisfechas": 10,
+     "de_textos": 180,
+     "importancia": 10.0,
+     "satisfaccion": 7.0,
+     "puntaje_oportunidad": 13.0
+    }
+   }
+  ],
+  "recorrido": [
+   {
+    "chequeo": "guardrail",
+    "supuesto": "Lo que dice el LLM está en los textos",
+    "pasa": true,
+    "motivo": "los baselines no citan textos"
+   },
+   {
+    "chequeo": "C1 verificada",
+    "supuesto": "La necesidad no es un caso aislado",
+    "pasa": true,
+    "motivo": "la señal aparece en 33 textos (mínimo 3)"
+   },
+   {
+    "chequeo": "C2 sub-atendida",
+    "supuesto": "La necesidad importa y está mal resuelta",
+    "pasa": false,
+    "motivo": "importancia 10.0, satisfacción 7.0 (hace falta ≥ 3.0 y ≤ 5.0)"
+   }
+  ]
+ },
+ {
+  "metodo": "B1",
+  "productos": [
+   "E039"
+  ],
+  "anclas": [
+   "Juguete Para Perros Peluche Con Chifle Longies"
+  ],
+  "id": "B1",
+  "que_traer": "versión del producto ancla que resuelva la queja 'chifle'",
+  "busqueda_ml": "juguete para perro",
+  "estado": "descartada",
+  "se_detiene_en": "C4 hueco",
+  "motivo": "ya atendido: 30 equivalentes venden +100",
+  "señales": [
+   {
+    "id": "E039.B1",
+    "descripcion": "queja más frecuente: 'chifle'",
+    "errores": [],
+    "medida": {
+     "menciones": 16,
+     "insatisfechas": 10,
+     "de_textos": 204,
+     "importancia": 7.8,
+     "satisfaccion": 3.8,
+     "puntaje_oportunidad": 11.8
+    }
+   }
+  ],
+  "recorrido": [
+   {
+    "chequeo": "guardrail",
+    "supuesto": "Lo que dice el LLM está en los textos",
+    "pasa": true,
+    "motivo": "los baselines no citan textos"
+   },
+   {
+    "chequeo": "C1 verificada",
+    "supuesto": "La necesidad no es un caso aislado",
+    "pasa": true,
+    "motivo": "la señal aparece en 16 textos (mínimo 3)"
+   },
+   {
+    "chequeo": "C2 sub-atendida",
+    "supuesto": "La necesidad importa y está mal resuelta",
+    "pasa": true,
+    "motivo": "importancia 7.8, satisfacción 3.8 (hace falta ≥ 3.0 y ≤ 5.0)"
+   },
+   {
+    "chequeo": "C3 demanda",
+    "supuesto": "Hay gente eligiendo el producto de origen",
+    "pasa": true,
+    "motivo": "el producto ancla vende +1000 (mínimo 500)"
+   },
+   {
+    "chequeo": "C4 hueco",
+    "supuesto": "Nadie la atiende todavía",
+    "pasa": false,
+    "motivo": "ya atendido: 30 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 45,
+     "venden": 30,
+     "con_alguna_venta": 37,
+     "ventas_visibles": 12675,
+     "ejemplos_que_venden": [
+      "Kit Juguete Para Perros Mordillo Soga X3 Surtidos (+1000, $6,980)",
+      "Juguete Mascota Pato Con Sonido Chifle Resistente Gato Perro (+1000, $17,990)",
+      "Juguete Para Perros Peluche Con Chifle Sonido Mordible (+1000, $4,840)"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "metodo": "B1",
+  "productos": [
+   "E040"
+  ],
+  "anclas": [
+   "Fular Portabebé Ergonómico Tela Elastizada Gris Melange 5m M"
+  ],
+  "id": "B1",
+  "que_traer": "versión del producto ancla que resuelva la queja 'bebe'",
+  "busqueda_ml": "mochila portabebe",
+  "estado": "descartada",
+  "se_detiene_en": "C2 sub-atendida",
+  "motivo": "importancia 10.0, satisfacción 7.1 (hace falta ≥ 3.0 y ≤ 5.0)",
+  "señales": [
+   {
+    "id": "E040.B1",
+    "descripcion": "queja más frecuente: 'bebe'",
+    "errores": [],
+    "medida": {
+     "menciones": 76,
+     "insatisfechas": 22,
+     "de_textos": 203,
+     "importancia": 10.0,
+     "satisfaccion": 7.1,
+     "puntaje_oportunidad": 12.9
+    }
+   }
+  ],
+  "recorrido": [
+   {
+    "chequeo": "guardrail",
+    "supuesto": "Lo que dice el LLM está en los textos",
+    "pasa": true,
+    "motivo": "los baselines no citan textos"
+   },
+   {
+    "chequeo": "C1 verificada",
+    "supuesto": "La necesidad no es un caso aislado",
+    "pasa": true,
+    "motivo": "la señal aparece en 76 textos (mínimo 3)"
+   },
+   {
+    "chequeo": "C2 sub-atendida",
+    "supuesto": "La necesidad importa y está mal resuelta",
+    "pasa": false,
+    "motivo": "importancia 10.0, satisfacción 7.1 (hace falta ≥ 3.0 y ≤ 5.0)"
+   }
+  ]
+ },
+ {
+  "metodo": "B1",
+  "productos": [
+   "E041"
+  ],
+  "anclas": [
+   "Mochila Porta Bebe SouthPort By Gadnic Ergonómica Hasta 20kg"
+  ],
+  "id": "B1",
+  "que_traer": "versión del producto ancla que resuelva la queja 'bebe'",
+  "busqueda_ml": "mochila portabebe",
+  "estado": "descartada",
+  "se_detiene_en": "C2 sub-atendida",
+  "motivo": "importancia 10.0, satisfacción 6.8 (hace falta ≥ 3.0 y ≤ 5.0)",
+  "señales": [
+   {
+    "id": "E041.B1",
+    "descripcion": "queja más frecuente: 'bebe'",
+    "errores": [],
+    "medida": {
+     "menciones": 66,
+     "insatisfechas": 21,
+     "de_textos": 219,
+     "importancia": 10.0,
+     "satisfaccion": 6.8,
+     "puntaje_oportunidad": 13.2
+    }
+   }
+  ],
+  "recorrido": [
+   {
+    "chequeo": "guardrail",
+    "supuesto": "Lo que dice el LLM está en los textos",
+    "pasa": true,
+    "motivo": "los baselines no citan textos"
+   },
+   {
+    "chequeo": "C1 verificada",
+    "supuesto": "La necesidad no es un caso aislado",
+    "pasa": true,
+    "motivo": "la señal aparece en 66 textos (mínimo 3)"
+   },
+   {
+    "chequeo": "C2 sub-atendida",
+    "supuesto": "La necesidad importa y está mal resuelta",
+    "pasa": false,
+    "motivo": "importancia 10.0, satisfacción 6.8 (hace falta ≥ 3.0 y ≤ 5.0)"
+   }
+  ]
+ },
+ {
+  "metodo": "B1",
+  "productos": [
+   "E042"
+  ],
+  "anclas": [
+   "Cambiador Antivuelco Munami Impermeable De 70x45cm Color Gri"
+  ],
+  "id": "B1",
+  "que_traer": "versión del producto ancla que resuelva la queja 'calidad'",
+  "busqueda_ml": "cambiador portatil",
+  "estado": "descartada",
+  "se_detiene_en": "C2 sub-atendida",
+  "motivo": "importancia 10.0, satisfacción 9.3 (hace falta ≥ 3.0 y ≤ 5.0)",
+  "señales": [
+   {
+    "id": "E042.B1",
+    "descripcion": "queja más frecuente: 'calidad'",
+    "errores": [],
+    "medida": {
+     "menciones": 46,
+     "insatisfechas": 3,
+     "de_textos": 201,
+     "importancia": 10.0,
+     "satisfaccion": 9.3,
+     "puntaje_oportunidad": 10.7
+    }
+   }
+  ],
+  "recorrido": [
+   {
+    "chequeo": "guardrail",
+    "supuesto": "Lo que dice el LLM está en los textos",
+    "pasa": true,
+    "motivo": "los baselines no citan textos"
+   },
+   {
+    "chequeo": "C1 verificada",
+    "supuesto": "La necesidad no es un caso aislado",
+    "pasa": true,
+    "motivo": "la señal aparece en 46 textos (mínimo 3)"
+   },
+   {
+    "chequeo": "C2 sub-atendida",
+    "supuesto": "La necesidad importa y está mal resuelta",
+    "pasa": false,
+    "motivo": "importancia 10.0, satisfacción 9.3 (hace falta ≥ 3.0 y ≤ 5.0)"
+   }
+  ]
+ },
+ {
+  "metodo": "B1",
+  "productos": [
+   "E043"
+  ],
+  "anclas": [
+   "Cambiador Bebé Plegable Acolchado Portátil Impermeable - Rey"
+  ],
+  "id": "B1",
+  "que_traer": "versión del producto ancla que resuelva la queja 'chico'",
+  "busqueda_ml": "cambiador portatil",
+  "estado": "descartada",
+  "se_detiene_en": "C4 hueco",
+  "motivo": "ya atendido: 19 equivalentes venden +100",
+  "señales": [
+   {
+    "id": "E043.B1",
+    "descripcion": "queja más frecuente: 'chico'",
+    "errores": [],
+    "medida": {
+     "menciones": 4,
+     "insatisfechas": 4,
+     "de_textos": 85,
+     "importancia": 4.7,
+     "satisfaccion": 0.0,
+     "puntaje_oportunidad": 9.4
+    }
+   }
+  ],
+  "recorrido": [
+   {
+    "chequeo": "guardrail",
+    "supuesto": "Lo que dice el LLM está en los textos",
+    "pasa": true,
+    "motivo": "los baselines no citan textos"
+   },
+   {
+    "chequeo": "C1 verificada",
+    "supuesto": "La necesidad no es un caso aislado",
+    "pasa": true,
+    "motivo": "la señal aparece en 4 textos (mínimo 3)"
+   },
+   {
+    "chequeo": "C2 sub-atendida",
+    "supuesto": "La necesidad importa y está mal resuelta",
+    "pasa": true,
+    "motivo": "importancia 4.7, satisfacción 0.0 (hace falta ≥ 3.0 y ≤ 5.0)"
+   },
+   {
+    "chequeo": "C3 demanda",
+    "supuesto": "Hay gente eligiendo el producto de origen",
+    "pasa": true,
+    "motivo": "el producto ancla vende +500 (mínimo 500)"
+   },
+   {
+    "chequeo": "C4 hueco",
+    "supuesto": "Nadie la atiende todavía",
+    "pasa": false,
+    "motivo": "ya atendido: 19 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 54,
+     "venden": 19,
+     "con_alguna_venta": 34,
+     "ventas_visibles": 4100,
+     "ejemplos_que_venden": [
+      "Cambiador Para Bebes Impermeable Estampa Varón (+500, $9,297)",
+      "Bolso Mochila Maternal Con Cuna Cambiador Plegable Usb Viaje (+500, $38,789)",
+      "Cambiador Impermeable Organizador Y Neceser Grande (+500, $23,507)"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "metodo": "B1",
+  "productos": [
+   "E044"
+  ],
+  "anclas": [
+   "Vaso Con Sorbete Philips Avent 300 Ml Scf798/01 Color Verde "
+  ],
+  "id": "B1",
+  "que_traer": "versión del producto ancla que resuelva la queja 'agua'",
+  "busqueda_ml": "vaso antiderrame bebe",
+  "estado": "descartada",
+  "se_detiene_en": "C2 sub-atendida",
+  "motivo": "importancia 10.0, satisfacción 6.7 (hace falta ≥ 3.0 y ≤ 5.0)",
+  "señales": [
+   {
+    "id": "E044.B1",
+    "descripcion": "queja más frecuente: 'agua'",
+    "errores": [],
+    "medida": {
+     "menciones": 24,
+     "insatisfechas": 8,
+     "de_textos": 202,
+     "importancia": 10.0,
+     "satisfaccion": 6.7,
+     "puntaje_oportunidad": 13.3
+    }
+   }
+  ],
+  "recorrido": [
+   {
+    "chequeo": "guardrail",
+    "supuesto": "Lo que dice el LLM está en los textos",
+    "pasa": true,
+    "motivo": "los baselines no citan textos"
+   },
+   {
+    "chequeo": "C1 verificada",
+    "supuesto": "La necesidad no es un caso aislado",
+    "pasa": true,
+    "motivo": "la señal aparece en 24 textos (mínimo 3)"
+   },
+   {
+    "chequeo": "C2 sub-atendida",
+    "supuesto": "La necesidad importa y está mal resuelta",
+    "pasa": false,
+    "motivo": "importancia 10.0, satisfacción 6.7 (hace falta ≥ 3.0 y ≤ 5.0)"
+   }
+  ]
+ },
+ {
+  "metodo": "B1",
+  "productos": [
+   "E045"
+  ],
+  "anclas": [
+   "Baby Monitor Babycall Gadnic Audio Bidireccional Pantalla LC"
+  ],
+  "id": "B1",
+  "que_traer": "versión del producto ancla que resuelva la queja 'camara'",
+  "busqueda_ml": "monitor de bebe",
+  "estado": "descartada",
+  "se_detiene_en": "C4 hueco",
+  "motivo": "ya atendido: 9 equivalentes venden +100",
+  "señales": [
+   {
+    "id": "E045.B1",
+    "descripcion": "queja más frecuente: 'camara'",
+    "errores": [],
+    "medida": {
+     "menciones": 45,
+     "insatisfechas": 28,
+     "de_textos": 220,
+     "importancia": 10.0,
+     "satisfaccion": 3.8,
+     "puntaje_oportunidad": 16.2
+    }
+   }
+  ],
+  "recorrido": [
+   {
+    "chequeo": "guardrail",
+    "supuesto": "Lo que dice el LLM está en los textos",
+    "pasa": true,
+    "motivo": "los baselines no citan textos"
+   },
+   {
+    "chequeo": "C1 verificada",
+    "supuesto": "La necesidad no es un caso aislado",
+    "pasa": true,
+    "motivo": "la señal aparece en 45 textos (mínimo 3)"
+   },
+   {
+    "chequeo": "C2 sub-atendida",
+    "supuesto": "La necesidad importa y está mal resuelta",
+    "pasa": true,
+    "motivo": "importancia 10.0, satisfacción 3.8 (hace falta ≥ 3.0 y ≤ 5.0)"
+   },
+   {
+    "chequeo": "C3 demanda",
+    "supuesto": "Hay gente eligiendo el producto de origen",
+    "pasa": true,
+    "motivo": "el producto ancla vende +5000 (mínimo 500)"
+   },
+   {
+    "chequeo": "C4 hueco",
+    "supuesto": "Nadie la atiende todavía",
+    "pasa": false,
+    "motivo": "ya atendido: 9 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 43,
+     "venden": 9,
+     "con_alguna_venta": 14,
+     "ventas_visibles": 2800,
+     "ejemplos_que_venden": [
+      "Baby Call Monitor Gadnic Cámara con Visión Nocturna para Bebes Audio V (+1000, $119,999)",
+      "Monitor Para Bebes Mega Baby Rotacion 360° Camara Color Blanco (+500, $109,086)",
+      "Baby Call Ditron SK-CAM6 Cámara Monitor Inalámbrico Visión Nocturna 2\" (+500, $84,819)"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "metodo": "B1",
+  "productos": [
+   "E046"
+  ],
+  "anclas": [
+   "Baby Call Inalámbrico Gadnic X5000 Cámara Visión Nocturna Pa"
+  ],
+  "id": "B1",
+  "que_traer": "versión del producto ancla que resuelva la queja 'camara'",
+  "busqueda_ml": "monitor de bebe",
+  "estado": "descartada",
+  "se_detiene_en": "C4 hueco",
+  "motivo": "ya atendido: 9 equivalentes venden +100",
+  "señales": [
+   {
+    "id": "E046.B1",
+    "descripcion": "queja más frecuente: 'camara'",
+    "errores": [],
+    "medida": {
+     "menciones": 32,
+     "insatisfechas": 16,
+     "de_textos": 203,
+     "importancia": 10.0,
+     "satisfaccion": 5.0,
+     "puntaje_oportunidad": 15.0
+    }
+   }
+  ],
+  "recorrido": [
+   {
+    "chequeo": "guardrail",
+    "supuesto": "Lo que dice el LLM está en los textos",
+    "pasa": true,
+    "motivo": "los baselines no citan textos"
+   },
+   {
+    "chequeo": "C1 verificada",
+    "supuesto": "La necesidad no es un caso aislado",
+    "pasa": true,
+    "motivo": "la señal aparece en 32 textos (mínimo 3)"
+   },
+   {
+    "chequeo": "C2 sub-atendida",
+    "supuesto": "La necesidad importa y está mal resuelta",
+    "pasa": true,
+    "motivo": "importancia 10.0, satisfacción 5.0 (hace falta ≥ 3.0 y ≤ 5.0)"
+   },
+   {
+    "chequeo": "C3 demanda",
+    "supuesto": "Hay gente eligiendo el producto de origen",
+    "pasa": true,
+    "motivo": "el producto ancla vende +1000 (mínimo 500)"
+   },
+   {
+    "chequeo": "C4 hueco",
+    "supuesto": "Nadie la atiende todavía",
+    "pasa": false,
+    "motivo": "ya atendido: 9 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 43,
+     "venden": 9,
+     "con_alguna_venta": 14,
+     "ventas_visibles": 2800,
+     "ejemplos_que_venden": [
+      "Baby Call Monitor Gadnic Cámara con Visión Nocturna para Bebes Audio V (+1000, $119,999)",
+      "Monitor Para Bebes Mega Baby Rotacion 360° Camara Color Blanco (+500, $109,086)",
+      "Baby Call Ditron SK-CAM6 Cámara Monitor Inalámbrico Visión Nocturna 2\" (+500, $84,819)"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "metodo": "B1",
+  "productos": [
+   "E048"
+  ],
+  "anclas": [
+   "Colchoneta Mat Yoga Eva 6mm 172x0.65 Varios Colores"
+  ],
+  "id": "B1",
+  "que_traer": "versión del producto ancla que resuelva la queja 'hola'",
+  "busqueda_ml": "colchoneta yoga",
+  "estado": "descartada",
+  "se_detiene_en": "C4 hueco",
+  "motivo": "ya atendido: 46 equivalentes venden +100",
+  "señales": [
+   {
+    "id": "E048.B1",
+    "descripcion": "queja más frecuente: 'hola'",
+    "errores": [],
+    "medida": {
+     "menciones": 18,
+     "insatisfechas": 10,
+     "de_textos": 219,
+     "importancia": 8.2,
+     "satisfaccion": 4.4,
+     "puntaje_oportunidad": 12.0
+    }
+   }
+  ],
+  "recorrido": [
+   {
+    "chequeo": "guardrail",
+    "supuesto": "Lo que dice el LLM está en los textos",
+    "pasa": true,
+    "motivo": "los baselines no citan textos"
+   },
+   {
+    "chequeo": "C1 verificada",
+    "supuesto": "La necesidad no es un caso aislado",
+    "pasa": true,
+    "motivo": "la señal aparece en 18 textos (mínimo 3)"
+   },
+   {
+    "chequeo": "C2 sub-atendida",
+    "supuesto": "La necesidad importa y está mal resuelta",
+    "pasa": true,
+    "motivo": "importancia 8.2, satisfacción 4.4 (hace falta ≥ 3.0 y ≤ 5.0)"
+   },
+   {
+    "chequeo": "C3 demanda",
+    "supuesto": "Hay gente eligiendo el producto de origen",
+    "pasa": true,
+    "motivo": "el producto ancla vende +10000 (mínimo 500)"
+   },
+   {
+    "chequeo": "C4 hueco",
+    "supuesto": "Nadie la atiende todavía",
+    "pasa": false,
+    "motivo": "ya atendido: 46 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 48,
+     "venden": 46,
+     "con_alguna_venta": 47,
+     "ventas_visibles": 63750,
+     "ejemplos_que_venden": [
+      "Colchoneta AB Fitness ALTA DENSIDAD 50 CM ANCHO color negro (+10000, $17,462)",
+      "Colchoneta AB Fitness alta densidad 50cm ancho violeta Yoga Pilates (+10000, $17,462)",
+      "Colchoneta Yoga Pilates Bagun 1m x 40cm x 3cm Azul AB Fitness (+10000, $11,242)"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "metodo": "B1",
+  "productos": [
+   "E049"
+  ],
+  "anclas": [
+   "Colchoneta Gimnasia Fitness Gym Yoga con Cierre 1m*40cm*3cm "
+  ],
+  "id": "B1",
+  "que_traer": "versión del producto ancla que resuelva la queja 'precio'",
+  "busqueda_ml": "colchoneta yoga",
+  "estado": "descartada",
+  "se_detiene_en": "C2 sub-atendida",
+  "motivo": "importancia 10.0, satisfacción 5.8 (hace falta ≥ 3.0 y ≤ 5.0)",
+  "señales": [
+   {
+    "id": "E049.B1",
+    "descripcion": "queja más frecuente: 'precio'",
+    "errores": [],
+    "medida": {
+     "menciones": 40,
+     "insatisfechas": 17,
+     "de_textos": 214,
+     "importancia": 10.0,
+     "satisfaccion": 5.8,
+     "puntaje_oportunidad": 14.2
+    }
+   }
+  ],
+  "recorrido": [
+   {
+    "chequeo": "guardrail",
+    "supuesto": "Lo que dice el LLM está en los textos",
+    "pasa": true,
+    "motivo": "los baselines no citan textos"
+   },
+   {
+    "chequeo": "C1 verificada",
+    "supuesto": "La necesidad no es un caso aislado",
+    "pasa": true,
+    "motivo": "la señal aparece en 40 textos (mínimo 3)"
+   },
+   {
+    "chequeo": "C2 sub-atendida",
+    "supuesto": "La necesidad importa y está mal resuelta",
+    "pasa": false,
+    "motivo": "importancia 10.0, satisfacción 5.8 (hace falta ≥ 3.0 y ≤ 5.0)"
+   }
+  ]
+ },
+ {
+  "metodo": "B1",
+  "productos": [
+   "E050"
+  ],
+  "anclas": [
+   "Kit De Bandas Elasticas Pilates Entrenamiento Gym Fitness Ve"
+  ],
+  "id": "B1",
+  "que_traer": "versión del producto ancla que resuelva la queja 'hola'",
+  "busqueda_ml": "banda elastica ejercicio",
+  "estado": "descartada",
+  "se_detiene_en": "C4 hueco",
+  "motivo": "ya atendido: 46 equivalentes venden +100",
+  "señales": [
+   {
+    "id": "E050.B1",
+    "descripcion": "queja más frecuente: 'hola'",
+    "errores": [],
+    "medida": {
+     "menciones": 20,
+     "insatisfechas": 16,
+     "de_textos": 220,
+     "importancia": 9.1,
+     "satisfaccion": 2.0,
+     "puntaje_oportunidad": 16.2
+    }
+   }
+  ],
+  "recorrido": [
+   {
+    "chequeo": "guardrail",
+    "supuesto": "Lo que dice el LLM está en los textos",
+    "pasa": true,
+    "motivo": "los baselines no citan textos"
+   },
+   {
+    "chequeo": "C1 verificada",
+    "supuesto": "La necesidad no es un caso aislado",
+    "pasa": true,
+    "motivo": "la señal aparece en 20 textos (mínimo 3)"
+   },
+   {
+    "chequeo": "C2 sub-atendida",
+    "supuesto": "La necesidad importa y está mal resuelta",
+    "pasa": true,
+    "motivo": "importancia 9.1, satisfacción 2.0 (hace falta ≥ 3.0 y ≤ 5.0)"
+   },
+   {
+    "chequeo": "C3 demanda",
+    "supuesto": "Hay gente eligiendo el producto de origen",
+    "pasa": true,
+    "motivo": "el producto ancla vende +10000 (mínimo 500)"
+   },
+   {
+    "chequeo": "C4 hueco",
+    "supuesto": "Nadie la atiende todavía",
+    "pasa": false,
+    "motivo": "ya atendido: 46 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 63,
+     "venden": 46,
+     "con_alguna_venta": 55,
+     "ventas_visibles": 58875,
+     "ejemplos_que_venden": [
+      "Kit de 5 Bandas Elásticas Circulares de Resistencia para Ejercicios y  (+10000, $16,796)",
+      "Bandas Elásticas de Resistencia con 5 Niveles para Entrenamiento Compl (+10000, $3,743)",
+      "Banda Elástica Circular Tela Ejercicio Glúteos Cadera Gmp Entrenar Pie (+5000, $11,357)"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "metodo": "B2",
+  "productos": [
+   "E050"
+  ],
+  "anclas": [
+   "Kit De Bandas Elasticas Pilates Entrenamiento Gym Fitness Ve"
+  ],
+  "id": "B2",
+  "que_traer": "repuesto de banda elastica ejercicio",
+  "busqueda_ml": "repuesto banda elastica ejercicio",
+  "estado": "descartada",
+  "se_detiene_en": "C2 sub-atendida",
+  "motivo": "importancia 1.4, satisfacción 6.7 (hace falta ≥ 3.0 y ≤ 5.0)",
+  "señales": [
+   {
+    "id": "E050.B2",
+    "descripcion": "preguntas que piden repuesto",
+    "errores": [],
+    "medida": {
+     "menciones": 3,
+     "insatisfechas": 1,
+     "de_textos": 220,
+     "importancia": 1.4,
+     "satisfaccion": 6.7,
+     "puntaje_oportunidad": 1.4
+    }
+   }
+  ],
+  "recorrido": [
+   {
+    "chequeo": "guardrail",
+    "supuesto": "Lo que dice el LLM está en los textos",
+    "pasa": true,
+    "motivo": "los baselines no citan textos"
+   },
+   {
+    "chequeo": "C1 verificada",
+    "supuesto": "La necesidad no es un caso aislado",
+    "pasa": true,
+    "motivo": "la señal aparece en 3 textos (mínimo 3)"
+   },
+   {
+    "chequeo": "C2 sub-atendida",
+    "supuesto": "La necesidad importa y está mal resuelta",
+    "pasa": false,
+    "motivo": "importancia 1.4, satisfacción 6.7 (hace falta ≥ 3.0 y ≤ 5.0)"
+   }
+  ]
+ },
+ {
+  "metodo": "B1",
+  "productos": [
+   "E051"
+  ],
+  "anclas": [
+   "Fit Mark Soga Speed Rope Ajustable Rulemanes Boxeo"
+  ],
+  "id": "B1",
+  "que_traer": "versión del producto ancla que resuelva la queja 'soga'",
+  "busqueda_ml": "soga para saltar",
+  "estado": "descartada",
+  "se_detiene_en": "C2 sub-atendida",
+  "motivo": "importancia 10.0, satisfacción 5.7 (hace falta ≥ 3.0 y ≤ 5.0)",
+  "señales": [
+   {
+    "id": "E051.B1",
+    "descripcion": "queja más frecuente: 'soga'",
+    "errores": [],
+    "medida": {
+     "menciones": 28,
+     "insatisfechas": 12,
+     "de_textos": 210,
+     "importancia": 10.0,
+     "satisfaccion": 5.7,
+     "puntaje_oportunidad": 14.3
+    }
+   }
+  ],
+  "recorrido": [
+   {
+    "chequeo": "guardrail",
+    "supuesto": "Lo que dice el LLM está en los textos",
+    "pasa": true,
+    "motivo": "los baselines no citan textos"
+   },
+   {
+    "chequeo": "C1 verificada",
+    "supuesto": "La necesidad no es un caso aislado",
+    "pasa": true,
+    "motivo": "la señal aparece en 28 textos (mínimo 3)"
+   },
+   {
+    "chequeo": "C2 sub-atendida",
+    "supuesto": "La necesidad importa y está mal resuelta",
+    "pasa": false,
+    "motivo": "importancia 10.0, satisfacción 5.7 (hace falta ≥ 3.0 y ≤ 5.0)"
+   }
+  ]
+ },
+ {
+  "metodo": "B1",
+  "productos": [
+   "E052"
+  ],
+  "anclas": [
+   "Soga Saltar Pvc Cuerda Boxeo Entrenamiento Económica Gmp"
+  ],
+  "id": "B1",
+  "que_traer": "versión del producto ancla que resuelva la queja 'poco'",
+  "busqueda_ml": "soga para saltar",
+  "estado": "descartada",
+  "se_detiene_en": "C4 hueco",
+  "motivo": "ya atendido: 39 equivalentes venden +100",
+  "señales": [
+   {
+    "id": "E052.B1",
+    "descripcion": "queja más frecuente: 'poco'",
+    "errores": [],
+    "medida": {
+     "menciones": 9,
+     "insatisfechas": 9,
+     "de_textos": 201,
+     "importancia": 4.5,
+     "satisfaccion": 0.0,
+     "puntaje_oportunidad": 9.0
+    }
+   }
+  ],
+  "recorrido": [
+   {
+    "chequeo": "guardrail",
+    "supuesto": "Lo que dice el LLM está en los textos",
+    "pasa": true,
+    "motivo": "los baselines no citan textos"
+   },
+   {
+    "chequeo": "C1 verificada",
+    "supuesto": "La necesidad no es un caso aislado",
+    "pasa": true,
+    "motivo": "la señal aparece en 9 textos (mínimo 3)"
+   },
+   {
+    "chequeo": "C2 sub-atendida",
+    "supuesto": "La necesidad importa y está mal resuelta",
+    "pasa": true,
+    "motivo": "importancia 4.5, satisfacción 0.0 (hace falta ≥ 3.0 y ≤ 5.0)"
+   },
+   {
+    "chequeo": "C3 demanda",
+    "supuesto": "Hay gente eligiendo el producto de origen",
+    "pasa": true,
+    "motivo": "el producto ancla vende +10000 (mínimo 500)"
+   },
+   {
+    "chequeo": "C4 hueco",
+    "supuesto": "Nadie la atiende todavía",
+    "pasa": false,
+    "motivo": "ya atendido: 39 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 51,
+     "venden": 39,
+     "con_alguna_venta": 45,
+     "ventas_visibles": 43275,
+     "ejemplos_que_venden": [
+      "Soga Cuerda Salto Saltar 280 Cm Gym Crossfit Boxeo Reforzada Negro Con (+10000, $6,999)",
+      "Soga De Saltar Profesional 360grs Ajustable 3m Acero Ruleman (+5000, $11,999)",
+      "Soga Saltar Cable Acero Speed Rope Regulable Fitness Boxeo Jr001-ne 2m (+5000, $6,999)"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "metodo": "B1",
+  "productos": [
+   "E061"
+  ],
+  "anclas": [
+   "Linterna Tactica LED Militar SPICA X-4 Recargable 3 Modos de"
+  ],
+  "id": "B1",
+  "que_traer": "versión del producto ancla que resuelva la queja 'bateria'",
+  "busqueda_ml": "linterna recargable",
+  "estado": "descartada",
+  "se_detiene_en": "C2 sub-atendida",
+  "motivo": "importancia 10.0, satisfacción 6.1 (hace falta ≥ 3.0 y ≤ 5.0)",
+  "señales": [
+   {
+    "id": "E061.B1",
+    "descripcion": "queja más frecuente: 'bateria'",
+    "errores": [],
+    "medida": {
+     "menciones": 62,
+     "insatisfechas": 24,
+     "de_textos": 211,
+     "importancia": 10.0,
+     "satisfaccion": 6.1,
+     "puntaje_oportunidad": 13.9
+    }
+   }
+  ],
+  "recorrido": [
+   {
+    "chequeo": "guardrail",
+    "supuesto": "Lo que dice el LLM está en los textos",
+    "pasa": true,
+    "motivo": "los baselines no citan textos"
+   },
+   {
+    "chequeo": "C1 verificada",
+    "supuesto": "La necesidad no es un caso aislado",
+    "pasa": true,
+    "motivo": "la señal aparece en 62 textos (mínimo 3)"
+   },
+   {
+    "chequeo": "C2 sub-atendida",
+    "supuesto": "La necesidad importa y está mal resuelta",
+    "pasa": false,
+    "motivo": "importancia 10.0, satisfacción 6.1 (hace falta ≥ 3.0 y ≤ 5.0)"
+   }
+  ]
+ },
+ {
+  "metodo": "B1",
+  "productos": [
+   "E062"
+  ],
+  "anclas": [
+   "Linterna Táctica Electroland LED 2000lm Recargable USB A Pru"
+  ],
+  "id": "B1",
+  "que_traer": "versión del producto ancla que resuelva la queja 'linterna'",
+  "busqueda_ml": "linterna recargable",
+  "estado": "descartada",
+  "se_detiene_en": "C2 sub-atendida",
+  "motivo": "importancia 10.0, satisfacción 5.5 (hace falta ≥ 3.0 y ≤ 5.0)",
+  "señales": [
+   {
+    "id": "E062.B1",
+    "descripcion": "queja más frecuente: 'linterna'",
+    "errores": [],
+    "medida": {
+     "menciones": 33,
+     "insatisfechas": 15,
+     "de_textos": 220,
+     "importancia": 10.0,
+     "satisfaccion": 5.5,
+     "puntaje_oportunidad": 14.5
+    }
+   }
+  ],
+  "recorrido": [
+   {
+    "chequeo": "guardrail",
+    "supuesto": "Lo que dice el LLM está en los textos",
+    "pasa": true,
+    "motivo": "los baselines no citan textos"
+   },
+   {
+    "chequeo": "C1 verificada",
+    "supuesto": "La necesidad no es un caso aislado",
+    "pasa": true,
+    "motivo": "la señal aparece en 33 textos (mínimo 3)"
+   },
+   {
+    "chequeo": "C2 sub-atendida",
+    "supuesto": "La necesidad importa y está mal resuelta",
+    "pasa": false,
+    "motivo": "importancia 10.0, satisfacción 5.5 (hace falta ≥ 3.0 y ≤ 5.0)"
+   }
+  ]
+ },
+ {
+  "metodo": "B1",
+  "productos": [
+   "E067"
+  ],
+  "anclas": [
+   "Funda Cubre Asiento Para Auto Equip"
+  ],
+  "id": "B1",
+  "que_traer": "versión del producto ancla que resuelva la queja 'dinamic'",
+  "busqueda_ml": "funda asiento auto",
+  "estado": "descartada",
+  "se_detiene_en": "C4 hueco",
+  "motivo": "ya atendido: 30 equivalentes venden +100",
+  "señales": [
+   {
+    "id": "E067.B1",
+    "descripcion": "queja más frecuente: 'dinamic'",
+    "errores": [],
+    "medida": {
+     "menciones": 19,
+     "insatisfechas": 16,
+     "de_textos": 220,
+     "importancia": 8.6,
+     "satisfaccion": 1.6,
+     "puntaje_oportunidad": 15.6
+    }
+   }
+  ],
+  "recorrido": [
+   {
+    "chequeo": "guardrail",
+    "supuesto": "Lo que dice el LLM está en los textos",
+    "pasa": true,
+    "motivo": "los baselines no citan textos"
+   },
+   {
+    "chequeo": "C1 verificada",
+    "supuesto": "La necesidad no es un caso aislado",
+    "pasa": true,
+    "motivo": "la señal aparece en 19 textos (mínimo 3)"
+   },
+   {
+    "chequeo": "C2 sub-atendida",
+    "supuesto": "La necesidad importa y está mal resuelta",
+    "pasa": true,
+    "motivo": "importancia 8.6, satisfacción 1.6 (hace falta ≥ 3.0 y ≤ 5.0)"
+   },
+   {
+    "chequeo": "C3 demanda",
+    "supuesto": "Hay gente eligiendo el producto de origen",
+    "pasa": true,
+    "motivo": "el producto ancla vende +5000 (mínimo 500)"
+   },
+   {
+    "chequeo": "C4 hueco",
+    "supuesto": "Nadie la atiende todavía",
+    "pasa": false,
+    "motivo": "ya atendido: 30 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 47,
+     "venden": 30,
+     "con_alguna_venta": 41,
+     "ventas_visibles": 14275,
+     "ejemplos_que_venden": [
+      "Funda Cubre Asiento Riñonera Premium Ecocuero Acolchada Full (+1000, $135,157)",
+      "Funda Cubre Asiento Fundas Auto Universal Cuero + Volante (+1000, $106,874)",
+      "Funda Cubre Asientos 9 Pcs Premium Univer Espuma 2mm Virel (+1000, $31,999)"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "metodo": "B1",
+  "productos": [
+   "E068"
+  ],
+  "anclas": [
+   "Funda Asientos Kit Eco Cuero 12 Piezas Auto/camioneta"
+  ],
+  "id": "B1",
+  "que_traer": "versión del producto ancla que resuelva la queja 'daniel'",
+  "busqueda_ml": "funda asiento auto",
+  "estado": "descartada",
+  "se_detiene_en": "C4 hueco",
+  "motivo": "ya atendido: 30 equivalentes venden +100",
+  "señales": [
+   {
+    "id": "E068.B1",
+    "descripcion": "queja más frecuente: 'daniel'",
+    "errores": [],
+    "medida": {
+     "menciones": 19,
+     "insatisfechas": 17,
+     "de_textos": 220,
+     "importancia": 8.6,
+     "satisfaccion": 1.1,
+     "puntaje_oportunidad": 16.1
+    }
+   }
+  ],
+  "recorrido": [
+   {
+    "chequeo": "guardrail",
+    "supuesto": "Lo que dice el LLM está en los textos",
+    "pasa": true,
+    "motivo": "los baselines no citan textos"
+   },
+   {
+    "chequeo": "C1 verificada",
+    "supuesto": "La necesidad no es un caso aislado",
+    "pasa": true,
+    "motivo": "la señal aparece en 19 textos (mínimo 3)"
+   },
+   {
+    "chequeo": "C2 sub-atendida",
+    "supuesto": "La necesidad importa y está mal resuelta",
+    "pasa": true,
+    "motivo": "importancia 8.6, satisfacción 1.1 (hace falta ≥ 3.0 y ≤ 5.0)"
+   },
+   {
+    "chequeo": "C3 demanda",
+    "supuesto": "Hay gente eligiendo el producto de origen",
+    "pasa": true,
+    "motivo": "el producto ancla vende +5000 (mínimo 500)"
+   },
+   {
+    "chequeo": "C4 hueco",
+    "supuesto": "Nadie la atiende todavía",
+    "pasa": false,
+    "motivo": "ya atendido: 30 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 47,
+     "venden": 30,
+     "con_alguna_venta": 41,
+     "ventas_visibles": 14275,
+     "ejemplos_que_venden": [
+      "Funda Cubre Asiento Riñonera Premium Ecocuero Acolchada Full (+1000, $135,157)",
+      "Funda Cubre Asiento Fundas Auto Universal Cuero + Volante (+1000, $106,874)",
+      "Funda Cubre Asientos 9 Pcs Premium Univer Espuma 2mm Virel (+1000, $31,999)"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "metodo": "B1",
+  "productos": [
+   "E069"
+  ],
+  "anclas": [
+   "Cargador Toma Usb Doble Para Embutir Auto 12 24v Moto 4x4 At"
+  ],
+  "id": "B1",
+  "que_traer": "versión del producto ancla que resuelva la queja 'consulta'",
+  "busqueda_ml": "cargador usb auto",
+  "estado": "descartada",
+  "se_detiene_en": "C4 hueco",
+  "motivo": "ya atendido: 32 equivalentes venden +100",
+  "señales": [
+   {
+    "id": "E069.B1",
+    "descripcion": "queja más frecuente: 'consulta'",
+    "errores": [],
+    "medida": {
+     "menciones": 14,
+     "insatisfechas": 11,
+     "de_textos": 214,
+     "importancia": 6.5,
+     "satisfaccion": 2.1,
+     "puntaje_oportunidad": 10.9
+    }
+   }
+  ],
+  "recorrido": [
+   {
+    "chequeo": "guardrail",
+    "supuesto": "Lo que dice el LLM está en los textos",
+    "pasa": true,
+    "motivo": "los baselines no citan textos"
+   },
+   {
+    "chequeo": "C1 verificada",
+    "supuesto": "La necesidad no es un caso aislado",
+    "pasa": true,
+    "motivo": "la señal aparece en 14 textos (mínimo 3)"
+   },
+   {
+    "chequeo": "C2 sub-atendida",
+    "supuesto": "La necesidad importa y está mal resuelta",
+    "pasa": true,
+    "motivo": "importancia 6.5, satisfacción 2.1 (hace falta ≥ 3.0 y ≤ 5.0)"
+   },
+   {
+    "chequeo": "C3 demanda",
+    "supuesto": "Hay gente eligiendo el producto de origen",
+    "pasa": true,
+    "motivo": "el producto ancla vende +10000 (mínimo 500)"
+   },
+   {
+    "chequeo": "C4 hueco",
+    "supuesto": "Nadie la atiende todavía",
+    "pasa": false,
+    "motivo": "ya atendido: 32 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 58,
+     "venden": 32,
+     "con_alguna_venta": 43,
+     "ventas_visibles": 12725,
+     "ejemplos_que_venden": [
+      "Cargador de Auto X5 Digital Usb Celular + Usb C Carga Eficiente Dehuka (+1000, $8,625)",
+      "Cargador De Auto Jd C-49 Negro Doble Puerto + Cable Usb C A Usb C 12v  (+1000, $17,999)",
+      "Cargador para Auto PD 3.0 Ugreen - Adaptador 30W para coche de Doble P (+1000, $19,406)"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "metodo": "B1",
+  "productos": [
+   "E070"
+  ],
+  "anclas": [
+   "Cargador Auto Aitech 48w Carga Rápida Con Cable"
+  ],
+  "id": "B1",
+  "que_traer": "versión del producto ancla que resuelva la queja 'hola'",
+  "busqueda_ml": "cargador usb auto",
+  "estado": "descartada",
+  "se_detiene_en": "C4 hueco",
+  "motivo": "ya atendido: 32 equivalentes venden +100",
+  "señales": [
+   {
+    "id": "E070.B1",
+    "descripcion": "queja más frecuente: 'hola'",
+    "errores": [],
+    "medida": {
+     "menciones": 11,
+     "insatisfechas": 10,
+     "de_textos": 94,
+     "importancia": 10.0,
+     "satisfaccion": 0.9,
+     "puntaje_oportunidad": 19.1
+    }
+   }
+  ],
+  "recorrido": [
+   {
+    "chequeo": "guardrail",
+    "supuesto": "Lo que dice el LLM está en los textos",
+    "pasa": true,
+    "motivo": "los baselines no citan textos"
+   },
+   {
+    "chequeo": "C1 verificada",
+    "supuesto": "La necesidad no es un caso aislado",
+    "pasa": true,
+    "motivo": "la señal aparece en 11 textos (mínimo 3)"
+   },
+   {
+    "chequeo": "C2 sub-atendida",
+    "supuesto": "La necesidad importa y está mal resuelta",
+    "pasa": true,
+    "motivo": "importancia 10.0, satisfacción 0.9 (hace falta ≥ 3.0 y ≤ 5.0)"
+   },
+   {
+    "chequeo": "C3 demanda",
+    "supuesto": "Hay gente eligiendo el producto de origen",
+    "pasa": true,
+    "motivo": "el producto ancla vende +1000 (mínimo 500)"
+   },
+   {
+    "chequeo": "C4 hueco",
+    "supuesto": "Nadie la atiende todavía",
+    "pasa": false,
+    "motivo": "ya atendido: 32 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 58,
+     "venden": 32,
+     "con_alguna_venta": 43,
+     "ventas_visibles": 12725,
+     "ejemplos_que_venden": [
+      "Cargador de Auto X5 Digital Usb Celular + Usb C Carga Eficiente Dehuka (+1000, $8,625)",
+      "Cargador De Auto Jd C-49 Negro Doble Puerto + Cable Usb C A Usb C 12v  (+1000, $17,999)",
+      "Cargador para Auto PD 3.0 Ugreen - Adaptador 30W para coche de Doble P (+1000, $19,406)"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "metodo": "B1",
+  "productos": [
+   "E075"
+  ],
+  "anclas": [
+   "Espejo Doble X10 Luz Led Usb Recargable 360 Porta Maquillaje"
+  ],
+  "id": "B1",
+  "que_traer": "versión del producto ancla que resuelva la queja 'aumento'",
+  "busqueda_ml": "espejo con luz",
+  "estado": "descartada",
+  "se_detiene_en": "C2 sub-atendida",
+  "motivo": "importancia 10.0, satisfacción 6.8 (hace falta ≥ 3.0 y ≤ 5.0)",
+  "señales": [
+   {
+    "id": "E075.B1",
+    "descripcion": "queja más frecuente: 'aumento'",
+    "errores": [],
+    "medida": {
+     "menciones": 34,
+     "insatisfechas": 11,
+     "de_textos": 211,
+     "importancia": 10.0,
+     "satisfaccion": 6.8,
+     "puntaje_oportunidad": 13.2
+    }
+   }
+  ],
+  "recorrido": [
+   {
+    "chequeo": "guardrail",
+    "supuesto": "Lo que dice el LLM está en los textos",
+    "pasa": true,
+    "motivo": "los baselines no citan textos"
+   },
+   {
+    "chequeo": "C1 verificada",
+    "supuesto": "La necesidad no es un caso aislado",
+    "pasa": true,
+    "motivo": "la señal aparece en 34 textos (mínimo 3)"
+   },
+   {
+    "chequeo": "C2 sub-atendida",
+    "supuesto": "La necesidad importa y está mal resuelta",
+    "pasa": false,
+    "motivo": "importancia 10.0, satisfacción 6.8 (hace falta ≥ 3.0 y ≤ 5.0)"
+   }
+  ]
+ },
+ {
+  "metodo": "B1",
+  "productos": [
+   "E076"
+  ],
+  "anclas": [
+   "Espejo Digital Luz Led Táctil Desempañador Baño 80x60cm"
+  ],
+  "id": "B1",
+  "que_traer": "versión del producto ancla que resuelva la queja 'hola'",
+  "busqueda_ml": "espejo con luz",
+  "estado": "descartada",
+  "se_detiene_en": "C4 hueco",
+  "motivo": "ya atendido: 38 equivalentes venden +100",
+  "señales": [
+   {
+    "id": "E076.B1",
+    "descripcion": "queja más frecuente: 'hola'",
+    "errores": [],
+    "medida": {
+     "menciones": 17,
+     "insatisfechas": 12,
+     "de_textos": 46,
+     "importancia": 10.0,
+     "satisfaccion": 2.9,
+     "puntaje_oportunidad": 17.1
+    }
+   }
+  ],
+  "recorrido": [
+   {
+    "chequeo": "guardrail",
+    "supuesto": "Lo que dice el LLM está en los textos",
+    "pasa": true,
+    "motivo": "los baselines no citan textos"
+   },
+   {
+    "chequeo": "C1 verificada",
+    "supuesto": "La necesidad no es un caso aislado",
+    "pasa": true,
+    "motivo": "la señal aparece en 17 textos (mínimo 3)"
+   },
+   {
+    "chequeo": "C2 sub-atendida",
+    "supuesto": "La necesidad importa y está mal resuelta",
+    "pasa": true,
+    "motivo": "importancia 10.0, satisfacción 2.9 (hace falta ≥ 3.0 y ≤ 5.0)"
+   },
+   {
+    "chequeo": "C3 demanda",
+    "supuesto": "Hay gente eligiendo el producto de origen",
+    "pasa": true,
+    "motivo": "el producto ancla vende +5000 (mínimo 500)"
+   },
+   {
+    "chequeo": "C4 hueco",
+    "supuesto": "Nadie la atiende todavía",
+    "pasa": false,
+    "motivo": "ya atendido: 38 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 60,
+     "venden": 38,
+     "con_alguna_venta": 50,
+     "ventas_visibles": 15700,
+     "ejemplos_que_venden": [
+      "Espejo Horizontal 60x80 con Luz Led fría táctil dimerizable Moderno ma (+1000, $96,999)",
+      "Espejo Vertical 80x60 con Luz Led fría táctil dimerizable Mübi (+1000, $104,663)",
+      "Espejo De Maquillaje Gadnic Cosmética Led Luz Regulable Pilas 3 Pliegu (+1000, $46,199)"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "metodo": "B1",
+  "productos": [
+   "E084"
+  ],
+  "anclas": [
+   "Desk Pad XXL Gamer Negro CDTek Antideslizante Caucho 84x38cm"
+  ],
+  "id": "B1",
+  "que_traer": "versión del producto ancla que resuelva la queja 'calidad'",
+  "busqueda_ml": "mouse pad grande",
+  "estado": "descartada",
+  "se_detiene_en": "C2 sub-atendida",
+  "motivo": "importancia 10.0, satisfacción 8.7 (hace falta ≥ 3.0 y ≤ 5.0)",
+  "señales": [
+   {
+    "id": "E084.B1",
+    "descripcion": "queja más frecuente: 'calidad'",
+    "errores": [],
+    "medida": {
+     "menciones": 84,
+     "insatisfechas": 11,
+     "de_textos": 207,
+     "importancia": 10.0,
+     "satisfaccion": 8.7,
+     "puntaje_oportunidad": 11.3
+    }
+   }
+  ],
+  "recorrido": [
+   {
+    "chequeo": "guardrail",
+    "supuesto": "Lo que dice el LLM está en los textos",
+    "pasa": true,
+    "motivo": "los baselines no citan textos"
+   },
+   {
+    "chequeo": "C1 verificada",
+    "supuesto": "La necesidad no es un caso aislado",
+    "pasa": true,
+    "motivo": "la señal aparece en 84 textos (mínimo 3)"
+   },
+   {
+    "chequeo": "C2 sub-atendida",
+    "supuesto": "La necesidad importa y está mal resuelta",
+    "pasa": false,
+    "motivo": "importancia 10.0, satisfacción 8.7 (hace falta ≥ 3.0 y ≤ 5.0)"
+   }
+  ]
+ },
+ {
+  "metodo": "B1",
+  "productos": [
+   "E085"
+  ],
+  "anclas": [
+   "Mouse pad XL Escritorio Gamer Oficina 90 X 40 Cm antidesliza"
+  ],
+  "id": "B1",
+  "que_traer": "versión del producto ancla que resuelva la queja 'calidad'",
+  "busqueda_ml": "mouse pad grande",
+  "estado": "descartada",
+  "se_detiene_en": "C2 sub-atendida",
+  "motivo": "importancia 10.0, satisfacción 8.8 (hace falta ≥ 3.0 y ≤ 5.0)",
+  "señales": [
+   {
+    "id": "E085.B1",
+    "descripcion": "queja más frecuente: 'calidad'",
+    "errores": [],
+    "medida": {
+     "menciones": 66,
+     "insatisfechas": 8,
+     "de_textos": 199,
+     "importancia": 10.0,
+     "satisfaccion": 8.8,
+     "puntaje_oportunidad": 11.2
+    }
+   }
+  ],
+  "recorrido": [
+   {
+    "chequeo": "guardrail",
+    "supuesto": "Lo que dice el LLM está en los textos",
+    "pasa": true,
+    "motivo": "los baselines no citan textos"
+   },
+   {
+    "chequeo": "C1 verificada",
+    "supuesto": "La necesidad no es un caso aislado",
+    "pasa": true,
+    "motivo": "la señal aparece en 66 textos (mínimo 3)"
+   },
+   {
+    "chequeo": "C2 sub-atendida",
+    "supuesto": "La necesidad importa y está mal resuelta",
+    "pasa": false,
+    "motivo": "importancia 10.0, satisfacción 8.8 (hace falta ≥ 3.0 y ≤ 5.0)"
+   }
+  ]
+ },
+ {
+  "metodo": "B1",
+  "productos": [
+   "E086"
+  ],
+  "anclas": [
+   "Porta Lapices De Escritorio Kendra Enrejado Negro"
+  ],
+  "id": "B1",
+  "que_traer": "versión del producto ancla que resuelva la queja 'material'",
+  "busqueda_ml": "portalapices",
+  "estado": "descartada",
+  "se_detiene_en": "C1 verificada",
+  "motivo": "la señal aparece en 2 textos (mínimo 3)",
+  "señales": [
+   {
+    "id": "E086.B1",
+    "descripcion": "queja más frecuente: 'material'",
+    "errores": [],
+    "medida": {
+     "menciones": 2,
+     "insatisfechas": 2,
+     "de_textos": 50,
+     "importancia": 4.0,
+     "satisfaccion": 0.0,
+     "puntaje_oportunidad": 8.0
+    }
+   }
+  ],
+  "recorrido": [
+   {
+    "chequeo": "guardrail",
+    "supuesto": "Lo que dice el LLM está en los textos",
+    "pasa": true,
+    "motivo": "los baselines no citan textos"
+   },
+   {
+    "chequeo": "C1 verificada",
+    "supuesto": "La necesidad no es un caso aislado",
+    "pasa": false,
+    "motivo": "la señal aparece en 2 textos (mínimo 3)"
+   }
+  ]
+ },
+ {
+  "metodo": "B1",
+  "productos": [
+   "E087"
+  ],
+  "anclas": [
+   "Organizador De Escritorio Lapicero Set 4 Divisiones Metal"
+  ],
+  "id": "B1",
+  "que_traer": "versión del producto ancla que resuelva la queja 'calidad'",
+  "busqueda_ml": "portalapices",
+  "estado": "descartada",
+  "se_detiene_en": "C2 sub-atendida",
+  "motivo": "importancia 10.0, satisfacción 8.7 (hace falta ≥ 3.0 y ≤ 5.0)",
+  "señales": [
+   {
+    "id": "E087.B1",
+    "descripcion": "queja más frecuente: 'calidad'",
+    "errores": [],
+    "medida": {
+     "menciones": 23,
+     "insatisfechas": 3,
+     "de_textos": 138,
+     "importancia": 10.0,
+     "satisfaccion": 8.7,
+     "puntaje_oportunidad": 11.3
+    }
+   }
+  ],
+  "recorrido": [
+   {
+    "chequeo": "guardrail",
+    "supuesto": "Lo que dice el LLM está en los textos",
+    "pasa": true,
+    "motivo": "los baselines no citan textos"
+   },
+   {
+    "chequeo": "C1 verificada",
+    "supuesto": "La necesidad no es un caso aislado",
+    "pasa": true,
+    "motivo": "la señal aparece en 23 textos (mínimo 3)"
+   },
+   {
+    "chequeo": "C2 sub-atendida",
+    "supuesto": "La necesidad importa y está mal resuelta",
+    "pasa": false,
+    "motivo": "importancia 10.0, satisfacción 8.7 (hace falta ≥ 3.0 y ≤ 5.0)"
+   }
+  ]
+ }
+]
