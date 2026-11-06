@@ -1003,7 +1003,7 @@
   "busqueda_ml": "recipientes hermeticos acero inoxidable",
   "estado": "descartada",
   "se_detiene_en": "C6 margen",
-  "motivo": "sin precio de proveedor o sin precio de mercado",
+  "motivo": "sin precio de proveedor: falta cotizarlo",
   "señales": [
    {
     "id": "P03.B1",
@@ -1075,7 +1075,7 @@
     "chequeo": "C6 margen",
     "supuesto": "Deja plata al precio que la gente paga",
     "pasa": false,
-    "motivo": "sin precio de proveedor o sin precio de mercado"
+    "motivo": "sin precio de proveedor: falta cotizarlo"
    }
   ]
  },
@@ -1092,7 +1092,7 @@
   "busqueda_ml": "recipientes hermeticos acero inoxidable",
   "estado": "descartada",
   "se_detiene_en": "C6 margen",
-  "motivo": "sin precio de proveedor o sin precio de mercado",
+  "motivo": "sin precio de proveedor: falta cotizarlo",
   "señales": [
    {
     "id": "P04.B1",
@@ -1164,7 +1164,7 @@
     "chequeo": "C6 margen",
     "supuesto": "Deja plata al precio que la gente paga",
     "pasa": false,
-    "motivo": "sin precio de proveedor o sin precio de mercado"
+    "motivo": "sin precio de proveedor: falta cotizarlo"
    }
   ]
  },

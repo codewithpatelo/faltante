@@ -130,8 +130,10 @@ def c5_la_eligen(p) -> Resultado:
 
 def c6_margen(p) -> Resultado:
     precio = precio_de_mercado(p)
-    if p.fob is None or precio is None:
-        return Resultado(False, "sin precio de proveedor o sin precio de mercado")
+    if precio is None:
+        return Resultado(False, "sin precio de mercado: ningún equivalente vendió, nadie lo compró todavía a ningún precio")
+    if p.fob is None:
+        return Resultado(False, "sin precio de proveedor: falta cotizarlo")
     m = margen(p.fob, precio)
     base, piso = m["escenarios"]["base"]["margen_pct"], round(U.MIN_MARGEN_SOBRE_COSTO * 100)
     if base >= piso:

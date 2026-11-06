@@ -1,0 +1,59 @@
+{
+ "nota": "Referencias de proveedor (FOB China) por oportunidad de escala_dev. Precios de catálogo de Alibaba, no cotizaciones. Los precios en ARS que muestra Alibaba se pasan a USD a 1.570 (harness/costo_puesto.TIPO_CAMBIO); los en EUR, a 1,09. DIE: base y alto (se prueba 35% por si no aplica el arancel menor).",
+ "G5.O2": {
+  "nombre": "Estantes de esquina adhesivos sin taladrar para baño, pack x2",
+  "fob": [
+   3.39,
+   3.72,
+   6.0
+  ],
+  "die": [
+   0.18,
+   0.35
+  ],
+  "volumen_m3": 0.00625,
+  "fuentes": "Alibaba, pack x2 estantes esquineros adhesivos: ARS 5.315,92 MOQ 80 (1601957647795), ARS 5.834,54 MOQ 10 (1601879657837), ARS 9.400,09 MOQ 200 (1601218335417); pesimista redondeado a USD 6. Caja ~25x25x10 cm. Unidad = pack x2, igual que el equivalente que vende en ML."
+ },
+ "G11.O1b": {
+  "nombre": "Cubre parabrisas exterior con correas a las puertas",
+  "fob": [
+   2.44,
+   3.99,
+   7.83
+  ],
+  "die": [
+   0.18,
+   0.35
+  ],
+  "volumen_m3": 0.005,
+  "fuentes": "Alibaba: media cubierta de aluminio US$2,44 200-1.999 u (1600738818174); PEVA con algodón y correas US$3,99 100-499 u (62388907945); Oxford 600D con correas antirrobo 7,18 € 50-499 u (1601727180840). Bolsa 40x25x5 cm."
+ },
+ "G11.O2b": {
+  "nombre": "Soporte de celular para auto con sopapa de vacío y brazo",
+  "fob": [
+   1.78,
+   5.38,
+   10.57
+  ],
+  "die": [
+   0.18,
+   0.35
+  ],
+  "volumen_m3": 0.00074,
+  "fuentes": "Alibaba: magnético de aluminio con sopapa de vacío US$1,78 200-2.999 u (1601635504080); LISEN con palanca de vacío y brazo US$5,38 300-999 u (1601709124960); LISEN con sopapa eléctrica US$10,57 300-499 u (1601391062360). Caja 10,5x9,5x7,4 cm."
+ },
+ "B2-aspiradora": {
+  "nombre": "Filtro HEPA de repuesto para aspiradora de mano o de auto",
+  "fob": [
+   1.45,
+   2.56,
+   5.6
+  ],
+  "die": [
+   0.18,
+   0.35
+  ],
+  "volumen_m3": 0.0002,
+  "fuentes": "Alibaba: filtro HEPA de repuesto US$1,45 100-499 u (1601804786798); filtro de aspiradora de mano US$2,56 100-999 u (1600879062908); set HEPA para aspiradora de mano US$5,60 500-999 u (1601039471824). Caja 9x6x4 cm."
+ }
+}

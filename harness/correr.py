@@ -25,7 +25,7 @@ METODOS = ["llm", "B1", "B2"]
 def propuestas(particion: str) -> list[Propuesta]:
     del_llm = json.loads((SERENDIPIA / f"divergente_{particion}.json").read_text(encoding="utf-8"))
     capturas = busquedas_capturadas()
-    fobs = json.loads((SERENDIPIA / "fob_2026-11-05.json").read_text(encoding="utf-8"))
+    fobs = precios_de_proveedor()
     todos = productos()
     titulos_ancla = {sin_acentos(p["titulo"]) for p in todos.values()}
 
@@ -78,6 +78,14 @@ def con_confianza(recorridos: list[dict]) -> list[dict]:
         for r in grupo:
             r["confianza"] = c
     return recorridos
+
+
+def precios_de_proveedor() -> dict:
+    """Todas las referencias de proveedor (data/serendipia/fob_*.json), por ID de oportunidad."""
+    fobs = {}
+    for f in sorted(SERENDIPIA.glob("fob_*.json")):
+        fobs.update(json.loads(f.read_text(encoding="utf-8")))
+    return fobs
 
 
 def busquedas_capturadas() -> dict:

@@ -21,7 +21,7 @@ MIN_PREGUNTAS_QUE_PIDEN_REPUESTO = 2
 
 # B1 no nombra un producto cotizable ("una versión que resuelva 'material'"), así que no tiene
 # precio de proveedor. B2 usa el del mismo repuesto que propuso el LLM: lo más favorable para B2.
-FOB_DEL_REPUESTO = {"afilador": "O1", "minipimer": "O4", "estante": "O6"}
+FOB_DEL_REPUESTO = {"afilador": "O1", "minipimer": "O4", "estante": "O6", "aspiradora": "B2-aspiradora"}
 
 
 def b1_queja_mas_frecuente(producto: dict) -> tuple[dict, dict, str | None]:
