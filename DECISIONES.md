@@ -114,8 +114,10 @@ fuente de cada extremo (`harness/costo_puesto.py`). Con esos costos a la vista, 
 las devoluciones se comen cerca de un cuarto del precio: el pastillero de dev, que con el 30%
 "casi pasaba", necesita un FOB de USD 1,99, debajo del catálogo. Si el margen no llega, se
 calcula el FOB máximo: la oportunidad queda condicional y el experimento siguiente es pedir
-cotización. Pendiente de fuente oficial: la alícuota de Ingresos Brutos y el volumen extra del
-embalaje.
+cotización. Ingresos Brutos: 3% en CABA para comercio
+minorista que factura menos de $391 millones (Ley 6948), 5% en el escenario pesimista. Pendiente
+de fuente: el volumen extra de la caja master (lo mejor es pedirle al proveedor la medida de la
+caja al cotizar).
 
 **Confianza calculada, no opinada.**
 Sobrevivir dice que nada refutó la oportunidad; no dice cuán sólida es la evidencia. La
