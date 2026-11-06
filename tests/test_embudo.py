@@ -142,11 +142,33 @@ MIEMBROS = {t["id"]: t for t in [persona("PX", "o1", dolor="sin repuesto"), pers
                                   persona("PY", "o1", situacion="taller chico"), persona("PY", "p2")]}
 
 
-def test_paso_b_exige_dos_personas_del_segmento_en_cada_uno_de_dos_productos():
-    ok = {"personas": ["PX.o1", "PX.p1", "PY.o1", "PY.p2"], "palabras_clave": ["repuesto"], "busqueda_ml": "x"}
-    assert errores_de_propuesta(ok, MIEMBROS) == []
-    assert any("2 productos" in e for e in errores_de_propuesta({**ok, "personas": ["PX.o1", "PX.p1", "PY.o1"]}, MIEMBROS))
-    assert any("no es del segmento" in e for e in errores_de_propuesta({**ok, "personas": ok["personas"] + ["PZ.o9"]}, MIEMBROS))
+VIVOS = {"G1.D1": {"medicion": {"segmento": {"tienen": ["PX.o1", "PX.p1", "PY.o1", "PY.p2"]}}}}
+
+
+def test_paso_b_resuelve_un_dolor_verificado_y_cita_a_quienes_lo_tienen_en_dos_productos():
+    ok = {"dolor": "G1.D1", "personas": ["PX.o1", "PX.p1", "PY.o1", "PY.p2"], "palabras_clave": ["repuesto"], "busqueda_ml": "x"}
+    assert errores_de_propuesta(ok, MIEMBROS, VIVOS) == []
+    assert any("dolores verificados" in e for e in errores_de_propuesta({**ok, "dolor": "G1.D9"}, MIEMBROS, VIVOS))
+    assert any("2 productos" in e for e in errores_de_propuesta({**ok, "personas": ["PX.o1", "PX.p1", "PY.o1"]}, MIEMBROS, VIVOS))
+    assert any("no tiene ese dolor" in e for e in errores_de_propuesta({**ok, "personas": ok["personas"] + ["PZ.o9"]}, MIEMBROS, VIVOS))
+
+
+def test_paso_b_sin_dolores_verificados_no_propone_nada():
+    class NoDeberiaLlamarse:
+        messages = None
+    assert proponer(NoDeberiaLlamarse(), {"segmento": "G1"}, MIEMBROS, {}, []) == []
+
+
+def test_el_dolor_sobrevive_solo_si_es_de_varios_productos_mas_que_en_el_control_y_no_esta_resuelto():
+    from harness.dolores import veredicto
+    tarjetas = {f"P{p}.o{i}": {"producto": f"P{p}"} for p in "XY" for i in range(10)}
+    tienen = [f"P{p}.o{i}" for p in "XY" for i in range(3)]          # 6 personas, 3 en cada producto
+    seg = {"medidas": 30, "tienen": tienen, "resuelto": []}
+    assert veredicto(seg, {"medidas": 30, "tienen": ["PZ.o1"]}, tarjetas)["pasa"]
+    assert "un solo producto" in veredicto({**seg, "tienen": [f"PX.o{i}" for i in range(6)]}, {"medidas": 30, "tienen": []}, tarjetas)["motivo"]
+    assert "no es de este grupo" in veredicto(seg, {"medidas": 30, "tienen": tienen[:5]}, tarjetas)["motivo"]
+    assert "ya lo resolvió" in veredicto({**seg, "resuelto": tienen[:4]}, {"medidas": 30, "tienen": []}, tarjetas)["motivo"]
+    assert "lo tienen 2" in veredicto({**seg, "tienen": tienen[:2]}, {"medidas": 30, "tienen": []}, tarjetas)["motivo"]
 
 
 def test_cada_propuesta_deja_una_señal_por_producto_con_las_citas_de_su_gente():

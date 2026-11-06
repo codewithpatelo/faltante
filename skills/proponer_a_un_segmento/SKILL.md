@@ -1,6 +1,6 @@
 ---
 name: proponer_a_un_segmento
-description: Paso B de la divergencia. Recibe el mapa de empatía de un segmento de gente (quiénes son, qué eligen y qué dejan pasar, qué ven en el mercado, qué dicen y qué temen) y busca un desfasaje de mercado - algo que ese grupo necesita, que el mercado local no ofrece y que se puede importar. Lo escribe como propuesta de valor.
+description: Paso B de la divergencia. Recibe el mapa de empatía de un segmento y los dolores que ya sobrevivieron a su medición, y busca un desfasaje de mercado - algo que resuelva uno de esos dolores, que el mercado local no ofrece y que se puede importar. Lo escribe como propuesta de valor.
 toca_datos: true
 ---
 
@@ -18,14 +18,16 @@ el programa después trata de refutarlo con datos.
 - **Qué ven:** lo que el mercado les ofrece hoy.
 - **Qué dicen y qué temen (voto con las manos):** una línea por persona, con su ID
   (`E012.o34`): situación, qué quiere lograr, dolor, ganancia, miedo, con qué compara.
+- **Dolores verificados:** los que ya sobrevivieron a su medición. Cada uno con el trabajo, el
+  obstáculo, con qué lo resuelven hoy, qué hace mal esa solución, y `lo_tienen`: las personas que
+  otro modelo encontró con ese dolor leyendo sus textos.
 
 ## Procedimiento
 
-1. Buscá lo que no cierra: lo que eligen pese a un defecto, lo que dejan pasar pese a una
-   ventaja, lo que improvisan, lo que temen y nadie les resuelve.
-2. Formulá la necesidad de fondo del grupo: qué trabajo quieren hacer y qué se los impide.
-3. Preguntate qué producto, que hoy no ven en su góndola, haría ese trabajo. Buscalo en otras
-   industrias o usos (ferretería, outdoor, salud, profesional, otros países).
+1. Partí de un dolor verificado. No formules otros: el problema ya está probado.
+2. Mirá qué hace mal la solución que usan hoy y qué eligen o dejan pasar en sus búsquedas.
+3. Preguntate qué producto, que hoy no ven en su góndola, haría ese trabajo sin esa falla.
+   Buscalo en otras industrias o usos (ferretería, outdoor, salud, profesional, otros países).
 4. Escribí de 0 a 3 propuestas. Cero es válido. Si no hay desfasaje, no lo inventes.
 
 **No propongas lo obvio:** repuestos, consumibles o accesorios de los productos que eligieron,
@@ -44,8 +46,9 @@ cualquiera lo ve mirando la búsqueda.
 
 ## Criterios (los chequea el programa)
 
-- `personas`: IDs del segmento cuyas voces sostienen la necesidad: al menos 2 personas de cada
-  uno de al menos 2 productos distintos.
+- `dolor`: el ID del dolor verificado que resuelve.
+- `personas`: IDs de `lo_tienen` de ese dolor: al menos 2 personas de cada uno de al menos 2
+  productos distintos.
 - `palabras_clave`: palabras que aparecen en esas voces cuando hablan de la necesidad; el
   programa las cuenta en todas las opiniones y preguntas de cada producto (C1 y C2).
 - `busqueda_ml`: lo que alguien escribiría en Mercado Libre para encontrar lo propuesto.
@@ -53,7 +56,7 @@ cualquiera lo ve mirando la búsqueda.
 ## Salida (JSON): una propuesta de valor por oportunidad
 
 ```json
-{"oportunidades": [{"id": "O1", "que_traer": "...", "para_quien": "la situación del segmento",
+{"oportunidades": [{"id": "O1", "dolor": "G3.D1", "que_traer": "...", "para_quien": "la situación del segmento",
    "alivia": "qué dolor o miedo saca", "crea": "qué ganancia da",
    "por_que_le_gana": "por qué lo elegirían frente a lo que hoy eligen o ven",
    "por_que": "la necesidad de fondo y por qué nadie la atiende",
