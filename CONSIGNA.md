@@ -12,7 +12,7 @@ preguntas de indecisos), proponer qué traer, y tratar de refutarlo con datos an
 recomendarlo.
 
 **Hipótesis:** con el mismo embudo convergente en código (guardrail de citas, C1
-verificada, C2 Ulwick, C3 demanda, C4 hueco local, C5 la eligen si se ofrece, C6 margen), el
+el dolor existe, C3 demanda, C4 hueco local, C5 la eligen si se ofrece, C6 margen), el
 LLM produce **más oportunidades distintas que sobreviven** que dos baselines sin LLM: B1, la queja más
 frecuente; B2, una regla que detecta pedidos de repuesto. Partición fija por producto,
 decidida antes de leer las voces (`data/voces/productos_2026-11-05.json`: 11 dev, 10 test).

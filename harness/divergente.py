@@ -8,6 +8,10 @@
                                                     no ve en su góndola, como propuesta de valor; dos
                                                     tandas, la segunda distinta de la primera
 
+    C1 · dolor     (harness/dolor.py)               otro modelo mide si el dolor que dice aliviar cada
+                                                    propuesta existe en la gente que cita (y en los
+                                                    baselines, igual); decide una prueba estadística
+
 Lo no obvio sale de la persona, no del producto: mirar un producto solo da su repuesto o su
 versión mejorada. En cada paso el guardrail (código) revisa lo que cita el LLM; lo que sigue
 mal después de un reintento se descarta. Las propuestas salen en el formato del embudo: cada una
@@ -23,7 +27,9 @@ import os
 import sys
 from collections import Counter
 
+from harness import dolor as D
 from harness import personas as P
+from harness.baselines import b1_queja_mas_frecuente, b2_pedidos_de_repuesto
 from harness.modelo import MODELO, DeepSeek, con_reintento, costo, en_paralelo
 from harness.voces import RAIZ, productos
 
@@ -81,6 +87,22 @@ def al_formato_del_embudo(oportunidades: list[dict], tarjetas: dict[str, dict], 
     return {"señales": señales, "oportunidades": salida}
 
 
+def dolores_de_los_baselines(particion: str, tarjetas: dict) -> dict[str, list]:
+    """El dolor de cada baseline, dicho como el del LLM, medido en la gente de su producto."""
+    con_gente = {t["producto"] for t in tarjetas.values()}
+    salida = {"B1": [], "B2": []}
+    for pid, producto in productos(particion).items():
+        if pid not in con_gente:
+            continue
+        for metodo, baseline in (("B1", b1_queja_mas_frecuente), ("B2", b2_pedidos_de_repuesto)):
+            hecho = baseline(producto)
+            if hecho:
+                señal, oportunidad, _ = hecho
+                salida[metodo].append(({"id": f"{metodo}.{pid}", "trabajo": f"usar {producto['busqueda']}",
+                                        "obstaculo": señal["descripcion"], "que_hace_mal": oportunidad["que_traer"]}, {pid}))
+    return salida
+
+
 def divergir(cliente, particion: str, capturas: dict) -> dict:
     todos, traza = productos(), []
     gente = P.personas_de_la_particion(cliente, particion, traza)
@@ -92,7 +114,11 @@ def divergir(cliente, particion: str, capturas: dict) -> dict:
     suficientes = [m for m in mapas if P.es_segmento_suficiente(m)]
     oportunidades = [o for ops in en_paralelo(lambda m: proponer(cliente, m, miembros_de[m["segmento"]], traza), suficientes)
                      for o in ops]
-    return {"quien": MODELO, "costo": costo(traza), "traza": traza,
+    dolor = {"llm": D.medir_y_decidir(cliente, [(D.enunciado(o), {tarjetas[i]["producto"] for i in o["personas"]})
+                                                for o in oportunidades], tarjetas, todos, traza)}
+    for metodo, dolores in dolores_de_los_baselines(particion, tarjetas).items():
+        dolor[metodo] = D.medir_y_decidir(cliente, dolores, tarjetas, todos, traza)
+    return {"quien": MODELO, "costo": costo(traza), "traza": traza, "dolor": dolor,
             "personas": len(tarjetas), "asignadas": len(gente["asignaciones"]),
             "segmentos": [{**m, "pasa_al_paso_b": P.es_segmento_suficiente(m)} for m in mapas],
             **al_formato_del_embudo(oportunidades, tarjetas, particion)}

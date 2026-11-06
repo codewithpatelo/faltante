@@ -79,8 +79,7 @@ voto con las manos ────┘   (divergente)     críticos y mata el humo (
 | Divergente A | — | Por producto: lee qué se eligió y qué se dejó pasar en su búsqueda, y las voces; devuelve señales (quejas, faltantes, deseos, usos raros) citando textos | **LLM** (`skills/leer_voces`) |
 | Divergente B | — | Entre todos los productos: propone qué traer conectando señales de al menos 2 productos distintos (lo no obvio sale de cruzar) | **LLM** (`skills/cruzar_senales`) |
 | Guardrail | Lo que dice el LLM está en los textos | Cita un texto que no existe, un fragmento que no está, o un solo texto (se le devuelve el error una vez) | Código |
-| C1 verificada | La necesidad no es un caso aislado | Aparece en menos de 3 textos, contando todos y no solo los que leyó el LLM | Código |
-| C2 sub-atendida | Importa y está mal resuelta | Puntaje de oportunidad de Ulwick: pocos la mencionan o la mayoría está conforme | Código |
+| C1 dolor | El dolor que dice aliviar existe y está mal resuelto | Otro modelo, que no sabe qué se propone, no encuentra a quienes lo tienen sin resolver más seguido que en gente al azar (Fisher con Benjamini-Hochberg), o los encuentra en un solo producto | **LLM que mide** (`skills/medir_dolor`) + código que decide |
 | C3 demanda | Hay gente eligiendo el producto de origen | Vende menos de +500 | Código |
 | C4 hueco | Nadie la atiende todavía | 3 o más equivalentes ya venden +100 | Código + captura |
 | C5 la eligen | Si se ofrece, la gente la elige | Las alternativas con stock local y precio no atípico venden significativamente menos (Mann-Whitney, 5%) que lo que la misma gente compra en su búsqueda de origen | Código + captura |
@@ -100,8 +99,8 @@ instrucciones, y la versión nueva se queda solo si mejora.
 "se raya pero la prefiero a la de madera"). Contar palabras da "filo", "precio", "hola".
 Proponer *qué traer* requiere leer.
 
-**Por qué no se lo cree:** el LLM no puede citar un texto que no existe, el programa recuenta
-todo por su cuenta, y cada supuesto se contrasta con lo que la gente hizo. Cada propuesta
+**Por qué no se lo cree:** el LLM no puede citar un texto que no existe, el dolor lo mide otro
+modelo que no sabe qué se propuso, y cada supuesto se contrasta con lo que la gente hizo. Cada propuesta
 descartada queda registrada con el motivo.
 
 ## Correrlo
@@ -153,7 +152,7 @@ Un archivo por etapa, en el orden en que corren:
 | `harness/explorar_prompts.py` · `harness/optimizar_prompt.py` | Comparan las 25 variantes y optimizan la mejor (juez auxiliar: `skills/juzgar_obviedad`) |
 | `harness/baselines.py` | B1 y B2: proponer sin LLM, para comparar |
 | `harness/embudo.py` | **La lista de supuestos críticos**, en orden, cada uno con el dato que lo refuta; y cómo se recorre |
-| `harness/chequeos.py` | Cómo se prueba cada supuesto (guardrail, C1 a C6) |
+| `harness/chequeos.py` | Cómo se prueba cada supuesto (guardrail, C1 y C3 a C6) |
 | `harness/confianza.py` | Los 5 factores de confianza de lo que sobrevive |
 | `harness/umbrales.py` | Todos los umbrales, con qué mide cada uno |
 | `harness/costo_puesto.py` | Costo puesto en Argentina e ingreso neto vendiendo en Mercado Libre |
@@ -174,7 +173,6 @@ Un archivo por etapa, en el orden en que corren:
 - **Voto con las manos:** lo que la gente dice: por qué eligió y qué le faltó (opiniones y preguntas).
 - **Divergente / convergente:** primero abrir hipótesis (LLM), después intentar refutarlas (programa).
 - **Abducción:** proponer lo que haría que lo observado tenga sentido.
-- **Puntaje de oportunidad (Ulwick):** importancia + (importancia − satisfacción); alto = importa y está mal resuelto.
 - **Equivalente:** una publicación que es el mismo producto o un reemplazo directo.
 - **Costo puesto:** precio en origen + flete + aranceles, con el producto en Argentina.
 - **FOB:** precio del proveedor en el puerto de origen.

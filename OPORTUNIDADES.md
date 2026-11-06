@@ -1,5 +1,8 @@
 # Oportunidades de importación (05/11/2026)
 
+> Corrida del 05/11, anterior a las personas y a C1 dolor: el embudo de hoy ya no la reproduce
+> (`embudo_dev.json` marca "falta medir el dolor"). Se reemplaza con la corrida final de escala_test.
+
 Qué sobrevivió, qué se descartó y por qué. Entrada: 21 productos, los más elegidos de sus
 búsquedas en Mercado Libre, con 2.647 opiniones y 334 preguntas de indecisos. El LLM propuso
 14 oportunidades distintas; el programa probó los supuestos críticos de cada una (guardrail y

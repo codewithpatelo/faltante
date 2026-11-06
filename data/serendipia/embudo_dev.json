@@ -12,61 +12,29 @@
   "id": "O1",
   "que_traer": "Disco de repuesto para afiladores rodantes (diamante 400/1000 o grano fino 3000/6000), vendido suelto",
   "busqueda_ml": "discos repuesto afilador rodante",
-  "estado": "condicional",
-  "se_detiene_en": "C6 margen",
-  "motivo": "margen neto base -9.1% a $17,416; pasa si el FOB es ≤ USD 1.99",
+  "estado": "descartada",
+  "se_detiene_en": "C1 dolor",
+  "motivo": "falta medir el dolor (harness/dolor.py, corre con la divergencia)",
   "señales": [
    {
     "id": "P01.S1",
     "descripcion": "Piden discos/piedras de repuesto y el vendedor no los tiene",
-    "errores": [],
-    "medida": {
-     "menciones": 11,
-     "insatisfechas": 7,
-     "de_textos": 115,
-     "importancia": 9.6,
-     "satisfaccion": 3.6,
-     "puntaje_oportunidad": 15.6
-    }
+    "errores": []
    },
    {
     "id": "P01.S2",
     "descripcion": "Quieren granos más finos para terminar el filo",
-    "errores": [],
-    "medida": {
-     "menciones": 4,
-     "insatisfechas": 3,
-     "de_textos": 115,
-     "importancia": 3.5,
-     "satisfaccion": 2.5,
-     "puntaje_oportunidad": 4.5
-    }
+    "errores": []
    },
    {
     "id": "P02.S1",
     "descripcion": "Piden repuestos de discos para el Refilo",
-    "errores": [],
-    "medida": {
-     "menciones": 10,
-     "insatisfechas": 8,
-     "de_textos": 138,
-     "importancia": 7.2,
-     "satisfaccion": 2.0,
-     "puntaje_oportunidad": 12.4
-    }
+    "errores": []
    },
    {
     "id": "P02.S2",
     "descripcion": "Esperaban el cuero para asentar el filo y no viene",
-    "errores": [],
-    "medida": {
-     "menciones": 7,
-     "insatisfechas": 7,
-     "de_textos": 138,
-     "importancia": 5.1,
-     "satisfaccion": 0.0,
-     "puntaje_oportunidad": 10.2
-    }
+    "errores": []
    }
   ],
   "recorrido": [
@@ -77,105 +45,12 @@
     "motivo": "citas verificadas"
    },
    {
-    "chequeo": "C1 verificada",
-    "supuesto": "La necesidad no es un caso aislado",
-    "pasa": true,
-    "motivo": "la señal aparece en 11 textos (mínimo 3)"
-   },
-   {
-    "chequeo": "C2 sub-atendida",
-    "supuesto": "La necesidad importa y está mal resuelta",
-    "pasa": true,
-    "motivo": "importancia 9.6, satisfacción 3.6 (hace falta ≥ 3.0 y ≤ 5.0)"
-   },
-   {
-    "chequeo": "C3 demanda",
-    "supuesto": "Hay gente eligiendo el producto de origen",
-    "pasa": true,
-    "motivo": "el producto ancla vende +1000 (mínimo 500)"
-   },
-   {
-    "chequeo": "C4 hueco",
-    "supuesto": "Nadie la atiende todavía",
-    "pasa": true,
-    "motivo": "2 equivalentes, 2 venden +100",
-    "datos": {
-     "equivalentes": 2,
-     "venden": 2,
-     "con_alguna_venta": 2,
-     "ventas_visibles": 200,
-     "ejemplos_que_venden": [
-      "Disco Diamante 240/800/1200 Grit Afilador Rodante Smarta (+100, $17,416)",
-      "Disco Diamante 240/800/1200 Grit Afilador Rodante Smarta (+100, $17,415)"
-     ]
-    }
-   },
-   {
-    "chequeo": "C5 la eligen",
-    "supuesto": "Si se ofrece, la gente la elige",
-    "pasa": true,
-    "motivo": "2 alternativas con stock local a precio comparable (ventas mediana 100.0) contra 58 publicaciones de la búsqueda de origen (mediana 0.0), p = 0.8741",
-    "datos": {
-     "comparables": 2,
-     "ventas_comparables": [
-      100,
-      100
-     ],
-     "mediana_de_origen": 0.0,
-     "publicaciones_de_origen": 58,
-     "p": 0.8741
-    }
-   },
-   {
-    "chequeo": "C6 margen",
-    "supuesto": "Deja plata al precio que la gente paga",
+    "chequeo": "C1 dolor",
+    "supuesto": "El dolor que dice aliviar existe y está mal resuelto",
     "pasa": false,
-    "motivo": "margen neto base -9.1% a $17,416; pasa si el FOB es ≤ USD 1.99",
-    "datos": {
-     "precio_ars": 17416,
-     "lote": 1000,
-     "envio_ars": 2500,
-     "escenarios": {
-      "optimista": {
-       "ingreso_neto_ars": 6752,
-       "costo_puesto_ars": 5715,
-       "margen_neto_pct": 6.0
-      },
-      "base": {
-       "ingreso_neto_ars": 5457,
-       "costo_puesto_ars": 7049,
-       "margen_neto_pct": -9.1
-      },
-      "pesimista": {
-       "ingreso_neto_ars": 3366,
-       "costo_puesto_ars": 16014,
-       "margen_neto_pct": -72.6
-      }
-     },
-     "fob_maximo_usd": 1.99
-    }
+    "motivo": "falta medir el dolor (harness/dolor.py, corre con la divergencia)"
    }
-  ],
-  "confianza": {
-   "nivel": "baja",
-   "factores_que_se_cumplen": "2 de 5",
-   "a_favor": [
-    "la misma necesidad aparece en 2 o más productos distintos",
-    "la mencionan 10 o más textos"
-   ],
-   "en_contra": [
-    "los equivalentes casi no se venden: puede que no lo quiera tanta gente",
-    "el precio de referencia sale de pocas publicaciones",
-    "en el escenario pesimista no deja la ganancia de referencia"
-   ],
-   "evidencia": {
-    "anclas": 2,
-    "max_menciones": 11,
-    "ventas_de_equivalentes": 200,
-    "publicaciones_con_precio": 2,
-    "margen_pesimista_pct": -72.6
-   }
-  }
+  ]
  },
  {
   "metodo": "llm",
@@ -189,34 +64,18 @@
   "que_traer": "Set de recipientes herméticos de acero de tamaño real (500 ml a 1,5 L) con tapa con burlete, a precio intermedio entre el set chino de $14k y el Tramontina de $28k por unidad",
   "busqueda_ml": "set recipientes hermeticos acero inoxidable",
   "estado": "descartada",
-  "se_detiene_en": "C4 hueco",
-  "motivo": "ya atendido: 5 equivalentes venden +100",
+  "se_detiene_en": "C1 dolor",
+  "motivo": "falta medir el dolor (harness/dolor.py, corre con la divergencia)",
   "señales": [
    {
     "id": "P03.S1",
     "descripcion": "No son herméticos y el material es finito, aunque se venden +5.000",
-    "errores": [],
-    "medida": {
-     "menciones": 48,
-     "insatisfechas": 22,
-     "de_textos": 172,
-     "importancia": 10.0,
-     "satisfaccion": 5.4,
-     "puntaje_oportunidad": 14.6
-    }
+    "errores": []
    },
    {
     "id": "P03.S2",
     "descripcion": "Son mucho más chicos que en la foto y la publicación no dice las medidas",
-    "errores": [],
-    "medida": {
-     "menciones": 71,
-     "insatisfechas": 38,
-     "de_textos": 172,
-     "importancia": 10.0,
-     "satisfaccion": 4.6,
-     "puntaje_oportunidad": 15.4
-    }
+    "errores": []
    }
   ],
   "recorrido": [
@@ -227,39 +86,10 @@
     "motivo": "citas verificadas"
    },
    {
-    "chequeo": "C1 verificada",
-    "supuesto": "La necesidad no es un caso aislado",
-    "pasa": true,
-    "motivo": "la señal aparece en 71 textos (mínimo 3)"
-   },
-   {
-    "chequeo": "C2 sub-atendida",
-    "supuesto": "La necesidad importa y está mal resuelta",
-    "pasa": true,
-    "motivo": "importancia 10.0, satisfacción 4.6 (hace falta ≥ 3.0 y ≤ 5.0)"
-   },
-   {
-    "chequeo": "C3 demanda",
-    "supuesto": "Hay gente eligiendo el producto de origen",
-    "pasa": true,
-    "motivo": "el producto ancla vende +5000 (mínimo 500)"
-   },
-   {
-    "chequeo": "C4 hueco",
-    "supuesto": "Nadie la atiende todavía",
+    "chequeo": "C1 dolor",
+    "supuesto": "El dolor que dice aliviar existe y está mal resuelto",
     "pasa": false,
-    "motivo": "ya atendido: 5 equivalentes venden +100",
-    "datos": {
-     "equivalentes": 37,
-     "venden": 5,
-     "con_alguna_venta": 15,
-     "ventas_visibles": 975,
-     "ejemplos_que_venden": [
-      "Set 3 Recipientes Herméticos De Acero Inoxidable Blanco (+100, $13,597)",
-      "X7 Contenedor Taper Acero Inoxidable Hermetico Con Tapa Plateado (+100, $84,854)",
-      "Lunchera Contenedor Taper Gastronomía 1200ml Acero Inoxidable Hermétic (+100, $44,935)"
-     ]
-    }
+    "motivo": "falta medir el dolor (harness/dolor.py, corre con la divergencia)"
    }
   ]
  },
@@ -275,21 +105,13 @@
   "que_traer": "Espumador de leche de mano (batidor de café a pilas o USB)",
   "busqueda_ml": "espumador de leche electrico",
   "estado": "descartada",
-  "se_detiene_en": "C4 hueco",
-  "motivo": "ya atendido: 12 equivalentes venden +100",
+  "se_detiene_en": "C1 dolor",
+  "motivo": "falta medir el dolor (harness/dolor.py, corre con la divergencia)",
   "señales": [
    {
     "id": "P07.S1",
     "descripcion": "Preguntan una y otra vez si trae el batidor/espumador de café de la foto",
-    "errores": [],
-    "medida": {
-     "menciones": 10,
-     "insatisfechas": 8,
-     "de_textos": 133,
-     "importancia": 7.5,
-     "satisfaccion": 2.0,
-     "puntaje_oportunidad": 13.0
-    }
+    "errores": []
    }
   ],
   "recorrido": [
@@ -300,39 +122,10 @@
     "motivo": "citas verificadas"
    },
    {
-    "chequeo": "C1 verificada",
-    "supuesto": "La necesidad no es un caso aislado",
-    "pasa": true,
-    "motivo": "la señal aparece en 10 textos (mínimo 3)"
-   },
-   {
-    "chequeo": "C2 sub-atendida",
-    "supuesto": "La necesidad importa y está mal resuelta",
-    "pasa": true,
-    "motivo": "importancia 7.5, satisfacción 2.0 (hace falta ≥ 3.0 y ≤ 5.0)"
-   },
-   {
-    "chequeo": "C3 demanda",
-    "supuesto": "Hay gente eligiendo el producto de origen",
-    "pasa": true,
-    "motivo": "el producto ancla vende +10000 (mínimo 500)"
-   },
-   {
-    "chequeo": "C4 hueco",
-    "supuesto": "Nadie la atiende todavía",
+    "chequeo": "C1 dolor",
+    "supuesto": "El dolor que dice aliviar existe y está mal resuelto",
     "pasa": false,
-    "motivo": "ya atendido: 12 equivalentes venden +100",
-    "datos": {
-     "equivalentes": 25,
-     "venden": 12,
-     "con_alguna_venta": 19,
-     "ventas_visibles": 5425,
-     "ejemplos_que_venden": [
-      "Batidor Espumador Leche Cafe Electrico Recargable Usb Inalam Color Neg (+1000, $11,304)",
-      "Batidor Espumador Leche Cafe Electrico Recargable Usb Inalam (+1000, $10,087)",
-      "Batidor Eléctrico Usb Inalámbrico Espumadora Café Leche (+1000, $10,499)"
-     ]
-    }
+    "motivo": "falta medir el dolor (harness/dolor.py, corre con la divergencia)"
    }
   ]
  },
@@ -348,34 +141,18 @@
   "que_traer": "Repuestos de minipimer (vaso picador, pie/varilla, acoples) compatibles con los modelos más vendidos",
   "busqueda_ml": "repuesto minipimer picador",
   "estado": "descartada",
-  "se_detiene_en": "C4 hueco",
-  "motivo": "ya atendido: 7 equivalentes venden +100",
+  "se_detiene_en": "C1 dolor",
+  "motivo": "falta medir el dolor (harness/dolor.py, corre con la divergencia)",
   "señales": [
    {
     "id": "P08.S1",
     "descripcion": "Piden repuestos (picador, pie, encastres) que no se consiguen",
-    "errores": [],
-    "medida": {
-     "menciones": 10,
-     "insatisfechas": 9,
-     "de_textos": 159,
-     "importancia": 6.3,
-     "satisfaccion": 1.0,
-     "puntaje_oportunidad": 11.6
-    }
+    "errores": []
    },
    {
     "id": "P08.S2",
     "descripcion": "El encastre de plástico se afloja o se rompe",
-    "errores": [],
-    "medida": {
-     "menciones": 10,
-     "insatisfechas": 8,
-     "de_textos": 159,
-     "importancia": 6.3,
-     "satisfaccion": 2.0,
-     "puntaje_oportunidad": 10.6
-    }
+    "errores": []
    }
   ],
   "recorrido": [
@@ -386,39 +163,10 @@
     "motivo": "citas verificadas"
    },
    {
-    "chequeo": "C1 verificada",
-    "supuesto": "La necesidad no es un caso aislado",
-    "pasa": true,
-    "motivo": "la señal aparece en 10 textos (mínimo 3)"
-   },
-   {
-    "chequeo": "C2 sub-atendida",
-    "supuesto": "La necesidad importa y está mal resuelta",
-    "pasa": true,
-    "motivo": "importancia 6.3, satisfacción 1.0 (hace falta ≥ 3.0 y ≤ 5.0)"
-   },
-   {
-    "chequeo": "C3 demanda",
-    "supuesto": "Hay gente eligiendo el producto de origen",
-    "pasa": true,
-    "motivo": "el producto ancla vende +10000 (mínimo 500)"
-   },
-   {
-    "chequeo": "C4 hueco",
-    "supuesto": "Nadie la atiende todavía",
+    "chequeo": "C1 dolor",
+    "supuesto": "El dolor que dice aliviar existe y está mal resuelto",
     "pasa": false,
-    "motivo": "ya atendido: 7 equivalentes venden +100",
-    "datos": {
-     "equivalentes": 29,
-     "venden": 7,
-     "con_alguna_venta": 13,
-     "ventas_visibles": 2275,
-     "ejemplos_que_venden": [
-      "Repuesto Pie/brazo/varilla Mixer Minipimer Liliana Original (+1000, $14,999)",
-      "Repuesto Brazo Pie Mixer Black+Decker, Electrolux, Top House, Liliana  (+500, $16,999)",
-      "Pie Picador Cuchilla Minipimer Black Decker Hb1003wc-ar (+100, $28,900)"
-     ]
-    }
+    "motivo": "falta medir el dolor (harness/dolor.py, corre con la divergencia)"
    }
   ]
  },
@@ -434,21 +182,13 @@
   "que_traer": "Organizadores de ropa plegables con armazón metálico",
   "busqueda_ml": "organizador ropa plegable estructura metalica",
   "estado": "descartada",
-  "se_detiene_en": "C4 hueco",
-  "motivo": "ya atendido: 6 equivalentes venden +100",
+  "se_detiene_en": "C1 dolor",
+  "motivo": "falta medir el dolor (harness/dolor.py, corre con la divergencia)",
   "señales": [
    {
     "id": "P09.S1",
     "descripcion": "No trae el armazón o las varillas y se desarma con peso",
-    "errores": [],
-    "medida": {
-     "menciones": 6,
-     "insatisfechas": 5,
-     "de_textos": 140,
-     "importancia": 4.3,
-     "satisfaccion": 1.7,
-     "puntaje_oportunidad": 6.9
-    }
+    "errores": []
    }
   ],
   "recorrido": [
@@ -459,39 +199,10 @@
     "motivo": "citas verificadas"
    },
    {
-    "chequeo": "C1 verificada",
-    "supuesto": "La necesidad no es un caso aislado",
-    "pasa": true,
-    "motivo": "la señal aparece en 6 textos (mínimo 3)"
-   },
-   {
-    "chequeo": "C2 sub-atendida",
-    "supuesto": "La necesidad importa y está mal resuelta",
-    "pasa": true,
-    "motivo": "importancia 4.3, satisfacción 1.7 (hace falta ≥ 3.0 y ≤ 5.0)"
-   },
-   {
-    "chequeo": "C3 demanda",
-    "supuesto": "Hay gente eligiendo el producto de origen",
-    "pasa": true,
-    "motivo": "el producto ancla vende +5000 (mínimo 500)"
-   },
-   {
-    "chequeo": "C4 hueco",
-    "supuesto": "Nadie la atiende todavía",
+    "chequeo": "C1 dolor",
+    "supuesto": "El dolor que dice aliviar existe y está mal resuelto",
     "pasa": false,
-    "motivo": "ya atendido: 6 equivalentes venden +100",
-    "datos": {
-     "equivalentes": 16,
-     "venden": 6,
-     "con_alguna_venta": 10,
-     "ventas_visibles": 8250,
-     "ejemplos_que_venden": [
-      "Organizador Caja De Tela Plegable Con Estructura Metalica (+5000, $10,830)",
-      "X4 Organizador Canasto Caja De Tela Premium Antidesgaste Cationica | P (+1000, $29,039)",
-      "Organizador Caja De Tela Plegable Estructura Metalica Ideal Para Ropa  (+1000, $7,278)"
-     ]
-    }
+    "motivo": "falta medir el dolor (harness/dolor.py, corre con la divergencia)"
    }
   ]
  },
@@ -509,60 +220,28 @@
   "que_traer": "Pack de adhesivos de repuesto (pegatinas transparentes resistentes al agua) para estantes de ducha sin perforar",
   "busqueda_ml": "adhesivo repuesto estante ducha",
   "estado": "descartada",
-  "se_detiene_en": "C5 la eligen",
-  "motivo": "la gente la deja pasar: 10 alternativas con stock local a precio comparable (ventas mediana 0.0) contra 51 publicaciones de la búsqueda de origen (mediana 100), p = 0.0",
+  "se_detiene_en": "C1 dolor",
+  "motivo": "falta medir el dolor (harness/dolor.py, corre con la divergencia)",
   "señales": [
    {
     "id": "P10.S1",
     "descripcion": "Piden los adhesivos de repuesto por separado",
-    "errores": [],
-    "medida": {
-     "menciones": 7,
-     "insatisfechas": 5,
-     "de_textos": 200,
-     "importancia": 3.5,
-     "satisfaccion": 2.9,
-     "puntaje_oportunidad": 4.1
-    }
+    "errores": []
    },
    {
     "id": "P10.S2",
     "descripcion": "Quisieran pegatinas extra en la caja",
-    "errores": [],
-    "medida": {
-     "menciones": 11,
-     "insatisfechas": 8,
-     "de_textos": 200,
-     "importancia": 5.5,
-     "satisfaccion": 2.7,
-     "puntaje_oportunidad": 8.3
-    }
+    "errores": []
    },
    {
     "id": "P11.S1",
     "descripcion": "Piden adhesivos extra porque el original se despegó",
-    "errores": [],
-    "medida": {
-     "menciones": 26,
-     "insatisfechas": 20,
-     "de_textos": 172,
-     "importancia": 10.0,
-     "satisfaccion": 2.3,
-     "puntaje_oportunidad": 17.7
-    }
+    "errores": []
    },
    {
     "id": "P11.S2",
     "descripcion": "El vapor del baño despega los ganchos",
-    "errores": [],
-    "medida": {
-     "menciones": 7,
-     "insatisfechas": 7,
-     "de_textos": 172,
-     "importancia": 4.1,
-     "satisfaccion": 0.0,
-     "puntaje_oportunidad": 8.2
-    }
+    "errores": []
    }
   ],
   "recorrido": [
@@ -573,59 +252,10 @@
     "motivo": "citas verificadas"
    },
    {
-    "chequeo": "C1 verificada",
-    "supuesto": "La necesidad no es un caso aislado",
-    "pasa": true,
-    "motivo": "la señal aparece en 26 textos (mínimo 3)"
-   },
-   {
-    "chequeo": "C2 sub-atendida",
-    "supuesto": "La necesidad importa y está mal resuelta",
-    "pasa": true,
-    "motivo": "importancia 3.5, satisfacción 2.9 (hace falta ≥ 3.0 y ≤ 5.0)"
-   },
-   {
-    "chequeo": "C3 demanda",
-    "supuesto": "Hay gente eligiendo el producto de origen",
-    "pasa": true,
-    "motivo": "el producto ancla vende +10000 (mínimo 500)"
-   },
-   {
-    "chequeo": "C4 hueco",
-    "supuesto": "Nadie la atiende todavía",
-    "pasa": true,
-    "motivo": "20 equivalentes, 0 venden +100",
-    "datos": {
-     "equivalentes": 20,
-     "venden": 0,
-     "con_alguna_venta": 3,
-     "ventas_visibles": 125,
-     "ejemplos_que_venden": []
-    }
-   },
-   {
-    "chequeo": "C5 la eligen",
-    "supuesto": "Si se ofrece, la gente la elige",
+    "chequeo": "C1 dolor",
+    "supuesto": "El dolor que dice aliviar existe y está mal resuelto",
     "pasa": false,
-    "motivo": "la gente la deja pasar: 10 alternativas con stock local a precio comparable (ventas mediana 0.0) contra 51 publicaciones de la búsqueda de origen (mediana 100), p = 0.0",
-    "datos": {
-     "comparables": 10,
-     "ventas_comparables": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      25,
-      50,
-      50
-     ],
-     "mediana_de_origen": 100,
-     "publicaciones_de_origen": 51,
-     "p": 0.0
-    }
+    "motivo": "falta medir el dolor (harness/dolor.py, corre con la divergencia)"
    }
   ]
  },
@@ -641,21 +271,13 @@
   "que_traer": "versión del producto ancla que resuelva la queja 'filo'",
   "busqueda_ml": "afilador cuchillos rodante",
   "estado": "descartada",
-  "se_detiene_en": "C4 hueco",
-  "motivo": "ya atendido: 15 equivalentes venden +100",
+  "se_detiene_en": "C1 dolor",
+  "motivo": "falta medir el dolor (harness/dolor.py, corre con la divergencia)",
   "señales": [
    {
     "id": "P01.B1",
     "descripcion": "queja más frecuente: 'filo'",
-    "errores": [],
-    "medida": {
-     "menciones": 21,
-     "insatisfechas": 11,
-     "de_textos": 115,
-     "importancia": 10.0,
-     "satisfaccion": 4.8,
-     "puntaje_oportunidad": 15.2
-    }
+    "errores": []
    }
   ],
   "recorrido": [
@@ -666,39 +288,10 @@
     "motivo": "los baselines no citan textos"
    },
    {
-    "chequeo": "C1 verificada",
-    "supuesto": "La necesidad no es un caso aislado",
-    "pasa": true,
-    "motivo": "la señal aparece en 21 textos (mínimo 3)"
-   },
-   {
-    "chequeo": "C2 sub-atendida",
-    "supuesto": "La necesidad importa y está mal resuelta",
-    "pasa": true,
-    "motivo": "importancia 10.0, satisfacción 4.8 (hace falta ≥ 3.0 y ≤ 5.0)"
-   },
-   {
-    "chequeo": "C3 demanda",
-    "supuesto": "Hay gente eligiendo el producto de origen",
-    "pasa": true,
-    "motivo": "el producto ancla vende +1000 (mínimo 500)"
-   },
-   {
-    "chequeo": "C4 hueco",
-    "supuesto": "Nadie la atiende todavía",
+    "chequeo": "C1 dolor",
+    "supuesto": "El dolor que dice aliviar existe y está mal resuelto",
     "pasa": false,
-    "motivo": "ya atendido: 15 equivalentes venden +100",
-    "datos": {
-     "equivalentes": 54,
-     "venden": 15,
-     "con_alguna_venta": 22,
-     "ventas_visibles": 14600,
-     "ejemplos_que_venden": [
-      "Afilador De Cuchillos Profesional De Diamante (+5000, $51,787)",
-      "Afilador Profesional de Cuchillos Sakir con Discos de Diamante y Cerám (+1000, $43,649)",
-      "Kit Afilador Cuchillos Artesanal Rodante Premium Diamante (+1000, $43,649)"
-     ]
-    }
+    "motivo": "falta medir el dolor (harness/dolor.py, corre con la divergencia)"
    }
   ]
  },
@@ -714,21 +307,13 @@
   "que_traer": "repuesto de afilador cuchillos rodante",
   "busqueda_ml": "repuesto afilador cuchillos rodante",
   "estado": "descartada",
-  "se_detiene_en": "C6 margen",
-  "motivo": "margen neto base -10.1% a $17,107 (haría falta FOB ≤ USD 1.92)",
+  "se_detiene_en": "C1 dolor",
+  "motivo": "falta medir el dolor (harness/dolor.py, corre con la divergencia)",
   "señales": [
    {
     "id": "P01.B2",
     "descripcion": "preguntas que piden repuesto",
-    "errores": [],
-    "medida": {
-     "menciones": 7,
-     "insatisfechas": 5,
-     "de_textos": 115,
-     "importancia": 6.1,
-     "satisfaccion": 2.9,
-     "puntaje_oportunidad": 9.3
-    }
+    "errores": []
    }
   ],
   "recorrido": [
@@ -739,88 +324,10 @@
     "motivo": "los baselines no citan textos"
    },
    {
-    "chequeo": "C1 verificada",
-    "supuesto": "La necesidad no es un caso aislado",
-    "pasa": true,
-    "motivo": "la señal aparece en 7 textos (mínimo 3)"
-   },
-   {
-    "chequeo": "C2 sub-atendida",
-    "supuesto": "La necesidad importa y está mal resuelta",
-    "pasa": true,
-    "motivo": "importancia 6.1, satisfacción 2.9 (hace falta ≥ 3.0 y ≤ 5.0)"
-   },
-   {
-    "chequeo": "C3 demanda",
-    "supuesto": "Hay gente eligiendo el producto de origen",
-    "pasa": true,
-    "motivo": "el producto ancla vende +1000 (mínimo 500)"
-   },
-   {
-    "chequeo": "C4 hueco",
-    "supuesto": "Nadie la atiende todavía",
-    "pasa": true,
-    "motivo": "9 equivalentes, 1 venden +100",
-    "datos": {
-     "equivalentes": 9,
-     "venden": 1,
-     "con_alguna_venta": 4,
-     "ventas_visibles": 1150,
-     "ejemplos_que_venden": [
-      "Kit Afilador Cuchillos Artesanal Rodante Premium Diamante (+1000, $43,649)"
-     ]
-    }
-   },
-   {
-    "chequeo": "C5 la eligen",
-    "supuesto": "Si se ofrece, la gente la elige",
-    "pasa": true,
-    "motivo": "8 alternativas con stock local a precio comparable (ventas mediana 25.0) contra 58 publicaciones de la búsqueda de origen (mediana 0.0), p = 0.4957",
-    "datos": {
-     "comparables": 8,
-     "ventas_comparables": [
-      0,
-      0,
-      0,
-      0,
-      50,
-      50,
-      50,
-      1000
-     ],
-     "mediana_de_origen": 0.0,
-     "publicaciones_de_origen": 58,
-     "p": 0.4957
-    }
-   },
-   {
-    "chequeo": "C6 margen",
-    "supuesto": "Deja plata al precio que la gente paga",
+    "chequeo": "C1 dolor",
+    "supuesto": "El dolor que dice aliviar existe y está mal resuelto",
     "pasa": false,
-    "motivo": "margen neto base -10.1% a $17,107 (haría falta FOB ≤ USD 1.92)",
-    "datos": {
-     "precio_ars": 17107,
-     "lote": 1000,
-     "envio_ars": 2500,
-     "escenarios": {
-      "optimista": {
-       "ingreso_neto_ars": 6590,
-       "costo_puesto_ars": 5715,
-       "margen_neto_pct": 5.1
-      },
-      "base": {
-       "ingreso_neto_ars": 5318,
-       "costo_puesto_ars": 7049,
-       "margen_neto_pct": -10.1
-      },
-      "pesimista": {
-       "ingreso_neto_ars": 3271,
-       "costo_puesto_ars": 16014,
-       "margen_neto_pct": -74.5
-      }
-     },
-     "fob_maximo_usd": 1.92
-    }
+    "motivo": "falta medir el dolor (harness/dolor.py, corre con la divergencia)"
    }
   ]
  },
@@ -836,21 +343,13 @@
   "que_traer": "versión del producto ancla que resuelva la queja 'filo'",
   "busqueda_ml": "afilador cuchillos rodante",
   "estado": "descartada",
-  "se_detiene_en": "C2 sub-atendida",
-  "motivo": "importancia 10.0, satisfacción 5.2 (hace falta ≥ 3.0 y ≤ 5.0)",
+  "se_detiene_en": "C1 dolor",
+  "motivo": "falta medir el dolor (harness/dolor.py, corre con la divergencia)",
   "señales": [
    {
     "id": "P02.B1",
     "descripcion": "queja más frecuente: 'filo'",
-    "errores": [],
-    "medida": {
-     "menciones": 27,
-     "insatisfechas": 13,
-     "de_textos": 138,
-     "importancia": 10.0,
-     "satisfaccion": 5.2,
-     "puntaje_oportunidad": 14.8
-    }
+    "errores": []
    }
   ],
   "recorrido": [
@@ -861,16 +360,10 @@
     "motivo": "los baselines no citan textos"
    },
    {
-    "chequeo": "C1 verificada",
-    "supuesto": "La necesidad no es un caso aislado",
-    "pasa": true,
-    "motivo": "la señal aparece en 27 textos (mínimo 3)"
-   },
-   {
-    "chequeo": "C2 sub-atendida",
-    "supuesto": "La necesidad importa y está mal resuelta",
+    "chequeo": "C1 dolor",
+    "supuesto": "El dolor que dice aliviar existe y está mal resuelto",
     "pasa": false,
-    "motivo": "importancia 10.0, satisfacción 5.2 (hace falta ≥ 3.0 y ≤ 5.0)"
+    "motivo": "falta medir el dolor (harness/dolor.py, corre con la divergencia)"
    }
   ]
  },
@@ -886,21 +379,13 @@
   "que_traer": "repuesto de afilador cuchillos rodante",
   "busqueda_ml": "repuesto afilador cuchillos rodante",
   "estado": "descartada",
-  "se_detiene_en": "C6 margen",
-  "motivo": "margen neto base -10.1% a $17,107 (haría falta FOB ≤ USD 1.92)",
+  "se_detiene_en": "C1 dolor",
+  "motivo": "falta medir el dolor (harness/dolor.py, corre con la divergencia)",
   "señales": [
    {
     "id": "P02.B2",
     "descripcion": "preguntas que piden repuesto",
-    "errores": [],
-    "medida": {
-     "menciones": 6,
-     "insatisfechas": 5,
-     "de_textos": 138,
-     "importancia": 4.3,
-     "satisfaccion": 1.7,
-     "puntaje_oportunidad": 6.9
-    }
+    "errores": []
    }
   ],
   "recorrido": [
@@ -911,88 +396,10 @@
     "motivo": "los baselines no citan textos"
    },
    {
-    "chequeo": "C1 verificada",
-    "supuesto": "La necesidad no es un caso aislado",
-    "pasa": true,
-    "motivo": "la señal aparece en 6 textos (mínimo 3)"
-   },
-   {
-    "chequeo": "C2 sub-atendida",
-    "supuesto": "La necesidad importa y está mal resuelta",
-    "pasa": true,
-    "motivo": "importancia 4.3, satisfacción 1.7 (hace falta ≥ 3.0 y ≤ 5.0)"
-   },
-   {
-    "chequeo": "C3 demanda",
-    "supuesto": "Hay gente eligiendo el producto de origen",
-    "pasa": true,
-    "motivo": "el producto ancla vende +1000 (mínimo 500)"
-   },
-   {
-    "chequeo": "C4 hueco",
-    "supuesto": "Nadie la atiende todavía",
-    "pasa": true,
-    "motivo": "9 equivalentes, 1 venden +100",
-    "datos": {
-     "equivalentes": 9,
-     "venden": 1,
-     "con_alguna_venta": 4,
-     "ventas_visibles": 1150,
-     "ejemplos_que_venden": [
-      "Kit Afilador Cuchillos Artesanal Rodante Premium Diamante (+1000, $43,649)"
-     ]
-    }
-   },
-   {
-    "chequeo": "C5 la eligen",
-    "supuesto": "Si se ofrece, la gente la elige",
-    "pasa": true,
-    "motivo": "8 alternativas con stock local a precio comparable (ventas mediana 25.0) contra 58 publicaciones de la búsqueda de origen (mediana 0.0), p = 0.4957",
-    "datos": {
-     "comparables": 8,
-     "ventas_comparables": [
-      0,
-      0,
-      0,
-      0,
-      50,
-      50,
-      50,
-      1000
-     ],
-     "mediana_de_origen": 0.0,
-     "publicaciones_de_origen": 58,
-     "p": 0.4957
-    }
-   },
-   {
-    "chequeo": "C6 margen",
-    "supuesto": "Deja plata al precio que la gente paga",
+    "chequeo": "C1 dolor",
+    "supuesto": "El dolor que dice aliviar existe y está mal resuelto",
     "pasa": false,
-    "motivo": "margen neto base -10.1% a $17,107 (haría falta FOB ≤ USD 1.92)",
-    "datos": {
-     "precio_ars": 17107,
-     "lote": 1000,
-     "envio_ars": 2500,
-     "escenarios": {
-      "optimista": {
-       "ingreso_neto_ars": 6590,
-       "costo_puesto_ars": 5715,
-       "margen_neto_pct": 5.1
-      },
-      "base": {
-       "ingreso_neto_ars": 5318,
-       "costo_puesto_ars": 7049,
-       "margen_neto_pct": -10.1
-      },
-      "pesimista": {
-       "ingreso_neto_ars": 3271,
-       "costo_puesto_ars": 16014,
-       "margen_neto_pct": -74.5
-      }
-     },
-     "fob_maximo_usd": 1.92
-    }
+    "motivo": "falta medir el dolor (harness/dolor.py, corre con la divergencia)"
    }
   ]
  },
@@ -1008,21 +415,13 @@
   "que_traer": "versión del producto ancla que resuelva la queja 'material'",
   "busqueda_ml": "recipientes hermeticos acero inoxidable",
   "estado": "descartada",
-  "se_detiene_en": "C6 margen",
-  "motivo": "sin precio de proveedor: falta cotizarlo",
+  "se_detiene_en": "C1 dolor",
+  "motivo": "falta medir el dolor (harness/dolor.py, corre con la divergencia)",
   "señales": [
    {
     "id": "P03.B1",
     "descripcion": "queja más frecuente: 'material'",
-    "errores": [],
-    "medida": {
-     "menciones": 61,
-     "insatisfechas": 31,
-     "de_textos": 172,
-     "importancia": 10.0,
-     "satisfaccion": 4.9,
-     "puntaje_oportunidad": 15.1
-    }
+    "errores": []
    }
   ],
   "recorrido": [
@@ -1033,61 +432,10 @@
     "motivo": "los baselines no citan textos"
    },
    {
-    "chequeo": "C1 verificada",
-    "supuesto": "La necesidad no es un caso aislado",
-    "pasa": true,
-    "motivo": "la señal aparece en 61 textos (mínimo 3)"
-   },
-   {
-    "chequeo": "C2 sub-atendida",
-    "supuesto": "La necesidad importa y está mal resuelta",
-    "pasa": true,
-    "motivo": "importancia 10.0, satisfacción 4.9 (hace falta ≥ 3.0 y ≤ 5.0)"
-   },
-   {
-    "chequeo": "C3 demanda",
-    "supuesto": "Hay gente eligiendo el producto de origen",
-    "pasa": true,
-    "motivo": "el producto ancla vende +5000 (mínimo 500)"
-   },
-   {
-    "chequeo": "C4 hueco",
-    "supuesto": "Nadie la atiende todavía",
-    "pasa": true,
-    "motivo": "15 equivalentes, 2 venden +100",
-    "datos": {
-     "equivalentes": 15,
-     "venden": 2,
-     "con_alguna_venta": 6,
-     "ventas_visibles": 350,
-     "ejemplos_que_venden": [
-      "Set 3 Recipientes Herméticos De Acero Inoxidable Blanco (+100, $13,597)",
-      "Recipientes De Acero Inoxidable Para Alimentos Con Tapas X3 Plateado (+100, $13,165)"
-     ]
-    }
-   },
-   {
-    "chequeo": "C5 la eligen",
-    "supuesto": "Si se ofrece, la gente la elige",
-    "pasa": true,
-    "motivo": "3 alternativas con stock local a precio comparable (ventas mediana 0) contra 47 publicaciones de la búsqueda de origen (mediana 25), p = 0.0578",
-    "datos": {
-     "comparables": 3,
-     "ventas_comparables": [
-      0,
-      0,
-      0
-     ],
-     "mediana_de_origen": 25,
-     "publicaciones_de_origen": 47,
-     "p": 0.0578
-    }
-   },
-   {
-    "chequeo": "C6 margen",
-    "supuesto": "Deja plata al precio que la gente paga",
+    "chequeo": "C1 dolor",
+    "supuesto": "El dolor que dice aliviar existe y está mal resuelto",
     "pasa": false,
-    "motivo": "sin precio de proveedor: falta cotizarlo"
+    "motivo": "falta medir el dolor (harness/dolor.py, corre con la divergencia)"
    }
   ]
  },
@@ -1103,21 +451,13 @@
   "que_traer": "versión del producto ancla que resuelva la queja 'cierra'",
   "busqueda_ml": "recipientes hermeticos acero inoxidable",
   "estado": "descartada",
-  "se_detiene_en": "C6 margen",
-  "motivo": "sin precio de proveedor: falta cotizarlo",
+  "se_detiene_en": "C1 dolor",
+  "motivo": "falta medir el dolor (harness/dolor.py, corre con la divergencia)",
   "señales": [
    {
     "id": "P04.B1",
     "descripcion": "queja más frecuente: 'cierra'",
-    "errores": [],
-    "medida": {
-     "menciones": 4,
-     "insatisfechas": 2,
-     "de_textos": 62,
-     "importancia": 6.5,
-     "satisfaccion": 5.0,
-     "puntaje_oportunidad": 8.0
-    }
+    "errores": []
    }
   ],
   "recorrido": [
@@ -1128,61 +468,10 @@
     "motivo": "los baselines no citan textos"
    },
    {
-    "chequeo": "C1 verificada",
-    "supuesto": "La necesidad no es un caso aislado",
-    "pasa": true,
-    "motivo": "la señal aparece en 4 textos (mínimo 3)"
-   },
-   {
-    "chequeo": "C2 sub-atendida",
-    "supuesto": "La necesidad importa y está mal resuelta",
-    "pasa": true,
-    "motivo": "importancia 6.5, satisfacción 5.0 (hace falta ≥ 3.0 y ≤ 5.0)"
-   },
-   {
-    "chequeo": "C3 demanda",
-    "supuesto": "Hay gente eligiendo el producto de origen",
-    "pasa": true,
-    "motivo": "el producto ancla vende +500 (mínimo 500)"
-   },
-   {
-    "chequeo": "C4 hueco",
-    "supuesto": "Nadie la atiende todavía",
-    "pasa": true,
-    "motivo": "15 equivalentes, 2 venden +100",
-    "datos": {
-     "equivalentes": 15,
-     "venden": 2,
-     "con_alguna_venta": 6,
-     "ventas_visibles": 350,
-     "ejemplos_que_venden": [
-      "Set 3 Recipientes Herméticos De Acero Inoxidable Blanco (+100, $13,597)",
-      "Recipientes De Acero Inoxidable Para Alimentos Con Tapas X3 Plateado (+100, $13,165)"
-     ]
-    }
-   },
-   {
-    "chequeo": "C5 la eligen",
-    "supuesto": "Si se ofrece, la gente la elige",
-    "pasa": true,
-    "motivo": "3 alternativas con stock local a precio comparable (ventas mediana 0) contra 47 publicaciones de la búsqueda de origen (mediana 25), p = 0.0578",
-    "datos": {
-     "comparables": 3,
-     "ventas_comparables": [
-      0,
-      0,
-      0
-     ],
-     "mediana_de_origen": 25,
-     "publicaciones_de_origen": 47,
-     "p": 0.0578
-    }
-   },
-   {
-    "chequeo": "C6 margen",
-    "supuesto": "Deja plata al precio que la gente paga",
+    "chequeo": "C1 dolor",
+    "supuesto": "El dolor que dice aliviar existe y está mal resuelto",
     "pasa": false,
-    "motivo": "sin precio de proveedor: falta cotizarlo"
+    "motivo": "falta medir el dolor (harness/dolor.py, corre con la divergencia)"
    }
   ]
  },
@@ -1198,21 +487,13 @@
   "que_traer": "versión del producto ancla que resuelva la queja 'precio'",
   "busqueda_ml": "balanza de cocina digital",
   "estado": "descartada",
-  "se_detiene_en": "C2 sub-atendida",
-  "motivo": "importancia 10.0, satisfacción 7.0 (hace falta ≥ 3.0 y ≤ 5.0)",
+  "se_detiene_en": "C1 dolor",
+  "motivo": "falta medir el dolor (harness/dolor.py, corre con la divergencia)",
   "señales": [
    {
     "id": "P05.B1",
     "descripcion": "queja más frecuente: 'precio'",
-    "errores": [],
-    "medida": {
-     "menciones": 37,
-     "insatisfechas": 11,
-     "de_textos": 155,
-     "importancia": 10.0,
-     "satisfaccion": 7.0,
-     "puntaje_oportunidad": 13.0
-    }
+    "errores": []
    }
   ],
   "recorrido": [
@@ -1223,16 +504,10 @@
     "motivo": "los baselines no citan textos"
    },
    {
-    "chequeo": "C1 verificada",
-    "supuesto": "La necesidad no es un caso aislado",
-    "pasa": true,
-    "motivo": "la señal aparece en 37 textos (mínimo 3)"
-   },
-   {
-    "chequeo": "C2 sub-atendida",
-    "supuesto": "La necesidad importa y está mal resuelta",
+    "chequeo": "C1 dolor",
+    "supuesto": "El dolor que dice aliviar existe y está mal resuelto",
     "pasa": false,
-    "motivo": "importancia 10.0, satisfacción 7.0 (hace falta ≥ 3.0 y ≤ 5.0)"
+    "motivo": "falta medir el dolor (harness/dolor.py, corre con la divergencia)"
    }
   ]
  },
@@ -1248,21 +523,13 @@
   "que_traer": "versión del producto ancla que resuelva la queja 'precio'",
   "busqueda_ml": "balanza de cocina digital",
   "estado": "descartada",
-  "se_detiene_en": "C2 sub-atendida",
-  "motivo": "importancia 10.0, satisfacción 7.6 (hace falta ≥ 3.0 y ≤ 5.0)",
+  "se_detiene_en": "C1 dolor",
+  "motivo": "falta medir el dolor (harness/dolor.py, corre con la divergencia)",
   "señales": [
    {
     "id": "P06.B1",
     "descripcion": "queja más frecuente: 'precio'",
-    "errores": [],
-    "medida": {
-     "menciones": 37,
-     "insatisfechas": 9,
-     "de_textos": 139,
-     "importancia": 10.0,
-     "satisfaccion": 7.6,
-     "puntaje_oportunidad": 12.4
-    }
+    "errores": []
    }
   ],
   "recorrido": [
@@ -1273,16 +540,10 @@
     "motivo": "los baselines no citan textos"
    },
    {
-    "chequeo": "C1 verificada",
-    "supuesto": "La necesidad no es un caso aislado",
-    "pasa": true,
-    "motivo": "la señal aparece en 37 textos (mínimo 3)"
-   },
-   {
-    "chequeo": "C2 sub-atendida",
-    "supuesto": "La necesidad importa y está mal resuelta",
+    "chequeo": "C1 dolor",
+    "supuesto": "El dolor que dice aliviar existe y está mal resuelto",
     "pasa": false,
-    "motivo": "importancia 10.0, satisfacción 7.6 (hace falta ≥ 3.0 y ≤ 5.0)"
+    "motivo": "falta medir el dolor (harness/dolor.py, corre con la divergencia)"
    }
   ]
  },
@@ -1298,21 +559,13 @@
   "que_traer": "versión del producto ancla que resuelva la queja 'precio'",
   "busqueda_ml": "minipimer",
   "estado": "descartada",
-  "se_detiene_en": "C2 sub-atendida",
-  "motivo": "importancia 10.0, satisfacción 6.3 (hace falta ≥ 3.0 y ≤ 5.0)",
+  "se_detiene_en": "C1 dolor",
+  "motivo": "falta medir el dolor (harness/dolor.py, corre con la divergencia)",
   "señales": [
    {
     "id": "P07.B1",
     "descripcion": "queja más frecuente: 'precio'",
-    "errores": [],
-    "medida": {
-     "menciones": 27,
-     "insatisfechas": 10,
-     "de_textos": 133,
-     "importancia": 10.0,
-     "satisfaccion": 6.3,
-     "puntaje_oportunidad": 13.7
-    }
+    "errores": []
    }
   ],
   "recorrido": [
@@ -1323,16 +576,10 @@
     "motivo": "los baselines no citan textos"
    },
    {
-    "chequeo": "C1 verificada",
-    "supuesto": "La necesidad no es un caso aislado",
-    "pasa": true,
-    "motivo": "la señal aparece en 27 textos (mínimo 3)"
-   },
-   {
-    "chequeo": "C2 sub-atendida",
-    "supuesto": "La necesidad importa y está mal resuelta",
+    "chequeo": "C1 dolor",
+    "supuesto": "El dolor que dice aliviar existe y está mal resuelto",
     "pasa": false,
-    "motivo": "importancia 10.0, satisfacción 6.3 (hace falta ≥ 3.0 y ≤ 5.0)"
+    "motivo": "falta medir el dolor (harness/dolor.py, corre con la divergencia)"
    }
   ]
  },
@@ -1348,21 +595,13 @@
   "que_traer": "versión del producto ancla que resuelva la queja 'buena'",
   "busqueda_ml": "minipimer",
   "estado": "descartada",
-  "se_detiene_en": "C2 sub-atendida",
-  "motivo": "importancia 10.0, satisfacción 5.9 (hace falta ≥ 3.0 y ≤ 5.0)",
+  "se_detiene_en": "C1 dolor",
+  "motivo": "falta medir el dolor (harness/dolor.py, corre con la divergencia)",
   "señales": [
    {
     "id": "P08.B1",
     "descripcion": "queja más frecuente: 'buena'",
-    "errores": [],
-    "medida": {
-     "menciones": 32,
-     "insatisfechas": 13,
-     "de_textos": 159,
-     "importancia": 10.0,
-     "satisfaccion": 5.9,
-     "puntaje_oportunidad": 14.1
-    }
+    "errores": []
    }
   ],
   "recorrido": [
@@ -1373,16 +612,10 @@
     "motivo": "los baselines no citan textos"
    },
    {
-    "chequeo": "C1 verificada",
-    "supuesto": "La necesidad no es un caso aislado",
-    "pasa": true,
-    "motivo": "la señal aparece en 32 textos (mínimo 3)"
-   },
-   {
-    "chequeo": "C2 sub-atendida",
-    "supuesto": "La necesidad importa y está mal resuelta",
+    "chequeo": "C1 dolor",
+    "supuesto": "El dolor que dice aliviar existe y está mal resuelto",
     "pasa": false,
-    "motivo": "importancia 10.0, satisfacción 5.9 (hace falta ≥ 3.0 y ≤ 5.0)"
+    "motivo": "falta medir el dolor (harness/dolor.py, corre con la divergencia)"
    }
   ]
  },
@@ -1398,21 +631,13 @@
   "que_traer": "repuesto de minipimer",
   "busqueda_ml": "repuesto minipimer",
   "estado": "descartada",
-  "se_detiene_en": "C2 sub-atendida",
-  "motivo": "importancia 1.9, satisfacción 0.0 (hace falta ≥ 3.0 y ≤ 5.0)",
+  "se_detiene_en": "C1 dolor",
+  "motivo": "falta medir el dolor (harness/dolor.py, corre con la divergencia)",
   "señales": [
    {
     "id": "P08.B2",
     "descripcion": "preguntas que piden repuesto",
-    "errores": [],
-    "medida": {
-     "menciones": 3,
-     "insatisfechas": 3,
-     "de_textos": 159,
-     "importancia": 1.9,
-     "satisfaccion": 0.0,
-     "puntaje_oportunidad": 3.8
-    }
+    "errores": []
    }
   ],
   "recorrido": [
@@ -1423,16 +648,10 @@
     "motivo": "los baselines no citan textos"
    },
    {
-    "chequeo": "C1 verificada",
-    "supuesto": "La necesidad no es un caso aislado",
-    "pasa": true,
-    "motivo": "la señal aparece en 3 textos (mínimo 3)"
-   },
-   {
-    "chequeo": "C2 sub-atendida",
-    "supuesto": "La necesidad importa y está mal resuelta",
+    "chequeo": "C1 dolor",
+    "supuesto": "El dolor que dice aliviar existe y está mal resuelto",
     "pasa": false,
-    "motivo": "importancia 1.9, satisfacción 0.0 (hace falta ≥ 3.0 y ≤ 5.0)"
+    "motivo": "falta medir el dolor (harness/dolor.py, corre con la divergencia)"
    }
   ]
  },
@@ -1448,21 +667,13 @@
   "que_traer": "versión del producto ancla que resuelva la queja 'color'",
   "busqueda_ml": "organizador de ropa plegable",
   "estado": "descartada",
-  "se_detiene_en": "C4 hueco",
-  "motivo": "ya atendido: 42 equivalentes venden +100",
+  "se_detiene_en": "C1 dolor",
+  "motivo": "falta medir el dolor (harness/dolor.py, corre con la divergencia)",
   "señales": [
    {
     "id": "P09.B1",
     "descripcion": "queja más frecuente: 'color'",
-    "errores": [],
-    "medida": {
-     "menciones": 7,
-     "insatisfechas": 6,
-     "de_textos": 140,
-     "importancia": 5.0,
-     "satisfaccion": 1.4,
-     "puntaje_oportunidad": 8.6
-    }
+    "errores": []
    }
   ],
   "recorrido": [
@@ -1473,39 +684,10 @@
     "motivo": "los baselines no citan textos"
    },
    {
-    "chequeo": "C1 verificada",
-    "supuesto": "La necesidad no es un caso aislado",
-    "pasa": true,
-    "motivo": "la señal aparece en 7 textos (mínimo 3)"
-   },
-   {
-    "chequeo": "C2 sub-atendida",
-    "supuesto": "La necesidad importa y está mal resuelta",
-    "pasa": true,
-    "motivo": "importancia 5.0, satisfacción 1.4 (hace falta ≥ 3.0 y ≤ 5.0)"
-   },
-   {
-    "chequeo": "C3 demanda",
-    "supuesto": "Hay gente eligiendo el producto de origen",
-    "pasa": true,
-    "motivo": "el producto ancla vende +5000 (mínimo 500)"
-   },
-   {
-    "chequeo": "C4 hueco",
-    "supuesto": "Nadie la atiende todavía",
+    "chequeo": "C1 dolor",
+    "supuesto": "El dolor que dice aliviar existe y está mal resuelto",
     "pasa": false,
-    "motivo": "ya atendido: 42 equivalentes venden +100",
-    "datos": {
-     "equivalentes": 62,
-     "venden": 42,
-     "con_alguna_venta": 47,
-     "ventas_visibles": 43500,
-     "ejemplos_que_venden": [
-      "Armario Portátil Guardarropa Organizador Gadnic Perchero 168x127x45cm  (+10000, $47,499)",
-      "Set de 4 Organizadores Plegables para Cajones Ropa Interior Beige Wagg (+5000, $10,480)",
-      "Organizador Canasto Cajon Plegable Tela Para Ropa Placard (+5000, $7,565)"
-     ]
-    }
+    "motivo": "falta medir el dolor (harness/dolor.py, corre con la divergencia)"
    }
   ]
  },
@@ -1521,21 +703,13 @@
   "que_traer": "versión del producto ancla que resuelva la queja 'hola'",
   "busqueda_ml": "estante baño sin taladro",
   "estado": "descartada",
-  "se_detiene_en": "C4 hueco",
-  "motivo": "ya atendido: 30 equivalentes venden +100",
+  "se_detiene_en": "C1 dolor",
+  "motivo": "falta medir el dolor (harness/dolor.py, corre con la divergencia)",
   "señales": [
    {
     "id": "P10.B1",
     "descripcion": "queja más frecuente: 'hola'",
-    "errores": [],
-    "medida": {
-     "menciones": 10,
-     "insatisfechas": 10,
-     "de_textos": 200,
-     "importancia": 5.0,
-     "satisfaccion": 0.0,
-     "puntaje_oportunidad": 10.0
-    }
+    "errores": []
    }
   ],
   "recorrido": [
@@ -1546,39 +720,10 @@
     "motivo": "los baselines no citan textos"
    },
    {
-    "chequeo": "C1 verificada",
-    "supuesto": "La necesidad no es un caso aislado",
-    "pasa": true,
-    "motivo": "la señal aparece en 10 textos (mínimo 3)"
-   },
-   {
-    "chequeo": "C2 sub-atendida",
-    "supuesto": "La necesidad importa y está mal resuelta",
-    "pasa": true,
-    "motivo": "importancia 5.0, satisfacción 0.0 (hace falta ≥ 3.0 y ≤ 5.0)"
-   },
-   {
-    "chequeo": "C3 demanda",
-    "supuesto": "Hay gente eligiendo el producto de origen",
-    "pasa": true,
-    "motivo": "el producto ancla vende +10000 (mínimo 500)"
-   },
-   {
-    "chequeo": "C4 hueco",
-    "supuesto": "Nadie la atiende todavía",
+    "chequeo": "C1 dolor",
+    "supuesto": "El dolor que dice aliviar existe y está mal resuelto",
     "pasa": false,
-    "motivo": "ya atendido: 30 equivalentes venden +100",
-    "datos": {
-     "equivalentes": 47,
-     "venden": 30,
-     "con_alguna_venta": 37,
-     "ventas_visibles": 45300,
-     "ejemplos_que_venden": [
-      "Pack x2 Estantes Repisas Con Adhesivos Para Ducha, Baño y Cocina – Org (+10000, $19,553)",
-      "Estante Repisa Organizador Baño Ducha Shampoo Con Adhesivo Sin Perfora (+10000, $6,969)",
-      "Pack x2 Estantes Esquineros Adhesivos Para Ducha o Baño – Repisas con  (+5000, $18,999)"
-     ]
-    }
+    "motivo": "falta medir el dolor (harness/dolor.py, corre con la divergencia)"
    }
   ]
  },
@@ -1594,21 +739,13 @@
   "que_traer": "repuesto de estante baño sin taladro",
   "busqueda_ml": "repuesto estante baño sin taladro",
   "estado": "descartada",
-  "se_detiene_en": "C2 sub-atendida",
-  "motivo": "importancia 2.0, satisfacción 0.0 (hace falta ≥ 3.0 y ≤ 5.0)",
+  "se_detiene_en": "C1 dolor",
+  "motivo": "falta medir el dolor (harness/dolor.py, corre con la divergencia)",
   "señales": [
    {
     "id": "P10.B2",
     "descripcion": "preguntas que piden repuesto",
-    "errores": [],
-    "medida": {
-     "menciones": 4,
-     "insatisfechas": 4,
-     "de_textos": 200,
-     "importancia": 2.0,
-     "satisfaccion": 0.0,
-     "puntaje_oportunidad": 4.0
-    }
+    "errores": []
    }
   ],
   "recorrido": [
@@ -1619,16 +756,10 @@
     "motivo": "los baselines no citan textos"
    },
    {
-    "chequeo": "C1 verificada",
-    "supuesto": "La necesidad no es un caso aislado",
-    "pasa": true,
-    "motivo": "la señal aparece en 4 textos (mínimo 3)"
-   },
-   {
-    "chequeo": "C2 sub-atendida",
-    "supuesto": "La necesidad importa y está mal resuelta",
+    "chequeo": "C1 dolor",
+    "supuesto": "El dolor que dice aliviar existe y está mal resuelto",
     "pasa": false,
-    "motivo": "importancia 2.0, satisfacción 0.0 (hace falta ≥ 3.0 y ≤ 5.0)"
+    "motivo": "falta medir el dolor (harness/dolor.py, corre con la divergencia)"
    }
   ]
  },
@@ -1644,21 +775,13 @@
   "que_traer": "versión del producto ancla que resuelva la queja 'adhesivo'",
   "busqueda_ml": "estante baño sin taladro",
   "estado": "descartada",
-  "se_detiene_en": "C4 hueco",
-  "motivo": "ya atendido: 30 equivalentes venden +100",
+  "se_detiene_en": "C1 dolor",
+  "motivo": "falta medir el dolor (harness/dolor.py, corre con la divergencia)",
   "señales": [
    {
     "id": "P11.B1",
     "descripcion": "queja más frecuente: 'adhesivo'",
-    "errores": [],
-    "medida": {
-     "menciones": 21,
-     "insatisfechas": 15,
-     "de_textos": 172,
-     "importancia": 10.0,
-     "satisfaccion": 2.9,
-     "puntaje_oportunidad": 17.1
-    }
+    "errores": []
    }
   ],
   "recorrido": [
@@ -1669,39 +792,10 @@
     "motivo": "los baselines no citan textos"
    },
    {
-    "chequeo": "C1 verificada",
-    "supuesto": "La necesidad no es un caso aislado",
-    "pasa": true,
-    "motivo": "la señal aparece en 21 textos (mínimo 3)"
-   },
-   {
-    "chequeo": "C2 sub-atendida",
-    "supuesto": "La necesidad importa y está mal resuelta",
-    "pasa": true,
-    "motivo": "importancia 10.0, satisfacción 2.9 (hace falta ≥ 3.0 y ≤ 5.0)"
-   },
-   {
-    "chequeo": "C3 demanda",
-    "supuesto": "Hay gente eligiendo el producto de origen",
-    "pasa": true,
-    "motivo": "el producto ancla vende +10000 (mínimo 500)"
-   },
-   {
-    "chequeo": "C4 hueco",
-    "supuesto": "Nadie la atiende todavía",
+    "chequeo": "C1 dolor",
+    "supuesto": "El dolor que dice aliviar existe y está mal resuelto",
     "pasa": false,
-    "motivo": "ya atendido: 30 equivalentes venden +100",
-    "datos": {
-     "equivalentes": 47,
-     "venden": 30,
-     "con_alguna_venta": 37,
-     "ventas_visibles": 45300,
-     "ejemplos_que_venden": [
-      "Pack x2 Estantes Repisas Con Adhesivos Para Ducha, Baño y Cocina – Org (+10000, $19,553)",
-      "Estante Repisa Organizador Baño Ducha Shampoo Con Adhesivo Sin Perfora (+10000, $6,969)",
-      "Pack x2 Estantes Esquineros Adhesivos Para Ducha o Baño – Repisas con  (+5000, $18,999)"
-     ]
-    }
+    "motivo": "falta medir el dolor (harness/dolor.py, corre con la divergencia)"
    }
   ]
  }

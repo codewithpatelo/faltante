@@ -29,8 +29,10 @@ def propuestas(particion: str) -> list[Propuesta]:
     todos = productos()
     titulos_ancla = {sin_acentos(p["titulo"]) for p in todos.values()}
 
-    def armar(metodo, anclas, oportunidad, señales, fob_ref, verifica_citas):
-        return Propuesta(metodo, anclas, oportunidad, señales, verifica_citas,
+    dolor = del_llm.get("dolor", {})
+
+    def armar(metodo, anclas, oportunidad, señales, fob_ref, verifica_citas, clave_dolor):
+        return Propuesta(metodo, anclas, oportunidad, señales, verifica_citas, dolor=dolor.get(metodo, {}).get(clave_dolor),
                          fob=fobs.get(fob_ref) if fob_ref else None,
                          captura=capturas.get(oportunidad["busqueda_ml"]), titulos_ancla=titulos_ancla,
                          capturas_de_origen=[capturas[b] for b in dict.fromkeys(a["busqueda"] for a in anclas) if b in capturas])
@@ -42,14 +44,14 @@ def propuestas(particion: str) -> list[Propuesta]:
         citadas = [señales[i] for i in o["señales"] if i in señales]
         anclas = [todos[pid] for pid in dict.fromkeys(s["producto"] for s in citadas)]
         if anclas:
-            salida.append(armar("llm", anclas, o, citadas, o["id"], True))
+            salida.append(armar("llm", anclas, o, citadas, o["id"], True, o["id"]))
     # Baselines: una propuesta por producto
     for pid in del_llm["señales"]:
         for metodo, baseline in (("B1", b1_queja_mas_frecuente), ("B2", b2_pedidos_de_repuesto)):
             propuesta = baseline(todos[pid])
             if propuesta:
                 señal, oportunidad, fob_ref = propuesta
-                salida.append(armar(metodo, [todos[pid]], oportunidad, [{**señal, "producto": pid}], fob_ref, False))
+                salida.append(armar(metodo, [todos[pid]], oportunidad, [{**señal, "producto": pid}], fob_ref, False, f"{metodo}.{pid}"))
     return salida
 
 

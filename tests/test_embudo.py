@@ -6,6 +6,7 @@ import sys
 from types import SimpleNamespace
 
 from harness import chequeos as c
+from harness import dolor as D
 from harness import umbrales as U
 from harness.costo_puesto import EMBALAJE, LOGISTICA_M3, TIPO_CAMBIO, costo_puesto_usd, ingreso_neto_ars
 from harness.divergente import al_formato_del_embudo, errores_de_propuesta, proponer
@@ -35,10 +36,22 @@ def test_guardrail_rechaza_citas_inventadas_o_de_un_solo_texto():
 
 # --- C1 y C2 -----------------------------------------------------------------------------
 
-def test_la_señal_se_cuenta_en_todos_los_textos_y_se_marca_la_insatisfaccion():
-    m = c.medir({"palabras_clave": ["repuesto"]}, TEXTOS)
-    assert m["menciones"] == 3 and m["insatisfechas"] == 3 and c.es_verificada(m) and c.es_subatendida(m)
-    assert not c.es_verificada(c.medir({"palabras_clave": ["excelente"]}, TEXTOS))
+def test_c1_pasa_solo_si_los_desatendidos_son_mas_que_en_el_control_y_cruzan_los_productos_que_cita():
+    tarjetas = {f"P{k}.o{i}": {"producto": f"P{k}"} for k in (1, 2, 3) for i in range(40)}
+    def medida(id_, productos, desat_por_producto, en_control):
+        tienen = [f"{q}.o{i}" for q in productos for i in range(desat_por_producto)]
+        return {"dolor": {"id": id_}, "productos": productos,
+                "medicion": {"propuesta": {"medidas": 80, "tienen": tienen, "resuelto": []},
+                             "control": {"medidas": 80, "tienen": [f"P3.o{i}" for i in range(en_control)], "resuelto": []}}}
+    v = D.decidir([medida("real", ["P1", "P2"], 10, 2), medida("ruido", ["P1", "P2"], 2, 4),
+                   medida("de_uno", ["P1", "P2"], 0, 0) | {"medicion": {"propuesta": {"medidas": 80, "tienen": [f"P1.o{i}" for i in range(20)], "resuelto": []},
+                                                                       "control": {"medidas": 80, "tienen": [], "resuelto": []}}}], tarjetas)
+    assert v["real"]["pasa"] and not v["ruido"]["pasa"]
+    assert v["de_uno"]["significativo"] and not v["de_uno"]["pasa"]          # un solo producto: es su defecto
+    p = _disco([])
+    assert not c.c1_dolor(p).pasa                                             # sin medir no pasa
+    p.dolor = v["real"]
+    assert c.c1_dolor(p).pasa
 
 
 # --- C4 ----------------------------------------------------------------------------------

@@ -4,13 +4,10 @@ Cambiar un número de acá cambia qué oportunidades pasan. Cada uno dice qué m
 dónde sale; los que son decisión nuestra lo dicen.
 """
 
-# C1 · La señal no es anecdótica
-MIN_TEXTOS_CON_LA_SEÑAL = 3          # decisión: con 1 o 2 textos puede ser un caso aislado
+# Pruebas estadísticas (C1 y C5): convención; en C1 se corrige por la cantidad de propuestas (Benjamini-Hochberg)
+NIVEL_DE_SIGNIFICANCIA = 0.05
 
-# C2 · La necesidad importa y está mal resuelta (puntaje de oportunidad de Ulwick, escala 0-10)
-PROPORCION_PARA_IMPORTANCIA_10 = 0.10  # decisión: si el 10% de los textos la menciona, importancia = 10
-MIN_IMPORTANCIA = 3.0                 # = la menciona al menos el 3% de los textos
-MAX_SATISFACCION = 5.0                # = al menos la mitad de las menciones son queja, duda o pedido
+# C1 · El dolor existe: prueba estadística, sin umbrales propios (harness/dolor.py)
 
 # Lo que vende una publicación típica, medido en las capturas (31.314 publicaciones de 498 búsquedas,
 # noviembre 2026): de las publicaciones locales que vendieron algo, la mediana muestra "+100" y el
@@ -29,7 +26,6 @@ MAX_EQUIVALENTES_QUE_YA_VENDEN = 2    # con 3 a 5 competidores un mercado ya se 
 # Las alternativas comparables (stock local, precio no atípico: debajo de la valla de Tukey, Q3 + 1,5 x rango
 # intercuartil) se comparan con las publicaciones locales de la búsqueda de donde salió la necesidad: si venden
 # significativamente menos (Mann-Whitney unilateral; "+N vendidos" es ordinal), la gente la tuvo enfrente y la dejó pasar.
-NIVEL_DE_SIGNIFICANCIA = 0.05
 
 # C6 · Deja plata al precio que la gente paga
 MIN_MARGEN_NETO = 0.0519              # ganancia neta sobre ventas de referencia: Retail (Special Lines), Damodaran, enero 2026; publicidad,
@@ -38,7 +34,7 @@ UNIDADES_MAX_PRIMER_LOTE = 1000       # el lote llena 1 m3 o llega a este tope, 
 
 # Confianza de una oportunidad que pasó (harness/confianza.py): decisiones nuestras
 MIN_ANCLAS_CON_LA_NECESIDAD = 2       # la misma necesidad aparece en 2 o más productos distintos
-MIN_TEXTOS_PARA_CONFIANZA = 10        # una señal que mencionan 10 o más textos
+MIN_DESATENDIDOS_PARA_CONFIANZA = 10  # 10 o más personas con el dolor sin resolver (PENDIENTE: fundamentar)
 MIN_VENTAS_DE_EQUIVALENTES = 500      # la gente ya elige este tipo de producto (suma de "+N vendidos")
 MIN_PUBLICACIONES_PARA_PRECIO = 3     # el precio de referencia sale de 3 o más publicaciones con ventas
 FACTORES_PARA_CONFIANZA_ALTA = 4      # de 5

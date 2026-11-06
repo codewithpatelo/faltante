@@ -1,0 +1,93 @@
+{
+ "filas": [
+  {
+   "corrida": "42228255278",
+   "A_c4": 23,
+   "A_c5": 10,
+   "B_c4": 39,
+   "B_c5": 18,
+   "solo_A": [],
+   "solo_B": [
+    "apoyabrazos escritorio ajustable",
+    "bandeja para notebook con cojin",
+    "correa antishock perro",
+    "extractor de aire pared baño recargable",
+    "guante de silicona con cerdas para limpiar baño",
+    "guantes para pasear perros",
+    "organizador de frascos con soporte para tornillos",
+    "teclado ergonomico inalambrico"
+   ]
+  },
+  {
+   "corrida": "42228312031",
+   "A_c4": 30,
+   "A_c5": 13,
+   "B_c4": 38,
+   "B_c5": 15,
+   "solo_A": [
+    "bomba de vacio para frascos de vidrio",
+    "exhibidor mostrador plegable para neceseres",
+    "fiambrera electrica acero inoxidable 220v",
+    "limpiacristales con mango telescópico",
+    "prolongador cable giratorio 360",
+    "soplador de aire para secar piso"
+   ],
+   "solo_B": [
+    "bolsa impermeable para viaje",
+    "caja organizadora transparente con divisiones ajustables maquillaje",
+    "correa lazo para perros que tiran",
+    "organizador de herramientas enrollable de lona",
+    "organizador de pared con contenedores transparentes",
+    "organizador entre asientos con soporte celular",
+    "pesa rusa ajustable con discos",
+    "pistola masajeadora"
+   ]
+  },
+  {
+   "corrida": "42228370344",
+   "A_c4": 34,
+   "A_c5": 12,
+   "B_c4": 42,
+   "B_c5": 17,
+   "solo_A": [
+    "aspiradora antiestatica para pc",
+    "atrapa pelos lavarropas mascotas ropa",
+    "bebedero para gato con canilla"
+   ],
+   "solo_B": [
+    "comedero lento para gatos",
+    "kit adiestramiento perro tironea",
+    "organizador de cajón con divisiones ajustables",
+    "organizador de valija para ropa",
+    "organizador interno para mochila con divisiones",
+    "soporte celular auto gel silicona tablero",
+    "soporte notebook brazo articulado de piso",
+    "ventosa electrica masaje contracturas"
+   ]
+  }
+ ],
+ "resumen": {
+  "A": {
+   "c5_por_corrida": 11.7,
+   "proporcion_c5_sobre_c4": 0.402
+  },
+  "B": {
+   "c5_por_corrida": 16.7,
+   "proporcion_c5_sobre_c4": 0.42
+  }
+ },
+ "dolor_vs_c5_entre_las_que_pasan_c3": {
+  "tabla_[dolor][c5]": [
+   [
+    34,
+    9
+   ],
+   [
+    175,
+    50
+   ]
+  ],
+  "p": 0.5156871186076346
+ },
+ "faltan": []
+}

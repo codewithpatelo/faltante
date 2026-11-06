@@ -24,10 +24,9 @@ class Chequeo:
 EMBUDO = [
     Chequeo("guardrail", "Lo que dice el LLM está en los textos",
             "cita un texto que no existe, un fragmento que no está, o un solo texto", c.guardrail),
-    Chequeo("C1 verificada", "La necesidad no es un caso aislado",
-            "las palabras de la señal aparecen en menos de 3 textos (contando todos)", c.c1_verificada),
-    Chequeo("C2 sub-atendida", "La necesidad importa y está mal resuelta",
-            "puntaje de Ulwick: pocos la mencionan o la mayoría está conforme", c.c2_subatendida),
+    Chequeo("C1 dolor", "El dolor que dice aliviar existe y está mal resuelto",
+            "otro modelo, que no sabe qué se propone, no encuentra a quienes lo tienen sin resolver más seguido "
+            "que en gente al azar (Fisher con Benjamini-Hochberg), o los encuentra en un solo producto", c.c1_dolor),
     Chequeo("C3 demanda", "Hay gente eligiendo el producto de origen",
             "el producto donde aparece la señal vende menos de +500", c.c3_demanda),
     Chequeo("C4 hueco", "Nadie la atiende todavía",
@@ -52,6 +51,7 @@ class Propuesta:
     fob: dict | None = None        # precio de proveedor (data/serendipia/fob_*.json), si lo hay
     captura: dict | None = None    # la búsqueda de Mercado Libre de lo propuesto, para C4, C5 y C6
     titulos_ancla: set = field(default_factory=set)
+    dolor: dict | None = None      # veredicto de C1 (harness/dolor.py), medido con la divergencia
     capturas_de_origen: list = field(default_factory=list)   # las búsquedas de donde salieron las anclas, para C5
 
     @property
@@ -61,11 +61,10 @@ class Propuesta:
 
     @cached_property
     def señales(self) -> list[dict]:
-        """Cada señal con los errores de sus citas y su medición sobre todos los textos de su producto."""
+        """Cada señal con los errores de sus citas."""
         textos = {a["id"]: textos_con_id(a) for a in self.anclas}
         return [{"id": f"{s['producto']}.{s['id']}", "descripcion": s["descripcion"],
-                 "errores": c.errores_de_citas(s, textos[s["producto"]]) if self.verifica_citas else [],
-                 "medida": c.medir(s, textos[s["producto"]])} for s in self.señales_citadas]
+                 "errores": c.errores_de_citas(s, textos[s["producto"]]) if self.verifica_citas else []} for s in self.señales_citadas]
 
     @property
     def señales_validas(self) -> list[dict]:

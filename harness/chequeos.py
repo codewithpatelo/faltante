@@ -13,7 +13,7 @@ from scipy.stats import mannwhitneyu
 
 from harness import costo_puesto as cp
 from harness import umbrales as U
-from harness.voces import expresa_insatisfaccion, sin_acentos
+from harness.voces import sin_acentos
 
 
 @dataclass
@@ -43,28 +43,6 @@ def errores_de_citas(señal: dict, textos: dict[str, str]) -> list[str]:
     return errores
 
 
-def medir(señal: dict, textos: dict[str, str]) -> dict:
-    """Cuenta la señal en TODOS los textos del producto, no solo en los que leyó el LLM, y
-    calcula el puntaje de oportunidad de Ulwick: importancia + máx(importancia − satisfacción, 0)."""
-    claves = [sin_acentos(p) for p in señal.get("palabras_clave", [])]
-    menciones = [t for t in textos.values() if any(k in sin_acentos(t) for k in claves)]
-    insatisfechas = sum(1 for t in menciones if expresa_insatisfaccion(t))
-    proporcion = len(menciones) / max(1, len(textos))
-    importancia = round(min(10.0, 10 * proporcion / U.PROPORCION_PARA_IMPORTANCIA_10), 1)
-    satisfaccion = round(10 * (1 - insatisfechas / len(menciones)), 1) if menciones else 10.0
-    return {"menciones": len(menciones), "insatisfechas": insatisfechas, "de_textos": len(textos),
-            "importancia": importancia, "satisfaccion": satisfaccion,
-            "puntaje_oportunidad": round(importancia + max(importancia - satisfaccion, 0), 1)}
-
-
-def es_verificada(m: dict) -> bool:
-    return m["menciones"] >= U.MIN_TEXTOS_CON_LA_SEÑAL
-
-
-def es_subatendida(m: dict) -> bool:
-    return m["importancia"] >= U.MIN_IMPORTANCIA and m["satisfaccion"] <= U.MAX_SATISFACCION
-
-
 # --- Chequeos ------------------------------------------------------------------------------
 
 def guardrail(p) -> Resultado:
@@ -75,17 +53,17 @@ def guardrail(p) -> Resultado:
     return Resultado(bool(buenas), "citas verificadas" if buenas else "; ".join(errores))
 
 
-def c1_verificada(p) -> Resultado:
-    mejor = max((s["medida"]["menciones"] for s in p.señales_validas), default=0)
-    return Resultado(any(es_verificada(s["medida"]) for s in p.señales_validas),
-                     f"la señal aparece en {mejor} textos (mínimo {U.MIN_TEXTOS_CON_LA_SEÑAL})")
-
-
-def c2_subatendida(p) -> Resultado:
-    ok = [s for s in p.señales_validas if es_verificada(s["medida"]) and es_subatendida(s["medida"])]
-    m = (ok or p.señales_validas or [{"medida": {"importancia": 0, "satisfaccion": 10}}])[0]["medida"]
-    return Resultado(bool(ok), f"importancia {m['importancia']}, satisfacción {m['satisfaccion']} "
-                               f"(hace falta ≥ {U.MIN_IMPORTANCIA} y ≤ {U.MAX_SATISFACCION})")
+def c1_dolor(p) -> Resultado:
+    v = p.dolor
+    if v is None:
+        return Resultado(False, "falta medir el dolor (harness/dolor.py, corre con la divergencia)")
+    datos = {k: v[k] for k in ("desatendidos", "de", "en_el_control", "p", "productos_con_desatendidos")}
+    resumen = f"{v['desatendidos']} de {v['de']} lo tienen sin resolver, contra {v['en_el_control']} en el control (p = {v['p']})"
+    if not v["significativo"]:
+        return Resultado(False, f"no es más frecuente que en gente al azar: {resumen}", datos)
+    if not v["pasa"]:
+        return Resultado(False, f"aparece en {v['productos_con_desatendidos']} producto(s), hacen falta {v['hacen_falta']}: es el defecto de un producto", datos)
+    return Resultado(True, resumen, datos)
 
 
 def c3_demanda(p) -> Resultado:

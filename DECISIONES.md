@@ -13,8 +13,8 @@ tener con sus propios datos de ventas; un importador chico no los tiene, pero s�
 el mercado muestra en público: qué se elige, qué se deja pasar, qué se dice y qué se pregunta.
 
 **El LLM propone, el código decide.**
-El LLM abre (lee personas, las agrupa, abduce qué traer); siete supuestos críticos probados en
-código cierran (guardrail y C1 a C6). La divergencia trae hipótesis no obvias; la convergencia
+El LLM abre (lee personas, las agrupa, abduce qué traer); seis supuestos críticos probados con
+datos cierran (guardrail, C1 y C3 a C6). La divergencia trae hipótesis no obvias; la convergencia
 mata el humo. Un LLM que también se juzga a sí mismo confirma lo que propuso.
 
 **La unidad es la persona, no el producto.**
@@ -47,9 +47,14 @@ exacta de Fisher con corrección de Benjamini-Hochberg contra gente de afuera de
 un dolor placebo nunca salió significativo): 9,0 por corrida contra 11,7, con la misma proporción
 (22%). Filtra pero no elige mejor: la fuerza del dolor apenas separa las ideas que sobreviven de
 las que mueren (p = 0,07). No entró. El problema es la implementación, no la idea: como filtro
-antes de proponer recorta el volumen, y C4 y C5 miden el mercado, no si el dolor existe. El paso
-que sigue es usar esa misma medición como chequeo de la propuesta, en lugar del conteo de
-palabras de C1 y C2. Lo que todavía no mide ninguna corrida: si las ideas que
+antes de proponer recorta el volumen, y C4 y C5 miden el mercado, no si el dolor existe. Usada
+como chequeo de la propuesta, en lugar del conteo de palabras clave de C1 y C2, sí entró
+(prerregistrado en `data/evaluacion/dolor_de_la_propuesta/`): sobre las mismas propuestas, 16,7
+sobrevivientes por corrida contra 11,7, y 42% de las que llegan a C4 pasan C5 contra 40%. La
+ganancia viene de sacar el conteo, que mataba ideas que la gente sí elige; el dolor medido no
+predice qué elige el mercado (deja pasar el 84%; las que mata sobreviven C5 tanto como las otras),
+pero agrega lo que C4 y C5 no ven: que la necesidad existe en la gente, medida por alguien que no
+propuso. Eso es lo que evita el primer error del emprendedor, saltar a la solución. Lo que todavía no mide ninguna corrida: si las ideas que
 sobreviven son obvias (juicio humano a ciegas, pendiente) y si dejan margen (falta precio de
 proveedor).
 
@@ -75,9 +80,14 @@ anotada cita un fragmento literal de su texto; cada propuesta cita personas del 
 señal del embudo cita 2 textos distintos. Si algo no pasa, el error vuelve al modelo una vez y
 lo que sigue mal se descarta.
 
-**El programa recuenta por su cuenta.**
-El LLM lee y anota; C1 y C2 cuentan las palabras clave de cada propuesta en todos los textos de
-cada producto. Así una necesidad no pasa por estar bien redactada.
+**Quien propone no es quien mide (C1).**
+El dolor de cada propuesta lo lee otro modelo, que solo ve el dolor y los textos originales de la
+gente de los productos que cita y de un grupo de control al azar; no sabe qué se propone ni quién
+lo propuso. Cuenta quiénes lo tienen sin resolver (los desatendidos: los conformes no refutan el
+dolor, dicen para quién funciona la solución de hoy) y decide una prueba exacta de Fisher con
+corrección de Benjamini-Hochberg. Así una necesidad no pasa por estar bien redactada. Antes lo
+hacía un conteo de las palabras clave que elegía el mismo LLM, con umbrales a ojo y el puntaje de
+Ulwick; se sacó porque mataba ideas buenas. A los baselines se les mide el dolor igual.
 
 **Lo que se deja pasar también es un voto (C5).**
 "Nadie lo vende con volumen" no prueba que haya un hueco: si la alternativa se ofrece con stock
@@ -119,7 +129,7 @@ La API de búsqueda de Mercado Libre devuelve 403 aun con token válido. Leer la
 sesión del usuario es lo único que funciona; se guarda solo el texto visible.
 
 **Código escrito a mano, sin frameworks de agentes.**
-El embudo es una lista de siete supuestos críticos con nombre (`harness/embudo.py`). La defensa
+El embudo es una lista de seis supuestos críticos con nombre (`harness/embudo.py`). La defensa
 es individual y cada uno tiene que poder explicarlo por dentro; un framework deja una caja negra.
 
 **DeepSeek Flash.**

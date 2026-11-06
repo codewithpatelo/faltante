@@ -23,8 +23,8 @@ FACTORES = [
     Factor("la misma necesidad aparece en 2 o más productos distintos",
            "aparece en un solo producto",
            lambda o: o["anclas"] >= U.MIN_ANCLAS_CON_LA_NECESIDAD),
-    Factor("la mencionan 10 o más textos", "la mencionan menos de 10 textos",
-           lambda o: o["max_menciones"] >= U.MIN_TEXTOS_PARA_CONFIANZA),
+    Factor("10 o más personas tienen el dolor sin resolver", "menos de 10 personas tienen el dolor sin resolver",
+           lambda o: o["desatendidos"] >= U.MIN_DESATENDIDOS_PARA_CONFIANZA),
     Factor("la gente ya elige este tipo de producto: los equivalentes suman +500 ventas",
            "los equivalentes casi no se venden: puede que no lo quiera tanta gente",
            lambda o: o["ventas_de_equivalentes"] >= U.MIN_VENTAS_DE_EQUIVALENTES),
@@ -44,7 +44,7 @@ def evidencia(recorridos: list[dict]) -> dict:
         return next((x.get("datos", {}) for x in r["recorrido"] if x["chequeo"] == chequeo), {})
     c4, c5 = datos(recorridos[0], "C4 hueco"), datos(recorridos[0], "C6 margen")
     return {"anclas": len({pid for r in recorridos for pid in r["productos"]}),
-            "max_menciones": max((s["medida"]["menciones"] for r in recorridos for s in r["señales"] if not s["errores"]), default=0),
+            "desatendidos": max((datos(r, "C1 dolor").get("desatendidos", 0) for r in recorridos), default=0),
             "ventas_de_equivalentes": c4.get("ventas_visibles", 0),
             "publicaciones_con_precio": c4.get("con_alguna_venta", 0),
             "margen_pesimista_pct": c5.get("escenarios", {}).get("pesimista", {}).get("margen_neto_pct", -100)}
