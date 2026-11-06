@@ -54,7 +54,15 @@ sobrevivientes por corrida contra 11,7, y 42% de las que llegan a C4 pasan C5 co
 ganancia viene de sacar el conteo, que mataba ideas que la gente sí elige; el dolor medido no
 predice qué elige el mercado (deja pasar el 84%; las que mata sobreviven C5 tanto como las otras),
 pero agrega lo que C4 y C5 no ven: que la necesidad existe en la gente, medida por alguien que no
-propuso. Eso es lo que evita el primer error del emprendedor, saltar a la solución. Lo que todavía no mide ninguna corrida: si las ideas que
+propuso. Eso es lo que evita el primer error del emprendedor, saltar a la solución. Después apareció un
+problema de medición en C4: el criterio de qué publicaciones son "lo mismo" lo escribía el mismo
+LLM que proponía, y dejaba afuera competidores obvios (para un quitapelos de mascotas no contaba
+uno que vende +10.000). Ahora lo juzga otro modelo que solo ve qué se propone y los títulos
+(`harness/equivalencias.py`). Prerregistrado en `data/evaluacion/equivalencias/`: en 40
+desacuerdos etiquetados a ciegas, el juez acierta 32 y el criterio viejo 8 (binomial, p < 0,001);
+cuando se equivoca, tiende a contar de más (más estricto con la idea). Con el juez, las mismas
+propuestas dejan 8,7 sobrevivientes de C5 por corrida: los 16,7 de antes estaban inflados por
+el criterio del autor. Esa es la medida de referencia de acá en adelante. Lo que todavía no mide ninguna corrida: si las ideas que
 sobreviven son obvias (juicio humano a ciegas, pendiente) y si dejan margen (falta precio de
 proveedor).
 

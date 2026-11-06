@@ -1,0 +1,242 @@
+[
+ {
+  "n": 0,
+  "viejo": false,
+  "juez": true,
+  "vendidos": 25
+ },
+ {
+  "n": 1,
+  "viejo": true,
+  "juez": false,
+  "vendidos": 25
+ },
+ {
+  "n": 2,
+  "viejo": false,
+  "juez": true,
+  "vendidos": 0
+ },
+ {
+  "n": 3,
+  "viejo": false,
+  "juez": true,
+  "vendidos": 0
+ },
+ {
+  "n": 4,
+  "viejo": false,
+  "juez": true,
+  "vendidos": 100
+ },
+ {
+  "n": 5,
+  "viejo": false,
+  "juez": true,
+  "vendidos": 500
+ },
+ {
+  "n": 6,
+  "viejo": false,
+  "juez": true,
+  "vendidos": 0
+ },
+ {
+  "n": 7,
+  "viejo": false,
+  "juez": true,
+  "vendidos": 100
+ },
+ {
+  "n": 8,
+  "viejo": false,
+  "juez": true,
+  "vendidos": 0
+ },
+ {
+  "n": 9,
+  "viejo": false,
+  "juez": true,
+  "vendidos": 500
+ },
+ {
+  "n": 10,
+  "viejo": false,
+  "juez": true,
+  "vendidos": 1000
+ },
+ {
+  "n": 11,
+  "viejo": true,
+  "juez": false,
+  "vendidos": 0
+ },
+ {
+  "n": 12,
+  "viejo": false,
+  "juez": true,
+  "vendidos": 1000
+ },
+ {
+  "n": 13,
+  "viejo": false,
+  "juez": true,
+  "vendidos": 50
+ },
+ {
+  "n": 14,
+  "viejo": true,
+  "juez": false,
+  "vendidos": 0
+ },
+ {
+  "n": 15,
+  "viejo": false,
+  "juez": true,
+  "vendidos": 0
+ },
+ {
+  "n": 16,
+  "viejo": false,
+  "juez": true,
+  "vendidos": 0
+ },
+ {
+  "n": 17,
+  "viejo": false,
+  "juez": true,
+  "vendidos": 50
+ },
+ {
+  "n": 18,
+  "viejo": false,
+  "juez": true,
+  "vendidos": 50
+ },
+ {
+  "n": 19,
+  "viejo": true,
+  "juez": false,
+  "vendidos": 5000
+ },
+ {
+  "n": 20,
+  "viejo": false,
+  "juez": true,
+  "vendidos": 50
+ },
+ {
+  "n": 21,
+  "viejo": false,
+  "juez": true,
+  "vendidos": 0
+ },
+ {
+  "n": 22,
+  "viejo": false,
+  "juez": true,
+  "vendidos": 0
+ },
+ {
+  "n": 23,
+  "viejo": false,
+  "juez": true,
+  "vendidos": 25
+ },
+ {
+  "n": 24,
+  "viejo": true,
+  "juez": false,
+  "vendidos": 0
+ },
+ {
+  "n": 25,
+  "viejo": false,
+  "juez": true,
+  "vendidos": 100
+ },
+ {
+  "n": 26,
+  "viejo": false,
+  "juez": true,
+  "vendidos": 0
+ },
+ {
+  "n": 27,
+  "viejo": false,
+  "juez": true,
+  "vendidos": 0
+ },
+ {
+  "n": 28,
+  "viejo": false,
+  "juez": true,
+  "vendidos": 0
+ },
+ {
+  "n": 29,
+  "viejo": false,
+  "juez": true,
+  "vendidos": 50
+ },
+ {
+  "n": 30,
+  "viejo": true,
+  "juez": false,
+  "vendidos": 0
+ },
+ {
+  "n": 31,
+  "viejo": false,
+  "juez": true,
+  "vendidos": 0
+ },
+ {
+  "n": 32,
+  "viejo": true,
+  "juez": false,
+  "vendidos": 0
+ },
+ {
+  "n": 33,
+  "viejo": false,
+  "juez": true,
+  "vendidos": 0
+ },
+ {
+  "n": 34,
+  "viejo": false,
+  "juez": true,
+  "vendidos": 500
+ },
+ {
+  "n": 35,
+  "viejo": true,
+  "juez": false,
+  "vendidos": 0
+ },
+ {
+  "n": 36,
+  "viejo": false,
+  "juez": true,
+  "vendidos": 0
+ },
+ {
+  "n": 37,
+  "viejo": false,
+  "juez": true,
+  "vendidos": 0
+ },
+ {
+  "n": 38,
+  "viejo": false,
+  "juez": true,
+  "vendidos": 0
+ },
+ {
+  "n": 39,
+  "viejo": false,
+  "juez": true,
+  "vendidos": 0
+ }
+]
