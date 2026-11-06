@@ -30,7 +30,8 @@ PERSONAS_PARA_DEFINIR = 2500      # las que lee el LLM para definir segmentos (a
 PERSONAS_POR_LLAMADA_AL_ASIGNAR = 150
 SEMILLA = 7
 MIN_PERSONAS_POR_SEGMENTO = 15    # decisión: un grupo más chico no sostiene un negocio de importación
-MIN_PRODUCTOS_POR_SEGMENTO = 2    # el segmento tiene que cruzar productos: si no, es "los compradores de X"
+MIN_BUSQUEDAS_POR_SEGMENTO = 2    # el segmento cruza búsquedas: si no, es "los compradores de X" (los anclas de una búsqueda son casi el mismo producto)
+MIN_PERSONAS_POR_BUSQUEDA = 3     # para contar una búsqueda en el segmento
 PERSONAS_EN_EL_MAPA = 60          # las que lee el paso B de cada segmento (primero las que tienen dolor o miedo)
 ALTERNATIVAS_QUE_VE = 4           # de cada búsqueda: las más elegidas y las que se dejaron pasar
 CAMPOS = ("situacion", "quiere_lograr", "dolor", "ganancia", "teme", "compara_con")
@@ -85,10 +86,17 @@ def linea(t: dict) -> str:
     return f"[{t['id']}] {t['situacion']} | {t['quiere_lograr']} | {t['dolor']}"
 
 
+def linea_con_busqueda(t: dict, todos: dict) -> str:
+    """Para definir segmentos el modelo ve de qué búsqueda viene cada persona, y así puede
+    juntar situaciones que se repiten en búsquedas distintas."""
+    return f"[{t['id']}] ({todos[t['producto']]['busqueda']}) {t['situacion']} | {t['quiere_lograr']} | {t['dolor']}"
+
+
 def definir_segmentos(cliente, tarjetas: list[dict], traza: list) -> list[dict]:
+    todos = productos()
     muestra = random.Random(SEMILLA).sample(tarjetas, min(PERSONAS_PARA_DEFINIR, len(tarjetas)))
     prompt = (f"{SKILL_S.read_text(encoding='utf-8')}\n\n---\n\nTAREA: definir\n\nPERSONAS\n"
-              + "\n".join(map(linea, muestra)) + "\n\nRespondé SOLO con el JSON de la tarea \"definir\".")
+              + "\n".join(linea_con_busqueda(t, todos) for t in muestra) + "\n\nRespondé SOLO con el JSON de la tarea \"definir\".")
     validar = lambda d: {} if d.get("segmentos") else {"segmentos": ["no hay segmentos"]}
     return con_reintento(cliente, prompt, validar, traza, "S definir").get("segmentos", [])
 
@@ -140,7 +148,7 @@ def eleccion_en_la_busqueda(captura: dict | None) -> dict:
 def mapa_de_empatia(segmento: dict, miembros: list[dict], todos: dict, capturas: dict) -> dict:
     """Lo que el paso B lee del segmento: quiénes son, qué hacen, qué ven, qué dicen y qué temen."""
     por_producto = Counter(t["producto"] for t in miembros)
-    busquedas = sorted({todos[pid]["busqueda"] for pid in por_producto})
+    por_busqueda = Counter(todos[t["producto"]]["busqueda"] for t in miembros)
     # primero las personas con dolor o miedo, repartidas entre productos
     orden = sorted(miembros, key=lambda t: (not (t["dolor"] or t["teme"]), t["id"]))
     rondas, vistas = {}, []
@@ -155,10 +163,13 @@ def mapa_de_empatia(segmento: dict, miembros: list[dict], todos: dict, capturas:
             "dudan": sum(not t["eligio"] for t in miembros),
             "productos": {pid: {"titulo": todos[pid]["titulo"][:70], "vendidos": todos[pid]["vendidos"],
                                 "precio": todos[pid]["precio"], "personas": n} for pid, n in por_producto.most_common()},
-            "busquedas": {b: eleccion_en_la_busqueda(capturas.get(b)) for b in busquedas},
+            "personas_por_busqueda": dict(por_busqueda.most_common()),
+            "busquedas": {b: eleccion_en_la_busqueda(capturas.get(b)) for b in sorted(por_busqueda)},
             "cuentan": {c: sum(1 for t in miembros if t[c]) for c in CAMPOS},
             "voces": [{"id": t["id"], **{c: t[c] for c in CAMPOS if t[c]}} for t in vistas]}
 
 
 def es_segmento_suficiente(mapa: dict) -> bool:
-    return mapa["personas"] >= MIN_PERSONAS_POR_SEGMENTO and len(mapa["productos"]) >= MIN_PRODUCTOS_POR_SEGMENTO
+    """Bastante gente, y de varias búsquedas: una situación de vida, no los compradores de un producto."""
+    busquedas = sum(n >= MIN_PERSONAS_POR_BUSQUEDA for n in mapa["personas_por_busqueda"].values())
+    return mapa["personas"] >= MIN_PERSONAS_POR_SEGMENTO and busquedas >= MIN_BUSQUEDAS_POR_SEGMENTO

@@ -10,7 +10,7 @@ from harness import umbrales as U
 from harness.costo_puesto import EMBALAJE, LOGISTICA_M3, TIPO_CAMBIO, costo_puesto_usd, ingreso_neto_ars
 from harness.divergente import al_formato_del_embudo, errores_de_propuesta, proponer
 from harness.modelo import costo
-from harness.personas import errores_de_tarjeta, mapa_de_empatia, tarjetas_de_una_tanda
+from harness.personas import errores_de_tarjeta, es_segmento_suficiente, mapa_de_empatia, tarjetas_de_una_tanda
 from harness.embudo import Propuesta, recorrer
 from harness.voces import RAIZ, textos_con_id
 
@@ -142,11 +142,16 @@ MIEMBROS = {t["id"]: t for t in [persona("PX", "o1", dolor="sin repuesto"), pers
                                   persona("PY", "o1", situacion="taller chico"), persona("PY", "p2")]}
 
 
-def test_paso_b_exige_dos_personas_del_segmento_en_cada_uno_de_dos_productos():
+TODOS = {"PX": AFILADOR, "PY": {**AFILADOR, "id": "PY", "busqueda": "taladro"}, "PZ": {**AFILADOR, "id": "PZ"}}
+
+
+def test_paso_b_exige_dos_personas_del_segmento_en_cada_una_de_dos_busquedas():
     ok = {"personas": ["PX.o1", "PX.p1", "PY.o1", "PY.p2"], "palabras_clave": ["repuesto"], "busqueda_ml": "x"}
-    assert errores_de_propuesta(ok, MIEMBROS) == []
-    assert any("2 productos" in e for e in errores_de_propuesta({**ok, "personas": ["PX.o1", "PX.p1", "PY.o1"]}, MIEMBROS))
-    assert any("no es del segmento" in e for e in errores_de_propuesta({**ok, "personas": ok["personas"] + ["PZ.o9"]}, MIEMBROS))
+    assert errores_de_propuesta(ok, MIEMBROS, TODOS) == []
+    assert any("2 búsquedas" in e for e in errores_de_propuesta({**ok, "personas": ["PX.o1", "PX.p1", "PY.o1"]}, MIEMBROS, TODOS))
+    assert any("no es del segmento" in e for e in errores_de_propuesta({**ok, "personas": ok["personas"] + ["PZ.o9"]}, MIEMBROS, TODOS))
+    misma_busqueda = {**MIEMBROS, "PZ.o1": persona("PZ", "o1"), "PZ.p1": persona("PZ", "p1")}
+    assert errores_de_propuesta({**ok, "personas": ["PX.o1", "PX.p1", "PZ.o1", "PZ.p1"]}, misma_busqueda, TODOS)
 
 
 def test_cada_propuesta_deja_una_señal_por_producto_con_las_citas_de_su_gente():
@@ -159,10 +164,11 @@ def test_cada_propuesta_deja_una_señal_por_producto_con_las_citas_de_su_gente()
 
 
 def test_el_mapa_de_empatia_cuenta_y_lee_primero_a_quien_tiene_dolor_o_miedo():
-    todos = {"PX": AFILADOR, "PY": {**AFILADOR, "id": "PY", "busqueda": "afilador"}}
-    m = mapa_de_empatia({"id": "G1", "nombre": "talleres", "quien": "q"}, list(MIEMBROS.values()), todos, {})
+    m = mapa_de_empatia({"id": "G1", "nombre": "talleres", "quien": "q"}, list(MIEMBROS.values()), TODOS, {})
     assert m["personas"] == 4 and m["compraron"] == 2 and m["dudan"] == 2 and set(m["productos"]) == {"PX", "PY"}
     assert m["cuentan"]["dolor"] == 1 and m["voces"][0]["id"] == "PX.o1" and len(m["voces"]) == 4
+    assert m["personas_por_busqueda"] == {"afilador": 2, "taladro": 2}
+    assert not es_segmento_suficiente(m)     # pocas personas, y menos de 3 por búsqueda
 
 
 def test_costo_del_llm_por_tokens():
