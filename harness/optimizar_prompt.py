@@ -1,7 +1,9 @@
 """Optimiza las instrucciones de la mejor variante del paso B, al estilo GEPA (Agrawal et al.,
 ICLR 2026): en cada ronda el modelo lee POR QUÉ fallaron sus propuestas (obvias, repetidas,
 descartadas por el guardrail o C1 a C3), reescribe las instrucciones, y la versión nueva se
-queda solo si mejora la medida. Es aprender de feedback en palabras, no de un número.
+queda solo si mejora la medida. Es aprender de feedback en palabras, no de un número. Como el
+mismo prompt varía mucho entre corridas, cada versión se mide varias veces (REPETICIONES en
+harness/explorar_prompts.py) y se compara el promedio.
 
     DEEPSEEK_API_KEY=... python -m harness.optimizar_prompt dev   -> data/serendipia/optimizacion_dev.json
 
@@ -16,7 +18,7 @@ import sys
 
 from harness.divergente import DeepSeek, _con_reintento, costo, señales_verificadas
 from harness.espacio_de_prompts import variantes
-from harness.explorar_prompts import SERENDIPIA, medir_variante, señales_del_paso_a
+from harness.explorar_prompts import SERENDIPIA, medir_repetido, señales_del_paso_a
 from harness.voces import productos
 
 RONDAS = 4
@@ -53,26 +55,29 @@ def optimizar(cliente, particion: str, capturas: dict) -> dict:
     verificadas = señales_verificadas(señales, todos)
 
     instrucciones = variante.instrucciones()
-    actual = medir_variante(cliente, variante, verificadas, señales, todos, traza, instrucciones)
+    medir = lambda ins: medir_repetido(cliente, [(variante, ins)], verificadas, señales, todos)[0]
+    actual = medir(instrucciones)
     historia = [{"ronda": 0, "instrucciones": instrucciones, **{k: actual[k] for k in ("propuestas", "validas_distintas", "no_obvias")}}]
+    print(f"ronda 0 ({mejor_id} sin cambios): {actual['no_obvias']} no obvias en promedio", flush=True)
     for ronda in range(1, RONDAS + 1):
-        feedback = "\n".join(f"- {f['que_traer']} → {f['resultado']}" for f in actual["feedback"])
+        feedback = "\n".join(f"- {f['que_traer']} → {f['resultado']}" for f in actual["feedback"][:40])
         pedido = REFLEXION.format(instrucciones=instrucciones, feedback=feedback, no_obvias=actual["no_obvias"],
                                   propuestas=actual["propuestas"])
         nueva = _con_reintento(cliente, pedido, lambda d: {} if d.get("instrucciones") else {"x": ["falta instrucciones"]},
                                traza, f"reflexión {ronda}")
         if not nueva.get("instrucciones"):
             continue
-        candidata = medir_variante(cliente, variante, verificadas, señales, todos, traza, nueva["instrucciones"])
+        candidata = medir(nueva["instrucciones"])
         se_queda = puntaje(candidata) > puntaje(actual)
         historia.append({"ronda": ronda, "diagnostico": nueva.get("diagnostico"), "instrucciones": nueva["instrucciones"],
                          "se_queda": se_queda, **{k: candidata[k] for k in ("propuestas", "validas_distintas", "no_obvias")}})
-        print(f"ronda {ronda}: {candidata['no_obvias']} no obvias de {candidata['propuestas']} "
+        print(f"ronda {ronda}: {candidata['no_obvias']} no obvias en promedio, de {candidata['propuestas']} propuestas "
               f"({'se queda' if se_queda else 'se descarta'})", flush=True)
         if se_queda:
             instrucciones, actual = nueva["instrucciones"], candidata
     return {"particion": particion, "variante_de_partida": mejor_id, "opciones": variante.opciones,
-            "instrucciones_finales": instrucciones, "resultado_final": actual, "historia": historia, "costo": costo(traza)}
+            "instrucciones_finales": instrucciones, "resultado_final": actual, "historia": historia,
+            "costo_reflexiones_y_paso_a": costo(traza)}
 
 
 if __name__ == "__main__":
@@ -80,4 +85,4 @@ if __name__ == "__main__":
     particion = sys.argv[1] if len(sys.argv) > 1 else "dev"
     salida = optimizar(DeepSeek(os.environ["DEEPSEEK_API_KEY"]), particion, busquedas_capturadas())
     (SERENDIPIA / f"optimizacion_{particion}.json").write_text(json.dumps(salida, ensure_ascii=False, indent=1), encoding="utf-8")
-    print(f"costo: {salida['costo']}")
+    print("INSTRUCCIONES FINALES:\n" + salida["instrucciones_finales"])

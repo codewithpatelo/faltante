@@ -42,6 +42,19 @@ jobs:
         run: |
           mkdir -p resultados
           cp data/serendipia/*_${{ inputs.particion }}_api.json data/serendipia/espacio_${{ inputs.particion }}.json data/serendipia/optimizacion_${{ inputs.particion }}.json resultados/ 2>/dev/null || true
+      - name: Mostrar el resumen en el registro (el archivo de la corrida no siempre se puede bajar)
+        if: always()
+        run: |
+          python - <<'PY'
+          import glob, json
+          for f in glob.glob("resultados/espacio_*.json") + glob.glob("resultados/optimizacion_*.json"):
+              d = json.load(open(f))
+              resumen = {k: v for k, v in d.items() if k not in ("variantes", "resultado_final")}
+              resumen["variantes"] = [{k: r[k] for k in ("variante", "no_obvias", "no_obvias_desvio", "validas_distintas", "opciones", "instrucciones")}
+                                      for r in d.get("variantes", [])][:5]
+              resumen["oportunidades_finales"] = [o.get("que_traer") for o in d.get("resultado_final", {}).get("oportunidades", [])]
+              print("=== " + f + "\n" + json.dumps(resumen, ensure_ascii=False, indent=1))
+          PY
       # Los resultados quedan como archivo de la corrida (pestaña Actions, o `gh run download <id>`).
       # Antes se empujaban a una rama, pero GitHub rechaza ese push cuando cambia el workflow.
       - uses: actions/upload-artifact@v4

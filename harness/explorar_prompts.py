@@ -4,11 +4,15 @@ capturando las búsquedas de las mejores variantes.
 
     DEEPSEEK_API_KEY=... python -m harness.explorar_prompts dev   -> data/serendipia/espacio_dev.json
 
+Cada variante se mide REPETICIONES veces y se promedia: el mismo prompt da resultados muy
+distintos de una corrida a otra (en dev, la V03 sacó 5 propuestas no obvias en la exploración
+y 3 o menos al repetirla). Las mediciones corren en paralelo.
+
 Medida de cada variante:
     validas    oportunidades que pasan el guardrail del cruce y C1 a C3
     distintas  de esas, las que no repiten a otra (comparando las palabras de "que_traer")
     no_obvias  de las distintas, las que el juez (skills/juzgar_obviedad) marca como no obvias
-    puntaje    no_obvias; desempata distintas
+    puntaje    no_obvias promedio; desempata distintas promedio
 
 El juez es un LLM y los LLM son malos jueces de ideas (ver DECISIONES.md): sirve para comparar
 prompts entre sí, no para recomendar. La recomendación la sigue decidiendo el embudo.
@@ -20,6 +24,8 @@ import json
 import os
 import re
 import sys
+from concurrent.futures import ThreadPoolExecutor
+from statistics import mean, pstdev
 
 from harness.chequeos import errores_de_citas
 from harness.divergente import (DeepSeek, _con_reintento, costo, cruzar, eleccion_en_la_busqueda, lineas_de_señales,
@@ -31,6 +37,8 @@ from harness.voces import RAIZ, productos, sin_acentos
 SERENDIPIA = RAIZ / "data/serendipia"
 JUEZ = (RAIZ / "skills/juzgar_obviedad/SKILL.md").read_text(encoding="utf-8")
 PARECIDO_PARA_REPETIDA = 0.5      # proporción de palabras en común de "que_traer"
+REPETICIONES = 3                  # mediciones por variante
+EN_PARALELO = 8                   # llamadas simultáneas a la API
 CHEQUEOS_SIN_NAVEGADOR = EMBUDO[:4]   # guardrail, C1, C2, C3
 
 
@@ -94,10 +102,10 @@ def juzgar(cliente, ops: list[dict], señales: dict, todos: dict, traza: list) -
     return {j.get("id"): j for j in d.get("juicios", [])}
 
 
-def medir_variante(cliente, v, verificadas, señales, todos, traza, instrucciones: str | None = None) -> dict:
-    """Propone con la variante y mide: válidas (guardrail y C1 a C3), distintas y no obvias.
-    Devuelve también, por cada propuesta descartada, el motivo: es el feedback del optimizador."""
-    inicio = len(traza)
+def medir_variante(cliente, v, verificadas, señales, todos, instrucciones: str | None = None) -> dict:
+    """Una medición: propone con la variante y cuenta válidas (guardrail y C1 a C3), distintas y
+    no obvias. Devuelve también el resultado de cada propuesta: es el feedback del optimizador."""
+    traza = []
     ops = proponer_con(cliente, v, verificadas, traza, instrucciones)
     validas_ = validas(ops, señales, todos)
     buenas = sin_repetidas(validas_)
@@ -111,22 +119,42 @@ def medir_variante(cliente, v, verificadas, señales, todos, traza, instruccione
                                f"obvia: {juicios.get(o['id'], {}).get('motivo', '')}" if juicios.get(o["id"], {}).get("obvia")
                                else "válida, distinta y no obvia")} for o in ops]
     return {"variante": v.id, "opciones": v.opciones, "propuestas": len(ops), "validas_distintas": len(buenas),
-            "no_obvias": len(no_obvias), "costo": costo(traza[inicio:]), "feedback": feedback,
+            "no_obvias": len(no_obvias), "costo": costo(traza), "feedback": feedback,
             "oportunidades": [{**o, "juicio": juicios.get(o["id"])} for o in buenas]}
+
+
+def promediar(v, mediciones: list[dict], instrucciones: str | None = None) -> dict:
+    """Junta las mediciones repetidas de una variante: promedios, dispersión y todo el feedback."""
+    return {"variante": v.id, "opciones": v.opciones, "instrucciones": instrucciones or v.instrucciones(),
+            "no_obvias": round(mean(m["no_obvias"] for m in mediciones), 2),
+            "no_obvias_desvio": round(pstdev([m["no_obvias"] for m in mediciones]), 2),
+            "validas_distintas": round(mean(m["validas_distintas"] for m in mediciones), 2),
+            "propuestas": round(mean(m["propuestas"] for m in mediciones), 2),
+            "costo_usd": round(sum(m["costo"]["usd"] for m in mediciones), 4),
+            "feedback": [f for m in mediciones for f in m["feedback"]],
+            "oportunidades": [o for m in mediciones for o in m["oportunidades"]]}
+
+
+def medir_repetido(cliente, pedidos: list, verificadas, señales, todos) -> list[dict]:
+    """`pedidos`: lista de (variante, instrucciones). Mide cada uno REPETICIONES veces, en paralelo."""
+    tareas = [(v, ins) for v, ins in pedidos for _ in range(REPETICIONES)]
+    with ThreadPoolExecutor(EN_PARALELO) as hilos:
+        mediciones = list(hilos.map(lambda t: medir_variante(cliente, t[0], verificadas, señales, todos, t[1]), tareas))
+    return [promediar(v, mediciones[i * REPETICIONES:(i + 1) * REPETICIONES], ins) for i, (v, ins) in enumerate(pedidos)]
 
 
 def explorar(cliente, particion: str, capturas: dict) -> dict:
     todos, traza = productos(), []
     señales = señales_del_paso_a(cliente, particion, capturas, traza)
     verificadas = señales_verificadas(señales, todos)
-    resultados = []
-    for v in variantes():
-        r = medir_variante(cliente, v, verificadas, señales, todos, traza)
-        resultados.append(r)
-        print(f"{v.id} {r['propuestas']:>2} propuestas, {r['validas_distintas']:>2} válidas y distintas, "
-              f"{r['no_obvias']:>2} no obvias  {v.opciones}", flush=True)
+    resultados = medir_repetido(cliente, [(v, None) for v in variantes()], verificadas, señales, todos)
+    for r in resultados:
+        print(f"{r['variante']} {r['no_obvias']:>5} no obvias (±{r['no_obvias_desvio']}), {r['validas_distintas']:>5} válidas y "
+              f"distintas, {r['propuestas']:>5} propuestas  {r['opciones']}", flush=True)
     resultados.sort(key=lambda r: (-r["no_obvias"], -r["validas_distintas"]))
-    return {"particion": particion, "señales_verificadas": len(verificadas), "costo_total": costo(traza), "variantes": resultados}
+    return {"particion": particion, "señales_verificadas": len(verificadas), "repeticiones": REPETICIONES,
+            "costo_paso_a": costo(traza), "costo_total_usd": round(costo(traza)["usd"] + sum(r["costo_usd"] for r in resultados), 4),
+            "variantes": resultados}
 
 
 if __name__ == "__main__":
@@ -134,4 +162,4 @@ if __name__ == "__main__":
     particion = sys.argv[1] if len(sys.argv) > 1 else "dev"
     salida = explorar(DeepSeek(os.environ["DEEPSEEK_API_KEY"]), particion, busquedas_capturadas())
     (SERENDIPIA / f"espacio_{particion}.json").write_text(json.dumps(salida, ensure_ascii=False, indent=1), encoding="utf-8")
-    print(f"costo total: {salida['costo_total']}")
+    print(f"costo total: USD {salida['costo_total_usd']}")
