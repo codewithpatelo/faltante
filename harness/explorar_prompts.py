@@ -28,8 +28,8 @@ from concurrent.futures import ThreadPoolExecutor
 from statistics import mean, pstdev
 
 from harness.chequeos import errores_de_citas
-from harness.divergente import (DeepSeek, _con_reintento, costo, cruzar, eleccion_en_la_busqueda, lineas_de_señales,
-                                señales_de, señales_verificadas)
+from harness.divergente import (EN_PARALELO, DeepSeek, _con_reintento, costo, cruzar, lineas_de_señales,
+                                señales_de_la_particion, señales_verificadas)
 from harness.embudo import EMBUDO, Propuesta
 from harness.espacio_de_prompts import variantes
 from harness.voces import RAIZ, productos, sin_acentos
@@ -38,7 +38,6 @@ SERENDIPIA = RAIZ / "data/serendipia"
 JUEZ = (RAIZ / "skills/juzgar_obviedad/SKILL.md").read_text(encoding="utf-8")
 PARECIDO_PARA_REPETIDA = 0.5      # proporción de palabras en común de "que_traer"
 REPETICIONES = 3                  # mediciones por variante
-EN_PARALELO = 8                   # llamadas simultáneas a la API
 CHEQUEOS_SIN_NAVEGADOR = EMBUDO[:4]   # guardrail, C1, C2, C3
 
 
@@ -48,8 +47,7 @@ def señales_del_paso_a(cliente, particion: str, capturas: dict, traza: list) ->
     archivo = SERENDIPIA / f"señales_{particion}_api.json"
     if archivo.exists():
         return json.loads(archivo.read_text(encoding="utf-8"))
-    señales = {pid: señales_de(cliente, p, eleccion_en_la_busqueda(p, capturas.get(p["busqueda"])), traza)
-               for pid, p in productos(particion).items()}
+    señales = señales_de_la_particion(cliente, particion, capturas, traza)
     archivo.write_text(json.dumps(señales, ensure_ascii=False, indent=1), encoding="utf-8")
     return señales
 

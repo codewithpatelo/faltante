@@ -20,7 +20,9 @@ import os
 import re
 import sys
 import time
+import urllib.error
 import urllib.request
+from concurrent.futures import ThreadPoolExecutor
 from types import SimpleNamespace
 
 from harness.chequeos import errores_de_citas, es_verificada, medir
@@ -32,7 +34,10 @@ URL_API = "https://api.deepseek.com/chat/completions"
 OPINIONES_QUE_LEE = 22            # además de todas las preguntas
 ALTERNATIVAS_QUE_VE = 6           # de cada lado: las más elegidas y las que se dejaron pasar
 MAX_TOKENS_DE_SALIDA = 32000      # DeepSeek Flash razona antes de responder (hasta ~27.000 caracteres): con 8.000 se cortaba
-REINTENTOS = 1
+REINTENTOS = 1                    # devolver los errores del guardrail al modelo una vez
+EN_PARALELO = 8                   # llamadas simultáneas a la API
+SEGUNDOS_POR_LLAMADA = 900        # razonando 32.000 tokens puede tardar más de 5 minutos
+INTENTOS_DE_RED = 3               # una corrida larga no se cae por un corte de red
 SKILL_A = RAIZ / "skills/leer_voces/SKILL.md"
 SKILL_B = RAIZ / "skills/cruzar_senales/SKILL.md"
 
@@ -58,6 +63,14 @@ def prompt_a(producto: dict, eleccion: str) -> str:
     lineas = "\n".join(f"[{i}] {t[:300]}" for i, t in textos.items())
     return (f"{SKILL_A.read_text(encoding='utf-8')}\n\n---\n\n{ancla}\n\nELECCIÓN\n{eleccion}\n\nVOCES\n{lineas}\n\n"
             "Respondé SOLO con el JSON de la salida.")
+
+
+def señales_de_la_particion(cliente, particion: str, capturas: dict, traza: list) -> dict[str, list]:
+    """Paso A sobre cada producto de la partición, en paralelo: {"E001": [señales], ...}."""
+    elegidos = productos(particion)
+    leer = lambda pid: señales_de(cliente, elegidos[pid], eleccion_en_la_busqueda(elegidos[pid], capturas.get(elegidos[pid]["busqueda"])), traza)
+    with ThreadPoolExecutor(EN_PARALELO) as hilos:
+        return dict(zip(elegidos, hilos.map(leer, elegidos)))
 
 
 def señales_de(cliente, producto: dict, eleccion: str, traza: list) -> list[dict]:
@@ -151,8 +164,15 @@ class DeepSeek:
                              "response_format": {"type": "json_object"}}).encode()
         pedido = urllib.request.Request(URL_API, data=cuerpo, headers={
             "Content-Type": "application/json", "Authorization": f"Bearer {self.clave}"})
-        with urllib.request.urlopen(pedido, timeout=300) as r:
-            d = json.loads(r.read())
+        for intento in range(INTENTOS_DE_RED):
+            try:
+                with urllib.request.urlopen(pedido, timeout=SEGUNDOS_POR_LLAMADA) as r:
+                    d = json.loads(r.read())
+                break
+            except (urllib.error.URLError, TimeoutError, ConnectionError):
+                if intento == INTENTOS_DE_RED - 1:
+                    raise
+                time.sleep(30 * (intento + 1))
         eleccion = d["choices"][0]
         return SimpleNamespace(content=[SimpleNamespace(text=eleccion["message"].get("content") or "")],
                                stop_reason=eleccion.get("finish_reason"),
@@ -171,9 +191,7 @@ def costo(traza: list) -> dict:
 def divergir(cliente, particion: str, capturas: dict) -> dict:
     """Paso A sobre cada producto de la partición y paso B sobre todas las señales verificadas."""
     todos, traza = productos(), []
-    elegidos = productos(particion)
-    señales = {pid: señales_de(cliente, p, eleccion_en_la_busqueda(p, capturas.get(p["busqueda"])), traza)
-               for pid, p in elegidos.items()}
+    señales = señales_de_la_particion(cliente, particion, capturas, traza)
     verificadas = señales_verificadas(señales, todos)
     oportunidades = cruzar(cliente, verificadas, traza) if verificadas else []
     return {"quien": MODELO, "costo": costo(traza), "traza": traza, "señales": señales, "oportunidades": oportunidades}

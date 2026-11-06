@@ -81,8 +81,10 @@ def con_confianza(recorridos: list[dict]) -> list[dict]:
 
 
 def busquedas_capturadas() -> dict:
+    """Todas las búsquedas capturadas (las de C4 y C5 y las de los productos ancla a escala):
+    {"texto de la búsqueda": {"total": ..., "publicaciones": [...]}}."""
     busquedas = {}
-    for f in sorted((RAIZ / "data/capturas").glob("captura_ml_serendipia_*.json")):
+    for f in sorted((RAIZ / "data/capturas").glob("captura_ml_*.json")):
         busquedas.update(json.loads(f.read_text(encoding="utf-8"))["busquedas"])
     return busquedas
 

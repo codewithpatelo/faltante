@@ -1,14 +1,15 @@
-# Corre el paso del LLM con la API sobre test usando el secreto DEEPSEEK_API_KEY del repo (Actions),
-# y guarda los resultados como archivo de la corrida. Se dispara a mano desde Actions.
+# Corre el LLM con la API usando el secreto DEEPSEEK_API_KEY del repo (Actions). Se dispara a mano
+# desde Actions. Los resultados quedan como archivo de la corrida y, completos, en el registro
+# (líneas "RESULTADO <archivo> <json>"), porque el archivo de la corrida no siempre se puede bajar.
 name: llm
 on:
   workflow_dispatch:
     inputs:
       tarea:
-        description: "serendipia (dos pasos + embudo), explorar (prueba las 25 variantes del prompt del paso B) u optimizar (mejora la mejor variante)"
+        description: "serendipia (dos pasos + embudo), explorar (prueba las 25 variantes del prompt del paso B), optimizar (mejora la mejor variante) o prompts (explorar y después optimizar)"
         default: "serendipia"
       particion:
-        description: "Qué productos leer: test (los 10 primeros) o escala"
+        description: "Qué productos leer: dev o test (los 21 primeros), escala_dev o escala_test (los 96 anclas)"
         default: "test"
 permissions:
   contents: write
@@ -28,12 +29,12 @@ jobs:
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
         run: make serendipia-api PARTICION=${{ inputs.particion }}
       - name: Explorar el espacio de prompts del paso B
-        if: inputs.tarea == 'explorar'
+        if: inputs.tarea == 'explorar' || inputs.tarea == 'prompts'
         env:
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
         run: python -m harness.explorar_prompts ${{ inputs.particion }}
-      - name: Optimizar la mejor variante (necesita espacio_<particion>.json en el repo)
-        if: inputs.tarea == 'optimizar'
+      - name: Optimizar la mejor variante (parte de espacio_<particion>.json)
+        if: inputs.tarea == 'optimizar' || inputs.tarea == 'prompts'
         env:
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
         run: python -m harness.optimizar_prompt ${{ inputs.particion }}
@@ -42,19 +43,14 @@ jobs:
         run: |
           mkdir -p resultados
           cp data/serendipia/*_${{ inputs.particion }}_api.json data/serendipia/espacio_${{ inputs.particion }}.json data/serendipia/optimizacion_${{ inputs.particion }}.json resultados/ 2>/dev/null || true
-      - name: Mostrar el resumen en el registro (el archivo de la corrida no siempre se puede bajar)
+      - name: Copiar los resultados completos al registro
         if: always()
         run: |
-          python - <<'PY'
-          import glob, json
-          for f in glob.glob("resultados/espacio_*.json") + glob.glob("resultados/optimizacion_*.json"):
-              d = json.load(open(f))
-              resumen = {k: v for k, v in d.items() if k not in ("variantes", "resultado_final")}
-              resumen["variantes"] = [{k: r[k] for k in ("variante", "no_obvias", "no_obvias_desvio", "validas_distintas", "opciones", "instrucciones")}
-                                      for r in d.get("variantes", [])][:5]
-              resumen["oportunidades_finales"] = [o.get("que_traer") for o in d.get("resultado_final", {}).get("oportunidades", [])]
-              print("=== " + f + "\n" + json.dumps(resumen, ensure_ascii=False, indent=1))
-          PY
+          for f in resultados/*.json; do
+            if [ -f "$f" ]; then
+              echo "RESULTADO $(basename "$f") $(python -c 'import json,sys; print(json.dumps(json.load(open(sys.argv[1])), ensure_ascii=False))' "$f")"
+            fi
+          done
       # Los resultados quedan como archivo de la corrida (pestaña Actions, o `gh run download <id>`).
       # Antes se empujaban a una rama, pero GitHub rechaza ese push cuando cambia el workflow.
       - uses: actions/upload-artifact@v4
