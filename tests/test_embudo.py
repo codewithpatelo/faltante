@@ -8,7 +8,9 @@ from types import SimpleNamespace
 from harness import chequeos as c
 from harness import umbrales as U
 from harness.costo_puesto import EMBALAJE, LOGISTICA_M3, TIPO_CAMBIO, costo_puesto_usd, ingreso_neto_ars
-from harness.divergente import costo, errores_de_cruce, señales_de
+from harness.divergente import al_formato_del_embudo, errores_de_propuesta, proponer
+from harness.modelo import costo
+from harness.personas import errores_de_tarjeta, mapa_de_empatia, tarjetas_de_una_tanda
 from harness.embudo import Propuesta, recorrer
 from harness.voces import RAIZ, textos_con_id
 
@@ -101,7 +103,7 @@ def test_la_logistica_cobra_al_menos_1_m3_por_embarque():
     assert chico["total"] > lleno["total"]
 
 
-# --- La divergencia (paso A y paso B) ------------------------------------------------------
+# --- La divergencia (personas, segmentos, propuestas) ---------------------------------------
 
 class LLMQueCorrige:
     """Paso A: primero inventa una cita; cuando el guardrail se la devuelve, la corrige."""
@@ -111,36 +113,60 @@ class LLMQueCorrige:
     def create(self, **kw):
         frag = self.fragmentos[min(self.llamadas, len(self.fragmentos) - 1)]
         self.llamadas += 1
-        d = {"señales": [{"id": "S1", "descripcion": "piden discos", "palabras_clave": ["repuesto"],
-                          "citas": [{"texto": "p1", "fragmento": "discos de repuesto"}, {"texto": "o1", "fragmento": frag}]}]}
+        d = {"personas": [{"texto": "o1", "dolor": "no consigue repuesto", "fragmento": frag},
+                          {"texto": "p1", "teme": "quedarse sin discos", "fragmento": "discos de repuesto"}]}
         return SimpleNamespace(content=[SimpleNamespace(text=json.dumps(d))], usage=SimpleNamespace(input_tokens=1000, output_tokens=200))
 
 
 def test_paso_a_el_llm_recibe_los_errores_del_guardrail_y_corrige():
     llm, traza = LLMQueCorrige(), []
-    señales = señales_de(llm, AFILADOR, "(sin captura)", traza)
+    tarjetas = tarjetas_de_una_tanda(llm, AFILADOR, textos_con_id(AFILADOR), traza)
     assert llm.llamadas == 2 and traza[0]["errores"] and not traza[1]["errores"]
-    assert c.errores_de_citas(señales[0], textos_con_id(AFILADOR)) == []
+    assert {t["id"] for t in tarjetas} == {"PX.o1", "PX.p1"} and tarjetas[0]["eligio"] and not tarjetas[1]["eligio"]
 
 
-def test_paso_a_si_el_llm_insiste_con_una_cita_falsa_la_propuesta_se_descarta_en_el_guardrail():
+def test_paso_a_si_el_llm_insiste_con_una_cita_falsa_esa_persona_no_se_anota():
     llm, traza = LLMQueCorrige(fragmentos=("inventado",)), []
-    señales = señales_de(llm, AFILADOR, "(sin captura)", traza)
-    assert llm.llamadas == 2 and all(t["errores"] for t in traza)
-    oportunidad = {"id": "O1", "que_traer": "disco", "busqueda_ml": "disco", "criterio_equivalencia": {}}
-    r = recorrer(Propuesta("llm", [AFILADOR], oportunidad, [{**señales[0], "producto": "PX"}]))
-    assert r["estado"] == "descartada" and r["se_detiene_en"] == "guardrail"
+    tarjetas = tarjetas_de_una_tanda(llm, AFILADOR, textos_con_id(AFILADOR), traza)
+    assert llm.llamadas == 2 and [t["id"] for t in tarjetas] == ["PX.p1"]
+    assert errores_de_tarjeta({"texto": "o2", "fragmento": "Excelente"}, TEXTOS)   # no anota nada de la persona
 
 
-def test_paso_b_exige_señales_que_existan_y_de_dos_productos_distintos():
-    ids = {"P01.S1", "P01.S2", "P12.S1"}
-    assert errores_de_cruce({"señales": ["P01.S1", "P12.S1"]}, ids) == []
-    assert any("2 productos" in e for e in errores_de_cruce({"señales": ["P01.S1", "P01.S2"]}, ids))
-    assert any("no existe" in e for e in errores_de_cruce({"señales": ["P01.S1", "P99.S9"]}, ids))
+def persona(pid, texto, **campos):
+    vacios = dict.fromkeys(("situacion", "quiere_lograr", "dolor", "ganancia", "teme", "compara_con"), "")
+    return {**vacios, **campos, "id": f"{pid}.{texto}", "producto": pid, "texto": texto, "fragmento": TEXTOS[texto],
+            "eligio": texto.startswith("o")}
+
+
+MIEMBROS = {t["id"]: t for t in [persona("PX", "o1", dolor="sin repuesto"), persona("PX", "p1", teme="sin discos"),
+                                  persona("PY", "o1", situacion="taller chico"), persona("PY", "p2")]}
+
+
+def test_paso_b_exige_dos_personas_del_segmento_en_cada_uno_de_dos_productos():
+    ok = {"personas": ["PX.o1", "PX.p1", "PY.o1", "PY.p2"], "palabras_clave": ["repuesto"], "busqueda_ml": "x"}
+    assert errores_de_propuesta(ok, MIEMBROS) == []
+    assert any("2 productos" in e for e in errores_de_propuesta({**ok, "personas": ["PX.o1", "PX.p1", "PY.o1"]}, MIEMBROS))
+    assert any("no es del segmento" in e for e in errores_de_propuesta({**ok, "personas": ok["personas"] + ["PZ.o9"]}, MIEMBROS))
+
+
+def test_cada_propuesta_deja_una_señal_por_producto_con_las_citas_de_su_gente():
+    o = {"id": "G1.O1", "que_traer": "x", "alivia": "sin repuesto", "personas": ["PX.o1", "PX.p1", "PY.o1", "PY.p2"],
+         "palabras_clave": ["repuesto"], "busqueda_ml": "x"}
+    salida = al_formato_del_embudo([o], MIEMBROS, "inexistente")
+    assert salida["oportunidades"][0]["señales"] == ["PX.G1O1", "PY.G1O1"]
+    señal_px = salida["señales"]["PX"][0]
+    assert c.errores_de_citas(señal_px, TEXTOS) == []   # 2 personas de PX: pasa el guardrail del embudo
+
+
+def test_el_mapa_de_empatia_cuenta_y_lee_primero_a_quien_tiene_dolor_o_miedo():
+    todos = {"PX": AFILADOR, "PY": {**AFILADOR, "id": "PY", "busqueda": "afilador"}}
+    m = mapa_de_empatia({"id": "G1", "nombre": "talleres", "quien": "q"}, list(MIEMBROS.values()), todos, {})
+    assert m["personas"] == 4 and m["compraron"] == 2 and m["dudan"] == 2 and set(m["productos"]) == {"PX", "PY"}
+    assert m["cuentan"]["dolor"] == 1 and m["voces"][0]["id"] == "PX.o1" and len(m["voces"]) == 4
 
 
 def test_costo_del_llm_por_tokens():
-    from harness.divergente import USD_POR_MILLON_DE_TOKENS as P
+    from harness.modelo import USD_POR_MILLON_DE_TOKENS as P
     r = costo([{"tokens": {"entrada": 1_000_000, "salida": 200_000}, "segundos": 2.0}])
     assert r["usd"] == round(P["entrada"] + 0.2 * P["salida"], 4) and r["segundos"] == 2.0
 
@@ -151,23 +177,3 @@ def test_cada_propuesta_de_dev_termina_con_estado_y_motivo():
     subprocess.run([sys.executable, "-m", "harness.correr", "dev"], cwd=RAIZ, check=True, capture_output=True)
     for r in json.loads((RAIZ / "data/serendipia/embudo_dev.json").read_text()):
         assert r["estado"] in {"sobrevive", "condicional", "descartada"} and r["motivo"]
-
-
-# --- Espacio de prompts ------------------------------------------------------------------
-
-def test_el_espacio_tiene_25_variantes_distintas_y_balanceadas():
-    from collections import Counter
-    from harness.espacio_de_prompts import DIMENSIONES, variantes
-    vs = variantes()
-    assert len(vs) == 25 and len({tuple(v.opciones.values()) for v in vs}) == 25
-    for d, opciones in DIMENSIONES.items():
-        cuentas = Counter(v.opciones[d] for v in vs)
-        assert set(cuentas) == set(opciones) and max(cuentas.values()) - min(cuentas.values()) <= 2
-
-
-def test_explorar_no_cuenta_dos_veces_la_misma_idea():
-    from harness.explorar_prompts import sin_repetidas
-    ops = [{"que_traer": "Rodillo quita pelos de mascota reutilizable"},
-           {"que_traer": "Rodillo reutilizable quita pelos de mascota para sillones"},
-           {"que_traer": "Base antideslizante de silicona para mesada"}]
-    assert len(sin_repetidas(ops)) == 2

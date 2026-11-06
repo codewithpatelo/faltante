@@ -14,11 +14,11 @@ serendipia:
 	$(PY) -m harness.correr dev
 	$(PY) -m harness.correr test
 
-# Igual, pero las propuestas las hace DeepSeek por la API (requiere DEEPSEEK_API_KEY), en dos
-# pasos: señales por producto y oportunidades que cruzan productos. PARTICION: dev, test,
-# escala_dev o escala_test.
-# Si el modelo propone búsquedas nuevas, hay que capturarlas con scripts/captura_ml.js para C4.
-PARTICION ?= test
+# Igual, pero las propuestas las hace DeepSeek por la API (requiere DEEPSEEK_API_KEY): lee a cada
+# persona (mapa de empatía), agrupa a la gente en segmentos y propone qué traer a cada segmento.
+# PARTICION: escala_dev o escala_test. Las búsquedas nuevas que proponga el modelo hay que
+# capturarlas con scripts/captura_ml.js para C4 y C5, y volver a correr harness.correr.
+PARTICION ?= escala_dev
 serendipia-api:
 	$(PY) -m harness.divergente $(PARTICION)
 	$(PY) -m harness.correr $(PARTICION)_api
