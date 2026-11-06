@@ -14,7 +14,7 @@
   "busqueda_ml": "quitapelos reutilizable pelos mascotas sillón",
   "estado": "descartada",
   "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "motivo": "ya atendido: 10 equivalentes venden +100",
   "señales": [
    {
     "id": "E065.G1O1",
@@ -57,7 +57,18 @@
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "ya atendido: 10 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 55,
+     "venden": 10,
+     "con_alguna_venta": 19,
+     "ventas_visibles": 21050,
+     "ejemplos_que_venden": [
+      "Guante Quita Pelos Mascotas Perros Gatos Ropa Negro (+10000, $6,465)",
+      "Guante Cepillo Quita Pelusas Y Pelos Perro Gato Sillon Ropa (+5000, $11,514)",
+      "Guante Quita Pelusas Y Quita Pelos Perro Gato Ropa Sillon (+1000, $24,999)"
+     ]
+    }
    }
   ]
  },
@@ -76,7 +87,7 @@
   "busqueda_ml": "filtro atrapa pelos lavarropas mascotas",
   "estado": "descartada",
   "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "motivo": "ya atendido: 3 equivalentes venden +100",
   "señales": [
    {
     "id": "E065.G1O2",
@@ -119,7 +130,18 @@
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "ya atendido: 3 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 43,
+     "venden": 3,
+     "con_alguna_venta": 5,
+     "ventas_visibles": 375,
+     "ejemplos_que_venden": [
+      "Filtro Atrapa Pelos Mascotas Y Pelusas Lavarropas (+100, $4,980)",
+      "Filtro Atrapa Pelusas Removedor Flotante Lavarropas Superior (+100, $5,350)",
+      "Bolsa Rejilla Filtro Remueve Pelusa Pelos Gato Perro Mascota Color A D (+100, $3,362)"
+     ]
+    }
    }
   ]
  },
@@ -188,7 +210,7 @@
   "busqueda_ml": "escoba de goma para pelo de mascota",
   "estado": "descartada",
   "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "motivo": "ya atendido: 9 equivalentes venden +100",
   "señales": [
    {
     "id": "E065.G1O2b",
@@ -231,7 +253,18 @@
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "ya atendido: 9 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 43,
+     "venden": 9,
+     "con_alguna_venta": 13,
+     "ventas_visibles": 9950,
+     "ejemplos_que_venden": [
+      "Escobillon Peluqueria Eurostil Escoba De Goma Atrapa Pelos (+5000, $32,990)",
+      "Escoba De Goma Atrapa Pelos Peluqueria Perros Gatos Magica (+1000, $17,248)",
+      "Escoba Goma Peluqueria Perros Gato No Se Adhieren Pelos 31cm (+1000, $14,755)"
+     ]
+    }
    }
   ]
  },
@@ -299,8 +332,8 @@
   "que_traer": "Arnés de cabeza antitirones (tipo Halti / Gentle Leader) para perros medianos y grandes, con anilla frontal, acolchado en hocico y nuca y correa corta de conexión al collar incluidas",
   "busqueda_ml": "arnes de cabeza antitirones para perro",
   "estado": "descartada",
-  "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "se_detiene_en": "C6 margen",
+  "motivo": "sin precio de proveedor: falta cotizarlo",
   "señales": [
    {
     "id": "E034.G2O1b",
@@ -342,8 +375,42 @@
    {
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
+    "pasa": true,
+    "motivo": "7 equivalentes, 2 venden +100",
+    "datos": {
+     "equivalentes": 7,
+     "venden": 2,
+     "con_alguna_venta": 2,
+     "ventas_visibles": 200,
+     "ejemplos_que_venden": [
+      "Bozal Arnés Trixie Perro Collar de Cabeza Nylon Talle M Hocico 27cm (+100, $10,449)",
+      "Arnés Trixie Top Trainer Collar de Cabeza Perros Grande Negro Hocico 3 (+100, $9,825)"
+     ]
+    }
+   },
+   {
+    "chequeo": "C5 la eligen",
+    "supuesto": "Si se ofrece, la gente la elige",
+    "pasa": true,
+    "motivo": "4 alternativas con stock local a precio comparable (ventas mediana 50.0) contra 65 publicaciones de la búsqueda de origen (mediana 50), p = 0.2047",
+    "datos": {
+     "comparables": 4,
+     "ventas_comparables": [
+      0,
+      0,
+      100,
+      100
+     ],
+     "mediana_de_origen": 50,
+     "publicaciones_de_origen": 65,
+     "p": 0.2047
+    }
+   },
+   {
+    "chequeo": "C6 margen",
+    "supuesto": "Deja plata al precio que la gente paga",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "sin precio de proveedor: falta cotizarlo"
    }
   ]
  },
@@ -412,7 +479,7 @@
   "busqueda_ml": "correa perro chico mosqueton liviano",
   "estado": "descartada",
   "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "motivo": "ya atendido: 7 equivalentes venden +100",
   "señales": [
    {
     "id": "E034.G3O1",
@@ -455,7 +522,18 @@
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "ya atendido: 7 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 26,
+     "venden": 7,
+     "con_alguna_venta": 19,
+     "ventas_visibles": 2475,
+     "ejemplos_que_venden": [
+      "Correa De Perro  3 Metros, K9, Paseo, Adiestramiento Canino (+1000, $17,945)",
+      "Correa K9 Dog Trainers 3m Adiestramiento Canino Negras Perros Pequeños (+500, $14,913)",
+      "Correa Para Perro K9 1.2m Mosquetón Reforzado Negro Poliéster (+100, $17,730)"
+     ]
+    }
    }
   ]
  },
@@ -474,7 +552,7 @@
   "busqueda_ml": "arnes antitirones perro chico",
   "estado": "descartada",
   "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "motivo": "ya atendido: 3 equivalentes venden +100",
   "señales": [
    {
     "id": "E034.G3O2b",
@@ -517,7 +595,18 @@
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "ya atendido: 3 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 31,
+     "venden": 3,
+     "con_alguna_venta": 4,
+     "ventas_visibles": 5225,
+     "ejemplos_que_venden": [
+      "Pretal Anti Tirones Para Perro Regulable K9 Dog Trainers (+5000, $41,185)",
+      "Pretal Arnés Para Perro Antiescape Antitirones Regulable (+100, $39,014)",
+      "Pretal Arnés Para Perro Antiescape Antitirones Regulable (+100, $37,927)"
+     ]
+    }
    }
   ]
  },
@@ -536,7 +625,7 @@
   "busqueda_ml": "fuente de agua para gatos",
   "estado": "descartada",
   "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "motivo": "ya atendido: 26 equivalentes venden +100",
   "señales": [
    {
     "id": "E031.G5O1",
@@ -579,7 +668,18 @@
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "ya atendido: 26 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 48,
+     "venden": 26,
+     "con_alguna_venta": 36,
+     "ventas_visibles": 16275,
+     "ejemplos_que_venden": [
+      "Bebedero Gatos Perro Fuente Agua Filtro Recipiente Mascota (+1000, $32,999)",
+      "Bebedero De Agua Silenciosa Gadnic Perro Gato 3l Color Blanco (+1000, $30,038)",
+      "Fuente Bebedero Agua Mascotas Luz Led Usb Dispenser Gatos Color Blanco (+1000, $37,546)"
+     ]
+    }
    }
   ]
  },
@@ -647,8 +747,8 @@
   "que_traer": "Comedero selectivo con lector de microchip (o collar) que abre solo la tapa de la ración de cada mascota y sirve porciones medidas, para hogares con varios animales o con un glotón que engorda y come la comida de los demás.",
   "busqueda_ml": "comedero selectivo microchip gato",
   "estado": "descartada",
-  "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "se_detiene_en": "C5 la eligen",
+  "motivo": "la gente la deja pasar: 8 alternativas con stock local a precio comparable (ventas mediana 0.0) contra 65 publicaciones de la búsqueda de origen (mediana 100), p = 0.0005",
   "señales": [
    {
     "id": "E030.G5O1b",
@@ -690,8 +790,37 @@
    {
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
+    "pasa": true,
+    "motivo": "12 equivalentes, 0 venden +100",
+    "datos": {
+     "equivalentes": 12,
+     "venden": 0,
+     "con_alguna_venta": 0,
+     "ventas_visibles": 0,
+     "ejemplos_que_venden": []
+    }
+   },
+   {
+    "chequeo": "C5 la eligen",
+    "supuesto": "Si se ofrece, la gente la elige",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "la gente la deja pasar: 8 alternativas con stock local a precio comparable (ventas mediana 0.0) contra 65 publicaciones de la búsqueda de origen (mediana 100), p = 0.0005",
+    "datos": {
+     "comparables": 8,
+     "ventas_comparables": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "mediana_de_origen": 100,
+     "publicaciones_de_origen": 65,
+     "p": 0.0005
+    }
    }
   ]
  },
@@ -709,8 +838,8 @@
   "que_traer": "Comedero interactivo tipo laberinto/puzzle que dispensa el alimento de a poco mientras la mascota lo destraba, con compartimentos y piezas móviles, en medidas para gato y perro chico.",
   "busqueda_ml": "comedero interactivo puzzle gato",
   "estado": "descartada",
-  "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "se_detiene_en": "C5 la eligen",
+  "motivo": "la gente la deja pasar: 16 alternativas con stock local a precio comparable (ventas mediana 0.0) contra 65 publicaciones de la búsqueda de origen (mediana 100), p = 0.0002",
   "señales": [
    {
     "id": "E030.G5O2b",
@@ -752,8 +881,47 @@
    {
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
+    "pasa": true,
+    "motivo": "35 equivalentes, 1 venden +100",
+    "datos": {
+     "equivalentes": 35,
+     "venden": 1,
+     "con_alguna_venta": 5,
+     "ventas_visibles": 225,
+     "ejemplos_que_venden": [
+      "Plato Juego Puzzle Come Lento Para Perros Ansiosos Energeneration Otto (+100, $30,180)"
+     ]
+    }
+   },
+   {
+    "chequeo": "C5 la eligen",
+    "supuesto": "Si se ofrece, la gente la elige",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "la gente la deja pasar: 16 alternativas con stock local a precio comparable (ventas mediana 0.0) contra 65 publicaciones de la búsqueda de origen (mediana 100), p = 0.0002",
+    "datos": {
+     "comparables": 16,
+     "ventas_comparables": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      25,
+      25,
+      50,
+      100
+     ],
+     "mediana_de_origen": 100,
+     "publicaciones_de_origen": 65,
+     "p": 0.0002
+    }
    }
   ]
  },
@@ -772,7 +940,7 @@
   "busqueda_ml": "organizador pared baño ventosa plegable",
   "estado": "descartada",
   "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "motivo": "ya atendido: 13 equivalentes venden +100",
   "señales": [
    {
     "id": "E024.G6O1",
@@ -815,7 +983,18 @@
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "ya atendido: 13 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 27,
+     "venden": 13,
+     "con_alguna_venta": 14,
+     "ventas_visibles": 4350,
+     "ejemplos_que_venden": [
+      "Organizador Para Ducha Esquinero De Baño Colgante 2 Estantes (+1000, $60,242)",
+      "Estante Organizador De Baño Metálico Con Ventosa (+1000, $17,398)",
+      "Organizador De Baño Blanco Bathlux Porta Shampoo Ventosa Adhesiva (+500, $35,750)"
+     ]
+    }
    }
   ]
  },
@@ -834,7 +1013,7 @@
   "busqueda_ml": "comedero plegable silicona mascotas",
   "estado": "descartada",
   "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "motivo": "ya atendido: 14 equivalentes venden +100",
   "señales": [
    {
     "id": "E031.G6O2",
@@ -877,7 +1056,18 @@
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "ya atendido: 14 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 48,
+     "venden": 14,
+     "con_alguna_venta": 30,
+     "ventas_visibles": 3250,
+     "ejemplos_que_venden": [
+      "Comedero Bebedero Plegable Silicona Con Gancho Paseos Viajes (+1000, $4,570)",
+      "Comedero Bebedero Plegable Silicona Con Gancho Paseos Viajes (+500, $4,000)",
+      "Comedero y Bebedero Plegable Portátil para Perros y Gatos de Silicona  (+100, $8,999)"
+     ]
+    }
    }
   ]
  },
@@ -895,8 +1085,8 @@
   "que_traer": "Kit de cepillo/escobilla de inodoro con cabezales desechables: mango corto con gancho para colgar y pack de 10 a 20 cabezales que se tiran después de cada uso, sin soporte ni base que quede en el piso",
   "busqueda_ml": "cepillo de inodoro desechable",
   "estado": "descartada",
-  "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "se_detiene_en": "C5 la eligen",
+  "motivo": "la gente la deja pasar: 2 alternativas con stock local a precio comparable (ventas mediana 0.0) contra 64 publicaciones de la búsqueda de origen (mediana 100.0), p = 0.0138",
   "señales": [
    {
     "id": "E024.G6O1b",
@@ -938,8 +1128,31 @@
    {
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
+    "pasa": true,
+    "motivo": "24 equivalentes, 0 venden +100",
+    "datos": {
+     "equivalentes": 24,
+     "venden": 0,
+     "con_alguna_venta": 1,
+     "ventas_visibles": 25,
+     "ejemplos_que_venden": []
+    }
+   },
+   {
+    "chequeo": "C5 la eligen",
+    "supuesto": "Si se ofrece, la gente la elige",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "la gente la deja pasar: 2 alternativas con stock local a precio comparable (ventas mediana 0.0) contra 64 publicaciones de la búsqueda de origen (mediana 100.0), p = 0.0138",
+    "datos": {
+     "comparables": 2,
+     "ventas_comparables": [
+      0,
+      0
+     ],
+     "mediana_de_origen": 100.0,
+     "publicaciones_de_origen": 64,
+     "p": 0.0138
+    }
    }
   ]
  },
@@ -957,8 +1170,8 @@
   "que_traer": "Organizador colgante de puerta con bolsillos de tela técnica de secado rápido para baño: se monta sobre la puerta con ganchos, no pega ni perfora, se retira y se lava",
   "busqueda_ml": "organizador de puerta con bolsillos baño",
   "estado": "descartada",
-  "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "se_detiene_en": "C5 la eligen",
+  "motivo": "la gente la deja pasar: 11 alternativas con stock local a precio comparable (ventas mediana 0) contra 64 publicaciones de la búsqueda de origen (mediana 100.0), p = 0.0",
   "señales": [
    {
     "id": "E024.G6O2b",
@@ -1000,8 +1213,42 @@
    {
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
+    "pasa": true,
+    "motivo": "18 equivalentes, 1 venden +100",
+    "datos": {
+     "equivalentes": 18,
+     "venden": 1,
+     "con_alguna_venta": 1,
+     "ventas_visibles": 100,
+     "ejemplos_que_venden": [
+      "Organizador Colgante Puerta Tela 4 Bolsillos Gris Özil (+100, $24,999)"
+     ]
+    }
+   },
+   {
+    "chequeo": "C5 la eligen",
+    "supuesto": "Si se ofrece, la gente la elige",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "la gente la deja pasar: 11 alternativas con stock local a precio comparable (ventas mediana 0) contra 64 publicaciones de la búsqueda de origen (mediana 100.0), p = 0.0",
+    "datos": {
+     "comparables": 11,
+     "ventas_comparables": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      100
+     ],
+     "mediana_de_origen": 100.0,
+     "publicaciones_de_origen": 64,
+     "p": 0.0
+    }
    }
   ]
  },
@@ -1079,7 +1326,7 @@
   "busqueda_ml": "cepillo electrico inodoro",
   "estado": "descartada",
   "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "motivo": "ya atendido: 3 equivalentes venden +100",
   "señales": [
    {
     "id": "E024.G7O1",
@@ -1122,7 +1369,18 @@
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "ya atendido: 3 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 29,
+     "venden": 3,
+     "con_alguna_venta": 6,
+     "ventas_visibles": 1700,
+     "ejemplos_que_venden": [
+      "Cepillo Electrico De Limpieza Inalambrico 7 En 1 Turbo (+1000, $45,745)",
+      "Cepillo Eléctrico Limpieza Inalámbrico 8 En 1 Recargable Cabezales Int (+500, $53,899)",
+      "Cepillo De Limpieza Eléctrico Usb 3 En 1 Baño Azulejo Cocina - Blanco (+100, $21,999)"
+     ]
+    }
    }
   ]
  },
@@ -1140,8 +1398,8 @@
   "que_traer": "Sistema de cepillo para inodoro con cabezal desechable y mango largo, tipo ToiletWand, con cabezales de fregado que se tiran después de usar.",
   "busqueda_ml": "cepillo inodoro desechable",
   "estado": "descartada",
-  "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "se_detiene_en": "C5 la eligen",
+  "motivo": "la gente la deja pasar: 3 alternativas con stock local a precio comparable (ventas mediana 0) contra 64 publicaciones de la búsqueda de origen (mediana 100.0), p = 0.0037",
   "señales": [
    {
     "id": "E025.G7O2",
@@ -1183,8 +1441,32 @@
    {
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
+    "pasa": true,
+    "motivo": "28 equivalentes, 0 venden +100",
+    "datos": {
+     "equivalentes": 28,
+     "venden": 0,
+     "con_alguna_venta": 2,
+     "ventas_visibles": 50,
+     "ejemplos_que_venden": []
+    }
+   },
+   {
+    "chequeo": "C5 la eligen",
+    "supuesto": "Si se ofrece, la gente la elige",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "la gente la deja pasar: 3 alternativas con stock local a precio comparable (ventas mediana 0) contra 64 publicaciones de la búsqueda de origen (mediana 100.0), p = 0.0037",
+    "datos": {
+     "comparables": 3,
+     "ventas_comparables": [
+      0,
+      0,
+      0
+     ],
+     "mediana_de_origen": 100.0,
+     "publicaciones_de_origen": 64,
+     "p": 0.0037
+    }
    }
   ]
  },
@@ -1202,8 +1484,8 @@
   "que_traer": "Escobilla para inodoro con dispensador de líquido limpiador en el mango: se aprieta un botón y sale lavandina o detergente por el cabezal de silicona mientras se friega. Adaptación del cepillo de cocina con dispensador (dish brush) al baño.",
   "busqueda_ml": "escobilla inodoro con dispensador de jabon",
   "estado": "descartada",
-  "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "se_detiene_en": "C5 la eligen",
+  "motivo": "la gente la deja pasar: 13 alternativas con stock local a precio comparable (ventas mediana 25) contra 64 publicaciones de la búsqueda de origen (mediana 100.0), p = 0.0001",
   "señales": [
    {
     "id": "E024.G7O3b",
@@ -1245,8 +1527,45 @@
    {
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
+    "pasa": true,
+    "motivo": "22 equivalentes, 2 venden +100",
+    "datos": {
+     "equivalentes": 22,
+     "venden": 2,
+     "con_alguna_venta": 7,
+     "ventas_visibles": 5250,
+     "ejemplos_que_venden": [
+      "Escobilla Limpia Inodoros Con Depósito Wc (+5000, $5,400)",
+      "Cepillo Inodoro Silicona Antibacterial C/ Dispensador Jabón Blanco Y G (+100, $16,000)"
+     ]
+    }
+   },
+   {
+    "chequeo": "C5 la eligen",
+    "supuesto": "Si se ofrece, la gente la elige",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "la gente la deja pasar: 13 alternativas con stock local a precio comparable (ventas mediana 25) contra 64 publicaciones de la búsqueda de origen (mediana 100.0), p = 0.0001",
+    "datos": {
+     "comparables": 13,
+     "ventas_comparables": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      25,
+      25,
+      25,
+      25,
+      50,
+      100,
+      5000
+     ],
+     "mediana_de_origen": 100.0,
+     "publicaciones_de_origen": 64,
+     "p": 0.0001
+    }
    }
   ]
  },
@@ -1264,8 +1583,8 @@
   "que_traer": "Guante o manopla de silicona con cerdas duras en la palma y los dedos, resistente al cloro, para fregar el inodoro, el bidet y la ducha con la mano (pack de 2 para que el envío cierre).",
   "busqueda_ml": "guante silicona con cerdas limpieza",
   "estado": "descartada",
-  "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "se_detiene_en": "C5 la eligen",
+  "motivo": "la gente la deja pasar: 5 alternativas con stock local a precio comparable (ventas mediana 0) contra 64 publicaciones de la búsqueda de origen (mediana 100.0), p = 0.0008",
   "señales": [
    {
     "id": "E024.G7O4b",
@@ -1307,8 +1626,34 @@
    {
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
+    "pasa": true,
+    "motivo": "6 equivalentes, 0 venden +100",
+    "datos": {
+     "equivalentes": 6,
+     "venden": 0,
+     "con_alguna_venta": 1,
+     "ventas_visibles": 50,
+     "ejemplos_que_venden": []
+    }
+   },
+   {
+    "chequeo": "C5 la eligen",
+    "supuesto": "Si se ofrece, la gente la elige",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "la gente la deja pasar: 5 alternativas con stock local a precio comparable (ventas mediana 0) contra 64 publicaciones de la búsqueda de origen (mediana 100.0), p = 0.0008",
+    "datos": {
+     "comparables": 5,
+     "ventas_comparables": [
+      0,
+      0,
+      0,
+      0,
+      50
+     ],
+     "mediana_de_origen": 100.0,
+     "publicaciones_de_origen": 64,
+     "p": 0.0008
+    }
    }
   ]
  },
@@ -1329,7 +1674,7 @@
   "busqueda_ml": "mopa con rociador",
   "estado": "descartada",
   "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "motivo": "ya atendido: 23 equivalentes venden +100",
   "señales": [
    {
     "id": "E027.G8O1",
@@ -1379,7 +1724,18 @@
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "ya atendido: 23 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 47,
+     "venden": 23,
+     "con_alguna_venta": 33,
+     "ventas_visibles": 37825,
+     "ejemplos_que_venden": [
+      "Mopa Trapeador Spray Rociador Giratoria 360 Lampazo LV-S02 Smart Tech (+10000, $17,199)",
+      "Trapeador Mopa Rociador Spray 400ml Lusqtoff Msl400-8 (+10000, $37,169)",
+      "Mopa Plana Trapeador Rociador  Spray Mop Giratoria 360 (+5000, $15,999)"
+     ]
+    }
    }
   ]
  },
@@ -1398,7 +1754,7 @@
   "busqueda_ml": "mopa electrica inalambrica",
   "estado": "descartada",
   "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "motivo": "ya atendido: 7 equivalentes venden +100",
   "señales": [
    {
     "id": "E027.G8O2b",
@@ -1441,7 +1797,18 @@
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "ya atendido: 7 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 37,
+     "venden": 7,
+     "con_alguna_venta": 8,
+     "ventas_visibles": 750,
+     "ejemplos_que_venden": [
+      "Mopa Trapeador Giratorio Inalámbrica Floating Mop Piso (+100, $123,388)",
+      "Mopa Eléctrica Inalámbrica Westinghouse 290ml Led 2000mah Color Blanco (+100, $146,738)",
+      "Mopa Electrica Inalambrica Westinghouse Color Blanco (+100, $144,126)"
+     ]
+    }
    }
   ]
  },
@@ -1510,7 +1877,7 @@
   "busqueda_ml": "cepillo para piso con mango largo",
   "estado": "descartada",
   "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "motivo": "ya atendido: 3 equivalentes venden +100",
   "señales": [
    {
     "id": "E023.G8O4b",
@@ -1553,7 +1920,18 @@
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "ya atendido: 3 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 36,
+     "venden": 3,
+     "con_alguna_venta": 5,
+     "ventas_visibles": 375,
+     "ejemplos_que_venden": [
+      "Cepillo De Limpieza Con Mango Largo Y Escurridor Multiuso Verde (+100, $11,385)",
+      "Cepillo De Limpieza 3 En 1 Wimport Extensible Pisos Baños Giratorio 18 (+100, $17,090)",
+      "Cepillo De Piso Plastico Cerdas Duras Romyl Con Cabo (+100, $6,336)"
+     ]
+    }
    }
   ]
  },
@@ -1690,7 +2068,7 @@
   "busqueda_ml": "vaporeta de mano portatil limpieza",
   "estado": "descartada",
   "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "motivo": "ya atendido: 12 equivalentes venden +100",
   "señales": [
    {
     "id": "E065.G9O1b",
@@ -1738,7 +2116,18 @@
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "ya atendido: 12 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 44,
+     "venden": 12,
+     "con_alguna_venta": 19,
+     "ventas_visibles": 8950,
+     "ejemplos_que_venden": [
+      "Limpiadora A Vapor Upper 2l 2000 W 106° + 15 Accesorios Limpieza Profu (+5000, $211,103)",
+      "Limpiadora a Vapor Slx 1050w 3 bar Slxvp01 accesorios color naranja (+1000, $62,248)",
+      "Limpiador a Vapor 2500w Alta Temperatura Domestico Portatil maquina li (+1000, $83,990)"
+     ]
+    }
    }
   ]
  },
@@ -1759,7 +2148,7 @@
   "busqueda_ml": "cepillo electrico limpieza recargable",
   "estado": "descartada",
   "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "motivo": "ya atendido: 17 equivalentes venden +100",
   "señales": [
    {
     "id": "E024.G9O2b",
@@ -1807,7 +2196,18 @@
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "ya atendido: 17 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 50,
+     "venden": 17,
+     "con_alguna_venta": 20,
+     "ventas_visibles": 9300,
+     "ejemplos_que_venden": [
+      "Cepillo Eléctrico Recargable Limpieza Mopa 7 en 1 Multiuso (+1000, $41,950)",
+      "Cepillo Eléctrico Limpieza 8 En 1 Recargable USB Inalámbrico Mango Ext (+1000, $55,868)",
+      "Cepillo Limpiador Eléctrico 9 Accesorios Stnffive Multifuncion Piso Co (+1000, $49,990)"
+     ]
+    }
    }
   ]
  },
@@ -1826,7 +2226,7 @@
   "busqueda_ml": "burlete cepillo para ventana corrediza",
   "estado": "descartada",
   "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "motivo": "ya atendido: 13 equivalentes venden +100",
   "señales": [
    {
     "id": "E066.G9O3b",
@@ -1869,7 +2269,18 @@
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "ya atendido: 13 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 33,
+     "venden": 13,
+     "con_alguna_venta": 17,
+     "ventas_visibles": 3850,
+     "ejemplos_que_venden": [
+      "Felpa 7x6 Mm 10 Mts Para Abertura Puerta Ventana Aluminio (+500, $7,790)",
+      "Burlete Felpa Autoadhesiva Para Puertas Ventanas 10mts (+500, $24,000)",
+      "Burlete Puerta Ventana Corrediza Auto Adhesivo Sealpro 2.5 M (+500, $12,427)"
+     ]
+    }
    }
   ]
  },
@@ -1888,7 +2299,7 @@
   "busqueda_ml": "cepillo removedor de pelos de mascota para tapizado de auto",
   "estado": "descartada",
   "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "motivo": "ya atendido: 13 equivalentes venden +100",
   "señales": [
    {
     "id": "E065.G10O1",
@@ -1931,7 +2342,18 @@
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "ya atendido: 13 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 61,
+     "venden": 13,
+     "con_alguna_venta": 26,
+     "ventas_visibles": 9725,
+     "ejemplos_que_venden": [
+      "Guante Cepillo Quita Pelusas Y Pelos Perro Gato Sillon Ropa (+5000, $11,514)",
+      "Cepillo Quita - Saca Pelusa Pelos De Perros Y Gatos De Ropa (+1000, $3,150)",
+      "Cepillo Quita Pelos De Mascota Saca Pelusas De Sillón Y Ropa (+1000, $7,500)"
+     ]
+    }
    }
   ]
  },
@@ -1950,7 +2372,7 @@
   "busqueda_ml": "cepillo para taladro limpiar tapizado de auto",
   "estado": "descartada",
   "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "motivo": "ya atendido: 12 equivalentes venden +100",
   "señales": [
    {
     "id": "E066.G10O2",
@@ -1993,7 +2415,18 @@
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "ya atendido: 12 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 41,
+     "venden": 12,
+     "con_alguna_venta": 22,
+     "ventas_visibles": 5325,
+     "ejemplos_que_venden": [
+      "Cepillo Para Taladro Limpieza De Tapizados Detailing Kit X3 (+1000, $7,490)",
+      "Kit 3 Cepillos Limpieza Taladro Will Nylon Amarillo Para Azulejos Llan (+1000, $7,700)",
+      "Kit 3 Cepillos Para Taladro Limpieza Tapizados Cerda Media (+500, $7,711)"
+     ]
+    }
    }
   ]
  },
@@ -2012,7 +2445,7 @@
   "busqueda_ml": "sopladora de aire portátil recargable",
   "estado": "descartada",
   "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "motivo": "ya atendido: 25 equivalentes venden +100",
   "señales": [
    {
     "id": "E065.G10O1b",
@@ -2055,7 +2488,18 @@
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "ya atendido: 25 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 52,
+     "venden": 25,
+     "con_alguna_venta": 30,
+     "ventas_visibles": 13225,
+     "ejemplos_que_venden": [
+      "Aspiradora Sopladora 3 en 1 Voltra Black Edition Inalámbrica 450ml (+5000, $156,000)",
+      "Soplador De Aire Multiuso Norcel / Inalambrico / Potente / Luz Led / P (+1000, $84,360)",
+      "Mini Sopladora De Aire Turbo Portátil Recargable Inalámbrica 3 Velocid (+1000, $19,109)"
+     ]
+    }
    }
   ]
  },
@@ -2074,7 +2518,7 @@
   "busqueda_ml": "vaporeta de mano para tapizados",
   "estado": "descartada",
   "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "motivo": "ya atendido: 19 equivalentes venden +100",
   "señales": [
    {
     "id": "E066.G10O2b",
@@ -2117,7 +2561,18 @@
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "ya atendido: 19 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 34,
+     "venden": 19,
+     "con_alguna_venta": 25,
+     "ventas_visibles": 12300,
+     "ejemplos_que_venden": [
+      "Limpiadora A Vapor Upper 2l 2000 W 106° + 15 Accesorios Limpieza Profu (+5000, $211,103)",
+      "Limpiador a Vapor 2500w Alta Temperatura Domestico Portatil maquina li (+1000, $83,990)",
+      "Zero Zevp01 Limpiadora 1050w 3 Bar A Vapor Cadena Mas Acceso (+1000, $47,530)"
+     ]
+    }
    }
   ]
  },
@@ -2136,7 +2591,7 @@
   "busqueda_ml": "lavatapizados portátil de mano",
   "estado": "descartada",
   "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "motivo": "ya atendido: 11 equivalentes venden +100",
   "señales": [
    {
     "id": "E066.G10O3b",
@@ -2179,7 +2634,18 @@
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "ya atendido: 11 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 25,
+     "venden": 11,
+     "con_alguna_venta": 11,
+     "ventas_visibles": 15300,
+     "ejemplos_que_venden": [
+      "Aspiradora Gadnic para Limpieza de Tapizados y Alfombras con Rociador, (+5000, $157,149)",
+      "Aspiradora Limpia Tapizados Gadnic 700W Doble Tanque Succion Potente A (+5000, $150,049)",
+      "Aspiradora Limpia Tapizados Fika Hydro 600w Lava Alfombras Sillones Au (+1000, $174,527)"
+     ]
+    }
    }
   ]
  },
@@ -2198,7 +2664,7 @@
   "busqueda_ml": "medidor laser distancia certificado calibracion",
   "estado": "descartada",
   "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "motivo": "ya atendido: 14 equivalentes venden +100",
   "señales": [
    {
     "id": "E057.G11O1",
@@ -2241,7 +2707,18 @@
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "ya atendido: 14 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 58,
+     "venden": 14,
+     "con_alguna_venta": 26,
+     "ventas_visibles": 14725,
+     "ejemplos_que_venden": [
+      "Medidor Láser Gadnic Alcance 40M Precisión 3 mm Pantalla LED IP54 Inte (+5000, $44,747)",
+      "Medidor Metro Laser 40 Mts Para Medir Distancias Area Y Volumen (+5000, $51,900)",
+      "Metro Cinta Métrica Medidor Distancia Laser 120 M No Bosch (+1000, $48,987)"
+     ]
+    }
    }
   ]
  },
@@ -2570,8 +3047,8 @@
   "que_traer": "Hamaca cervical de tracción: una eslinga acolchada que se engancha en una puerta y suspende la cabeza para descomprimir la columna cervical (tracción por gravedad, sin motor ni enchufe)",
   "busqueda_ml": "hamaca cervical traccion cuello",
   "estado": "descartada",
-  "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "se_detiene_en": "C5 la eligen",
+  "motivo": "la gente la deja pasar: 12 alternativas con stock local a precio comparable (ventas mediana 0.0) contra 113 publicaciones de la búsqueda de origen (mediana 500), p = 0.0",
   "señales": [
    {
     "id": "E056.G13O1",
@@ -2618,8 +3095,41 @@
    {
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
+    "pasa": true,
+    "motivo": "22 equivalentes, 0 venden +100",
+    "datos": {
+     "equivalentes": 22,
+     "venden": 0,
+     "con_alguna_venta": 0,
+     "ventas_visibles": 0,
+     "ejemplos_que_venden": []
+    }
+   },
+   {
+    "chequeo": "C5 la eligen",
+    "supuesto": "Si se ofrece, la gente la elige",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "la gente la deja pasar: 12 alternativas con stock local a precio comparable (ventas mediana 0.0) contra 113 publicaciones de la búsqueda de origen (mediana 500), p = 0.0",
+    "datos": {
+     "comparables": 12,
+     "ventas_comparables": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "mediana_de_origen": 500,
+     "publicaciones_de_origen": 113,
+     "p": 0.0
+    }
    }
   ]
  },
@@ -2638,7 +3148,7 @@
   "busqueda_ml": "almohada cervical traccion cuello",
   "estado": "descartada",
   "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "motivo": "ya atendido: 19 equivalentes venden +100",
   "señales": [
    {
     "id": "E056.G13O2",
@@ -2681,7 +3191,18 @@
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "ya atendido: 19 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 35,
+     "venden": 19,
+     "con_alguna_venta": 26,
+     "ventas_visibles": 31650,
+     "ejemplos_que_venden": [
+      "Almohada Cervical Inteligente Viscoelástica Color Blanco (+10000, $18,882)",
+      "Almohada Viscoelastica Cervical Inteligente Confort Funda (+10000, $18,911)",
+      "Almohada Inteligente Ergonómica Cervical Gadnic Espuma Viscoelástica M (+5000, $51,584)"
+     ]
+    }
    }
   ]
  },
@@ -2700,7 +3221,7 @@
   "busqueda_ml": "compresa cervical semillas trigo",
   "estado": "descartada",
   "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "motivo": "ya atendido: 8 equivalentes venden +100",
   "señales": [
    {
     "id": "E055.G13O3b",
@@ -2743,7 +3264,18 @@
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "ya atendido: 8 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 21,
+     "venden": 8,
+     "con_alguna_venta": 12,
+     "ventas_visibles": 3050,
+     "ejemplos_que_venden": [
+      "Almohadilla Cervical Termica De Semillas Microonda - Cuello (+1000, $12,900)",
+      "Almohadilla Bolsa Cervical Térmica Semillas Regalo Relax Gde (+500, $22,990)",
+      "Almohadilla Cervical Termica De Semillas Relax - Cuello (+500, $12,900)"
+     ]
+    }
    }
   ]
  },
@@ -2761,8 +3293,8 @@
   "que_traer": "Parche térmico autoadhesivo para cuello y hombros (pack x 5): tiras que se activan con el aire y dan calor suave durante horas, finas y discretas para llevar puestas en el trabajo, el viaje o el auto, sin enchufe ni microondas",
   "busqueda_ml": "parche térmico cervical autoadhesivo",
   "estado": "descartada",
-  "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "se_detiene_en": "C5 la eligen",
+  "motivo": "la gente la deja pasar: 9 alternativas con stock local a precio comparable (ventas mediana 0) contra 49 publicaciones de la búsqueda de origen (mediana 100), p = 0.0001",
   "señales": [
    {
     "id": "E055.G13O4b",
@@ -2804,8 +3336,40 @@
    {
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
+    "pasa": true,
+    "motivo": "12 equivalentes, 1 venden +100",
+    "datos": {
+     "equivalentes": 12,
+     "venden": 1,
+     "con_alguna_venta": 1,
+     "ventas_visibles": 500,
+     "ejemplos_que_venden": [
+      "Parches Térmicos Sensación Calor Alivio Dolor Muscular 8u (+500, $9,800)"
+     ]
+    }
+   },
+   {
+    "chequeo": "C5 la eligen",
+    "supuesto": "Si se ofrece, la gente la elige",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "la gente la deja pasar: 9 alternativas con stock local a precio comparable (ventas mediana 0) contra 49 publicaciones de la búsqueda de origen (mediana 100), p = 0.0001",
+    "datos": {
+     "comparables": 9,
+     "ventas_comparables": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      500
+     ],
+     "mediana_de_origen": 100,
+     "publicaciones_de_origen": 49,
+     "p": 0.0001
+    }
    }
   ]
  },
@@ -2823,8 +3387,8 @@
   "que_traer": "Rodillo/masajeador de espalda montable en pared o puerta con ventosas, rodillos de silicona y altura regulable",
   "busqueda_ml": "masajeador de espalda de pared con ventosas",
   "estado": "descartada",
-  "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "se_detiene_en": "C6 margen",
+  "motivo": "sin precio de mercado: ningún equivalente vendió, nadie lo compró todavía a ningún precio",
   "señales": [
    {
     "id": "E056.G14O1",
@@ -2866,8 +3430,36 @@
    {
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
+    "pasa": true,
+    "motivo": "2 equivalentes, 0 venden +100",
+    "datos": {
+     "equivalentes": 2,
+     "venden": 0,
+     "con_alguna_venta": 0,
+     "ventas_visibles": 0,
+     "ejemplos_que_venden": []
+    }
+   },
+   {
+    "chequeo": "C5 la eligen",
+    "supuesto": "Si se ofrece, la gente la elige",
+    "pasa": true,
+    "motivo": "1 alternativas con stock local a precio comparable (ventas mediana 0) contra 49 publicaciones de la búsqueda de origen (mediana 100), p = 0.0589",
+    "datos": {
+     "comparables": 1,
+     "ventas_comparables": [
+      0
+     ],
+     "mediana_de_origen": 100,
+     "publicaciones_de_origen": 49,
+     "p": 0.0589
+    }
+   },
+   {
+    "chequeo": "C6 margen",
+    "supuesto": "Deja plata al precio que la gente paga",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "sin precio de mercado: ningún equivalente vendió, nadie lo compró todavía a ningún precio"
    }
   ]
  },
@@ -2885,8 +3477,8 @@
   "que_traer": "Cinturón lumbar inflable de descompresión/tracción (cámara de aire con bomba manual y velcro), tipo faja ortopédica hinchable que se usa acostado 10-15 minutos",
   "busqueda_ml": "cinturon lumbar inflable traccion",
   "estado": "descartada",
-  "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "se_detiene_en": "C5 la eligen",
+  "motivo": "la gente la deja pasar: 8 alternativas con stock local a precio comparable (ventas mediana 0.0) contra 49 publicaciones de la búsqueda de origen (mediana 100), p = 0.0",
   "señales": [
    {
     "id": "E055.G14O2b",
@@ -2928,8 +3520,37 @@
    {
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
+    "pasa": true,
+    "motivo": "31 equivalentes, 0 venden +100",
+    "datos": {
+     "equivalentes": 31,
+     "venden": 0,
+     "con_alguna_venta": 0,
+     "ventas_visibles": 0,
+     "ejemplos_que_venden": []
+    }
+   },
+   {
+    "chequeo": "C5 la eligen",
+    "supuesto": "Si se ofrece, la gente la elige",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "la gente la deja pasar: 8 alternativas con stock local a precio comparable (ventas mediana 0.0) contra 49 publicaciones de la búsqueda de origen (mediana 100), p = 0.0",
+    "datos": {
+     "comparables": 8,
+     "ventas_comparables": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "mediana_de_origen": 100,
+     "publicaciones_de_origen": 49,
+     "p": 0.0
+    }
    }
   ]
  },
@@ -2947,8 +3568,8 @@
   "que_traer": "Banda lumbar inalámbrica con vibración y calor, recargable por USB, que se ajusta con velcro a la cintura y se usa puesta (debajo de la ropa) mientras se trabaja, se cocina o se alza a un bebé",
   "busqueda_ml": "faja lumbar vibracion calor inalambrica",
   "estado": "descartada",
-  "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "se_detiene_en": "C5 la eligen",
+  "motivo": "la gente la deja pasar: 11 alternativas con stock local a precio comparable (ventas mediana 0) contra 49 publicaciones de la búsqueda de origen (mediana 100), p = 0.0",
   "señales": [
    {
     "id": "E056.G14O3b",
@@ -2990,8 +3611,40 @@
    {
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
+    "pasa": true,
+    "motivo": "13 equivalentes, 0 venden +100",
+    "datos": {
+     "equivalentes": 13,
+     "venden": 0,
+     "con_alguna_venta": 1,
+     "ventas_visibles": 50,
+     "ejemplos_que_venden": []
+    }
+   },
+   {
+    "chequeo": "C5 la eligen",
+    "supuesto": "Si se ofrece, la gente la elige",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "la gente la deja pasar: 11 alternativas con stock local a precio comparable (ventas mediana 0) contra 49 publicaciones de la búsqueda de origen (mediana 100), p = 0.0",
+    "datos": {
+     "comparables": 11,
+     "ventas_comparables": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      50
+     ],
+     "mediana_de_origen": 100,
+     "publicaciones_de_origen": 49,
+     "p": 0.0
+    }
    }
   ]
  },
@@ -3010,7 +3663,7 @@
   "busqueda_ml": "electroestimulador tens dolor lumbar",
   "estado": "descartada",
   "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "motivo": "ya atendido: 9 equivalentes venden +100",
   "señales": [
    {
     "id": "E055.G14O4b",
@@ -3053,7 +3706,18 @@
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "ya atendido: 9 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 46,
+     "venden": 9,
+     "con_alguna_venta": 16,
+     "ventas_visibles": 5700,
+     "ejemplos_que_venden": [
+      "Electroestimulador Digital Ems Tens Masajes con Calor 4 en 1 Beurer Em (+1000, $187,137)",
+      "Electroestimulador Muscular Wolke Masajeador 50 Modos (+1000, $95,999)",
+      "Electroestimulador EMS TENS Tekmedical Isis-Bi Gen3 - glúteos, abdomin (+1000, $595,344)"
+     ]
+    }
    }
   ]
  },
@@ -3072,7 +3736,7 @@
   "busqueda_ml": "masajeador cervical inalambrico",
   "estado": "descartada",
   "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "motivo": "ya atendido: 10 equivalentes venden +100",
   "señales": [
    {
     "id": "E056.G15O1",
@@ -3115,7 +3779,18 @@
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "ya atendido: 10 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 20,
+     "venden": 10,
+     "con_alguna_venta": 14,
+     "ventas_visibles": 53650,
+     "ejemplos_que_venden": [
+      "Masajeador Cervical Eléctrico Portatil Inalambrico Batería Recargable  (+50000, $32,999)",
+      "Masajeador Cervical Inalambrico Portatil Waggs Recargable (+1000, $43,588)",
+      "Masajeador Cervical Cuello Piernas Manitos Calor 4D Recargable Inalamb (+1000, $54,999)"
+     ]
+    }
    }
   ]
  },
@@ -3134,7 +3809,7 @@
   "busqueda_ml": "cinturon termico lumbar",
   "estado": "descartada",
   "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "motivo": "ya atendido: 4 equivalentes venden +100",
   "señales": [
    {
     "id": "E056.G15O2",
@@ -3177,7 +3852,18 @@
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "ya atendido: 4 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 21,
+     "venden": 4,
+     "con_alguna_venta": 4,
+     "ventas_visibles": 2500,
+     "ejemplos_que_venden": [
+      "Almohadilla Térmica Natural Pillow Semillas Cervical Lumbar (+1000, $22,550)",
+      "Bolsa Térmica Semillas Almohadilla Lumbar 27x40 Cm Multiuso (+500, $16,900)",
+      "Almohadilla Semillas Naturalpillow Anatómica C/cinturón 74cm (+500, $23,000)"
+     ]
+    }
    }
   ]
  },
@@ -3196,7 +3882,7 @@
   "busqueda_ml": "collar cervical inflable traccion",
   "estado": "descartada",
   "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "motivo": "ya atendido: 8 equivalentes venden +100",
   "señales": [
    {
     "id": "E056.G15O3b",
@@ -3239,7 +3925,18 @@
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "ya atendido: 8 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 45,
+     "venden": 8,
+     "con_alguna_venta": 14,
+     "ventas_visibles": 1950,
+     "ejemplos_que_venden": [
+      "Collar Cervical Ortopédico Inflable para el Cuello, Talla Universal y  (+1000, $32,000)",
+      "Cuello Cervical Collar Inflable Traccion Alivio Ortopedico (+100, $25,649)",
+      "Cuello Cervical Reforzado Inflable Traccion Alivio Ortopedic (+100, $65,340)"
+     ]
+    }
    }
   ]
  },
@@ -3257,8 +3954,8 @@
   "que_traer": "Colchoneta de acupresión de cúpulas con almohada cervical incluida y funda lavable, para acostarse encima 15 minutos",
   "busqueda_ml": "colchoneta acupresion",
   "estado": "descartada",
-  "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "se_detiene_en": "C5 la eligen",
+  "motivo": "la gente la deja pasar: 34 alternativas con stock local a precio comparable (ventas mediana 0.0) contra 49 publicaciones de la búsqueda de origen (mediana 100), p = 0.0",
   "señales": [
    {
     "id": "E055.G15O4b",
@@ -3300,8 +3997,65 @@
    {
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
+    "pasa": true,
+    "motivo": "41 equivalentes, 1 venden +100",
+    "datos": {
+     "equivalentes": 41,
+     "venden": 1,
+     "con_alguna_venta": 3,
+     "ventas_visibles": 150,
+     "ejemplos_que_venden": [
+      "Colchoneta De Acupresión Gadnic Con Almohada Relajación Muscular Alivi (+100, $27,999)"
+     ]
+    }
+   },
+   {
+    "chequeo": "C5 la eligen",
+    "supuesto": "Si se ofrece, la gente la elige",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "la gente la deja pasar: 34 alternativas con stock local a precio comparable (ventas mediana 0.0) contra 49 publicaciones de la búsqueda de origen (mediana 100), p = 0.0",
+    "datos": {
+     "comparables": 34,
+     "ventas_comparables": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      25,
+      25,
+      100
+     ],
+     "mediana_de_origen": 100,
+     "publicaciones_de_origen": 49,
+     "p": 0.0
+    }
    }
   ]
  },
@@ -3320,7 +4074,7 @@
   "busqueda_ml": "electroestimulador tens dolor",
   "estado": "descartada",
   "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "motivo": "ya atendido: 5 equivalentes venden +100",
   "señales": [
    {
     "id": "E055.G15O5b",
@@ -3363,7 +4117,18 @@
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "ya atendido: 5 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 52,
+     "venden": 5,
+     "con_alguna_venta": 10,
+     "ventas_visibles": 3400,
+     "ejemplos_que_venden": [
+      "Electroestimulador Digital Ems Tens Masajes con Calor 4 en 1 Beurer Em (+1000, $187,137)",
+      "Electroestimulador EMS TENS Tekmedical Isis-Bi Gen3 - glúteos, abdomin (+1000, $595,344)",
+      "Electroestimulador Muscular Wolke Masajeador 50 Modos (+1000, $95,999)"
+     ]
+    }
    }
   ]
  },
@@ -3381,8 +4146,8 @@
   "que_traer": "Set de mancuernas ajustables de 20 kg con cierre de clip metálico de liberación rápida, sin tuerca a rosca (barra pasante con discos de encastre y traba de resorte en los extremos)",
   "busqueda_ml": "mancuernas ajustables con seguro de clip",
   "estado": "descartada",
-  "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "se_detiene_en": "C5 la eligen",
+  "motivo": "la gente la deja pasar: 3 alternativas con stock local a precio comparable (ventas mediana 0) contra 67 publicaciones de la búsqueda de origen (mediana 100), p = 0.0065",
   "señales": [
    {
     "id": "E053.G16O1",
@@ -3424,8 +4189,32 @@
    {
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
+    "pasa": true,
+    "motivo": "3 equivalentes, 0 venden +100",
+    "datos": {
+     "equivalentes": 3,
+     "venden": 0,
+     "con_alguna_venta": 0,
+     "ventas_visibles": 0,
+     "ejemplos_que_venden": []
+    }
+   },
+   {
+    "chequeo": "C5 la eligen",
+    "supuesto": "Si se ofrece, la gente la elige",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "la gente la deja pasar: 3 alternativas con stock local a precio comparable (ventas mediana 0) contra 67 publicaciones de la búsqueda de origen (mediana 100), p = 0.0065",
+    "datos": {
+     "comparables": 3,
+     "ventas_comparables": [
+      0,
+      0,
+      0
+     ],
+     "mediana_de_origen": 100,
+     "publicaciones_de_origen": 67,
+     "p": 0.0065
+    }
    }
   ]
  },
@@ -3443,8 +4232,8 @@
   "que_traer": "Chaleco de lastre ajustable de 0 a 10 kg en placas de acero, con tiras de velcro y talle único",
   "busqueda_ml": "chaleco de lastre ajustable",
   "estado": "descartada",
-  "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "se_detiene_en": "C5 la eligen",
+  "motivo": "la gente la deja pasar: 20 alternativas con stock local a precio comparable (ventas mediana 0.0) contra 67 publicaciones de la búsqueda de origen (mediana 100), p = 0.0",
   "señales": [
    {
     "id": "E054.G16O2",
@@ -3486,8 +4275,49 @@
    {
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
+    "pasa": true,
+    "motivo": "49 equivalentes, 0 venden +100",
+    "datos": {
+     "equivalentes": 49,
+     "venden": 0,
+     "con_alguna_venta": 5,
+     "ventas_visibles": 225,
+     "ejemplos_que_venden": []
+    }
+   },
+   {
+    "chequeo": "C5 la eligen",
+    "supuesto": "Si se ofrece, la gente la elige",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "la gente la deja pasar: 20 alternativas con stock local a precio comparable (ventas mediana 0.0) contra 67 publicaciones de la búsqueda de origen (mediana 100), p = 0.0",
+    "datos": {
+     "comparables": 20,
+     "ventas_comparables": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      25,
+      50,
+      50
+     ],
+     "mediana_de_origen": 100,
+     "publicaciones_de_origen": 67,
+     "p": 0.0
+    }
    }
   ]
  },
@@ -3506,7 +4336,7 @@
   "busqueda_ml": "losetas goma gimnasio piso",
   "estado": "descartada",
   "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "motivo": "ya atendido: 25 equivalentes venden +100",
   "señales": [
    {
     "id": "E054.G16O1b",
@@ -3549,7 +4379,18 @@
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "ya atendido: 25 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 42,
+     "venden": 25,
+     "con_alguna_venta": 32,
+     "ventas_visibles": 13750,
+     "ejemplos_que_venden": [
+      "Piso Goma Eva Gym 1m2 Encastrable 20mm Con Borde Antigolpes Negro/gris (+1000, $32,890)",
+      "Piso De Caucho Gimnasio Plaza Interior Exterior Alto Transit (+1000, $75,040)",
+      "Piso Goma Eva + Bordes Entrenamiento 10mm 1x1 Metro Gym (+1000, $21,235)"
+     ]
+    }
    }
   ]
  },
@@ -3568,7 +4409,7 @@
   "busqueda_ml": "bolsa de arena entrenamiento ajustable",
   "estado": "descartada",
   "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "motivo": "ya atendido: 3 equivalentes venden +100",
   "señales": [
    {
     "id": "E053.G16O2b",
@@ -3611,7 +4452,18 @@
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "ya atendido: 3 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 32,
+     "venden": 3,
+     "con_alguna_venta": 5,
+     "ventas_visibles": 775,
+     "ejemplos_que_venden": [
+      "Core Bag 10 Kg Bolso Entrenamiento Con Peso En Casa Calidad (+500, $35,988)",
+      "Core Bag 15kg. Lona Bolsa Con Peso 15kg Para Entrenamiento (+100, $32,999)",
+      "Core Bag 15 Kg Bolso Entrenamiento Con Peso Sand Bag (+100, $48,840)"
+     ]
+    }
    }
   ]
  },
@@ -3629,8 +4481,8 @@
   "que_traer": "Asa de acero con recubrimiento de goma y cierre de leva que convierte los discos del kit en una kettlebell, con perno central regulable y base para discos de orificio de 25 mm",
   "busqueda_ml": "asa para discos kettlebell",
   "estado": "descartada",
-  "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "se_detiene_en": "C5 la eligen",
+  "motivo": "la gente la deja pasar: 2 alternativas con stock local a precio comparable (ventas mediana 0.0) contra 67 publicaciones de la búsqueda de origen (mediana 100), p = 0.0209",
   "señales": [
    {
     "id": "E054.G16O3b",
@@ -3672,8 +4524,31 @@
    {
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
+    "pasa": true,
+    "motivo": "5 equivalentes, 0 venden +100",
+    "datos": {
+     "equivalentes": 5,
+     "venden": 0,
+     "con_alguna_venta": 0,
+     "ventas_visibles": 0,
+     "ejemplos_que_venden": []
+    }
+   },
+   {
+    "chequeo": "C5 la eligen",
+    "supuesto": "Si se ofrece, la gente la elige",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "la gente la deja pasar: 2 alternativas con stock local a precio comparable (ventas mediana 0.0) contra 67 publicaciones de la búsqueda de origen (mediana 100), p = 0.0209",
+    "datos": {
+     "comparables": 2,
+     "ventas_comparables": [
+      0,
+      0
+     ],
+     "mediana_de_origen": 100,
+     "publicaciones_de_origen": 67,
+     "p": 0.0209
+    }
    }
   ]
  },
@@ -3791,8 +4666,8 @@
   "que_traer": "Aspirador profesional de pelo para estaciones de corte en barbería y peluquería",
   "busqueda_ml": "aspirador de pelo peluqueria",
   "estado": "descartada",
-  "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "se_detiene_en": "C6 margen",
+  "motivo": "sin precio de mercado: ningún equivalente vendió, nadie lo compró todavía a ningún precio",
   "señales": [
    {
     "id": "E079.G17O2b",
@@ -3834,8 +4709,27 @@
    {
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
+    "pasa": true,
+    "motivo": "2 equivalentes, 0 venden +100",
+    "datos": {
+     "equivalentes": 2,
+     "venden": 0,
+     "con_alguna_venta": 0,
+     "ventas_visibles": 0,
+     "ejemplos_que_venden": []
+    }
+   },
+   {
+    "chequeo": "C5 la eligen",
+    "supuesto": "Si se ofrece, la gente la elige",
+    "pasa": true,
+    "motivo": "no hay alternativas con stock local: nadie la ofreció todavía"
+   },
+   {
+    "chequeo": "C6 margen",
+    "supuesto": "Deja plata al precio que la gente paga",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "sin precio de mercado: ningún equivalente vendió, nadie lo compró todavía a ningún precio"
    }
   ]
  },
@@ -3953,8 +4847,8 @@
   "que_traer": "Guía/plantilla de corte con nivel (clip que agarra el mechón) para cortar flequillo, puntas y capas parejas sin técnica; conviene ofrecerla en kit para cubrir el costo fijo de envío.",
   "busqueda_ml": "guia para cortar el pelo en casa",
   "estado": "descartada",
-  "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "se_detiene_en": "C6 margen",
+  "motivo": "sin precio de mercado: ningún equivalente vendió, nadie lo compró todavía a ningún precio",
   "señales": [
    {
     "id": "E079.G18O2",
@@ -3996,8 +4890,27 @@
    {
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
+    "pasa": true,
+    "motivo": "8 equivalentes, 0 venden +100",
+    "datos": {
+     "equivalentes": 8,
+     "venden": 0,
+     "con_alguna_venta": 0,
+     "ventas_visibles": 0,
+     "ejemplos_que_venden": []
+    }
+   },
+   {
+    "chequeo": "C5 la eligen",
+    "supuesto": "Si se ofrece, la gente la elige",
+    "pasa": true,
+    "motivo": "no hay alternativas con stock local: nadie la ofreció todavía"
+   },
+   {
+    "chequeo": "C6 margen",
+    "supuesto": "Deja plata al precio que la gente paga",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "sin precio de mercado: ningún equivalente vendió, nadie lo compró todavía a ningún precio"
    }
   ]
  },
@@ -4216,7 +5129,7 @@
   "busqueda_ml": "protector termico para el pelo anti frizz",
   "estado": "descartada",
   "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "motivo": "ya atendido: 15 equivalentes venden +100",
   "señales": [
    {
     "id": "E073.G19O2",
@@ -4259,7 +5172,18 @@
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "ya atendido: 15 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 29,
+     "venden": 15,
+     "con_alguna_venta": 16,
+     "ventas_visibles": 24250,
+     "ejemplos_que_venden": [
+      "La Puissance Thermal Protector Térmico Cabello X 250ml (+10000, $18,400)",
+      "La Puissance Soft Liss Spray Protector Térmico Alisado (+5000, $9,040)",
+      "Spray Termoprotector Osis Flatliner Fijación Duradera 200ml (+5000, $33,280)"
+     ]
+    }
    }
   ]
  },
@@ -4277,8 +5201,8 @@
   "que_traer": "Guante térmico de silicona resistente al calor, par, uso profesional (hasta 230 °C), con dedos moldeados y exterior antideslizante",
   "busqueda_ml": "guante termico para planchar el pelo",
   "estado": "descartada",
-  "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "se_detiene_en": "C5 la eligen",
+  "motivo": "la gente la deja pasar: 8 alternativas con stock local a precio comparable (ventas mediana 0.0) contra 57 publicaciones de la búsqueda de origen (mediana 1000), p = 0.0001",
   "señales": [
    {
     "id": "E074.G19O1b",
@@ -4320,8 +5244,39 @@
    {
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
+    "pasa": true,
+    "motivo": "19 equivalentes, 1 venden +100",
+    "datos": {
+     "equivalentes": 19,
+     "venden": 1,
+     "con_alguna_venta": 3,
+     "ventas_visibles": 175,
+     "ejemplos_que_venden": [
+      "Guante Termico Protector Planchita Buclera Jessamy G1500 (+100, $11,500)"
+     ]
+    }
+   },
+   {
+    "chequeo": "C5 la eligen",
+    "supuesto": "Si se ofrece, la gente la elige",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "la gente la deja pasar: 8 alternativas con stock local a precio comparable (ventas mediana 0.0) contra 57 publicaciones de la búsqueda de origen (mediana 1000), p = 0.0001",
+    "datos": {
+     "comparables": 8,
+     "ventas_comparables": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      25,
+      50,
+      100
+     ],
+     "mediana_de_origen": 1000,
+     "publicaciones_de_origen": 57,
+     "p": 0.0001
+    }
    }
   ]
  },
@@ -4340,7 +5295,7 @@
   "busqueda_ml": "difusor para secador de pelo rulos",
   "estado": "descartada",
   "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "motivo": "ya atendido: 4 equivalentes venden +100",
   "señales": [
    {
     "id": "E073.G19O2b",
@@ -4383,7 +5338,18 @@
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "ya atendido: 4 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 12,
+     "venden": 4,
+     "con_alguna_venta": 9,
+     "ventas_visibles": 1025,
+     "ejemplos_que_venden": [
+      "Difusor Silicona Secador Universal De Pelo Rulos Curly (+500, $26,000)",
+      "Difusor Silicona Secador Universal De Pelo Rulos Curly Color Violeta (+100, $23,367)",
+      "Vanta Difusor Universal Para Secador De Pelo Rulos Color Neg (+100, $13,990)"
+     ]
+    }
    }
   ]
  },
@@ -4529,7 +5495,7 @@
   "busqueda_ml": "set organizador de valija packing cubes",
   "estado": "descartada",
   "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "motivo": "ya atendido: 18 equivalentes venden +100",
   "señales": [
    {
     "id": "E077.G20O2b",
@@ -4572,7 +5538,18 @@
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "ya atendido: 18 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 53,
+     "venden": 18,
+     "con_alguna_venta": 20,
+     "ventas_visibles": 32800,
+     "ejemplos_que_venden": [
+      "Set Organizador De Ropa Valija Viaje De 6 Bolsas Con Cierre (+10000, $7,354)",
+      "Organizador De Equipaje Travel Set X6 Unidades Gris Oscuro (+10000, $8,040)",
+      "Set Organizador de Equipaje Travel Ropa Maleta 6 Piezas Negro (+5000, $7,742)"
+     ]
+    }
    }
   ]
  },
@@ -4659,7 +5636,7 @@
   "busqueda_ml": "bolsas de regalo de tela con cordon pack",
   "estado": "descartada",
   "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "motivo": "ya atendido: 13 equivalentes venden +100",
   "señales": [
    {
     "id": "E077.G20O4b",
@@ -4702,7 +5679,18 @@
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "ya atendido: 13 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 34,
+     "venden": 13,
+     "con_alguna_venta": 17,
+     "ventas_visibles": 3950,
+     "ejemplos_que_venden": [
+      "Bolsa Tela Eco 10x15cm Lienzo 100% Algodón Souvenirs X 20 Un (+1000, $25,467)",
+      "Bolsa Tela Eco 20x20cm Lienzo 100% Algodón Souvenirs X 10 Un (+500, $19,607)",
+      "Bolsitas De Lienzo 12 X 15 Cm S/impresión X 10 Unidades (+500, $18,999)"
+     ]
+    }
    }
   ]
  },
@@ -4721,7 +5709,7 @@
   "busqueda_ml": "brazo soporte notebook escritorio",
   "estado": "descartada",
   "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "motivo": "ya atendido: 9 equivalentes venden +100",
   "señales": [
    {
     "id": "E080.G21O1",
@@ -4764,7 +5752,18 @@
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "ya atendido: 9 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 28,
+     "venden": 9,
+     "con_alguna_venta": 12,
+     "ventas_visibles": 3200,
+     "ejemplos_que_venden": [
+      "Soporte Doble Brazo Para Monitor Y Notebook Gadnic 13 A 32 VESA Ajusta (+1000, $75,117)",
+      "Klip Xtreme Soporte Notebook Monitor KMM-301 - Negro mate (+1000, $109,892)",
+      "Soporte Doble para Monitor y Notebook de 13\" a 32\" Zenei (+500, $92,500)"
+     ]
+    }
    }
   ]
  },
@@ -4782,8 +5781,8 @@
   "que_traer": "Estación o plataforma regulable en altura que se apoya sobre el escritorio existente (conversor de pie), con bandeja superior para la notebook y bandeja inferior separada para teclado y mouse.",
   "busqueda_ml": "escritorio regulable altura para notebook",
   "estado": "descartada",
-  "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "se_detiene_en": "C5 la eligen",
+  "motivo": "la gente la deja pasar: 4 alternativas con stock local a precio comparable (ventas mediana 12.5) contra 64 publicaciones de la búsqueda de origen (mediana 500.0), p = 0.0078",
   "señales": [
    {
     "id": "E080.G21O2",
@@ -4825,8 +5824,35 @@
    {
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
+    "pasa": true,
+    "motivo": "4 equivalentes, 1 venden +100",
+    "datos": {
+     "equivalentes": 4,
+     "venden": 1,
+     "con_alguna_venta": 2,
+     "ventas_visibles": 125,
+     "ejemplos_que_venden": [
+      "Escritorio Elevable Neumático Touchscreen E1 . 13 A 51 Cm (+100, $228,475)"
+     ]
+    }
+   },
+   {
+    "chequeo": "C5 la eligen",
+    "supuesto": "Si se ofrece, la gente la elige",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "la gente la deja pasar: 4 alternativas con stock local a precio comparable (ventas mediana 12.5) contra 64 publicaciones de la búsqueda de origen (mediana 500.0), p = 0.0078",
+    "datos": {
+     "comparables": 4,
+     "ventas_comparables": [
+      0,
+      0,
+      25,
+      100
+     ],
+     "mediana_de_origen": 500.0,
+     "publicaciones_de_origen": 64,
+     "p": 0.0078
+    }
    }
   ]
  },
@@ -4844,8 +5870,8 @@
   "que_traer": "Bandeja de regazo (lap desk): superficie rígida con ventilación pasiva/perforada, tope frontal y almohadilla blanda abajo, tipo bandeja de hotel, para apoyar la notebook sobre las piernas, el sofá o la cama",
   "busqueda_ml": "bandeja para notebook en la cama",
   "estado": "descartada",
-  "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "se_detiene_en": "C5 la eligen",
+  "motivo": "la gente la deja pasar: 5 alternativas con stock local a precio comparable (ventas mediana 0) contra 64 publicaciones de la búsqueda de origen (mediana 500.0), p = 0.0025",
   "señales": [
    {
     "id": "E081.G21O1b",
@@ -4887,8 +5913,36 @@
    {
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
+    "pasa": true,
+    "motivo": "5 equivalentes, 1 venden +100",
+    "datos": {
+     "equivalentes": 5,
+     "venden": 1,
+     "con_alguna_venta": 2,
+     "ventas_visibles": 125,
+     "ejemplos_que_venden": [
+      "Lap Desk - Bandeja Portátil Para Notebook - Sillón/ Cama (+100, $31,500)"
+     ]
+    }
+   },
+   {
+    "chequeo": "C5 la eligen",
+    "supuesto": "Si se ofrece, la gente la elige",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "la gente la deja pasar: 5 alternativas con stock local a precio comparable (ventas mediana 0) contra 64 publicaciones de la búsqueda de origen (mediana 500.0), p = 0.0025",
+    "datos": {
+     "comparables": 5,
+     "ventas_comparables": [
+      0,
+      0,
+      0,
+      25,
+      100
+     ],
+     "mediana_de_origen": 500.0,
+     "publicaciones_de_origen": 64,
+     "p": 0.0025
+    }
    }
   ]
  },
@@ -4906,8 +5960,8 @@
   "que_traer": "Bandeja de teclado y mouse que se cuelga debajo del escritorio con abrazadera (sin tornillos), con riel de extracción y superficie antideslizante, para dejar el teclado externo y el mouse abajo mientras la notebook queda elevada a la altura de la mirada",
   "busqueda_ml": "bandeja para teclado debajo del escritorio con abrazadera",
   "estado": "descartada",
-  "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "se_detiene_en": "C5 la eligen",
+  "motivo": "la gente la deja pasar: 14 alternativas con stock local a precio comparable (ventas mediana 0.0) contra 64 publicaciones de la búsqueda de origen (mediana 500.0), p = 0.0",
   "señales": [
    {
     "id": "E081.G21O2b",
@@ -4949,8 +6003,43 @@
    {
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
+    "pasa": true,
+    "motivo": "28 equivalentes, 0 venden +100",
+    "datos": {
+     "equivalentes": 28,
+     "venden": 0,
+     "con_alguna_venta": 1,
+     "ventas_visibles": 25,
+     "ejemplos_que_venden": []
+    }
+   },
+   {
+    "chequeo": "C5 la eligen",
+    "supuesto": "Si se ofrece, la gente la elige",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "la gente la deja pasar: 14 alternativas con stock local a precio comparable (ventas mediana 0.0) contra 64 publicaciones de la búsqueda de origen (mediana 500.0), p = 0.0",
+    "datos": {
+     "comparables": 14,
+     "ventas_comparables": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      25
+     ],
+     "mediana_de_origen": 500.0,
+     "publicaciones_de_origen": 64,
+     "p": 0.0
+    }
    }
   ]
  },
@@ -4969,7 +6058,7 @@
   "busqueda_ml": "lampara de escritorio recargable inalambrica articulada",
   "estado": "descartada",
   "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "motivo": "ya atendido: 4 equivalentes venden +100",
   "señales": [
    {
     "id": "E082.G22O1",
@@ -5012,7 +6101,18 @@
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "ya atendido: 4 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 13,
+     "venden": 4,
+     "con_alguna_venta": 7,
+     "ventas_visibles": 11225,
+     "ejemplos_que_venden": [
+      "Lampara Velador VL040 Led Doble Dakota Plegable Mesa Escritorio Flexib (+5000, $14,799)",
+      "Lampara Velador Led Dakota Mesa Escritorio Flexible Dimerizable Táctil (+5000, $10,864)",
+      "Lampara Velador Led Recargable Plegable Escritorio Tactil (+1000, $8,250)"
+     ]
+    }
    }
   ]
  },
@@ -5081,7 +6181,7 @@
   "busqueda_ml": "luz de cuello led recargable lectura",
   "estado": "descartada",
   "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "motivo": "ya atendido: 9 equivalentes venden +100",
   "señales": [
    {
     "id": "E082.G22O3b",
@@ -5124,7 +6224,18 @@
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "ya atendido: 9 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 40,
+     "venden": 9,
+     "con_alguna_venta": 18,
+     "ventas_visibles": 4175,
+     "ejemplos_que_venden": [
+      "Luz LED Portátil Gadnic 3 Colores Read Pro De Lectura Flexible Y Recar (+1000, $29,681)",
+      "Linterna LED de Lectura Para Cuello Flexible Recargable 3 Tonos TBCIN  (+1000, $29,530)",
+      "Linterna LED de Lectura Para Cuello Flexible Recargable 3 Tonos TBCIN  (+500, $28,841)"
+     ]
+    }
    }
   ]
  },
@@ -5193,7 +6304,7 @@
   "busqueda_ml": "barra led recargable magnetica escritorio",
   "estado": "descartada",
   "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "motivo": "ya atendido: 8 equivalentes venden +100",
   "señales": [
    {
     "id": "E082.G22O5b",
@@ -5236,7 +6347,18 @@
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "ya atendido: 8 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 48,
+     "venden": 8,
+     "con_alguna_venta": 11,
+     "ventas_visibles": 7000,
+     "ejemplos_que_venden": [
+      "Lampara Barra Velador Luz Led 30cm Recargable Alacena Cocina (+5000, $11,795)",
+      "Pack de 3 Barras Luz LED Magnéticas Táctiles Recargables USB de 30 cm (+500, $31,340)",
+      "Barra Luz LED Recargable Sensor Movimiento Magnetica Iman USB Placard  (+500, $7,999)"
+     ]
+    }
    }
   ]
  },
@@ -5254,8 +6376,8 @@
   "que_traer": "Soporte de celular para auto que se ancla en el portavasos, con brazo regulable y cuna acolchada.",
   "busqueda_ml": "soporte celular portavasos auto",
   "estado": "descartada",
-  "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "se_detiene_en": "C5 la eligen",
+  "motivo": "la gente la deja pasar: 10 alternativas con stock local a precio comparable (ventas mediana 0.0) contra 64 publicaciones de la búsqueda de origen (mediana 500.0), p = 0.0",
   "señales": [
    {
     "id": "E063.G23O1",
@@ -5297,8 +6419,39 @@
    {
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
+    "pasa": true,
+    "motivo": "17 equivalentes, 0 venden +100",
+    "datos": {
+     "equivalentes": 17,
+     "venden": 0,
+     "con_alguna_venta": 2,
+     "ventas_visibles": 100,
+     "ejemplos_que_venden": []
+    }
+   },
+   {
+    "chequeo": "C5 la eligen",
+    "supuesto": "Si se ofrece, la gente la elige",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "la gente la deja pasar: 10 alternativas con stock local a precio comparable (ventas mediana 0.0) contra 64 publicaciones de la búsqueda de origen (mediana 500.0), p = 0.0",
+    "datos": {
+     "comparables": 10,
+     "ventas_comparables": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      50,
+      50
+     ],
+     "mediana_de_origen": 500.0,
+     "publicaciones_de_origen": 64,
+     "p": 0.0
+    }
    }
   ]
  },
@@ -5316,8 +6469,8 @@
   "que_traer": "Soporte de celular para auto que se inserta en la ranura del reproductor de CD, con brazo regulable y cuna giratoria.",
   "busqueda_ml": "soporte celular auto cd",
   "estado": "descartada",
-  "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "se_detiene_en": "C5 la eligen",
+  "motivo": "la gente la deja pasar: 5 alternativas con stock local a precio comparable (ventas mediana 0) contra 64 publicaciones de la búsqueda de origen (mediana 500.0), p = 0.0006",
   "señales": [
    {
     "id": "E064.G23O1b",
@@ -5359,8 +6512,34 @@
    {
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
+    "pasa": true,
+    "motivo": "31 equivalentes, 0 venden +100",
+    "datos": {
+     "equivalentes": 31,
+     "venden": 0,
+     "con_alguna_venta": 1,
+     "ventas_visibles": 25,
+     "ejemplos_que_venden": []
+    }
+   },
+   {
+    "chequeo": "C5 la eligen",
+    "supuesto": "Si se ofrece, la gente la elige",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "la gente la deja pasar: 5 alternativas con stock local a precio comparable (ventas mediana 0) contra 64 publicaciones de la búsqueda de origen (mediana 500.0), p = 0.0006",
+    "datos": {
+     "comparables": 5,
+     "ventas_comparables": [
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "mediana_de_origen": 500.0,
+     "publicaciones_de_origen": 64,
+     "p": 0.0006
+    }
    }
   ]
  },
@@ -5379,7 +6558,7 @@
   "busqueda_ml": "soporte celular auto ranura tablero",
   "estado": "descartada",
   "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "motivo": "ya atendido: 5 equivalentes venden +100",
   "señales": [
    {
     "id": "E064.G23O2b",
@@ -5422,7 +6601,18 @@
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "ya atendido: 5 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 9,
+     "venden": 5,
+     "con_alguna_venta": 7,
+     "ventas_visibles": 11750,
+     "ejemplos_que_venden": [
+      "Base Soporte Para Celular Telefono Gps Auto Coche Tablero (+10000, $5,101)",
+      "Soporte Para Celular Gps Auto Coche Tablero + Cable Usb-c (+1000, $15,199)",
+      "Soporte Pinza Celular Gps Tablero Torpedo (+500, $7,969)"
+     ]
+    }
    }
   ]
  },
@@ -5440,8 +6630,8 @@
   "que_traer": "Extractor solar de aire para ventanilla de auto: ventilador que se coloca en el vidrio y expulsa el aire caliente del habitáculo mientras el auto está estacionado al sol.",
   "busqueda_ml": "ventilador solar auto ventanilla extractor",
   "estado": "descartada",
-  "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "se_detiene_en": "C5 la eligen",
+  "motivo": "la gente la deja pasar: 6 alternativas con stock local a precio comparable (ventas mediana 0.0) contra 58 publicaciones de la búsqueda de origen (mediana 100.0), p = 0.0009",
   "señales": [
    {
     "id": "E071.G24O1",
@@ -5483,8 +6673,35 @@
    {
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
+    "pasa": true,
+    "motivo": "25 equivalentes, 0 venden +100",
+    "datos": {
+     "equivalentes": 25,
+     "venden": 0,
+     "con_alguna_venta": 0,
+     "ventas_visibles": 0,
+     "ejemplos_que_venden": []
+    }
+   },
+   {
+    "chequeo": "C5 la eligen",
+    "supuesto": "Si se ofrece, la gente la elige",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "la gente la deja pasar: 6 alternativas con stock local a precio comparable (ventas mediana 0.0) contra 58 publicaciones de la búsqueda de origen (mediana 100.0), p = 0.0009",
+    "datos": {
+     "comparables": 6,
+     "ventas_comparables": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "mediana_de_origen": 100.0,
+     "publicaciones_de_origen": 58,
+     "p": 0.0009
+    }
    }
   ]
  },
@@ -5502,8 +6719,8 @@
   "que_traer": "Cubre parabrisas exterior con imanes cosidos en el borde (funda de tela reflectiva que se apoya sobre el vidrio por fuera y se pega a la chapa del techo y el capó, sin ventosas ni estructura)",
   "busqueda_ml": "cubre parabrisas magnetico exterior",
   "estado": "descartada",
-  "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "se_detiene_en": "C5 la eligen",
+  "motivo": "la gente la deja pasar: 28 alternativas con stock local a precio comparable (ventas mediana 0.0) contra 58 publicaciones de la búsqueda de origen (mediana 100.0), p = 0.0",
   "señales": [
    {
     "id": "E071.G24O1b",
@@ -5545,8 +6762,59 @@
    {
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
+    "pasa": true,
+    "motivo": "48 equivalentes, 1 venden +100",
+    "datos": {
+     "equivalentes": 48,
+     "venden": 1,
+     "con_alguna_venta": 2,
+     "ventas_visibles": 125,
+     "ejemplos_que_venden": [
+      "Cubre Parabrisas Anti Hielo Nieve Universal Protector Auto (+100, $42,059)"
+     ]
+    }
+   },
+   {
+    "chequeo": "C5 la eligen",
+    "supuesto": "Si se ofrece, la gente la elige",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "la gente la deja pasar: 28 alternativas con stock local a precio comparable (ventas mediana 0.0) contra 58 publicaciones de la búsqueda de origen (mediana 100.0), p = 0.0",
+    "datos": {
+     "comparables": 28,
+     "ventas_comparables": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      25,
+      100
+     ],
+     "mediana_de_origen": 100.0,
+     "publicaciones_de_origen": 58,
+     "p": 0.0
+    }
    }
   ]
  },
@@ -5564,8 +6832,8 @@
   "que_traer": "Sombrilla plegable de techo para auto completo (tipo carpa/paraguas que se abre sobre el techo y tapa techo y parabrisas desde afuera, con anclaje a las manijas o al piso)",
   "busqueda_ml": "sombrilla techo auto",
   "estado": "descartada",
-  "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "se_detiene_en": "C6 margen",
+  "motivo": "sin precio de mercado: ningún equivalente vendió, nadie lo compró todavía a ningún precio",
   "señales": [
    {
     "id": "E071.G24O2b",
@@ -5607,8 +6875,27 @@
    {
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
+    "pasa": true,
+    "motivo": "3 equivalentes, 0 venden +100",
+    "datos": {
+     "equivalentes": 3,
+     "venden": 0,
+     "con_alguna_venta": 0,
+     "ventas_visibles": 0,
+     "ejemplos_que_venden": []
+    }
+   },
+   {
+    "chequeo": "C5 la eligen",
+    "supuesto": "Si se ofrece, la gente la elige",
+    "pasa": true,
+    "motivo": "no hay alternativas con stock local: nadie la ofreció todavía"
+   },
+   {
+    "chequeo": "C6 margen",
+    "supuesto": "Deja plata al precio que la gente paga",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "sin precio de mercado: ningún equivalente vendió, nadie lo compró todavía a ningún precio"
    }
   ]
  },
@@ -5626,8 +6913,8 @@
   "que_traer": "Sistema modular de pared: riel/panel que se atornilla a la pared con contenedores transparentes encastrables y extraíbles (tipo Akro-Mils / riel de cocina / pared de taller), que se agranda agregando módulos.",
   "busqueda_ml": "organizador de pared con cajones para tornillos",
   "estado": "descartada",
-  "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "se_detiene_en": "C6 margen",
+  "motivo": "sin precio de proveedor: falta cotizarlo",
   "señales": [
    {
     "id": "E059.G25O1",
@@ -5669,8 +6956,41 @@
    {
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
+    "pasa": true,
+    "motivo": "6 equivalentes, 1 venden +100",
+    "datos": {
+     "equivalentes": 6,
+     "venden": 1,
+     "con_alguna_venta": 1,
+     "ventas_visibles": 100,
+     "ejemplos_que_venden": [
+      "Rack De Pared 10 Bins 2 Estanterias Gaveteros Cajones (+100, $154,116)"
+     ]
+    }
+   },
+   {
+    "chequeo": "C5 la eligen",
+    "supuesto": "Si se ofrece, la gente la elige",
+    "pasa": true,
+    "motivo": "4 alternativas con stock local a precio comparable (ventas mediana 0.0) contra 58 publicaciones de la búsqueda de origen (mediana 100.0), p = 0.0694",
+    "datos": {
+     "comparables": 4,
+     "ventas_comparables": [
+      0,
+      0,
+      0,
+      100
+     ],
+     "mediana_de_origen": 100.0,
+     "publicaciones_de_origen": 58,
+     "p": 0.0694
+    }
+   },
+   {
+    "chequeo": "C6 margen",
+    "supuesto": "Deja plata al precio que la gente paga",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "sin precio de proveedor: falta cotizarlo"
    }
   ]
  },
@@ -5689,7 +7009,7 @@
   "busqueda_ml": "bolsa organizadora de tornillos con divisiones",
   "estado": "descartada",
   "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "motivo": "ya atendido: 10 equivalentes venden +100",
   "señales": [
    {
     "id": "E060.G25O2",
@@ -5732,7 +7052,18 @@
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "ya atendido: 10 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 45,
+     "venden": 10,
+     "con_alguna_venta": 16,
+     "ventas_visibles": 2475,
+     "ejemplos_que_venden": [
+      "Gavetero Organizador Tornillos Anzuelo Kushiro 18 Divisiones Color Gri (+1000, $13,059)",
+      "Caja Organizador Tornillos Tuercas Transparente 3 Unidades Incoloro (+500, $18,749)",
+      "Gavetero Organizador Plástico 15 Pulg Maletín Ronix Rh-9127 (+100, $23,655)"
+     ]
+    }
    }
   ]
  },
@@ -5750,8 +7081,8 @@
   "que_traer": "Organizador de balde (bucket caddy) de lona reforzada: un cuerpo de bolsillos interiores y exteriores, varios de ellos transparentes, que se calza dentro de un balde de obra común y deja el centro libre para las piezas pesadas, con asa de mano y correa para colgar del hombro o de la moto.",
   "busqueda_ml": "organizador de balde para herramientas",
   "estado": "descartada",
-  "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "se_detiene_en": "C5 la eligen",
+  "motivo": "la gente la deja pasar: 13 alternativas con stock local a precio comparable (ventas mediana 0) contra 58 publicaciones de la búsqueda de origen (mediana 100.0), p = 0.0",
   "señales": [
    {
     "id": "E059.G25O1b",
@@ -5793,8 +7124,42 @@
    {
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
+    "pasa": true,
+    "motivo": "26 equivalentes, 0 venden +100",
+    "datos": {
+     "equivalentes": 26,
+     "venden": 0,
+     "con_alguna_venta": 0,
+     "ventas_visibles": 0,
+     "ejemplos_que_venden": []
+    }
+   },
+   {
+    "chequeo": "C5 la eligen",
+    "supuesto": "Si se ofrece, la gente la elige",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "la gente la deja pasar: 13 alternativas con stock local a precio comparable (ventas mediana 0) contra 58 publicaciones de la búsqueda de origen (mediana 100.0), p = 0.0",
+    "datos": {
+     "comparables": 13,
+     "ventas_comparables": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "mediana_de_origen": 100.0,
+     "publicaciones_de_origen": 58,
+     "p": 0.0
+    }
    }
   ]
  },
@@ -5863,7 +7228,7 @@
   "busqueda_ml": "frascos apilables transparentes para tornillos",
   "estado": "descartada",
   "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "motivo": "ya atendido: 12 equivalentes venden +100",
   "señales": [
    {
     "id": "E059.G25O3b",
@@ -5906,7 +7271,18 @@
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "ya atendido: 12 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 39,
+     "venden": 12,
+     "con_alguna_venta": 24,
+     "ventas_visibles": 4725,
+     "ejemplos_que_venden": [
+      "Set x6 Frascos Herméticos Gadnic Apilables Plásticos Transparentes (+1000, $28,863)",
+      "Frascos Para Fideos X 3 + Organi De Lata Hermetico Apilable (+1000, $35,212)",
+      "Set x6 Frascos Herméticos Gadnic Apilables Plásticos Transparentes (+1000, $28,749)"
+     ]
+    }
    }
   ]
  },
@@ -5974,8 +7350,8 @@
   "que_traer": "Estuche tipo rollo o valija que se abre plano, con elásticos y divisiones fijas (formato estuche de herramientas de ferretería) para brochas, lápices, rímels y útiles, con los compartimentos a la vista al abrirlo",
   "busqueda_ml": "porta brochas enrollable con elastico",
   "estado": "descartada",
-  "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "se_detiene_en": "C5 la eligen",
+  "motivo": "la gente la deja pasar: 6 alternativas con stock local a precio comparable (ventas mediana 0.0) contra 68 publicaciones de la búsqueda de origen (mediana 500.0), p = 0.0014",
   "señales": [
    {
     "id": "E077.G26O2",
@@ -6017,8 +7393,37 @@
    {
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
+    "pasa": true,
+    "motivo": "12 equivalentes, 1 venden +100",
+    "datos": {
+     "equivalentes": 12,
+     "venden": 1,
+     "con_alguna_venta": 1,
+     "ventas_visibles": 500,
+     "ejemplos_que_venden": [
+      "Organizador Maquillaje Mtl Neceser Profesional Compartimentos Ajustabl (+500, $25,989)"
+     ]
+    }
+   },
+   {
+    "chequeo": "C5 la eligen",
+    "supuesto": "Si se ofrece, la gente la elige",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "la gente la deja pasar: 6 alternativas con stock local a precio comparable (ventas mediana 0.0) contra 68 publicaciones de la búsqueda de origen (mediana 500.0), p = 0.0014",
+    "datos": {
+     "comparables": 6,
+     "ventas_comparables": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      500
+     ],
+     "mediana_de_origen": 500.0,
+     "publicaciones_de_origen": 68,
+     "p": 0.0014
+    }
    }
   ]
  },
@@ -6037,7 +7442,7 @@
   "busqueda_ml": "esmaltero organizador acrilico para esmaltes y maquillaje",
   "estado": "descartada",
   "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "motivo": "ya atendido: 4 equivalentes venden +100",
   "señales": [
    {
     "id": "E078.G26O3b",
@@ -6080,7 +7485,18 @@
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "ya atendido: 4 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 10,
+     "venden": 4,
+     "con_alguna_venta": 5,
+     "ventas_visibles": 825,
+     "ejemplos_que_venden": [
+      "Exhibidor Organizador De Maquillajes Esmaltes Acrílico 5 (+500, $54,975)",
+      "Repisa Organizador 3 Niveles Acrilico Perfumes Maquillaje (+100, $31,900)",
+      "Estante, Esmaltero Melamina 5 Pisos (+100, $54,780)"
+     ]
+    }
    }
   ]
  },
@@ -6098,8 +7514,8 @@
   "que_traer": "Contenedor modular apilable de plástico rígido con tapa y puerta frontal abatible (formato organizador de alacena/heladera trasladado al placard), para guardar ropa, ropa de otra temporada y objetos, sacando por adelante sin desarmar la pila",
   "busqueda_ml": "organizador apilable con tapa y puerta frontal",
   "estado": "descartada",
-  "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "se_detiene_en": "C5 la eligen",
+  "motivo": "la gente la deja pasar: 11 alternativas con stock local a precio comparable (ventas mediana 0) contra 61 publicaciones de la búsqueda de origen (mediana 100), p = 0.0001",
   "señales": [
    {
     "id": "E013.G26O4b",
@@ -6141,8 +7557,43 @@
    {
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
+    "pasa": true,
+    "motivo": "12 equivalentes, 2 venden +100",
+    "datos": {
+     "equivalentes": 12,
+     "venden": 2,
+     "con_alguna_venta": 2,
+     "ventas_visibles": 2000,
+     "ejemplos_que_venden": [
+      "Canasto Organizador Plegable Apilable Casa Perfecta Container Pro Comp (+1000, $65,173)",
+      "Organizador Alacena Plegable 3 Cajones HCO. Moderno Apilable Canastos  (+1000, $49,871)"
+     ]
+    }
+   },
+   {
+    "chequeo": "C5 la eligen",
+    "supuesto": "Si se ofrece, la gente la elige",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "la gente la deja pasar: 11 alternativas con stock local a precio comparable (ventas mediana 0) contra 61 publicaciones de la búsqueda de origen (mediana 100), p = 0.0001",
+    "datos": {
+     "comparables": 11,
+     "ventas_comparables": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1000,
+      1000
+     ],
+     "mediana_de_origen": 100,
+     "publicaciones_de_origen": 61,
+     "p": 0.0001
+    }
    }
   ]
  },
@@ -6311,7 +7762,7 @@
   "busqueda_ml": "bolsas de compresión para viaje ropa sin bomba",
   "estado": "descartada",
   "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "motivo": "ya atendido: 20 equivalentes venden +100",
   "señales": [
    {
     "id": "E077.G27O1b",
@@ -6354,7 +7805,18 @@
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "ya atendido: 20 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 47,
+     "venden": 20,
+     "con_alguna_venta": 32,
+     "ventas_visibles": 45425,
+     "ejemplos_que_venden": [
+      "Combo Bomba Manual + 4 Bolsas Al Vacio Guardado Ropa Viaje (+10000, $9,999)",
+      "Set de 5 Bolsas al Vacío para Ropa Acolchada y Viaje con Bomba de Levy (+10000, $11,199)",
+      "Set X5 Bolsas Al Vacio 50x70 Cm Con Bomba Manual Para Guardado Organiz (+5000, $12,080)"
+     ]
+    }
    }
   ]
  },
@@ -6422,8 +7884,8 @@
   "que_traer": "Organizador colgante de valija tipo armario plegable, con gancho para percha y bolsillos de malla transpirable, que se cuelga en el placard del hotel o en el baño y se pliega dentro de la valija.",
   "busqueda_ml": "organizador de valija colgante para ropa",
   "estado": "descartada",
-  "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "se_detiene_en": "C5 la eligen",
+  "motivo": "la gente la deja pasar: 14 alternativas con stock local a precio comparable (ventas mediana 0.0) contra 68 publicaciones de la búsqueda de origen (mediana 500.0), p = 0.0",
   "señales": [
    {
     "id": "E077.G27O3b",
@@ -6465,8 +7927,43 @@
    {
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
+    "pasa": true,
+    "motivo": "28 equivalentes, 0 venden +100",
+    "datos": {
+     "equivalentes": 28,
+     "venden": 0,
+     "con_alguna_venta": 2,
+     "ventas_visibles": 75,
+     "ejemplos_que_venden": []
+    }
+   },
+   {
+    "chequeo": "C5 la eligen",
+    "supuesto": "Si se ofrece, la gente la elige",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "la gente la deja pasar: 14 alternativas con stock local a precio comparable (ventas mediana 0.0) contra 68 publicaciones de la búsqueda de origen (mediana 500.0), p = 0.0",
+    "datos": {
+     "comparables": 14,
+     "ventas_comparables": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      25,
+      50
+     ],
+     "mediana_de_origen": 500.0,
+     "publicaciones_de_origen": 68,
+     "p": 0.0
+    }
    }
   ]
  },
@@ -6743,8 +8240,8 @@
   "que_traer": "Filtro universal lavable recortable (espuma/fibra) que se adapta a la boca de cualquier aspiradora de mano inalámbrica tipo Yelmo/Gadnic, para reemplazar el filtro de papel no lavable que hoy solo viene con el equipo.",
   "busqueda_ml": "filtro aspiradora lavable universal",
   "estado": "descartada",
-  "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "se_detiene_en": "C5 la eligen",
+  "motivo": "la gente la deja pasar: 4 alternativas con stock local a precio comparable (ventas mediana 25.0) contra 60 publicaciones de la búsqueda de origen (mediana 500.0), p = 0.0055",
   "señales": [
    {
     "id": "E065.G34O1",
@@ -6786,8 +8283,35 @@
    {
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
+    "pasa": true,
+    "motivo": "7 equivalentes, 1 venden +100",
+    "datos": {
+     "equivalentes": 7,
+     "venden": 1,
+     "con_alguna_venta": 2,
+     "ventas_visibles": 150,
+     "ejemplos_que_venden": [
+      "Filtro De Espuma Universal Para Aspiradora (+100, $4,990)"
+     ]
+    }
+   },
+   {
+    "chequeo": "C5 la eligen",
+    "supuesto": "Si se ofrece, la gente la elige",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "la gente la deja pasar: 4 alternativas con stock local a precio comparable (ventas mediana 25.0) contra 60 publicaciones de la búsqueda de origen (mediana 500.0), p = 0.0055",
+    "datos": {
+     "comparables": 4,
+     "ventas_comparables": [
+      0,
+      0,
+      50,
+      100
+     ],
+     "mediana_de_origen": 500.0,
+     "publicaciones_de_origen": 60,
+     "p": 0.0055
+    }
    }
   ]
  },
@@ -6808,7 +8332,7 @@
   "busqueda_ml": "repuesto mopa microfibra universal balde centrifugo",
   "estado": "descartada",
   "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "motivo": "ya atendido: 5 equivalentes venden +100",
   "señales": [
    {
     "id": "E022.G34O2",
@@ -6856,7 +8380,18 @@
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "ya atendido: 5 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 22,
+     "venden": 5,
+     "con_alguna_venta": 10,
+     "ventas_visibles": 2925,
+     "ejemplos_que_venden": [
+      "Unixcen X2 Repuestos De Mopa Microfibra Base Negra P-004 (+1000, $6,990)",
+      "Repuesto Mopa Giratoria X4 Danper Para Balde Centrifugo Microfibra Pre (+1000, $12,901)",
+      "Unixcen Repuesto De Mopa Microfibra Base Negra P-004 Local (+500, $3,990)"
+     ]
+    }
    }
   ]
  },
@@ -6874,8 +8409,8 @@
   "que_traer": "Kit de reparación de tapizado sintético y plásticos: parches autoadhesivos de cuero sintético (cuerina) en varios colores y tamaños más masilla epoxi moldeable para piezas plásticas y engranajes chicos",
   "busqueda_ml": "parche cuerina autoadhesivo reparar tapizado",
   "estado": "descartada",
-  "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "se_detiene_en": "C6 margen",
+  "motivo": "sin precio de mercado: ningún equivalente vendió, nadie lo compró todavía a ningún precio",
   "señales": [
    {
     "id": "E055.G34O1b",
@@ -6917,8 +8452,27 @@
    {
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
+    "pasa": true,
+    "motivo": "0 equivalentes, 0 venden +100",
+    "datos": {
+     "equivalentes": 0,
+     "venden": 0,
+     "con_alguna_venta": 0,
+     "ventas_visibles": 0,
+     "ejemplos_que_venden": []
+    }
+   },
+   {
+    "chequeo": "C5 la eligen",
+    "supuesto": "Si se ofrece, la gente la elige",
+    "pasa": true,
+    "motivo": "no hay alternativas con stock local: nadie la ofreció todavía"
+   },
+   {
+    "chequeo": "C6 margen",
+    "supuesto": "Deja plata al precio que la gente paga",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "sin precio de mercado: ningún equivalente vendió, nadie lo compró todavía a ningún precio"
    }
   ]
  },
@@ -6936,8 +8490,8 @@
   "que_traer": "Batería de repuesto recargable con adaptadores de conector y cargador USB de reemplazo, compatible con aspiradoras de mano inalámbricas de varias marcas (tipo Yelmo, Gadnic y similares)",
   "busqueda_ml": "bateria repuesto aspiradora de mano inalambrica",
   "estado": "descartada",
-  "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "se_detiene_en": "C5 la eligen",
+  "motivo": "la gente la deja pasar: 10 alternativas con stock local a precio comparable (ventas mediana 0.0) contra 60 publicaciones de la búsqueda de origen (mediana 500.0), p = 0.0",
   "señales": [
    {
     "id": "E065.G34O2b",
@@ -6979,8 +8533,39 @@
    {
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
+    "pasa": true,
+    "motivo": "11 equivalentes, 0 venden +100",
+    "datos": {
+     "equivalentes": 11,
+     "venden": 0,
+     "con_alguna_venta": 1,
+     "ventas_visibles": 25,
+     "ejemplos_que_venden": []
+    }
+   },
+   {
+    "chequeo": "C5 la eligen",
+    "supuesto": "Si se ofrece, la gente la elige",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "la gente la deja pasar: 10 alternativas con stock local a precio comparable (ventas mediana 0.0) contra 60 publicaciones de la búsqueda de origen (mediana 500.0), p = 0.0",
+    "datos": {
+     "comparables": 10,
+     "ventas_comparables": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      25
+     ],
+     "mediana_de_origen": 500.0,
+     "publicaciones_de_origen": 60,
+     "p": 0.0
+    }
    }
   ]
  },
@@ -8840,7 +10425,7 @@
   "busqueda_ml": "repuesto pistola de silicona",
   "estado": "descartada",
   "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "motivo": "ya atendido: 9 equivalentes venden +100",
   "señales": [
    {
     "id": "E058.B2",
@@ -8878,7 +10463,18 @@
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "ya atendido: 9 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 30,
+     "venden": 9,
+     "con_alguna_venta": 14,
+     "ventas_visibles": 5550,
+     "ejemplos_que_venden": [
+      "Barras Adhesivas De Silicona Gruesas 11mm X 30cm Pistola Tfp (+1000, $18,901)",
+      "84 Barras Adhesivas Silicona (1kg) 7mmx30cm Candela 7444 (+1000, $13,871)",
+      "Silicona En Barra 7mm - 1 Kilo Transparente (+1000, $11,500)"
+     ]
+    }
    }
   ]
  },
