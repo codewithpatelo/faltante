@@ -16,9 +16,9 @@ import json
 import os
 import sys
 
-from harness.divergente import DeepSeek, _con_reintento, costo, señales_verificadas
+from harness.divergente import DeepSeek, _con_reintento, costo, señales_del_paso_a, señales_verificadas
 from harness.espacio_de_prompts import variantes
-from harness.explorar_prompts import SERENDIPIA, medir_repetido, señales_del_paso_a
+from harness.explorar_prompts import SERENDIPIA, medir_repetido
 from harness.voces import productos
 
 RONDAS = 4

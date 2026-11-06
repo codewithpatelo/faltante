@@ -27,7 +27,7 @@ import sys
 from concurrent.futures import ThreadPoolExecutor
 from statistics import mean, pstdev
 
-from harness.divergente import (EN_PARALELO, DeepSeek, _con_reintento, costo, proponer, señales_de_la_particion,
+from harness.divergente import (EN_PARALELO, DeepSeek, _con_reintento, costo, proponer, señales_del_paso_a,
                                 señales_verificadas)
 from harness.embudo import EMBUDO, Propuesta
 from harness.espacio_de_prompts import variantes
@@ -38,17 +38,6 @@ JUEZ = (RAIZ / "skills/juzgar_obviedad/SKILL.md").read_text(encoding="utf-8")
 PARECIDO_PARA_REPETIDA = 0.5      # proporción de palabras en común de "que_traer"
 REPETICIONES = 3                  # mediciones por variante
 CHEQUEOS_SIN_NAVEGADOR = EMBUDO[:4]   # guardrail, C1, C2, C3
-
-
-def señales_del_paso_a(cliente, particion: str, capturas: dict, traza: list) -> dict:
-    """Las señales del paso A se calculan una vez y se guardan: todas las variantes del paso B
-    parten de las mismas, así la comparación es justa."""
-    archivo = SERENDIPIA / f"señales_{particion}_api.json"
-    if archivo.exists():
-        return json.loads(archivo.read_text(encoding="utf-8"))
-    señales = señales_de_la_particion(cliente, particion, capturas, traza)
-    archivo.write_text(json.dumps(señales, ensure_ascii=False, indent=1), encoding="utf-8")
-    return señales
 
 
 def validas(ops: list[dict], señales: dict, todos: dict) -> list[dict]:

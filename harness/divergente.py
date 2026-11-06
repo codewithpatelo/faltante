@@ -37,10 +37,11 @@ USD_POR_MILLON_DE_TOKENS = {"entrada": 0.30, "salida": 1.20}  # precio en hora p
 URL_API = "https://api.deepseek.com/chat/completions"
 OPINIONES_QUE_LEE = 22            # además de todas las preguntas
 ALTERNATIVAS_QUE_VE = 6           # de cada lado: las más elegidas y las que se dejaron pasar
-MAX_TOKENS_DE_SALIDA = 32000      # DeepSeek Flash razona antes de responder (hasta ~27.000 caracteres): con 8.000 se cortaba
+MAX_TOKENS_DE_SALIDA = 128000     # DeepSeek Flash razona antes de responder: el paso B con ~250 señales gastó 32.000
+                                  # razonando y no llegó a responder (el modelo admite hasta 384.000)
 REINTENTOS = 1                    # devolver los errores del guardrail al modelo una vez
 EN_PARALELO = 8                   # llamadas simultáneas a la API
-SEGUNDOS_POR_LLAMADA = 900        # razonando 32.000 tokens puede tardar más de 5 minutos
+SEGUNDOS_POR_LLAMADA = 1800       # razona a ~150 tokens por segundo: 128.000 tokens son ~15 minutos
 INTENTOS_DE_RED = 3               # una corrida larga no se cae por un corte de red (al conectar o a mitad de la respuesta)
 SKILL_A = RAIZ / "skills/leer_voces/SKILL.md"
 SKILL_B = RAIZ / "skills/cruzar_senales/SKILL.md"
@@ -79,6 +80,17 @@ def señales_de_la_particion(cliente, particion: str, capturas: dict, traza: lis
     leer = lambda pid: señales_de(cliente, elegidos[pid], eleccion_en_la_busqueda(elegidos[pid], capturas.get(elegidos[pid]["busqueda"])), traza)
     with ThreadPoolExecutor(EN_PARALELO) as hilos:
         return dict(zip(elegidos, hilos.map(leer, elegidos)))
+
+
+def señales_del_paso_a(cliente, particion: str, capturas: dict, traza: list) -> dict[str, list]:
+    """Las señales del paso A se calculan una vez por partición y se guardan: los experimentos
+    de prompts del paso B parten de las mismas, y si el paso B falla no se vuelve a leer todo."""
+    archivo = RAIZ / f"data/serendipia/señales_{particion}_api.json"
+    if archivo.exists():
+        return json.loads(archivo.read_text(encoding="utf-8"))
+    señales = señales_de_la_particion(cliente, particion, capturas, traza)
+    archivo.write_text(json.dumps(señales, ensure_ascii=False, indent=1), encoding="utf-8")
+    return señales
 
 
 def señales_de(cliente, producto: dict, eleccion: str, traza: list) -> list[dict]:
@@ -145,12 +157,18 @@ def señales_verificadas(señales: dict[str, list], todos: dict[str, dict]) -> l
 
 # --- Llamada al modelo ------------------------------------------------------------------------
 
+class RespuestaCortada(RuntimeError):
+    """Una respuesta cortada por el tope de tokens no es "cero oportunidades": la corrida se detiene."""
+
+
 def _con_reintento(cliente, prompt: str, validar, traza: list, etiqueta: str) -> dict:
     mensajes = [{"role": "user", "content": prompt}]
     salida = {}
     for intento in range(REINTENTOS + 1):
         inicio = time.time()
         respuesta = cliente.messages.create(model=MODELO, max_tokens=MAX_TOKENS_DE_SALIDA, messages=mensajes)
+        if getattr(respuesta, "stop_reason", None) == "length":
+            raise RespuestaCortada(f"{etiqueta}: el modelo usó los {MAX_TOKENS_DE_SALIDA} tokens de salida sin terminar de responder")
         texto = respuesta.content[0].text
         salida = _json(texto)
         errores = validar(salida)
@@ -212,9 +230,10 @@ def costo(traza: list) -> dict:
 
 
 def divergir(cliente, particion: str, capturas: dict) -> dict:
-    """Paso A sobre cada producto de la partición y paso B sobre todas las señales verificadas."""
+    """Paso A sobre cada producto de la partición (o sus señales ya guardadas) y paso B sobre
+    todas las señales verificadas."""
     todos, traza = productos(), []
-    señales = señales_de_la_particion(cliente, particion, capturas, traza)
+    señales = señales_del_paso_a(cliente, particion, capturas, traza)
     verificadas = señales_verificadas(señales, todos)
     oportunidades = proponer(cliente, verificadas, traza) if verificadas else []
     return {"quien": MODELO, "costo": costo(traza), "traza": traza, "señales": señales, "oportunidades": oportunidades}
