@@ -107,17 +107,17 @@ def divergir(cliente, particion: str, capturas: dict) -> dict:
         mapas.append(P.mapa_de_empatia(s, list(miembros_de[s["id"]].values()), todos, capturas))
     suficientes = [m for m in mapas if P.es_segmento_suficiente(m)]
 
-    def dolores_y_propuestas(m):
-        dolores = D.dolores_del_segmento(cliente, m, miembros_de[m["segmento"]], tarjetas, todos, traza)
-        vivos = {d["id"]: d for d in dolores if d["veredicto"]["pasa"]}
-        return dolores, proponer(cliente, m, miembros_de[m["segmento"]], vivos, traza)
-
-    resultados = dict(zip((m["segmento"] for m in suficientes), en_paralelo(dolores_y_propuestas, suficientes)))
-    oportunidades = [o for _, ops in resultados.values() for o in ops]
+    dolores_de = dict(zip((m["segmento"] for m in suficientes),
+                          en_paralelo(lambda m: D.dolores_del_segmento(cliente, m, miembros_de[m["segmento"]], tarjetas, todos, traza), suficientes)))
+    control_del_procedimiento = D.decidir([x for ds in dolores_de.values() for x in ds], tarjetas)
+    vivos_de = {s: {x["id"]: x for x in ds if x["veredicto"]["pasa"]} for s, ds in dolores_de.items()}
+    oportunidades = [o for ops in en_paralelo(lambda m: proponer(cliente, m, miembros_de[m["segmento"]], vivos_de[m["segmento"]], traza),
+                                              suficientes) for o in ops]
     return {"quien": MODELO, "costo": costo(traza), "traza": traza,
             "personas": len(tarjetas), "asignadas": len(gente["asignaciones"]),
             "segmentos": [{**m, "pasa_al_paso_b": P.es_segmento_suficiente(m),
-                           "dolores": resultados.get(m["segmento"], ([], []))[0]} for m in mapas],
+                           "dolores": dolores_de.get(m["segmento"], [])} for m in mapas],
+            "control_del_procedimiento": control_del_procedimiento,
             **al_formato_del_embudo(oportunidades, tarjetas, particion)}
 
 

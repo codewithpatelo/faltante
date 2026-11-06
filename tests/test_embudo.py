@@ -159,23 +159,25 @@ def test_paso_b_sin_dolores_verificados_no_propone_nada():
     assert proponer(NoDeberiaLlamarse(), {"segmento": "G1"}, MIEMBROS, {}, []) == []
 
 
-def test_el_dolor_sobrevive_por_sus_desatendidos_de_varios_productos_y_mas_que_en_el_control():
-    from harness.dolores import veredicto
-    tarjetas = {f"P{p}.o{i}": {"producto": f"P{p}"} for p in "XY" for i in range(20)}
-    tienen = [f"P{p}.o{i}" for p in "XY" for i in range(10)]          # 20 personas, 10 en cada producto
-    seg = {"medidas": 60, "tienen": tienen, "resuelto": []}
-    control = {"medidas": 60, "tienen": ["PZ.o1"]}
-    assert veredicto(seg, control, tarjetas)["pasa"]
-    # la mayoría conforme no lo mata: alcanzan 6 desatendidos en dos productos
-    mayoria = {**seg, "resuelto": [i for i in tienen if int(i.split("o")[1]) >= 3]}
-    assert veredicto(mayoria, control, tarjetas)["pasa"]
-    casi_todos = {**seg, "resuelto": tienen[2:]}
-    r = veredicto(casi_todos, control, tarjetas)
-    assert not r["pasa"] and r["rama"] == "precio_o_acceso"
-    un_producto = {**seg, "resuelto": [i for i in tienen if i.startswith("PY")]}
-    assert "un solo producto" in veredicto(un_producto, control, tarjetas)["motivo"]
-    assert "no es de este grupo" in veredicto(seg, {"medidas": 60, "tienen": tienen[:15]}, tarjetas)["motivo"]
-    assert "lo tienen 2" in veredicto({**seg, "tienen": tienen[:2]}, control, tarjetas)["motivo"]
+def test_el_dolor_se_decide_con_fisher_corregido_sobre_los_desatendidos():
+    from harness.dolores import benjamini_hochberg, decidir
+    tarjetas = {f"P{p}.o{i}": {"producto": f"P{p}"} for p in "XYZ" for i in range(80)}
+    gente = lambda p, n: [f"P{p}.o{i}" for i in range(n)]
+    def dolor(tienen, resuelto, control, placebo=0):
+        return {"medicion": {"segmento": {"medidas": 60, "tienen": tienen, "resuelto": resuelto},
+                             "control": {"medidas": 60, "tienen": gente("Z", control), "resuelto": []},
+                             "placebo": {"medidas": 60, "tienen": gente("Z", placebo), "resuelto": []}}}
+    fuerte = dolor(gente("X", 8) + gente("Y", 8), [], 1)
+    de_todos = dolor(gente("X", 8) + gente("Y", 8), [], 15)
+    resuelto = dolor(gente("X", 8) + gente("Y", 8), gente("X", 8) + gente("Y", 7), 0)
+    un_producto = dolor(gente("X", 16), [], 0)
+    control = decidir([fuerte, de_todos, resuelto, un_producto], tarjetas)
+    assert fuerte["veredicto"]["pasa"]
+    assert "control" in de_todos["veredicto"]["motivo"]
+    assert resuelto["veredicto"]["rama"] == "precio_o_acceso"
+    assert "un solo producto" in un_producto["veredicto"]["motivo"]
+    assert control["tasa_de_falsos_positivos_del_placebo"] == 0
+    assert benjamini_hochberg([0.001, 0.02, 0.04, 0.5]) == [True, True, False, False]
 
 
 def test_cada_propuesta_deja_una_señal_por_producto_con_las_citas_de_su_gente():

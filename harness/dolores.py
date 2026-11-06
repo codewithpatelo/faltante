@@ -11,14 +11,20 @@ Lo que importa son los DESATENDIDOS: quienes tienen el dolor y no lo resolvieron
 son de compradores de la solución actual y la mayoría suele estar conforme; eso no refuta el dolor,
 dice para quién funciona esa solución. El agujero está en la gente a la que le falla.
 
+Cada dolor se mide en tres grupos del mismo tamaño: el segmento, un control y un placebo (los dos
+últimos, gente al azar de fuera del segmento). La decisión es una prueba estadística, no un umbral
+a ojo: test exacto de Fisher (unilateral) de que el dolor es más frecuente en el segmento que en el
+control, con el nivel de significancia corregido por Benjamini-Hochberg sobre todos los dolores de
+la corrida. El placebo contra el control mide cuántos falsos positivos da el procedimiento (tendría
+que rondar el nivel de significancia).
+
 Un dolor se refuta si:
-    pocas personas lo tienen                       (MIN_PERSONAS_CON_EL_DOLOR)
-    no es más frecuente en el segmento que afuera  (MIN_VECES_MAS_QUE_EN_EL_CONTROL)
-    la solución actual le sirve a casi todos       (MIN_PERSONAS_DESATENDIDAS): no hay agujero para algo
-                                                    mejor; queda marcado para la rama "más barato o más
-                                                    accesible" (todavía no construida)
-    los desatendidos son de un solo producto       (MIN_PRODUCTOS_CON_DESATENDIDOS, 2 personas en cada uno):
-                                                    es el defecto de un producto, no un dolor del grupo
+    no es más frecuente en el segmento que en el control       (Fisher sobre quienes lo tienen)
+    la solución actual le sirve al segmento                    (Fisher sobre los desatendidos): sin
+                                                               agujero para algo mejor; queda para la
+                                                               rama "más barato o más accesible"
+    los desatendidos son de un solo producto                   (definición: es el defecto de ese
+                                                               producto, no un dolor del grupo)
 """
 
 from __future__ import annotations
@@ -27,15 +33,16 @@ import json
 import random
 from collections import Counter
 
+from scipy.stats import fisher_exact
+
 from harness.modelo import con_reintento, en_paralelo
 from harness.voces import RAIZ, textos_con_id
 
 SKILL_D = RAIZ / "skills/hipotesis_de_dolor/SKILL.md"
 SKILL_MEDIR = RAIZ / "skills/medir_dolor/SKILL.md"
-MIN_PERSONAS_CON_EL_DOLOR = 5
-MIN_VECES_MAS_QUE_EN_EL_CONTROL = 2.0  # decisión: el dolor es de este grupo, no de todo el mundo
-MIN_PERSONAS_DESATENDIDAS = 5         # decisión: menos que esto no sostiene un lote de importación
-MIN_PRODUCTOS_CON_DESATENDIDOS = 2    # con al menos 2 desatendidos en cada uno
+NIVEL_DE_SIGNIFICANCIA = 0.05        # convención estadística; se corrige por la cantidad de dolores probados
+MIN_PRODUCTOS_CON_DESATENDIDOS = 2    # definición: si no, es el defecto de un producto
+DESATENDIDOS_POR_PRODUCTO = 2         # el embudo pide 2 textos por señal (harness/chequeos.errores_de_citas)
 PERSONAS_MEDIDAS = 150                # del segmento y del control (al azar, con semilla fija, si hay más)
 PERSONAS_POR_LLAMADA_AL_MEDIR = 75
 SEMILLA = 7
@@ -78,28 +85,57 @@ def desatendidos(medicion: dict) -> list[str]:
     return [i for i in medicion["tienen"] if i not in set(medicion["resuelto"])]
 
 
-def veredicto(en_segmento: dict, en_control: dict, tarjetas: dict) -> dict:
-    """El código decide si el dolor sobrevive, con los números a la vista."""
-    tienen, sin_resolver = en_segmento["tienen"], desatendidos(en_segmento)
-    proporcion = len(tienen) / max(1, en_segmento["medidas"])
-    proporcion_control = len(en_control["tienen"]) / max(1, en_control["medidas"])
-    veces = proporcion / proporcion_control if proporcion_control else float("inf") if tienen else 0.0
-    productos = sum(n >= 2 for n in Counter(tarjetas[i]["producto"] for i in sin_resolver).values())
-    datos = {"personas": len(tienen), "desatendidos": len(sin_resolver), "de": en_segmento["medidas"],
-             "proporcion": round(proporcion, 3), "proporcion_control": round(proporcion_control, 3),
-             "veces_mas_que_el_control": round(veces, 2) if veces != float("inf") else "sin casos en el control",
-             "productos_con_2_desatendidos_o_mas": productos}
-    if len(tienen) < MIN_PERSONAS_CON_EL_DOLOR:
-        return {"pasa": False, "motivo": f"lo tienen {len(tienen)} personas (mínimo {MIN_PERSONAS_CON_EL_DOLOR})", **datos}
-    if veces < MIN_VECES_MAS_QUE_EN_EL_CONTROL:
-        return {"pasa": False, "motivo": f"no es de este grupo: {proporcion:.0%} en el segmento contra {proporcion_control:.0%} en el control", **datos}
-    if len(sin_resolver) < MIN_PERSONAS_DESATENDIDAS:
-        return {"pasa": False, "rama": "precio_o_acceso", **datos,
-                "motivo": f"la solución actual le sirve a casi todos ({len(sin_resolver)} desatendidos): sin agujero para algo mejor"}
-    if productos < MIN_PRODUCTOS_CON_DESATENDIDOS:
-        return {"pasa": False, "motivo": "los desatendidos son de un solo producto: es el defecto de ese producto", **datos}
-    return {"pasa": True, "motivo": f"{len(sin_resolver)} desatendidos (lo tienen {len(tienen)} de {en_segmento['medidas']}, "
-                                    f"{datos['veces_mas_que_el_control']} veces más que en el control)", **datos}
+def p_mas_frecuente(casos: int, medidas: int, casos_ref: int, medidas_ref: int) -> float:
+    """Fisher exacto unilateral: ¿la proporción es mayor que en el grupo de referencia?"""
+    if medidas == 0 or medidas_ref == 0:
+        return 1.0
+    return float(fisher_exact([[casos, medidas - casos], [casos_ref, medidas_ref - casos_ref]], alternative="greater")[1])
+
+
+def benjamini_hochberg(p: list[float], nivel: float = NIVEL_DE_SIGNIFICANCIA) -> list[bool]:
+    """Cuáles p-valores son significativos controlando la tasa de falsos descubrimientos."""
+    orden = sorted(range(len(p)), key=lambda i: p[i])
+    k = max((r + 1 for r, i in enumerate(orden) if p[i] <= (r + 1) / len(p) * nivel), default=0)
+    significativos = set(orden[:k])
+    return [i in significativos for i in range(len(p))]
+
+
+def pruebas(m: dict) -> dict:
+    """Los p-valores de un dolor medido: segmento y placebo contra control."""
+    seg, ctrl, plac = m["segmento"], m["control"], m["placebo"]
+    n = lambda g: len(g["tienen"])
+    d = lambda g: len(desatendidos(g))
+    return {"p_tienen": p_mas_frecuente(n(seg), seg["medidas"], n(ctrl), ctrl["medidas"]),
+            "p_desatendidos": p_mas_frecuente(d(seg), seg["medidas"], d(ctrl), ctrl["medidas"]),
+            "p_placebo": p_mas_frecuente(d(plac), plac["medidas"], d(ctrl), ctrl["medidas"])}
+
+
+def decidir(dolores: list[dict], tarjetas: dict) -> dict:
+    """Pone el veredicto a todos los dolores de la corrida juntos (la corrección es sobre todos) y
+    devuelve la tasa de falsos positivos del placebo."""
+    ps = [pruebas(x["medicion"]) for x in dolores]
+    tiene_sig = benjamini_hochberg([p["p_tienen"] for p in ps])
+    desat_sig = benjamini_hochberg([p["p_desatendidos"] for p in ps])
+    for x, p, t, dsig in zip(dolores, ps, tiene_sig, desat_sig):
+        seg = x["medicion"]["segmento"]
+        sin_resolver = desatendidos(seg)
+        productos = sum(k >= DESATENDIDOS_POR_PRODUCTO for k in Counter(tarjetas[i]["producto"] for i in sin_resolver).values())
+        datos = {"personas": len(seg["tienen"]), "desatendidos": len(sin_resolver), "de": seg["medidas"],
+                 "en_el_control": len(x["medicion"]["control"]["tienen"]), **{k: round(v, 4) for k, v in p.items()},
+                 "productos_con_desatendidos": productos}
+        if not t:
+            v = {"pasa": False, "motivo": "no es más frecuente en el segmento que en el control (Fisher, corregido)"}
+        elif not dsig:
+            v = {"pasa": False, "rama": "precio_o_acceso", "motivo": "la solución actual le sirve al segmento: sin agujero para algo mejor"}
+        elif productos < MIN_PRODUCTOS_CON_DESATENDIDOS:
+            v = {"pasa": False, "motivo": "los desatendidos son de un solo producto: es el defecto de ese producto"}
+        else:
+            v = {"pasa": True, "motivo": f"{len(sin_resolver)} desatendidos de {seg['medidas']}, contra "
+                                         f"{len(desatendidos(x['medicion']['control']))} en el control (p = {p['p_desatendidos']:.4f})"}
+        x["veredicto"] = {**v, **datos}
+    falsos = sum(p["p_placebo"] <= NIVEL_DE_SIGNIFICANCIA for p in ps)
+    return {"dolores": len(dolores), "placebo_significativos": falsos,
+            "tasa_de_falsos_positivos_del_placebo": round(falsos / max(1, len(ps)), 3)}
 
 
 def muestra(gente: list[dict], n: int, etiqueta: str) -> list[dict]:
@@ -107,12 +143,11 @@ def muestra(gente: list[dict], n: int, etiqueta: str) -> list[dict]:
 
 
 def dolores_del_segmento(cliente, mapa: dict, miembros: dict, tarjetas: dict, todos: dict, traza: list) -> list[dict]:
-    """Hipótesis de dolor del segmento, cada una medida en el segmento y en un control al azar."""
+    """Hipótesis de dolor del segmento, cada una medida en el segmento, un control y un placebo
+    (gente al azar de fuera del segmento, distinta en cada grupo). El veredicto lo pone `decidir`."""
     del_segmento = muestra(list(miembros.values()), PERSONAS_MEDIDAS, mapa["segmento"])
-    control = muestra([t for i, t in tarjetas.items() if i not in miembros], len(del_segmento), f"control {mapa['segmento']}")
-    salida = []
-    for d in proponer_dolores(cliente, mapa, traza):
-        en_segmento, en_control = medir(cliente, d, del_segmento, todos, traza), medir(cliente, d, control, todos, traza)
-        salida.append({**d, "medicion": {"segmento": en_segmento, "control": {"medidas": en_control["medidas"], "tienen": en_control["tienen"]}},
-                       "veredicto": veredicto(en_segmento, en_control, tarjetas)})
-    return salida
+    afuera = muestra([t for i, t in tarjetas.items() if i not in miembros], 2 * len(del_segmento), f"afuera {mapa['segmento']}")
+    control, placebo = afuera[:len(del_segmento)], afuera[len(del_segmento):]
+    return [{**d, "medicion": {g: medir(cliente, d, gente, todos, traza)
+                               for g, gente in (("segmento", del_segmento), ("control", control), ("placebo", placebo))}}
+            for d in proponer_dolores(cliente, mapa, traza)]
