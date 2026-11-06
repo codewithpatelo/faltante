@@ -9,6 +9,9 @@ on:
       particion:
         description: "Qué productos leer: escala_dev o escala_test (test se corre una sola vez)"
         default: "escala_dev"
+      tarea:
+        description: "serendipia (todo el programa) o dolor_de_la_propuesta (mide el dolor de las propuestas guardadas)"
+        default: "serendipia"
 permissions:
   contents: write
 jobs:
@@ -21,7 +24,13 @@ jobs:
           python-version: "3.12"
       - run: pip install -r requirements.txt
       - run: make test
+      - name: Dolor de las propuestas guardadas
+        if: inputs.tarea == 'dolor_de_la_propuesta'
+        env:
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+        run: python -m harness.dolor_de_la_propuesta data/evaluacion/versiones_escala_dev/eval-personas-libres_*.json
       - name: Personas, segmentos y propuestas con la API, y embudo
+        if: inputs.tarea != 'dolor_de_la_propuesta'
         env:
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
         run: make serendipia-api PARTICION=${{ inputs.particion }}
