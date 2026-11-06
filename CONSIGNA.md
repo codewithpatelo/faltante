@@ -49,8 +49,9 @@ recolección; B2 se escribió después de leer dev.
 1. En GitHub: Settings → Secrets and variables → Actions → *New repository secret*:
    `DEEPSEEK_API_KEY` (ya está cargada).
 2. Pestaña Actions → workflow **llm** → *Run workflow*.
-3. Corre los tests y `make serendipia-api` (paso del LLM sobre test con DeepSeek Flash, guardrail con
-   reintento, embudo) y deja propuestas, costo, latencia y traza en la rama `resultados-llm`.
+3. Según la tarea: `serendipia` (los dos pasos del LLM con DeepSeek Flash, guardrail con
+   reintento y embudo), `explorar` (compara las 25 variantes del prompt) u `optimizar`. Deja
+   propuestas, costo, latencia y traza como archivo de la corrida (`gh run download <id>`).
 
 Alternativa local: `DEEPSEEK_API_KEY=... make serendipia-api`.
 

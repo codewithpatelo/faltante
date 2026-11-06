@@ -1,0 +1,361 @@
+{
+ "particion": "dev",
+ "origen": "registro de la corrida 42132754136 de GitHub Actions (el JSON completo no se pudo guardar: la rama de resultados rechazó el push); quedan las medidas por variante, no el texto de las propuestas",
+ "señales_verificadas": null,
+ "costo_total": {
+  "usd": 0.8042,
+  "segundos": 3532.6
+ },
+ "variantes": [
+  {
+   "variante": "V03",
+   "propuestas": 9,
+   "validas_distintas": 8,
+   "no_obvias": 5,
+   "opciones": {
+    "estructura": "inspiraciones_lejanas",
+    "abduccion": "directa",
+    "diversidad": "repreguntar",
+    "rol": "antropologo",
+    "evitar_obvio": "no",
+    "razonamiento": "alto"
+   }
+  },
+  {
+   "variante": "V09",
+   "propuestas": 9,
+   "validas_distintas": 7,
+   "no_obvias": 4,
+   "opciones": {
+    "estructura": "todo_junto",
+    "abduccion": "sherlock",
+    "diversidad": "repreguntar",
+    "rol": "antropologo",
+    "evitar_obvio": "si",
+    "razonamiento": "conciso"
+   }
+  },
+  {
+   "variante": "V14",
+   "propuestas": 7,
+   "validas_distintas": 6,
+   "no_obvias": 4,
+   "opciones": {
+    "estructura": "inspiraciones_lejanas",
+    "abduccion": "rival",
+    "diversidad": "repreguntar",
+    "rol": "detective",
+    "evitar_obvio": "si",
+    "razonamiento": "conciso"
+   }
+  },
+  {
+   "variante": "V17",
+   "propuestas": 7,
+   "validas_distintas": 6,
+   "no_obvias": 3,
+   "opciones": {
+    "estructura": "inspiraciones_lejanas",
+    "abduccion": "sherlock",
+    "diversidad": "repreguntar",
+    "rol": "detective",
+    "evitar_obvio": "no",
+    "razonamiento": "conciso"
+   }
+  },
+  {
+   "variante": "V01",
+   "propuestas": 8,
+   "validas_distintas": 5,
+   "no_obvias": 3,
+   "opciones": {
+    "estructura": "agrupar_primero",
+    "abduccion": "directa",
+    "diversidad": "repreguntar",
+    "rol": "importador",
+    "evitar_obvio": "si",
+    "razonamiento": "conciso"
+   }
+  },
+  {
+   "variante": "V11",
+   "propuestas": 4,
+   "validas_distintas": 3,
+   "no_obvias": 3,
+   "opciones": {
+    "estructura": "inspiraciones_lejanas",
+    "abduccion": "directa",
+    "diversidad": "una_pasada",
+    "rol": "detective",
+    "evitar_obvio": "si",
+    "razonamiento": "conciso"
+   }
+  },
+  {
+   "variante": "V13",
+   "propuestas": 3,
+   "validas_distintas": 3,
+   "no_obvias": 3,
+   "opciones": {
+    "estructura": "agrupar_primero",
+    "abduccion": "sherlock",
+    "diversidad": "una_pasada",
+    "rol": "antropologo",
+    "evitar_obvio": "si",
+    "razonamiento": "conciso"
+   }
+  },
+  {
+   "variante": "V22",
+   "propuestas": 8,
+   "validas_distintas": 7,
+   "no_obvias": 2,
+   "opciones": {
+    "estructura": "agrupar_primero",
+    "abduccion": "rival",
+    "diversidad": "repreguntar",
+    "rol": "importador",
+    "evitar_obvio": "no",
+    "razonamiento": "alto"
+   }
+  },
+  {
+   "variante": "V12",
+   "propuestas": 7,
+   "validas_distintas": 6,
+   "no_obvias": 2,
+   "opciones": {
+    "estructura": "todo_junto",
+    "abduccion": "rival",
+    "diversidad": "repreguntar",
+    "rol": "antropologo",
+    "evitar_obvio": "no",
+    "razonamiento": "conciso"
+   }
+  },
+  {
+   "variante": "V04",
+   "propuestas": 4,
+   "validas_distintas": 4,
+   "no_obvias": 2,
+   "opciones": {
+    "estructura": "agrupar_primero",
+    "abduccion": "directa",
+    "diversidad": "una_pasada",
+    "rol": "antropologo",
+    "evitar_obvio": "no",
+    "razonamiento": "conciso"
+   }
+  },
+  {
+   "variante": "V10",
+   "propuestas": 6,
+   "validas_distintas": 4,
+   "no_obvias": 2,
+   "opciones": {
+    "estructura": "todo_junto",
+    "abduccion": "directa",
+    "diversidad": "repreguntar",
+    "rol": "importador",
+    "evitar_obvio": "si",
+    "razonamiento": "conciso"
+   }
+  },
+  {
+   "variante": "V16",
+   "propuestas": 6,
+   "validas_distintas": 3,
+   "no_obvias": 2,
+   "opciones": {
+    "estructura": "todo_junto",
+    "abduccion": "sherlock",
+    "diversidad": "repreguntar",
+    "rol": "detective",
+    "evitar_obvio": "si",
+    "razonamiento": "alto"
+   }
+  },
+  {
+   "variante": "V20",
+   "propuestas": 4,
+   "validas_distintas": 3,
+   "no_obvias": 2,
+   "opciones": {
+    "estructura": "agrupar_primero",
+    "abduccion": "sherlock",
+    "diversidad": "una_pasada",
+    "rol": "detective",
+    "evitar_obvio": "si",
+    "razonamiento": "conciso"
+   }
+  },
+  {
+   "variante": "V05",
+   "propuestas": 3,
+   "validas_distintas": 2,
+   "no_obvias": 2,
+   "opciones": {
+    "estructura": "agrupar_primero",
+    "abduccion": "directa",
+    "diversidad": "una_pasada",
+    "rol": "antropologo",
+    "evitar_obvio": "si",
+    "razonamiento": "alto"
+   }
+  },
+  {
+   "variante": "V24",
+   "propuestas": 9,
+   "validas_distintas": 8,
+   "no_obvias": 1,
+   "opciones": {
+    "estructura": "todo_junto",
+    "abduccion": "rival",
+    "diversidad": "repreguntar",
+    "rol": "detective",
+    "evitar_obvio": "no",
+    "razonamiento": "alto"
+   }
+  },
+  {
+   "variante": "V08",
+   "propuestas": 7,
+   "validas_distintas": 6,
+   "no_obvias": 1,
+   "opciones": {
+    "estructura": "agrupar_primero",
+    "abduccion": "directa",
+    "diversidad": "repreguntar",
+    "rol": "detective",
+    "evitar_obvio": "no",
+    "razonamiento": "alto"
+   }
+  },
+  {
+   "variante": "V19",
+   "propuestas": 6,
+   "validas_distintas": 5,
+   "no_obvias": 1,
+   "opciones": {
+    "estructura": "inspiraciones_lejanas",
+    "abduccion": "sherlock",
+    "diversidad": "repreguntar",
+    "rol": "importador",
+    "evitar_obvio": "no",
+    "razonamiento": "conciso"
+   }
+  },
+  {
+   "variante": "V21",
+   "propuestas": 7,
+   "validas_distintas": 4,
+   "no_obvias": 1,
+   "opciones": {
+    "estructura": "agrupar_primero",
+    "abduccion": "sherlock",
+    "diversidad": "repreguntar",
+    "rol": "antropologo",
+    "evitar_obvio": "si",
+    "razonamiento": "alto"
+   }
+  },
+  {
+   "variante": "V23",
+   "propuestas": 4,
+   "validas_distintas": 3,
+   "no_obvias": 1,
+   "opciones": {
+    "estructura": "agrupar_primero",
+    "abduccion": "sherlock",
+    "diversidad": "una_pasada",
+    "rol": "importador",
+    "evitar_obvio": "no",
+    "razonamiento": "alto"
+   }
+  },
+  {
+   "variante": "V25",
+   "propuestas": 4,
+   "validas_distintas": 3,
+   "no_obvias": 1,
+   "opciones": {
+    "estructura": "todo_junto",
+    "abduccion": "rival",
+    "diversidad": "una_pasada",
+    "rol": "importador",
+    "evitar_obvio": "no",
+    "razonamiento": "alto"
+   }
+  },
+  {
+   "variante": "V07",
+   "propuestas": 3,
+   "validas_distintas": 2,
+   "no_obvias": 1,
+   "opciones": {
+    "estructura": "inspiraciones_lejanas",
+    "abduccion": "directa",
+    "diversidad": "una_pasada",
+    "rol": "importador",
+    "evitar_obvio": "si",
+    "razonamiento": "alto"
+   }
+  },
+  {
+   "variante": "V15",
+   "propuestas": 4,
+   "validas_distintas": 2,
+   "no_obvias": 1,
+   "opciones": {
+    "estructura": "inspiraciones_lejanas",
+    "abduccion": "sherlock",
+    "diversidad": "una_pasada",
+    "rol": "importador",
+    "evitar_obvio": "si",
+    "razonamiento": "alto"
+   }
+  },
+  {
+   "variante": "V18",
+   "propuestas": 4,
+   "validas_distintas": 4,
+   "no_obvias": 0,
+   "opciones": {
+    "estructura": "inspiraciones_lejanas",
+    "abduccion": "rival",
+    "diversidad": "una_pasada",
+    "rol": "importador",
+    "evitar_obvio": "no",
+    "razonamiento": "conciso"
+   }
+  },
+  {
+   "variante": "V02",
+   "propuestas": 3,
+   "validas_distintas": 3,
+   "no_obvias": 0,
+   "opciones": {
+    "estructura": "inspiraciones_lejanas",
+    "abduccion": "directa",
+    "diversidad": "una_pasada",
+    "rol": "antropologo",
+    "evitar_obvio": "no",
+    "razonamiento": "conciso"
+   }
+  },
+  {
+   "variante": "V06",
+   "propuestas": 4,
+   "validas_distintas": 1,
+   "no_obvias": 0,
+   "opciones": {
+    "estructura": "todo_junto",
+    "abduccion": "rival",
+    "diversidad": "una_pasada",
+    "rol": "detective",
+    "evitar_obvio": "si",
+    "razonamiento": "alto"
+   }
+  }
+ ]
+}

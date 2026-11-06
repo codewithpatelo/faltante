@@ -122,8 +122,9 @@ make todo      # tests + el embudo en dev y test sobre los datos guardados (sin 
 productos, ~USD 3. La recolección en el navegador lleva ~1 minuto por producto.
 
 Sin compartir claves: `DEEPSEEK_API_KEY` está cargada como secreto del repo (Actions). Se
-corre el workflow **llm** desde la pestaña Actions y los resultados quedan en la rama
-`resultados-llm`.
+corre el workflow **llm** desde la pestaña Actions eligiendo la tarea (serendipia, explorar u
+optimizar) y la partición; los resultados quedan como archivo de la corrida
+(`gh run download <id>`).
 
 ## Datos
 
