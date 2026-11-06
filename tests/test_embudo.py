@@ -92,7 +92,7 @@ def test_el_fob_maximo_deja_justo_el_margen_minimo():
     fob = {"fob": [2.0, 3.3, 7.0], "die": [0.18, 0.35], "volumen_m3": 0.00015}
     m = c.margen(fob, 17416)
     costo_ars = costo_puesto_usd(m["fob_maximo_usd"], 0.18, 0.00015, m["lote"])["total"] * TIPO_CAMBIO
-    assert abs(ingreso_neto_ars(17416, m["envio_ars"]) / costo_ars - (1 + U.MIN_MARGEN_SOBRE_COSTO)) < 0.01
+    assert abs((ingreso_neto_ars(17416, m["envio_ars"]) - costo_ars) / 17416 - U.MIN_MARGEN_NETO) < 0.002
 
 
 def test_la_logistica_cobra_al_menos_1_m3_por_embarque():

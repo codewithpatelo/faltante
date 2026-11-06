@@ -14,7 +14,7 @@
   "busqueda_ml": "discos repuesto afilador rodante",
   "estado": "condicional",
   "se_detiene_en": "C6 margen",
-  "motivo": "margen base 27% a $17,416; pasa si el FOB es ≤ USD 3.21",
+  "motivo": "margen neto base -9.1% a $17,416; pasa si el FOB es ≤ USD 1.99",
   "señales": [
    {
     "id": "P01.S1",
@@ -125,27 +125,29 @@
     "chequeo": "C6 margen",
     "supuesto": "Deja plata al precio que la gente paga",
     "pasa": false,
-    "motivo": "margen base 27% a $17,416; pasa si el FOB es ≤ USD 3.21",
+    "motivo": "margen neto base -9.1% a $17,416; pasa si el FOB es ≤ USD 1.99",
     "datos": {
      "precio_ars": 17416,
-     "ingreso_neto_ars": 8951,
      "lote": 1000,
      "envio_ars": 2500,
      "escenarios": {
       "optimista": {
+       "ingreso_neto_ars": 6752,
        "costo_puesto_ars": 5715,
-       "margen_pct": 57
+       "margen_neto_pct": 6.0
       },
       "base": {
+       "ingreso_neto_ars": 5457,
        "costo_puesto_ars": 7049,
-       "margen_pct": 27
+       "margen_neto_pct": -9.1
       },
       "pesimista": {
-       "costo_puesto_ars": 16030,
-       "margen_pct": -44
+       "ingreso_neto_ars": 3366,
+       "costo_puesto_ars": 16014,
+       "margen_neto_pct": -72.6
       }
      },
-     "fob_maximo_usd": 3.21
+     "fob_maximo_usd": 1.99
     }
    }
   ],
@@ -159,14 +161,14 @@
    "en_contra": [
     "los equivalentes casi no se venden: puede que no lo quiera tanta gente",
     "el precio de referencia sale de pocas publicaciones",
-    "en el escenario pesimista no deja el margen mínimo"
+    "en el escenario pesimista no deja la ganancia de referencia"
    ],
    "evidencia": {
     "anclas": 2,
     "max_menciones": 11,
     "ventas_de_equivalentes": 200,
     "publicaciones_con_precio": 2,
-    "margen_pesimista_pct": -44
+    "margen_pesimista_pct": -72.6
    }
   }
  },
@@ -693,9 +695,9 @@
   "id": "B2",
   "que_traer": "repuesto de afilador cuchillos rodante",
   "busqueda_ml": "repuesto afilador cuchillos rodante",
-  "estado": "condicional",
+  "estado": "descartada",
   "se_detiene_en": "C6 margen",
-  "motivo": "margen base 24% a $17,107; pasa si el FOB es ≤ USD 3.13",
+  "motivo": "margen neto base -10.1% a $17,107 (haría falta FOB ≤ USD 1.92)",
   "señales": [
    {
     "id": "P01.B2",
@@ -766,50 +768,32 @@
     "chequeo": "C6 margen",
     "supuesto": "Deja plata al precio que la gente paga",
     "pasa": false,
-    "motivo": "margen base 24% a $17,107; pasa si el FOB es ≤ USD 3.13",
+    "motivo": "margen neto base -10.1% a $17,107 (haría falta FOB ≤ USD 1.92)",
     "datos": {
      "precio_ars": 17107,
-     "ingreso_neto_ars": 8748,
      "lote": 1000,
      "envio_ars": 2500,
      "escenarios": {
       "optimista": {
+       "ingreso_neto_ars": 6590,
        "costo_puesto_ars": 5715,
-       "margen_pct": 53
+       "margen_neto_pct": 5.1
       },
       "base": {
+       "ingreso_neto_ars": 5318,
        "costo_puesto_ars": 7049,
-       "margen_pct": 24
+       "margen_neto_pct": -10.1
       },
       "pesimista": {
-       "costo_puesto_ars": 16030,
-       "margen_pct": -45
+       "ingreso_neto_ars": 3271,
+       "costo_puesto_ars": 16014,
+       "margen_neto_pct": -74.5
       }
      },
-     "fob_maximo_usd": 3.13
+     "fob_maximo_usd": 1.92
     }
    }
-  ],
-  "confianza": {
-   "nivel": "media",
-   "factores_que_se_cumplen": "3 de 5",
-   "a_favor": [
-    "la misma necesidad aparece en 2 o más productos distintos",
-    "la gente ya elige este tipo de producto: los equivalentes suman +500 ventas",
-    "el precio de referencia sale de 3 o más publicaciones con ventas"
-   ],
-   "en_contra": [
-    "la mencionan menos de 10 textos",
-    "en el escenario pesimista no deja el margen mínimo"
-   ],
-   "evidencia": {
-    "anclas": 2,
-    "max_menciones": 7,
-    "ventas_de_equivalentes": 1150,
-    "publicaciones_con_precio": 4,
-    "margen_pesimista_pct": -45
-   }
-  }
+  ]
  },
  {
   "metodo": "B1",
@@ -872,9 +856,9 @@
   "id": "B2",
   "que_traer": "repuesto de afilador cuchillos rodante",
   "busqueda_ml": "repuesto afilador cuchillos rodante",
-  "estado": "condicional",
+  "estado": "descartada",
   "se_detiene_en": "C6 margen",
-  "motivo": "margen base 24% a $17,107; pasa si el FOB es ≤ USD 3.13",
+  "motivo": "margen neto base -10.1% a $17,107 (haría falta FOB ≤ USD 1.92)",
   "señales": [
    {
     "id": "P02.B2",
@@ -945,50 +929,32 @@
     "chequeo": "C6 margen",
     "supuesto": "Deja plata al precio que la gente paga",
     "pasa": false,
-    "motivo": "margen base 24% a $17,107; pasa si el FOB es ≤ USD 3.13",
+    "motivo": "margen neto base -10.1% a $17,107 (haría falta FOB ≤ USD 1.92)",
     "datos": {
      "precio_ars": 17107,
-     "ingreso_neto_ars": 8748,
      "lote": 1000,
      "envio_ars": 2500,
      "escenarios": {
       "optimista": {
+       "ingreso_neto_ars": 6590,
        "costo_puesto_ars": 5715,
-       "margen_pct": 53
+       "margen_neto_pct": 5.1
       },
       "base": {
+       "ingreso_neto_ars": 5318,
        "costo_puesto_ars": 7049,
-       "margen_pct": 24
+       "margen_neto_pct": -10.1
       },
       "pesimista": {
-       "costo_puesto_ars": 16030,
-       "margen_pct": -45
+       "ingreso_neto_ars": 3271,
+       "costo_puesto_ars": 16014,
+       "margen_neto_pct": -74.5
       }
      },
-     "fob_maximo_usd": 3.13
+     "fob_maximo_usd": 1.92
     }
    }
-  ],
-  "confianza": {
-   "nivel": "media",
-   "factores_que_se_cumplen": "3 de 5",
-   "a_favor": [
-    "la misma necesidad aparece en 2 o más productos distintos",
-    "la gente ya elige este tipo de producto: los equivalentes suman +500 ventas",
-    "el precio de referencia sale de 3 o más publicaciones con ventas"
-   ],
-   "en_contra": [
-    "la mencionan menos de 10 textos",
-    "en el escenario pesimista no deja el margen mínimo"
-   ],
-   "evidencia": {
-    "anclas": 2,
-    "max_menciones": 7,
-    "ventas_de_equivalentes": 1150,
-    "publicaciones_con_precio": 4,
-    "margen_pesimista_pct": -45
-   }
-  }
+  ]
  },
  {
   "metodo": "B1",

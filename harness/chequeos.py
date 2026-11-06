@@ -135,13 +135,13 @@ def c6_margen(p) -> Resultado:
     if p.fob is None:
         return Resultado(False, "sin precio de proveedor: falta cotizarlo")
     m = margen(p.fob, precio)
-    base, piso = m["escenarios"]["base"]["margen_pct"], round(U.MIN_MARGEN_SOBRE_COSTO * 100)
+    base, piso = m["escenarios"]["base"]["margen_neto_pct"], round(U.MIN_MARGEN_NETO * 100, 1)
     if base >= piso:
-        return Resultado(True, f"margen base {base}% a ${precio:,}", m)
-    if m["escenarios"]["optimista"]["margen_pct"] >= piso:
-        return Resultado(False, f"margen base {base}% a ${precio:,}; pasa si el FOB es ≤ USD {m['fob_maximo_usd']}",
+        return Resultado(True, f"margen neto base {base}% a ${precio:,} (referencia del sector: {piso}%)", m)
+    if m["escenarios"]["optimista"]["margen_neto_pct"] >= piso:
+        return Resultado(False, f"margen neto base {base}% a ${precio:,}; pasa si el FOB es ≤ USD {m['fob_maximo_usd']}",
                          m, condicional=True)
-    return Resultado(False, f"margen base {base}% a ${precio:,} (haría falta FOB ≤ USD {m['fob_maximo_usd']})", m)
+    return Resultado(False, f"margen neto base {base}% a ${precio:,} (haría falta FOB ≤ USD {m['fob_maximo_usd']})", m)
 
 
 # --- Ayudas de C4 a C6 -----------------------------------------------------------------------
@@ -184,25 +184,27 @@ def precio_de_mercado(p) -> int | None:
 
 
 def margen(fob: dict, precio_ars: float) -> dict:
-    """Margen sobre costo puesto en tres escenarios (optimista, base, pesimista) y el FOB
-    máximo que todavía deja el margen mínimo: es lo que hay que pedirle al proveedor."""
+    """Margen neto sobre el precio en tres escenarios (optimista, base, pesimista: proveedor,
+    arancel, comisión, impuestos, publicidad, devoluciones y seguro en su extremo) y el FOB máximo
+    que en el escenario base deja la ganancia de referencia del sector: es lo que hay que pedirle
+    al proveedor."""
     lote = min(U.UNIDADES_MAX_PRIMER_LOTE, int(1 / (fob["volumen_m3"] * cp.EMBALAJE)))
     envio = U.ENVIO_DEBAJO_DEL_PISO if precio_ars < U.PRECIO_DESDE_EL_QUE_EL_ENVIO_ES_GRATIS else U.ENVIO_ARRIBA_DEL_PISO
-    neto = cp.ingreso_neto_ars(precio_ars, envio)
     escenarios = {}
-    for nombre, f, die in (("optimista", fob["fob"][0], fob["die"][0]), ("base", fob["fob"][1], fob["die"][0]),
-                           ("pesimista", fob["fob"][2], fob["die"][1])):
-        costo = cp.costo_puesto_usd(f, die, fob["volumen_m3"], lote)["total"] * cp.TIPO_CAMBIO
-        escenarios[nombre] = {"costo_puesto_ars": round(costo), "margen_pct": round((neto - costo) / costo * 100)}
-    return {"precio_ars": precio_ars, "ingreso_neto_ars": round(neto), "lote": lote, "envio_ars": envio,
-            "escenarios": escenarios, "fob_maximo_usd": fob_maximo(fob, neto, lote)}
+    for k, nombre in enumerate(cp.ESCENARIOS):
+        die = fob["die"][0] if k < 2 else fob["die"][1]
+        neto = cp.ingreso_neto_ars(precio_ars, envio, k)
+        costo = cp.costo_puesto_usd(fob["fob"][k], die, fob["volumen_m3"], lote, k)["total"] * cp.TIPO_CAMBIO
+        escenarios[nombre] = {"ingreso_neto_ars": round(neto), "costo_puesto_ars": round(costo),
+                              "margen_neto_pct": round((neto - costo) / precio_ars * 100, 1)}
+    return {"precio_ars": precio_ars, "lote": lote, "envio_ars": envio, "escenarios": escenarios,
+            "fob_maximo_usd": fob_maximo(fob, cp.ingreso_neto_ars(precio_ars, envio, 1) - U.MIN_MARGEN_NETO * precio_ars, lote)}
 
 
-def fob_maximo(fob: dict, ingreso_neto_ars: float, lote: int) -> float:
-    """Despeja el FOB de costo_puesto_usd para que el costo deje justo el margen mínimo."""
+def fob_maximo(fob: dict, costo_max_ars: float, lote: int) -> float:
+    """Despeja el FOB de costo_puesto_usd (escenario base) para que el costo puesto sea `costo_max_ars`."""
     vol = max(1.0, fob["volumen_m3"] * cp.EMBALAJE * lote) / lote
     impuestos = fob["die"][0] + cp.TASA_ESTADISTICA
-    costo_max = ingreso_neto_ars / (1 + U.MIN_MARGEN_SOBRE_COSTO) / cp.TIPO_CAMBIO
+    costo_max = costo_max_ars / cp.TIPO_CAMBIO
     return round((costo_max - cp.LOGISTICA_M3 * vol - cp.FLETE_M3_PARA_CIF * vol * impuestos)
-                 / (1 + (1 + cp.SEGURO) * impuestos), 2)
-
+                 / (1 + (1 + cp.SEGURO[1] * 1.1) * impuestos), 2)

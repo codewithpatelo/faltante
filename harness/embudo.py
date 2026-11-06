@@ -36,7 +36,8 @@ EMBUDO = [
             "3 o más alternativas con stock local y precio comparable venden, entre todas, menos del 25% "
             "que el producto de origen: la gente las tuvo enfrente y las dejó pasar", c.c5_la_eligen),
     Chequeo("C6 margen", "Deja plata al precio que la gente paga",
-            "menos de 30% sobre costo puesto; si alcanza solo con un FOB más bajo, queda condicional", c.c6_margen),
+            "ganancia neta (después de comisión, impuestos, envío, publicidad y devoluciones) menor que la del "
+            "comercio minorista (Damodaran); si alcanza solo con un FOB más bajo, queda condicional", c.c6_margen),
 ]
 
 

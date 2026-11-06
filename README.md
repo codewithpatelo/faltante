@@ -84,7 +84,7 @@ voto con las manos ────┘   (divergente)     críticos y mata el humo (
 | C3 demanda | Hay gente eligiendo el producto de origen | Vende menos de +500 | Código |
 | C4 hueco | Nadie la atiende todavía | 3 o más equivalentes ya venden +100 | Código + captura |
 | C5 la eligen | Si se ofrece, la gente la elige | 3 o más alternativas con stock local y precio comparable venden, entre todas, menos del 25% que el producto de origen | Código + captura |
-| C6 margen | Deja plata al precio que la gente paga | Menos de 30% sobre costo puesto; si alcanza solo con un FOB más bajo, queda condicional | Código |
+| C6 margen | Deja plata al precio que la gente paga | Ganancia neta (después de comisión, impuestos, envío, publicidad y devoluciones) menor que la del comercio minorista (5,19%, Damodaran); si alcanza solo con un FOB más bajo, queda condicional | Código |
 | Confianza | — | A lo que sobrevive le pone alta, media o baja según 5 factores de sí o no (`harness/confianza.py`) | Código |
 
 **Cómo se eligió el prompt del paso B:** no a ojo. Se arman 25 variantes que combinan

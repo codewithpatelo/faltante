@@ -17,7 +17,7 @@ propuestas fueron triviales y la muestra es insignificante (ver "¿Sirve?" en el
 |---|---|
 | **De dónde sale** | Los dos afiladores más elegidos de su búsqueda venden +1.000 cada uno (P01 y P02). En las preguntas piden **discos de repuesto** y el vendedor no los tiene ("Venden discos de respuesto para el afilador Refilo?", "se consigue repuestos cuando se gastan las piedras?"). |
 | **C4 y C5** | Solo hay un disco suelto para afilador rodante con stock local (+100, $17.416): nadie más lo ofrece, así que la gente no tuvo la opción de dejarlo pasar. |
-| **C6** | A $17.416 el margen base es 27%: **no llega al 30%** con el FOB de catálogo (USD 3,30). Pasa si el proveedor cotiza **≤ USD 3,21** (catálogo: USD 2,60-3,30). |
+| **C6** | A $17.416, con publicidad y devoluciones, la ganancia neta base es -9,1% con el FOB de catálogo (USD 3,30): no llega a la del comercio minorista (5,19%). Pasa si el proveedor cotiza **≤ USD 1,99** (catálogo: USD 2,60-3,30). |
 | **Confianza baja (2 de 5)** | A favor: aparece en 2 productos y la mencionan 11 textos. En contra: el disco que existe vendió poco (+100), el precio sale de una sola publicación y en el escenario pesimista pierde plata. |
 | **Próximo paso** | Cotizar discos compatibles con los afiladores de imán más vendidos; solo si alguna cotización baja de USD 3,21, publicar 50 unidades. |
 

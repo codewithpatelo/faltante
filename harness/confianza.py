@@ -31,9 +31,9 @@ FACTORES = [
     Factor("el precio de referencia sale de 3 o más publicaciones con ventas",
            "el precio de referencia sale de pocas publicaciones",
            lambda o: o["publicaciones_con_precio"] >= U.MIN_PUBLICACIONES_PARA_PRECIO),
-    Factor("deja el margen mínimo aun en el escenario pesimista",
-           "en el escenario pesimista no deja el margen mínimo",
-           lambda o: o["margen_pesimista_pct"] >= U.MIN_MARGEN_SOBRE_COSTO * 100),
+    Factor("deja la ganancia de referencia aun en el escenario pesimista",
+           "en el escenario pesimista no deja la ganancia de referencia",
+           lambda o: o["margen_pesimista_pct"] >= U.MIN_MARGEN_NETO * 100),
 ]
 
 
@@ -47,7 +47,7 @@ def evidencia(recorridos: list[dict]) -> dict:
             "max_menciones": max((s["medida"]["menciones"] for r in recorridos for s in r["señales"] if not s["errores"]), default=0),
             "ventas_de_equivalentes": c4.get("ventas_visibles", 0),
             "publicaciones_con_precio": c4.get("con_alguna_venta", 0),
-            "margen_pesimista_pct": c5.get("escenarios", {}).get("pesimista", {}).get("margen_pct", -100)}
+            "margen_pesimista_pct": c5.get("escenarios", {}).get("pesimista", {}).get("margen_neto_pct", -100)}
 
 
 def confianza(recorridos: list[dict]) -> dict:

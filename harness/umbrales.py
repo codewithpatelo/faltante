@@ -25,7 +25,8 @@ PRECIO_COMPARABLE_HASTA = 1.5         # comparables: con stock local y hasta 1,5
 MIN_VENTAS_VS_ANCLA = 0.25            # decisión: si entre todos venden menos del 25% del producto de origen, la dejan pasar
 
 # C6 · Deja plata al precio que la gente paga
-MIN_MARGEN_SOBRE_COSTO = 0.30         # decisión: colchón para devoluciones, publicidad y error de cotización
+MIN_MARGEN_NETO = 0.0519              # ganancia neta sobre ventas de referencia: Retail (Special Lines), Damodaran, enero 2026; publicidad,
+                                      # devoluciones, comisión, impuestos y logística ya se descuentan (harness/costo_puesto.py)
 UNIDADES_MAX_PRIMER_LOTE = 1000       # el lote llena 1 m3 o llega a este tope, lo que pase primero
 
 # Confianza de una oportunidad que pasó (harness/confianza.py): decisiones nuestras

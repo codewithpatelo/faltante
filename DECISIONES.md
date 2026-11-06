@@ -80,8 +80,16 @@ alternativa, porque explican por sí solos que no se elija.
 **Una oportunidad tiene que dejar plata al precio que la gente paga (C6).**
 El precio de mercado es la mediana de los equivalentes que vendieron algo: una publicación sin
 ventas puede pedir cualquier cosa, y si ningún equivalente vendió, nadie lo compró a ningún
-precio. Si el margen no llega, se calcula el FOB máximo: la oportunidad queda condicional y el
-experimento siguiente es pedir cotización.
+precio. El piso no es un número elegido: es la ganancia neta sobre ventas del comercio minorista
+(Damodaran, enero 2026, 5,19%), después de descontar todo lo que antes cubría un "colchón" de 30%
+puesto a ojo: comisión, impuestos, envío, publicidad (ACOS de Hogar en Mercado Libre) y
+devoluciones (contadas como unidad perdida). Cada costo incierto va en tres escenarios con la
+fuente de cada extremo (`harness/costo_puesto.py`). Con esos costos a la vista, la publicidad y
+las devoluciones se comen cerca de un cuarto del precio: el pastillero de dev, que con el 30%
+"casi pasaba", necesita un FOB de USD 1,99, debajo del catálogo. Si el margen no llega, se
+calcula el FOB máximo: la oportunidad queda condicional y el experimento siguiente es pedir
+cotización. Pendiente de fuente oficial: la alícuota de Ingresos Brutos y el volumen extra del
+embalaje.
 
 **Confianza calculada, no opinada.**
 Sobrevivir dice que nada refutó la oportunidad; no dice cuán sólida es la evidencia. La
