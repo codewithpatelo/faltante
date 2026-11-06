@@ -331,9 +331,9 @@
   "id": "G2.O1b",
   "que_traer": "Arnés de cabeza antitirones (tipo Halti / Gentle Leader) para perros medianos y grandes, con anilla frontal, acolchado en hocico y nuca y correa corta de conexión al collar incluidas",
   "busqueda_ml": "arnes de cabeza antitirones para perro",
-  "estado": "descartada",
+  "estado": "condicional",
   "se_detiene_en": "C6 margen",
-  "motivo": "sin precio de proveedor: falta cotizarlo",
+  "motivo": "margen neto base -9.4% a $10,449; pasa si el FOB es ≤ USD 0.57",
   "señales": [
    {
     "id": "E034.G2O1b",
@@ -410,9 +410,59 @@
     "chequeo": "C6 margen",
     "supuesto": "Deja plata al precio que la gente paga",
     "pasa": false,
-    "motivo": "sin precio de proveedor: falta cotizarlo"
+    "motivo": "margen neto base -9.4% a $10,449; pasa si el FOB es ≤ USD 0.57",
+    "datos": {
+     "precio_ars": 10449,
+     "lote": 1000,
+     "envio_ars": 2500,
+     "escenarios": {
+      "optimista": {
+       "ingreso_neto_ars": 3101,
+       "costo_puesto_ars": 1774,
+       "margen_neto_pct": 12.7
+      },
+      "base": {
+       "ingreso_neto_ars": 2406,
+       "costo_puesto_ars": 3391,
+       "margen_neto_pct": -9.4
+      },
+      "pesimista": {
+       "ingreso_neto_ars": 1219,
+       "costo_puesto_ars": 5181,
+       "margen_neto_pct": -37.9
+      }
+     },
+     "fob_maximo_usd": 0.57
+    }
    }
-  ]
+  ],
+  "confianza": {
+   "riesgos": [
+    "en el escenario pesimista deja -37.9%, menos que la ganancia de referencia"
+   ],
+   "evidencia": {
+    "productos": 2,
+    "dolor": {
+     "desatendidos": 5,
+     "de": 150,
+     "en_el_control": 0,
+     "proporcion_ic95": [
+      0.014,
+      0.076
+     ],
+     "p": 0.03021
+    },
+    "demanda": {
+     "ventas_de_equivalentes_al_menos": 200,
+     "equivalentes_con_ventas": 2
+    },
+    "margen_neto_pct": {
+     "optimista": 12.7,
+     "base": -9.4,
+     "pesimista": -37.9
+    }
+   }
+  }
  },
  {
   "metodo": "llm",
@@ -3386,9 +3436,9 @@
   "id": "G14.O1",
   "que_traer": "Rodillo/masajeador de espalda montable en pared o puerta con ventosas, rodillos de silicona y altura regulable",
   "busqueda_ml": "masajeador de espalda de pared con ventosas",
-  "estado": "descartada",
+  "estado": "condicional",
   "se_detiene_en": "C6 margen",
-  "motivo": "sin precio de mercado: ningún equivalente vendió, nadie lo compró todavía a ningún precio",
+  "motivo": "margen neto base 33.9% a $140,529 (lo que piden; nadie lo compró todavía): pasa si la gente paga ese precio",
   "señales": [
    {
     "id": "E056.G14O1",
@@ -3459,9 +3509,59 @@
     "chequeo": "C6 margen",
     "supuesto": "Deja plata al precio que la gente paga",
     "pasa": false,
-    "motivo": "sin precio de mercado: ningún equivalente vendió, nadie lo compró todavía a ningún precio"
+    "motivo": "margen neto base 33.9% a $140,529 (lo que piden; nadie lo compró todavía): pasa si la gente paga ese precio",
+    "datos": {
+     "precio_ars": 140529,
+     "lote": 217,
+     "envio_ars": 7000,
+     "escenarios": {
+      "optimista": {
+       "ingreso_neto_ars": 66997,
+       "costo_puesto_ars": 7944,
+       "margen_neto_pct": 42.0
+      },
+      "base": {
+       "ingreso_neto_ars": 57652,
+       "costo_puesto_ars": 10048,
+       "margen_neto_pct": 33.9
+      },
+      "pesimista": {
+       "ingreso_neto_ars": 37697,
+       "costo_puesto_ars": 28040,
+       "margen_neto_pct": 6.9
+      }
+     },
+     "fob_maximo_usd": 24.62
+    }
    }
-  ]
+  ],
+  "confianza": {
+   "riesgos": [
+    "ningún equivalente vendió: el precio no lo pagó nadie todavía"
+   ],
+   "evidencia": {
+    "productos": 2,
+    "dolor": {
+     "desatendidos": 51,
+     "de": 150,
+     "en_el_control": 0,
+     "proporcion_ic95": [
+      0.269,
+      0.419
+     ],
+     "p": 0.0
+    },
+    "demanda": {
+     "ventas_de_equivalentes_al_menos": 0,
+     "equivalentes_con_ventas": 0
+    },
+    "margen_neto_pct": {
+     "optimista": 42.0,
+     "base": 33.9,
+     "pesimista": 6.9
+    }
+   }
+  }
  },
  {
   "metodo": "llm",
@@ -4665,9 +4765,9 @@
   "id": "G17.O2b",
   "que_traer": "Aspirador profesional de pelo para estaciones de corte en barbería y peluquería",
   "busqueda_ml": "aspirador de pelo peluqueria",
-  "estado": "descartada",
+  "estado": "condicional",
   "se_detiene_en": "C6 margen",
-  "motivo": "sin precio de mercado: ningún equivalente vendió, nadie lo compró todavía a ningún precio",
+  "motivo": "margen neto base 10.2% a $434,946 (lo que piden; nadie lo compró todavía): pasa si la gente paga ese precio",
   "señales": [
    {
     "id": "E079.G17O2b",
@@ -4729,9 +4829,60 @@
     "chequeo": "C6 margen",
     "supuesto": "Deja plata al precio que la gente paga",
     "pasa": false,
-    "motivo": "sin precio de mercado: ningún equivalente vendió, nadie lo compró todavía a ningún precio"
+    "motivo": "margen neto base 10.2% a $434,946 (lo que piden; nadie lo compró todavía): pasa si la gente paga ese precio",
+    "datos": {
+     "precio_ars": 434946,
+     "lote": 17,
+     "envio_ars": 7000,
+     "escenarios": {
+      "optimista": {
+       "ingreso_neto_ars": 221292,
+       "costo_puesto_ars": 108487,
+       "margen_neto_pct": 25.9
+      },
+      "base": {
+       "ingreso_neto_ars": 192368,
+       "costo_puesto_ars": 148098,
+       "margen_neto_pct": 10.2
+      },
+      "pesimista": {
+       "ingreso_neto_ars": 128407,
+       "costo_puesto_ars": 236725,
+       "margen_neto_pct": -24.9
+      }
+     },
+     "fob_maximo_usd": 65.41
+    }
    }
-  ]
+  ],
+  "confianza": {
+   "riesgos": [
+    "en el escenario pesimista deja -24.9%, menos que la ganancia de referencia",
+    "ningún equivalente vendió: el precio no lo pagó nadie todavía"
+   ],
+   "evidencia": {
+    "productos": 2,
+    "dolor": {
+     "desatendidos": 5,
+     "de": 150,
+     "en_el_control": 0,
+     "proporcion_ic95": [
+      0.014,
+      0.076
+     ],
+     "p": 0.03021
+    },
+    "demanda": {
+     "ventas_de_equivalentes_al_menos": 0,
+     "equivalentes_con_ventas": 0
+    },
+    "margen_neto_pct": {
+     "optimista": 25.9,
+     "base": 10.2,
+     "pesimista": -24.9
+    }
+   }
+  }
  },
  {
   "metodo": "llm",
@@ -4846,9 +4997,9 @@
   "id": "G18.O2",
   "que_traer": "Guía/plantilla de corte con nivel (clip que agarra el mechón) para cortar flequillo, puntas y capas parejas sin técnica; conviene ofrecerla en kit para cubrir el costo fijo de envío.",
   "busqueda_ml": "guia para cortar el pelo en casa",
-  "estado": "descartada",
+  "estado": "condicional",
   "se_detiene_en": "C6 margen",
-  "motivo": "sin precio de mercado: ningún equivalente vendió, nadie lo compró todavía a ningún precio",
+  "motivo": "margen neto base 22.2% a $21,078 (lo que piden; nadie lo compró todavía): pasa si la gente paga ese precio",
   "señales": [
    {
     "id": "E079.G18O2",
@@ -4910,9 +5061,60 @@
     "chequeo": "C6 margen",
     "supuesto": "Deja plata al precio que la gente paga",
     "pasa": false,
-    "motivo": "sin precio de mercado: ningún equivalente vendió, nadie lo compró todavía a ningún precio"
+    "motivo": "margen neto base 22.2% a $21,078 (lo que piden; nadie lo compró todavía): pasa si la gente paga ese precio",
+    "datos": {
+     "precio_ars": 21078,
+     "lote": 1000,
+     "envio_ars": 2500,
+     "escenarios": {
+      "optimista": {
+       "ingreso_neto_ars": 8671,
+       "costo_puesto_ars": 1931,
+       "margen_neto_pct": 32.0
+      },
+      "base": {
+       "ingreso_neto_ars": 7270,
+       "costo_puesto_ars": 2590,
+       "margen_neto_pct": 22.2
+      },
+      "pesimista": {
+       "ingreso_neto_ars": 4494,
+       "costo_puesto_ars": 3470,
+       "margen_neto_pct": 4.9
+      }
+     },
+     "fob_maximo_usd": 2.84
+    }
    }
-  ]
+  ],
+  "confianza": {
+   "riesgos": [
+    "en el escenario pesimista deja 4.9%, menos que la ganancia de referencia",
+    "ningún equivalente vendió: el precio no lo pagó nadie todavía"
+   ],
+   "evidencia": {
+    "productos": 2,
+    "dolor": {
+     "desatendidos": 18,
+     "de": 150,
+     "en_el_control": 0,
+     "proporcion_ic95": [
+      0.077,
+      0.182
+     ],
+     "p": 0.0
+    },
+    "demanda": {
+     "ventas_de_equivalentes_al_menos": 0,
+     "equivalentes_con_ventas": 0
+    },
+    "margen_neto_pct": {
+     "optimista": 32.0,
+     "base": 22.2,
+     "pesimista": 4.9
+    }
+   }
+  }
  },
  {
   "metodo": "llm",
@@ -6831,9 +7033,9 @@
   "id": "G24.O2b",
   "que_traer": "Sombrilla plegable de techo para auto completo (tipo carpa/paraguas que se abre sobre el techo y tapa techo y parabrisas desde afuera, con anclaje a las manijas o al piso)",
   "busqueda_ml": "sombrilla techo auto",
-  "estado": "descartada",
+  "estado": "condicional",
   "se_detiene_en": "C6 margen",
-  "motivo": "sin precio de mercado: ningún equivalente vendió, nadie lo compró todavía a ningún precio",
+  "motivo": "margen neto base 15.2% a $130,411 (lo que piden; nadie lo compró todavía): pasa si la gente paga ese precio",
   "señales": [
    {
     "id": "E071.G24O2b",
@@ -6895,9 +7097,60 @@
     "chequeo": "C6 margen",
     "supuesto": "Deja plata al precio que la gente paga",
     "pasa": false,
-    "motivo": "sin precio de mercado: ningún equivalente vendió, nadie lo compró todavía a ningún precio"
+    "motivo": "margen neto base 15.2% a $130,411 (lo que piden; nadie lo compró todavía): pasa si la gente paga ese precio",
+    "datos": {
+     "precio_ars": 130411,
+     "lote": 43,
+     "envio_ars": 7000,
+     "escenarios": {
+      "optimista": {
+       "ingreso_neto_ars": 61695,
+       "costo_puesto_ars": 28401,
+       "margen_neto_pct": 25.5
+      },
+      "base": {
+       "ingreso_neto_ars": 53022,
+       "costo_puesto_ars": 33190,
+       "margen_neto_pct": 15.2
+      },
+      "pesimista": {
+       "ingreso_neto_ars": 34580,
+       "costo_puesto_ars": 57289,
+       "margen_neto_pct": -17.4
+      }
+     },
+     "fob_maximo_usd": 14.88
+    }
    }
-  ]
+  ],
+  "confianza": {
+   "riesgos": [
+    "en el escenario pesimista deja -17.4%, menos que la ganancia de referencia",
+    "ningún equivalente vendió: el precio no lo pagó nadie todavía"
+   ],
+   "evidencia": {
+    "productos": 2,
+    "dolor": {
+     "desatendidos": 7,
+     "de": 150,
+     "en_el_control": 1,
+     "proporcion_ic95": [
+      0.023,
+      0.093
+     ],
+     "p": 0.03334
+    },
+    "demanda": {
+     "ventas_de_equivalentes_al_menos": 0,
+     "equivalentes_con_ventas": 0
+    },
+    "margen_neto_pct": {
+     "optimista": 25.5,
+     "base": 15.2,
+     "pesimista": -17.4
+    }
+   }
+  }
  },
  {
   "metodo": "llm",
@@ -6912,9 +7165,9 @@
   "id": "G25.O1",
   "que_traer": "Sistema modular de pared: riel/panel que se atornilla a la pared con contenedores transparentes encastrables y extraíbles (tipo Akro-Mils / riel de cocina / pared de taller), que se agranda agregando módulos.",
   "busqueda_ml": "organizador de pared con cajones para tornillos",
-  "estado": "descartada",
-  "se_detiene_en": "C6 margen",
-  "motivo": "sin precio de proveedor: falta cotizarlo",
+  "estado": "sobrevive",
+  "se_detiene_en": null,
+  "motivo": "margen neto base 9.5% a $154,116 (referencia del sector: 5.2%)",
   "señales": [
    {
     "id": "E059.G25O1",
@@ -6989,10 +7242,61 @@
    {
     "chequeo": "C6 margen",
     "supuesto": "Deja plata al precio que la gente paga",
-    "pasa": false,
-    "motivo": "sin precio de proveedor: falta cotizarlo"
+    "pasa": true,
+    "motivo": "margen neto base 9.5% a $154,116 (referencia del sector: 5.2%)",
+    "datos": {
+     "precio_ars": 154116,
+     "lote": 28,
+     "envio_ars": 7000,
+     "escenarios": {
+      "optimista": {
+       "ingreso_neto_ars": 74118,
+       "costo_puesto_ars": 41040,
+       "margen_neto_pct": 21.5
+      },
+      "base": {
+       "ingreso_neto_ars": 63869,
+       "costo_puesto_ars": 49204,
+       "margen_neto_pct": 9.5
+      },
+      "pesimista": {
+       "ingreso_neto_ars": 41883,
+       "costo_puesto_ars": 146088,
+       "margen_neto_pct": -67.6
+      }
+     },
+     "fob_maximo_usd": 14.88
+    }
    }
-  ]
+  ],
+  "confianza": {
+   "riesgos": [
+    "en el escenario pesimista deja -67.6%, menos que la ganancia de referencia",
+    "el precio sale de una sola publicación con ventas"
+   ],
+   "evidencia": {
+    "productos": 2,
+    "dolor": {
+     "desatendidos": 10,
+     "de": 87,
+     "en_el_control": 0,
+     "proporcion_ic95": [
+      0.064,
+      0.199
+     ],
+     "p": 0.00074
+    },
+    "demanda": {
+     "ventas_de_equivalentes_al_menos": 100,
+     "equivalentes_con_ventas": 1
+    },
+    "margen_neto_pct": {
+     "optimista": 21.5,
+     "base": 9.5,
+     "pesimista": -67.6
+    }
+   }
+  }
  },
  {
   "metodo": "llm",
@@ -8408,9 +8712,9 @@
   "id": "G34.O1b",
   "que_traer": "Kit de reparación de tapizado sintético y plásticos: parches autoadhesivos de cuero sintético (cuerina) en varios colores y tamaños más masilla epoxi moldeable para piezas plásticas y engranajes chicos",
   "busqueda_ml": "parche cuerina autoadhesivo reparar tapizado",
-  "estado": "descartada",
+  "estado": "condicional",
   "se_detiene_en": "C6 margen",
-  "motivo": "sin precio de mercado: ningún equivalente vendió, nadie lo compró todavía a ningún precio",
+  "motivo": "sin precio de referencia: nadie lo ofrece; el experimento es una preventa",
   "señales": [
    {
     "id": "E055.G34O1b",
@@ -8472,9 +8776,31 @@
     "chequeo": "C6 margen",
     "supuesto": "Deja plata al precio que la gente paga",
     "pasa": false,
-    "motivo": "sin precio de mercado: ningún equivalente vendió, nadie lo compró todavía a ningún precio"
+    "motivo": "sin precio de referencia: nadie lo ofrece; el experimento es una preventa"
    }
-  ]
+  ],
+  "confianza": {
+   "riesgos": [
+    "ningún equivalente vendió: el precio no lo pagó nadie todavía"
+   ],
+   "evidencia": {
+    "productos": 2,
+    "dolor": {
+     "desatendidos": 8,
+     "de": 150,
+     "en_el_control": 0,
+     "proporcion_ic95": [
+      0.027,
+      0.102
+     ],
+     "p": 0.00355
+    },
+    "demanda": {
+     "ventas_de_equivalentes_al_menos": 0,
+     "equivalentes_con_ventas": 0
+    }
+   }
+  }
  },
  {
   "metodo": "llm",
@@ -9712,9 +10038,9 @@
   "id": "B1",
   "que_traer": "versión del producto ancla que resuelva la queja 'saludos'",
   "busqueda_ml": "comedero automatico gato",
-  "estado": "descartada",
+  "estado": "condicional",
   "se_detiene_en": "C6 margen",
-  "motivo": "sin precio de mercado: ningún equivalente vendió, nadie lo compró todavía a ningún precio",
+  "motivo": "sin precio de referencia: nadie lo ofrece; el experimento es una preventa",
   "señales": [
    {
     "id": "E031.B1",
@@ -9771,9 +10097,31 @@
     "chequeo": "C6 margen",
     "supuesto": "Deja plata al precio que la gente paga",
     "pasa": false,
-    "motivo": "sin precio de mercado: ningún equivalente vendió, nadie lo compró todavía a ningún precio"
+    "motivo": "sin precio de referencia: nadie lo ofrece; el experimento es una preventa"
    }
-  ]
+  ],
+  "confianza": {
+   "riesgos": [
+    "ningún equivalente vendió: el precio no lo pagó nadie todavía"
+   ],
+   "evidencia": {
+    "productos": 1,
+    "dolor": {
+     "desatendidos": 14,
+     "de": 70,
+     "en_el_control": 0,
+     "proporcion_ic95": [
+      0.123,
+      0.308
+     ],
+     "p": 3e-05
+    },
+    "demanda": {
+     "ventas_de_equivalentes_al_menos": 0,
+     "equivalentes_con_ventas": 0
+    }
+   }
+  }
  },
  {
   "metodo": "B1",

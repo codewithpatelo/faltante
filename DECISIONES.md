@@ -114,7 +114,18 @@ fuente de cada extremo (`harness/costo_puesto.py`). Con esos costos a la vista, 
 las devoluciones se comen cerca de un cuarto del precio: el pastillero de dev, que con el 30%
 "casi pasaba", necesita un FOB de USD 1,99, debajo del catálogo. Si el margen no llega, se
 calcula el FOB máximo: la oportunidad queda condicional y el experimento siguiente es pedir
-cotización. Ingresos Brutos: 3% en CABA para comercio
+cotización. Un hueco de verdad (C4: nadie lo vende) no tiene precio probado, y antes eso lo
+descartaba en C6: C4 y C6 juntos hacían imposible pasar. Ahora se usa lo que piden los
+equivalentes ofrecidos (con stock local o, si solo llegan por Compra Internacional, esos) y queda
+condicional a que la gente pague ese precio; si nadie lo ofrece, condicional a una preventa.
+
+**El precio de proveedor se arma como compra un importador.** Los importadores argentinos miran
+Alibaba para orientarse y compran en 1688 (el mayorista chino) a través de un agente o de un
+servicio local que cotiza en pesos puesto en la puerta (BorderBox, Chilat). 1688 pide cuenta
+china, así que el programa ve Alibaba y aplica lo que se cita para 1688: pesimista = techo de
+Alibaba; base = mitad del rango x 0,85 x 1,05; optimista = piso x 0,70 x 1,02 (1688 de 15 a 30%
+más barato, agente de 2 a 5%: Cubells). Es una estimación, y por eso el próximo experimento de lo
+que sobrevive es pedir cotización con foto y cantidad. Ingresos Brutos: 3% en CABA para comercio
 minorista que factura menos de $391 millones (Ley 6948), 5% en el escenario pesimista. Pendiente
 de fuente: el volumen extra de la caja master (lo mejor es pedirle al proveedor la medida de la
 caja al cotizar).

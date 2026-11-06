@@ -1,0 +1,87 @@
+{
+ "nota": "Referencias de proveedor para las propuestas que pasan C1 a C5 en escala_dev (6/11/2026), siguiendo cómo compra un importador argentino: Alibaba para orientarse y 1688 a través de un agente para el precio real (BorderBox, Chilat; Cubells). 1688 pide cuenta china, así que se ve Alibaba y se aplica lo que se cita para 1688: pesimista = techo de Alibaba; base = mitad del rango de Alibaba x 0,85 (15% menos en 1688) x 1,05 (agente 5%); optimista = piso de Alibaba x 0,70 (30% menos) x 1,02 (agente 2%) (Cubells: 1688 15-30% más barato, agentes de pago 2-5%). ESTIMADO, no cotizado: el próximo experimento es pedir cotización con foto y cantidad. ARS a USD a 1.570. DIE: base y alto (35% por si no aplica el arancel menor). Volumen: caja individual estimada.",
+ "arnes de cabeza antitirones para perro": {
+  "nombre": "Arnés de cabeza antitirones (tipo Halti)",
+  "fob": [
+   0.53,
+   1.38,
+   2.01
+  ],
+  "die": [
+   0.18,
+   0.35
+  ],
+  "volumen_m3": 0.0006,
+  "fuentes": "Alibaba 6/11: ARS 1.167-2.253 MOQ100; 1.702-3.160 MOQ50; 2.561-2.901 MOQ10."
+ },
+ "masajeador de espalda de pared con ventosas": {
+  "nombre": "Masajeador de espalda de pared con ventosas y rodillos",
+  "fob": [
+   2.31,
+   3.41,
+   11.17
+  ],
+  "die": [
+   0.18,
+   0.35
+  ],
+  "volumen_m3": 0.004,
+  "fuentes": "Alibaba 6/11: multifunción con ventosa ARS 5.073-6.353 MOQ10, 5.186-6.418 MOQ50, 5.754-6.807 MOQ10; con rodillos ARS 17.536 MOQ50."
+ },
+ "aspirador de pelo peluqueria": {
+  "nombre": "Aspirador de pelo para estación de peluquería",
+  "fob": [
+   33.17,
+   54.0,
+   86.71
+  ],
+  "die": [
+   0.18,
+   0.35
+  ],
+  "volumen_m3": 0.05,
+  "fuentes": "Alibaba 6/11: ARS 72.932-77.794 MOQ500; 81.035-105.346 MOQ2; 95.622-124.794 MOQ2; 105.346-136.139 MOQ1."
+ },
+ "guia para cortar el pelo en casa": {
+  "nombre": "Guía/pinza con nivel para cortar flequillo y capas",
+  "fob": [
+   0.61,
+   0.96,
+   1.22
+  ],
+  "die": [
+   0.18,
+   0.35
+  ],
+  "volumen_m3": 0.0003,
+  "fuentes": "Alibaba 6/11: pinza para posicionar flequillo ARS 1.345-1.783 MOQ120; herramienta de corte ARS 1.669-1.912 MOQ100."
+ },
+ "sombrilla techo auto": {
+  "nombre": "Sombrilla plegable de techo para auto",
+  "fob": [
+   5.49,
+   8.01,
+   17.55
+  ],
+  "die": [
+   0.18,
+   0.35
+  ],
+  "volumen_m3": 0.02,
+  "fuentes": "Alibaba 6/11: cubierta de techo plegable tipo sombrilla ARS 12.074-16.094 MOQ500; toldo plegable ARS 22.366-27.552 MOQ1. (Las de ARS 1.500-3.700 son parasoles de parabrisas interiores, no cuentan.)"
+ },
+ "organizador de pared con cajones para tornillos": {
+  "nombre": "Panel de pared con contenedores transparentes",
+  "fob": [
+   7.08,
+   11.37,
+   53.73
+  ],
+  "die": [
+   0.18,
+   0.35
+  ],
+  "volumen_m3": 0.03,
+  "fuentes": "Alibaba 6/11: estante organizador de pared con piezas ARS 15.559-17.179 MOQ2; para taller ARS 19.448-24.311 MOQ10; organizador de garaje con contenedores ARS 84.358 MOQ1."
+ }
+}

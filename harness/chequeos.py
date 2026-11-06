@@ -116,19 +116,29 @@ def valla_de_tukey(xs: list[float]) -> float:
 
 
 def c6_margen(p) -> Resultado:
+    """Al precio que paga la gente. Si ningún equivalente vendió (el caso de un hueco de verdad,
+    que C4 deja pasar), el precio no está probado: se usa lo que piden los equivalentes ofrecidos
+    y, como mucho, queda condicional; el experimento es probar ese precio. Si ni siquiera se
+    ofrece, no hay con qué calcular: condicional a una preventa."""
     precio = precio_de_mercado(p)
-    if precio is None:
-        return Resultado(False, "sin precio de mercado: ningún equivalente vendió, nadie lo compró todavía a ningún precio")
+    probado = precio is not None
+    if not probado:
+        precio = precio_pedido(p)
+        if precio is None:
+            return Resultado(False, "sin precio de referencia: nadie lo ofrece; el experimento es una preventa", condicional=True)
     if p.fob is None:
-        return Resultado(False, "sin precio de proveedor: falta cotizarlo")
+        return Resultado(False, "sin precio de proveedor: falta cotizarlo", condicional=True)
     m = margen(p.fob, precio)
     base, piso = m["escenarios"]["base"]["margen_neto_pct"], round(U.MIN_MARGEN_NETO * 100, 1)
+    a_precio = f"a ${precio:,}" + ("" if probado else " (lo que piden; nadie lo compró todavía)")
     if base >= piso:
-        return Resultado(True, f"margen neto base {base}% a ${precio:,} (referencia del sector: {piso}%)", m)
+        if probado:
+            return Resultado(True, f"margen neto base {base}% {a_precio} (referencia del sector: {piso}%)", m)
+        return Resultado(False, f"margen neto base {base}% {a_precio}: pasa si la gente paga ese precio", m, condicional=True)
     if m["escenarios"]["optimista"]["margen_neto_pct"] >= piso:
-        return Resultado(False, f"margen neto base {base}% a ${precio:,}; pasa si el FOB es ≤ USD {m['fob_maximo_usd']}",
+        return Resultado(False, f"margen neto base {base}% {a_precio}; pasa si el FOB es ≤ USD {m['fob_maximo_usd']}",
                          m, condicional=True)
-    return Resultado(False, f"margen neto base {base}% a ${precio:,} (haría falta FOB ≤ USD {m['fob_maximo_usd']})", m)
+    return Resultado(False, f"margen neto base {base}% {a_precio} (haría falta FOB ≤ USD {m['fob_maximo_usd']})", m)
 
 
 # --- Ayudas de C4 a C6 -----------------------------------------------------------------------
@@ -155,6 +165,18 @@ def precio_de_mercado(p) -> int | None:
     if p.captura is None or p.equivalentes_juzgados is None:
         return None
     precios = sorted(x["precio"] for x in equivalentes(p) if x.get("precio") and x["vendidos"] > 0)
+    return precios[len(precios) // 2] if precios else None
+
+
+def precio_pedido(p) -> int | None:
+    """Lo que piden los equivalentes, aunque nadie los haya comprado: no prueba que la gente lo
+    pague, solo dice a qué precio se ofrece. Primero los que tienen stock local; si solo llega por
+    Compra Internacional (el hueco es de acceso), lo que piden esos."""
+    if p.captura is None or p.equivalentes_juzgados is None:
+        return None
+    ofrecidos = [x for x in equivalentes(p) if x.get("precio")]
+    locales = [x["precio"] for x in ofrecidos if not x.get("internacional")]
+    precios = sorted(locales or [x["precio"] for x in ofrecidos])
     return precios[len(precios) // 2] if precios else None
 
 
