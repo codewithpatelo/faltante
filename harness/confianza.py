@@ -1,60 +1,57 @@
-"""Cuánto confiar en una oportunidad que pasó las pruebas (o quedó condicional).
+"""Cuánto sabemos de una oportunidad que pasó las pruebas (o quedó condicional).
 
-Pasar las pruebas dice que nada la descartó; no dice cuán sólida es la evidencia. La
-confianza la calcula el programa (no el LLM) con cinco factores de sí o no. Cuantos más se
-cumplen, más alta. Los umbrales están en `harness/umbrales.py`.
+Pasar las pruebas dice que nada la descartó; no dice cuán sólida es la evidencia. En vez de sumar
+puntos con umbrales a ojo, se muestra cada evidencia con su incertidumbre y se listan los
+riesgos que sí tienen una definición:
+
+    dolor        quiénes lo tienen sin resolver, con su intervalo de confianza de Wilson al 95%
+    demanda      lo que ya venden los equivalentes ("al menos", por la escala de "+N vendidos")
+    precio       de cuántas publicaciones con ventas sale, y su rango
+    margen       del escenario pesimista al optimista
+
+    riesgo: en el escenario pesimista no deja la ganancia de referencia del sector
+    riesgo: ningún equivalente vendió (el precio no lo pagó nadie todavía)
+    riesgo: el precio sale de una sola publicación (no hay dispersión que mirar)
 """
 
 from __future__ import annotations
 
-from dataclasses import dataclass
+from scipy.stats import binomtest
 
 from harness import umbrales as U
 
 
-@dataclass(frozen=True)
-class Factor:
-    a_favor: str
-    en_contra: str
-    se_cumple: object   # función: lo que sabemos de la oportunidad -> bool
-
-
-FACTORES = [
-    Factor("la misma necesidad aparece en 2 o más productos distintos",
-           "aparece en un solo producto",
-           lambda o: o["anclas"] >= U.MIN_ANCLAS_CON_LA_NECESIDAD),
-    Factor("10 o más personas tienen el dolor sin resolver", "menos de 10 personas tienen el dolor sin resolver",
-           lambda o: o["desatendidos"] >= U.MIN_DESATENDIDOS_PARA_CONFIANZA),
-    Factor("la gente ya elige este tipo de producto: los equivalentes suman +500 ventas",
-           "los equivalentes casi no se venden: puede que no lo quiera tanta gente",
-           lambda o: o["ventas_de_equivalentes"] >= U.MIN_VENTAS_DE_EQUIVALENTES),
-    Factor("el precio de referencia sale de 3 o más publicaciones con ventas",
-           "el precio de referencia sale de pocas publicaciones",
-           lambda o: o["publicaciones_con_precio"] >= U.MIN_PUBLICACIONES_PARA_PRECIO),
-    Factor("deja la ganancia de referencia aun en el escenario pesimista",
-           "en el escenario pesimista no deja la ganancia de referencia",
-           lambda o: o["margen_pesimista_pct"] >= U.MIN_MARGEN_NETO * 100),
-]
+def datos(r: dict, chequeo: str) -> dict:
+    return next((x.get("datos", {}) for x in r["recorrido"] if x["chequeo"] == chequeo), {})
 
 
 def evidencia(recorridos: list[dict]) -> dict:
-    """Junta lo que sabemos de una oportunidad a partir de sus recorridos por el embudo (uno
-    por cada producto ancla donde apareció)."""
-    def datos(r, chequeo):
-        return next((x.get("datos", {}) for x in r["recorrido"] if x["chequeo"] == chequeo), {})
-    c4, c5 = datos(recorridos[0], "C4 hueco"), datos(recorridos[0], "C6 margen")
-    return {"anclas": len({pid for r in recorridos for pid in r["productos"]}),
-            "desatendidos": max((datos(r, "C1 dolor").get("desatendidos", 0) for r in recorridos), default=0),
-            "ventas_de_equivalentes": c4.get("ventas_visibles", 0),
-            "publicaciones_con_precio": c4.get("con_alguna_venta", 0),
-            "margen_pesimista_pct": c5.get("escenarios", {}).get("pesimista", {}).get("margen_neto_pct", -100)}
+    """Lo que sabemos de una oportunidad a partir de sus recorridos por el embudo (uno por cada
+    producto ancla donde apareció)."""
+    r = recorridos[0]
+    dolor, c4, c6 = datos(r, "C1 dolor"), datos(r, "C4 hueco"), datos(r, "C6 margen")
+    e = {"productos": len({pid for x in recorridos for pid in x["productos"]})}
+    if dolor.get("de"):
+        ic = binomtest(dolor["desatendidos"], dolor["de"]).proportion_ci(0.95, method="wilson")
+        e["dolor"] = {"desatendidos": dolor["desatendidos"], "de": dolor["de"], "en_el_control": dolor["en_el_control"],
+                      "proporcion_ic95": [round(ic.low, 3), round(ic.high, 3)], "p": dolor["p"]}
+    e["demanda"] = {"ventas_de_equivalentes_al_menos": c4.get("ventas_visibles", 0), "equivalentes_con_ventas": c4.get("con_alguna_venta", 0)}
+    escenarios = c6.get("escenarios", {})
+    if escenarios:
+        e["margen_neto_pct"] = {k: v["margen_neto_pct"] for k, v in escenarios.items()}
+    return e
 
 
 def confianza(recorridos: list[dict]) -> dict:
     e = evidencia(recorridos)
-    cumplidos = [f for f in FACTORES if f.se_cumple(e)]
-    n = len(cumplidos)
-    nivel = "alta" if n >= U.FACTORES_PARA_CONFIANZA_ALTA else "media" if n >= U.FACTORES_PARA_CONFIANZA_MEDIA else "baja"
-    return {"nivel": nivel, "factores_que_se_cumplen": f"{n} de {len(FACTORES)}",
-            "a_favor": [f.a_favor for f in cumplidos],
-            "en_contra": [f.en_contra for f in FACTORES if f not in cumplidos], "evidencia": e}
+    riesgos = []
+    margen = e.get("margen_neto_pct", {})
+    if margen and margen.get("pesimista", -100) < U.MIN_MARGEN_NETO * 100:
+        riesgos.append(f"en el escenario pesimista deja {margen['pesimista']}%, menos que la ganancia de referencia")
+    con_ventas = e["demanda"]["equivalentes_con_ventas"]
+    if con_ventas == 0:
+        riesgos.append("ningún equivalente vendió: el precio no lo pagó nadie todavía")
+    elif con_ventas == 1:
+        riesgos.append("el precio sale de una sola publicación con ventas")
+    return {"riesgos": riesgos, "evidencia": e}
+

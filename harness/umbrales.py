@@ -32,14 +32,6 @@ MIN_MARGEN_NETO = 0.0519              # ganancia neta sobre ventas de referencia
                                       # devoluciones, comisión, impuestos y logística ya se descuentan (harness/costo_puesto.py)
 UNIDADES_MAX_PRIMER_LOTE = 1000       # el lote llena 1 m3 o llega a este tope, lo que pase primero
 
-# Confianza de una oportunidad que pasó (harness/confianza.py): decisiones nuestras
-MIN_ANCLAS_CON_LA_NECESIDAD = 2       # la misma necesidad aparece en 2 o más productos distintos
-MIN_DESATENDIDOS_PARA_CONFIANZA = 10  # 10 o más personas con el dolor sin resolver (PENDIENTE: fundamentar)
-MIN_VENTAS_DE_EQUIVALENTES = 500      # la gente ya elige este tipo de producto (suma de "+N vendidos")
-MIN_PUBLICACIONES_PARA_PRECIO = 3     # el precio de referencia sale de 3 o más publicaciones con ventas
-FACTORES_PARA_CONFIANZA_ALTA = 4      # de 5
-FACTORES_PARA_CONFIANZA_MEDIA = 3
-
 # Envío de Mercado Libre a cargo del vendedor (algoritmodigital.com.ar, septiembre 2026)
 PRECIO_DESDE_EL_QUE_EL_ENVIO_ES_GRATIS = 33000   # ARS
 ENVIO_DEBAJO_DEL_PISO = 2500          # ARS por unidad (costo fijo: 1.330 a 4.550 según modalidad)

@@ -114,5 +114,5 @@ if __name__ == "__main__":
     (SERENDIPIA / f"embudo_{particion}.json").write_text(json.dumps(recorridos, ensure_ascii=False, indent=1), encoding="utf-8")
     print(f"## {particion}\n{tabla(recorridos)}\n")
     for r in recorridos:
-        nivel = f"confianza {r['confianza']['nivel']}" if "confianza" in r else ""
+        nivel = f"riesgos: {len(r['confianza']['riesgos'])}" if "confianza" in r else ""
         print(f"  {r['metodo']:<3} {','.join(r['productos']):<7} {r['estado']:<11} {r['se_detiene_en'] or '':<15} {r['que_traer'][:55]:<55} {r['motivo']} {nivel}")

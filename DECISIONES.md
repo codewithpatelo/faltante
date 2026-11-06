@@ -119,9 +119,13 @@ minorista que factura menos de $391 millones (Ley 6948), 5% en el escenario pesi
 de fuente: el volumen extra de la caja master (lo mejor es pedirle al proveedor la medida de la
 caja al cotizar).
 
-**Confianza calculada, no opinada.**
-Sobrevivir dice que nada refutó la oportunidad; no dice cuán sólida es la evidencia. La
-confianza (alta, media, baja) sale de cinco factores de sí o no que calcula el programa.
+**Confianza con su incertidumbre, no con puntos.**
+Sobrevivir dice que nada refutó la oportunidad; no dice cuán sólida es la evidencia. Antes la
+confianza (alta, media, baja) sumaba cinco factores con umbrales a ojo. Ahora se muestra cada
+evidencia con su incertidumbre (la proporción de desatendidos con su intervalo de Wilson al 95%,
+lo que ya venden los equivalentes, el margen del escenario pesimista al optimista) y solo los
+riesgos que tienen una definición: que en el pesimista no deje la ganancia del sector, que ningún
+equivalente haya vendido, o que el precio salga de una sola publicación.
 
 **Baselines sin LLM por el mismo embudo.**
 B1 (queja más frecuente) es lo que haría un análisis de palabras, y es lo que hacen las

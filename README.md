@@ -84,7 +84,7 @@ voto con las manos ────┘   (divergente)     críticos y mata el humo (
 | C4 hueco | Nadie la atiende todavía | 3 o más equivalentes ya venden +100 | Código + captura |
 | C5 la eligen | Si se ofrece, la gente la elige | Las alternativas con stock local y precio no atípico venden significativamente menos (Mann-Whitney, 5%) que lo que la misma gente compra en su búsqueda de origen | Código + captura |
 | C6 margen | Deja plata al precio que la gente paga | Ganancia neta (después de comisión, impuestos, envío, publicidad y devoluciones) menor que la del comercio minorista (5,19%, Damodaran); si alcanza solo con un FOB más bajo, queda condicional | Código |
-| Confianza | — | A lo que sobrevive le pone alta, media o baja según 5 factores de sí o no (`harness/confianza.py`) | Código |
+| Confianza | — | A lo que sobrevive le muestra cada evidencia con su incertidumbre (dolor con intervalo de Wilson, ventas de equivalentes, margen de pesimista a optimista) y los riesgos definidos (`harness/confianza.py`) | Código |
 
 **Cómo se eligió el prompt del paso B:** no a ojo. Se arman 25 variantes que combinan
 decisiones de diseño sacadas de la literatura sobre generación de hipótesis (antecedente más
@@ -153,7 +153,7 @@ Un archivo por etapa, en el orden en que corren:
 | `harness/baselines.py` | B1 y B2: proponer sin LLM, para comparar |
 | `harness/embudo.py` | **La lista de supuestos críticos**, en orden, cada uno con el dato que lo refuta; y cómo se recorre |
 | `harness/chequeos.py` | Cómo se prueba cada supuesto (guardrail, C1 y C3 a C6) |
-| `harness/confianza.py` | Los 5 factores de confianza de lo que sobrevive |
+| `harness/confianza.py` | La evidencia y los riesgos de lo que sobrevive |
 | `harness/umbrales.py` | Todos los umbrales, con qué mide cada uno |
 | `harness/costo_puesto.py` | Costo puesto en Argentina e ingreso neto vendiendo en Mercado Libre |
 | `harness/correr.py` | Junta las propuestas, las pasa por el embudo y escribe el resultado |
