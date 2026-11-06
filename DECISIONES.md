@@ -41,7 +41,15 @@ que pasan C1 a C3 (`data/evaluacion/versiones_escala_dev/`). Señales por produc
 por corrida (10,5%). Personas con segmentos libres: 13,3 (25%), 40 ideas distintas en 3 corridas.
 Personas con segmentos obligados a cruzar búsquedas: 3,0 (12,5%). La idea de obligar a cruzar
 búsquedas sonaba bien (en la primera corrida muchos segmentos eran "los compradores de X"), pero
-empeoró la medida, así que se sacó. Lo que todavía no mide ninguna corrida: si las ideas que
+empeoró la medida, así que se sacó. Un paso de dolor antes de proponer (el LLM formula
+dolores, un clasificador independiente mide quién los tiene en los textos originales y una prueba
+exacta de Fisher con corrección de Benjamini-Hochberg contra gente de afuera decide cuáles siguen;
+un dolor placebo nunca salió significativo): 9,0 por corrida contra 11,7, con la misma proporción
+(22%). Filtra pero no elige mejor: la fuerza del dolor apenas separa las ideas que sobreviven de
+las que mueren (p = 0,07). No entró. El problema es la implementación, no la idea: como filtro
+antes de proponer recorta el volumen, y C4 y C5 miden el mercado, no si el dolor existe. El paso
+que sigue es usar esa misma medición como chequeo de la propuesta, en lugar del conteo de
+palabras de C1 y C2. Lo que todavía no mide ninguna corrida: si las ideas que
 sobreviven son obvias (juicio humano a ciegas, pendiente) y si dejan margen (falta precio de
 proveedor).
 

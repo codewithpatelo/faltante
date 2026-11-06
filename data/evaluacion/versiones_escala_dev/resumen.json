@@ -1,22 +1,83 @@
 {
  "filas": [
   {
+   "version": "eval-dolores-fisher",
+   "corrida": "42259318156",
+   "propuestas": 63,
+   "c1_c3": 43,
+   "c4": 17,
+   "c5": 10,
+   "c6_o_condicional": 0,
+   "falta_capturar": 0,
+   "sobrevivientes": [
+    "Bebedero automático de nivel constante con válvula flotante y conexión",
+    "Caja mayorista de contenedores gastronómicos de polipropileno grado al",
+    "Cortina parasol enrollable tipo persiana de proyector: un tubo con res",
+    "Cubre parabrisas exterior: paño impermeable aluminizado que se coloca ",
+    "Gancho de masaje de punto gatillo (theracane): vara rígida con mangos ",
+    "Kit de 2 bloques de goma volcánica tipo piedra pómez de tapicería, la ",
+    "Lámina estática metalizada en rollo (film electrostático reflectivo) q",
+    "Parasol acordeón de paneles rígidos forrados en material reflectivo, u",
+    "Parasol de aro continuo (tipo twist): dos aros de acero forrados en te",
+    "Sistema de poleas con anclaje a puerta y carro porta-discos con mango "
+   ]
+  },
+  {
+   "version": "eval-dolores-fisher",
+   "corrida": "42259362207",
+   "propuestas": 52,
+   "c1_c3": 30,
+   "c4": 17,
+   "c5": 8,
+   "c6_o_condicional": 0,
+   "falta_capturar": 0,
+   "sobrevivientes": [
+    "Bandejas/contenedores de vidrio borosilicato de formato gastronorm (co",
+    "Bebedero automático para mascotas pequeñas con válvula de flotante y c",
+    "Collarín cervical inflable de tracción, con bomba manual, válvula y gu",
+    "Escobilla de baño con soporte de gancho que se calza sobre el borde de",
+    "Faja o cinturón de calor infrarrojo lejano con turmalina, moldeable y ",
+    "Frascos/contenedores de vidrio con tapa de silicona y bomba de vacío m",
+    "Set de viandas de vidrio borosilicato con tapa de vidrio y cierre de c",
+    "Sombrilla exterior tipo paraguas para el techo del auto: abre como un "
+   ]
+  },
+  {
+   "version": "eval-dolores-fisher",
+   "corrida": "42259408608",
+   "propuestas": 81,
+   "c1_c3": 48,
+   "c4": 26,
+   "c5": 9,
+   "c6_o_condicional": 0,
+   "falta_capturar": 0,
+   "sobrevivientes": [
+    "Almohadilla térmica cervical y de hombros, eléctrica, con cierre ajust",
+    "Kit de reparación multiuso con parches autoadhesivos de tela y cuero, ",
+    "Mini aspiradora de mano ciclónica con cepillo motorizado para tapizado",
+    "Parasol plegable de paneles rígidos tipo acordeón (lámina reflectiva m",
+    "Parasol pop-up: lámina reflectiva cosida a un aro de acero elástico ti",
+    "Plancha alisadora de vapor capilar con termostato digital y placas cer",
+    "Robot aspiradora-barredora básico, sin wifi ni cámara: cepillo de goma",
+    "Sistema de mancuernas cargables con discos de acero calibrados de bajo",
+    "Sugru o kit de masilla de silicona moldeable importada para reparar y "
+   ]
+  },
+  {
    "version": "eval-dolores",
    "corrida": "42245730803",
    "propuestas": 54,
    "c1_c3": 25,
    "c4": 14,
-   "c5": 7,
+   "c5": 5,
    "c6_o_condicional": 0,
    "falta_capturar": 0,
    "sobrevivientes": [
+    "Base de anclaje de piso (landmine) con mango en T de dos manos: la bar",
     "Cepillo eléctrico inalámbrico de agitación para tapizados (tipo power ",
-    "Cinturón lumbar de tracción y descompresión inflable, con calor y ajus",
-    "Lámpara de trabajo plegable recargable tipo taller, con cuerpo de vari",
+    "Cubierta de parabrisas exterior con solapas que se atrapan al cerrar l",
     "Mancuernas de 2 a 24 kg con selector de peso por manija giratoria (dia",
-    "Multiestilizador de aire tipo airwrap: secador con cepillos y barras q",
-    "Sombrilla de techo para auto completo (car umbrella): se abre sobre el",
-    "Vaporeta de mano (limpiador a vapor portátil) con boquilla de chorro f"
+    "Sombrilla de techo para auto completo (car umbrella): se abre sobre el"
    ]
   },
   {
@@ -29,11 +90,11 @@
    "c6_o_condicional": 0,
    "falta_capturar": 0,
    "sobrevivientes": [
-    "Almohadilla térmica cervical y de hombros con peso y calor húmedo regu",
     "Aspiradora de mano con pack de batería extraíble que se cambia en segu",
     "Bebedero de boquilla de acero con válvula a presión para montar en par",
     "Caja master mayorista surtida (case pack) con cantidad exacta de unida",
-    "Hamaca cervical de tracción por gravedad, con soporte acolchado para c",
+    "Cortina parasol enrollable para el interior del parabrisas: un tubo de",
+    "Cubreparabrisas exterior reflectante que se sujeta desde afuera: imane",
     "Mini limpia-tapizados (extractora) portátil de inyección y extracción:",
     "Mopa de esponja PVA con escurridor de rodillo integrado al mango: la e",
     "Mopa de tiras de silicona de una sola pieza con escurridor manual de d",
@@ -47,18 +108,19 @@
    "propuestas": 72,
    "c1_c3": 42,
    "c4": 21,
-   "c5": 12,
-   "c6_o_condicional": 1,
+   "c5": 13,
+   "c6_o_condicional": 0,
    "falta_capturar": 0,
    "sobrevivientes": [
     "Balde escurridor profesional con ruedas y tapón de desagote, con estru",
     "Balde mopa centrífugo con centrifugado eléctrico a batería recargable ",
     "Bebedero dispensador tipo 'dispensador de agua de oficina': garrafón e",
-    "Bolsas y recipientes de silicona platinum reutilizables (tipo Stasher ",
     "Electroestimulador TENS/EMS inalámbrico recargable de uso doméstico, c",
     "Estación de descanso con ventilador (base de enfriamiento para herrami",
     "Extractor de tapicería portátil que inyecta agua con detergente y la a",
+    "Kit de 3 cepillos de nylon para acoplar al taladro (plano, de punta y ",
     "Lámina estática de control solar reutilizable, sin adhesivo, en rollo ",
+    "Mancuernas ajustables con selector de peso por dial y placas de acero ",
     "Parasol inflable de PVC con válvula (mecánica de colchoneta y salvavid",
     "Parasol interior a medida por modelo de auto, con patrón de corte para",
     "Pistola de masaje de percusión con sensor de presión y control automát",
@@ -100,8 +162,8 @@
    "propuestas": 7,
    "c1_c3": 3,
    "c4": 1,
-   "c5": 1,
-   "c6_o_condicional": 1,
+   "c5": 0,
+   "c6_o_condicional": 0,
    "falta_capturar": 0,
    "sobrevivientes": []
   },
@@ -126,10 +188,11 @@
    "propuestas": 48,
    "c1_c3": 15,
    "c4": 9,
-   "c5": 2,
+   "c5": 3,
    "c6_o_condicional": 0,
    "falta_capturar": 0,
    "sobrevivientes": [
+    "Aspiradora-mopa inalámbrica para pisos duros que aspira, trapea y deja",
     "Masajeador de pared con rodillos o bolas de silicona que se adhiere co",
     "Sopladora-secadora de mano recargable y compacta: aire fuerte y dirigi"
    ]
@@ -140,16 +203,14 @@
    "propuestas": 117,
    "c1_c3": 54,
    "c4": 23,
-   "c5": 12,
+   "c5": 10,
    "c6_o_condicional": 0,
    "falta_capturar": 0,
    "sobrevivientes": [
     "Alargador / prolongador de 2 a 3 metros con ficha giratoria 360° y tom",
-    "Base/almohadilla ponderada antideslizante para tablero con cuna de cel",
     "Cepillo / rodillo removedor de pelos de mascota para tapizados, mantas",
-    "Cubre parabrisas exterior de tela reflectante aluminizada, con imanes ",
     "Cubre torpedo / alfombrilla de tablero reflectante y aluminizada, cort",
-    "Esterilla de silicona antiadherente reutilizable con medidas, para hor",
+    "Kit de pinzas / clips de seccionado profesional para cabello (set de 1",
     "Lámina de control solar electrostática de quita y pon, sin adhesivo, p",
     "Mancuernas ajustables de cambio rápido por selector (tipo dial) de has",
     "Mopa/paño secador de microfibra de alta absorción con mango largo, par",
@@ -164,7 +225,7 @@
    "propuestas": 97,
    "c1_c3": 45,
    "c4": 30,
-   "c5": 14,
+   "c5": 13,
    "c6_o_condicional": 0,
    "falta_capturar": 0,
    "sobrevivientes": [
@@ -173,14 +234,13 @@
     "Caja organizadora rígida con 8 a 12 compartimentos, cada uno con su ta",
     "Comedero puzzle de ralentización, con laberinto amplio y antideslizant",
     "Cubre-parabrisas exterior reflectivo (tipo manta de tela metalizada) c",
+    "Exhibidor de mostrador plegable con ganchos y bolsillos, para exhibir ",
     "Fiambrera eléctrica portátil de acero inoxidable con enchufe 220V/12V ",
     "Kit de limpieza de ventanas y superficies altas con mango telescópico,",
-    "Limpiadora de tapizados portátil con inyección y extracción de agua, p",
     "Lámpara de cuello LED recargable, con dos brazos flexibles, 3 temperat",
     "Mancuernas ajustables de bloque con selector de peso (dial/pin) y base",
     "Parasol enrollable/retráctil de parabrisas que se monta fijo en el vid",
     "Soplador/secador de piso de aire de alta velocidad (tipo air mover com",
-    "Soporte de celular para auto con articulación amortiguada (silentblock",
     "Soporte de celular que se traba en la ranura del estéreo/radio del aut"
    ]
   },
@@ -190,7 +250,7 @@
    "propuestas": 114,
    "c1_c3": 61,
    "c4": 34,
-   "c5": 14,
+   "c5": 12,
    "c6_o_condicional": 0,
    "falta_capturar": 0,
    "sobrevivientes": [
@@ -200,8 +260,6 @@
     "Bebedero de agua de flujo continuo que se acopla a la canilla del hoga",
     "Cepillo eléctrico recargable quitapelos para tapizados, con cepillo de",
     "Cojín térmico cervical eléctrico con apagado automático, forro lavable",
-    "Collarín de tracción cervical inflable con bomba manual y válvula regu",
-    "Comedero automático programable que entrega porciones medidas a horari",
     "Mopa plana (flat mop) con balde de dos compartimentos que separa agua ",
     "Parasol de tela elástica de ajuste universal (tipo funda) para parabri",
     "Rollo de tela filtrante lavable de poliéster, recortable a medida, par",
@@ -216,11 +274,12 @@
    "propuestas": 6,
    "c1_c3": 6,
    "c4": 4,
-   "c5": 1,
+   "c5": 2,
    "c6_o_condicional": 0,
    "falta_capturar": 0,
    "sobrevivientes": [
-    "Cámara endoscópica inalámbrica con luz LED y pantalla o app para inspe"
+    "Cámara endoscópica inalámbrica con luz LED y pantalla o app para inspe",
+    "Soldador y reparador de plástico por grapas, con estuche y grapas de d"
    ]
   },
   {
@@ -241,10 +300,10 @@
    "c1_c3": 8,
    "c4": 4,
    "c5": 1,
-   "c6_o_condicional": 0,
+   "c6_o_condicional": 1,
    "falta_capturar": 0,
    "sobrevivientes": [
-    "Repisa/estante modular de pared con fijación sin taladro (perfil de pr"
+    "Tapete secante rígido de piedra de diatomeas para baño y zonas de escu"
    ]
   }
  ],
