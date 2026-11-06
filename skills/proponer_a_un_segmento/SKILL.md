@@ -38,16 +38,13 @@ cualquiera lo ve mirando la búsqueda.
   deja pasar** (C5). Proponé cosas que plausiblemente no estén ofrecidas con stock local.
 - **Lo barato no paga el envío:** debajo de ~$10.000 el costo fijo de Mercado Libre se come el
   margen; un consumible barato tiene que ir en pack o junto a otro producto.
-- **El criterio de equivalencia mira el comienzo del título**, que en Mercado Libre es lo que se
-  vende ("Disco …" es un disco). Usá `empieza_con` para el sustantivo y `todos` / `excluir`
-  para el resto.
 
 ## Criterios (los chequea el programa)
 
 - `personas`: IDs del segmento cuyas voces sostienen la necesidad: al menos 2 personas de cada
   uno de al menos 2 productos distintos.
-- `palabras_clave`: palabras que aparecen en esas voces cuando hablan de la necesidad; el
-  programa las cuenta en todas las opiniones y preguntas de cada producto (C1 y C2).
+- `alivia` y `por_que`: el dolor, dicho sin el producto. Otro modelo, que no ve tu propuesta,
+  lo busca en los textos de la gente de esos productos y en gente al azar (C1).
 - `busqueda_ml`: lo que alguien escribiría en Mercado Libre para encontrar lo propuesto.
 
 ## Salida (JSON): una propuesta de valor por oportunidad
@@ -57,7 +54,6 @@ cualquiera lo ve mirando la búsqueda.
    "alivia": "qué dolor o miedo saca", "crea": "qué ganancia da",
    "por_que_le_gana": "por qué lo elegirían frente a lo que hoy eligen o ven",
    "por_que": "la necesidad de fondo y por qué nadie la atiende",
-   "personas": ["E012.o34", "E012.p2", "E047.p3", "E047.o8"], "palabras_clave": ["...", "..."],
-   "busqueda_ml": "...",
-   "criterio_equivalencia": {"empieza_con": ["..."], "todos": [["...", "..."]], "excluir": ["..."]}}]}
+   "personas": ["E012.o34", "E012.p2", "E047.p3", "E047.o8"],
+   "busqueda_ml": "..."}]}
 ```

@@ -45,13 +45,14 @@ class Propuesta:
     """Qué traer, quién lo propuso, y de qué productos y señales sale."""
     metodo: str                    # "llm", "B1" o "B2"
     anclas: list[dict]             # los productos donde aparecen sus señales, con opiniones y preguntas
-    oportunidad: dict              # que_traer, busqueda_ml, criterio_equivalencia
+    oportunidad: dict              # que_traer, busqueda_ml
     señales_citadas: list[dict]    # cada una con "producto" (el ID del ancla donde apareció)
     verifica_citas: bool = True    # los baselines no citan textos
     fob: dict | None = None        # precio de proveedor (data/serendipia/fob_*.json), si lo hay
     captura: dict | None = None    # la búsqueda de Mercado Libre de lo propuesto, para C4, C5 y C6
     titulos_ancla: set = field(default_factory=set)
     dolor: dict | None = None      # veredicto de C1 (harness/dolor.py), medido con la divergencia
+    equivalentes_juzgados: list | None = None   # títulos que reemplazan a lo propuesto (harness/equivalencias.py)
     capturas_de_origen: list = field(default_factory=list)   # las búsquedas de donde salieron las anclas, para C5
 
     @property

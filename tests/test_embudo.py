@@ -25,12 +25,12 @@ AFILADOR = {"id": "PX", "titulo": "Afilador", "vendidos": 1000, "precio": 50000,
 # --- Guardrail ---------------------------------------------------------------------------
 
 def test_guardrail_rechaza_citas_inventadas_o_de_un_solo_texto():
-    ok = {"palabras_clave": ["repuesto"], "citas": [{"texto": "p1", "fragmento": "discos de repuesto"}, {"texto": "o1", "fragmento": "no trae el repuesto"}]}
+    ok = {"citas": [{"texto": "p1", "fragmento": "discos de repuesto"}, {"texto": "o1", "fragmento": "no trae el repuesto"}]}
     assert c.errores_de_citas(ok, TEXTOS) == []
-    inventada = {"palabras_clave": ["x"], "citas": [{"texto": "p1", "fragmento": "esto no está"}, {"texto": "p9", "fragmento": "nada"}]}
+    inventada = {"citas": [{"texto": "p1", "fragmento": "esto no está"}, {"texto": "p9", "fragmento": "nada"}]}
     errores = c.errores_de_citas(inventada, TEXTOS)
     assert any("no está" in e for e in errores) and any("no existe" in e for e in errores)
-    un_solo_texto = {"palabras_clave": ["x"], "citas": [{"texto": "p1", "fragmento": "discos"}, {"texto": "p1", "fragmento": "repuesto"}]}
+    un_solo_texto = {"citas": [{"texto": "p1", "fragmento": "discos"}, {"texto": "p1", "fragmento": "repuesto"}]}
     assert any("2 textos" in e for e in c.errores_de_citas(un_solo_texto, TEXTOS))
 
 
@@ -56,22 +56,23 @@ def test_c1_pasa_solo_si_los_desatendidos_son_mas_que_en_el_control_y_cruzan_los
 
 # --- C4 ----------------------------------------------------------------------------------
 
-def test_equivalente_es_lo_que_el_titulo_dice_que_se_vende():
-    criterio = {"empieza_con": ["disco"], "todos": [["rodante"]], "excluir": ["motosierra"]}
-    assert c.es_equivalente("Disco Diamante Afilador Rodante", criterio)
-    assert not c.es_equivalente("Afilador Rodante Con Discos", criterio)          # es el afilador, no el disco
-    assert not c.es_equivalente("Disco Afilador Rodante Motosierra", criterio)
-    assert not c.es_equivalente("Estante Adhesivo Repuesto", {"no_empieza_con": ["estante"], "todos": [["adhesivo"]]})
+def test_equivalente_es_lo_que_dice_el_juez_y_sin_juicio_c4_no_decide():
+    publicaciones = [{"titulo": "Disco Rodante", "vendidos": 100, "precio": 1}, {"titulo": "Afilador Con Discos", "vendidos": 5000, "precio": 1}]
+    p = _disco(publicaciones)
+    assert [x["titulo"] for x in c.equivalentes(p)] == ["Disco Rodante"]      # el afilador comparte palabras, no es un disco
+    p.equivalentes_juzgados = None
+    assert "falta juzgar" in c.c4_hueco(p).motivo
 
 
 def _disco(captura):
-    oportunidad = {"id": "O1", "que_traer": "disco", "busqueda_ml": "disco", "criterio_equivalencia": {"empieza_con": ["disco"]}}
-    señal = {"id": "S1", "producto": "PX", "descripcion": "piden discos", "palabras_clave": ["repuesto"],
+    oportunidad = {"id": "O1", "que_traer": "disco", "busqueda_ml": "disco"}
+    señal = {"id": "S1", "producto": "PX", "descripcion": "piden discos",
              "citas": [{"texto": "p1", "fragmento": "discos de repuesto"}, {"texto": "o1", "fragmento": "no trae el repuesto"}]}
     origen = {"publicaciones": [{"titulo": f"Afilador {i}", "vendidos": v, "precio": 50000}
                                 for i, v in enumerate([1000, 500, 500, 100, 100, 100, 50, 25, 100, 500])]}
+    juez = [x["titulo"] for x in captura if x["titulo"].startswith("Disco")]    # lo que diría harness/equivalencias.py
     return Propuesta("llm", [AFILADOR], oportunidad, [señal], captura={"publicaciones": captura},
-                     titulos_ancla={"disco rodante ancla"}, capturas_de_origen=[origen])
+                     titulos_ancla={"disco rodante ancla"}, capturas_de_origen=[origen], equivalentes_juzgados=juez)
 
 
 def test_c4_saca_repetidos_y_anclas_y_el_precio_es_el_de_lo_que_se_vendio():
@@ -162,7 +163,7 @@ MIEMBROS = {t["id"]: t for t in [persona("PX", "o1", dolor="sin repuesto"), pers
 
 
 def test_paso_b_exige_dos_personas_del_segmento_en_cada_uno_de_dos_productos():
-    ok = {"personas": ["PX.o1", "PX.p1", "PY.o1", "PY.p2"], "palabras_clave": ["repuesto"], "busqueda_ml": "x"}
+    ok = {"personas": ["PX.o1", "PX.p1", "PY.o1", "PY.p2"], "alivia": "sin repuesto", "busqueda_ml": "x"}
     assert errores_de_propuesta(ok, MIEMBROS) == []
     assert any("2 productos" in e for e in errores_de_propuesta({**ok, "personas": ["PX.o1", "PX.p1", "PY.o1"]}, MIEMBROS))
     assert any("no es del segmento" in e for e in errores_de_propuesta({**ok, "personas": ok["personas"] + ["PZ.o9"]}, MIEMBROS))
@@ -170,7 +171,7 @@ def test_paso_b_exige_dos_personas_del_segmento_en_cada_uno_de_dos_productos():
 
 def test_cada_propuesta_deja_una_señal_por_producto_con_las_citas_de_su_gente():
     o = {"id": "G1.O1", "que_traer": "x", "alivia": "sin repuesto", "personas": ["PX.o1", "PX.p1", "PY.o1", "PY.p2"],
-         "palabras_clave": ["repuesto"], "busqueda_ml": "x"}
+         "busqueda_ml": "x"}
     salida = al_formato_del_embudo([o], MIEMBROS, "inexistente")
     assert salida["oportunidades"][0]["señales"] == ["PX.G1O1", "PY.G1O1"]
     señal_px = salida["señales"]["PX"][0]

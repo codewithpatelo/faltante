@@ -52,8 +52,8 @@ def errores_de_propuesta(o: dict, miembros: dict[str, dict]) -> list[str]:
     if sum(n >= MIN_PERSONAS_POR_PRODUCTO for n in por_producto.values()) < MIN_PRODUCTOS_CITADOS:
         errores.append(f"tiene que citar al menos {MIN_PERSONAS_POR_PRODUCTO} personas de cada uno de al menos "
                        f"{MIN_PRODUCTOS_CITADOS} productos distintos")
-    if not o.get("palabras_clave") or not o.get("busqueda_ml"):
-        errores.append("faltan palabras_clave o busqueda_ml")
+    if not o.get("alivia") or not o.get("busqueda_ml"):
+        errores.append("faltan alivia o busqueda_ml")
     return errores
 
 
@@ -79,7 +79,6 @@ def al_formato_del_embudo(oportunidades: list[dict], tarjetas: dict[str, dict], 
         sid, ids = o["id"].replace(".", ""), []
         for pid in dict.fromkeys(tarjetas[i]["producto"] for i in o["personas"]):
             señales.setdefault(pid, []).append({"id": sid, "tipo": "segmento", "descripcion": o.get("alivia") or o.get("por_que", ""),
-                                 "palabras_clave": o["palabras_clave"],
                                  "citas": [{"texto": tarjetas[i]["texto"], "fragmento": tarjetas[i]["fragmento"]}
                                            for i in o["personas"] if tarjetas[i]["producto"] == pid]})
             ids.append(f"{pid}.{sid}")

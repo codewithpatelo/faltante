@@ -12,6 +12,7 @@ from __future__ import annotations
 
 import json
 import sys
+from pathlib import Path
 
 from harness.baselines import b1_queja_mas_frecuente, b2_pedidos_de_repuesto
 from harness.confianza import confianza
@@ -23,7 +24,13 @@ METODOS = ["llm", "B1", "B2"]
 
 
 def propuestas(particion: str) -> list[Propuesta]:
-    del_llm = json.loads((SERENDIPIA / f"divergente_{particion}.json").read_text(encoding="utf-8"))
+    return propuestas_de_un_archivo(SERENDIPIA / f"divergente_{particion}.json")
+
+
+def propuestas_de_un_archivo(archivo) -> list[Propuesta]:
+    from harness.equivalencias import clave, guardadas
+    del_llm = json.loads(Path(archivo).read_text(encoding="utf-8"))
+    juicios = guardadas()
     capturas = busquedas_capturadas()
     fobs = precios_de_proveedor()
     todos = productos()
@@ -33,6 +40,7 @@ def propuestas(particion: str) -> list[Propuesta]:
 
     def armar(metodo, anclas, oportunidad, señales, fob_ref, verifica_citas, clave_dolor):
         return Propuesta(metodo, anclas, oportunidad, señales, verifica_citas, dolor=dolor.get(metodo, {}).get(clave_dolor),
+                         equivalentes_juzgados=juicios.get(clave(oportunidad["que_traer"], oportunidad["busqueda_ml"])),
                          fob=fobs.get(fob_ref) if fob_ref else None,
                          captura=capturas.get(oportunidad["busqueda_ml"]), titulos_ancla=titulos_ancla,
                          capturas_de_origen=[capturas[b] for b in dict.fromkeys(a["busqueda"] for a in anclas) if b in capturas])

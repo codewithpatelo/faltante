@@ -38,8 +38,6 @@ def errores_de_citas(señal: dict, textos: dict[str, str]) -> list[str]:
             errores.append(f"cita un texto que no existe: {c.get('texto')}")
         elif len(c.get("fragmento", "")) < 4 or sin_acentos(c["fragmento"]) not in sin_acentos(texto):
             errores.append(f"[{c.get('texto')}] el fragmento no está en el texto")
-    if not señal.get("palabras_clave"):
-        errores.append("faltan palabras_clave para que el programa cuente")
     return errores
 
 
@@ -74,6 +72,8 @@ def c3_demanda(p) -> Resultado:
 def c4_hueco(p) -> Resultado:
     if p.captura is None:
         return Resultado(False, "falta capturar la búsqueda (scripts/captura_ml.js)")
+    if p.equivalentes_juzgados is None:
+        return Resultado(False, "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)")
     eq = equivalentes(p)
     venden = [x for x in eq if x["vendidos"] >= U.VENDIDOS_PARA_DECIR_QUE_YA_VENDE]
     datos = {"equivalentes": len(eq), "venden": len(venden),
@@ -133,30 +133,18 @@ def c6_margen(p) -> Resultado:
 
 # --- Ayudas de C4 a C6 -----------------------------------------------------------------------
 
-def es_equivalente(titulo: str, criterio: dict) -> bool:
-    """En Mercado Libre el título empieza por lo que se vende ("Disco …" es un disco;
-    "Afilador … con discos" es un afilador). El criterio lo escribe el LLM:
-    empieza_con / no_empieza_con, `todos` (un término de cada grupo) y `excluir`."""
-    t = sin_acentos(titulo)
-    if any(t.startswith(sin_acentos(e)) for e in criterio.get("no_empieza_con", [])):
-        return False
-    if criterio.get("empieza_con") and not any(t.startswith(sin_acentos(e)) for e in criterio["empieza_con"]):
-        return False
-    if any(sin_acentos(x) in t for x in criterio.get("excluir", [])):
-        return False
-    return all(any(sin_acentos(s) in t for s in grupo) for grupo in criterio.get("todos", []))
-
-
 def equivalentes(p) -> list[dict]:
-    """Publicaciones de la búsqueda que son lo mismo que se propone traer, sin repetidas y
-    sin los productos ancla (el ancla no compite con lo que se le ocurrió a sus compradores)."""
+    """Publicaciones de la búsqueda que reemplazan a lo propuesto, según el juez que no propuso
+    (harness/equivalencias.py), sin repetidas y sin los productos ancla (el ancla no compite con
+    lo que se les ocurrió a sus compradores)."""
+    juzgados = {sin_acentos(t) for t in p.equivalentes_juzgados or []}
     vistos, salida = set(), []
     for x in p.captura["publicaciones"]:
         clave = (sin_acentos(x["titulo"]), x.get("precio"))
         if clave in vistos or clave[0] in p.titulos_ancla:
             continue
         vistos.add(clave)
-        if es_equivalente(x["titulo"], p.oportunidad["criterio_equivalencia"]):
+        if clave[0] in juzgados:
             salida.append(x)
     return salida
 
@@ -164,7 +152,7 @@ def equivalentes(p) -> list[dict]:
 def precio_de_mercado(p) -> int | None:
     """Lo que la gente paga: mediana de los equivalentes que vendieron algo. Una publicación
     sin ventas puede pedir cualquier precio, así que no cuenta."""
-    if p.captura is None:
+    if p.captura is None or p.equivalentes_juzgados is None:
         return None
     precios = sorted(x["precio"] for x in equivalentes(p) if x.get("precio") and x["vendidos"] > 0)
     return precios[len(precios) // 2] if precios else None

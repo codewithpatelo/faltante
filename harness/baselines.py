@@ -31,10 +31,9 @@ def b1_queja_mas_frecuente(producto: dict) -> tuple[dict, dict, str | None]:
             conteo.update(w for w in set(re.findall(r"[a-z]{4,}", sin_acentos(t))) if w not in PALABRAS_VACIAS)
     # Desempate alfabético para que el resultado no dependa del orden interno de Python.
     queja = min(conteo.items(), key=lambda kv: (-kv[1], kv[0]))[0] if conteo else ""
-    señal = {"id": "B1", "descripcion": f"queja más frecuente: '{queja}'", "palabras_clave": [queja] if queja else []}
+    señal = {"id": "B1", "descripcion": f"queja más frecuente: '{queja}'"}
     oportunidad = {"id": "B1", "que_traer": f"versión del producto ancla que resuelva la queja '{queja}'",
-                   "busqueda_ml": producto["busqueda"],
-                   "criterio_equivalencia": {"todos": [[producto["busqueda"].split()[0]]]}}
+                   "busqueda_ml": producto["busqueda"]}
     return señal, oportunidad, None
 
 
@@ -44,8 +43,7 @@ def b2_pedidos_de_repuesto(producto: dict) -> tuple[dict, dict, str | None] | No
     if len(pedidos) < MIN_PREGUNTAS_QUE_PIDEN_REPUESTO:
         return None
     nucleo = producto["busqueda"].split()[0]
-    señal = {"id": "B2", "descripcion": "preguntas que piden repuesto", "palabras_clave": ["repuesto", "respuesto", "por separado"]}
+    señal = {"id": "B2", "descripcion": "preguntas que piden repuesto"}
     oportunidad = {"id": "B2", "que_traer": f"repuesto de {producto['busqueda']}",
-                   "busqueda_ml": f"repuesto {producto['busqueda']}",
-                   "criterio_equivalencia": {"empieza_con": ["repuesto", "kit", "pack", "juego"], "todos": [[nucleo]]}}
+                   "busqueda_ml": f"repuesto {producto['busqueda']}"}
     return señal, oportunidad, FOB_DEL_REPUESTO.get(nucleo)
