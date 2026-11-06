@@ -34,7 +34,8 @@ for f in sorted(carpeta.glob("dolor_eval-personas-libres_*.json")):
             continue
         c4 = c.c4_hueco(p)
         if c4.motivo.startswith("falta capturar"):
-            faltan.add(busq)
+            if medida[p.oportunidad["id"]]["pasa"]:      # solo importa para B: A ya la mató en C1 o C2
+                faltan.add(busq)
             continue
         c5 = c4.pasa and c.c5_la_eligen(p).pasa
         dolor = medida[p.oportunidad["id"]]["pasa"]
