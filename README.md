@@ -33,6 +33,9 @@ TP de IA Agéntica, Maestría en Explotación de Datos (UBA), 2026.
 
 ## ¿Sirve? Estado al 06/11/2026 (escala_dev)
 
+> Los resultados de esta sección son de la corrida sobre los primeros 41 productos. El corpus ya se
+> amplió a 133 productos en dev (de 71 búsquedas de 9 rubros); la próxima corrida los usa.
+
 | Pregunta | Respuesta hoy |
 |---|---|
 | ¿Propone cosas no obvias? | **Parece que sí, falta el juicio humano.** De 123 propuestas, 7 pasan del dolor a "la eligen" (C1 a C5): masajeador de espalda de pared, guía para cortarse el flequillo, arnés de cabeza para perros que tiran, aspirador de pelo para peluquería, sombrilla de techo para auto, panel de pared con contenedores, kit de parches para tapizado. Ninguna es un repuesto ni "lo mismo pero mejor". Falta que alguien del grupo juzgue a ciegas si son obvias. |
@@ -152,7 +155,7 @@ dolor) + ~USD 0,85 (equivalencias), con DeepSeek Flash a USD 0,30 / 1,20 por mil
 
 | Qué | Volumen | Dónde |
 |---|---|---|
-| Productos ancla (los más elegidos de cada búsqueda), particionados por búsqueda antes de leerlos | escala_dev: 41 productos de 23 búsquedas; escala_test: 46 de 24 | `data/escala/corpus_2026-11-05.json` |
+| Productos ancla (los 2 más elegidos de cada búsqueda), particionados por búsqueda antes de leerlos | escala_dev: 133 productos de 71 búsquedas; escala_test: 136 de 71. La ampliación del 6/11 (182 productos) eligió las búsquedas sin intervención: 99 categorías hoja del árbol de Mercado Libre, sorteadas en proporción a cuántas publicaciones tienen, en 9 rubros de consumo importables (`scripts/muestrear_categorias.js`) | `data/escala/corpus_*.json` |
 | Opiniones y preguntas de indecisos | escala_dev: 6.547 textos → 3.389 personas | mismo archivo; personas en `data/serendipia/personas_escala_dev_api.json` |
 | Búsquedas capturadas (para C3 a C6) | ~770 | `data/capturas/` (solo se agregan) |
 | Precios de proveedor | estimados de Alibaba con el descuento citado para 1688 y la comisión del agente | `data/serendipia/fob_*.json` |
