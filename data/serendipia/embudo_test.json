@@ -878,7 +878,7 @@
   "busqueda_ml": "aspiradora de mano inalambrica",
   "estado": "descartada",
   "se_detiene_en": "C4 hueco",
-  "motivo": "ya atendido: 45 equivalentes venden +100",
+  "motivo": "ya atendido: 44 equivalentes venden +100",
   "señales": [
    {
     "id": "P16.B1",
@@ -923,16 +923,16 @@
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
     "pasa": false,
-    "motivo": "ya atendido: 45 equivalentes venden +100",
+    "motivo": "ya atendido: 44 equivalentes venden +100",
     "datos": {
-     "equivalentes": 54,
-     "venden": 45,
-     "con_alguna_venta": 47,
-     "ventas_visibles": 70650,
+     "equivalentes": 53,
+     "venden": 44,
+     "con_alguna_venta": 46,
+     "ventas_visibles": 60650,
      "ejemplos_que_venden": [
-      "Aspiradora De Mano Gadnic Inalambrica 120W Succion 9000Pa Bateria 2000 (+10000, $52,399)",
       "Aspiradora de mano Laffitte inalámbrica 120W sin bolsa para autos (+10000, $32,099)",
-      "Aspiradora inalámbrica De mano Black+Decker HWVI225J01 177ml azul 50Hz (+10000, $79,999)"
+      "Aspiradora inalámbrica De mano Black+Decker HWVI225J01 177ml azul 50Hz (+10000, $79,999)",
+      "Aspiradora de Mano Inalámbrica Laffitte 120W Recargable Sin Bolsa Negr (+10000, $52,900)"
      ]
     }
    }

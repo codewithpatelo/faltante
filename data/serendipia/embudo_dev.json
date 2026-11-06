@@ -428,7 +428,7 @@
   "busqueda_ml": "organizador ropa plegable estructura metalica",
   "estado": "descartada",
   "se_detiene_en": "C4 hueco",
-  "motivo": "ya atendido: 7 equivalentes venden +100",
+  "motivo": "ya atendido: 6 equivalentes venden +100",
   "señales": [
    {
     "id": "P09.S1",
@@ -473,16 +473,16 @@
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
     "pasa": false,
-    "motivo": "ya atendido: 7 equivalentes venden +100",
+    "motivo": "ya atendido: 6 equivalentes venden +100",
     "datos": {
-     "equivalentes": 17,
-     "venden": 7,
-     "con_alguna_venta": 11,
-     "ventas_visibles": 13250,
+     "equivalentes": 16,
+     "venden": 6,
+     "con_alguna_venta": 10,
+     "ventas_visibles": 8250,
      "ejemplos_que_venden": [
-      "X2 Organizador Canasto Caja De Tela Plegable Estructura Metalica Ideal (+5000, $14,520)",
       "Organizador Caja De Tela Plegable Con Estructura Metalica (+5000, $10,830)",
-      "X4 Organizador Canasto Caja De Tela Premium Antidesgaste Cationica | P (+1000, $29,039)"
+      "X4 Organizador Canasto Caja De Tela Premium Antidesgaste Cationica | P (+1000, $29,039)",
+      "Organizador Caja De Tela Plegable Estructura Metalica Ideal Para Ropa  (+1000, $7,278)"
      ]
     }
    }
@@ -1431,7 +1431,7 @@
   "busqueda_ml": "organizador de ropa plegable",
   "estado": "descartada",
   "se_detiene_en": "C4 hueco",
-  "motivo": "ya atendido: 43 equivalentes venden +100",
+  "motivo": "ya atendido: 42 equivalentes venden +100",
   "señales": [
    {
     "id": "P09.B1",
@@ -1476,16 +1476,16 @@
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
     "pasa": false,
-    "motivo": "ya atendido: 43 equivalentes venden +100",
+    "motivo": "ya atendido: 42 equivalentes venden +100",
     "datos": {
-     "equivalentes": 63,
-     "venden": 43,
-     "con_alguna_venta": 48,
-     "ventas_visibles": 53500,
+     "equivalentes": 62,
+     "venden": 42,
+     "con_alguna_venta": 47,
+     "ventas_visibles": 43500,
      "ejemplos_que_venden": [
       "Armario Portátil Guardarropa Organizador Gadnic Perchero 168x127x45cm  (+10000, $47,499)",
-      "Canasto Cesto Ropa Sucia Bambu Plegable Asas Organizador Marca Känn Li (+10000, $27,099)",
-      "Set de 4 Organizadores Plegables para Cajones Ropa Interior Beige Wagg (+5000, $10,480)"
+      "Set de 4 Organizadores Plegables para Cajones Ropa Interior Beige Wagg (+5000, $10,480)",
+      "Organizador Canasto Cajon Plegable Tela Para Ropa Placard (+5000, $7,565)"
      ]
     }
    }
