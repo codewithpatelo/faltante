@@ -30,7 +30,10 @@ from harness.modelo import con_reintento, en_paralelo
 from harness.voces import RAIZ, textos_con_id
 
 SKILL_MEDIR = RAIZ / "skills/medir_dolor/SKILL.md"
-PERSONAS_MEDIDAS = 150                # por grupo (al azar, con semilla fija, si hay más) (PENDIENTE: análisis de potencia)
+PERSONAS_MEDIDAS = 150                # por grupo (al azar, con semilla fija, si hay más). Análisis de potencia con los efectos
+                                      # medidos en escala_dev (328 propuestas): el cuartil más chico de desatendidos es 4,7% contra
+                                      # 0% en el control; 150 es el menor tamaño (de a 10) con 80% de potencia (convención de
+                                      # Cohen) para Fisher al 5% (simulación en data/evaluacion/dolor_de_la_propuesta/potencia.py)
 PERSONAS_POR_LLAMADA_AL_MEDIR = 75
 MAX_PRODUCTOS_CON_DESATENDIDOS = 2    # el guardrail del paso B pide que la necesidad cruce 2 productos
 DESATENDIDOS_POR_PRODUCTO = 2         # como toda señal del embudo: 2 textos (harness/chequeos.errores_de_citas)
