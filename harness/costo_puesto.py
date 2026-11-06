@@ -27,7 +27,8 @@ EMBALAJE = 1.15             # volumen extra por caja master (PENDIENTE de fuente
 ESCENARIOS = ("optimista", "base", "pesimista")
 SEGURO = (0.003, 0.004, 0.005)       # prima sobre CIF + 10%, carga marítima general 0,3-0,5% (Suaid Global)
 COMISION_ML = (0.13, 0.14, 0.15)     # Premium Hogar 13-15% del precio (Jaguar Sheet)
-IIBB = (0.03, 0.04, 0.05)            # sobre la venta neta de IVA; PENDIENTE de la Ley Tarifaria vigente (3-5% según actividad y facturación)
+IIBB = (0.03, 0.03, 0.05)            # CABA, comercio minorista, sobre la venta neta de IVA: 3% si el año anterior facturó hasta
+                                     # $391.128.000 (un importador que empieza), 5% arriba (Ley 6948, desde junio 2026; Contablix)
 PUBLICIDAD = (0.12, 0.18, 0.25)      # Product Ads, ACOS Hogar 12-25%, "bueno" < 18% (Jaguar Sheet); se cobra sobre todas las ventas (producto nuevo, sin ventas orgánicas)
 DEVOLUCIONES = (0.05, 0.05, 0.20)    # 5%: tasa de referencia para vendedores de ML (Jaguar Sheet); 20%: e-commerce en general (SaleCycle/Red Stag)
 # ----------------------------------------------------------------------------------------
