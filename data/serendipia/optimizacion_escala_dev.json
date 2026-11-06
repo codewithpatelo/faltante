@@ -1,0 +1,633 @@
+{
+ "particion": "escala_dev",
+ "variante_de_partida": "V21",
+ "opciones": {
+  "estructura": "agrupar_primero",
+  "abduccion": "sherlock",
+  "diversidad": "repreguntar",
+  "rol": "antropologo",
+  "evitar_obvio": "si",
+  "razonamiento": "alto"
+ },
+ "instrucciones_finales": "Sos un antropólogo del consumo y analista de importación. Objetivo: a partir de señales de consumidores de productos distintos, proponer qué importar que hoy nadie trae y que no sea obvio. Mantené exactamente el formato de salida y las reglas de validación indicadas fuera de este bloque; no agregues campos ni cambies el esquema.\n\nDefiniciones operativas:\n- Señal válida: conducta observable de consumidores (elección repetida, queja, workaround, uso imprevisto, sobreprecio pagado, abandono de una función, reseña que revela tensión). Debe estar atada a un producto concreto y a una familia/categoría de producto. No uses búsquedas genéricas, un comentario aislado ni señales de productos que venden poco.\n- Productos distintos: familias o categorías distintas. No cuentes como distintos variantes, colores, tamaños, capacidades, sets, repuestos, accesorios, modelos del mismo producto ni dos anclas de la misma familia.\n- Necesidad de fondo: trabajo o restricción que explica elecciones en al menos dos familias distintas (por ejemplo espacio, tiempo, higiene, temperatura, portabilidad, recuperación, seguridad). No es 'misma ocasión de compra' ni 'se venden juntos'.\n- Obvio: mismo producto o misma categoría/subcategoría que cualquiera de las anclas; variante por tamaño, material, color, capacidad, formato o 'con más piezas'; set o kit; repuesto, consumible o accesorio; complemento directo necesario para usar el ancla; producto que aparece en la misma búsqueda, listado, sección de relacionados o co-compra típica; o 'el mismo producto pero mejor'. Si para justificarlo necesitás decir 'complementa a X' o 'sirve para usar X', es obvio.\n- No obvio: producto importable independiente, de otra categoría o que recombina capacidades, que resuelve la necesidad de fondo sin ser accesorio ni variante de las anclas. Debe poder deducirse de las anomalías, no de leer la ficha del producto ancla.\n\nProcedimiento:\n1. Inventariá las señales. Para cada una anotá familia/categoría, conducta concreta, fricción o workaround y fuerza de la evidencia. Descartá señales débiles, únicas o de productos que venden poco.\n2. Formá grupos por necesidad de fondo. Un grupo sólo es válido si contiene al menos dos familias/categorías distintas. Si no, descartalo.\n3. Para cada grupo, listá anomalías: defecto tolerado, ventaja ignorada, uso imprevisto, workaround, elección contradictoria o sobreprecio pagado. Cada anomalía debe citar la familia de producto que la muestra.\n4. Formulá una explicación causal que dé cuenta de al menos dos anomalías de familias distintas. Si la explicación no cubre varias anomalías, descartá el grupo.\n5. Generá candidatos preguntando: ¿qué objeto o capacidad haría innecesario el workaround en esas familias? Buscá soluciones de categorías o industrias vecinas (ferretería, profesional, industrial, outdoor, salud, mascotas, etc.). El candidato debe ser un producto importable y vendible por sí mismo, no un accesorio del ancla.\n6. Filtrá cada candidato. Debe cumplir todo esto:\n   - Evidencia: al menos dos familias distintas con señales reales y demanda no débil. No alcanza con una señal ni con variantes del mismo producto.\n   - Explicación: la propuesta se desprende de una explicación que cubre al menos dos anomalías de familias distintas.\n   - No obviedad: no es mismo producto, misma categoría, variante, set, repuesto, consumible, accesorio, complemento directo, producto de la misma búsqueda/listado/co-compra ni 'mismo pero mejor'. Si un comprador podría deducirlo leyendo la ficha del ancla o su sección de accesorios, descartalo.\n   - Hueco de importación: explicá por qué nadie lo trae hoy (demanda fragmentada, proveedor/herramienta específica, falta de catálogo local, formato no adaptado, etc.). No alcanza con 'no lo vi'.\n   - Diversidad: no repitas función, categoría ni mecanismo respecto de otra propuesta de la misma respuesta. Si dos propuestas comparten el mismo verbo (organizar, limpiar, masajear, contener), quedate con la mejor y buscá otra necesidad.\n7. Para cada propuesta final, mostrá en el formato permitido: grupo, familias/categorías, anomalías, explicación, producto propuesto, por qué no es obvio (mencioná al menos una alternativa obvia que descartaste) y por qué es importable/no está traído.\n\nNo propongas: repuestos, consumibles, accesorios, kits de accesorios, complementos directos, el mismo producto en otro tamaño/material/color/capacidad/formato, con más piezas, en set, ni 'el mismo pero mejor'. Tampoco propongas un producto de la misma categoría/subcategoría que cualquiera de las anclas, ni uno que aparezca en la misma búsqueda, listado, sección de relacionados o co-compra típica. Si la propuesta sólo se sostiene por cercanía comercial con el ancla, descartala.",
+ "resultado_final": {
+  "variante": "V21",
+  "opciones": {
+   "estructura": "agrupar_primero",
+   "abduccion": "sherlock",
+   "diversidad": "repreguntar",
+   "rol": "antropologo",
+   "evitar_obvio": "si",
+   "razonamiento": "alto"
+  },
+  "instrucciones": "Sos un antropólogo del consumo y analista de importación. Objetivo: a partir de señales de consumidores de productos distintos, proponer qué importar que hoy nadie trae y que no sea obvio. Mantené exactamente el formato de salida y las reglas de validación indicadas fuera de este bloque; no agregues campos ni cambies el esquema.\n\nDefiniciones operativas:\n- Señal válida: conducta observable de consumidores (elección repetida, queja, workaround, uso imprevisto, sobreprecio pagado, abandono de una función, reseña que revela tensión). Debe estar atada a un producto concreto y a una familia/categoría de producto. No uses búsquedas genéricas, un comentario aislado ni señales de productos que venden poco.\n- Productos distintos: familias o categorías distintas. No cuentes como distintos variantes, colores, tamaños, capacidades, sets, repuestos, accesorios, modelos del mismo producto ni dos anclas de la misma familia.\n- Necesidad de fondo: trabajo o restricción que explica elecciones en al menos dos familias distintas (por ejemplo espacio, tiempo, higiene, temperatura, portabilidad, recuperación, seguridad). No es 'misma ocasión de compra' ni 'se venden juntos'.\n- Obvio: mismo producto o misma categoría/subcategoría que cualquiera de las anclas; variante por tamaño, material, color, capacidad, formato o 'con más piezas'; set o kit; repuesto, consumible o accesorio; complemento directo necesario para usar el ancla; producto que aparece en la misma búsqueda, listado, sección de relacionados o co-compra típica; o 'el mismo producto pero mejor'. Si para justificarlo necesitás decir 'complementa a X' o 'sirve para usar X', es obvio.\n- No obvio: producto importable independiente, de otra categoría o que recombina capacidades, que resuelve la necesidad de fondo sin ser accesorio ni variante de las anclas. Debe poder deducirse de las anomalías, no de leer la ficha del producto ancla.\n\nProcedimiento:\n1. Inventariá las señales. Para cada una anotá familia/categoría, conducta concreta, fricción o workaround y fuerza de la evidencia. Descartá señales débiles, únicas o de productos que venden poco.\n2. Formá grupos por necesidad de fondo. Un grupo sólo es válido si contiene al menos dos familias/categorías distintas. Si no, descartalo.\n3. Para cada grupo, listá anomalías: defecto tolerado, ventaja ignorada, uso imprevisto, workaround, elección contradictoria o sobreprecio pagado. Cada anomalía debe citar la familia de producto que la muestra.\n4. Formulá una explicación causal que dé cuenta de al menos dos anomalías de familias distintas. Si la explicación no cubre varias anomalías, descartá el grupo.\n5. Generá candidatos preguntando: ¿qué objeto o capacidad haría innecesario el workaround en esas familias? Buscá soluciones de categorías o industrias vecinas (ferretería, profesional, industrial, outdoor, salud, mascotas, etc.). El candidato debe ser un producto importable y vendible por sí mismo, no un accesorio del ancla.\n6. Filtrá cada candidato. Debe cumplir todo esto:\n   - Evidencia: al menos dos familias distintas con señales reales y demanda no débil. No alcanza con una señal ni con variantes del mismo producto.\n   - Explicación: la propuesta se desprende de una explicación que cubre al menos dos anomalías de familias distintas.\n   - No obviedad: no es mismo producto, misma categoría, variante, set, repuesto, consumible, accesorio, complemento directo, producto de la misma búsqueda/listado/co-compra ni 'mismo pero mejor'. Si un comprador podría deducirlo leyendo la ficha del ancla o su sección de accesorios, descartalo.\n   - Hueco de importación: explicá por qué nadie lo trae hoy (demanda fragmentada, proveedor/herramienta específica, falta de catálogo local, formato no adaptado, etc.). No alcanza con 'no lo vi'.\n   - Diversidad: no repitas función, categoría ni mecanismo respecto de otra propuesta de la misma respuesta. Si dos propuestas comparten el mismo verbo (organizar, limpiar, masajear, contener), quedate con la mejor y buscá otra necesidad.\n7. Para cada propuesta final, mostrá en el formato permitido: grupo, familias/categorías, anomalías, explicación, producto propuesto, por qué no es obvio (mencioná al menos una alternativa obvia que descartaste) y por qué es importable/no está traído.\n\nNo propongas: repuestos, consumibles, accesorios, kits de accesorios, complementos directos, el mismo producto en otro tamaño/material/color/capacidad/formato, con más piezas, en set, ni 'el mismo pero mejor'. Tampoco propongas un producto de la misma categoría/subcategoría que cualquiera de las anclas, ni uno que aparezca en la misma búsqueda, listado, sección de relacionados o co-compra típica. Si la propuesta sólo se sostiene por cercanía comercial con el ancla, descartala.",
+  "no_obvias": 3,
+  "no_obvias_desvio": 1.41,
+  "validas_distintas": 4.67,
+  "propuestas": 5.33,
+  "costo_usd": 0.2228,
+  "feedback": [
+   {
+    "que_traer": "Medidor láser de distancias compacto, recargable, con cálculo de área/volumen y nivelación, para medir espacios y objetos antes de comprar.",
+    "resultado": "válida, distinta y no obvia"
+   },
+   {
+    "que_traer": "Cámara endoscópica inalámbrica con luz LED, pantalla o app y gancho/imán, para inspeccionar y alcanzar lugares ocultos.",
+    "resultado": "válida, distinta y no obvia"
+   },
+   {
+    "que_traer": "Cepillo eléctrico limpiador recargable con mango largo (spin scrubber) para baño y piso",
+    "resultado": "obvia: Es una versión eléctrica del cepillo/escobilla y del trapeador: misma categoría de limpieza y variante obvia de las anclas."
+   },
+   {
+    "que_traer": "Medidor láser de distancia de bolsillo (distanciómetro recargable)",
+    "resultado": "válida, distinta y no obvia"
+   },
+   {
+    "que_traer": "Cojín/soporte lumbar ergonómico firme para silla de escritorio",
+    "resultado": "obvia: El cojín lumbar es una variante ergonómica directa y previsible de la almohada cervical y del masajeador; se le ocurre a cualquiera que mire esas búsquedas."
+   },
+   {
+    "que_traer": "Estación de energía portátil recargable con salida de 220V e inversor (power station compacta, con tomas de corriente y USB)",
+    "resultado": "válida, distinta y no obvia"
+   },
+   {
+    "que_traer": "Almohadilla/cinturón térmico eléctrico con control de temperatura y apagado automático, para cuello y espalda (heat therapy pad)",
+    "resultado": "obvia: La almohadilla térmica es una alternativa/variante directa y obvia de los masajeadores con calor y la almohada cervical para el mismo tipo de dolor."
+   },
+   {
+    "que_traer": "Medidor láser de distancias con nivel y cálculo de área/volumen",
+    "resultado": "válida, distinta y no obvia"
+   },
+   {
+    "que_traer": "Collarín cervical inflable con bomba manual",
+    "resultado": "obvia: es otro producto cervical de la misma categoría; aparece como alternativa inmediata al buscar almohada o masajeador cervical"
+   },
+   {
+    "que_traer": "Guantes de trabajo con palma de gel antivibración, pack x2",
+    "resultado": "válida, distinta y no obvia"
+   },
+   {
+    "que_traer": "Etiquetadora térmica portátil Bluetooth",
+    "resultado": "no pasó el guardrail o C1 a C3 (señales que no existen, de un solo producto, débiles o de productos que venden poco)"
+   },
+   {
+    "que_traer": "Termómetro digital de sonda con alarma para horno y air fryer, sonda de acero inoxidable resistente a 300 °C",
+    "resultado": "válida, distinta y no obvia"
+   },
+   {
+    "que_traer": "Cepillo eléctrico giratorio recargable con cabezales intercambiables para baño, azulejos y paredes, con mango extensible",
+    "resultado": "obvia: es una versión eléctrica y mejorada del cepillo/escobilla de baño ancla, con cabezales y mango extensible; surge al mirar esa búsqueda"
+   },
+   {
+    "que_traer": "Cámara endoscópica/boroscopio WiFi con luz LED y cable semiflexible de 5 m para inspección de caños, paredes y rincones",
+    "resultado": "válida, distinta y no obvia"
+   },
+   {
+    "que_traer": "Bolsa estanca impermeable con cierre roll-top y correa, pack x2 (10 L y 20 L)",
+    "resultado": "no pasó el guardrail o C1 a C3 (señales que no existen, de un solo producto, débiles o de productos que venden poco)"
+   },
+   {
+    "que_traer": "Estación de energía portátil de 300 Wh con tomacorriente 220V, USB-C y linterna LED",
+    "resultado": "válida, distinta y no obvia"
+   }
+  ],
+  "oportunidades": [
+   {
+    "id": "O1",
+    "que_traer": "Medidor láser de distancias compacto, recargable, con cálculo de área/volumen y nivelación, para medir espacios y objetos antes de comprar.",
+    "por_que": "Agrupa una misma necesidad de fondo: traducir capacidades y medidas publicadas a un espacio real antes de decidir. En tupper de vidrio la capacidad en litros no alcanza para imaginar el recipiente (E007.S1); en organizadores de placard y cajón las medidas dudosas definen si entra o no (E013.S2, E014.S1); en soportes para notebook el ancho debe cubrir notebooks de 15” o más (E081.S2); en parasoles el tamaño universal no tranquiliza sobre el parabrisas real (E072.S1). La oferta local de medición láser es profesional/cara o poco visible en formato consumer; la demanda está fragmentada entre cocina, placard, oficina y auto, por eso nadie lo trae como solución transversal. Descarté el obvio “tupper/organizador con otra medida” porque sigue siendo la misma categoría del ancla.",
+    "señales": [
+     "E007.S1",
+     "E013.S2",
+     "E014.S1",
+     "E081.S2",
+     "E072.S1"
+    ],
+    "busqueda_ml": "medidor laser distancia recargable",
+    "criterio_equivalencia": {
+     "empieza_con": [
+      "Medidor",
+      "Distanciometro",
+      "Telemetro"
+     ],
+     "todos": [
+      [
+       "distancia",
+       "laser"
+      ]
+     ],
+     "excluir": [
+      "cinta",
+      "rueda",
+      "calibre",
+      "ph",
+      "humedad"
+     ]
+    },
+    "juicio": {
+     "id": "O1",
+     "obvia": false,
+     "motivo": "no es repuesto ni variante de las anclas; conecta la necesidad de medir espacios reales antes de comprar productos distintos"
+    }
+   },
+   {
+    "id": "O2",
+    "que_traer": "Cámara endoscópica inalámbrica con luz LED, pantalla o app y gancho/imán, para inspeccionar y alcanzar lugares ocultos.",
+    "por_que": "Conecta familias que chocan con lo invisible: el termómetro infrarrojo se usa para buscar caños y filtraciones ocultas, pero solo lee superficie (E047.S3); la aspiradora de auto se usa como herramienta de detalle en rincones, rieles y ranuras donde no se ve ni se entra bien (E065.S5); la escobilla de baño se valora por llegar a pliegues y descargas fuera del alcance de la escobilla común (E024.S4). La necesidad de fondo es ver y alcanzar cavidades estrechas, no medir temperatura ni succionar. Nadie lo trae como producto masivo porque la demanda está repartida entre plomería, limpieza, auto y hogar, y la oferta local es de inspección profesional o USB atada a notebook; una versión inalámbrica barata con gancho no está en el catálogo doméstico. Descarté “aspiradora con boquilla más fina” por ser misma categoría y complemento directo del ancla.",
+    "señales": [
+     "E047.S3",
+     "E065.S5",
+     "E024.S4"
+    ],
+    "busqueda_ml": "camara endoscopica inalambrica",
+    "criterio_equivalencia": {
+     "empieza_con": [
+      "Camara Endoscopica",
+      "Endoscopio",
+      "Boroscopio"
+     ],
+     "todos": [
+      [
+       "inalambrica"
+      ]
+     ],
+     "excluir": [
+      "usb",
+      "seguridad",
+      "vigilancia",
+      "otoscopio"
+     ]
+    },
+    "juicio": {
+     "id": "O2",
+     "obvia": false,
+     "motivo": "no es accesorio ni versión mejorada de las anclas; cruza necesidades distintas de inspeccionar y alcanzar lugares ocultos"
+    }
+   },
+   {
+    "id": "O1",
+    "que_traer": "Cepillo eléctrico limpiador recargable con mango largo (spin scrubber) para baño y piso",
+    "por_que": "La limpieza profunda hoy se hace a fuerza de brazo y con herramientas manuales que fallan. En la escobilla de baño se reconoce que la silicona no raspa como el cepillo duro y hace falta la eficacia del clásico (E024.S3, E025.S5), pero el mango firme se desarma justo cuando se usa (E024.S2). En la mopa se pide limpiar sin agacharse ni hacer fuerza (E023.S4) y el mecanismo plástico (pedal/palanca) se rompe (E023.S2). En el secador de piso se busca rendir en superficies grandes sin pelear con una herramienta que se dobla o incomoda (E026.S4, E027.S3). La necesidad de fondo es fregar a fondo con menos esfuerzo físico y mecanismos que no cedan. Solo se ofrece limpieza manual (mopa, trapo, escobilla) o electrodomésticos grandes que no entran en el baño. Un cepillo eléctrico recargable de mango largo y buen torque une potencia de fregado con ergonomía y no tiene stock local accesible. Descarté el repuesto de microfibra y 'la misma mopa pero más resistente' por obvios (misma categoría/consumible).",
+    "señales": [
+     "E024.S3",
+     "E025.S5",
+     "E024.S2",
+     "E023.S4",
+     "E023.S2",
+     "E026.S4",
+     "E027.S3"
+    ],
+    "busqueda_ml": "cepillo electrico limpiador recargable con mango largo",
+    "criterio_equivalencia": {
+     "empieza_con": [
+      "cepillo electrico",
+      "limpiador electrico",
+      "cepillo limpiador electrico"
+     ],
+     "todos": [
+      [
+       "electrico"
+      ]
+     ],
+     "excluir": [
+      "manual",
+      "repuesto",
+      "microfibra",
+      "escobilla de baño"
+     ]
+    },
+    "juicio": {
+     "id": "O1",
+     "obvia": true,
+     "motivo": "Es una versión eléctrica del cepillo/escobilla y del trapeador: misma categoría de limpieza y variante obvia de las anclas."
+    }
+   },
+   {
+    "id": "O2",
+    "que_traer": "Medidor láser de distancia de bolsillo (distanciómetro recargable)",
+    "por_que": "Comprar muebles y accesorios que 'entren' fracasa porque no se puede medir el hueco real en soledad. En organizadores de placard el ancho estándar no calza y las medidas de la foto no coinciden con la descripción (E013.S2, E014.S1); en el tupper hermético se calcula mal el tamaño (E007.S1); el parasol sobra a los costados o deja el vidrio a medio cubrir y no se sabe si entra en el modelo (E072.S1); el soporte de notebook queda angosto para 15\" (E081.S2) y el del celular depende del auto y año (E063.S1). La necesidad de fondo es verificar medidas de espacios incómodos (techos de placard, parabrisas, torpedo, fondos de cajón) antes de comprar. La cinta manual no llega o queda corta en esos lugares y su carcasa se rompe con los golpes. Un medidor láser de bolsillo da la medida en segundos y resuelve el '¿me entra?'. No se ofrece como artículo de consumo masivo (solo instrumental de obra caro). Descarté 'la misma cinta métrica más resistente' por obvio (misma categoría).",
+    "señales": [
+     "E013.S2",
+     "E014.S1",
+     "E007.S1",
+     "E072.S1",
+     "E081.S2",
+     "E063.S1"
+    ],
+    "busqueda_ml": "medidor laser de distancia",
+    "criterio_equivalencia": {
+     "empieza_con": [
+      "medidor laser",
+      "medidor de distancia laser",
+      "distanciometro",
+      "medidor láser"
+     ],
+     "todos": [
+      [
+       "laser"
+      ]
+     ],
+     "excluir": [
+      "cinta metrica",
+      "termometro",
+      "humedad",
+      "infrarrojo"
+     ]
+    },
+    "juicio": {
+     "id": "O2",
+     "obvia": false,
+     "motivo": "No es accesorio ni variante de los organizadores; conecta la organización del hogar con una herramienta de medición, una necesidad que las búsquedas ancla no muestran."
+    }
+   },
+   {
+    "id": "O3",
+    "que_traer": "Cojín/soporte lumbar ergonómico firme para silla de escritorio",
+    "por_que": "El dolor de cuello y espalda aparece en tres frentes que hoy se parchean por separado. Al trabajar horas frente a la notebook sin apoyar bien la zona lumbar, se busca subir la pantalla pero el malestar de espalda persiste (E080.S4). Al dormir con una almohada viscoelástica se acepta que 'no resuelve lo cervical' y solo alivia (E021.S4, E021.S5). Para el alivio se compra un rodillo masajeador de espalda y zona lumbar (E056.S4, E056.S2). La necesidad de fondo es sostener la postura durante las largas horas de sedentarismo, no solo aliviar después. Se ofrecen almohadas de cama, masajeadores y parches, pero no un soporte lumbar firme y ajustable para la silla de trabajo que prevenga el problema. Es importable y vendible por sí mismo (no es accesorio de ninguno de los anclas). Descarté 'otra almohada cervical' o 'un masajeador más potente' por obvios (misma categoría).",
+    "señales": [
+     "E080.S4",
+     "E021.S4",
+     "E056.S4",
+     "E056.S2"
+    ],
+    "busqueda_ml": "cojin soporte lumbar para silla",
+    "criterio_equivalencia": {
+     "empieza_con": [
+      "cojin lumbar",
+      "soporte lumbar",
+      "respaldo lumbar"
+     ],
+     "todos": [
+      [
+       "lumbar"
+      ]
+     ],
+     "excluir": [
+      "almohada",
+      "cama",
+      "cervical de cama"
+     ]
+    },
+    "juicio": {
+     "id": "O3",
+     "obvia": true,
+     "motivo": "El cojín lumbar es una variante ergonómica directa y previsible de la almohada cervical y del masajeador; se le ocurre a cualquiera que mire esas búsquedas."
+    }
+   },
+   {
+    "id": "O1b",
+    "que_traer": "Estación de energía portátil recargable con salida de 220V e inversor (power station compacta, con tomas de corriente y USB)",
+    "por_que": "Varias familias distintas —masajeador con calor, pistola de silicona, lámpara de escritorio, cortapelo— se venden con un cable corto y fijo a la pared, y la gente lo tolera solo porque no hay alternativa: pide poder usar el aparato sin estar enchufado, se queja de que el cable es corto y limita dónde trabaja, o directamente lamenta que la lámpara no sea inalámbrica. La necesidad de fondo es la misma: independencia del tomacorriente para mover la herramienta por el ambiente o el taller. Nadie ofrece hoy, con stock local, una fuente de energía portátil que entregue 220V real para estos artefactos (los power bank solo dan USB y el alargue sigue atando al enchufe).",
+    "señales": [
+     "E055.S2",
+     "E058.S3",
+     "E083.S1",
+     "E079.S5"
+    ],
+    "busqueda_ml": "estacion de energia portatil 220v",
+    "criterio_equivalencia": {
+     "empieza_con": [
+      "estacion de energia",
+      "generador portatil",
+      "central electrica portatil"
+     ],
+     "todos": [
+      [
+       "portatil"
+      ]
+     ],
+     "excluir": [
+      "cargador",
+      "funda",
+      "cable",
+      "alargador"
+     ]
+    },
+    "juicio": {
+     "id": "O1b",
+     "obvia": false,
+     "motivo": "No es accesorio ni variante de las anclas; conecta varios aparatos con cable corto con una estación de energía portátil, una solución transversal no visible en esas búsquedas."
+    }
+   },
+   {
+    "id": "O2b",
+    "que_traer": "Almohadilla/cinturón térmico eléctrico con control de temperatura y apagado automático, para cuello y espalda (heat therapy pad)",
+    "por_que": "Dos familias distintas comparten una concesión: el masajeador con calor y la almohada cervical se compran por precio y se acepta que no resuelven el dolor de fondo. Los usuarios del rodillo dicen que el calor es tibio, que 'solo prende luces' o que no alcanza para la contractura y piden más calor y más rápido; los de la almohada asumen que 'no soluciona el problema cervical' pero igual la usan. La necesidad común es alivio de dolor cervical/contracturas en casa con calor sostenido y regulable, algo que estos aparatos baratos (calor débil, soporte pasivo) no entregan. Falta una solución dedicada de termoterapia: las opciones locales son bolsas de agua caliente o almohadillas básicas sin control de temperatura.",
+    "señales": [
+     "E055.S3",
+     "E056.S3",
+     "E021.S4"
+    ],
+    "busqueda_ml": "almohadilla termica electrica cuello espalda",
+    "criterio_equivalencia": {
+     "empieza_con": [
+      "almohadilla termica",
+      "cinturon termico",
+      "faja termica"
+     ],
+     "todos": [
+      [
+       "electrico"
+      ]
+     ],
+     "excluir": [
+      "bolsa de agua",
+      "semillas",
+      "masajeador"
+     ]
+    },
+    "juicio": {
+     "id": "O2b",
+     "obvia": true,
+     "motivo": "La almohadilla térmica es una alternativa/variante directa y obvia de los masajeadores con calor y la almohada cervical para el mismo tipo de dolor."
+    }
+   },
+   {
+    "id": "O1",
+    "que_traer": "Medidor láser de distancias con nivel y cálculo de área/volumen",
+    "por_que": "En organizadores de placard y parasoles la compra se frustra por lo mismo: el comprador no puede traducir litros o 'universal' a las medidas reales de su cajón o parabrisas, y las fotos/descripciones no coinciden. Un medidor láser con área/volumen y nivel resuelve la verificación previa. No lo trae el canal hogar/auto porque se lo percibe como herramienta profesional y la demanda está fragmentada entre organización, auto y contenedores. Descarté 'organizador con más medidas' y 'parasol por modelo' por ser variantes obvias.",
+    "señales": [
+     "E014.S1",
+     "E072.S1"
+    ],
+    "busqueda_ml": "medidor laser distancia",
+    "criterio_equivalencia": {
+     "empieza_con": [
+      "medidor",
+      "telemetro",
+      "distanciometro"
+     ],
+     "todos": [
+      [
+       "laser"
+      ]
+     ],
+     "excluir": [
+      "cinta",
+      "escolar",
+      "manual"
+     ]
+    },
+    "juicio": {
+     "id": "O1",
+     "obvia": false,
+     "motivo": "el medidor láser no es repuesto, accesorio ni variante de parasol u organizador; conecta dos búsquedas distintas por una necesidad de medición que no surge de mirar esas anclas"
+    }
+   },
+   {
+    "id": "O2",
+    "que_traer": "Collarín cervical inflable con bomba manual",
+    "por_que": "La almohada cervical se compra aunque no resuelva el problema de fondo y el rodillo se usa también en cuello/espalda: en ambos casos la gente autotrata dolor con productos pasivos y tolera límites. Un collarín cervical inflable aporta tracción activa y portátil sin depender de sesiones. No está en retail masivo: es ortopedia que se vende en casas médicas, con demanda dispersa. Descarté otra almohada o un masajeador por ser misma categoría.",
+    "señales": [
+     "E021.S4",
+     "E056.S4"
+    ],
+    "busqueda_ml": "collar cervical inflable",
+    "criterio_equivalencia": {
+     "empieza_con": [
+      "collar",
+      "collarin",
+      "collarín",
+      "inmovilizador"
+     ],
+     "todos": [
+      [
+       "cervical",
+       "inflable"
+      ]
+     ],
+     "excluir": [
+      "almohada",
+      "viaje"
+     ]
+    },
+    "juicio": {
+     "id": "O2",
+     "obvia": true,
+     "motivo": "es otro producto cervical de la misma categoría; aparece como alternativa inmediata al buscar almohada o masajeador cervical"
+    }
+   },
+   {
+    "id": "O3",
+    "que_traer": "Guantes de trabajo con palma de gel antivibración, pack x2",
+    "por_que": "El cortapelo se tolera pesado y vibratorio, y en la limpieza se buscan manos sin cayos: el trabajo repetitivo de agarre y vibración castiga las manos y no hay protección de consumo. Guantes con palma de gel antivibración son PPE de industria, no se ofrecen en belleza/limpieza; el pack x2 evita que el envío se coma el margen. Descarté 'cortapelo más liviano' y 'mopa ergonómica' por ser el mismo producto mejorado.",
+    "señales": [
+     "E079.S2",
+     "E027.S5"
+    ],
+    "busqueda_ml": "guantes antivibracion trabajo",
+    "criterio_equivalencia": {
+     "empieza_con": [
+      "guantes",
+      "guante"
+     ],
+     "todos": [
+      [
+       "antivibracion"
+      ]
+     ],
+     "excluir": [
+      "boxeo",
+      "futbol",
+      "invierno",
+      "motocross"
+     ]
+    },
+    "juicio": {
+     "id": "O3",
+     "obvia": false,
+     "motivo": "los guantes antivibración no son accesorio ni variante de cortapelo o trapeador; conecta usos distintos de agarre y vibración"
+    }
+   },
+   {
+    "id": "O1b",
+    "que_traer": "Termómetro digital de sonda con alarma para horno y air fryer, sonda de acero inoxidable resistente a 300 °C",
+    "por_que": "En tupper de vidrio y en espátulas de silicona la duda de fondo no es el recipiente sino la temperatura real: si la tapa aguanta horno/air fryer, cuánto calor soporta la silicona y cómo cocinar sin adivinar. La gente resuelve esto con el termómetro infrarrojo de taller, que mide superficie y no el interior del alimento. Nadie ofrece un instrumento de núcleo pensado para cocina doméstica, con sonda y alarma, que se venda como producto independiente y no como accesorio del recipiente.",
+    "señales": [
+     "E008.S1",
+     "E008.S2",
+     "E011.S2"
+    ],
+    "busqueda_ml": "termometro digital sonda horno air fryer",
+    "criterio_equivalencia": {
+     "empieza_con": [
+      "Termómetro",
+      "Termometro"
+     ],
+     "todos": [
+      [
+       "sonda",
+       "horno"
+      ]
+     ],
+     "excluir": [
+      "infrarrojo",
+      "repuesto",
+      "funda"
+     ]
+    },
+    "juicio": {
+     "id": "O1b",
+     "obvia": false,
+     "motivo": "el termómetro de sonda no es accesorio ni variante de espátula o tupper; la necesidad de medir temperatura no se ve en esas búsquedas"
+    }
+   },
+   {
+    "id": "O2b",
+    "que_traer": "Cepillo eléctrico giratorio recargable con cabezales intercambiables para baño, azulejos y paredes, con mango extensible",
+    "por_que": "La escobilla de baño de silicona se acepta porque llega a rincones, pero se objeta que no raspa como las cerdas duras; la mopa y el secador se usan también en paredes, techos y superficies altas, y la gente pide no agacharse ni hacer fuerza. Un cepillo eléctrico con cabezales resuelve las dos fricciones: potencia de cerdas en un formato que entra en rincones y alcanza altura sin esfuerzo. No es una escobilla manual mejorada ni un accesorio de la mopa: es un aparato de limpieza independiente que hoy no está en el catálogo local con stock.",
+    "señales": [
+     "E024.S3",
+     "E025.S5",
+     "E023.S3",
+     "E023.S4"
+    ],
+    "busqueda_ml": "cepillo electrico recargable limpieza baño azulejos",
+    "criterio_equivalencia": {
+     "empieza_con": [
+      "Cepillo eléctrico",
+      "Cepillo electrico",
+      "Limpiador eléctrico",
+      "Limpiador electrico"
+     ],
+     "todos": [
+      [
+       "recargable",
+       "cabezal"
+      ]
+     ],
+     "excluir": [
+      "repuesto",
+      "solo cabezal",
+      "manual"
+     ]
+    },
+    "juicio": {
+     "id": "O2b",
+     "obvia": true,
+     "motivo": "es una versión eléctrica y mejorada del cepillo/escobilla de baño ancla, con cabezales y mango extensible; surge al mirar esa búsqueda"
+    }
+   },
+   {
+    "id": "O3b",
+    "que_traer": "Cámara endoscópica/boroscopio WiFi con luz LED y cable semiflexible de 5 m para inspección de caños, paredes y rincones",
+    "por_que": "Usuarios de termómetro infrarrojo lo compran para detectar pérdidas de agua en caños y paredes, pero el equipo solo lee superficie y no ve el interior; usuarios de aspiradora de mano lo usan para rincones, rieles y ranuras donde no entra la mano. Ambos necesitan ver dentro de espacios ocultos y estrechos. No hay en el mercado local un boroscopio barato y simple que se conecte al celular; se resuelve con linterna y tacto.",
+    "señales": [
+     "E047.S3",
+     "E065.S5"
+    ],
+    "busqueda_ml": "camara endoscopica boroscopio wifi inspeccion caños",
+    "criterio_equivalencia": {
+     "empieza_con": [
+      "Endoscopio",
+      "Boroscopio",
+      "Cámara endoscópica",
+      "Camara endoscopica"
+     ],
+     "todos": [
+      [
+       "WiFi",
+       "LED"
+      ]
+     ],
+     "excluir": [
+      "repuesto",
+      "cable",
+      "soporte"
+     ]
+    },
+    "juicio": {
+     "id": "O3b",
+     "obvia": false,
+     "motivo": "el boroscopio no es accesorio ni variante de termómetro infrarrojo o aspiradora; conecta búsquedas distintas para inspeccionar interiores"
+    }
+   },
+   {
+    "id": "O5b",
+    "que_traer": "Estación de energía portátil de 300 Wh con tomacorriente 220V, USB-C y linterna LED",
+    "por_que": "Usuarios de pistola de silicona se quejan del cable corto que los ata al enchufe; usuarios de lámpara de escritorio quieren usarla sin cable o seguir con luz si se corta la corriente; usuarios de rodillo masajeador piden usarlo sin red eléctrica y con cable más largo. La necesidad común es energía disponible donde no hay toma, sin cambiar cada herramienta por una versión a batería. Hoy se resuelve con alargues o comprando equipos inalámbricos de menor potencia; una estación portátil es un producto independiente de energía, no un accesorio de ninguna de las anclas.",
+    "señales": [
+     "E058.S3",
+     "E083.S1",
+     "E055.S2"
+    ],
+    "busqueda_ml": "estacion de energia portatil 220v usb-c",
+    "criterio_equivalencia": {
+     "empieza_con": [
+      "Estación de energía",
+      "Estacion de energia",
+      "Power station"
+     ],
+     "todos": [
+      [
+       "portátil",
+       "220V"
+      ]
+     ],
+     "excluir": [
+      "repuesto",
+      "cargador",
+      "cable"
+     ]
+    },
+    "juicio": {
+     "id": "O5b",
+     "obvia": false,
+     "motivo": "la estación de energía portátil no es accesorio ni variante de lámpara, masajeador o pistola de silicona; conecta necesidades distintas de energía"
+    }
+   }
+  ]
+ },
+ "historia": [
+  {
+   "ronda": 0,
+   "instrucciones": "Sos un antropólogo del consumo: te importa qué revelan las elecciones sobre cómo vive la gente.\n\nTrabajá así: primero agrupá las señales que expresan la misma necesidad de fondo aunque vengan de productos y búsquedas distintas. Después, para cada grupo de 2 o más productos, proponé qué traer.\n\nRazoná como un detective: primero listá las observaciones que no cierran (anomalías: lo que la gente elige pese a un defecto, lo que deja pasar pese a una ventaja, usos que nadie previó). Después proponé la explicación que da cuenta de varias anomalías a la vez, y lo que habría que traer si esa explicación es cierta.\n\nNO propongas: repuestos, consumibles o accesorios del mismo producto ancla, ni el mismo producto \"pero mejor\" (más grande, de otro material, con más piezas). Eso cualquiera lo ve.",
+   "propuestas": 6.67,
+   "validas_distintas": 5,
+   "no_obvias": 1.67
+  },
+  {
+   "ronda": 1,
+   "diagnostico": "El enfoque de antropología del consumo y el paso de anomalías producen las buenas propuestas cuando obligan a detectar una tensión de uso concreta que cruza categorías y a proponer una familia de producto independiente con otro mecanismo. Las buenas (rodillo de espuma, termómetro, cepillos de detalle, mopa, kit miofascial) aparecen cuando la propuesta reemplaza un workaround observado y no se puede describir como '[ancla] pero...'. El problema es que 'misma necesidad de fondo' y 'grupo de 2+ productos' no exigen categorías distintas ni prohíben el clúster del ancla: el modelo agrupa por verbos amplios (organizar, limpiar, medir, contener) y propone el accesorio, repuesto, kit o variante que completa el ancla. La lista negativa es demasiado estrecha: no cubre sets, módulos, versiones para otro contexto/material/formato, sustitutos directos ni 'lo que falta para que funcione'. Tampoco hay prueba de obviedad, evidencia mínima ni control de repetición/diversidad; por eso aparecen cajas organizadoras, termos, soportes y foam rollers repetidos o directamente derivados del ancla.",
+   "instrucciones": "Sos un antropólogo del consumo y detective de demanda. Te importa qué revelan las elecciones sobre cómo vive la gente. Tu tarea no es completar el catálogo del producto ancla ni proponer el accesorio que le falta: es detectar una tensión de uso que atraviese categorías y proponer una categoría de producto importable que hoy no aparece en las señales y que no sea obvia.\n\nReglas de evidencia:\n1. Trabajá con señales de al menos dos categorías de producto distintas. No cuentes como categorías distintas: variantes, tamaños, materiales, colores, packs, sets, kits, modelos, repuestos, accesorios, consumibles, búsquedas del mismo producto, recomendados de la misma página ni productos que solo se diferencian por contexto, ambiente o usuario.\n2. Cada grupo debe tener al menos dos señales independientes y al menos una anomalía conductual: gente que elige pese a un defecto, que deja pasar una ventaja, que adapta o improvisa un workaround, que usa un producto para un fin no previsto, que compra una combinación rara o que reemplaza una categoría con otra. Descartá grupos sostenidos por un solo producto, una tendencia genérica, una intención sin conducta o un 'sería lindo'.\n3. No agrupes por verbos amplios (organizar, limpiar, cocinar, medir, contener, bienestar). Agrupá por una tensión concreta: situación + obstáculo + workaround actual + costo o riesgo de ese workaround. Si la explicación no permite predecir una conducta concreta, es demasiado amplia.\n\nTrabajá en este orden:\nA. Listá primero solo observaciones que no cierran (anomalías), con la categoría de producto y la conducta observada. No propongas nada todavía.\nB. Agrupá las anomalías que expresan la misma tensión de uso, aunque vengan de productos y búsquedas distintas. Para cada grupo, escribí una explicación que dé cuenta de al menos dos anomalías a la vez y que nombre el workaround que la gente usa hoy y por qué le falla.\nC. Para cada grupo que pase las reglas, proponé qué importar. La propuesta debe ser una familia o categoría de producto independiente, con mecanismo distinto al ancla, que resuelva esa tensión reemplazando el workaround observado. Debe poder venderse y usarse como producto en sí, no como complemento necesario del ancla.\n\nFiltros obligatorios antes de proponer (si falla uno, descartá la idea):\n- No es repuesto, consumible, accesorio, complemento, adaptador, soporte, mango, cabezal, filtro, bolsa, funda, organizador interno ni 'lo que falta para que el ancla funcione'.\n- No es el mismo producto ni una variante de la misma categoría específica del ancla: tamaño, material, color, capacidad, forma, pack, set, kit, módulo, sistema, versión plegable, telescópica, ergonómica, impermeable, térmica o rígida, 'para otro ambiente, persona o uso', 'con más divisiones, tapa, ruedas o piezas'.\n- No es un sustituto directo que solo cambia el material (vidrio por silicona, plástico por acero) o el formato.\n- No es una mejora obvia de un producto ya señalado ni la respuesta estándar a la misma búsqueda. Si un comprador que busca cualquiera de las anclas lo vería como 'también te puede interesar', misma góndola específica o co-compra típica, descartalo.\n- No lo propongas si su única razón de ser es completar, mejorar o sustituir el ancla. Sí puede pertenecer al mismo gran rubro si es un producto independiente, con uso completo y mecanismo distinto.\n- Prueba de obviedad: describí la propuesta en una frase. Si la frase contiene el nombre del ancla, 'para [ancla]', 'con [ancla]', 'más [atributo]', 'set o kit de [ancla]' o 'versión [contexto]', descartala. Si un no experto podría adivinarla a partir del ancla en menos de cinco segundos, descartala.\n- Prueba de ausencia: la propuesta no debe aparecer nombrada en las señales ni ser la solución que ya están comprando. Si ya existe en las señales, no es 'qué importar que nadie trae'.\n- Prueba de workaround: debe reemplazar un workaround observado. Si solo agrega comodidad sin explicar qué hace hoy la gente y por qué le falla, descartala.\n\nDiversidad y repetición:\n- Si dos ideas resuelven la misma tensión o comparten familia, ocasión de uso, ambiente, parte del cuerpo o usuario, dejá solo la mejor.\n- No repitas categorías: nada de dos propuestas que sean variantes, kit o sinónimos de lo mismo.\n- Priorizá tensiones que crucen categorías y que no sean el cliché de la categoría (por ejemplo, no 'otro organizador' para señales de orden; no 'otro termómetro' para señales de medición) salvo que la anomalía y el workaround sean muy específicos y la propuesta no sea la variante obvia.\n\nPara cada propuesta final, verificá internamente: (1) al menos dos categorías distintas; (2) al menos dos anomalías; (3) explicación que las conecta; (4) workaround actual y su falla; (5) propuesta independiente y con otro mecanismo; (6) no aparece en las señales; (7) pasa la prueba de obviedad; (8) no repite otra propuesta. Si no cumple todo, no la incluyas. Mantené el formato de salida y las reglas de validación externas; acá solo se define el razonamiento.",
+   "se_queda": false,
+   "propuestas": 0,
+   "validas_distintas": 0,
+   "no_obvias": 0
+  },
+  {
+   "ronda": 2,
+   "diagnostico": "El fallo principal es que las instrucciones no definen de forma operativa qué es una 'necesidad de fondo' ni qué es 'obvio'. Al pedir agrupar señales 'aunque vengan de productos y búsquedas distintas', el modelo agrupa por ocasión de compra o co-búsqueda (limpieza, organizar, cocina, mascotas, recuperación) y luego propone el accesorio o la variante típica del ancla: ventosas, mango telescópico, cajas modulares, soporte lumbar, termómetro, bolsas de silicona, bebedero, foam roller. La lista negativa sólo bloquea repuestos, consumibles, accesorios y 'mismo producto pero mejor', pero no bloquea variantes por material, formato, capacidad o kit, complementos directos, productos de la misma categoría, ni productos que aparecen en la misma búsqueda, listado, sección de relacionados o co-compra. Además, '2 o más productos' se cumple con variantes/SKUs del mismo producto, no con familias distintas, y no se exige evidencia real ni demanda no débil; de ahí las fallas C1-C3 por señales únicas, débiles o de productos que venden poco. El paso de anomalías tampoco está conectado causalmente con la propuesta: se pueden listar anomalías y saltar a un producto adyacente sin que la explicación lo exija. Falta control de diversidad: varios grupos terminan en la misma función (organizar, limpiar, masajear) y salen propuestas repetidas. También falta exigir que sea importable y que efectivamente no esté traído o visible en el mercado, justificando el hueco. Las buenas propuestas aparecen cuando el modelo usa una tensión o rareza y propone una categoría distinta que resuelve el trabajo (mopa vertical, cepillos de detalle, termómetro de sonda, set de liberación miofascial), pero nada en las instrucciones obliga a que la propuesta no sea un accesorio/variante ni a explicar por qué no es la solución obvia.",
+   "instrucciones": "Sos un antropólogo del consumo y analista de importación. Objetivo: a partir de señales de consumidores de productos distintos, proponer qué importar que hoy nadie trae y que no sea obvio. Mantené exactamente el formato de salida y las reglas de validación indicadas fuera de este bloque; no agregues campos ni cambies el esquema.\n\nDefiniciones operativas:\n- Señal válida: conducta observable de consumidores (elección repetida, queja, workaround, uso imprevisto, sobreprecio pagado, abandono de una función, reseña que revela tensión). Debe estar atada a un producto concreto y a una familia/categoría de producto. No uses búsquedas genéricas, un comentario aislado ni señales de productos que venden poco.\n- Productos distintos: familias o categorías distintas. No cuentes como distintos variantes, colores, tamaños, capacidades, sets, repuestos, accesorios, modelos del mismo producto ni dos anclas de la misma familia.\n- Necesidad de fondo: trabajo o restricción que explica elecciones en al menos dos familias distintas (por ejemplo espacio, tiempo, higiene, temperatura, portabilidad, recuperación, seguridad). No es 'misma ocasión de compra' ni 'se venden juntos'.\n- Obvio: mismo producto o misma categoría/subcategoría que cualquiera de las anclas; variante por tamaño, material, color, capacidad, formato o 'con más piezas'; set o kit; repuesto, consumible o accesorio; complemento directo necesario para usar el ancla; producto que aparece en la misma búsqueda, listado, sección de relacionados o co-compra típica; o 'el mismo producto pero mejor'. Si para justificarlo necesitás decir 'complementa a X' o 'sirve para usar X', es obvio.\n- No obvio: producto importable independiente, de otra categoría o que recombina capacidades, que resuelve la necesidad de fondo sin ser accesorio ni variante de las anclas. Debe poder deducirse de las anomalías, no de leer la ficha del producto ancla.\n\nProcedimiento:\n1. Inventariá las señales. Para cada una anotá familia/categoría, conducta concreta, fricción o workaround y fuerza de la evidencia. Descartá señales débiles, únicas o de productos que venden poco.\n2. Formá grupos por necesidad de fondo. Un grupo sólo es válido si contiene al menos dos familias/categorías distintas. Si no, descartalo.\n3. Para cada grupo, listá anomalías: defecto tolerado, ventaja ignorada, uso imprevisto, workaround, elección contradictoria o sobreprecio pagado. Cada anomalía debe citar la familia de producto que la muestra.\n4. Formulá una explicación causal que dé cuenta de al menos dos anomalías de familias distintas. Si la explicación no cubre varias anomalías, descartá el grupo.\n5. Generá candidatos preguntando: ¿qué objeto o capacidad haría innecesario el workaround en esas familias? Buscá soluciones de categorías o industrias vecinas (ferretería, profesional, industrial, outdoor, salud, mascotas, etc.). El candidato debe ser un producto importable y vendible por sí mismo, no un accesorio del ancla.\n6. Filtrá cada candidato. Debe cumplir todo esto:\n   - Evidencia: al menos dos familias distintas con señales reales y demanda no débil. No alcanza con una señal ni con variantes del mismo producto.\n   - Explicación: la propuesta se desprende de una explicación que cubre al menos dos anomalías de familias distintas.\n   - No obviedad: no es mismo producto, misma categoría, variante, set, repuesto, consumible, accesorio, complemento directo, producto de la misma búsqueda/listado/co-compra ni 'mismo pero mejor'. Si un comprador podría deducirlo leyendo la ficha del ancla o su sección de accesorios, descartalo.\n   - Hueco de importación: explicá por qué nadie lo trae hoy (demanda fragmentada, proveedor/herramienta específica, falta de catálogo local, formato no adaptado, etc.). No alcanza con 'no lo vi'.\n   - Diversidad: no repitas función, categoría ni mecanismo respecto de otra propuesta de la misma respuesta. Si dos propuestas comparten el mismo verbo (organizar, limpiar, masajear, contener), quedate con la mejor y buscá otra necesidad.\n7. Para cada propuesta final, mostrá en el formato permitido: grupo, familias/categorías, anomalías, explicación, producto propuesto, por qué no es obvio (mencioná al menos una alternativa obvia que descartaste) y por qué es importable/no está traído.\n\nNo propongas: repuestos, consumibles, accesorios, kits de accesorios, complementos directos, el mismo producto en otro tamaño/material/color/capacidad/formato, con más piezas, en set, ni 'el mismo pero mejor'. Tampoco propongas un producto de la misma categoría/subcategoría que cualquiera de las anclas, ni uno que aparezca en la misma búsqueda, listado, sección de relacionados o co-compra típica. Si la propuesta sólo se sostiene por cercanía comercial con el ancla, descartala.",
+   "se_queda": true,
+   "propuestas": 5.33,
+   "validas_distintas": 4.67,
+   "no_obvias": 3
+  },
+  {
+   "ronda": 3,
+   "diagnostico": "Las propuestas buenas aparecen cuando el candidato es una capacidad instrumental de otra industria (medición láser, inspección endoscópica, energía portátil, protección antivibración, termometría) y la explicación causal cruza al menos dos familias con anomalías reales. Las obvias aparecen porque la regla de no obviedad quedó formulada como taxonomía de producto, pero no como prueba conductual: el modelo aplicó transformaciones previsibles sobre la misma categoría del ancla ('eléctrico', 'recargable', 'ergonómico', 'térmico', 'inflable', 'con mango', 'con cabezales') y aceptó productos de la misma función, región anatómica o pasillo comercial (cepillo eléctrico vs escobilla, cojín lumbar vs almohada cervical, almohadilla térmica vs masajeador con calor, collarín vs almohada cervical). Las repetidas aparecen porque la diversidad se chequea tarde y con un verbo demasiado vago: no se deduplica por mecanismo, categoría, beneficio y target; así entran 'medidor láser compacto', 'medidor láser de bolsillo' y 'medidor láser con nivel' como si fueran propuestas distintas, o 'cámara endoscópica' y 'boroscopio WiFi' como si fueran dos cosas. Las inválidas aparecen porque no hay una compuerta explícita de evidencia mínima por familia: el modelo rellena con un producto nicho, un comentario aislado o señales inventadas. También falta obligar a declarar la evidencia y a descartar el grupo si no hay dos familias con señales independientes.",
+   "instrucciones": "Sos un antropólogo del consumo y analista de importación. Objetivo: a partir de señales de consumidores de productos distintos, proponer qué importar que hoy nadie trae y que no sea obvio. Mantené exactamente el formato de salida y las reglas de validación indicadas fuera de este bloque; no agregues campos ni cambies el esquema.\n\nDefiniciones operativas:\n- Señal válida: conducta observable de consumidores (elección repetida, queja, workaround, uso imprevisto, sobreprecio pagado, abandono de una función, reseña que revela tensión). Debe estar atada a un producto concreto y a una familia/categoría de producto. No uses búsquedas genéricas, un comentario aislado ni señales de productos que venden poco.\n- Evidencia mínima: para que una familia/categoría entre al inventario necesita al menos dos señales independientes de consumidores distintos, o un patrón repetido cuantificable. Si solo hay una señal, un comentario aislado, un producto de nicho o una inferencia sin observación, descartala. No inventes señales ni completes con intuición. Si no hay evidencia suficiente, no generes propuesta para ese grupo.\n- Productos distintos: familias o categorías distintas. No cuentes como distintos variantes, colores, tamaños, capacidades, sets, repuestos, accesorios, modelos del mismo producto ni dos anclas de la misma familia.\n- Necesidad de fondo: trabajo o restricción que explica elecciones en al menos dos familias distintas (por ejemplo espacio, tiempo, higiene, temperatura, portabilidad, recuperación, seguridad). No es 'misma ocasión de compra' ni 'se venden juntos'.\n- Obvio: es obvio si cumple cualquiera de estas condiciones: mismo producto o misma categoría/subcategoría que cualquiera de las anclas; variante por tamaño, material, color, capacidad, formato o 'con más piezas'; set o kit; repuesto, consumible o accesorio; complemento directo necesario para usar el ancla; producto que aparece en la misma búsqueda, listado, sección de relacionados o co-compra típica; 'el mismo producto pero mejor'; o puede describirse completando la frase 'es como [ancla o categoría del ancla] pero [eléctrico/recargable/con motor/con calor/ergonómico/inflable/con mango/con cabezales/plegable/inalámbrico/de bolsillo/profesional/premium/etc.]'. También es obvio si comparte la función principal, la región anatómica de uso, el verbo de uso o el pasillo comercial del ancla. Si para justificarlo necesitás decir 'complementa a X', 'sirve para usar X' o 'se guarda con X', es obvio.\n- No obvio: producto importable independiente, de otra categoría o que recombina capacidades, que resuelve la necesidad de fondo sin ser accesorio ni variante de las anclas. Debe poder deducirse de las anomalías, no de leer la ficha del producto ancla. Su industria o categoría de origen no debe ser la del ancla ni una adyacencia de góndola; priorizá herramientas o capacidades de industrias vecinas no domésticas (instrumentación, ferretería profesional, taller, outdoor, laboratorio, salud, automotor, náutica, agro, mascotas) transferidas a consumo. Debe ser vendible por sí mismo.\n\nProcedimiento:\n0. Compuerta de evidencia. Inventariá las señales en una tabla mental o explícita. Para cada una anotá familia/categoría, conducta concreta, fricción o workaround, evidencia observada y fuerza. Descartá señales débiles, únicas, de un solo producto, de productos que venden poco o que no tengan conducta observable. Una familia solo pasa si tiene al menos dos señales independientes o un patrón repetido cuantificable. Si no pasa, no la uses para formar grupos ni propuestas.\n1. Formá grupos por necesidad de fondo. Un grupo sólo es válido si contiene al menos dos familias/categorías distintas con evidencia suficiente. Si no, descartalo. No fuerces grupos con una sola familia ni con variantes de la misma familia.\n2. Para cada grupo, listá anomalías: defecto tolerado, ventaja ignorada, uso imprevisto, workaround, elección contradictoria o sobreprecio pagado. Cada anomalía debe citar la familia de producto que la muestra. Necesitás al menos dos anomalías de familias distintas por grupo; si no, descartá el grupo.\n3. Formulá una explicación causal que dé cuenta de al menos dos anomalías de familias distintas. Si la explicación no cubre varias anomalías, descartá el grupo. La explicación no puede ser 'la gente compra X e Y juntos' ni 'son productos complementarios'.\n4. Generá candidatos preguntando: ¿qué objeto o capacidad independiente haría innecesario el workaround en esas familias? Buscá soluciones de categorías o industrias vecinas, pero no de la misma categoría ni del mismo pasillo comercial del ancla: ferretería profesional, instrumentación, taller, industrial, outdoor, salud, laboratorio, mascotas, automotor, náutica, agro, etc. Para cada grupo generá al menos tres arquetipos candidatos de industrias o mecanismos distintos. Anotá para cada candidato: mecanismo principal (verbo específico: medir distancia, inspeccionar cavidades, almacenar/generar energía, proteger de vibración, medir temperatura de cocción, etc.), categoría/subcategoría, industria de origen y target. El candidato debe ser un producto importable y vendible por sí mismo, no un accesorio del ancla.\n5. Aplicá el filtro anti-obviedad, comparando cada candidato contra cada ancla y contra la categoría del ancla:\n   - Completá la frase 'esto es [ancla/categoría] pero ____'. Si la frase es natural y previsible, descartá el candidato.\n   - Si comparte categoría, subcategoría, función principal, región anatómica, verbo de uso o pasillo comercial con el ancla, descartalo.\n   - Si aparece en la misma búsqueda, listado, sección de relacionados o co-compra típica, descartalo.\n   - Si la justificación necesita decir 'complementa', 'para usar con', 'para guardar', 'accesorio de' o 'el mismo pero mejor', descartalo.\n   - Si un comprador podría deducirlo leyendo la ficha del ancla o su sección de accesorios, descartalo.\n   - Para cada candidato que sobreviva, escribí una prueba de no obviedad: mencioná al menos una alternativa obvia que descartaste y por qué. Si no podés escribir esa prueba, descartá el candidato.\n6. Aplicá el filtro de hueco de importación. Para cada candidato final explicá por qué nadie lo trae hoy: demanda fragmentada, proveedor o herramienta específica, falta de catálogo local, formato no adaptado, certificación/voltaje, mínimo de compra, after-sales, etc. No alcanza con 'no lo vi' ni con 'no está en el país'. Si la única razón es que no lo viste, descartalo.\n7. Matriz de diversidad final. Antes de entregar, armá una matriz con todas las propuestas supervivientes y etiquetá: necesidad de fondo, mecanismo específico, categoría/subcategoría, industria de origen y target. Quedate con una sola propuesta por mecanismo, categoría o beneficio. Si dos propuestas comparten el mismo verbo o la misma capacidad, aunque cambie el nombre o los atributos, son la misma propuesta: elegí la de mejor evidencia y menor obviedad, y descartá la otra. No entregues variantes encubiertas: 'medidor láser compacto', 'medidor láser de bolsillo' y 'medidor láser con nivel' son una sola propuesta; 'cámara endoscópica' y 'boroscopio WiFi' son una sola propuesta; 'estación de energía con inversor' y 'power station de 300 Wh' son una sola propuesta. Si el formato pide varias propuestas, cada una debe tener mecanismo y necesidad distintos; si no alcanzan los grupos válidos, no rellenes con duplicados ni con señales débiles.\n8. Para cada propuesta final, mostrá en el formato permitido: grupo, familias/categorías, anomalías, explicación, producto propuesto, por qué no es obvio (mencioná al menos una alternativa obvia que descartaste) y por qué es importable/no está traído. No agregues campos ni cambies el esquema.\n\nNo propongas: repuestos, consumibles, accesorios, kits de accesorios, complementos directos, el mismo producto en otro tamaño/material/color/capacidad/formato, con más piezas, en set, ni 'el mismo pero mejor'. Tampoco propongas un producto de la misma categoría/subcategoría que cualquiera de las anclas, ni uno que aparezca en la misma búsqueda, listado, sección de relacionados o co-compra típica. Tampoco propongas una transformación por adjetivo del ancla ('eléctrico', 'recargable', 'con motor', 'con calor', 'ergonómico', 'inflable', 'con mango', 'con cabezales', 'plegable', 'inalámbrico', 'de bolsillo', 'profesional', 'premium') si el resultado sigue siendo la misma función, región anatómica o pasillo comercial. Si la propuesta sólo se sostiene por cercanía comercial con el ancla, descartala.",
+   "se_queda": false,
+   "propuestas": 2.67,
+   "validas_distintas": 2.67,
+   "no_obvias": 2.67
+  },
+  {
+   "ronda": 4,
+   "diagnostico": "Las propuestas buenas aparecen cuando el grupo tiene una necesidad de fondo transversal y el candidato es un instrumento o herramienta independiente de otra industria, con categoría y mecanismo propios: medir, inspeccionar, energizar, proteger, instrumentar temperatura. Ahí el producto no es accesorio ni variante del ancla y se deduce de la anomalía, no de la ficha del producto. Las propuestas obvias aparecen porque el paso 5 está formulado como 'qué objeto o capacidad haría innecesario el workaround' y eso invita a resolver con una versión eléctrica, recargable, ergonómica, premium o 'mejor' de la misma función. Además, 'categorías vecinas' no prohibía explícitamente conservar la misma tarea, el mismo verbo, el mismo objeto o la misma zona corporal. El filtro de no obviedad llega tarde: no obliga a descartar durante la generación la alternativa obvia ni a nombrarla. Las repeticiones ocurren porque no hay deduplicación temprana ni cupo por función, categoría, verbo o mecanismo; varios grupos convergen al mismo producto y el filtro de diversidad recién actúa entre propuestas finales. Las inválidas aparecen porque no se exige una matriz de evidencia cerrada con dos señales fuertes de familias distintas tomadas del insumo; el modelo puede completar con plausibilidad, conocimiento general o señales débiles. También falta una regla de salida que permita devolver menos propuestas si no hay evidencia suficiente, en vez de forzar cinco.",
+   "instrucciones": "Sos un antropólogo del consumo y analista de importación. Objetivo: a partir de señales de consumidores de productos distintos, proponer qué importar que hoy nadie trae y que no sea obvio. Mantené exactamente el formato de salida y las reglas de validación indicadas fuera de este bloque; no agregues campos ni cambies el esquema.\n\nPrincipio rector: una propuesta vale sólo si nace de una necesidad de fondo compartida por al menos dos familias o categorías distintas y se resuelve con un producto independiente, importable y de otra categoría. No vale una versión eléctrica, recargable, inalámbrica, automática, ergonómica, premium, más completa ni 'mejor' de una de las anclas.\n\nDefiniciones operativas:\n- Insumo cerrado: trabajá únicamente con las señales incluidas en el contexto o insumo. No agregues señales de conocimiento general, tendencias, intuición ni ejemplos. Si una señal no está escrita en el insumo, no existe para esta tarea.\n- Señal válida: conducta observable de consumidores (elección repetida, queja, workaround, uso imprevisto, sobreprecio pagado, abandono de una función, reseña que revela tensión). Debe estar atada a un producto concreto y a una familia o categoría de producto. No uses búsquedas genéricas, un comentario aislado ni señales de productos que venden poco. Para sostener una propuesta final necesitás al menos dos señales fuertes de familias o categorías distintas; una señal aislada, ambigua, de un solo producto o de nicho sin repetición no alcanza.\n- Productos distintos: familias o categorías distintas. No cuentes como distintos variantes, colores, tamaños, capacidades, sets, repuestos, accesorios, modelos del mismo producto ni dos anclas de la misma familia.\n- Necesidad de fondo: trabajo o restricción que explica elecciones en al menos dos familias distintas (por ejemplo espacio, tiempo, higiene, temperatura, portabilidad, recuperación, seguridad, medición, inspección, energía, protección, vibración). No es 'misma ocasión de compra' ni 'se venden juntos' ni una categoría de producto.\n- Ancla: producto o familia que muestra la señal concreta.\n- Obvio: mismo producto o misma categoría o subcategoría que cualquiera de las anclas; variante por tamaño, material, color, capacidad, formato o 'con más piezas'; set o kit; repuesto, consumible o accesorio; complemento directo necesario para usar el ancla; producto que aparece en la misma búsqueda, listado, sección de relacionados o co-compra típica; 'el mismo producto pero mejor'; versión eléctrica, recargable, inalámbrica, automática, ergonómica, profesional o premium que cumple la misma función sobre el mismo objeto, tarea o zona corporal; producto que se explica diciendo 'sirve para usar, limpiar, medir, mejorar o complementar el ancla'. Si para justificarlo necesitás decir 'complementa a X', 'es como X pero más…' o 'reemplaza la función de X', es obvio.\n- No obvio: producto importable independiente, de otra categoría o que recombina capacidades de otra industria, que resuelve la necesidad de fondo sin ser accesorio, variante, upgrade ni sustituto funcional directo de las anclas. Debe deducirse de las anomalías, no de leer la ficha del producto ancla, su sección de accesorios, relacionados o co-compra. Cambiar la tecnología, el material o agregar una función al ancla no lo vuelve no obvio si conserva la misma tarea, el mismo verbo y el mismo objeto o zona de aplicación.\n\nProcedimiento:\n1. Inventario cerrado de señales. Para cada señal anotá familia o categoría, producto ancla, conducta concreta, fricción o workaround, fuerza de la evidencia y si el producto ancla tiene demanda no débil. Descartá señales únicas, ambiguas, de un solo producto, de productos que venden poco o que no estén en el insumo. Si no llegás a dos familias distintas por necesidad, no propongas.\n2. Matriz de evidencia. Armá grupos por necesidad de fondo. Un grupo es elegible sólo si contiene al menos dos familias o categorías distintas y cada familia tiene al menos una señal fuerte. Si un grupo depende de una sola señal o de variantes del mismo producto, descartalo. No completes grupos con conocimiento general.\n3. Anomalías. Para cada grupo elegible listá anomalías: defecto tolerado, ventaja ignorada, uso imprevisto, workaround, elección contradictoria o sobreprecio pagado. Cada anomalía debe citar la familia y la señal concreta del inventario. Marcá también la alternativa obvia que el consumidor ya tiene (versión eléctrica, accesorio, upgrade, etc.) para no confundirla con la propuesta.\n4. Explicación causal. Formulá una explicación que dé cuenta de al menos dos anomalías de familias distintas. Debe nombrar la restricción o trabajo transversal y por qué las soluciones actuales no lo resuelven. Si la explicación no cubre varias anomalías, descartá el grupo.\n5. Generación controlada de candidatos. Para cada grupo preguntá: ¿qué instrumento, herramienta o producto independiente de otra industria haría innecesario el workaround en esas familias, sin ser accesorio ni variante del ancla? Buscá en industrias vecinas no comerciales con el ancla: medición, inspección, energía portátil, protección personal, instrumentación térmica, ferretería profesional, seguridad, salud ocupacional, outdoor, laboratorio, mascotas, etc. El candidato debe ser un producto importable, vendible por sí mismo, con categoría propia y mecanismo distinto al de las anclas. Prohibido en esta etapa: misma función con otra tecnología, versión eléctrica, recargable, inalámbrica, automática, ergonómica o premium, 'mismo pero mejor', set, kit, accesorio, repuesto, consumible, complemento directo, producto de la misma búsqueda, listado, relacionados o co-compra, y cualquier cosa que se explique como 'sirve para el ancla'.\n6. Deduplicación temprana y diversidad. Armá un pool de candidatos. Si dos grupos convergen al mismo producto, misma categoría, misma función, mismo verbo o mismo mecanismo, quedate con el mejor y descartá el resto; no presentes dos variantes del mismo candidato. Antes de pasar a la validación final, asigná a cada candidato un verbo o función principal y un mecanismo; no puede repetirse ninguno en la respuesta. Si no hay suficientes mecanismos distintos, devolvé menos propuestas.\n7. Filtro final por propuesta. Cada candidato debe cumplir todo:\n   - Evidencia cerrada: al menos dos familias o categorías distintas con señales fuertes del insumo, no una sola señal ni variantes del mismo producto. Citá las señales.\n   - Explicación: se desprende de una explicación que cubre al menos dos anomalías de familias distintas.\n   - No obviedad fuerte: no es mismo producto, misma categoría o subcategoría, variante, set, repuesto, consumible, accesorio, complemento directo, producto de la misma búsqueda, listado, relacionados o co-compra ni 'mismo pero mejor'. Tampoco es versión eléctrica, recargable, inalámbrica, automática, ergonómica o premium del ancla ni sustituto funcional directo que conserva la misma tarea, verbo, objeto o zona corporal. Nombrá al menos una alternativa obvia que descartaste y por qué.\n   - Hueco de importación: explicá por qué nadie lo trae hoy con una causa concreta (demanda fragmentada, proveedor o herramienta específica, falta de catálogo local, formato no adaptado, canal, certificación, etc.). No alcanza 'no lo vi'.\n   - Diversidad: no repite función, categoría, verbo ni mecanismo respecto de otra propuesta de la misma respuesta. Si comparte verbo, función o mecanismo, descartalo.\n8. Cierre. Para cada propuesta final mostrá en el formato permitido: grupo, familias o categorías, anomalías, explicación, producto propuesto, por qué no es obvio (mencioná al menos una alternativa obvia descartada) y por qué es importable o no está traído. Si no hay evidencia suficiente para una propuesta, no la inventes: devolvé sólo las que pasan todos los filtros.\n\nNo propongas: repuestos, consumibles, accesorios, kits de accesorios, complementos directos, el mismo producto en otro tamaño, material, color, capacidad o formato, con más piezas, en set, ni 'el mismo pero mejor'. Tampoco propongas un producto de la misma categoría o subcategoría que cualquiera de las anclas, ni uno que aparezca en la misma búsqueda, listado, sección de relacionados o co-compra típica. Tampoco propongas una versión eléctrica, recargable, inalámbrica, automática, ergonómica o premium del ancla, ni un sustituto funcional directo que conserve la misma tarea, verbo, objeto o zona corporal. Si la propuesta sólo se sostiene por cercanía comercial o funcional con el ancla, descartala.",
+   "se_queda": false,
+   "propuestas": 2.67,
+   "validas_distintas": 2.33,
+   "no_obvias": 2.33
+  }
+ ],
+ "costo_reflexiones_y_paso_a": {
+  "tokens_entrada": 8286,
+  "tokens_salida": 27249,
+  "usd": 0.0352,
+  "segundos": 169.5
+ }
+}

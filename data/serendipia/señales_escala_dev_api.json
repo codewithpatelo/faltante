@@ -1,0 +1,5690 @@
+{
+ "E007": [
+  {
+   "id": "S1",
+   "tipo": "duda",
+   "descripcion": "necesita una referencia clara de tamaño y medidas antes de comprar, porque la capacidad en litros no le alcanza para imaginar el recipiente",
+   "palabras_clave": [
+    "tamaño",
+    "grande",
+    "medidas"
+   ],
+   "citas": [
+    {
+     "texto": "o4",
+     "fragmento": "Calculé mal el tamaño"
+    },
+    {
+     "texto": "o10",
+     "fragmento": "es mas grande de lo que pensé"
+    },
+    {
+     "texto": "p16",
+     "fragmento": "Este es el más grande que tienen?"
+    },
+    {
+     "texto": "p3",
+     "fragmento": "POR LAS MEDIDAS MENCIONAS"
+    }
+   ]
+  },
+  {
+   "id": "S2",
+   "tipo": "duda",
+   "descripcion": "quiere saber con precisión qué partes del envase soportan calor (microondas, horno, air fryer) y cuáles no, porque la tapa plástica genera desconfianza",
+   "palabras_clave": [
+    "tapa",
+    "microondas",
+    "horno"
+   ],
+   "citas": [
+    {
+     "texto": "p14",
+     "fragmento": "La tapa tambien es apto microondas?"
+    },
+    {
+     "texto": "p5",
+     "fragmento": "Salvo la tapa, ¿es 100% de vidrio?"
+    },
+    {
+     "texto": "p4",
+     "fragmento": "es apto para microondas?"
+    }
+   ]
+  },
+  {
+   "id": "S3",
+   "tipo": "faltante",
+   "descripcion": "necesita comprar en cantidad (varias unidades iguales o combinadas) con precio por volumen, para equipar la cocina o revender",
+   "palabras_clave": [
+    "combo",
+    "pack",
+    "mayorista"
+   ],
+   "citas": [
+    {
+     "texto": "p2",
+     "fragmento": "Necesito 3 iguales"
+    },
+    {
+     "texto": "p7",
+     "fragmento": "precio mayorista por 400 unidades"
+    },
+    {
+     "texto": "p11",
+     "fragmento": "tienen packs x 10 de este tamaño?"
+    }
+   ]
+  },
+  {
+   "id": "S4",
+   "tipo": "preferencia",
+   "descripcion": "lo usa para transportar comida fuera de casa (trabajo, bolso, mochila) y espera que no se derrame ni se abra en el traslado",
+   "palabras_clave": [
+    "trabajo",
+    "bolso",
+    "llevar"
+   ],
+   "citas": [
+    {
+     "texto": "o4",
+     "fragmento": "se me tiraba todo en mi bolso"
+    },
+    {
+     "texto": "o7",
+     "fragmento": "lo uso para llevar la comida al trabajo"
+    },
+    {
+     "texto": "o11",
+     "fragmento": "llevar el almuerzo al trabajo"
+    }
+   ]
+  },
+  {
+   "id": "S5",
+   "tipo": "duda",
+   "descripcion": "quiere la seguridad de que el material resiste los cambios bruscos de temperatura (freezer a microondas u horno) sin romperse",
+   "palabras_clave": [
+    "freezer",
+    "térmicos",
+    "grueso"
+   ],
+   "citas": [
+    {
+     "texto": "p17",
+     "fragmento": "soporta todos los choques térmicos"
+    },
+    {
+     "texto": "p4",
+     "fragmento": "apto horno/frezzer/microondas/air fryer"
+    },
+    {
+     "texto": "o2",
+     "fragmento": "El vidrio grueso y de buena calidad"
+    }
+   ]
+  }
+ ],
+ "E008": [
+  {
+   "id": "S1",
+   "tipo": "duda",
+   "descripcion": "Antes de comprar quiere certeza de para qué fuentes de calor sirve el recipiente (horno, microondas, freezer, lavavajillas) porque lo va a usar más allá de guardar en la heladera",
+   "palabras_clave": [
+    "horno",
+    "microondas",
+    "freezer"
+   ],
+   "citas": [
+    {
+     "texto": "p1",
+     "fragmento": "Es apto horno sin tapa?"
+    },
+    {
+     "texto": "p8",
+     "fragmento": "Es para horno?"
+    },
+    {
+     "texto": "o4",
+     "fragmento": "sirve para microondas y horno"
+    }
+   ]
+  },
+  {
+   "id": "S2",
+   "tipo": "faltante",
+   "descripcion": "Quiere poder llevar el recipiente completo al calor, pero la tapa no soporta horno ni air fryer: el uso térmico obliga a separar las piezas",
+   "palabras_clave": [
+    "tapa"
+   ],
+   "citas": [
+    {
+     "texto": "p3",
+     "fragmento": "apto air fryer pero sin la tapa"
+    },
+    {
+     "texto": "p1",
+     "fragmento": "sin la tapa podes usarlo en horno"
+    }
+   ]
+  },
+  {
+   "id": "S3",
+   "tipo": "duda",
+   "descripcion": "Necesita poder desarmar la tapa para higienizar bien la junta de goma, porque teme que se acumule suciedad en el sellado",
+   "palabras_clave": [
+    "tapa"
+   ],
+   "citas": [
+    {
+     "texto": "p5",
+     "fragmento": "sacar la goma de la tapa"
+    },
+    {
+     "texto": "o4",
+     "fragmento": "una banda de goma para sellar"
+    }
+   ]
+  },
+  {
+   "id": "S4",
+   "tipo": "preferencia",
+   "descripcion": "Elige el vidrio por salud: quiere que la comida no toque plástico y que el material esté libre de BPA",
+   "palabras_clave": [
+    "vidrio",
+    "plástico"
+   ],
+   "citas": [
+    {
+     "texto": "p6",
+     "fragmento": "es libre de BPA"
+    },
+    {
+     "texto": "o10",
+     "fragmento": "El plástico termina dentro del organismo."
+    },
+    {
+     "texto": "o10",
+     "fragmento": "Lo compre por mi salud"
+    }
+   ]
+  },
+  {
+   "id": "S5",
+   "tipo": "preferencia",
+   "descripcion": "El cierre hermético es el atributo que decide la compra: necesita transportar líquidos y comidas sin que se derramen fuera de casa",
+   "palabras_clave": [
+    "cierre",
+    "hermético"
+   ],
+   "citas": [
+    {
+     "texto": "o7",
+     "fragmento": "no pierde una gota"
+    },
+    {
+     "texto": "o10",
+     "fragmento": "excelente cierre de la tapa"
+    },
+    {
+     "texto": "o14",
+     "fragmento": "cierra herméticamente"
+    }
+   ]
+  },
+  {
+   "id": "S6",
+   "tipo": "uso_no_previsto",
+   "descripcion": "Lo usa como vianda para llevar comida al trabajo, y necesita un tamaño que corresponda a una porción real, ni chico ni gigante",
+   "palabras_clave": [
+    "tamaño"
+   ],
+   "citas": [
+    {
+     "texto": "o2",
+     "fragmento": "El tamaño es justo para llevar"
+    },
+    {
+     "texto": "o14",
+     "fragmento": "tamaño adecuado para una porción y media"
+    },
+    {
+     "texto": "o11",
+     "fragmento": "Tamaño ideal para comidas"
+    }
+   ]
+  }
+ ],
+ "E011": [
+  {
+   "id": "S1",
+   "tipo": "preferencia",
+   "descripcion": "Quiere utensilios de una sola pieza, sin uniones ni mangos de otro material donde se acumule suciedad, para poder lavarlos fácil y rápido",
+   "palabras_clave": [
+    "una sola pieza",
+    "limpieza",
+    "mango"
+   ],
+   "citas": [
+    {
+     "texto": "o4",
+     "fragmento": "tenía de esas que se separa el mango y se junta mugre ahí"
+    },
+    {
+     "texto": "o2",
+     "fragmento": "al ser una sola pieza la limpieza es una pabada"
+    },
+    {
+     "texto": "o6",
+     "fragmento": "de una sola pieza (la anterior que tenía era con la punta separada y se termina despegando)"
+    },
+    {
+     "texto": "o12",
+     "fragmento": "son todas recubiertas de silicona, lo cual facilita mucho la limpieza"
+    }
+   ]
+  },
+  {
+   "id": "S2",
+   "tipo": "duda",
+   "descripcion": "Necesita saber con certeza qué temperatura soporta el utensilio antes de comprarlo, porque lo va a usar sobre calor",
+   "palabras_clave": [
+    "temperatura",
+    "grados"
+   ],
+   "citas": [
+    {
+     "texto": "p1",
+     "fragmento": "se puede conocer que temperatura soportan?"
+    },
+    {
+     "texto": "p4",
+     "fragmento": "Qué temperatura resiste?"
+    },
+    {
+     "texto": "p5",
+     "fragmento": "Que temperaturas resiste la espatula"
+    },
+    {
+     "texto": "o7",
+     "fragmento": "no se derrite con lo caliente"
+    }
+   ]
+  },
+  {
+   "id": "S3",
+   "tipo": "duda",
+   "descripcion": "Quiere seguridad sobre el material en contacto con alimentos (libre de BPA, silicona real) y desconfía del origen",
+   "palabras_clave": [
+    "bpa",
+    "silicona"
+   ],
+   "citas": [
+    {
+     "texto": "p2",
+     "fragmento": "Son libres de bpa?"
+    },
+    {
+     "texto": "o4",
+     "fragmento": "dicen ser libres de bpa aunque son chinas"
+    },
+    {
+     "texto": "o12",
+     "fragmento": "son todas recubiertas de silicona"
+    }
+   ]
+  },
+  {
+   "id": "S4",
+   "tipo": "deseo",
+   "descripcion": "Quiere poder elegir el color exacto y que coincida con la foto, no recibir colores aleatorios",
+   "palabras_clave": [
+    "color",
+    "colores"
+   ],
+   "citas": [
+    {
+     "texto": "p6",
+     "fragmento": "Solo hay color gris?"
+    },
+    {
+     "texto": "p7",
+     "fragmento": "los colores son aleatoreos"
+    },
+    {
+     "texto": "o1",
+     "fragmento": "elegi el verde pensando que era el de la foto y es un verde fuerte"
+    },
+    {
+     "texto": "o11",
+     "fragmento": "Ya compré más en distintos colores"
+    }
+   ]
+  },
+  {
+   "id": "S5",
+   "tipo": "preferencia",
+   "descripcion": "Espera que el utensilio aguante el uso diario durante meses sin romperse, despegarse ni deformarse",
+   "palabras_clave": [
+    "intacta",
+    "uso"
+   ],
+   "citas": [
+    {
+     "texto": "o6",
+     "fragmento": "hace 6 meses que la uso y sigue intacta"
+    },
+    {
+     "texto": "o11",
+     "fragmento": "Tiene más de un año de uso"
+    },
+    {
+     "texto": "o4",
+     "fragmento": "hasta ahora siguen intactas"
+    }
+   ]
+  },
+  {
+   "id": "S6",
+   "tipo": "preferencia",
+   "descripcion": "Prefiere tamaño grande y mango largo para trabajar cómodo con las manos lejos del calor y de la mezcla",
+   "palabras_clave": [
+    "cómoda",
+    "tamaño",
+    "mando largo"
+   ],
+   "citas": [
+    {
+     "texto": "o8",
+     "fragmento": "es cómoda y buen tamaño"
+    },
+    {
+     "texto": "o9",
+     "fragmento": "mando largo y cómodo"
+    },
+    {
+     "texto": "o6",
+     "fragmento": "Es grande, cómoda"
+    }
+   ]
+  }
+ ],
+ "E012": [
+  {
+   "id": "S1",
+   "tipo": "duda",
+   "descripcion": "Quien compra un kit de moldes necesita saber las medidas exactas de cada pieza antes de decidir: sin dimensiones claras (diámetro de tortera, capacidad de muffinera, tamaño de picos) la compra queda en duda.",
+   "palabras_clave": [
+    "medida",
+    "cm",
+    "diámetro"
+   ],
+   "citas": [
+    {
+     "texto": "p1",
+     "fragmento": "de cuántos cm es la tortera"
+    },
+    {
+     "texto": "p4",
+     "fragmento": "Diámetro del espacio para los muffins?"
+    },
+    {
+     "texto": "p8",
+     "fragmento": "que medida es el molde de torta?"
+    },
+    {
+     "texto": "p13",
+     "fragmento": "La tartera desmontable que medida tiene??"
+    }
+   ]
+  },
+  {
+   "id": "S2",
+   "tipo": "preferencia",
+   "descripcion": "Se prefiere resolver toda la repostería con un kit completo (varios moldes más accesorios) antes que comprar utensilios sueltos, incluso pagando bastante más: lo que se valora es la integralidad del combo por sobre la pieza individual barata.",
+   "palabras_clave": [
+    "set",
+    "kit",
+    "completo"
+   ],
+   "citas": [
+    {
+     "texto": "o13",
+     "fragmento": "El set es buenísimo"
+    },
+    {
+     "texto": "o8",
+     "fragmento": "Un kit bastante completo, moldes de buenos tamaños"
+    }
+   ]
+  },
+  {
+   "id": "S3",
+   "tipo": "faltante",
+   "descripcion": "Se quiere poder ampliar el kit con piezas sueltas o variantes (batidor, jarra medidora, termómetro, neceser, versión con tortera más grande), y la respuesta recurrente es que no se ofrece.",
+   "palabras_clave": [
+    "set",
+    "agregar",
+    "combo"
+   ],
+   "citas": [
+    {
+     "texto": "p10",
+     "fragmento": "tendras de este combo más un. Batidor"
+    },
+    {
+     "texto": "p17",
+     "fragmento": "Y una jarra medidora y el neceser de viaje"
+    },
+    {
+     "texto": "p18",
+     "fragmento": "si al set puedo agregar un termómetro para horno"
+    },
+    {
+     "texto": "p7",
+     "fragmento": "este mismo kit con la tortera más grande tenes?"
+    }
+   ]
+  },
+  {
+   "id": "S4",
+   "tipo": "queja",
+   "descripcion": "Se espera calidad pareja entre todas las piezas del kit: las partes flojas (espátula frágil, molde de torta que se dobla, goma fina) son lo único que se objeta cuando el resto funciona.",
+   "palabras_clave": [
+    "calidad",
+    "molde"
+   ],
+   "citas": [
+    {
+     "texto": "o12",
+     "fragmento": "la espátula muy frágil"
+    },
+    {
+     "texto": "o14",
+     "fragmento": "el molde de torta no es muy bueno"
+    },
+    {
+     "texto": "o6",
+     "fragmento": "La goma de la manga es un poco fina"
+    }
+   ]
+  },
+  {
+   "id": "S5",
+   "tipo": "duda",
+   "descripcion": "Sobre los consumibles y descartables se quiere saber cantidad y espesor antes de comprar, y se desconfía de los materiales finos: se pregunta cuántas unidades vienen y si son gruesas.",
+   "palabras_clave": [
+    "manga"
+   ],
+   "citas": [
+    {
+     "texto": "p12",
+     "fragmento": "Y son gruesitas las mangas"
+    },
+    {
+     "texto": "o3",
+     "fragmento": "La manga tiene pinta berretona"
+    },
+    {
+     "texto": "o6",
+     "fragmento": "La goma de la manga es un poco fina"
+    }
+   ]
+  }
+ ],
+ "E013": [
+  {
+   "id": "S1",
+   "tipo": "faltante",
+   "descripcion": "Quiere el mismo organizador con tapa, para cerrarlo y no dejar el contenido a la vista; espera que venga incluida porque asume que la foto la muestra.",
+   "palabras_clave": [
+    "tapa"
+   ],
+   "citas": [
+    {
+     "texto": "p1",
+     "fragmento": "tenes así pero con tapa"
+    },
+    {
+     "texto": "p3",
+     "fragmento": "Vienen con tapa?"
+    },
+    {
+     "texto": "p19",
+     "fragmento": "vi en la propaganda q viene con tapa"
+    }
+   ]
+  },
+  {
+   "id": "S2",
+   "tipo": "faltante",
+   "descripcion": "Necesita medidas exactas y anchos intermedios que entren en el espacio disponible del placard: el tamaño estándar no siempre calza y piden variantes de ancho.",
+   "palabras_clave": [
+    "cm",
+    "ancho"
+   ],
+   "citas": [
+    {
+     "texto": "p4",
+     "fragmento": "de 24cm de ancho"
+    },
+    {
+     "texto": "p8",
+     "fragmento": "30 a 35 cm"
+    },
+    {
+     "texto": "p20",
+     "fragmento": "de ancho máximo 20 cm"
+    }
+   ]
+  },
+  {
+   "id": "S3",
+   "tipo": "preferencia",
+   "descripcion": "Prioriza capacidad: quiere que entre mucha ropa en un canasto que parece chico, aprovechar el volumen del placard sin sumar muebles.",
+   "palabras_clave": [
+    "amplio",
+    "espacios",
+    "entra"
+   ],
+   "citas": [
+    {
+     "texto": "o4",
+     "fragmento": "Son súper amplios"
+    },
+    {
+     "texto": "o10",
+     "fragmento": "son mas amplios de lo que parecen"
+    },
+    {
+     "texto": "o12",
+     "fragmento": "Son muy amplios entra un monton de ropa"
+    },
+    {
+     "texto": "o2",
+     "fragmento": "Son espaciosos"
+    }
+   ]
+  },
+  {
+   "id": "S4",
+   "tipo": "preferencia",
+   "descripcion": "Exige que el organizador sea firme y aguante peso y traslado: estructura y manijas bien sujetas son lo que hace que lo considere útil.",
+   "palabras_clave": [
+    "firme",
+    "resistent",
+    "manija",
+    "estructura"
+   ],
+   "citas": [
+    {
+     "texto": "o1",
+     "fragmento": "Estructura firme y las manijas están cosidas"
+    },
+    {
+     "texto": "o3",
+     "fragmento": "quedan firmes después de armarse"
+    },
+    {
+     "texto": "o6",
+     "fragmento": "Las varillas metálicas son resistentes"
+    }
+   ]
+  },
+  {
+   "id": "S5",
+   "tipo": "preferencia",
+   "descripcion": "Quiere armado simple y rápido, sin herramientas ni complicación, y que al armarse quede parado solo (aunque venga plegado/enrollado).",
+   "palabras_clave": [
+    "arm",
+    "fácil"
+   ],
+   "citas": [
+    {
+     "texto": "o6",
+     "fragmento": "para poder armalas"
+    },
+    {
+     "texto": "o12",
+     "fragmento": "fácil de armando"
+    },
+    {
+     "texto": "o11",
+     "fragmento": "Quedan bien armadillos"
+    }
+   ]
+  }
+ ],
+ "E014": [
+  {
+   "id": "S1",
+   "tipo": "duda",
+   "descripcion": "Necesita medidas exactas y confiables del organizador porque el cajón donde va es el límite: si no entra de alto o de ancho, el producto no le sirve, y las fotos y la descripción no siempre coinciden.",
+   "palabras_clave": [
+    "cajón"
+   ],
+   "citas": [
+    {
+     "texto": "p5",
+     "fragmento": "en la descripción dice 8cm y la foto dice 10"
+    },
+    {
+     "texto": "p6",
+     "fragmento": "hay una imagen q dice 31 cm y otra 32"
+    },
+    {
+     "texto": "o9",
+     "fragmento": "si el cajón es medio bajo no entra de altura. Midan bien."
+    }
+   ]
+  },
+  {
+   "id": "S2",
+   "tipo": "preferencia",
+   "descripcion": "Prioriza el precio bajo por sobre la calidad del material: acepta tela y cartón simples si el costo es conveniente y el producto cumple con ordenar.",
+   "palabras_clave": [
+    "precio"
+   ],
+   "citas": [
+    {
+     "texto": "o9",
+     "fragmento": "Por el precio una ganga"
+    },
+    {
+     "texto": "o4",
+     "fragmento": "Práctico y barato!"
+    },
+    {
+     "texto": "o2",
+     "fragmento": "Precio calidad excelente."
+    }
+   ]
+  },
+  {
+   "id": "S3",
+   "tipo": "uso_no_previsto",
+   "descripcion": "Lo usa para ordenar prendas chicas de distintos miembros de la familia dentro de cajoneras y no solo en el placard: ropa de bebé, medias y ropa interior.",
+   "palabras_clave": [
+    "ropa"
+   ],
+   "citas": [
+    {
+     "texto": "o7",
+     "fragmento": "me sirvieron mucho para ordenar la ropa de mi bebé"
+    },
+    {
+     "texto": "o8",
+     "fragmento": "ideal para medias, ropas íntimas"
+    },
+    {
+     "texto": "o1",
+     "fragmento": "Lo pude adaptar perfectamente a mi cajonera"
+    }
+   ]
+  },
+  {
+   "id": "S4",
+   "tipo": "duda",
+   "descripcion": "Antes de comprar quiere certeza de que el set trae efectivamente los 4 módulos y con la variedad de tamaños que muestra la publicación, porque de eso depende que sirva para su cajón.",
+   "palabras_clave": [
+    "tamaño"
+   ],
+   "citas": [
+    {
+     "texto": "p2",
+     "fragmento": "Que son 4, de distintos tamaños cada uno"
+    },
+    {
+     "texto": "p7",
+     "fragmento": "los cuatros que vienen son tal cual la foto"
+    },
+    {
+     "texto": "o3",
+     "fragmento": "tienen buen tamaño y buen cierre"
+    }
+   ]
+  }
+ ],
+ "E021": [
+  {
+   "id": "S1",
+   "tipo": "faltante",
+   "descripcion": "Quiere poder reponer o sumar fundas lavables de la almohada, para rotarlas e higienizarlas sin comprar otra almohada entera.",
+   "palabras_clave": [
+    "funda",
+    "fundas"
+   ],
+   "citas": [
+    {
+     "texto": "p5",
+     "fragmento": "si tienen para comprar otra funda"
+    },
+    {
+     "texto": "p6",
+     "fragmento": "venden la funda por separado para comprar mas?"
+    },
+    {
+     "texto": "p20",
+     "fragmento": "vendes funda por separado. La idea es tener 2 fundas"
+    },
+    {
+     "texto": "p10",
+     "fragmento": "Queria comprar funda antialergica"
+    },
+    {
+     "texto": "o3",
+     "fragmento": "yo le sumaría una funda más porque al ser una almohada muy particular"
+    }
+   ]
+  },
+  {
+   "id": "S2",
+   "tipo": "duda",
+   "descripcion": "Necesita saber de qué lado y cómo se usa la almohada: la forma particular y la falta de instrucciones claras lo hace dudar antes y después de comprar.",
+   "palabras_clave": [
+    "lado",
+    "usar"
+   ],
+   "citas": [
+    {
+     "texto": "p13",
+     "fragmento": "De que lado se usa?"
+    },
+    {
+     "texto": "p12",
+     "fragmento": "para dormir boca arriba de que lado se usa?"
+    },
+    {
+     "texto": "o9",
+     "fragmento": "me costo un poco acostumbrarme"
+    },
+    {
+     "texto": "o12",
+     "fragmento": "al principio no fue fácil acostumbrarme. Es rara"
+    }
+   ]
+  },
+  {
+   "id": "S3",
+   "tipo": "duda",
+   "descripcion": "Quiere saber si la densidad es firme o media y si la altura le va a servir según su contextura, porque teme que le quede demasiado alta.",
+   "palabras_clave": [
+    "firme",
+    "alta"
+   ],
+   "citas": [
+    {
+     "texto": "p4",
+     "fragmento": "Puede que me quede demasiado alta?"
+    },
+    {
+     "texto": "p9",
+     "fragmento": "Es blanda o más bien firme?"
+    },
+    {
+     "texto": "p8",
+     "fragmento": "es densidad media o firme?"
+    },
+    {
+     "texto": "o9",
+     "fragmento": "Es bastante alta pero al ser viscoelastica"
+    }
+   ]
+  },
+  {
+   "id": "S4",
+   "tipo": "concesion",
+   "descripcion": "Acepta que la almohada alivia y da confort, pero no espera que resuelva el problema cervical de fondo; igual la compra y la recomienda porque el precio es bajo.",
+   "palabras_clave": [
+    "cervical",
+    "soluci"
+   ],
+   "citas": [
+    {
+     "texto": "o7",
+     "fragmento": "No soluciona mi problema de cervical, pero ya la use 3 días y la verdad q me desperté sin dolor"
+    },
+    {
+     "texto": "o6",
+     "fragmento": "no me ayudó con los problemas cervicales de hecho creo q después de usarla por dos semanas me empeoró el cuadro"
+    },
+    {
+     "texto": "o9",
+     "fragmento": "Si estas esperando que solucione tu problema de cervicales"
+    },
+    {
+     "texto": "o10",
+     "fragmento": "estaba sufriendo de la cervical constantemente, pensando que aunque sea le ofrecería un alivio"
+    }
+   ]
+  },
+  {
+   "id": "S5",
+   "tipo": "preferencia",
+   "descripcion": "Busca una almohada que acompañe cualquier postura de sueño (boca arriba, de costado y hasta boca abajo), no una forma rígida de un solo uso.",
+   "palabras_clave": [
+    "costado",
+    "boca arriba"
+   ],
+   "citas": [
+    {
+     "texto": "o8",
+     "fragmento": "Ideal para los que duermen boca arriba y de costado como yo"
+    },
+    {
+     "texto": "o2",
+     "fragmento": "Se adapta perfecto para dormir boca arriba, de costado, y es genial para usar boca abajo"
+    },
+    {
+     "texto": "o11",
+     "fragmento": "Duermo de costado y desde que cambié el colchon"
+    },
+    {
+     "texto": "o4",
+     "fragmento": "Viajo en transporte constantemente, duermo mal por turnos nocturnos"
+    }
+   ]
+  }
+ ],
+ "E022": [
+  {
+   "id": "S1",
+   "tipo": "faltante",
+   "descripcion": "Quiere poder reponer todas las piezas del sistema de limpieza (mango/cabo, soporte rígido), no solo la microfibra, para no tener que tirar el equipo cuando se rompe una parte.",
+   "palabras_clave": [
+    "palo",
+    "cabo"
+   ],
+   "citas": [
+    {
+     "texto": "p1",
+     "fragmento": "necesito la mopa y el palo"
+    },
+    {
+     "texto": "p1",
+     "fragmento": "luego del cabo no tenemos disponible"
+    },
+    {
+     "texto": "p6",
+     "fragmento": "Viene el palo de repuesto?"
+    },
+    {
+     "texto": "p7",
+     "fragmento": "se me rompió el palo"
+    }
+   ]
+  },
+  {
+   "id": "S2",
+   "tipo": "preferencia",
+   "descripcion": "Necesita que la mopa rinda en la limpieza diaria de superficies duras (cerámicos, porcelanato), porque el piso se limpia todos los días y con uso intensivo.",
+   "palabras_clave": [
+    "piso",
+    "diario"
+   ],
+   "citas": [
+    {
+     "texto": "o10",
+     "fragmento": "limpia muy bien el piso"
+    },
+    {
+     "texto": "o7",
+     "fragmento": "me facilitó enormemente la limpieza diaria"
+    },
+    {
+     "texto": "o12",
+     "fragmento": "En cerámicos y porcelanatos de departamento"
+    },
+    {
+     "texto": "o14",
+     "fragmento": "Mis pisos quedan más limpio"
+    }
+   ]
+  },
+  {
+   "id": "S3",
+   "tipo": "queja",
+   "descripcion": "Quiere que el repuesto dure más: la microfibra se gasta rápido y obliga a reponerlo cada pocos meses, aunque se la cuide.",
+   "palabras_clave": [
+    "dur",
+    "meses"
+   ],
+   "citas": [
+    {
+     "texto": "o12",
+     "fragmento": "lo compro cada tres meses"
+    },
+    {
+     "texto": "o3",
+     "fragmento": "Duran bastante, pero no lo dejes al sol porque se reseca"
+    },
+    {
+     "texto": "o6",
+     "fragmento": "el anterior me duró mas de 10 años"
+    }
+   ]
+  },
+  {
+   "id": "S4",
+   "tipo": "concesion",
+   "descripcion": "Acepta pagar un repuesto caro porque la calidad lo justifica, pero le pesa el costo cuando el recambio es frecuente: quiere mejor relación precio-duración.",
+   "palabras_clave": [
+    "barato",
+    "precio",
+    "gasta"
+   ],
+   "citas": [
+    {
+     "texto": "o1",
+     "fragmento": "No es barato el repuesto"
+    },
+    {
+     "texto": "o12",
+     "fragmento": "me gasta bastante seguido"
+    },
+    {
+     "texto": "o13",
+     "fragmento": "Excelente calidad precio"
+    }
+   ]
+  },
+  {
+   "id": "S5",
+   "tipo": "duda",
+   "descripcion": "Duda de la compatibilidad y de que el repuesto suelto sea idéntico al original: teme que no coincida en medida, modelo o marca con el balde que ya tiene.",
+   "palabras_clave": [
+    "modelo",
+    "misma",
+    "exclusivo"
+   ],
+   "citas": [
+    {
+     "texto": "p2",
+     "fragmento": "este repuesto es de uso exclusivo para el modelo de Vileda Easy Wring"
+    },
+    {
+     "texto": "p5",
+     "fragmento": "Se adapta para otras marcas de balde"
+    },
+    {
+     "texto": "o5",
+     "fragmento": "no es la misma que viene cuando compras todo completo con el balde"
+    }
+   ]
+  }
+ ],
+ "E023": [
+  {
+   "id": "S1",
+   "tipo": "faltante",
+   "descripcion": "Quiere poder reponer la parte de microfibra del mopa fácilmente y con certeza de que hay consumible disponible en el mismo lugar donde compró",
+   "palabras_clave": [
+    "repuesto",
+    "mopa"
+   ],
+   "citas": [
+    {
+     "texto": "p7",
+     "fragmento": "venden mopa de repuesto"
+    },
+    {
+     "texto": "p20",
+     "fragmento": "tienen la mopa extra"
+    },
+    {
+     "texto": "o13",
+     "fragmento": "los repuestos se consiguen fácilmente"
+    }
+   ]
+  },
+  {
+   "id": "S2",
+   "tipo": "queja",
+   "descripcion": "Quiere que el mecanismo de accionamiento (pedal y palanca) resista el uso doméstico repetido: desconfía de las piezas plásticas y del trabado",
+   "palabras_clave": [
+    "pedal",
+    "plástico"
+   ],
+   "citas": [
+    {
+     "texto": "o3",
+     "fragmento": "ya se me rompió el pedal"
+    },
+    {
+     "texto": "o12",
+     "fragmento": "la palanca del balde se traba"
+    },
+    {
+     "texto": "o5",
+     "fragmento": "el mecanismo es de plástico"
+    }
+   ]
+  },
+  {
+   "id": "S3",
+   "tipo": "uso_no_previsto",
+   "descripcion": "Quiere limpiar superficies altas y verticales, no solo el piso: paredes, puertas, azulejos y techos",
+   "palabras_clave": [
+    "limpiar",
+    "puertas",
+    "azulejos"
+   ],
+   "citas": [
+    {
+     "texto": "o6",
+     "fragmento": "ideal para limpiar las paredes, techos"
+    },
+    {
+     "texto": "o4",
+     "fragmento": "los azulejos del baño"
+    }
+   ]
+  },
+  {
+   "id": "S4",
+   "tipo": "preferencia",
+   "descripcion": "Quiere hacer la limpieza sin agacharse ni hacer fuerza, con un mango a la altura adecuada para su cuerpo",
+   "palabras_clave": [
+    "palo",
+    "altura",
+    "cómodo"
+   ],
+   "citas": [
+    {
+     "texto": "o11",
+     "fragmento": "sin agacharse a estrujar el trapo"
+    },
+    {
+     "texto": "o15",
+     "fragmento": "sin hacer fuerza ni agacharte"
+    },
+    {
+     "texto": "o13",
+     "fragmento": "la altura me parece cómodo"
+    }
+   ]
+  },
+  {
+   "id": "S5",
+   "tipo": "duda",
+   "descripcion": "Quiere saber con claridad qué incluye cada opción o variante publicada (mopa, repuestos, kit) antes de elegir",
+   "palabras_clave": [
+    "opción",
+    "kit",
+    "modelo"
+   ],
+   "citas": [
+    {
+     "texto": "p4",
+     "fragmento": "Qué diferencia hay entre las dos mopas"
+    },
+    {
+     "texto": "p15",
+     "fragmento": "trae una mopa ya con el kit"
+    },
+    {
+     "texto": "p1",
+     "fragmento": "Que diferencia tiene la opcion 1 que es mas barata"
+    }
+   ]
+  },
+  {
+   "id": "S6",
+   "tipo": "duda",
+   "descripcion": "Quiere saber de antemano qué cobertura y cuánto dura la garantía, y cómo hacerla valer si se rompe",
+   "palabras_clave": [
+    "garantía"
+   ],
+   "citas": [
+    {
+     "texto": "p18",
+     "fragmento": "Donde encuentro la garantía del fabricante"
+    },
+    {
+     "texto": "p13",
+     "fragmento": "Tiene 2 años de garantía"
+    },
+    {
+     "texto": "o3",
+     "fragmento": "Lo compre como calidad garantizada"
+    }
+   ]
+  }
+ ],
+ "E024": [
+  {
+   "id": "S1",
+   "tipo": "preferencia",
+   "descripcion": "Prefiere el cepillo fijado a la pared, en altura: libera el piso, no se mueve mientras limpia y facilita el paso de la aspiradora o el trapeador",
+   "palabras_clave": [
+    "pared",
+    "piso",
+    "adhesivo"
+   ],
+   "citas": [
+    {
+     "texto": "o67",
+     "fragmento": "va adherida a la pared y no ocupa espacio en el piso"
+    },
+    {
+     "texto": "o2",
+     "fragmento": "la base esta buena porque se pega en altura y liberas el piso"
+    },
+    {
+     "texto": "o136",
+     "fragmento": "Ocupa poquísimo espacio porque además se adhiere a la pared"
+    }
+   ]
+  },
+  {
+   "id": "S2",
+   "tipo": "queja",
+   "descripcion": "Quiere un mango firme de una sola pieza: el armado enroscable se afloja y se desarma justo cuando está limpiando",
+   "palabras_clave": [
+    "desenrosca",
+    "desarmar",
+    "partes"
+   ],
+   "citas": [
+    {
+     "texto": "o118",
+     "fragmento": "cada vez que limpio se quiere desarmar"
+    },
+    {
+     "texto": "o94",
+     "fragmento": "llegara con el mango fuera dividido en tres partes"
+    },
+    {
+     "texto": "o12",
+     "fragmento": "se desenrosca un poquito"
+    }
+   ]
+  },
+  {
+   "id": "S3",
+   "tipo": "concesion",
+   "descripcion": "Acepta que la silicona no raspa como las cerdas duras porque llega a los bordes y es más higiénica, pero pide que limpie con la misma eficacia de una escobilla tradicional",
+   "palabras_clave": [
+    "cerdas",
+    "tradicionales",
+    "raspan"
+   ],
+   "citas": [
+    {
+     "texto": "o28",
+     "fragmento": "no limpia como lo hiciera un cepillo de cerdas"
+    },
+    {
+     "texto": "o15",
+     "fragmento": "las escobillas tradicionales raspan mejor que este material"
+    },
+    {
+     "texto": "o102",
+     "fragmento": "no limpia bien como una de cerdas"
+    }
+   ]
+  },
+  {
+   "id": "S4",
+   "tipo": "uso_no_previsto",
+   "descripcion": "Lo usa como herramienta de precisión: pliegues del asiento, borde interno y rincones que la escobilla común no alcanza, e incluso para otras superficies fuera del inodoro",
+   "palabras_clave": [
+    "rincones",
+    "pliegues",
+    "bordes"
+   ],
+   "citas": [
+    {
+     "texto": "o37",
+     "fragmento": "se puede usar para otro tipo de limpieza"
+    },
+    {
+     "texto": "o71",
+     "fragmento": "sirve para los pliegues del asiento"
+    },
+    {
+     "texto": "o70",
+     "fragmento": "el cepillo llega mejor a los rincones"
+    }
+   ]
+  },
+  {
+   "id": "S5",
+   "tipo": "duda",
+   "descripcion": "Necesita saber de antemano si el recipiente es cerrado o tiene rejilla/agujeros de drenaje: define si se junta agua sucia o no",
+   "palabras_clave": [
+    "cerrada",
+    "agujeros",
+    "drenaje"
+   ],
+   "citas": [
+    {
+     "texto": "p8",
+     "fragmento": "Tiene agujeros abajo o es cerrado?"
+    },
+    {
+     "texto": "p3",
+     "fragmento": "Viene con rejilla con drenaje adentro?"
+    },
+    {
+     "texto": "o20",
+     "fragmento": "no tiene augero abajo como las otras"
+    }
+   ]
+  },
+  {
+   "id": "S6",
+   "tipo": "faltante",
+   "descripcion": "Quiere elegir el color y combinarlo con el baño: blanco, negro y otras opciones que no siempre hay en stock o en el modelo deseado",
+   "palabras_clave": [
+    "color",
+    "negro",
+    "blanco"
+   ],
+   "citas": [
+    {
+     "texto": "p1",
+     "fragmento": "No tienen asi en azul/celeste?"
+    },
+    {
+     "texto": "p7",
+     "fragmento": "vienen negro y en blanco? Necesito 4"
+    },
+    {
+     "texto": "p2",
+     "fragmento": "No tenés más negro cuadrado?"
+    }
+   ]
+  }
+ ],
+ "E025": [
+  {
+   "id": "S1",
+   "tipo": "faltante",
+   "descripcion": "Quiere que el soporte retenga el agua que escurre del cepillo y no moje el piso: el receptáculo sin fondo se percibe como un defecto que hay que resolver con un plato o rejilla.",
+   "palabras_clave": [
+    "fondo",
+    "agua"
+   ],
+   "citas": [
+    {
+     "texto": "o13",
+     "fragmento": "la base en la que viene tiene el fondo perforado, con lo cual si queda agua sale por los orificios"
+    },
+    {
+     "texto": "o133",
+     "fragmento": "tenes que poner algo en el suelo para que no gotee ya que el recipiente no tiene fondo"
+    },
+    {
+     "texto": "o4",
+     "fragmento": "el vasito es abierto abajo y el agua cae en el piso pero le puse un platito"
+    },
+    {
+     "texto": "o162",
+     "fragmento": "el tema es que no tiene fondo, y puede chorrear"
+    }
+   ]
+  },
+  {
+   "id": "S2",
+   "tipo": "queja",
+   "descripcion": "Necesita que la fijación a la pared o al azulejo sostenga de verdad: la humedad del baño hace ceder el adhesivo y el producto termina en el piso o reforzado con otro pegamento.",
+   "palabras_clave": [
+    "pegamento",
+    "adhesivo"
+   ],
+   "citas": [
+    {
+     "texto": "o43",
+     "fragmento": "el pegamento que trae para adherírlo en la pared no es bueno"
+    },
+    {
+     "texto": "o18",
+     "fragmento": "el pegamento es muy débil se despegó en el dia"
+    },
+    {
+     "texto": "o102",
+     "fragmento": "Se callo por la cantidad de humedad, el pegamento cedio"
+    },
+    {
+     "texto": "o76",
+     "fragmento": "no así sobre pared que tuvimos que reforzar con pegamento"
+    }
+   ]
+  },
+  {
+   "id": "S3",
+   "tipo": "preferencia",
+   "descripcion": "Busca una forma flexible y chata que entre en la descarga y en los rincones a los que el cepillo de cerdas redondo no llega.",
+   "palabras_clave": [
+    "flexible"
+   ],
+   "citas": [
+    {
+     "texto": "o20",
+     "fragmento": "Es lo suficientemente flexible como para entrar perfectamente en la descarga del inodoro"
+    },
+    {
+     "texto": "o18",
+     "fragmento": "Es flexible para llegar a la parte de arriba es ideal"
+    },
+    {
+     "texto": "o102",
+     "fragmento": "Es super flexible ya que es de silicona"
+    },
+    {
+     "texto": "o63",
+     "fragmento": "lo compré por la forma chata que tiene, pensando que eso permite limpiar zonas que el cepillo redondo no accede"
+    }
+   ]
+  },
+  {
+   "id": "S4",
+   "tipo": "preferencia",
+   "descripcion": "Prioriza que ocupe poco lugar y no afeé el baño: un baño chico y a la vista pesa más que la robustez del producto.",
+   "palabras_clave": [
+    "espacio"
+   ],
+   "citas": [
+    {
+     "texto": "o188",
+     "fragmento": "es ideal porque se puede esconder fácilmente y no ocupa espacio en el baño"
+    },
+    {
+     "texto": "o102",
+     "fragmento": "Lo que me gusta es que no ocupa espacio y se limpia muy fácil"
+    },
+    {
+     "texto": "o48",
+     "fragmento": "Es estético y no ocupa tanto espacio como los clásicos ordinarios"
+    }
+   ]
+  },
+  {
+   "id": "S5",
+   "tipo": "concesion",
+   "descripcion": "Acepta que limpia menos que el cepillo tradicional y lo usa como complemento: quiere la limpieza profunda del clásico sin renunciar al formato chato y estético.",
+   "palabras_clave": [
+    "limpia"
+   ],
+   "citas": [
+    {
+     "texto": "o18",
+     "fragmento": "no raspa como los tradicionales uso los dos como complemento"
+    },
+    {
+     "texto": "o5",
+     "fragmento": "No esperes que te limpie como los cepillos del súper porque no es así"
+    },
+    {
+     "texto": "o4",
+     "fragmento": "limpia en esos lugares donde las escobillas comunes no llegan"
+    }
+   ]
+  }
+ ],
+ "E026": [
+  {
+   "id": "S1",
+   "tipo": "queja",
+   "descripcion": "Quiere que el secador aguante el uso real sin doblarse ni deformarse: espera refuerzo estructural acorde a lo que se vende como 'industrial', no una herramienta que ceda a la semana.",
+   "palabras_clave": [
+    "rompe",
+    "dobla",
+    "deforma",
+    "blandito",
+    "reforzado",
+    "débil",
+    "quebraron"
+   ],
+   "citas": [
+    {
+     "texto": "o55",
+     "fragmento": "el aluminio se dobla completamente"
+    },
+    {
+     "texto": "o54",
+     "fragmento": "pero débil, se rompe con facilidad"
+    },
+    {
+     "texto": "o58",
+     "fragmento": "se deforma enseguida con poca esfuerzo"
+    },
+    {
+     "texto": "o57",
+     "fragmento": "era un poco más reforzado"
+    }
+   ]
+  },
+  {
+   "id": "S2",
+   "tipo": "concesion",
+   "descripcion": "Quiere cubrir mucho piso rápido, pero sin pelear con la herramienta: acepta el tamaño grande solo si sigue siendo manejable, y algunos directamente lo encuentran demasiado grande para su uso.",
+   "palabras_clave": [
+    "grande",
+    "tamaño",
+    "manejar",
+    "medida"
+   ],
+   "citas": [
+    {
+     "texto": "o10",
+     "fragmento": "al ser tan grande no es lo mismo que una medida mas chica para manejarlo"
+    },
+    {
+     "texto": "o48",
+     "fragmento": "me parece demasiado grande"
+    },
+    {
+     "texto": "o54",
+     "fragmento": "Muy útil por su tamaño"
+    },
+    {
+     "texto": "o6",
+     "fragmento": "bastabte grande cumple su funcion"
+    }
+   ]
+  },
+  {
+   "id": "S3",
+   "tipo": "preferencia",
+   "descripcion": "Prefiere rendimiento por pasada: secar superficies amplias de una sola vez, sin repetir el movimiento ni volver sobre la misma zona.",
+   "palabras_clave": [
+    "superficies",
+    "pasada",
+    "grandes",
+    "patios"
+   ],
+   "citas": [
+    {
+     "texto": "o46",
+     "fragmento": "se puede retirar muy bien el agua en una sola pasada"
+    },
+    {
+     "texto": "o28",
+     "fragmento": "my efectivo para grandes superficies"
+    },
+    {
+     "texto": "o15",
+     "fragmento": "ideal para grandes superficies"
+    },
+    {
+     "texto": "o10",
+     "fragmento": "funcional para los patios grandes"
+    }
+   ]
+  },
+  {
+   "id": "S4",
+   "tipo": "uso_no_previsto",
+   "descripcion": "Lo compra como herramienta de trabajo o para limpiezas de gran escala fuera del hogar (patios, canchas, espacios públicos) y necesita que rinda a ese ritmo, no como accesorio doméstico.",
+   "palabras_clave": [
+    "trabajo",
+    "industrial",
+    "skatepark",
+    "agilizar"
+   ],
+   "citas": [
+    {
+     "texto": "o1",
+     "fragmento": "Lo compre para agilizar mi trabajo"
+    },
+    {
+     "texto": "o42",
+     "fragmento": "me sirvió para secar todo un skatepark"
+    },
+    {
+     "texto": "o57",
+     "fragmento": "Por ser industrial tenía la idea"
+    }
+   ]
+  }
+ ],
+ "E027": [
+  {
+   "id": "S1",
+   "tipo": "queja",
+   "descripcion": "Necesita que la unión entre el palo y el cabezal sea firme y no se destrabe o zafe al inclinar, acomodar o escurrir la mopa.",
+   "palabras_clave": [
+    "palo"
+   ],
+   "citas": [
+    {
+     "texto": "p1",
+     "fragmento": "no se destrabe fácilmente el palo"
+    },
+    {
+     "texto": "p2",
+     "fragmento": "se destraba facilmente"
+    },
+    {
+     "texto": "o5",
+     "fragmento": "sistema de giro del palo suele zafarse con facilidad"
+    }
+   ]
+  },
+  {
+   "id": "S2",
+   "tipo": "queja",
+   "descripcion": "Espera mayor resistencia y mejor sujeción en el mango, la manija y las piezas plásticas, que se salen o se rompen con el uso.",
+   "palabras_clave": [
+    "mango"
+   ],
+   "citas": [
+    {
+     "texto": "o75",
+     "fragmento": "la tapita redonda que está en la mitad del mango de la mopa, se sale varias veces muy fácil"
+    },
+    {
+     "texto": "o146",
+     "fragmento": "se me rompio un plástico del costado del mango"
+    },
+    {
+     "texto": "o18",
+     "fragmento": "la maniga del balde es un poco fragil"
+    }
+   ]
+  },
+  {
+   "id": "S3",
+   "tipo": "preferencia",
+   "descripcion": "Prefiere una altura de palo o mango cómoda, que permita limpiar sin agacharse demasiado y se adapte a distintas estaturas.",
+   "palabras_clave": [
+    "palo",
+    "mango"
+   ],
+   "citas": [
+    {
+     "texto": "o136",
+     "fragmento": "El mango de 1,46 m resulta muy cómodo, ya que no hay que agacharse tanto"
+    },
+    {
+     "texto": "o12",
+     "fragmento": "Algo corto el palo para trabajar"
+    },
+    {
+     "texto": "o140",
+     "fragmento": "lo que tiene el palo más largo es mucho mejor"
+    }
+   ]
+  },
+  {
+   "id": "S4",
+   "tipo": "queja",
+   "descripcion": "Quiere una mopa de calidad consistente y poder mantenerla o reemplazarla sin que el recambio sea de menor calidad que el original.",
+   "palabras_clave": [
+    "mopa"
+   ],
+   "citas": [
+    {
+     "texto": "o118",
+     "fragmento": "la mopa ya viene mas ordinaria los pelos son mas largos pero no tan tupidos"
+    },
+    {
+     "texto": "o7",
+     "fragmento": "vino con el repuesto y todo"
+    },
+    {
+     "texto": "o21",
+     "fragmento": "se consigue los repuestos"
+    }
+   ]
+  },
+  {
+   "id": "S5",
+   "tipo": "preferencia",
+   "descripcion": "Busca reemplazar el trapo de piso para limpiar sin ensuciarse ni lastimarse las manos, y sin dejar pelusas.",
+   "palabras_clave": [
+    "trapo"
+   ],
+   "citas": [
+    {
+     "texto": "o4",
+     "fragmento": "mis manos sin cayos"
+    },
+    {
+     "texto": "o9",
+     "fragmento": "No me duelen más las manos estrujando el trapo y desaparecieron las odiosas pelusas"
+    },
+    {
+     "texto": "o162",
+     "fragmento": "reemplaza totalmente al trapo de piso"
+    }
+   ]
+  },
+  {
+   "id": "S6",
+   "tipo": "concesion",
+   "descripcion": "Acepta pagar más si el producto es durable, resistente y mantiene una calidad superior a otras alternativas.",
+   "palabras_clave": [
+    "calidad"
+   ],
+   "citas": [
+    {
+     "texto": "o21",
+     "fragmento": "Caro pero el mejor!!"
+    },
+    {
+     "texto": "o5",
+     "fragmento": "Es muy buena calidad dentro de los del mercado"
+    },
+    {
+     "texto": "o148",
+     "fragmento": "super resistente"
+    }
+   ]
+  }
+ ],
+ "E030": [
+  {
+   "id": "S1",
+   "tipo": "faltante",
+   "descripcion": "Quiere resolver comida y agua en una sola compra / un solo equipo, no dos dispensers separados ni de otra marca o diseño",
+   "palabras_clave": [
+    "agua",
+    "bebedero"
+   ],
+   "citas": [
+    {
+     "texto": "p1",
+     "fragmento": "Sirve para agua??"
+    },
+    {
+     "texto": "p2",
+     "fragmento": "Este sirve para agua ?"
+    },
+    {
+     "texto": "p4",
+     "fragmento": "no tenemos comedero y bebedero que sean iguales o que sea dos en uno"
+    },
+    {
+     "texto": "p7",
+     "fragmento": "Tienen tb bebederos? Para encargar todo jubto"
+    }
+   ]
+  },
+  {
+   "id": "S2",
+   "tipo": "faltante",
+   "descripcion": "Quiere que el depósito de alimento quede cerrado/hermético para que la comida no se humedezca ni se ensucie",
+   "palabras_clave": [
+    "tapa",
+    "humed"
+   ],
+   "citas": [
+    {
+     "texto": "p6",
+     "fragmento": "la partida que tenemos no cuenta con tapa superior"
+    },
+    {
+     "texto": "p8",
+     "fragmento": "el bidón queda abierto no cuenta con tapa"
+    },
+    {
+     "texto": "o85",
+     "fragmento": "no se humedexca con el ambiente, ya que es bastante hermético"
+    }
+   ]
+  },
+  {
+   "id": "S3",
+   "tipo": "queja",
+   "descripcion": "Necesita que la comida baje sola de forma confiable, sin tener que sacudir ni inclinar el equipo",
+   "palabras_clave": [
+    "baje",
+    "bajar",
+    "bajada"
+   ],
+   "citas": [
+    {
+     "texto": "o19",
+     "fragmento": "debería tener una mayor inclinación para que la gravedad haga su trabajo de manera más efectiva"
+    },
+    {
+     "texto": "o39",
+     "fragmento": "cuesta bajar aveces hay que sacudiro un poco para que se llene bien el plato"
+    },
+    {
+     "texto": "o68",
+     "fragmento": "puede ser que no baje solo del todo , pero la comida baja"
+    }
+   ]
+  },
+  {
+   "id": "S4",
+   "tipo": "deseo",
+   "descripcion": "Quiere un plato/bandeja más hondo y contenido para que el alimento no se desparrame fuera al caer",
+   "palabras_clave": [
+    "plato"
+   ],
+   "citas": [
+    {
+     "texto": "o163",
+     "fragmento": "El plato debería ser un poco más hondo ya que mis gatos desparraman toda la comida"
+    },
+    {
+     "texto": "o6",
+     "fragmento": "los sacaba afuera del plato y comia del piso"
+    },
+    {
+     "texto": "o39",
+     "fragmento": "hay que sacudiro un poco para que se llene bien el plato"
+    }
+   ]
+  },
+  {
+   "id": "S5",
+   "tipo": "queja",
+   "descripcion": "Duda del tamaño real / quiere dimensiones claras porque la capacidad le resulta chica para lo que necesita (mascota grande o varios días)",
+   "palabras_clave": [
+    "chico",
+    "tamaño"
+   ],
+   "citas": [
+    {
+     "texto": "o186",
+     "fragmento": "es muy chiquito y no me sirve para lo que necesitaba"
+    },
+    {
+     "texto": "o170",
+     "fragmento": "Es más chico de lo que esperaba"
+    },
+    {
+     "texto": "o28",
+     "fragmento": "buena calidad y el tamaño está perfecto"
+    }
+   ]
+  }
+ ],
+ "E031": [
+  {
+   "id": "S1",
+   "tipo": "duda",
+   "descripcion": "Quiere saber capacidad y medidas exactas (litros de agua, diámetro del plato) antes de comprar, porque no puede deducirlas de la publicación y el tamaño define si le sirve",
+   "palabras_clave": [
+    "capacidad",
+    "diámetro",
+    "cuánta",
+    "entra"
+   ],
+   "citas": [
+    {
+     "texto": "p5",
+     "fragmento": "que capaciad tiene la botella"
+    },
+    {
+     "texto": "p13",
+     "fragmento": "qué diámetro tiene el pote de comida"
+    },
+    {
+     "texto": "p8",
+     "fragmento": "Cuanto de agua entra en la botella"
+    },
+    {
+     "texto": "p11",
+     "fragmento": "cuánto es la capacidad del depósito de agua"
+    }
+   ]
+  },
+  {
+   "id": "S2",
+   "tipo": "queja",
+   "descripcion": "El depósito y el plato resultan chicos para el uso real: necesita más volumen de agua y una boca más amplia para que la mascota beba y coma cómoda, sobre todo si no es un cachorro",
+   "palabras_clave": [
+    "chico",
+    "pequeño"
+   ],
+   "citas": [
+    {
+     "texto": "o191",
+     "fragmento": "el recipiente para el agua es demasiado pequeño"
+    },
+    {
+     "texto": "o40",
+     "fragmento": "el bebedero es muy chico"
+    },
+    {
+     "texto": "o97",
+     "fragmento": "le quedó chico el plato"
+    },
+    {
+     "texto": "o24",
+     "fragmento": "Es pequeño, como para un perro chico o gato"
+    }
+   ]
+  },
+  {
+   "id": "S3",
+   "tipo": "queja",
+   "descripcion": "La botella se percibe frágil y de material fino; quiere un envase resistente o reemplazable, porque la ve como la pieza que se va a romper primero",
+   "palabras_clave": [
+    "botella",
+    "frágil",
+    "finito"
+   ],
+   "citas": [
+    {
+     "texto": "o41",
+     "fragmento": "si bien es muy frágil la botella"
+    },
+    {
+     "texto": "o148",
+     "fragmento": "El material de la botella es muy finito"
+    },
+    {
+     "texto": "o24",
+     "fragmento": "la botella parece resistente"
+    }
+   ]
+  },
+  {
+   "id": "S4",
+   "tipo": "queja",
+   "descripcion": "Al gato le cuesta aceptar el bebedero de pico o le desconfía: necesita que el sistema de agua sea lo bastante natural y atractivo para que el animal efectivamente tome, no solo coma",
+   "palabras_clave": [
+    "tomar",
+    "bebedero"
+   ],
+   "citas": [
+    {
+     "texto": "o142",
+     "fragmento": "ninguno de mis gatos tomo agua pero si comen"
+    },
+    {
+     "texto": "o103",
+     "fragmento": "no le gustó nunca tomar de esa botellita"
+    },
+    {
+     "texto": "o172",
+     "fragmento": "le tiene desconfianza, ni se acerca"
+    },
+    {
+     "texto": "o176",
+     "fragmento": "le costó empezar a tomar del bebedero"
+    }
+   ]
+  },
+  {
+   "id": "S5",
+   "tipo": "preferencia",
+   "descripcion": "Quiere higiene fácil: plato de acero inoxidable removible que se pueda sacar y lavar sin que se oxide, porque la limpieza diaria es parte del uso",
+   "palabras_clave": [
+    "acero",
+    "lavar"
+   ],
+   "citas": [
+    {
+     "texto": "o106",
+     "fragmento": "el platito de la comida es de acero y se puede lavar"
+    },
+    {
+     "texto": "o24",
+     "fragmento": "El plato se puede extraer para lavar"
+    },
+    {
+     "texto": "o193",
+     "fragmento": "pensé que se iba a oxidar el plato"
+    }
+   ]
+  },
+  {
+   "id": "S6",
+   "tipo": "deseo",
+   "descripcion": "Quiere elegir el color, y poder combinar o conseguir el que quiere (rosa, gris) cuando tiene más de una mascota o quiere que combine con su casa",
+   "palabras_clave": [
+    "color",
+    "rosa"
+   ],
+   "citas": [
+    {
+     "texto": "p2",
+     "fragmento": "el rosa o otro color hay? Tengo 3 gatitas"
+    },
+    {
+     "texto": "o17",
+     "fragmento": "yo quería uno rosa y gris pero no pude comprarlos así"
+    },
+    {
+     "texto": "o185",
+     "fragmento": "Linda calidad y color"
+    }
+   ]
+  }
+ ],
+ "E034": [
+  {
+   "id": "S1",
+   "tipo": "preferencia",
+   "descripcion": "Quien compra una correa retráctil prioriza que aguante los tirones de un perro fuerte y no se corte, porque ya perdió una (o casi pierde a su perro) con correas finitas que se rompieron.",
+   "palabras_clave": [
+    "tira",
+    "resistente",
+    "rompe"
+   ],
+   "citas": [
+    {
+     "texto": "o51",
+     "fragmento": "se rompieron y mí perro se escapó"
+    },
+    {
+     "texto": "p6",
+     "fragmento": "Se rompe fácil si el perro tironea?"
+    },
+    {
+     "texto": "o161",
+     "fragmento": "se banca los tirones de un beagle adulto de 15 kg"
+    },
+    {
+     "texto": "o9",
+     "fragmento": "vienen por una nueva correa ya que la anterior se les ha roto"
+    }
+   ]
+  },
+  {
+   "id": "S2",
+   "tipo": "concesion",
+   "descripcion": "Quien tiene perro chico acepta una correa grande y pesada con tal de sentirse seguro: prefiere sobrarle resistencia antes que arriesgar otra rotura, aunque le resulte incómoda de sostener.",
+   "palabras_clave": [
+    "pesada",
+    "grande",
+    "pesado"
+   ],
+   "citas": [
+    {
+     "texto": "o164",
+     "fragmento": "yo la compré para mi salchi pero siento que es un poco pesada"
+    },
+    {
+     "texto": "o156",
+     "fragmento": "la tuve que devolver porque era muy grande para mí perrito"
+    },
+    {
+     "texto": "o51",
+     "fragmento": "Quizá para mí perrito es grande, teniendo en cuenta que pesa 7 kilos"
+    },
+    {
+     "texto": "o83",
+     "fragmento": "quizás para mi mltes es un poco pesada"
+    }
+   ]
+  },
+  {
+   "id": "S3",
+   "tipo": "queja",
+   "descripcion": "El mecanismo de freno y de recogida tiene que ser confiable: se tolera el peso y el tamaño, pero no que el botón se trabe o que la cinta no termine de recogerse.",
+   "palabras_clave": [
+    "traba",
+    "recoge",
+    "botón"
+   ],
+   "citas": [
+    {
+     "texto": "o160",
+     "fragmento": "se traba un montón, no sé si lo volvería a comprar"
+    },
+    {
+     "texto": "o74",
+     "fragmento": "se traba un poco el botón pero anda muy bien"
+    },
+    {
+     "texto": "o30",
+     "fragmento": "aveces no se mete todo la correa dentro del cosito"
+    }
+   ]
+  },
+  {
+   "id": "S4",
+   "tipo": "duda",
+   "descripcion": "Antes de comprar no queda claro para qué tamaño de perro sirve: la gente pregunta varias veces por el peso que soporta y si sirve para perros chicos o solo medianos y grandes.",
+   "palabras_clave": [
+    "peso",
+    "kg",
+    "soporta"
+   ],
+   "citas": [
+    {
+     "texto": "p2",
+     "fragmento": "Para que peso de perro?"
+    },
+    {
+     "texto": "p5",
+     "fragmento": "Hasta que peso de perro aguanta?"
+    },
+    {
+     "texto": "p1",
+     "fragmento": "es para perros pequeños o para medianos también?"
+    }
+   ]
+  },
+  {
+   "id": "S5",
+   "tipo": "preferencia",
+   "descripcion": "Se busca el mejor material posible dentro de un presupuesto ajustado: se valora pagar un poco más si eso garantiza que el producto dure, y se mide el precio contra la calidad percibida.",
+   "palabras_clave": [
+    "calidad",
+    "precio"
+   ],
+   "citas": [
+    {
+     "texto": "o9",
+     "fragmento": "buscaba dentro de las más económicas la de mejor calidad posible"
+    },
+    {
+     "texto": "o3",
+     "fragmento": "por el precio es bastante bueno la verdad"
+    },
+    {
+     "texto": "o51",
+     "fragmento": "preferí ir más a lo seguro"
+    }
+   ]
+  }
+ ],
+ "E035": [
+  {
+   "id": "S1",
+   "tipo": "concesion",
+   "descripcion": "Acepta una correa pesada y de tamaño grande (carcasa, gancho, manija) con tal de que resista los tirones y no se rompa; quien tiene perro chico la compra igual porque las versiones finitas se rompen, aunque le sobra volumen y peso",
+   "palabras_clave": [
+    "pesada",
+    "perrito"
+   ],
+   "citas": [
+    {
+     "texto": "o20",
+     "fragmento": "El mosquetón es grande y la carcasa un poco pesada pero por ahora todo ok"
+    },
+    {
+     "texto": "o52",
+     "fragmento": "Es pesada pero muy buena!!!"
+    },
+    {
+     "texto": "o164",
+     "fragmento": "yo la compré para mi salchi pero siento que es un poco pesada"
+    },
+    {
+     "texto": "o51",
+     "fragmento": "Quizá para mí perrito es grande, teniendo en cuenta que pesa 7 kilos"
+    },
+    {
+     "texto": "o156",
+     "fragmento": "era muy grande para mí perrito"
+    },
+    {
+     "texto": "o83",
+     "fragmento": "quizás para mi mltes es un poco pesada"
+    }
+   ]
+  },
+  {
+   "id": "S2",
+   "tipo": "queja",
+   "descripcion": "El mecanismo de freno y recogida no siempre responde: el botón se traba o la correa no termina de guardarse, y eso hace dudar de la compra",
+   "palabras_clave": [
+    "traba",
+    "botón"
+   ],
+   "citas": [
+    {
+     "texto": "o160",
+     "fragmento": "Es bueno pero se traba un montón, no sé si lo volvería a comprar"
+    },
+    {
+     "texto": "o74",
+     "fragmento": "se traba un poco el botón pero anda muy bien"
+    },
+    {
+     "texto": "o30",
+     "fragmento": "aveces no se mete todo la correa dentro del cosito"
+    }
+   ]
+  },
+  {
+   "id": "S3",
+   "tipo": "duda",
+   "descripcion": "Antes de comprar necesita saber con claridad para qué peso y tamaño de perro sirve; el límite de kilos es la duda que define la decisión",
+   "palabras_clave": [
+    "kg",
+    "kilos"
+   ],
+   "citas": [
+    {
+     "texto": "p1",
+     "fragmento": "¿hasta cuántos kilos de peso de perro soporta esta correa retráctil de 8 metros?"
+    },
+    {
+     "texto": "o62",
+     "fragmento": "Perfecto para mi perro, un pastor belga de 25 kg"
+    },
+    {
+     "texto": "o161",
+     "fragmento": "se banca los tirones de un beagle adulto de 15 kg"
+    },
+    {
+     "texto": "o32",
+     "fragmento": "Tengo un perro de 38k y aguanta perfecto"
+    }
+   ]
+  },
+  {
+   "id": "S4",
+   "tipo": "preferencia",
+   "descripcion": "Prioriza la calidad y durabilidad de los materiales por encima del precio más bajo: prefiere gastar un poco más que volver a comprar otra correa al poco tiempo",
+   "palabras_clave": [
+    "calidad"
+   ],
+   "citas": [
+    {
+     "texto": "o9",
+     "fragmento": "buscaba dentro de las más económicas la de mejor calidad posible"
+    },
+    {
+     "texto": "o73",
+     "fragmento": "Muy buena calidad, es pesadito pero bien reforzado"
+    },
+    {
+     "texto": "o68",
+     "fragmento": "los materiales parecen de buena calidad"
+    },
+    {
+     "texto": "o156",
+     "fragmento": "Era hermosa de una excelente calidad"
+    }
+   ]
+  }
+ ],
+ "E047": [
+  {
+   "id": "S1",
+   "tipo": "uso_no_previsto",
+   "descripcion": "Quiere medir temperatura de alimentos y procesos de cocina (masas, horno, chocolate, almíbar): espera que un instrumento de taller sirva también en la gastronomía cotidiana.",
+   "palabras_clave": [
+    "horno",
+    "cocina",
+    "cocinar"
+   ],
+   "citas": [
+    {
+     "texto": "p20",
+     "fragmento": "si lo puedo usar para cocina"
+    },
+    {
+     "texto": "o44",
+     "fragmento": "Lo uso para cocinar tanto en horno parrilla como en el anafe"
+    },
+    {
+     "texto": "o85",
+     "fragmento": "lo uso constantemente en la panadería para saber temperaturas de las masas, del horno"
+    }
+   ]
+  },
+  {
+   "id": "S2",
+   "tipo": "uso_no_previsto",
+   "descripcion": "Lo destina a oficios técnicos de frío y clima: refrigeración, heladeras y aire acondicionado, incluso para leer la temperatura del aire y no solo de superficies.",
+   "palabras_clave": [
+    "refrigeracion",
+    "refrigeración",
+    "evaporador",
+    "heladera"
+   ],
+   "citas": [
+    {
+     "texto": "p2",
+     "fragmento": "trabajo en refrigeracion"
+    },
+    {
+     "texto": "o8",
+     "fragmento": "Para el uso que yo le doy en refrigeracion"
+    },
+    {
+     "texto": "o91",
+     "fragmento": "medir la temperatura del aire cuando pasa por el evaporador de un aire acondicionado"
+    }
+   ]
+  },
+  {
+   "id": "S3",
+   "tipo": "duda",
+   "descripcion": "Busca resolver problemas ocultos (pérdidas de agua, caños en pisos y paredes, filtraciones) y duda de que un equipo que solo lee la superficie alcance para eso.",
+   "palabras_clave": [
+    "fuga",
+    "superficie",
+    "caño"
+   ],
+   "citas": [
+    {
+     "texto": "p13",
+     "fragmento": "sirve para detectar caños de agua en el piso"
+    },
+    {
+     "texto": "p17",
+     "fragmento": "sirve para detectar fugas de agua"
+    },
+    {
+     "texto": "p19",
+     "fragmento": "me sirve para buscar una perdida de agua caliente en un piso"
+    },
+    {
+     "texto": "p5",
+     "fragmento": "temperaturas internas en pisos o paredes"
+    }
+   ]
+  },
+  {
+   "id": "S4",
+   "tipo": "duda",
+   "descripcion": "Pretende un mismo aparato para superficies y para personas (fiebre, estética) y queda confundido cuando le dicen que no sirve para temperatura corporal.",
+   "palabras_clave": [
+    "corporal",
+    "personas"
+   ],
+   "citas": [
+    {
+     "texto": "p9",
+     "fragmento": "sirve para medir la temp. corporal"
+    },
+    {
+     "texto": "o22",
+     "fragmento": "no sirve para tomar la temperatura a las personas"
+    },
+    {
+     "texto": "o48",
+     "fragmento": "La temperatura corporal y el radiador de un vehículo"
+    }
+   ]
+  },
+  {
+   "id": "S5",
+   "tipo": "faltante",
+   "descripcion": "Necesita poder confiar en la exactitud: reclama certificado de calibración y lamenta no tener con qué contrastar las mediciones.",
+   "palabras_clave": [
+    "calibra",
+    "precis"
+   ],
+   "citas": [
+    {
+     "texto": "p18",
+     "fragmento": "Tiene certificado de calibración"
+    },
+    {
+     "texto": "o44",
+     "fragmento": "No se si es muy preciso porque no tengo instrumentos"
+    },
+    {
+     "texto": "o128",
+     "fragmento": "Lamentablemente no pude contrastar sus mediciones"
+    }
+   ]
+  },
+  {
+   "id": "S6",
+   "tipo": "preferencia",
+   "descripcion": "Lo elige como herramienta de trabajo de taller y obra (electricidad, mecánica, construcción), no como accesorio doméstico: prioriza robustez y marca conocida sobre el precio más bajo.",
+   "palabras_clave": [
+    "herramienta",
+    "taller",
+    "trabajo"
+   ],
+   "citas": [
+    {
+     "texto": "o17",
+     "fragmento": "yo lo uso en mí taller todo el tiempo"
+    },
+    {
+     "texto": "o51",
+     "fragmento": "Buena herramienta de trabajo, para mi uso como mecánico de motos"
+    },
+    {
+     "texto": "o10",
+     "fragmento": "verificación de temperatura de elementos y artefactos de instalaciones eléctricas"
+    }
+   ]
+  }
+ ],
+ "E053": [
+  {
+   "id": "S1",
+   "tipo": "faltante",
+   "descripcion": "Los 20 kg del kit se quedan cortos rápido: necesita poder ampliar la carga comprando discos sueltos del mismo sistema, sin tener que cambiar de equipo",
+   "palabras_clave": [
+    "discos",
+    "sumar",
+    "agregar"
+   ],
+   "citas": [
+    {
+     "texto": "p4",
+     "fragmento": "y me gustaria sumar un poco mas de carga"
+    },
+    {
+     "texto": "p2",
+     "fragmento": "cuánto me saldría sumarle a este kit dos discos de 5 Kg"
+    },
+    {
+     "texto": "p12",
+     "fragmento": "si es posible agregar 2 discos mas de cada peso"
+    },
+    {
+     "texto": "p13",
+     "fragmento": "me interesa comprar este kit y agregar 2 discos de 5kg"
+    }
+   ]
+  },
+  {
+   "id": "S2",
+   "tipo": "deseo",
+   "descripcion": "Quiere escalones de peso más finos (discos chicos de 1, 1,25 o 2,5 kg) en lugar de discos grandes, para progresar de a poco y variar la carga",
+   "palabras_clave": [
+    "discos",
+    "2,5"
+   ],
+   "citas": [
+    {
+     "texto": "o92",
+     "fragmento": "podrían dividir 2 de los discos de 5kg por 4 de 2. 5kg para mas varianza del peso"
+    },
+    {
+     "texto": "p18",
+     "fragmento": "4 discos de 1 ½ kg 4 discos de 2,5 kg"
+    },
+    {
+     "texto": "p7",
+     "fragmento": "4 discos chicos de 1 o 1,25 kg"
+    },
+    {
+     "texto": "p18",
+     "fragmento": "No tenemos discos de 1 1/2"
+    }
+   ]
+  },
+  {
+   "id": "S3",
+   "tipo": "concesion",
+   "descripcion": "La sujeción a rosca se afloja con el uso y las piezas (topes, tuercas) se pierden o no se reponen sueltas: acepta reajustar a mano, pero necesita poder conseguir el repuesto",
+   "palabras_clave": [
+    "rosca",
+    "afloj"
+   ],
+   "citas": [
+    {
+     "texto": "p6",
+     "fragmento": "cuánto sale solo los topes a rosca rojos.. pasa que los perdí"
+    },
+    {
+     "texto": "p6",
+     "fragmento": "no vendemos solo las roscas"
+    },
+    {
+     "texto": "o24",
+     "fragmento": "las roscas se van aflojando a medida que lo usas"
+    },
+    {
+     "texto": "o53",
+     "fragmento": "pueden aflojarse las tuercas que ajustan"
+    },
+    {
+     "texto": "o22",
+     "fragmento": "me hubiese gustado que sea un poco más fácil enroscar"
+    }
+   ]
+  },
+  {
+   "id": "S4",
+   "tipo": "queja",
+   "descripcion": "Las medidas del conjunto no calzan con todos los usos: la barra extensora queda corta para banco y ciertos ejercicios, mientras los caños de las mancuernas resultan largos y estorbosos",
+   "palabras_clave": [
+    "largo",
+    "larga"
+   ],
+   "citas": [
+    {
+     "texto": "o31",
+     "fragmento": "Lo único que podría mejorar es el largo de la barra extensora"
+    },
+    {
+     "texto": "o47",
+     "fragmento": "Quizás el largo total unido podría ser un poco más largo"
+    },
+    {
+     "texto": "o60",
+     "fragmento": "son largos los caños de las mancuernas"
+    },
+    {
+     "texto": "p1",
+     "fragmento": "cuánto mide la barra larga sirve para apoyar en banco plano"
+    }
+   ]
+  },
+  {
+   "id": "S5",
+   "tipo": "duda",
+   "descripcion": "Antes de comprar necesita certeza sobre compatibilidad: diámetro del centro de los discos (30 mm) y si puede mezclar discos de otras marcas o de otro kit",
+   "palabras_clave": [
+    "centro",
+    "30 mm"
+   ],
+   "citas": [
+    {
+     "texto": "p16",
+     "fragmento": "si se le puede agregar otros discos (diferente marca)"
+    },
+    {
+     "texto": "p16",
+     "fragmento": "siempre que tengan centro de 30 mm"
+    },
+    {
+     "texto": "p15",
+     "fragmento": "No importa si el centro no es a rosca?"
+    },
+    {
+     "texto": "p7",
+     "fragmento": "con centro de 30 mm"
+    }
+   ]
+  },
+  {
+   "id": "S6",
+   "tipo": "uso_no_previsto",
+   "descripcion": "Se usa como gimnasio doméstico para quien no tiene tiempo ni ganas de ir al gym, incluido entrenamiento post parto o vuelta a la actividad después de años",
+   "palabras_clave": [
+    "casa",
+    "gym"
+   ],
+   "citas": [
+    {
+     "texto": "o5",
+     "fragmento": "Lo compré para mi entrenamiento post parto"
+    },
+    {
+     "texto": "o2",
+     "fragmento": "para los que no tenemos tiempo de ir al gym , lo hacemos de desde casa"
+    },
+    {
+     "texto": "o36",
+     "fragmento": "Ideal para hacer ejercicios en casa"
+    },
+    {
+     "texto": "o11",
+     "fragmento": "he empleado pesas en mi juventud, y comparado con estas"
+    }
+   ]
+  }
+ ],
+ "E054": [
+  {
+   "id": "S1",
+   "tipo": "queja",
+   "descripcion": "Quiere que la sujeción de los discos no se afloje durante el ejercicio y no tener que reajustarla cada vez.",
+   "palabras_clave": [
+    "rosca",
+    "ajustar"
+   ],
+   "citas": [
+    {
+     "texto": "o12",
+     "fragmento": "la rosca que cada tanto la tenes que volver a ajustar"
+    },
+    {
+     "texto": "o130",
+     "fragmento": "es incómodo tener que ajustar el perno que mantiene los discos en su lugar cada dos por tres"
+    },
+    {
+     "texto": "o174",
+     "fragmento": "Las roscas son buenas, aunque tienden a aflojarse"
+    },
+    {
+     "texto": "o99",
+     "fragmento": "cada tanto se desajusta la rosca"
+    }
+   ]
+  },
+  {
+   "id": "S2",
+   "tipo": "faltante",
+   "descripcion": "Necesita poder cargar más peso por mancuerna del que permite el espacio disponible para discos.",
+   "palabras_clave": [
+    "discos",
+    "mancuerna"
+   ],
+   "citas": [
+    {
+     "texto": "p6",
+     "fragmento": "puedo agregarle discos para llegar a 20 kilos por mancuerna?"
+    },
+    {
+     "texto": "o81",
+     "fragmento": "Solo se puede poner 5 kg por lado por el ancho de los discos con un maximo de 10 kg por mancuerna"
+    },
+    {
+     "texto": "o2",
+     "fragmento": "me confundí y pensé que eran de 20 kg. Cada mancuerna"
+    },
+    {
+     "texto": "o174",
+     "fragmento": "no es posible adicionar más discos por el tamaño"
+    }
+   ]
+  },
+  {
+   "id": "S3",
+   "tipo": "deseo",
+   "descripcion": "Quiere ampliar o reponer el kit comprando discos sueltos o en otras combinaciones de peso.",
+   "palabras_clave": [
+    "discos",
+    "kilos"
+   ],
+   "citas": [
+    {
+     "texto": "p17",
+     "fragmento": "Tenés para vender los discos solos"
+    },
+    {
+     "texto": "p4",
+     "fragmento": "Existe el kit pero con 30kgs?"
+    },
+    {
+     "texto": "p10",
+     "fragmento": "se puede pedir 30kg: 4 x5kg y 4x2.5kg"
+    }
+   ]
+  },
+  {
+   "id": "S4",
+   "tipo": "queja",
+   "descripcion": "Le molesta el olor fuerte del plástico o la goma de los discos y agarres, sobre todo al principio.",
+   "palabras_clave": [
+    "olor",
+    "plástico"
+   ],
+   "citas": [
+    {
+     "texto": "o87",
+     "fragmento": "tiene un olor a plastico fuerte"
+    },
+    {
+     "texto": "o179",
+     "fragmento": "la goma tiene mucho olor"
+    },
+    {
+     "texto": "o130",
+     "fragmento": "dejan un olor a plástico en ls manos muy fuerte"
+    },
+    {
+     "texto": "o16",
+     "fragmento": "el material tiene un olor fuerte"
+    }
+   ]
+  },
+  {
+   "id": "S5",
+   "tipo": "duda",
+   "descripcion": "Duda de la resistencia de las barras huecas y quiere saber si son macizas o cuánto peso soportan.",
+   "palabras_clave": [
+    "acero",
+    "barra"
+   ],
+   "citas": [
+    {
+     "texto": "p5",
+     "fragmento": "son mancuernas huecas?"
+    },
+    {
+     "texto": "p19",
+     "fragmento": "Las barras son de acero hueco"
+    },
+    {
+     "texto": "o74",
+     "fragmento": "Son huecas, lo que me enteré cuando las recibí"
+    },
+    {
+     "texto": "o13",
+     "fragmento": "la barra no es mazisa"
+    }
+   ]
+  },
+  {
+   "id": "S6",
+   "tipo": "concesion",
+   "descripcion": "Acepta roscas y recubrimientos plásticos porque prioriza el precio y la relación calidad-precio para entrenar en casa.",
+   "palabras_clave": [
+    "plástico",
+    "precio"
+   ],
+   "citas": [
+    {
+     "texto": "o37",
+     "fragmento": "Las roscas son de plástico pero entran y salen bien. Ojalá duren"
+    },
+    {
+     "texto": "o21",
+     "fragmento": "No es que es endeble pero es plástico contra metal"
+    },
+    {
+     "texto": "o12",
+     "fragmento": "por lo demás las recomiendo por calidad precio"
+    }
+   ]
+  }
+ ],
+ "E055": [
+  {
+   "id": "S1",
+   "tipo": "faltante",
+   "descripcion": "quiere poder usarlo sin depender del enchufe: inalámbrico o al menos recargable, para moverse o usarlo en cualquier lado",
+   "palabras_clave": [
+    "inalámbric",
+    "recargable",
+    "sin estar conectado"
+   ],
+   "citas": [
+    {
+     "texto": "p7",
+     "fragmento": "se puede usar sin estar conectado a la red electrica"
+    },
+    {
+     "texto": "p11",
+     "fragmento": "tenes como rste pero inalambrico"
+    },
+    {
+     "texto": "p16",
+     "fragmento": "como lo cambio por uno recargable"
+    },
+    {
+     "texto": "o96",
+     "fragmento": "pensé que era inalámbrico"
+    }
+   ]
+  },
+  {
+   "id": "S2",
+   "tipo": "queja",
+   "descripcion": "necesita más autonomía de movimiento: pregunta y reclama un cable de alimentación más largo para no quedar atado al tomacorriente",
+   "palabras_clave": [
+    "cable"
+   ],
+   "citas": [
+    {
+     "texto": "p14",
+     "fragmento": "Cual es el largo del cable 220"
+    },
+    {
+     "texto": "p15",
+     "fragmento": "Cuanto mide el cable"
+    },
+    {
+     "texto": "o66",
+     "fragmento": "que el cable de alimentación sea un poco más largo"
+    },
+    {
+     "texto": "o58",
+     "fragmento": "El cable podría ser más largo"
+    }
+   ]
+  },
+  {
+   "id": "S3",
+   "tipo": "queja",
+   "descripcion": "espera que el calor sea potente y realmente se sienta: el calor tibio o que solo prende luces no alcanza para aliviar la contractura",
+   "palabras_clave": [
+    "calor"
+   ],
+   "citas": [
+    {
+     "texto": "o191",
+     "fragmento": "El efecto calor no funciona"
+    },
+    {
+     "texto": "o196",
+     "fragmento": "le faltaría aportar un poco más de calor"
+    },
+    {
+     "texto": "o58",
+     "fragmento": "El calor es suave, pero se siente"
+    },
+    {
+     "texto": "o193",
+     "fragmento": "el color que irradia es muy suave"
+    }
+   ]
+  },
+  {
+   "id": "S4",
+   "tipo": "faltante",
+   "descripcion": "quiere usarlo recostado o sin sostenerlo con los brazos, sobre la cama o debajo del cuerpo, y no solo apoyado con la mano",
+   "palabras_clave": [
+    "acostad",
+    "recostar",
+    "cama",
+    "sostenga"
+   ],
+   "citas": [
+    {
+     "texto": "p5",
+     "fragmento": "Tienen algún modelo que si se puede usar acostado"
+    },
+    {
+     "texto": "p6",
+     "fragmento": "¿Se puede usar en la cama y uno recostarse encima"
+    },
+    {
+     "texto": "p8",
+     "fragmento": "que se sostenga solo sin utilizar los brazos"
+    }
+   ]
+  },
+  {
+   "id": "S5",
+   "tipo": "deseo",
+   "descripcion": "quiere poder guardarlo y trasladarlo protegido: pide bolso o funda de transporte, y nota que la tela exterior se gasta con el uso",
+   "palabras_clave": [
+    "bolso",
+    "funda",
+    "trasladar"
+   ],
+   "citas": [
+    {
+     "texto": "o196",
+     "fragmento": "vendría bien un bolso para transportarlo"
+    },
+    {
+     "texto": "o193",
+     "fragmento": "Mejoría la funda, ya que no trae"
+    },
+    {
+     "texto": "o177",
+     "fragmento": "práctico al poder trasladarlo a donde vaya"
+    }
+   ]
+  },
+  {
+   "id": "S6",
+   "tipo": "queja",
+   "descripcion": "quiere que las piezas resistan y poder reparar lo que se rompe en vez de tirar el equipo entero",
+   "palabras_clave": [
+    "repuesto",
+    "rompió",
+    "costura"
+   ],
+   "citas": [
+    {
+     "texto": "p1",
+     "fragmento": "Venden el repuesto o donde podré comprar"
+    },
+    {
+     "texto": "p4",
+     "fragmento": "¿Venden el engranaje como repuesto"
+    },
+    {
+     "texto": "o138",
+     "fragmento": "las costuras se resienten con el uso normal"
+    },
+    {
+     "texto": "o142",
+     "fragmento": "se pelo toda la parte donde forra los cosos que dan vuelta"
+    }
+   ]
+  }
+ ],
+ "E056": [
+  {
+   "id": "S1",
+   "tipo": "duda",
+   "descripcion": "Quiere saber si puede usarlo sin estar enchufado a la pared, porque la conexión fija condiciona dónde y cómo lo usa.",
+   "palabras_clave": [
+    "220"
+   ],
+   "citas": [
+    {
+     "texto": "p4",
+     "fragmento": "Se puede usar sin estar conectado"
+    },
+    {
+     "texto": "p15",
+     "fragmento": "solo se puede usar conectado a 220"
+    }
+   ]
+  },
+  {
+   "id": "S2",
+   "tipo": "deseo",
+   "descripcion": "Quiere rodillos de mayor tamaño y más potencia para lograr un masaje más profundo.",
+   "palabras_clave": [
+    "rodillos",
+    "potencia"
+   ],
+   "citas": [
+    {
+     "texto": "p8",
+     "fragmento": "quiero que sean rodillos grandes"
+    },
+    {
+     "texto": "p9",
+     "fragmento": "Quiero uno con potencia y rodillos grandes"
+    }
+   ]
+  },
+  {
+   "id": "S3",
+   "tipo": "queja",
+   "descripcion": "Pide más calor, que aparezca más rápido y sea regulable; algunos sienten que el calor es tibio o insuficiente.",
+   "palabras_clave": [
+    "calor"
+   ],
+   "citas": [
+    {
+     "texto": "o7",
+     "fragmento": "el calor aunque perceptible, podría ser mayor"
+    },
+    {
+     "texto": "o4",
+     "fragmento": "Se siente el calor pero no quema para nada, es tibio"
+    },
+    {
+     "texto": "o113",
+     "fragmento": "El tema del calor que todos se quejan"
+    }
+   ]
+  },
+  {
+   "id": "S4",
+   "tipo": "uso_no_previsto",
+   "descripcion": "Lo usa también en espalda, zona lumbar, piernas y otras áreas, no solo en el cuello, y espera que se adapte a esas zonas.",
+   "palabras_clave": [
+    "lumbar",
+    "espalda"
+   ],
+   "citas": [
+    {
+     "texto": "o58",
+     "fragmento": "La espalda y la parte lumbar, pies"
+    },
+    {
+     "texto": "o62",
+     "fragmento": "ponerselo debajo de los gemelos"
+    },
+    {
+     "texto": "o121",
+     "fragmento": "También lo uso en la zona lumbar"
+    }
+   ]
+  },
+  {
+   "id": "S5",
+   "tipo": "preferencia",
+   "descripcion": "Prefiere que los rodillos mantengan fuerza y no se frenen cuando se hace presión con el cuerpo.",
+   "palabras_clave": [
+    "rodillos",
+    "potencia"
+   ],
+   "citas": [
+    {
+     "texto": "o12",
+     "fragmento": "apoyandole todo el cuerpo tiene fuerza para masajear"
+    },
+    {
+     "texto": "o4",
+     "fragmento": "no se frenan al hacer bastante presión"
+    },
+    {
+     "texto": "o50",
+     "fragmento": "Si se le hace mucha presión los rodillos siguen girando"
+    }
+   ]
+  },
+  {
+   "id": "S6",
+   "tipo": "preferencia",
+   "descripcion": "Valora materiales, costuras y terminaciones de calidad, y rechaza lo que se siente genérico.",
+   "palabras_clave": [
+    "calidad"
+   ],
+   "citas": [
+    {
+     "texto": "o98",
+     "fragmento": "Los materiales parecen de buena calidad"
+    },
+    {
+     "texto": "o4",
+     "fragmento": "muy buena calidad de material y terminaciones"
+    }
+   ]
+  }
+ ],
+ "E057": [
+  {
+   "id": "S1",
+   "tipo": "queja",
+   "descripcion": "Quiere carcasa, clip y punta resistentes: el plástico y los golpes/el uso las rompen.",
+   "palabras_clave": [
+    "plástico",
+    "rompe"
+   ],
+   "citas": [
+    {
+     "texto": "o19",
+     "fragmento": "carcaza es de un plástico poco resistente a golpes"
+    },
+    {
+     "texto": "o114",
+     "fragmento": "El enganche para la cintura es plástico!"
+    },
+    {
+     "texto": "o1",
+     "fragmento": "la puntera de metal choque fuerte al recogerla porque se rompe"
+    }
+   ]
+  },
+  {
+   "id": "S2",
+   "tipo": "concesion",
+   "descripcion": "Acepta fallas de robustez o suavidad mientras la cinta cumpla su función básica.",
+   "palabras_clave": [
+    "función"
+   ],
+   "citas": [
+    {
+     "texto": "o73",
+     "fragmento": "Cumple con su función! es bastante pesado"
+    },
+    {
+     "texto": "o178",
+     "fragmento": "Pero cumplió su función."
+    },
+    {
+     "texto": "o69",
+     "fragmento": "Pero cumple muy bien su función."
+    }
+   ]
+  },
+  {
+   "id": "S3",
+   "tipo": "preferencia",
+   "descripcion": "Prefiere marcas que ya conoce o le recomiendan antes que opciones desconocidas.",
+   "palabras_clave": [
+    "marca"
+   ],
+   "citas": [
+    {
+     "texto": "o68",
+     "fragmento": "es la marca que busque por conocerla"
+    },
+    {
+     "texto": "o73",
+     "fragmento": "tenia uno de 5 metros de la misma marca"
+    },
+    {
+     "texto": "o62",
+     "fragmento": "nada que invidiar de otras marcas"
+    }
+   ]
+  }
+ ],
+ "E058": [
+  {
+   "id": "S1",
+   "tipo": "queja",
+   "descripcion": "Quien compra un equipo económico espera que el consumible incluido rinda para un trabajo real: las barras que vienen son cortas y se agotan enseguida, así que el kit se siente insuficiente apenas se empieza a usar",
+   "palabras_clave": [
+    "barras",
+    "silicona"
+   ],
+   "citas": [
+    {
+     "texto": "o17",
+     "fragmento": "las barras de silicón que trae se acaban demasiado rapido"
+    },
+    {
+     "texto": "o110",
+     "fragmento": "las barras de silicona son pequeñas, no del tamaño que se vende en librería"
+    },
+    {
+     "texto": "o42",
+     "fragmento": "Viene con 10 barritas que duran muy poco"
+    }
+   ]
+  },
+  {
+   "id": "S2",
+   "tipo": "concesion",
+   "descripcion": "Se acepta un equipo chico, liviano y transportable aunque no dé para trabajos exigentes o de uso constante: la potencia y el tamaño se perdonan mientras caliente rápido y sirva para tareas puntuales",
+   "palabras_clave": [
+    "chica",
+    "cumple"
+   ],
+   "citas": [
+    {
+     "texto": "o42",
+     "fragmento": "Es super chica pero cumple con su cometido"
+    },
+    {
+     "texto": "o17",
+     "fragmento": "No la usaría para proyectos demasiado importantes"
+    },
+    {
+     "texto": "o38",
+     "fragmento": "es excelente para transportarla con facilidad"
+    }
+   ]
+  },
+  {
+   "id": "S3",
+   "tipo": "queja",
+   "descripcion": "El largo del cable limita dónde se puede usar: se necesita trabajar lejos del enchufe o con más libertad de movimiento, y el cable corto obliga a usar alargue o a mover el trabajo",
+   "palabras_clave": [
+    "cable",
+    "corto"
+   ],
+   "citas": [
+    {
+     "texto": "o38",
+     "fragmento": "el cable también es corto según mi opinión"
+    },
+    {
+     "texto": "o92",
+     "fragmento": "cablecito corto para enchufar"
+    }
+   ]
+  },
+  {
+   "id": "S4",
+   "tipo": "faltante",
+   "descripcion": "Falta que el consumible se pueda reponer fácil: se busca el repuesto de barras, packs más grandes de 10 y saber qué referencia comprar para no quedarse sin material a mitad del trabajo",
+   "palabras_clave": [
+    "repuesto",
+    "barras"
+   ],
+   "citas": [
+    {
+     "texto": "p14",
+     "fragmento": "AY REPUESTO DE BARRA DE SILICONA"
+    },
+    {
+     "texto": "p4",
+     "fragmento": "Necesito comprar más barritas"
+    },
+    {
+     "texto": "o186",
+     "fragmento": "está bueno que venga con más repuestos"
+    }
+   ]
+  },
+  {
+   "id": "S5",
+   "tipo": "duda",
+   "descripcion": "No queda claro qué medida de barra entra: se pregunta si es chica o grande, cuál es el número y si hay una versión de mayor tamaño, señal de que la compatibilidad del consumible no está comunicada",
+   "palabras_clave": [
+    "chica",
+    "grande"
+   ],
+   "citas": [
+    {
+     "texto": "p9",
+     "fragmento": "Es la barra de silicona chica o grande?"
+    },
+    {
+     "texto": "p4",
+     "fragmento": "como ago para saber el número de la barrita"
+    },
+    {
+     "texto": "p2",
+     "fragmento": "Tienen un tamaña más grande ?"
+    }
+   ]
+  },
+  {
+   "id": "S6",
+   "tipo": "uso_no_previsto",
+   "descripcion": "Se lo usa más allá de la pega doméstica: manualidades, tareas escolares, telas, cartón, arreglos y hasta pegar tiras LED, así que se espera que sirva para materiales y soportes variados",
+   "palabras_clave": [
+    "manualidades",
+    "pegar"
+   ],
+   "citas": [
+    {
+     "texto": "o115",
+     "fragmento": "funciona muy bien para hacer manualidades, arreglos"
+    },
+    {
+     "texto": "o157",
+     "fragmento": "excelente para pegar tela. Cartón. Cartulina"
+    },
+    {
+     "texto": "p18",
+     "fragmento": "Sirve para pegar una tira led a una pared?"
+    }
+   ]
+  }
+ ],
+ "E059": [
+  {
+   "id": "S1",
+   "tipo": "duda",
+   "descripcion": "Quiere poder elegir el tamaño adecuado: hay quienes necesitan más altura o volumen y otros advierten que las medidas reales son grandes o que la profundidad queda corta.",
+   "palabras_clave": [
+    "grande",
+    "gigante",
+    "medidas",
+    "corto"
+   ],
+   "citas": [
+    {
+     "texto": "p1",
+     "fragmento": "necesito más grande y más alto"
+    },
+    {
+     "texto": "o95",
+     "fragmento": "Lean las medidas ,es gigante"
+    },
+    {
+     "texto": "o28",
+     "fragmento": "los 6cm les queda corto"
+    }
+   ]
+  },
+  {
+   "id": "S2",
+   "tipo": "preferencia",
+   "descripcion": "Quiere muchos compartimentos y capacidad para clasificar y guardar objetos pequeños.",
+   "palabras_clave": [
+    "espacios",
+    "capacidad",
+    "guardar"
+   ],
+   "citas": [
+    {
+     "texto": "o4",
+     "fragmento": "Buenisima la cantidad de espacios para guardar cosas"
+    },
+    {
+     "texto": "o66",
+     "fragmento": "Amplios espacios para organizar todos mis materiales pequeños"
+    },
+    {
+     "texto": "o5",
+     "fragmento": "muy buena capacidad incluso para los tornillos largos"
+    }
+   ]
+  },
+  {
+   "id": "S3",
+   "tipo": "uso_no_previsto",
+   "descripcion": "Quiere poder adaptar el espacio interior para objetos largos o herramientas, no solo tornillos cortos.",
+   "palabras_clave": [
+    "tornillos",
+    "mechas",
+    "largos"
+   ],
+   "citas": [
+    {
+     "texto": "o90",
+     "fragmento": "guardar mechas de agujereadora o tornillos mas largos"
+    },
+    {
+     "texto": "o5",
+     "fragmento": "incluso para los tornillos largos"
+    },
+    {
+     "texto": "o82",
+     "fragmento": "guardar los tornillos y las mechas"
+    }
+   ]
+  },
+  {
+   "id": "S4",
+   "tipo": "uso_no_previsto",
+   "descripcion": "Quiere un organizador multipropósito para piezas pequeñas de electrónica, manualidades, pesca u otros rubros.",
+   "palabras_clave": [
+    "eletronica",
+    "manualidades",
+    "pesca",
+    "guardar"
+   ],
+   "citas": [
+    {
+     "texto": "o11",
+     "fragmento": "guardar mis cosas de eletronica"
+    },
+    {
+     "texto": "o66",
+     "fragmento": "materiales pequeños para hacer manualidades"
+    },
+    {
+     "texto": "o25",
+     "fragmento": "Para los que les gusta la pesca"
+    }
+   ]
+  },
+  {
+   "id": "S5",
+   "tipo": "queja",
+   "descripcion": "Quiere cierres y manijas firmes que den confianza al trasladar la caja, no solo para dejarla fija en casa.",
+   "palabras_clave": [
+    "cierre",
+    "manija",
+    "frágil"
+   ],
+   "citas": [
+    {
+     "texto": "o141",
+     "fragmento": "cierre de la caja muy frágil"
+    },
+    {
+     "texto": "o95",
+     "fragmento": "el cierre y la manija"
+    },
+    {
+     "texto": "o155",
+     "fragmento": "los cierres que posee son muy deficientes"
+    }
+   ]
+  },
+  {
+   "id": "S6",
+   "tipo": "concesion",
+   "descripcion": "Acepta una calidad media por el precio, pero espera que el plástico y el cierre duren y resistan el uso.",
+   "palabras_clave": [
+    "calidad",
+    "plástico",
+    "precio",
+    "resistencia"
+   ],
+   "citas": [
+    {
+     "texto": "o155",
+     "fragmento": "El plástico con el cual está construído es de mediana calidad"
+    },
+    {
+     "texto": "o140",
+     "fragmento": "por el precio no se puede pedir mucho mas"
+    },
+    {
+     "texto": "o157",
+     "fragmento": "Resistencia media pero bueno"
+    }
+   ]
+  }
+ ],
+ "E060": [
+  {
+   "id": "S1",
+   "tipo": "preferencia",
+   "descripcion": "Prefiere cajas que se apilen y encastren entre sí, sumando módulos y optimizando espacio, en lugar de contenedores sueltos.",
+   "palabras_clave": [
+    "apilable",
+    "apilar",
+    "encastr",
+    "ensambla",
+    "acopl"
+   ],
+   "citas": [
+    {
+     "texto": "o183",
+     "fragmento": "son apilables y encastrables"
+    },
+    {
+     "texto": "o26",
+     "fragmento": "el encastre funciona bien"
+    },
+    {
+     "texto": "p1",
+     "fragmento": "Se acoplan entre si"
+    },
+    {
+     "texto": "o176",
+     "fragmento": "cada caja se ensambla con la otra no ocupa lugar"
+    }
+   ]
+  },
+  {
+   "id": "S2",
+   "tipo": "uso_no_previsto",
+   "descripcion": "Usa la caja para trasladar tornillería y materiales al trabajo o a la calle; necesita portabilidad y resistencia para el movimiento.",
+   "palabras_clave": [
+    "trabajo",
+    "transportar",
+    "llevar",
+    "calle"
+   ],
+   "citas": [
+    {
+     "texto": "o183",
+     "fragmento": "para los que trabajamos en la calle"
+    },
+    {
+     "texto": "o8",
+     "fragmento": "para transportar lo que vas a usar en el trabajo van vien"
+    },
+    {
+     "texto": "o63",
+     "fragmento": "Son lo mejor para salir a trabajar"
+    },
+    {
+     "texto": "o6",
+     "fragmento": "lo puedo llevar a donde sea con mas comodidad"
+    }
+   ]
+  },
+  {
+   "id": "S3",
+   "tipo": "deseo",
+   "descripcion": "Quiere poder ajustar o ampliar las divisiones internas según lo que guarda; a veces lo resuelve fabricando divisores extra.",
+   "palabras_clave": [
+    "compartimentos",
+    "compartimientos",
+    "divisiones",
+    "separadores",
+    "divisores"
+   ],
+   "citas": [
+    {
+     "texto": "o141",
+     "fragmento": "me hubiera gustado que tuviera más compartimientos"
+    },
+    {
+     "texto": "o65",
+     "fragmento": "yo le hice más divisores con la impresora 3d"
+    },
+    {
+     "texto": "o26",
+     "fragmento": "Trae separadores para modificar las divisiones como uno quiere"
+    },
+    {
+     "texto": "o15",
+     "fragmento": "se puede sacar los separadores quedan compartimentos grandes"
+    }
+   ]
+  },
+  {
+   "id": "S4",
+   "tipo": "queja",
+   "descripcion": "Necesita que el plástico y las asas soporten peso y manoseo sin deformarse ni desarmarse.",
+   "palabras_clave": [
+    "deforman",
+    "desarma",
+    "resistencia"
+   ],
+   "citas": [
+    {
+     "texto": "o8",
+     "fragmento": "se deforman"
+    },
+    {
+     "texto": "o191",
+     "fragmento": "empuñadura se desarma"
+    },
+    {
+     "texto": "o14",
+     "fragmento": "robusta, no se dobla"
+    }
+   ]
+  },
+  {
+   "id": "S5",
+   "tipo": "preferencia",
+   "descripcion": "Prioriza cierres firmes y trabas confiables para que el contenido no se abra al apilar o transportar.",
+   "palabras_clave": [
+    "cierran",
+    "cierres",
+    "trabas"
+   ],
+   "citas": [
+    {
+     "texto": "o63",
+     "fragmento": "Cierran bien y las trabas apilables son de calidad"
+    },
+    {
+     "texto": "o37",
+     "fragmento": "cierran perfecto"
+    },
+    {
+     "texto": "o83",
+     "fragmento": "buenos cierres"
+    }
+   ]
+  }
+ ],
+ "E063": [
+  {
+   "id": "S1",
+   "tipo": "duda",
+   "descripcion": "Quiere saber antes de comprar si el soporte entra en la rejilla de su auto específico: la compatibilidad por modelo y año es la duda que frena la compra",
+   "palabras_clave": [
+    "compatible",
+    "modelo",
+    "rejilla"
+   ],
+   "citas": [
+    {
+     "texto": "p3",
+     "fragmento": "sirve para volkswagen bora?"
+    },
+    {
+     "texto": "p13",
+     "fragmento": "servirá para instalar en un Fiat Cronos?"
+    },
+    {
+     "texto": "p17",
+     "fragmento": "para un Peugeot 208 modelo 2017"
+    }
+   ]
+  },
+  {
+   "id": "S2",
+   "tipo": "queja",
+   "descripcion": "El agarre funciona bien en rejillas horizontales o cuadradas, pero falla en rejillas verticales o redondas: necesita fijarse firme en cualquier tipo de rejilla",
+   "palabras_clave": [
+    "rejilla",
+    "redonda",
+    "vertical"
+   ],
+   "citas": [
+    {
+     "texto": "o13",
+     "fragmento": "buen agarre para rejillas de aire cuadradas no tanto para redonda"
+    },
+    {
+     "texto": "o51",
+     "fragmento": "Si la rejilla de tu aire es recto y no en diagonal como la mia seguro queda mas firme"
+    },
+    {
+     "texto": "p9",
+     "fragmento": "la rejilla es vertical , no es horizontal como muestra la foto"
+    }
+   ]
+  },
+  {
+   "id": "S3",
+   "tipo": "preferencia",
+   "descripcion": "No quiere obstáculos ni adhesivos en el parabrisas: prefiere que el celular se sujete en la rejilla o en el torpedo y no en el vidrio",
+   "palabras_clave": [
+    "vidrio",
+    "parabrisas",
+    "torpedo"
+   ],
+   "citas": [
+    {
+     "texto": "p12",
+     "fragmento": "Mi esposo no quiere obstáculos en el parabrisas"
+    },
+    {
+     "texto": "p14",
+     "fragmento": "creí que podía ponerse sobre el torpedo y ya te compré"
+    },
+    {
+     "texto": "o66",
+     "fragmento": "si no te gustan los que van adheridos al vidrio este es el que va"
+    }
+   ]
+  },
+  {
+   "id": "S4",
+   "tipo": "queja",
+   "descripcion": "Duda de la firmeza en el tiempo: el peso del celular vence la articulación, el soporte se vence hacia abajo o se afloja a los pocos días",
+   "palabras_clave": [
+    "firme",
+    "estabilidad",
+    "afloja"
+   ],
+   "citas": [
+    {
+     "texto": "o1",
+     "fragmento": "el peso le gana a la articulación y queda mirando al piso"
+    },
+    {
+     "texto": "o51",
+     "fragmento": "Se afloja despues de un par de dias"
+    },
+    {
+     "texto": "o161",
+     "fragmento": "No sé cuánto puede durar el sistema para suj"
+    }
+   ]
+  },
+  {
+   "id": "S5",
+   "tipo": "preferencia",
+   "descripcion": "Valora que se instale rápido y sin vueltas, y que venga con instrucciones claras para no renegar con el anclaje",
+   "palabras_clave": [
+    "instalar",
+    "instalación",
+    "instrucciones"
+   ],
+   "citas": [
+    {
+     "texto": "o43",
+     "fragmento": "Muy buenas las instrucciones que trae para la instalación"
+    },
+    {
+     "texto": "o57",
+     "fragmento": "muy fácil de instalar"
+    },
+    {
+     "texto": "o101",
+     "fragmento": "Para los q andamos en diferentes vehículos es super práctico"
+    }
+   ]
+  }
+ ],
+ "E064": [
+  {
+   "id": "S1",
+   "tipo": "faltante",
+   "descripcion": "Quiere poder reponer el adhesivo o la ventosa cuando el soporte deja de pegar, sin tener que comprar el producto entero.",
+   "palabras_clave": [
+    "pegamento",
+    "sopapa",
+    "repuesto"
+   ],
+   "citas": [
+    {
+     "texto": "p3",
+     "fragmento": "La ventosa perdió aderencia , se vende el pegamento ?"
+    },
+    {
+     "texto": "p7",
+     "fragmento": "dejo de pegar la sopapa, hay algún repuesto del pegamento"
+    },
+    {
+     "texto": "p16",
+     "fragmento": "se me despego, como hago para conseguir el pegamento"
+    }
+   ]
+  },
+  {
+   "id": "S2",
+   "tipo": "duda",
+   "descripcion": "Necesita confirmar antes de comprar si el soporte calza en su modelo de auto y en su modelo de teléfono; la compatibilidad no se resuelve con la información publicada.",
+   "palabras_clave": [
+    "compatible"
+   ],
+   "citas": [
+    {
+     "texto": "p1",
+     "fragmento": "Es compatible con el Samsung j4 plus?"
+    },
+    {
+     "texto": "p13",
+     "fragmento": "sirve para Ecosport 2006?"
+    },
+    {
+     "texto": "p19",
+     "fragmento": "es compatible para Samsung S25 o S24Fe?"
+    },
+    {
+     "texto": "p12",
+     "fragmento": "tengo un celular pequeño, 5.5 pulgadas. Le agarra bien a este tamaño?"
+    }
+   ]
+  },
+  {
+   "id": "S3",
+   "tipo": "queja",
+   "descripcion": "Quiere que el teléfono quede quieto: con equipos grandes y pesados el brazo largo amplifica la vibración y el soporte se sacude en el andar.",
+   "palabras_clave": [
+    "estabilidad",
+    "vibran",
+    "pesado"
+   ],
+   "citas": [
+    {
+     "texto": "o83",
+     "fragmento": "es medio pesado , con los movimientos del auto no tiene mucha estabilidad"
+    },
+    {
+     "texto": "o157",
+     "fragmento": "tanto el soporte como el teléfono vibran mucho"
+    },
+    {
+     "texto": "o16",
+     "fragmento": "en calles desparejas el soporte se mueve bastante"
+    }
+   ]
+  },
+  {
+   "id": "S4",
+   "tipo": "duda",
+   "descripcion": "Duda de que el adhesivo funcione fuera del vidrio: necesita que pegue en tableros y torpedos rugosos o porosos, no solo en superficies lisas.",
+   "palabras_clave": [
+    "rugosa",
+    "porosos",
+    "adhiere"
+   ],
+   "citas": [
+    {
+     "texto": "p8",
+     "fragmento": "Adhiere en tablero con superficie rugosa?"
+    },
+    {
+     "texto": "p15",
+     "fragmento": "Adhiere a torpedos porosos tipo ranger 2022"
+    },
+    {
+     "texto": "o111",
+     "fragmento": "se adhiere en superficies rugosas que era mi duda"
+    }
+   ]
+  },
+  {
+   "id": "S5",
+   "tipo": "concesion",
+   "descripcion": "Acepta materiales y terminaciones no ideales, e incluso cierta inestabilidad, a cambio de un precio muy bajo comparado con otras soluciones.",
+   "palabras_clave": [
+    "precio"
+   ],
+   "citas": [
+    {
+     "texto": "o40",
+     "fragmento": "Lo único malo es que el primer tramo es fijo, pero por el precio es buenisimo"
+    },
+    {
+     "texto": "o106",
+     "fragmento": "luego volvio a la normalidad, bien por el precio"
+    },
+    {
+     "texto": "o100",
+     "fragmento": "sale 20 veces menos que poner una pantalla"
+    }
+   ]
+  },
+  {
+   "id": "S6",
+   "tipo": "queja",
+   "descripcion": "Quiere sujetar y liberar el teléfono con un gesto simple y seguro: el mecanismo de traba muerde los laterales y a veces se traba o presiona botones.",
+   "palabras_clave": [
+    "trabarlo",
+    "trabo",
+    "presionado"
+   ],
+   "citas": [
+    {
+     "texto": "o7",
+     "fragmento": "no me gusta el sistema de apoyar fuerte el celular hacia abajo para trabarlo"
+    },
+    {
+     "texto": "o106",
+     "fragmento": "Al principio se me trabo la cosita que sostiene el celular"
+    },
+    {
+     "texto": "o54",
+     "fragmento": "el sostén del celular en sí puede quedar presionado en un botón lateral"
+    }
+   ]
+  }
+ ],
+ "E065": [
+  {
+   "id": "S1",
+   "tipo": "faltante",
+   "descripcion": "Quiere poder reponer los consumibles y piezas que se gastan o se pierden (filtros, cargador, batería) del mismo equipo, sin tener que cambiar el aparato entero o salir a buscar al fabricante.",
+   "palabras_clave": [
+    "filtro",
+    "repuesto"
+   ],
+   "citas": [
+    {
+     "texto": "p3",
+     "fragmento": "no venden el filtro solo?"
+    },
+    {
+     "texto": "p9",
+     "fragmento": "Necesito comprar el filtro"
+    },
+    {
+     "texto": "p13",
+     "fragmento": "vendes el repuesto del cargador"
+    },
+    {
+     "texto": "p19",
+     "fragmento": "Venden los filtros de repuesto?"
+    },
+    {
+     "texto": "p16",
+     "fragmento": "se venden aparte los filtro de la aspiradora"
+    }
+   ]
+  },
+  {
+   "id": "S2",
+   "tipo": "duda",
+   "descripcion": "Necesita saber con precisión cuánto rinde y cómo se carga el equipo (capacidad de batería, autonomía, tipo de conector) antes de decidir, y la ficha no lo aclara.",
+   "palabras_clave": [
+    "batería",
+    "carga",
+    "usb"
+   ],
+   "citas": [
+    {
+     "texto": "p5",
+     "fragmento": "capacidad de la batería en mAh"
+    },
+    {
+     "texto": "p4",
+     "fragmento": "¿Cómo sé que ya llegó al 100% de carga?"
+    },
+    {
+     "texto": "p2",
+     "fragmento": "el cargador es usb a o usb c"
+    },
+    {
+     "texto": "p10",
+     "fragmento": "La entrada de carga es tipo C ?"
+    },
+    {
+     "texto": "p8",
+     "fragmento": "posee una bateria de 3,7 volt?"
+    }
+   ]
+  },
+  {
+   "id": "S3",
+   "tipo": "queja",
+   "descripcion": "Quiere que los accesorios finos y con cepillo mantengan la fuerza de succión: al acoplar la boquilla el equipo pierde casi toda la potencia y deja de levantar lo que sí aspira el tubo directo.",
+   "palabras_clave": [
+    "cepillo",
+    "pico"
+   ],
+   "citas": [
+    {
+     "texto": "o15",
+     "fragmento": "pierde el 80% de la fuerza de aspirado"
+    },
+    {
+     "texto": "o2",
+     "fragmento": "con el pico fino mejor, chupa con más potencia al ser más fino"
+    },
+    {
+     "texto": "o70",
+     "fragmento": "Trae una punta delgada qué se mete en cualquier recoveco"
+    },
+    {
+     "texto": "o41",
+     "fragmento": "Primero usé le pico"
+    }
+   ]
+  },
+  {
+   "id": "S4",
+   "tipo": "concesion",
+   "descripcion": "Acepta una autonomía corta de batería porque valora la practicidad de tener el equipo siempre listo, pero pide que se diga de antemano cuánto dura y que alcance para una limpieza rápida.",
+   "palabras_clave": [
+    "autonomía",
+    "batería",
+    "dura"
+   ],
+   "citas": [
+    {
+     "texto": "o55",
+     "fragmento": "la critica mas fuerte es la autonomia de la bateria"
+    },
+    {
+     "texto": "o102",
+     "fragmento": "obvio que no va a durar media hora la bateria"
+    },
+    {
+     "texto": "o130",
+     "fragmento": "La batería dura aprox 25 mins, 30"
+    },
+    {
+     "texto": "o59",
+     "fragmento": "algunos se quejaban de la dirección de la batería o de la potencia de aspirado"
+    }
+   ]
+  },
+  {
+   "id": "S5",
+   "tipo": "uso_no_previsto",
+   "descripcion": "Lo usa como herramienta de detalle para lugares donde la aspiradora grande no entra: rincones, rieles y ranuras de ventanas, cajones y el escritorio; busca alcance fino más que potencia bruta.",
+   "palabras_clave": [
+    "rincones",
+    "rieles"
+   ],
+   "citas": [
+    {
+     "texto": "o11",
+     "fragmento": "mantener los rincones limpios y también los rieles de las ventanas"
+    },
+    {
+     "texto": "o2",
+     "fragmento": "limpiar los rieles de ventanas y ventanales"
+    },
+    {
+     "texto": "o3",
+     "fragmento": "las ranuras de las ventanas"
+    },
+    {
+     "texto": "o9",
+     "fragmento": "ilumina los rincones oscuros"
+    }
+   ]
+  },
+  {
+   "id": "S6",
+   "tipo": "duda",
+   "descripcion": "Necesita certeza de que levanta pelos de mascota adheridos a telas y tapizados (mantas, sofa, cama, cochecito) antes de comprar, porque las opiniones sobre succión lo hacen dudar.",
+   "palabras_clave": [
+    "pelos",
+    "mascota"
+   ],
+   "citas": [
+    {
+     "texto": "p12",
+     "fragmento": "pelos de gato de mantas polares y ropa"
+    },
+    {
+     "texto": "o20",
+     "fragmento": "la cama llena de pelos"
+    },
+    {
+     "texto": "o10",
+     "fragmento": "levanta los pelos del perro del sillon"
+    },
+    {
+     "texto": "o59",
+     "fragmento": "Lo uso para aspirar pelos de mascotas"
+    }
+   ]
+  }
+ ],
+ "E066": [
+  {
+   "id": "S1",
+   "tipo": "faltante",
+   "descripcion": "Quiere poder reponer el filtro: saber cuál es, cuánto dura y comprarlo suelto sin tener que cambiar el equipo o adivinar el modelo",
+   "palabras_clave": [
+    "filtro",
+    "repuesto"
+   ],
+   "citas": [
+    {
+     "texto": "p2",
+     "fragmento": "Cual es el filtro y se puede conseguir aparte"
+    },
+    {
+     "texto": "p6",
+     "fragmento": "no venden solo el filtro"
+    },
+    {
+     "texto": "p14",
+     "fragmento": "venden la aspiradora y tres filtros o compro la aspiradora y los filtros después"
+    },
+    {
+     "texto": "p15",
+     "fragmento": "Tengo este modelo y quedaría saber si venden los filtros"
+    },
+    {
+     "texto": "p4",
+     "fragmento": "Cuánto tiempo de vida útil tiene el filtro"
+    }
+   ]
+  },
+  {
+   "id": "S2",
+   "tipo": "queja",
+   "descripcion": "La relación carga/uso no cierra: espera horas de carga para minutos de aspirado, y para una limpieza completa tiene que recargar en el medio",
+   "palabras_clave": [
+    "carga",
+    "horas",
+    "batería"
+   ],
+   "citas": [
+    {
+     "texto": "o30",
+     "fragmento": "tarda 4 horas en cargar y dura 20 a 25 min"
+    },
+    {
+     "texto": "o177",
+     "fragmento": "lleva mucho tiempo cargarla,más de 3 horas"
+    },
+    {
+     "texto": "o123",
+     "fragmento": "la batería se carga en 4 hs"
+    },
+    {
+     "texto": "o199",
+     "fragmento": "la duración de la batería que no dura más de 20 minutos"
+    },
+    {
+     "texto": "o129",
+     "fragmento": "es necesario cargarlo más de una vez para una limpieza ideal"
+    }
+   ]
+  },
+  {
+   "id": "S3",
+   "tipo": "queja",
+   "descripcion": "La potencia prometida no se condice con la succión real: espera fuerza de aspiradora grande y encuentra un equipo de repaso",
+   "palabras_clave": [
+    "potencia",
+    "succión"
+   ],
+   "citas": [
+    {
+     "texto": "o80",
+     "fragmento": "No tiene la succión o no tiene la potencia indicada"
+    },
+    {
+     "texto": "o132",
+     "fragmento": "No me parece que tenga gran poder de succión realmente"
+    },
+    {
+     "texto": "o77",
+     "fragmento": "No pretendan que la potencia sea mucha"
+    },
+    {
+     "texto": "o198",
+     "fragmento": "no tiene una súper potencia"
+    }
+   ]
+  },
+  {
+   "id": "S4",
+   "tipo": "uso_no_previsto",
+   "descripcion": "La usa como herramienta contra pelos de mascotas en tapizados, ropa y sábanas, no solo para polvo del auto",
+   "palabras_clave": [
+    "pelos",
+    "mascota"
+   ],
+   "citas": [
+    {
+     "texto": "p17",
+     "fragmento": "Sirve para juntar pelos de animales de sillas , sillones ?"
+    },
+    {
+     "texto": "p18",
+     "fragmento": "sirve para sacar pelos de la ropa?"
+    },
+    {
+     "texto": "o186",
+     "fragmento": "yo lo uso en sábanas para quitar los pelos de los gatos"
+    },
+    {
+     "texto": "o111",
+     "fragmento": "pelos que hayan en la ropa"
+    },
+    {
+     "texto": "o132",
+     "fragmento": "pelusas y pelos del perro"
+    }
+   ]
+  },
+  {
+   "id": "S5",
+   "tipo": "preferencia",
+   "descripcion": "La quiere como equipo de repaso a mano, rápido y sin cables, para no desarmar la limpieza grande por unas migas o un rincón",
+   "palabras_clave": [
+    "cable",
+    "práctica"
+   ],
+   "citas": [
+    {
+     "texto": "o120",
+     "fragmento": "buscaba algo más cómodo para las miguitas, polvo, rincones"
+    },
+    {
+     "texto": "o30",
+     "fragmento": "es bueno no depender de cables"
+    },
+    {
+     "texto": "o109",
+     "fragmento": "funciona sim cable claramente"
+    },
+    {
+     "texto": "o132",
+     "fragmento": "no tenes que sacar ningún equipo pesado"
+    }
+   ]
+  }
+ ],
+ "E071": [
+  {
+   "id": "S1",
+   "tipo": "queja",
+   "descripcion": "quiere una sujeción al vidrio confiable: que las ventosas agarren, no lleguen deformadas y se puedan reponer por separado",
+   "palabras_clave": [
+    "sopapa",
+    "ventosa"
+   ],
+   "citas": [
+    {
+     "texto": "o3",
+     "fragmento": "Lo único que es de pésima calidad son las ventosas"
+    },
+    {
+     "texto": "o33",
+     "fragmento": "Los chupetes no se pegan con nada"
+    },
+    {
+     "texto": "o18",
+     "fragmento": "las sopapas son medias débiles"
+    },
+    {
+     "texto": "p2",
+     "fragmento": "¿Se pueden comprar las ventosas por separado?"
+    },
+    {
+     "texto": "o160",
+     "fragmento": "las sopapas vinieron dobladas al medio"
+    }
+   ]
+  },
+  {
+   "id": "S2",
+   "tipo": "queja",
+   "descripcion": "quiere una medida que se ajuste de verdad a su parabrisas: ni que sobre tanto a los costados ni que deje el vidrio a medio cubrir",
+   "palabras_clave": [
+    "grande",
+    "tamaño"
+   ],
+   "citas": [
+    {
+     "texto": "o82",
+     "fragmento": "es muy grande"
+    },
+    {
+     "texto": "o116",
+     "fragmento": "Queda un poco grande en mi auto (ethios xls)"
+    },
+    {
+     "texto": "o166",
+     "fragmento": "en un focus 3 no llega a cubrir la totalidad del parabrisa"
+    },
+    {
+     "texto": "o133",
+     "fragmento": "queda un poco grande de ancho para un 207"
+    }
+   ]
+  },
+  {
+   "id": "S3",
+   "tipo": "duda",
+   "descripcion": "necesita confirmar antes de comprar si el producto entra en su modelo exacto de auto o camioneta, más allá de que sea universal",
+   "palabras_clave": [
+    "sirve"
+   ],
+   "citas": [
+    {
+     "texto": "p3",
+     "fragmento": "sirve para un sandero intense?"
+    },
+    {
+     "texto": "p4",
+     "fragmento": "sirve para peugeot boxer?"
+    },
+    {
+     "texto": "p5",
+     "fragmento": "Para Mercedes sprinter sirve?"
+    }
+   ]
+  },
+  {
+   "id": "S4",
+   "tipo": "concesion",
+   "descripcion": "tolera defectos (ventosas flojas, sobra de tela, poca duración) porque el producto cumple la función y el precio es bajo",
+   "palabras_clave": [
+    "precio",
+    "cumple"
+   ],
+   "citas": [
+    {
+     "texto": "o33",
+     "fragmento": "Pero zafa"
+    },
+    {
+     "texto": "o3",
+     "fragmento": "De igual modo no hace falta usarlas"
+    },
+    {
+     "texto": "o19",
+     "fragmento": "Muy buena relación precio calidad"
+    },
+    {
+     "texto": "o182",
+     "fragmento": "Para el precio es muy recomendable"
+    }
+   ]
+  },
+  {
+   "id": "S5",
+   "tipo": "uso_no_previsto",
+   "descripcion": "lo compra para camionetas y vehículos de parabrisas grandes, donde necesita cobertura amplia y firme",
+   "palabras_clave": [
+    "camioneta"
+   ],
+   "citas": [
+    {
+     "texto": "o173",
+     "fragmento": "lo compré para una camioneta y le va perfecto"
+    },
+    {
+     "texto": "o90",
+     "fragmento": "Me salvo de estos calores para la camionetas"
+    },
+    {
+     "texto": "o82",
+     "fragmento": "Compre el de 150 para una ranger nueva"
+    }
+   ]
+  }
+ ],
+ "E072": [
+  {
+   "id": "S1",
+   "tipo": "duda",
+   "descripcion": "Antes de comprar necesita confirmar si el tamaño universal realmente calza en su modelo y medidas exactas de parabrisas; la respuesta de que 'si admite la medida' no termina de tranquilizarlo.",
+   "palabras_clave": [
+    "sirve",
+    "medida"
+   ],
+   "citas": [
+    {
+     "texto": "p2",
+     "fragmento": "sirve para Toyota Yaris"
+    },
+    {
+     "texto": "p7",
+     "fragmento": "sirve para Peugeot Partner"
+    },
+    {
+     "texto": "o1",
+     "fragmento": "no calza perfecto en algunos vehículos"
+    },
+    {
+     "texto": "o11",
+     "fragmento": "queda un poco justo de ancho"
+    }
+   ]
+  },
+  {
+   "id": "S2",
+   "tipo": "queja",
+   "descripcion": "Percibe el material y las varillas como frágiles; duda de la duración y sabe que hay que tratarlo con cuidado.",
+   "palabras_clave": [
+    "frágil",
+    "calidad"
+   ],
+   "citas": [
+    {
+     "texto": "o1",
+     "fragmento": "material es bastante delicado (frágil)"
+    },
+    {
+     "texto": "o50",
+     "fragmento": "Es frágil, si"
+    },
+    {
+     "texto": "o48",
+     "fragmento": "Es algo frágil"
+    },
+    {
+     "texto": "o30",
+     "fragmento": "calidad de los materiales es baja"
+    }
+   ]
+  },
+  {
+   "id": "S3",
+   "tipo": "queja",
+   "descripcion": "Le cuesta volver a plegarlo y guardarlo en el estuche o funda original; quiere que sea fácil de cerrar y guardar sin pelear.",
+   "palabras_clave": [
+    "guardar",
+    "práctico"
+   ],
+   "citas": [
+    {
+     "texto": "o16",
+     "fragmento": "volver a plegarlo y meterlo en el estuche original"
+    },
+    {
+     "texto": "o146",
+     "fragmento": "cerrarlo es una tarea engorrosa"
+    },
+    {
+     "texto": "o142",
+     "fragmento": "no es práctico para guardar de nuevo en la funda"
+    }
+   ]
+  },
+  {
+   "id": "S4",
+   "tipo": "faltante",
+   "descripcion": "Quiere que el parasol respete el espacio del espejo retrovisor para que no lo tape ni quede incómodo al colocarlo.",
+   "palabras_clave": [
+    "espejo"
+   ],
+   "citas": [
+    {
+     "texto": "p5",
+     "fragmento": "como se hace con el espejo retrovisor"
+    },
+    {
+     "texto": "o4",
+     "fragmento": "tapa el espejo retrovisor"
+    },
+    {
+     "texto": "o48",
+     "fragmento": "espacio del espejo retrovisor"
+    }
+   ]
+  },
+  {
+   "id": "S5",
+   "tipo": "concesion",
+   "descripcion": "Acepta que el interior siga caliente si el parasol protege el tablero y el volante del sol directo.",
+   "palabras_clave": [
+    "tablero"
+   ],
+   "citas": [
+    {
+     "texto": "o36",
+     "fragmento": "no le de el sol al tablero"
+    },
+    {
+     "texto": "o51",
+     "fragmento": "se caliente tanto el volante y el tablero"
+    },
+    {
+     "texto": "o88",
+     "fragmento": "cubre todo el tablero"
+    }
+   ]
+  },
+  {
+   "id": "S6",
+   "tipo": "preferencia",
+   "descripcion": "Valora la practicidad del formato plegable tipo paraguas: se abre y cierra rápido y ocupa poco lugar, frente a los parasoles clásicos.",
+   "palabras_clave": [
+    "práctico"
+   ],
+   "citas": [
+    {
+     "texto": "o22",
+     "fragmento": "práctico que es a comparación de cualquier parasol clásico"
+    },
+    {
+     "texto": "o48",
+     "fragmento": "es práctico porq al poder cerrarlo como paraguas"
+    },
+    {
+     "texto": "o13",
+     "fragmento": "se abre y cierra rápido"
+    }
+   ]
+  }
+ ],
+ "E073": [
+  {
+   "id": "S1",
+   "tipo": "queja",
+   "descripcion": "Quiere un cable más largo y giratorio que no se enrede al peinar.",
+   "palabras_clave": [
+    "cable"
+   ],
+   "citas": [
+    {
+     "texto": "o18",
+     "fragmento": "el cable es corto y se enrolla"
+    },
+    {
+     "texto": "o2",
+     "fragmento": "el cable muy corto y nos es giratorio"
+    },
+    {
+     "texto": "o162",
+     "fragmento": "El cable no es giratorio"
+    },
+    {
+     "texto": "o13",
+     "fragmento": "no gira el cable"
+    }
+   ]
+  },
+  {
+   "id": "S2",
+   "tipo": "duda",
+   "descripcion": "Necesita claridad y resultados reales sobre si el cepillo seca y alisa en un solo paso, no solo que modela.",
+   "palabras_clave": [
+    "seca"
+   ],
+   "citas": [
+    {
+     "texto": "p2",
+     "fragmento": "seca y plancha a la misma vez"
+    },
+    {
+     "texto": "o86",
+     "fragmento": "No seca del todo"
+    },
+    {
+     "texto": "o20",
+     "fragmento": "no seca casi nada"
+    },
+    {
+     "texto": "o38",
+     "fragmento": "no es un cepillo planchita es un cepillo secador"
+    }
+   ]
+  },
+  {
+   "id": "S3",
+   "tipo": "concesion",
+   "descripcion": "Prioriza un precio accesible y acepta materiales básicos o defectos menores a cambio.",
+   "palabras_clave": [
+    "precio"
+   ],
+   "citas": [
+    {
+     "texto": "o38",
+     "fragmento": "por el precio cumple"
+    },
+    {
+     "texto": "o66",
+     "fragmento": "Para el precio cumple bien"
+    },
+    {
+     "texto": "o5",
+     "fragmento": "por el precio"
+    }
+   ]
+  },
+  {
+   "id": "S4",
+   "tipo": "preferencia",
+   "descripcion": "Busca que el cabello quede sin frizz y con aspecto brilloso o natural.",
+   "palabras_clave": [
+    "frizz"
+   ],
+   "citas": [
+    {
+     "texto": "o6",
+     "fragmento": "El pelo me quedo brilloso y sin frizz!"
+    },
+    {
+     "texto": "o13",
+     "fragmento": "excelente producto para el friz"
+    },
+    {
+     "texto": "o189",
+     "fragmento": "le saca el frizz"
+    },
+    {
+     "texto": "o18",
+     "fragmento": "mucho frizz"
+    }
+   ]
+  },
+  {
+   "id": "S5",
+   "tipo": "deseo",
+   "descripcion": "Quiere lograr un efecto brushing o peinado de peluquería en casa, aunque requiera práctica.",
+   "palabras_clave": [
+    "brushing"
+   ],
+   "citas": [
+    {
+     "texto": "o24",
+     "fragmento": "Tamb si qres ya hacerte el brushing de una es genial"
+    },
+    {
+     "texto": "o38",
+     "fragmento": "Te hace el efecto brushing"
+    },
+    {
+     "texto": "o167",
+     "fragmento": "me queda lindo el brushing"
+    },
+    {
+     "texto": "o18",
+     "fragmento": "brushing en la pelu"
+    }
+   ]
+  },
+  {
+   "id": "S6",
+   "tipo": "preferencia",
+   "descripcion": "Valora el secado rápido para ahorrar tiempo, sobre todo con mucho pelo.",
+   "palabras_clave": [
+    "rápido"
+   ],
+   "citas": [
+    {
+     "texto": "o12",
+     "fragmento": "seca rapidísimo"
+    },
+    {
+     "texto": "o2",
+     "fragmento": "seco el pelo rápido"
+    },
+    {
+     "texto": "o6",
+     "fragmento": "secó bastante rápido"
+    },
+    {
+     "texto": "o189",
+     "fragmento": "para hacer más rápido"
+    }
+   ]
+  }
+ ],
+ "E074": [
+  {
+   "id": "S1",
+   "tipo": "duda",
+   "descripcion": "Necesita certeza de que el producto es original y no una réplica, para confiar en la marca y en la inversión.",
+   "palabras_clave": [
+    "original",
+    "réplica"
+   ],
+   "citas": [
+    {
+     "texto": "p3",
+     "fragmento": "Es original?"
+    },
+    {
+     "texto": "p18",
+     "fragmento": "Es original o omitacion?"
+    },
+    {
+     "texto": "o110",
+     "fragmento": "Es una réplica. No es original."
+    }
+   ]
+  },
+  {
+   "id": "S2",
+   "tipo": "queja",
+   "descripcion": "Prefiere una plancha liviana que no canse el brazo en uso prolongado, sin resignar potencia.",
+   "palabras_clave": [
+    "pesada",
+    "liviana"
+   ],
+   "citas": [
+    {
+     "texto": "o105",
+     "fragmento": "es media pesada"
+    },
+    {
+     "texto": "o173",
+     "fragmento": "está es un poco pesada"
+    },
+    {
+     "texto": "o4",
+     "fragmento": "Un poco pesada en relación a otras planchitas"
+    }
+   ]
+  },
+  {
+   "id": "S3",
+   "tipo": "queja",
+   "descripcion": "Necesita claridad sobre el tamaño real y opciones que no sean XL, para poder maniobrar cómodo.",
+   "palabras_clave": [
+    "tamaño",
+    "grande",
+    "enorme"
+   ],
+   "citas": [
+    {
+     "texto": "p7",
+     "fragmento": "es xl es enorme no me la quisieron cambiar"
+    },
+    {
+     "texto": "p17",
+     "fragmento": "Es grande?"
+    },
+    {
+     "texto": "p20",
+     "fragmento": "es tamaño normal"
+    }
+   ]
+  },
+  {
+   "id": "S4",
+   "tipo": "duda",
+   "descripcion": "Quiere entender el rango real de temperatura y que la escala sea clara (Fahrenheit/Celsius) para elegir el nivel adecuado.",
+   "palabras_clave": [
+    "temperatura",
+    "grados",
+    "450"
+   ],
+   "citas": [
+    {
+     "texto": "p5",
+     "fragmento": "Cuál es la temperatura mínima"
+    },
+    {
+     "texto": "p13",
+     "fragmento": "CUAL ES LA TEMPERATURA REAL"
+    },
+    {
+     "texto": "o100",
+     "fragmento": "Yo la uso en 375/ 410 de temperatura"
+    }
+   ]
+  },
+  {
+   "id": "S5",
+   "tipo": "duda",
+   "descripcion": "Duda si la plancha es apta para uso doméstico o solo profesional, por miedo a quemar el cabello.",
+   "palabras_clave": [
+    "profesional",
+    "domestico",
+    "casa",
+    "quema"
+   ],
+   "citas": [
+    {
+     "texto": "o2",
+     "fragmento": "para uso domestico"
+    },
+    {
+     "texto": "o3",
+     "fragmento": "No se recomienda para el uso en casa. Xq les quema el pelo"
+    },
+    {
+     "texto": "o153",
+     "fragmento": "recomiendo q lo usen profesionales"
+    }
+   ]
+  },
+  {
+   "id": "S6",
+   "tipo": "duda",
+   "descripcion": "Busca una plancha que también sirva para cabello húmedo o que aclare si solo es para seco.",
+   "palabras_clave": [
+    "húmedo",
+    "humedo",
+    "seco"
+   ],
+   "citas": [
+    {
+     "texto": "p1",
+     "fragmento": "Es para cabellis húmedos?"
+    },
+    {
+     "texto": "p10",
+     "fragmento": "La 4083 es humedo y seco"
+    },
+    {
+     "texto": "o100",
+     "fragmento": "Apta para cabello húmedo"
+    }
+   ]
+  }
+ ],
+ "E077": [
+  {
+   "id": "S1",
+   "tipo": "queja",
+   "descripcion": "Quiere un neceser que se sostenga armado como en las fotos y que el material y la manija aguanten el uso, no una bolsa blanda que se descose",
+   "palabras_clave": [
+    "resistente",
+    "resistencia",
+    "frágil",
+    "blando",
+    "manija",
+    "armado"
+   ],
+   "citas": [
+    {
+     "texto": "o8",
+     "fragmento": "salvo que no queda armado como muestra en la imagen, es blando"
+    },
+    {
+     "texto": "o195",
+     "fragmento": "le tuve que agregar como una una cajita de cartón del tamaño de la base"
+    },
+    {
+     "texto": "o31",
+     "fragmento": "debería ser más resistente la manija qué trae para agarrar"
+    },
+    {
+     "texto": "o111",
+     "fragmento": "parece super frágil"
+    }
+   ]
+  },
+  {
+   "id": "S2",
+   "tipo": "duda",
+   "descripcion": "Necesita saber el tamaño real y la capacidad antes de comprar: las fotos lo hacen ver más grande y armado de lo que es",
+   "palabras_clave": [
+    "chico",
+    "tamaño",
+    "parecia",
+    "grande"
+   ],
+   "citas": [
+    {
+     "texto": "o9",
+     "fragmento": "Parece chico pero me entró un montón de cosas"
+    },
+    {
+     "texto": "o35",
+     "fragmento": "Parece chico de tamaño pero en realidad es bastante práctico"
+    },
+    {
+     "texto": "o76",
+     "fragmento": "Es un poco mas chico de lo que parecia en foto"
+    },
+    {
+     "texto": "o187",
+     "fragmento": "pense que era un poquito mas grande"
+    }
+   ]
+  },
+  {
+   "id": "S3",
+   "tipo": "faltante",
+   "descripcion": "Quiere que lo que lleva adentro quede protegido de derrames y humedad (shampoo, lociones), no solo que sea lindo por fuera",
+   "palabras_clave": [
+    "impermeable",
+    "impermiable",
+    "derrames",
+    "tela"
+   ],
+   "citas": [
+    {
+     "texto": "o45",
+     "fragmento": "Es impermiable y de buena calidad"
+    },
+    {
+     "texto": "o125",
+     "fragmento": "con una tela ideal para ocasionales derrames (shampoo o lociones)"
+    }
+   ]
+  },
+  {
+   "id": "S4",
+   "tipo": "uso_no_previsto",
+   "descripcion": "Lo usa como organizador de cualquier cosa chica y con divisiones: higiene, pañales, medicación, sacaleches, tecnología",
+   "palabras_clave": [
+    "guardar",
+    "organizar",
+    "divisiones",
+    "bolsillos"
+   ],
+   "citas": [
+    {
+     "texto": "o99",
+     "fragmento": "Lo compré específicamente para guardar los pañales"
+    },
+    {
+     "texto": "o45",
+     "fragmento": "yo guardo un sacaleches electronico"
+    },
+    {
+     "texto": "o200",
+     "fragmento": "yo lo uso para mí medicación"
+    },
+    {
+     "texto": "o51",
+     "fragmento": "las divisiones me son muy cómodas"
+    }
+   ]
+  },
+  {
+   "id": "S5",
+   "tipo": "duda",
+   "descripcion": "Necesita elegir color y juntar varias unidades en una sola compra (para regalar o revender) y no encuentra stock de todos los colores",
+   "palabras_clave": [
+    "color",
+    "colores",
+    "cantidad",
+    "blanco",
+    "regale"
+   ],
+   "citas": [
+    {
+     "texto": "p3",
+     "fragmento": "Podras pasarme el link del blanco?"
+    },
+    {
+     "texto": "p1",
+     "fragmento": "necesito 10 tenes cantidad? Y color?"
+    },
+    {
+     "texto": "p4",
+     "fragmento": "necesito 14 gris y 1 blanco sera posible?"
+    },
+    {
+     "texto": "o200",
+     "fragmento": "lástima no me pudieron cambiar color"
+    },
+    {
+     "texto": "o172",
+     "fragmento": "les regale a mis 5 sobrinitas"
+    }
+   ]
+  },
+  {
+   "id": "S6",
+   "tipo": "concesion",
+   "descripcion": "Prioriza el precio muy bajo y acepta material modesto o tamaño justo porque con ese monto no consigue nada equivalente",
+   "palabras_clave": [
+    "precio",
+    "valor",
+    "barato"
+   ],
+   "citas": [
+    {
+     "texto": "o125",
+     "fragmento": "al precio que lo compré no conseguía ni una bolsita de nylon"
+    },
+    {
+     "texto": "o86",
+     "fragmento": "Por el precio 10 puntos la verdad"
+    },
+    {
+     "texto": "o151",
+     "fragmento": "Muy bien precio!"
+    },
+    {
+     "texto": "o9",
+     "fragmento": "pero está bien por el valor"
+    }
+   ]
+  }
+ ],
+ "E078": [
+  {
+   "id": "S1",
+   "tipo": "queja",
+   "descripcion": "Quiere que el producto llegue sin olor fuerte, listo para usar o para regalar sin tener que airearlo",
+   "palabras_clave": [
+    "olor"
+   ],
+   "citas": [
+    {
+     "texto": "o8",
+     "fragmento": "lo único un malo es que tiene olor como a cuero"
+    },
+    {
+     "texto": "o55",
+     "fragmento": "vino con muy feo olor como a pescado"
+    },
+    {
+     "texto": "o46",
+     "fragmento": "vino con un olor raro"
+    }
+   ]
+  },
+  {
+   "id": "S2",
+   "tipo": "faltante",
+   "descripcion": "Quiere el interior terminado: laterales y bolsillos cosidos, con divisiones reales para que las cosas no se mezclen",
+   "palabras_clave": [
+    "cosidas",
+    "cosido",
+    "costura",
+    "bolsillo",
+    "bolsillos"
+   ],
+   "citas": [
+    {
+     "texto": "o17",
+     "fragmento": "las partes laterales del interior no este cosidas"
+    },
+    {
+     "texto": "o26",
+     "fragmento": "en el bolsillo del medio no está cosido a los costados"
+    },
+    {
+     "texto": "o2",
+     "fragmento": "Los bolsillos internos no muy buena calidad"
+    },
+    {
+     "texto": "o46",
+     "fragmento": "tiene detallitos de costura no tiene los espacios separados"
+    }
+   ]
+  },
+  {
+   "id": "S3",
+   "tipo": "preferencia",
+   "descripcion": "Prefiere capacidad amplia y sobrante: que entre todo con espacio de más, incluso cosas voluminosas",
+   "palabras_clave": [
+    "espacio",
+    "amplio"
+   ],
+   "citas": [
+    {
+     "texto": "o173",
+     "fragmento": "Suuuuper amplio y cómodo"
+    },
+    {
+     "texto": "o190",
+     "fragmento": "me sobra muchísimo espacio"
+    },
+    {
+     "texto": "o8",
+     "fragmento": "a mi me sobró espacio eso es bueno"
+    }
+   ]
+  },
+  {
+   "id": "S4",
+   "tipo": "concesion",
+   "descripcion": "Acepta materiales finos y terminaciones simples mientras el precio sea bajo: la relación precio-calidad es lo que decide la compra",
+   "palabras_clave": [
+    "precio",
+    "calidad"
+   ],
+   "citas": [
+    {
+     "texto": "o191",
+     "fragmento": "No creo que dure demasiado pero por el precio está muy bien"
+    },
+    {
+     "texto": "o106",
+     "fragmento": "Es una cuerina fina de gran espacio"
+    },
+    {
+     "texto": "o17",
+     "fragmento": "considerando el precio esta muy bien"
+    }
+   ]
+  },
+  {
+   "id": "S5",
+   "tipo": "preferencia",
+   "descripcion": "Quiere elegir y combinar colores, incluso comprando varias unidades de tonos distintos en una misma compra",
+   "palabras_clave": [
+    "colores",
+    "color"
+   ],
+   "citas": [
+    {
+     "texto": "p4",
+     "fragmento": "quisiera comprar 5 unidades de colores distintos"
+    },
+    {
+     "texto": "o2",
+     "fragmento": "No era el color que seleccione"
+    },
+    {
+     "texto": "o132",
+     "fragmento": "en otros dos colores para regalar"
+    }
+   ]
+  },
+  {
+   "id": "S6",
+   "tipo": "uso_no_previsto",
+   "descripcion": "Lo usa como organizador portátil de cualquier cosa pequeña, no solo de maquillaje: herramientas, insumos de trabajo, colecciones",
+   "palabras_clave": [
+    "cosas",
+    "guardar"
+   ],
+   "citas": [
+    {
+     "texto": "o11",
+     "fragmento": "lo compre para llevar mis cosas de enfermería"
+    },
+    {
+     "texto": "o159",
+     "fragmento": "lo compre para mis esmaltes y entro todo perfecto"
+    },
+    {
+     "texto": "o10",
+     "fragmento": "también como cartuchera"
+    }
+   ]
+  }
+ ],
+ "E079": [
+  {
+   "id": "S1",
+   "tipo": "faltante",
+   "descripcion": "Quiere poder comprar por separado los consumibles y piezas que se desgastan o que necesita por medida (peines largos, aspas, aceite), y saber cuál repuesto es compatible con su modelo.",
+   "palabras_clave": [
+    "peines",
+    "aspas",
+    "medidas"
+   ],
+   "citas": [
+    {
+     "texto": "p10",
+     "fragmento": "tambien necesito un kit de peines que vienen de 32mm, 38mm y 51 mm"
+    },
+    {
+     "texto": "p11",
+     "fragmento": "Venden aspas de 0.5 para este modelo?"
+    },
+    {
+     "texto": "p15",
+     "fragmento": "que aceite puedo usar parala máquina?"
+    },
+    {
+     "texto": "o4",
+     "fragmento": "me gustó mucho que trajera varias medidas de peines"
+    }
+   ]
+  },
+  {
+   "id": "S2",
+   "tipo": "queja",
+   "descripcion": "Acepta la potencia pero le molesta el peso y la vibración en la mano durante cortes largos; quiere fuerza sin que el aparato se sienta tan pesado ni sacuda tanto.",
+   "palabras_clave": [
+    "vibra",
+    "vibración",
+    "pesada"
+   ],
+   "citas": [
+    {
+     "texto": "o4",
+     "fragmento": "Es un poco pesada y vibra bastante"
+    },
+    {
+     "texto": "o10",
+     "fragmento": "es muy pesada y se siente mucho la vibración en mano"
+    },
+    {
+     "texto": "o68",
+     "fragmento": "al principio sea algo incomoda la vibración"
+    },
+    {
+     "texto": "o13",
+     "fragmento": "es cierto que vibra mucho pero es porque el motor tiene muchisima fuerza"
+    }
+   ]
+  },
+  {
+   "id": "S3",
+   "tipo": "queja",
+   "descripcion": "Necesita poder trabajar varios cortes seguidos sin que el motor levante temperatura hasta incomodar al tacto.",
+   "palabras_clave": [
+    "calienta",
+    "motor"
+   ],
+   "citas": [
+    {
+     "texto": "o73",
+     "fragmento": "a los 20 minutos calienta muchisimo el motor, incluso incomoda al tacto"
+    },
+    {
+     "texto": "o136",
+     "fragmento": "la máquina se calienta"
+    },
+    {
+     "texto": "o2",
+     "fragmento": "Tiene muy buena potencia, no calienta"
+    }
+   ]
+  },
+  {
+   "id": "S4",
+   "tipo": "queja",
+   "descripcion": "Busca un corte potente pero silencioso: el ruido es el punto que más le pesa, sobre todo si lo usa con chicos o con personas sensibles al sonido.",
+   "palabras_clave": [
+    "ruidosa",
+    "ruidito",
+    "ruido"
+   ],
+   "citas": [
+    {
+     "texto": "o8",
+     "fragmento": "Lo único que le resta un toque es que es un poquito ruidosa"
+    },
+    {
+     "texto": "o71",
+     "fragmento": "lo que si molesta es el ruido imprenta que hace al cortar. Es muy ruidosa."
+    },
+    {
+     "texto": "o23",
+     "fragmento": "Hace su ruidito como cualquier m"
+    },
+    {
+     "texto": "o1",
+     "fragmento": "no hizo encandalo ni lloro"
+    }
+   ]
+  },
+  {
+   "id": "S5",
+   "tipo": "duda",
+   "descripcion": "Duda entre la comodidad de lo inalámbrico y la potencia sostenida del cable; quiere claridad sobre si el equipo funciona sin enchufe y valora no depender de una batería que se agote.",
+   "palabras_clave": [
+    "inalámbrica",
+    "cable",
+    "batería"
+   ],
+   "citas": [
+    {
+     "texto": "p19",
+     "fragmento": "Es inalanbrica"
+    },
+    {
+     "texto": "o96",
+     "fragmento": "lo mejor de todo es que es a cable"
+    },
+    {
+     "texto": "o23",
+     "fragmento": "nada que envidiarle a las inalámbricas, que solo por ese detalle la hace un poco más costosa"
+    },
+    {
+     "texto": "o159",
+     "fragmento": "no tengo que esperar a que se cargue"
+    }
+   ]
+  },
+  {
+   "id": "S6",
+   "tipo": "concesion",
+   "descripcion": "Acepta accesorios de plástico porque el precio es bueno, pero necesita que peines y tijera resistan el uso: son lo primero que se rompe o se siente flojo.",
+   "palabras_clave": [
+    "plástico",
+    "endeble",
+    "tijera"
+   ],
+   "citas": [
+    {
+     "texto": "o7",
+     "fragmento": "La cantidad de peines adaptadores que trae abruma y son de plásticos frágiles."
+    },
+    {
+     "texto": "o20",
+     "fragmento": "lo unico reprochable quizas es que el peine es bastante endeble"
+    },
+    {
+     "texto": "o71",
+     "fragmento": "la tijera y el peine es super barato y m"
+    },
+    {
+     "texto": "o30",
+     "fragmento": "La calidad de la tijera es regular pero tiene buen filo"
+    }
+   ]
+  }
+ ],
+ "E080": [
+  {
+   "id": "S1",
+   "tipo": "duda",
+   "descripcion": "Quiere seguridad de que un soporte compacto y liviano aguanta notebooks grandes y pesadas (15,6\" a 16\", 3 kg) sin ceder",
+   "palabras_clave": [
+    "chiquito",
+    "pesada",
+    "peso",
+    "justo"
+   ],
+   "citas": [
+    {
+     "texto": "o5",
+     "fragmento": "Dudé porque se veía chiquito pero aguanta como un campeón el peso de la notebook"
+    },
+    {
+     "texto": "o57",
+     "fragmento": "Compré con miedo porque mi compu es de 16\" y bastante pesada pero se la bancó"
+    },
+    {
+     "texto": "o154",
+     "fragmento": "Al principio parece que es chiquito pero es super estable"
+    }
+   ]
+  },
+  {
+   "id": "S2",
+   "tipo": "queja",
+   "descripcion": "Necesita un mecanismo de fijación de niveles confiable: que trabe en todas las posiciones y no se salga de su eje ni se cierre solo",
+   "palabras_clave": [
+    "pestaña",
+    "trabas",
+    "eje",
+    "chueca",
+    "niveles"
+   ],
+   "citas": [
+    {
+     "texto": "o6",
+     "fragmento": "no es posible ponerlo en la posicion mas alta prevista, ya que la pestaña, por un error de diseño, no encaja en la guia"
+    },
+    {
+     "texto": "o47",
+     "fragmento": "debe apoyarse bien y no levantar de forma brusca porque se sale de su eje y se cierra"
+    },
+    {
+     "texto": "o57",
+     "fragmento": "una pata está un poco chueca, tengo que acomodarla antes de poner la"
+    }
+   ]
+  },
+  {
+   "id": "S3",
+   "tipo": "queja",
+   "descripcion": "Busca robustez real: que no se sienta frágil al abrirlo ni tenga terminaciones plásticas que obliguen a manipularlo con cuidado",
+   "palabras_clave": [
+    "frágil",
+    "plástico",
+    "rompa",
+    "cuidado"
+   ],
+   "citas": [
+    {
+     "texto": "o17",
+     "fragmento": "Las patas son de plástico detalle a tener en cuenta"
+    },
+    {
+     "texto": "o74",
+     "fragmento": "es un poco frágil al ponerlo en forma, hay que tener cuidado para que no se rompa"
+    },
+    {
+     "texto": "o8",
+     "fragmento": "Parece frágil al principio, pero me quedé tranquilo por los comentarios"
+    }
+   ]
+  },
+  {
+   "id": "S4",
+   "tipo": "preferencia",
+   "descripcion": "Quiere subir la pantalla a la altura de la mirada para trabajar largas jornadas sin dolor de cuello ni de espalda",
+   "palabras_clave": [
+    "cuello",
+    "espalda",
+    "altura"
+   ],
+   "citas": [
+    {
+     "texto": "o23",
+     "fragmento": "Lo compré para poder laburar sin tener que doblar tanto el cuello"
+    },
+    {
+     "texto": "o29",
+     "fragmento": "Hace tiempo que necesitaba apoyar mi laptop, porque sufro de dolor de cuello"
+    },
+    {
+     "texto": "o42",
+     "fragmento": "Y tener la vista más centrada para que no duela la espalda y el cuello"
+    }
+   ]
+  },
+  {
+   "id": "S5",
+   "tipo": "preferencia",
+   "descripcion": "Prefiere que sea plegable y venga con funda para poder trasladarlo y guardarlo sin que ocupe lugar",
+   "palabras_clave": [
+    "funda",
+    "bolsita",
+    "transportar",
+    "guardar"
+   ],
+   "citas": [
+    {
+     "texto": "o29",
+     "fragmento": "trae su saquito para guardar, por lo que también sirve para viajar o trasladar"
+    },
+    {
+     "texto": "o23",
+     "fragmento": "Viene en una cajita con una funda"
+    },
+    {
+     "texto": "o16",
+     "fragmento": "se pliega por lo q es transportable y no ocupa lugar"
+    }
+   ]
+  },
+  {
+   "id": "S6",
+   "tipo": "duda",
+   "descripcion": "Quien compra para su trabajo o negocio necesita comprobante fiscal (factura A) y no lo consigue con este vendedor",
+   "palabras_clave": [
+    "factura"
+   ],
+   "citas": [
+    {
+     "texto": "p1",
+     "fragmento": "hacen factura A o C?"
+    },
+    {
+     "texto": "p3",
+     "fragmento": "hola, hacen factura A?"
+    },
+    {
+     "texto": "p4",
+     "fragmento": "hola, hacen factura A?"
+    }
+   ]
+  }
+ ],
+ "E081": [
+  {
+   "id": "S1",
+   "tipo": "duda",
+   "descripcion": "quiere que el soporte sirva también para tablet y otros dispositivos, no solo para notebook",
+   "palabras_clave": [
+    "tablet"
+   ],
+   "citas": [
+    {
+     "texto": "p1",
+     "fragmento": "Sirve para tablet???"
+    },
+    {
+     "texto": "p19",
+     "fragmento": "Sirve para tablet?"
+    },
+    {
+     "texto": "o158",
+     "fragmento": "Me encantó con la tablet de 11”"
+    }
+   ]
+  },
+  {
+   "id": "S2",
+   "tipo": "queja",
+   "descripcion": "necesita que el ancho del soporte cubra notebooks de 15 pulgadas o más sin quedar chico",
+   "palabras_clave": [
+    "15",
+    "ancho"
+   ],
+   "citas": [
+    {
+     "texto": "o66",
+     "fragmento": "no es lo suficientemente ancho como para una notebook grande"
+    },
+    {
+     "texto": "o11",
+     "fragmento": "el soporte quedó medio chico para la misma"
+    }
+   ]
+  },
+  {
+   "id": "S3",
+   "tipo": "queja",
+   "descripcion": "quiere estabilidad firme con notebooks grandes o pesadas, sobre todo cuando lo eleva",
+   "palabras_clave": [
+    "estable",
+    "peso"
+   ],
+   "citas": [
+    {
+     "texto": "o99",
+     "fragmento": "No es lo más estable del mundo"
+    },
+    {
+     "texto": "o2",
+     "fragmento": "queda un poco inestable"
+    },
+    {
+     "texto": "o105",
+     "fragmento": "no soporta el peso de mi compu"
+    }
+   ]
+  },
+  {
+   "id": "S4",
+   "tipo": "preferencia",
+   "descripcion": "necesita trasladarlo entre casa y oficina: liviano, que se pliegue compacto y con funda",
+   "palabras_clave": [
+    "liviano",
+    "pleg"
+   ],
+   "citas": [
+    {
+     "texto": "o96",
+     "fragmento": "Es liviano pero soporta bien el peso"
+    },
+    {
+     "texto": "o79",
+     "fragmento": "liviano pero resistente"
+    },
+    {
+     "texto": "o104",
+     "fragmento": "al plegarse es cómodo de llevar y traer a la oficina"
+    }
+   ]
+  },
+  {
+   "id": "S5",
+   "tipo": "concesion",
+   "descripcion": "prioriza el precio bajo y acepta concesiones de tamaño o estabilidad porque no hay algo mejor al mismo costo",
+   "palabras_clave": [
+    "precio"
+   ],
+   "citas": [
+    {
+     "texto": "o2",
+     "fragmento": "Por el precio está más que bien"
+    },
+    {
+     "texto": "o105",
+     "fragmento": "por el precio para que no se caliente funciona de 10"
+    },
+    {
+     "texto": "o179",
+     "fragmento": "Excelente relación precio/ calidad"
+    }
+   ]
+  },
+  {
+   "id": "S6",
+   "tipo": "faltante",
+   "descripcion": "compra en cantidad para equipar equipos u oficinas y necesita canal de venta por mayor y factura",
+   "palabras_clave": [
+    "mayor",
+    "factura"
+   ],
+   "citas": [
+    {
+     "texto": "p3",
+     "fragmento": "vendes por mayor?"
+    },
+    {
+     "texto": "p10",
+     "fragmento": "venden por mayor ?"
+    },
+    {
+     "texto": "p12",
+     "fragmento": "Venden x mayor afuera de meli?"
+    }
+   ]
+  }
+ ],
+ "E082": [
+  {
+   "id": "S1",
+   "tipo": "faltante",
+   "descripcion": "Quiere que la lámpara venga con el foco o la lamparita incluida, o poder comprarlo junto, para no tener que conseguirlo aparte.",
+   "palabras_clave": [
+    "lamparita",
+    "foco"
+   ],
+   "citas": [
+    {
+     "texto": "p10",
+     "fragmento": "viene sin lamparita"
+    },
+    {
+     "texto": "o28",
+     "fragmento": "no trae foco"
+    },
+    {
+     "texto": "o146",
+     "fragmento": "Viene sin foquito"
+    }
+   ]
+  },
+  {
+   "id": "S2",
+   "tipo": "preferencia",
+   "descripcion": "Prefiere elegir qué foco usa (potencia, LED, smart/RGB) y necesita que la lámpara acepte focos estándar.",
+   "palabras_clave": [
+    "foco"
+   ],
+   "citas": [
+    {
+     "texto": "p7",
+     "fragmento": "foco led de 15 watts"
+    },
+    {
+     "texto": "p13",
+     "fragmento": "9 watts tipo LED"
+    },
+    {
+     "texto": "o1",
+     "fragmento": "foco inteligente (smart)"
+    }
+   ]
+  },
+  {
+   "id": "S3",
+   "tipo": "concesion",
+   "descripcion": "Acepta que la base y la morsa sean de plástico si son pesadas y firmes, pero preferiría mayor robustez en la morsa.",
+   "palabras_clave": [
+    "morsa",
+    "plastico"
+   ],
+   "citas": [
+    {
+     "texto": "p5",
+     "fragmento": "Es de plástico con Yeso por dentro"
+    },
+    {
+     "texto": "o17",
+     "fragmento": "La base es plastica, pero tiene relleno"
+    },
+    {
+     "texto": "o43",
+     "fragmento": "la morsa de plastico algo berreta"
+    }
+   ]
+  },
+  {
+   "id": "S4",
+   "tipo": "faltante",
+   "descripcion": "Quiere poder comprar la base o la morsa por separado, como repuesto o para reutilizar una lámpara que ya tiene.",
+   "palabras_clave": [
+    "base",
+    "morsa",
+    "aparte"
+   ],
+   "citas": [
+    {
+     "texto": "p11",
+     "fragmento": "una base aparte"
+    },
+    {
+     "texto": "p12",
+     "fragmento": "venden la base y la morsa"
+    },
+    {
+     "texto": "p17",
+     "fragmento": "vendes solo la base"
+    }
+   ]
+  },
+  {
+   "id": "S5",
+   "tipo": "preferencia",
+   "descripcion": "Necesita estabilidad: una base pesada y firme (o una morsa que sujete bien) para que la lámpara no se mueva al usarla.",
+   "palabras_clave": [
+    "base",
+    "pesada"
+   ],
+   "citas": [
+    {
+     "texto": "o36",
+     "fragmento": "una base pesada y firme"
+    },
+    {
+     "texto": "o156",
+     "fragmento": "la base es pesada y eso te sirve"
+    },
+    {
+     "texto": "o7",
+     "fragmento": "buena estabilidad con la base pesada"
+    }
+   ]
+  },
+  {
+   "id": "S6",
+   "tipo": "preferencia",
+   "descripcion": "Prefiere un brazo articulado con varias posiciones para orientar la luz exactamente donde la necesita.",
+   "palabras_clave": [
+    "brazo",
+    "posiciones"
+   ],
+   "citas": [
+    {
+     "texto": "o7",
+     "fragmento": "los brazos articulados permiten acomodarla fácilmente"
+    },
+    {
+     "texto": "o28",
+     "fragmento": "lo podés articular como quieras"
+    },
+    {
+     "texto": "o160",
+     "fragmento": "muy útil q sea de brazo movible"
+    }
+   ]
+  }
+ ],
+ "E083": [
+  {
+   "id": "S1",
+   "tipo": "concesion",
+   "descripcion": "Quiere una luz de escritorio que funcione sin estar atada a un cable: poder moverla, usarla en distintos lugares o seguir usándola si se corta la luz, y acepta el cableado solo porque no encuentra algo mejor.",
+   "palabras_clave": [
+    "inalámbrica",
+    "enchufada",
+    "conectada",
+    "enchufado"
+   ],
+   "citas": [
+    {
+     "texto": "o12",
+     "fragmento": "lastima que no sea inalámbrica y tener que usarla enchufada"
+    },
+    {
+     "texto": "o7",
+     "fragmento": "solo creí que era inalambrica"
+    },
+    {
+     "texto": "o14",
+     "fragmento": "si o si tiene que tener el cable enchufado para que ande"
+    },
+    {
+     "texto": "o15",
+     "fragmento": "No es que con el usb se carga y después lo usa sin cable. Siempre con el cable"
+    },
+    {
+     "texto": "o3",
+     "fragmento": "solo funciona conectada, no queda cargada"
+    },
+    {
+     "texto": "o2",
+     "fragmento": "no pregunte si es inalambrica"
+    },
+    {
+     "texto": "p14",
+     "fragmento": "Hay otro modelo similar inalámbrico?"
+    },
+    {
+     "texto": "p19",
+     "fragmento": "Se usa sin conexión a la red ?"
+    }
+   ]
+  },
+  {
+   "id": "S2",
+   "tipo": "faltante",
+   "descripcion": "Espera que la lámpara venga lista para enchufar: le falta la fuente/adaptador de pared y tiene que resolverlo con un cargador de celular propio.",
+   "palabras_clave": [
+    "fuente",
+    "cargador",
+    "transformador"
+   ],
+   "citas": [
+    {
+     "texto": "o11",
+     "fragmento": "no viene con la fuente, la tuve que poner yo"
+    },
+    {
+     "texto": "o24",
+     "fragmento": "no trae fuente"
+    },
+    {
+     "texto": "o2",
+     "fragmento": "No viene con el toma a 220v"
+    },
+    {
+     "texto": "o28",
+     "fragmento": "es con usb para usarla, hay que conseguir un enchufe con esa entrada"
+    },
+    {
+     "texto": "p12",
+     "fragmento": "Necesita cargador o transformador?"
+    },
+    {
+     "texto": "p17",
+     "fragmento": "se enchufa al cargador de 5v"
+    }
+   ]
+  },
+  {
+   "id": "S3",
+   "tipo": "queja",
+   "descripcion": "Necesita un cable de alimentación largo y resistente: el que trae es corto y se rompe o se pela con el uso normal de mover la lámpara de un lado a otro.",
+   "palabras_clave": [
+    "cable"
+   ],
+   "citas": [
+    {
+     "texto": "o35",
+     "fragmento": "hizo que el cable se rompiera con facilidad"
+    },
+    {
+     "texto": "o22",
+     "fragmento": "el cable medio cortina"
+    },
+    {
+     "texto": "p9",
+     "fragmento": "El cable para enchufar de la Lámpara Led Escritorio Velador es corto"
+    },
+    {
+     "texto": "p7",
+     "fragmento": "incluye un cable de 30 cm"
+    },
+    {
+     "texto": "p10",
+     "fragmento": "el cable que incluye tiene 80cm"
+    }
+   ]
+  },
+  {
+   "id": "S4",
+   "tipo": "duda",
+   "descripcion": "Le preocupa la vida útil y la reparabilidad de una lámpara con LED integrado: quiere saber si puede arreglarla o reemplazar la fuente de luz si algo falla.",
+   "palabras_clave": [
+    "led",
+    "vida útil"
+   ],
+   "citas": [
+    {
+     "texto": "p15",
+     "fragmento": "si se queman los led se pueden cambiar?"
+    },
+    {
+     "texto": "o1",
+     "fragmento": "habrá que ver la vida útil de los leds"
+    },
+    {
+     "texto": "p4",
+     "fragmento": "lo compré hace 2 meses y dejó de funcionar. El puerto USBc hace falso contacto"
+    }
+   ]
+  },
+  {
+   "id": "S5",
+   "tipo": "preferencia",
+   "descripcion": "Quiere controlar la temperatura de la luz (cálida para leer o descansar la vista, fría para trabajar) y poder regular la intensidad según la tarea.",
+   "palabras_clave": [
+    "cálida",
+    "temperatura",
+    "intensidad"
+   ],
+   "citas": [
+    {
+     "texto": "p8",
+     "fragmento": "tienen alguna lampara como esta, pero de luz cálida?"
+    },
+    {
+     "texto": "p19",
+     "fragmento": "Tiene opción de luz fría y luz cálida ?"
+    },
+    {
+     "texto": "p20",
+     "fragmento": "que temperatura de blanco es?"
+    },
+    {
+     "texto": "o1",
+     "fragmento": "que tenga luz fría, luz cálida y que se pueda regular la intensidad"
+    },
+    {
+     "texto": "o4",
+     "fragmento": "La luz cálida es un alivio a los ojos"
+    }
+   ]
+  }
+ ]
+}
