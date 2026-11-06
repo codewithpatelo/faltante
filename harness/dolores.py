@@ -7,11 +7,18 @@ quién lo tiene: en el segmento y en un grupo de control tomado al azar del rest
 Quien propone no es quien mide. El código decide si el dolor sobrevive; solo los que sobreviven
 pasan al paso B (proponer qué traer).
 
+Lo que importa son los DESATENDIDOS: quienes tienen el dolor y no lo resolvieron. Las opiniones
+son de compradores de la solución actual y la mayoría suele estar conforme; eso no refuta el dolor,
+dice para quién funciona esa solución. El agujero está en la gente a la que le falla.
+
 Un dolor se refuta si:
     pocas personas lo tienen                       (MIN_PERSONAS_CON_EL_DOLOR)
-    es un caso de un solo producto                 (MIN_PRODUCTOS_CON_EL_DOLOR, con 2 personas en cada uno)
     no es más frecuente en el segmento que afuera  (MIN_VECES_MAS_QUE_EN_EL_CONTROL)
-    la mayoría ya lo resolvió                      (MAX_PROPORCION_RESUELTA)
+    la solución actual le sirve a casi todos       (MIN_PERSONAS_DESATENDIDAS): no hay agujero para algo
+                                                    mejor; queda marcado para la rama "más barato o más
+                                                    accesible" (todavía no construida)
+    los desatendidos son de un solo producto       (MIN_PRODUCTOS_CON_DESATENDIDOS, 2 personas en cada uno):
+                                                    es el defecto de un producto, no un dolor del grupo
 """
 
 from __future__ import annotations
@@ -26,9 +33,9 @@ from harness.voces import RAIZ, textos_con_id
 SKILL_D = RAIZ / "skills/hipotesis_de_dolor/SKILL.md"
 SKILL_MEDIR = RAIZ / "skills/medir_dolor/SKILL.md"
 MIN_PERSONAS_CON_EL_DOLOR = 5
-MIN_PRODUCTOS_CON_EL_DOLOR = 2        # con al menos 2 personas en cada uno: si no, es el defecto de un producto
 MIN_VECES_MAS_QUE_EN_EL_CONTROL = 2.0  # decisión: el dolor es de este grupo, no de todo el mundo
-MAX_PROPORCION_RESUELTA = 0.5
+MIN_PERSONAS_DESATENDIDAS = 5         # decisión: menos que esto no sostiene un lote de importación
+MIN_PRODUCTOS_CON_DESATENDIDOS = 2    # con al menos 2 desatendidos en cada uno
 PERSONAS_MEDIDAS = 150                # del segmento y del control (al azar, con semilla fija, si hay más)
 PERSONAS_POR_LLAMADA_AL_MEDIR = 75
 SEMILLA = 7
@@ -67,27 +74,32 @@ def medir(cliente, dolor: dict, gente: list[dict], todos: dict, traza: list) -> 
             "resuelto": sorted(set().union(*[p[1] for p in partes])) if partes else []}
 
 
+def desatendidos(medicion: dict) -> list[str]:
+    return [i for i in medicion["tienen"] if i not in set(medicion["resuelto"])]
+
+
 def veredicto(en_segmento: dict, en_control: dict, tarjetas: dict) -> dict:
     """El código decide si el dolor sobrevive, con los números a la vista."""
-    tienen = en_segmento["tienen"]
+    tienen, sin_resolver = en_segmento["tienen"], desatendidos(en_segmento)
     proporcion = len(tienen) / max(1, en_segmento["medidas"])
     proporcion_control = len(en_control["tienen"]) / max(1, en_control["medidas"])
     veces = proporcion / proporcion_control if proporcion_control else float("inf") if tienen else 0.0
-    productos = sum(n >= 2 for n in Counter(tarjetas[i]["producto"] for i in tienen).values())
-    resuelta = len(en_segmento["resuelto"]) / max(1, len(tienen))
-    datos = {"personas": len(tienen), "de": en_segmento["medidas"], "proporcion": round(proporcion, 3),
-             "proporcion_control": round(proporcion_control, 3), "veces_mas_que_el_control": round(veces, 2) if veces != float("inf") else "sin casos en el control",
-             "productos_con_2_o_mas": productos, "proporcion_resuelta": round(resuelta, 2)}
+    productos = sum(n >= 2 for n in Counter(tarjetas[i]["producto"] for i in sin_resolver).values())
+    datos = {"personas": len(tienen), "desatendidos": len(sin_resolver), "de": en_segmento["medidas"],
+             "proporcion": round(proporcion, 3), "proporcion_control": round(proporcion_control, 3),
+             "veces_mas_que_el_control": round(veces, 2) if veces != float("inf") else "sin casos en el control",
+             "productos_con_2_desatendidos_o_mas": productos}
     if len(tienen) < MIN_PERSONAS_CON_EL_DOLOR:
         return {"pasa": False, "motivo": f"lo tienen {len(tienen)} personas (mínimo {MIN_PERSONAS_CON_EL_DOLOR})", **datos}
-    if productos < MIN_PRODUCTOS_CON_EL_DOLOR:
-        return {"pasa": False, "motivo": "aparece en un solo producto: es un defecto de ese producto, no un dolor del grupo", **datos}
     if veces < MIN_VECES_MAS_QUE_EN_EL_CONTROL:
         return {"pasa": False, "motivo": f"no es de este grupo: {proporcion:.0%} en el segmento contra {proporcion_control:.0%} en el control", **datos}
-    if resuelta > MAX_PROPORCION_RESUELTA:
-        return {"pasa": False, "motivo": f"la mayoría ya lo resolvió ({resuelta:.0%})", **datos}
-    return {"pasa": True, "motivo": f"lo tienen {len(tienen)} de {en_segmento['medidas']} ({proporcion:.0%}), "
-                                    f"{datos['veces_mas_que_el_control']} veces más que en el control", **datos}
+    if len(sin_resolver) < MIN_PERSONAS_DESATENDIDAS:
+        return {"pasa": False, "rama": "precio_o_acceso", **datos,
+                "motivo": f"la solución actual le sirve a casi todos ({len(sin_resolver)} desatendidos): sin agujero para algo mejor"}
+    if productos < MIN_PRODUCTOS_CON_DESATENDIDOS:
+        return {"pasa": False, "motivo": "los desatendidos son de un solo producto: es el defecto de ese producto", **datos}
+    return {"pasa": True, "motivo": f"{len(sin_resolver)} desatendidos (lo tienen {len(tienen)} de {en_segmento['medidas']}, "
+                                    f"{datos['veces_mas_que_el_control']} veces más que en el control)", **datos}
 
 
 def muestra(gente: list[dict], n: int, etiqueta: str) -> list[dict]:

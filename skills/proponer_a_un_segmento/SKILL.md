@@ -19,8 +19,9 @@ el programa después trata de refutarlo con datos.
 - **Qué dicen y qué temen (voto con las manos):** una línea por persona, con su ID
   (`E012.o34`): situación, qué quiere lograr, dolor, ganancia, miedo, con qué compara.
 - **Dolores verificados:** los que ya sobrevivieron a su medición. Cada uno con el trabajo, el
-  obstáculo, con qué lo resuelven hoy, qué hace mal esa solución, y `lo_tienen`: las personas que
-  otro modelo encontró con ese dolor leyendo sus textos.
+  obstáculo, con qué lo resuelven hoy, qué hace mal esa solución, y `desatendidos`: las personas
+  que otro modelo encontró con ese dolor sin resolver, leyendo sus textos. Para ellas falla la
+  solución actual: proponé para ellas, no para las que ya están conformes.
 
 ## Procedimiento
 
@@ -47,7 +48,7 @@ cualquiera lo ve mirando la búsqueda.
 ## Criterios (los chequea el programa)
 
 - `dolor`: el ID del dolor verificado que resuelve.
-- `personas`: IDs de `lo_tienen` de ese dolor: al menos 2 personas de cada uno de al menos 2
+- `personas`: IDs de `desatendidos` de ese dolor: al menos 2 personas de cada uno de al menos 2
   productos distintos.
 - `palabras_clave`: palabras que aparecen en esas voces cuando hablan de la necesidad; el
   programa las cuenta en todas las opiniones y preguntas de cada producto (C1 y C2).

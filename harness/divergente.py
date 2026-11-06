@@ -40,20 +40,20 @@ REPREGUNTAR = True                # pedir una segunda tanda distinta: lo que má
 
 def prompt_b(mapa: dict, vivos: dict[str, dict]) -> str:
     dolores = [{"id": i, **{k: d.get(k) for k in ("trabajo", "obstaculo", "solucion_actual", "que_hace_mal")},
-                "lo_tienen": d["medicion"]["segmento"]["tienen"], "medicion": d["veredicto"]["motivo"]} for i, d in vivos.items()]
+                "desatendidos": D.desatendidos(d["medicion"]["segmento"]), "medicion": d["veredicto"]["motivo"]} for i, d in vivos.items()]
     return (f"{SKILL_B.read_text(encoding='utf-8')}\n\n---\n\nMAPA DE EMPATÍA DEL SEGMENTO\n"
             f"{json.dumps(mapa, ensure_ascii=False, indent=1)}\n\nDOLORES VERIFICADOS\n"
             f"{json.dumps(dolores, ensure_ascii=False, indent=1)}\n\nRespondé SOLO con el JSON de la salida.")
 
 
 def errores_de_propuesta(o: dict, miembros: dict[str, dict], vivos: dict[str, dict]) -> list[str]:
-    """Guardrail del paso B: resuelve un dolor verificado, y las personas citadas son las que el
-    medidor encontró con ese dolor, alcanzan y cruzan productos."""
+    """Guardrail del paso B: resuelve un dolor verificado, y las personas citadas son desatendidas
+    (el medidor les encontró ese dolor sin resolver), alcanzan y cruzan productos."""
     if o.get("dolor") not in vivos:
         return [f"tiene que resolver uno de los dolores verificados: {', '.join(vivos)}"]
-    con_el_dolor = set(vivos[o["dolor"]]["medicion"]["segmento"]["tienen"])
+    con_el_dolor = set(D.desatendidos(vivos[o["dolor"]]["medicion"]["segmento"]))
     citadas = o.get("personas") or []
-    errores = [f"cita a alguien que no tiene ese dolor según la medición: {i}" for i in citadas if i not in con_el_dolor]
+    errores = [f"cita a alguien que no tiene ese dolor sin resolver según la medición: {i}" for i in citadas if i not in con_el_dolor]
     por_producto = Counter(miembros[i]["producto"] for i in dict.fromkeys(citadas) if i in con_el_dolor)
     if sum(n >= MIN_PERSONAS_POR_PRODUCTO for n in por_producto.values()) < MIN_PRODUCTOS_CITADOS:
         errores.append(f"tiene que citar al menos {MIN_PERSONAS_POR_PRODUCTO} personas de cada uno de al menos "
