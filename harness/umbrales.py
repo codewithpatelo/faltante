@@ -12,17 +12,24 @@ PROPORCION_PARA_IMPORTANCIA_10 = 0.10  # decisión: si el 10% de los textos la m
 MIN_IMPORTANCIA = 3.0                 # = la menciona al menos el 3% de los textos
 MAX_SATISFACCION = 5.0                # = al menos la mitad de las menciones son queja, duda o pedido
 
-# C3 · Hay demanda: el producto donde aparece la señal se vende
-MIN_VENDIDOS_DEL_ANCLA = 500
+# Lo que vende una publicación típica, medido en las capturas (31.314 publicaciones de 498 búsquedas,
+# noviembre 2026): de las publicaciones locales que vendieron algo, la mediana muestra "+100" y el
+# escalón siguiente que muestra Mercado Libre es "+500".
+VENTAS_DE_LA_PUBLICACION_TIPICA = 100
+
+# C3 · Hay demanda: el producto donde aparece la señal vende más que la publicación típica
+MIN_VENDIDOS_DEL_ANCLA = 500          # el primer escalón de "+N vendidos" arriba de la mediana
 
 # C4 · Nadie la atiende todavía
-VENDIDOS_PARA_DECIR_QUE_YA_VENDE = 100
-MAX_EQUIVALENTES_QUE_YA_VENDEN = 2    # decisión: con 3 o más vendedores que venden, la necesidad está atendida
+VENDIDOS_PARA_DECIR_QUE_YA_VENDE = VENTAS_DE_LA_PUBLICACION_TIPICA   # un equivalente "vende" si vende como la publicación típica
+MAX_EQUIVALENTES_QUE_YA_VENDEN = 2    # con 3 a 5 competidores un mercado ya se comporta como competitivo y el siguiente
+                                      # cambia poco (Bresnahan y Reiss, 1991): con 3 o más que venden, está atendida
 
 # C5 · Si se ofrece, la gente lo elige (voto con los pies: lo que se deja pasar también cuenta)
-MIN_ALTERNATIVAS_OFRECIDAS = 3        # con 3 o más equivalentes a la venta, la gente ya tuvo la opción
-PRECIO_COMPARABLE_HASTA = 1.5         # comparables: con stock local y hasta 1,5 veces la mediana local de precio
-MIN_VENTAS_VS_ANCLA = 0.25            # decisión: si entre todos venden menos del 25% del producto de origen, la dejan pasar
+# Las alternativas comparables (stock local, precio no atípico: debajo de la valla de Tukey, Q3 + 1,5 x rango
+# intercuartil) se comparan con las publicaciones locales de la búsqueda de donde salió la necesidad: si venden
+# significativamente menos (Mann-Whitney unilateral; "+N vendidos" es ordinal), la gente la tuvo enfrente y la dejó pasar.
+NIVEL_DE_SIGNIFICANCIA = 0.05
 
 # C6 · Deja plata al precio que la gente paga
 MIN_MARGEN_NETO = 0.0519              # ganancia neta sobre ventas de referencia: Retail (Special Lines), Damodaran, enero 2026; publicidad,

@@ -32,7 +32,8 @@ def propuestas(particion: str) -> list[Propuesta]:
     def armar(metodo, anclas, oportunidad, señales, fob_ref, verifica_citas):
         return Propuesta(metodo, anclas, oportunidad, señales, verifica_citas,
                          fob=fobs.get(fob_ref) if fob_ref else None,
-                         captura=capturas.get(oportunidad["busqueda_ml"]), titulos_ancla=titulos_ancla)
+                         captura=capturas.get(oportunidad["busqueda_ml"]), titulos_ancla=titulos_ancla,
+                         capturas_de_origen=[capturas[b] for b in dict.fromkeys(a["busqueda"] for a in anclas) if b in capturas])
 
     # LLM: cada oportunidad cita señales "P12.S2" de uno o más productos
     señales = {f"{pid}.{s['id']}": {**s, "producto": pid} for pid, lista in del_llm["señales"].items() for s in lista}

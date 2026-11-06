@@ -83,7 +83,7 @@ voto con las manos ────┘   (divergente)     críticos y mata el humo (
 | C2 sub-atendida | Importa y está mal resuelta | Puntaje de oportunidad de Ulwick: pocos la mencionan o la mayoría está conforme | Código |
 | C3 demanda | Hay gente eligiendo el producto de origen | Vende menos de +500 | Código |
 | C4 hueco | Nadie la atiende todavía | 3 o más equivalentes ya venden +100 | Código + captura |
-| C5 la eligen | Si se ofrece, la gente la elige | 3 o más alternativas con stock local y precio comparable venden, entre todas, menos del 25% que el producto de origen | Código + captura |
+| C5 la eligen | Si se ofrece, la gente la elige | Las alternativas con stock local y precio no atípico venden significativamente menos (Mann-Whitney, 5%) que lo que la misma gente compra en su búsqueda de origen | Código + captura |
 | C6 margen | Deja plata al precio que la gente paga | Ganancia neta (después de comisión, impuestos, envío, publicidad y devoluciones) menor que la del comercio minorista (5,19%, Damodaran); si alcanza solo con un FOB más bajo, queda condicional | Código |
 | Confianza | — | A lo que sobrevive le pone alta, media o baja según 5 factores de sí o no (`harness/confianza.py`) | Código |
 

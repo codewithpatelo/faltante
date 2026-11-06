@@ -7,6 +7,9 @@ que lo sostienen. El orden y la descripción de cada uno están en `harness/embu
 from __future__ import annotations
 
 from dataclasses import dataclass, field
+from statistics import median, quantiles
+
+from scipy.stats import mannwhitneyu
 
 from harness import costo_puesto as cp
 from harness import umbrales as U
@@ -106,26 +109,32 @@ def c4_hueco(p) -> Resultado:
 
 
 def c5_la_eligen(p) -> Resultado:
-    """Si la alternativa ya se ofrece con stock local y a precio razonable, y la gente igual
-    elige el producto de origen, la necesidad no alcanza para que la compren: es humo.
-    Las explicaciones rivales que dejamos afuera (Compra Internacional, precio inflado) se
-    descartan antes de contar."""
+    """Si la alternativa ya se ofrece con stock local y a precio razonable, y se vende menos que
+    lo que la misma gente compra en su búsqueda de origen, la necesidad no alcanza para que la
+    compren: es humo. Las explicaciones rivales (Compra Internacional, precio atípico) se sacan
+    antes de comparar."""
     if p.captura is None:
         return Resultado(False, "falta capturar la búsqueda (scripts/captura_ml.js)")
     locales = [x for x in equivalentes(p) if not x.get("internacional") and x.get("precio")]
     if not locales:
         return Resultado(True, "no hay alternativas con stock local: nadie la ofreció todavía")
-    precios = sorted(x["precio"] for x in locales)
-    techo = precios[len(precios) // 2] * U.PRECIO_COMPARABLE_HASTA
-    comparables = [x for x in locales if x["precio"] <= techo]
-    ventas = sum(x["vendidos"] for x in comparables)
-    del_ancla = p.vendidos_del_ancla
-    datos = {"comparables": len(comparables), "ventas_comparables": ventas, "ventas_del_ancla": del_ancla}
-    if len(comparables) >= U.MIN_ALTERNATIVAS_OFRECIDAS and ventas < U.MIN_VENTAS_VS_ANCLA * del_ancla:
-        return Resultado(False, f"la gente la deja pasar: {len(comparables)} alternativas con stock local a precio "
-                                f"comparable suman +{ventas} ventas contra +{del_ancla} del producto de origen", datos)
-    return Resultado(True, f"{len(comparables)} alternativas comparables suman +{ventas} ventas "
-                           f"(producto de origen: +{del_ancla})", datos)
+    comparables = [x for x in locales if x["precio"] <= valla_de_tukey([x["precio"] for x in locales])]
+    referencia = [x["vendidos"] for c in p.capturas_de_origen for x in c["publicaciones"] if not x.get("internacional")]
+    if not referencia:
+        return Resultado(True, "sin la búsqueda de origen capturada no hay con qué comparar")
+    valor_p = mannwhitneyu([x["vendidos"] for x in comparables], referencia, alternative="less").pvalue
+    datos = {"comparables": len(comparables), "ventas_comparables": sorted(x["vendidos"] for x in comparables),
+             "mediana_de_origen": median(referencia), "publicaciones_de_origen": len(referencia), "p": round(valor_p, 4)}
+    resumen = (f"{len(comparables)} alternativas con stock local a precio comparable (ventas mediana {median(datos['ventas_comparables'])}) "
+               f"contra {len(referencia)} publicaciones de la búsqueda de origen (mediana {datos['mediana_de_origen']}), p = {datos['p']}")
+    if valor_p < U.NIVEL_DE_SIGNIFICANCIA:
+        return Resultado(False, f"la gente la deja pasar: {resumen}", datos)
+    return Resultado(True, resumen, datos)
+
+
+def valla_de_tukey(xs: list[float]) -> float:
+    q1, _, q3 = quantiles(xs, n=4, method="inclusive") if len(xs) > 1 else (xs[0],) * 3
+    return q3 + 1.5 * (q3 - q1)
 
 
 def c6_margen(p) -> Resultado:

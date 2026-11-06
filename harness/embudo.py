@@ -33,8 +33,8 @@ EMBUDO = [
     Chequeo("C4 hueco", "Nadie la atiende todavía",
             "3 o más equivalentes ya venden +100", c.c4_hueco),
     Chequeo("C5 la eligen", "Si se ofrece, la gente la elige",
-            "3 o más alternativas con stock local y precio comparable venden, entre todas, menos del 25% "
-            "que el producto de origen: la gente las tuvo enfrente y las dejó pasar", c.c5_la_eligen),
+            "las alternativas con stock local y precio no atípico venden significativamente menos que lo que "
+            "la misma gente compra en su búsqueda de origen: las tuvo enfrente y las dejó pasar", c.c5_la_eligen),
     Chequeo("C6 margen", "Deja plata al precio que la gente paga",
             "ganancia neta (después de comisión, impuestos, envío, publicidad y devoluciones) menor que la del "
             "comercio minorista (Damodaran); si alcanza solo con un FOB más bajo, queda condicional", c.c6_margen),
@@ -52,6 +52,7 @@ class Propuesta:
     fob: dict | None = None        # precio de proveedor (data/serendipia/fob_*.json), si lo hay
     captura: dict | None = None    # la búsqueda de Mercado Libre de lo propuesto, para C4, C5 y C6
     titulos_ancla: set = field(default_factory=set)
+    capturas_de_origen: list = field(default_factory=list)   # las búsquedas de donde salieron las anclas, para C5
 
     @property
     def vendidos_del_ancla(self) -> int:

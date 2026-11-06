@@ -114,11 +114,16 @@
     "chequeo": "C5 la eligen",
     "supuesto": "Si se ofrece, la gente la elige",
     "pasa": true,
-    "motivo": "2 alternativas comparables suman +200 ventas (producto de origen: +1000)",
+    "motivo": "2 alternativas con stock local a precio comparable (ventas mediana 100.0) contra 58 publicaciones de la búsqueda de origen (mediana 0.0), p = 0.8741",
     "datos": {
      "comparables": 2,
-     "ventas_comparables": 200,
-     "ventas_del_ancla": 1000
+     "ventas_comparables": [
+      100,
+      100
+     ],
+     "mediana_de_origen": 0.0,
+     "publicaciones_de_origen": 58,
+     "p": 0.8741
     }
    },
    {
@@ -505,7 +510,7 @@
   "busqueda_ml": "adhesivo repuesto estante ducha",
   "estado": "descartada",
   "se_detiene_en": "C5 la eligen",
-  "motivo": "la gente la deja pasar: 8 alternativas con stock local a precio comparable suman +125 ventas contra +10000 del producto de origen",
+  "motivo": "la gente la deja pasar: 10 alternativas con stock local a precio comparable (ventas mediana 0.0) contra 51 publicaciones de la búsqueda de origen (mediana 100), p = 0.0",
   "señales": [
    {
     "id": "P10.S1",
@@ -602,11 +607,24 @@
     "chequeo": "C5 la eligen",
     "supuesto": "Si se ofrece, la gente la elige",
     "pasa": false,
-    "motivo": "la gente la deja pasar: 8 alternativas con stock local a precio comparable suman +125 ventas contra +10000 del producto de origen",
+    "motivo": "la gente la deja pasar: 10 alternativas con stock local a precio comparable (ventas mediana 0.0) contra 51 publicaciones de la búsqueda de origen (mediana 100), p = 0.0",
     "datos": {
-     "comparables": 8,
-     "ventas_comparables": 125,
-     "ventas_del_ancla": 10000
+     "comparables": 10,
+     "ventas_comparables": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      25,
+      50,
+      50
+     ],
+     "mediana_de_origen": 100,
+     "publicaciones_de_origen": 51,
+     "p": 0.0
     }
    }
   ]
@@ -757,11 +775,22 @@
     "chequeo": "C5 la eligen",
     "supuesto": "Si se ofrece, la gente la elige",
     "pasa": true,
-    "motivo": "7 alternativas comparables suman +1150 ventas (producto de origen: +1000)",
+    "motivo": "8 alternativas con stock local a precio comparable (ventas mediana 25.0) contra 58 publicaciones de la búsqueda de origen (mediana 0.0), p = 0.4957",
     "datos": {
-     "comparables": 7,
-     "ventas_comparables": 1150,
-     "ventas_del_ancla": 1000
+     "comparables": 8,
+     "ventas_comparables": [
+      0,
+      0,
+      0,
+      0,
+      50,
+      50,
+      50,
+      1000
+     ],
+     "mediana_de_origen": 0.0,
+     "publicaciones_de_origen": 58,
+     "p": 0.4957
     }
    },
    {
@@ -918,11 +947,22 @@
     "chequeo": "C5 la eligen",
     "supuesto": "Si se ofrece, la gente la elige",
     "pasa": true,
-    "motivo": "7 alternativas comparables suman +1150 ventas (producto de origen: +1000)",
+    "motivo": "8 alternativas con stock local a precio comparable (ventas mediana 25.0) contra 58 publicaciones de la búsqueda de origen (mediana 0.0), p = 0.4957",
     "datos": {
-     "comparables": 7,
-     "ventas_comparables": 1150,
-     "ventas_del_ancla": 1000
+     "comparables": 8,
+     "ventas_comparables": [
+      0,
+      0,
+      0,
+      0,
+      50,
+      50,
+      50,
+      1000
+     ],
+     "mediana_de_origen": 0.0,
+     "publicaciones_de_origen": 58,
+     "p": 0.4957
     }
    },
    {
@@ -1030,11 +1070,17 @@
     "chequeo": "C5 la eligen",
     "supuesto": "Si se ofrece, la gente la elige",
     "pasa": true,
-    "motivo": "2 alternativas comparables suman +0 ventas (producto de origen: +5000)",
+    "motivo": "3 alternativas con stock local a precio comparable (ventas mediana 0) contra 47 publicaciones de la búsqueda de origen (mediana 25), p = 0.0578",
     "datos": {
-     "comparables": 2,
-     "ventas_comparables": 0,
-     "ventas_del_ancla": 5000
+     "comparables": 3,
+     "ventas_comparables": [
+      0,
+      0,
+      0
+     ],
+     "mediana_de_origen": 25,
+     "publicaciones_de_origen": 47,
+     "p": 0.0578
     }
    },
    {
@@ -1119,11 +1165,17 @@
     "chequeo": "C5 la eligen",
     "supuesto": "Si se ofrece, la gente la elige",
     "pasa": true,
-    "motivo": "2 alternativas comparables suman +0 ventas (producto de origen: +500)",
+    "motivo": "3 alternativas con stock local a precio comparable (ventas mediana 0) contra 47 publicaciones de la búsqueda de origen (mediana 25), p = 0.0578",
     "datos": {
-     "comparables": 2,
-     "ventas_comparables": 0,
-     "ventas_del_ancla": 500
+     "comparables": 3,
+     "ventas_comparables": [
+      0,
+      0,
+      0
+     ],
+     "mediana_de_origen": 25,
+     "publicaciones_de_origen": 47,
+     "p": 0.0578
     }
    },
    {

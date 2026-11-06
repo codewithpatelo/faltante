@@ -55,8 +55,10 @@ def _disco(captura):
     oportunidad = {"id": "O1", "que_traer": "disco", "busqueda_ml": "disco", "criterio_equivalencia": {"empieza_con": ["disco"]}}
     señal = {"id": "S1", "producto": "PX", "descripcion": "piden discos", "palabras_clave": ["repuesto"],
              "citas": [{"texto": "p1", "fragmento": "discos de repuesto"}, {"texto": "o1", "fragmento": "no trae el repuesto"}]}
+    origen = {"publicaciones": [{"titulo": f"Afilador {i}", "vendidos": v, "precio": 50000}
+                                for i, v in enumerate([1000, 500, 500, 100, 100, 100, 50, 25, 100, 500])]}
     return Propuesta("llm", [AFILADOR], oportunidad, [señal], captura={"publicaciones": captura},
-                     titulos_ancla={"disco rodante ancla"})
+                     titulos_ancla={"disco rodante ancla"}, capturas_de_origen=[origen])
 
 
 def test_c4_saca_repetidos_y_anclas_y_el_precio_es_el_de_lo_que_se_vendio():
@@ -77,8 +79,12 @@ def test_c4_descarta_si_ya_lo_venden_varios():
 # --- C5: lo que la gente deja pasar ----------------------------------------------------
 
 def test_c5_descarta_si_la_gente_tuvo_la_alternativa_y_la_dejo_pasar():
-    ofrecidas = [{"titulo": f"Disco {i}", "vendidos": 25, "precio": 10000, "internacional": 0} for i in range(3)]
-    assert not c.c5_la_eligen(_disco(ofrecidas)).pasa                        # 75 ventas contra +1000 del afilador
+    ofrecidas = [{"titulo": f"Disco {i}", "vendidos": v, "precio": 10000, "internacional": 0} for i, v in enumerate([0, 0, 5, 25, 0])]
+    assert not c.c5_la_eligen(_disco(ofrecidas)).pasa      # venden mucho menos que los afiladores de la misma búsqueda
+    elegidas = [{"titulo": f"Disco {i}", "vendidos": v, "precio": 10000, "internacional": 0} for i, v in enumerate([500, 100, 1000])]
+    assert c.c5_la_eligen(_disco(elegidas)).pasa
+    caras = ofrecidas[:4] + [{"titulo": "Disco Oro", "vendidos": 0, "precio": 10 ** 7, "internacional": 0}]
+    assert c.c5_la_eligen(_disco(caras)).datos["comparables"] == 4     # el precio atípico no cuenta como alternativa
 
 
 def test_c5_no_cuenta_lo_importado_como_alternativa():
