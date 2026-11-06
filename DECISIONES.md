@@ -37,9 +37,9 @@ ve).
 **Cada pieza entra solo si la evidencia dice que mejora.**
 Las versiones se comparan en escala_dev, 3 corridas cada una, con la misma medida: propuestas
 distintas que pasan C4 (nadie lo trae) y C5 (la eligen si se ofrece), y su proporción sobre las
-que pasan C1 a C3 (`data/evaluacion/versiones_escala_dev/`). Señales por producto más cruce: 0,7
-por corrida (10,5%). Personas con segmentos libres: 13,3 (25%), 40 ideas distintas en 3 corridas.
-Personas con segmentos obligados a cruzar búsquedas: 3,0 (12,5%). La idea de obligar a cruzar
+que pasan C1 a C3 (`data/evaluacion/versiones_escala_dev/`). Con las reglas de C3 a C5 de abajo: señales
+por producto más cruce, 1,0 por corrida (16%); personas con segmentos libres, 11,7 (22%), 35 ideas
+distintas en 3 corridas; personas con segmentos obligados a cruzar búsquedas, 3,3 (14%). La idea de obligar a cruzar
 búsquedas sonaba bien (en la primera corrida muchos segmentos eran "los compradores de X"), pero
 empeoró la medida, así que se sacó. Un paso de dolor antes de proponer (el LLM formula
 dolores, un clasificador independiente mide quién los tiene en los textos originales y una prueba
