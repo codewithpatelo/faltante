@@ -1,9 +1,10 @@
 """Une lo que juntó scripts/voces_ml.js (opiniones y preguntas) con los productos ancla
 elegidos por scripts/elegir_anclas.py, en un corpus que lee el programa.
 
-    python scripts/unir_escala.py 2026-11-05
+    python scripts/unir_escala.py 2026-11-05 [PREFIJO]
       lee   data/escala/anclas_<fecha>.json, opiniones_<fecha>*.json, preguntas_<fecha>*.json
-      deja  data/escala/corpus_<fecha>.json   (productos E001, E002, ...)
+      deja  data/escala/corpus_<fecha>.json   (productos E001, E002, ...; con otro PREFIJO, F001, ...
+                                               para que no choquen con los de otra fecha)
 
 Los productos sin opiniones ni preguntas quedan afuera: no hay voces que leer.
 
@@ -25,7 +26,7 @@ def particiones(busquedas: set[str]) -> dict[str, str]:
     return {b: "escala_dev" if i < len(orden) / 2 else "escala_test" for i, b in enumerate(orden)}
 
 
-def unir(fecha: str) -> list[dict]:
+def unir(fecha: str, prefijo: str = "E") -> list[dict]:
     anclas = json.loads((CARPETA / f"anclas_{fecha}.json").read_text(encoding="utf-8"))
     leer = lambda patron: [p for f in sorted(CARPETA.glob(patron)) for p in json.loads(f.read_text(encoding="utf-8"))["productos"]]
     opiniones = {p["url"]: p for p in leer(f"opiniones_{fecha}*.json")}
@@ -37,7 +38,7 @@ def unir(fecha: str) -> list[dict]:
         p = preguntas.get(o.get("item"), [])
         if not o.get("opiniones") and not p:
             continue
-        corpus.append({"id": f"E{len(corpus) + 1:03d}", "particion": parte[a["busqueda"]], "busqueda": a["busqueda"],
+        corpus.append({"id": f"{prefijo}{len(corpus) + 1:03d}", "particion": parte[a["busqueda"]], "busqueda": a["busqueda"],
                        "titulo": o.get("titulo") or a["titulo"], "vendidos": a["vendidos"], "precio": a["precio"],
                        "url": a["url"], "calificacion": o.get("calificacion"),
                        "opiniones": o.get("opiniones", []), "preguntas": p})
@@ -46,7 +47,7 @@ def unir(fecha: str) -> list[dict]:
 
 if __name__ == "__main__":
     fecha = sys.argv[1] if len(sys.argv) > 1 else "2026-11-05"
-    corpus = unir(fecha)
+    corpus = unir(fecha, sys.argv[2] if len(sys.argv) > 2 else "E")
     (CARPETA / f"corpus_{fecha}.json").write_text(json.dumps({"fecha": fecha, "productos": corpus}, ensure_ascii=False, indent=1),
                                                   encoding="utf-8")
     for parte in ("escala_dev", "escala_test"):

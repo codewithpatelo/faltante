@@ -67,9 +67,9 @@ def tarjetas_de_una_tanda(cliente, producto: dict, voces: dict[str, str], traza:
             for t in d.get("personas", []) if not errores_de_tarjeta(t, voces)]
 
 
-def tarjetas_de_la_particion(cliente, particion: str, traza: list) -> list[dict]:
+def tarjetas_de_la_particion(cliente, particion: str, traza: list, saltear: set = frozenset()) -> list[dict]:
     tandas = []
-    for p in productos(particion).values():
+    for p in (p for pid, p in productos(particion).items() if pid not in saltear):
         voces = list(voces_a_leer(p).items())
         tandas += [(p, dict(voces[i:i + VOCES_POR_LLAMADA])) for i in range(0, len(voces), VOCES_POR_LLAMADA)]
     por_tanda = en_paralelo(lambda t: tarjetas_de_una_tanda(cliente, t[0], t[1], traza), tandas)
@@ -115,8 +115,11 @@ def personas_de_la_particion(cliente, particion: str, traza: list) -> dict:
     """Tarjetas, segmentos y asignaciones de la partición; se calculan una vez y se guardan."""
     archivo = RAIZ / f"data/serendipia/personas_{particion}_api.json"
     guardado = json.loads(archivo.read_text(encoding="utf-8")) if archivo.exists() else {}
-    if "tarjetas" not in guardado:
-        guardado["tarjetas"] = tarjetas_de_la_particion(cliente, particion, traza)
+    leidos = {t["producto"] for t in guardado.get("tarjetas", [])}
+    if "tarjetas" not in guardado or set(productos(particion)) - leidos:
+        # Solo se leen los productos nuevos (la partición creció); los ya leídos no se repiten.
+        guardado["tarjetas"] = guardado.get("tarjetas", []) + tarjetas_de_la_particion(cliente, particion, traza, saltear=leidos)
+        guardado.pop("segmentos", None)
         archivo.write_text(json.dumps(guardado, ensure_ascii=False, indent=1), encoding="utf-8")
     if "segmentos" not in guardado:
         segmentos = definir_segmentos(cliente, guardado["tarjetas"], traza)
