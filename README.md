@@ -2,8 +2,8 @@
 
 **Qué hace:** descubre desfasajes de mercado para importar y vender en Mercado Libre: un grupo de
 gente con un dolor que el mercado local no atiende, y algo que ya se fabrica afuera y lo resuelve.
-Automatiza la función empresarial (Kirzner, Huerta de Soto): ver el desajuste y después tratar de
-demostrar que no existe antes de recomendarlo.
+Automatiza la función empresarial (Kirzner, Huerta de Soto): ver el desajuste y, antes de
+recomendarlo, buscar con datos lo que lo refutaría. Solo se recomienda lo que resiste.
 
 Parte de las **elecciones** de la gente, que se ven de dos maneras:
 
@@ -12,11 +12,22 @@ Parte de las **elecciones** de la gente, que se ven de dos maneras:
 - **Voto con las manos, lo que la gente dice:** opiniones de quienes compraron y preguntas de
   quienes todavía dudan.
 
-**La divergencia trae hipótesis no obvias:** un LLM lee a cada persona como un mapa de empatía,
-agrupa a la gente por situación (no por producto) y propone qué traer a cada grupo. **La
-convergencia mata el humo:** cada propuesta pasa por supuestos críticos (¿el dolor existe?, ¿nadie
-lo atiende?, ¿si se ofrece, la gente lo elige?, ¿deja plata?) y el dato que la tira abajo. Quien
-propone nunca es quien mide.
+**Primero abre ideas (divergencia).** Un LLM lee cada opinión y cada pregunta como si fuera una
+persona: en qué situación está, qué quiere lograr, qué le molesta. Después junta a la gente que
+está en la misma situación aunque haya comprado cosas distintas (por ejemplo, "corta el pelo en
+casa a sus hijos o a sí mismo"), y para cada grupo propone qué traer que hoy no encuentra.
+
+**Después intenta matar cada idea (convergencia).** Cada propuesta tiene que pasar cuatro
+preguntas, y en cada una hay un dato que puede tirarla abajo:
+
+1. ¿Ese problema le pasa de verdad a esa gente, más que a gente al azar?
+2. ¿Nadie lo vende ya en Mercado Libre?
+3. Si alguien lo ofrece, ¿la gente lo compra o lo deja pasar?
+4. ¿Deja plata al precio que pagan?
+
+La regla de fondo: el modelo que propone una idea nunca es el que la evalúa. El problema lo mide
+otro modelo que no sabe qué se propuso, la competencia la juzga otro modelo, y las cuentas las
+hace el código.
 
 TP de IA Agéntica, Maestría en Explotación de Datos (UBA), 2026.
 
@@ -36,23 +47,68 @@ sola vez con todo congelado.
 
 ## Cómo funciona
 
+Lo que pasó en la última corrida de escala_dev, paso por paso:
+
+```mermaid
+flowchart TD
+    subgraph datos["📥 Datos de Mercado Libre"]
+        V["🗣️ Voto con las manos<br/>6.547 opiniones y preguntas<br/>de 41 productos (23 búsquedas)"]
+        P["👣 Voto con los pies<br/>qué se elige y qué se deja pasar<br/>en cada búsqueda"]
+    end
+
+    subgraph divergencia["💡 Divergencia: abrir ideas (LLM)"]
+        A["A · Personas<br/>cada texto → un mapa de empatía<br/>3.389 personas"]
+        S["S · Grupos por situación<br/>'corta el pelo en casa',<br/>'perro que tira de la correa'…<br/>30 grupos"]
+        B["B · Propuestas<br/>qué traer a cada grupo<br/>123 propuestas"]
+        A --> S --> B
+    end
+
+    subgraph convergencia["🔪 Convergencia: matar el humo"]
+        C1{"C1 ¿El problema existe?<br/>otro LLM lo busca en la gente<br/>y en un grupo al azar"}
+        C4{"C4 ¿Nadie lo vende?<br/>otro LLM juzga qué es competencia"}
+        C5{"C5 ¿La gente lo elige<br/>cuando se lo ofrecen?"}
+        C6{"C6 ¿Deja plata?<br/>costos con fuente"}
+        C1 -->|80| C4 -->|36| C5 -->|7| C6
+    end
+
+    V --> A
+    P --> S
+    B -->|123| C1
+    C1 -.->|43 mueren| X1["❌ problema no comprobado"]
+    C4 -.->|44 mueren| X2["❌ ya lo venden 3 o más"]
+    C5 -.->|29 mueren| X3["❌ se lo ofrecieron y no lo compró"]
+    C6 -->|1| OK["✅ sobrevive<br/>panel de pared con contenedores"]
+    C6 -->|6| COND["⏳ condicional<br/>con su próximo experimento:<br/>cotizar, probar el precio, preventa"]
 ```
-voces (opiniones y preguntas)     búsquedas (qué se elige y qué se deja pasar)
-          │                                     │
-          ▼                                     │
- A · una persona = un mapa de empatía (LLM)     │
- S · segmentos por situación de vida (LLM)  ◄───┤
- B · por segmento, qué traer, como propuesta    │
-     de valor (LLM)                             │
-          │                                     │
-          ▼                                     ▼
- C1 el dolor existe (otro LLM mide, Fisher decide)
- C3 hay demanda · C4 nadie lo vende · C5 la eligen (otro LLM juzga equivalencias; código decide)
- C6 deja plata · evidencia y riesgos
-          │
-          ▼
- sobrevive / condicional (con su próximo experimento) / descartada (con su motivo)
-```
+
+### Una idea de punta a punta: la guía para cortarse el flequillo
+
+1. **Personas.** Entre las opiniones de una máquina de cortar pelo (+50.000 vendidos) aparece gente
+   como "estoy aprendiendo a cortar con mi pareja" o "la compré para mi hija pero la uso más yo".
+2. **Grupo.** El LLM junta a 107 personas en "corta el pelo en casa, a la familia o a sí mismo",
+   aunque compraron productos distintos.
+3. **Propuesta.** Una guía con nivel que agarra el mechón para cortar flequillo y puntas parejos.
+   El dolor que alivia: el miedo a cortar desparejo y tener que ir a la peluquería a arreglarlo.
+4. **C1, ¿el problema existe?** Otro modelo, que no sabe qué se propuso, lee 150 textos de esos
+   productos y 150 de gente al azar: 18 tienen ese miedo sin resolver, contra 0 al azar. Pasa.
+5. **C3, ¿hay demanda?** El producto de origen vende +50.000. Pasa.
+6. **C4, ¿nadie lo vende?** Hay 8 guías publicadas y ninguna vendió +100. Todas llegan solo por
+   Compra Internacional: el hueco es de acceso. Pasa.
+7. **C5, ¿la eligen?** No hay ninguna con stock local, así que nadie tuvo la opción de dejarla
+   pasar. Pasa (sin evidencia en contra, que no es lo mismo que evidencia a favor).
+8. **C6, ¿deja plata?** Al precio que piden hoy ($21.078) deja 22% neto después de comisión,
+   impuestos, envío, publicidad y devoluciones. Pero nadie lo compró todavía a ese precio:
+   **queda condicional**. El próximo experimento es probar el precio y cotizar con un proveedor.
+
+### Una idea que murió: el quitapelos de mascotas
+
+En una corrida anterior el LLM propuso un quitapelos de mascotas para tapizados, y pasaba C4
+porque el criterio de qué era competencia lo escribía el mismo LLM. Pero en la búsqueda había un
+"Quita Pelo Mascota Ropa Tapizados" con +10.000 vendidos. Ahora la competencia la juzga otro
+modelo, que en 40 casos etiquetados a ciegas acierta 32 contra 8 del criterio viejo, y esa
+propuesta muere en C4.
+
+### Cada etapa en detalle
 
 | Etapa | Supuesto que pone a prueba | El dato que lo tira abajo | Quién |
 |---|---|---|---|
@@ -70,15 +126,6 @@ voces (opiniones y preguntas)     búsquedas (qué se elige y qué se deja pasar
 **Ningún número está elegido a ojo.** Cada uno sale de una fuente, de los datos o de una prueba
 estadística, y dice de dónde en `harness/umbrales.py`, `harness/costo_puesto.py` y
 `harness/dolor.py`. Lo que todavía no tiene fuente está marcado PENDIENTE.
-
-## Un ejemplo: cómo se mata el humo
-
-En una corrida anterior el LLM propuso un quitapelos de mascotas para tapizados y pasaba C4:
-según el criterio que escribía el mismo LLM, nadie lo vendía. Pero en la búsqueda había un "Quita
-Pelo Mascota Ropa Tapizados" con +10.000 vendidos. El autor de la idea estaba definiendo qué era
-su competencia. Ahora las equivalencias las juzga otro modelo; en 40 desacuerdos etiquetados a
-ciegas acierta 32 contra 8 del criterio viejo, y esa propuesta muere en C4. Con el juez, las
-sobrevivientes de las mismas propuestas bajaron de 16,7 a 8,7 por corrida: las otras eran humo.
 
 ## Correrlo
 
