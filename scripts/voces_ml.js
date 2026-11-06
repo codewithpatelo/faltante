@@ -18,6 +18,7 @@
 (async () => {
   const espera = (ms) => new Promise((r) => setTimeout(r, ms));
   const fecha = new Date().toISOString().slice(0, 10);
+  const MAX_OPINIONES = 200;   // algunos productos tienen miles; con 200 alcanza para contar una señal
 
   // Una página de Mercado Libre metida en la pantalla actual. Tiene que estar visible (aunque
   // casi transparente): las opiniones se cargan a medida que se ven.
@@ -44,7 +45,11 @@
 
   // --- Pasada 1: opiniones -------------------------------------------------------------------
   async function opinionesDe(url) {
-    const html = await fetch(new URL(url).pathname).then((r) => r.text());
+    // Las publicaciones clásicas (articulo.mercadolibre.com.ar/MLA-123-...) traen el ID en la
+    // dirección; no se pueden leer desde www, pero tampoco hace falta: título, precio y ventas
+    // ya están en la captura de la búsqueda.
+    const clasica = url.match(/articulo\.mercadolibre\.com\.ar\/MLA-(\d+)/);
+    const html = clasica ? `noindex/questions/MLA${clasica[1]}` : await fetch(new URL(url).pathname).then((r) => r.text());
     const item = (html.match(/noindex\/questions\/(MLA\d+)/) || [])[1] || null;
     // Las opiniones se piden con el ID de la publicación (el mismo de las preguntas); el ID de
     // catálogo de las páginas /p/ devuelve una lista vacía.
@@ -59,14 +64,14 @@
       const f = await abrir(`/noindex/catalog/reviews/${idOpiniones}?noIndex=true&access=view_all&modal=true`);
       const leer = () => [...f.contentDocument.querySelectorAll("p.ui-review-capability-comments__comment__content")];
       let antes = -1, quietas = 0;
-      while (quietas < 3) {                       // seguir bajando hasta que no aparezcan más
+      while (quietas < 3 && antes < MAX_OPINIONES) {   // seguir bajando hasta que no aparezcan más
         f.contentWindow.scrollTo(0, f.contentDocument.body.scrollHeight);
         await espera(1000);
         const ahora = leer().length;
         quietas = ahora === antes ? quietas + 1 : 0;
         antes = ahora;
       }
-      opiniones = leer().map((p) => limpio(p.textContent)).filter(Boolean);
+      opiniones = leer().map((p) => limpio(p.textContent)).filter(Boolean).slice(0, MAX_OPINIONES);
       f.remove();
     }
     return { url, item, titulo, precio, vendidos, calificacion, opiniones };
