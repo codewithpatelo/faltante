@@ -34,13 +34,16 @@ cuadrantes tiene un dato que lo llena; la propuesta se escribe como la mitad izq
 canvas de propuesta de valor (qué dolor alivia, qué ganancia crea, por qué le gana a lo que ya
 ve).
 
-**Un segmento tiene que cruzar búsquedas.**
-En la primera corrida, la mayoría de los segmentos salió de una sola búsqueda ("celular en el
-auto" eran los compradores de soportes): eran productos con otro nombre. Ahora el modelo ve la
-búsqueda de cada persona al definirlos, no valen los motivos de compra (regalo, reventa,
-garantía), y pasan al paso B solo los segmentos con 3 o más personas en 2 búsquedas o más. Cada
-propuesta cita 2 personas en cada una de 2 búsquedas: dos anclas de la misma búsqueda son casi
-el mismo producto.
+**Cada pieza entra solo si la evidencia dice que mejora.**
+Las versiones se comparan en escala_dev, 3 corridas cada una, con la misma medida: propuestas
+distintas que pasan C4 (nadie lo trae) y C5 (la eligen si se ofrece), y su proporción sobre las
+que pasan C1 a C3 (`data/evaluacion/versiones_escala_dev/`). Señales por producto más cruce: 0,7
+por corrida (10,5%). Personas con segmentos libres: 13,3 (25%), 40 ideas distintas en 3 corridas.
+Personas con segmentos obligados a cruzar búsquedas: 3,0 (12,5%). La idea de obligar a cruzar
+búsquedas sonaba bien (en la primera corrida muchos segmentos eran "los compradores de X"), pero
+empeoró la medida, así que se sacó. Lo que todavía no mide ninguna corrida: si las ideas que
+sobreviven son obvias (juicio humano a ciegas, pendiente) y si dejan margen (falta precio de
+proveedor).
 
 **El prompt se probó, no se adivinó.**
 Antes de pasar a personas se compararon 25 variantes del prompt que cruzaba señales (espacio
@@ -105,5 +108,5 @@ es individual y cada uno tiene que poder explicarlo por dentro; un framework dej
 
 **DeepSeek Flash.**
 Lo que falta es escala: leer 3.389 personas, armar segmentos y proponer costó USD 1,39 en la
-primera corrida de escala_dev, y rehacer segmentos y propuestas, USD 0,68. Leer y asignar
+primera corrida de escala_dev, y rehacer segmentos y propuestas, unos USD 0,95. Leer y asignar
 personas va sin razonamiento (es clasificar); definir segmentos y proponer, con razonamiento.

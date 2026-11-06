@@ -28,8 +28,8 @@ from harness.modelo import MODELO, DeepSeek, con_reintento, costo, en_paralelo
 from harness.voces import RAIZ, productos
 
 SKILL_B = RAIZ / "skills/proponer_a_un_segmento/SKILL.md"
-MIN_PERSONAS_POR_BUSQUEDA = 2     # en cada búsqueda, la necesidad la dicen al menos 2 personas (como toda señal del embudo)
-MIN_BUSQUEDAS_CITADAS = 2         # en al menos 2 búsquedas distintas: la necesidad cruza productos que no compiten entre sí
+MIN_PERSONAS_POR_PRODUCTO = 2     # en cada producto, la necesidad la dicen al menos 2 personas (como toda señal del embudo)
+MIN_PRODUCTOS_CITADOS = 2         # en al menos 2 productos distintos: la necesidad cruza productos
 REPREGUNTAR = True                # pedir una segunda tanda distinta: lo que más rindió al comparar prompts (DECISIONES.md)
 
 
@@ -38,14 +38,14 @@ def prompt_b(mapa: dict) -> str:
             f"{json.dumps(mapa, ensure_ascii=False, indent=1)}\n\nRespondé SOLO con el JSON de la salida.")
 
 
-def errores_de_propuesta(o: dict, miembros: dict[str, dict], todos: dict) -> list[str]:
-    """Guardrail del paso B: las personas citadas son del segmento, alcanzan y cruzan búsquedas."""
+def errores_de_propuesta(o: dict, miembros: dict[str, dict]) -> list[str]:
+    """Guardrail del paso B: las personas citadas son del segmento, alcanzan y cruzan productos."""
     citadas = o.get("personas") or []
     errores = [f"cita a alguien que no es del segmento: {i}" for i in citadas if i not in miembros]
-    por_busqueda = Counter(todos[miembros[i]["producto"]]["busqueda"] for i in dict.fromkeys(citadas) if i in miembros)
-    if sum(n >= MIN_PERSONAS_POR_BUSQUEDA for n in por_busqueda.values()) < MIN_BUSQUEDAS_CITADAS:
-        errores.append(f"tiene que citar al menos {MIN_PERSONAS_POR_BUSQUEDA} personas de cada una de al menos "
-                       f"{MIN_BUSQUEDAS_CITADAS} búsquedas distintas")
+    por_producto = Counter(miembros[i]["producto"] for i in dict.fromkeys(citadas) if i in miembros)
+    if sum(n >= MIN_PERSONAS_POR_PRODUCTO for n in por_producto.values()) < MIN_PRODUCTOS_CITADOS:
+        errores.append(f"tiene que citar al menos {MIN_PERSONAS_POR_PRODUCTO} personas de cada uno de al menos "
+                       f"{MIN_PRODUCTOS_CITADOS} productos distintos")
     if not o.get("palabras_clave") or not o.get("busqueda_ml"):
         errores.append("faltan palabras_clave o busqueda_ml")
     return errores
@@ -53,9 +53,7 @@ def errores_de_propuesta(o: dict, miembros: dict[str, dict], todos: dict) -> lis
 
 def proponer(cliente, mapa: dict, miembros: dict[str, dict], traza: list) -> list[dict]:
     """Paso B para un segmento: una tanda de propuestas y, si REPREGUNTAR, otra distinta."""
-    todos = productos()
-    errores = lambda o: errores_de_propuesta(o, miembros, todos)
-    validar = lambda d: {o.get("id"): e for o in d.get("oportunidades", []) if (e := errores(o))}
+    validar = lambda d: {o.get("id"): e for o in d.get("oportunidades", []) if (e := errores_de_propuesta(o, miembros))}
     prompt, etiqueta = prompt_b(mapa), f"B {mapa['segmento']}"
     ops = con_reintento(cliente, prompt, validar, traza, etiqueta).get("oportunidades", [])
     if REPREGUNTAR and ops:
@@ -63,7 +61,7 @@ def proponer(cliente, mapa: dict, miembros: dict[str, dict], traza: list) -> lis
         otra = f"{prompt}\n\nYa propusiste estas:\n{previas}\nProponé hasta 3 MÁS, distintas de todas estas."
         ops += [{**o, "id": f"{o.get('id', 'O')}b"} for o in con_reintento(cliente, otra, validar, traza, f"{etiqueta} otra").get("oportunidades", [])]
     return [{**o, "id": f"{mapa['segmento']}.{o.get('id', 'O')}", "segmento": mapa["segmento"]}
-            for o in ops if not errores(o)]
+            for o in ops if not errores_de_propuesta(o, miembros)]
 
 
 def al_formato_del_embudo(oportunidades: list[dict], tarjetas: dict[str, dict], particion: str) -> dict:

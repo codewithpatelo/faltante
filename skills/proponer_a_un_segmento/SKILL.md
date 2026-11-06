@@ -13,8 +13,7 @@ el programa después trata de refutarlo con datos.
 
 ## Entrada: el mapa de empatía del segmento
 
-- **Quiénes son:** la situación que comparten y cuántas personas son, de qué productos y búsquedas
-  (`personas_por_busqueda`).
+- **Quiénes son:** la situación que comparten y cuántas personas son, de qué productos y búsquedas.
 - **Qué hacen (voto con los pies):** qué eligieron y qué dejaron pasar en sus búsquedas.
 - **Qué ven:** lo que el mercado les ofrece hoy.
 - **Qué dicen y qué temen (voto con las manos):** una línea por persona, con su ID
@@ -46,7 +45,7 @@ cualquiera lo ve mirando la búsqueda.
 ## Criterios (los chequea el programa)
 
 - `personas`: IDs del segmento cuyas voces sostienen la necesidad: al menos 2 personas de cada
-  una de al menos 2 búsquedas distintas (`personas_por_busqueda` dice de dónde viene cada grupo).
+  uno de al menos 2 productos distintos.
 - `palabras_clave`: palabras que aparecen en esas voces cuando hablan de la necesidad; el
   programa las cuenta en todas las opiniones y preguntas de cada producto (C1 y C2).
 - `busqueda_ml`: lo que alguien escribiría en Mercado Libre para encontrar lo propuesto.
