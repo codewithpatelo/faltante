@@ -18,6 +18,7 @@ los devuelve una vez para que corrija; lo que sigue mal se descarta en el embudo
 
 from __future__ import annotations
 
+import http.client
 import json
 import os
 import re
@@ -40,7 +41,7 @@ MAX_TOKENS_DE_SALIDA = 32000      # DeepSeek Flash razona antes de responder (ha
 REINTENTOS = 1                    # devolver los errores del guardrail al modelo una vez
 EN_PARALELO = 8                   # llamadas simultáneas a la API
 SEGUNDOS_POR_LLAMADA = 900        # razonando 32.000 tokens puede tardar más de 5 minutos
-INTENTOS_DE_RED = 3               # una corrida larga no se cae por un corte de red
+INTENTOS_DE_RED = 3               # una corrida larga no se cae por un corte de red (al conectar o a mitad de la respuesta)
 SKILL_A = RAIZ / "skills/leer_voces/SKILL.md"
 SKILL_B = RAIZ / "skills/cruzar_senales/SKILL.md"
 # Cómo trabajar en el paso B, congelado antes de test: la ronda 2 de harness/optimizar_prompt.py
@@ -191,7 +192,7 @@ class DeepSeek:
                 with urllib.request.urlopen(pedido, timeout=SEGUNDOS_POR_LLAMADA) as r:
                     d = json.loads(r.read())
                 break
-            except (urllib.error.URLError, TimeoutError, ConnectionError):
+            except (urllib.error.URLError, http.client.HTTPException, TimeoutError, ConnectionError, json.JSONDecodeError):
                 if intento == INTENTOS_DE_RED - 1:
                     raise
                 time.sleep(30 * (intento + 1))
