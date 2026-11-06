@@ -1,6 +1,71 @@
 {
  "filas": [
   {
+   "version": "eval-dolores",
+   "corrida": "42245730803",
+   "propuestas": 54,
+   "c1_c3": 25,
+   "c4": 14,
+   "c5": 7,
+   "c6_o_condicional": 0,
+   "falta_capturar": 0,
+   "sobrevivientes": [
+    "Cepillo eléctrico inalámbrico de agitación para tapizados (tipo power ",
+    "Cinturón lumbar de tracción y descompresión inflable, con calor y ajus",
+    "Lámpara de trabajo plegable recargable tipo taller, con cuerpo de vari",
+    "Mancuernas de 2 a 24 kg con selector de peso por manija giratoria (dia",
+    "Multiestilizador de aire tipo airwrap: secador con cepillos y barras q",
+    "Sombrilla de techo para auto completo (car umbrella): se abre sobre el",
+    "Vaporeta de mano (limpiador a vapor portátil) con boquilla de chorro f"
+   ]
+  },
+  {
+   "version": "eval-dolores",
+   "corrida": "42245774931",
+   "propuestas": 64,
+   "c1_c3": 39,
+   "c4": 24,
+   "c5": 10,
+   "c6_o_condicional": 0,
+   "falta_capturar": 0,
+   "sobrevivientes": [
+    "Almohadilla térmica cervical y de hombros con peso y calor húmedo regu",
+    "Aspiradora de mano con pack de batería extraíble que se cambia en segu",
+    "Bebedero de boquilla de acero con válvula a presión para montar en par",
+    "Caja master mayorista surtida (case pack) con cantidad exacta de unida",
+    "Hamaca cervical de tracción por gravedad, con soporte acolchado para c",
+    "Mini limpia-tapizados (extractora) portátil de inyección y extracción:",
+    "Mopa de esponja PVA con escurridor de rodillo integrado al mango: la e",
+    "Mopa de tiras de silicona de una sola pieza con escurridor manual de d",
+    "Programa de reposición mayorista por suscripción, con reserva de stock",
+    "Sistema de mopa plana con balde escurridor de prensa a rodillo: el cab"
+   ]
+  },
+  {
+   "version": "eval-dolores",
+   "corrida": "42245819127",
+   "propuestas": 72,
+   "c1_c3": 42,
+   "c4": 21,
+   "c5": 12,
+   "c6_o_condicional": 1,
+   "falta_capturar": 0,
+   "sobrevivientes": [
+    "Balde escurridor profesional con ruedas y tapón de desagote, con estru",
+    "Balde mopa centrífugo con centrifugado eléctrico a batería recargable ",
+    "Bebedero dispensador tipo 'dispensador de agua de oficina': garrafón e",
+    "Bolsas y recipientes de silicona platinum reutilizables (tipo Stasher ",
+    "Electroestimulador TENS/EMS inalámbrico recargable de uso doméstico, c",
+    "Estación de descanso con ventilador (base de enfriamiento para herrami",
+    "Extractor de tapicería portátil que inyecta agua con detergente y la a",
+    "Lámina estática de control solar reutilizable, sin adhesivo, en rollo ",
+    "Parasol inflable de PVC con válvula (mecánica de colchoneta y salvavid",
+    "Parasol interior a medida por modelo de auto, con patrón de corte para",
+    "Pistola de masaje de percusión con sensor de presión y control automát",
+    "Soporte de celular para auto con base de anclaje específica para el mo"
+   ]
+  },
+  {
    "version": "eval-personas-cruzan",
    "corrida": "42228258740",
    "propuestas": 57,
