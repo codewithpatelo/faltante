@@ -11,9 +11,6 @@ import itertools
 import random
 from dataclasses import dataclass
 
-from harness.voces import RAIZ
-
-BASE = (RAIZ / "skills/cruzar_senales/SKILL.md").read_text(encoding="utf-8")
 CANTIDAD = 25
 SEMILLA = 7
 
@@ -41,7 +38,7 @@ DIMENSIONES = {
     },
     "diversidad": {
         "una_pasada": "",
-        "repreguntar": "",   # se implementa con una segunda llamada: "otras distintas de estas" (harness/explorar_prompts.py)
+        "repreguntar": "",   # se implementa con una segunda llamada: "otras distintas de estas" (harness/divergente.py::proponer)
     },
     "rol": {
         "importador": "Sos un importador argentino que vive de encontrar lo que nadie trae.",
@@ -70,16 +67,11 @@ class Variante:
         return self.opciones["diversidad"] == "repreguntar"
 
     def instrucciones(self) -> str:
-        """La parte que cambia entre variantes (y la que reescribe el optimizador): rol y cómo trabajar."""
+        """La parte que cambia entre variantes (y la que reescribe el optimizador): rol y cómo trabajar.
+        El resto del prompt lo arma harness/divergente.py::prompt_b."""
         o = self.opciones
         partes = [DIMENSIONES["rol"][o["rol"]]] + [DIMENSIONES[d][o[d]] for d in ("estructura", "abduccion", "evitar_obvio", "razonamiento")]
         return "\n\n".join(x for x in partes if x)
-
-    def prompt(self, señales: str, instrucciones: str | None = None) -> str:
-        """El prompt completo: la skill base (qué devolver y qué chequea el programa), las
-        instrucciones de esta variante y las señales."""
-        return "\n\n".join((BASE, "## Cómo trabajar en esta corrida", instrucciones or self.instrucciones(),
-                             "---", "SEÑALES VERIFICADAS", señales, "Respondé SOLO con el JSON de la salida."))
 
 
 def variantes(cantidad: int = CANTIDAD, semilla: int = SEMILLA) -> list[Variante]:

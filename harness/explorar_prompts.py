@@ -27,9 +27,8 @@ import sys
 from concurrent.futures import ThreadPoolExecutor
 from statistics import mean, pstdev
 
-from harness.chequeos import errores_de_citas
-from harness.divergente import (EN_PARALELO, DeepSeek, _con_reintento, costo, cruzar, lineas_de_señales,
-                                señales_de_la_particion, señales_verificadas)
+from harness.divergente import (EN_PARALELO, DeepSeek, _con_reintento, costo, proponer, señales_de_la_particion,
+                                señales_verificadas)
 from harness.embudo import EMBUDO, Propuesta
 from harness.espacio_de_prompts import variantes
 from harness.voces import RAIZ, productos, sin_acentos
@@ -50,17 +49,6 @@ def señales_del_paso_a(cliente, particion: str, capturas: dict, traza: list) ->
     señales = señales_de_la_particion(cliente, particion, capturas, traza)
     archivo.write_text(json.dumps(señales, ensure_ascii=False, indent=1), encoding="utf-8")
     return señales
-
-
-def proponer_con(cliente, variante, verificadas: list[dict], traza: list, instrucciones: str | None = None) -> list[dict]:
-    texto = lineas_de_señales(verificadas)
-    ops = cruzar(cliente, verificadas, traza, variante.prompt(texto, instrucciones), f"B {variante.id}")
-    if variante.repreguntar and ops:
-        previas = "\n".join(f"- {o.get('que_traer', '')}" for o in ops)
-        otra = variante.prompt(texto, instrucciones) + f"\n\nYa propusiste estas:\n{previas}\nProponé hasta 5 MÁS, distintas de todas estas."
-        nuevas = cruzar(cliente, verificadas, traza, otra, f"B {variante.id} otra")
-        ops += [{**o, "id": f"{o.get('id', 'O')}b"} for o in nuevas]
-    return ops
 
 
 def validas(ops: list[dict], señales: dict, todos: dict) -> list[dict]:
@@ -104,7 +92,7 @@ def medir_variante(cliente, v, verificadas, señales, todos, instrucciones: str 
     """Una medición: propone con la variante y cuenta válidas (guardrail y C1 a C3), distintas y
     no obvias. Devuelve también el resultado de cada propuesta: es el feedback del optimizador."""
     traza = []
-    ops = proponer_con(cliente, v, verificadas, traza, instrucciones)
+    ops = proponer(cliente, verificadas, traza, instrucciones or v.instrucciones(), v.repreguntar, f"B {v.id}")
     validas_ = validas(ops, señales, todos)
     buenas = sin_repetidas(validas_)
     juicios = juzgar(cliente, buenas, señales, todos, traza)

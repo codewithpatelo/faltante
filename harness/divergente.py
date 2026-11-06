@@ -4,7 +4,10 @@
                                                devuelve SEÑALES citando textos.
     B · entre todos   (skills/cruzar_senales)  recibe las señales verificadas de todos los
                                                productos y propone OPORTUNIDADES que conectan
-                                               señales de al menos 2 productos distintos.
+                                               señales de al menos 2 productos distintos, en dos
+                                               tandas (la segunda, distinta de la primera). Cómo
+                                               trabajar sale del espacio de prompts y su
+                                               optimización (skills/cruzar_senales/como_trabajar.md).
 
 Mirar un producto solo da ideas obvias (su repuesto, su versión mejorada); lo no obvio sale de
 cruzar. En los dos pasos el guardrail (código) revisa lo que cita el LLM y, si hay errores, se
@@ -40,6 +43,10 @@ SEGUNDOS_POR_LLAMADA = 900        # razonando 32.000 tokens puede tardar más de
 INTENTOS_DE_RED = 3               # una corrida larga no se cae por un corte de red
 SKILL_A = RAIZ / "skills/leer_voces/SKILL.md"
 SKILL_B = RAIZ / "skills/cruzar_senales/SKILL.md"
+# Cómo trabajar en el paso B, congelado antes de test: la ronda 2 de harness/optimizar_prompt.py
+# sobre escala_dev (data/serendipia/optimizacion_escala_dev.json), la única que mejoró.
+COMO_TRABAJAR_B = RAIZ / "skills/cruzar_senales/como_trabajar.md"
+REPREGUNTAR = True                # pedir una segunda tanda distinta: la decisión que más rindió en dev y en escala_dev
 
 
 # --- Paso A: señales de un producto --------------------------------------------------------
@@ -86,9 +93,24 @@ def lineas_de_señales(verificadas: list[dict]) -> str:
                      f" — \"{s['cita'][:120]}\"" for s in verificadas)
 
 
-def prompt_b(verificadas: list[dict]) -> str:
-    return (f"{SKILL_B.read_text(encoding='utf-8')}\n\n---\n\nSEÑALES VERIFICADAS\n{lineas_de_señales(verificadas)}\n\n"
-            "Respondé SOLO con el JSON de la salida.")
+def prompt_b(verificadas: list[dict], instrucciones: str | None = None) -> str:
+    """La skill (qué devolver y qué chequea el programa), cómo trabajar y las señales.
+    `instrucciones` reemplaza a las congeladas para probar otras (harness/explorar_prompts.py)."""
+    return "\n\n".join((SKILL_B.read_text(encoding="utf-8"), "## Cómo trabajar en esta corrida",
+                        instrucciones or COMO_TRABAJAR_B.read_text(encoding="utf-8"), "---", "SEÑALES VERIFICADAS",
+                        lineas_de_señales(verificadas), "Respondé SOLO con el JSON de la salida."))
+
+
+def proponer(cliente, verificadas: list[dict], traza: list, instrucciones: str | None = None,
+             repreguntar: bool = REPREGUNTAR, etiqueta: str = "B") -> list[dict]:
+    """Paso B completo: una tanda de oportunidades y, si `repreguntar`, otra distinta de la primera."""
+    prompt = prompt_b(verificadas, instrucciones)
+    ops = cruzar(cliente, verificadas, traza, prompt, etiqueta)
+    if repreguntar and ops:
+        previas = "\n".join(f"- {o.get('que_traer', '')}" for o in ops)
+        otra = f"{prompt}\n\nYa propusiste estas:\n{previas}\nProponé hasta 5 MÁS, distintas de todas estas."
+        ops += [{**o, "id": f"{o.get('id', 'O')}b"} for o in cruzar(cliente, verificadas, traza, otra, f"{etiqueta} otra")]
+    return ops
 
 
 def errores_de_cruce(oportunidad: dict, ids: set[str]) -> list[str]:
@@ -100,11 +122,11 @@ def errores_de_cruce(oportunidad: dict, ids: set[str]) -> list[str]:
     return errores
 
 
-def cruzar(cliente, verificadas: list[dict], traza: list, prompt: str | None = None, etiqueta: str = "B") -> list[dict]:
-    """Paso B. `prompt` permite probar otra variante del prompt (harness/explorar_prompts.py)."""
+def cruzar(cliente, verificadas: list[dict], traza: list, prompt: str, etiqueta: str) -> list[dict]:
+    """Una llamada del paso B, con el guardrail del cruce y un reintento."""
     ids = {s["id"] for s in verificadas}
     validar = lambda d: {o.get("id"): e for o in d.get("oportunidades", []) if (e := errores_de_cruce(o, ids))}
-    return _con_reintento(cliente, prompt or prompt_b(verificadas), validar, traza, etiqueta).get("oportunidades", [])
+    return _con_reintento(cliente, prompt, validar, traza, etiqueta).get("oportunidades", [])
 
 
 def señales_verificadas(señales: dict[str, list], todos: dict[str, dict]) -> list[dict]:
@@ -193,7 +215,7 @@ def divergir(cliente, particion: str, capturas: dict) -> dict:
     todos, traza = productos(), []
     señales = señales_de_la_particion(cliente, particion, capturas, traza)
     verificadas = señales_verificadas(señales, todos)
-    oportunidades = cruzar(cliente, verificadas, traza) if verificadas else []
+    oportunidades = proponer(cliente, verificadas, traza) if verificadas else []
     return {"quien": MODELO, "costo": costo(traza), "traza": traza, "señales": señales, "oportunidades": oportunidades}
 
 

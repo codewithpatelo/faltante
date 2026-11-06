@@ -15,7 +15,8 @@ serendipia:
 	$(PY) -m harness.correr test
 
 # Igual, pero las propuestas las hace DeepSeek por la API (requiere DEEPSEEK_API_KEY), en dos
-# pasos: señales por producto y oportunidades que cruzan productos. PARTICION: test o escala.
+# pasos: señales por producto y oportunidades que cruzan productos. PARTICION: dev, test,
+# escala_dev o escala_test.
 # Si el modelo propone búsquedas nuevas, hay que capturarlas con scripts/captura_ml.js para C4.
 PARTICION ?= test
 serendipia-api:
