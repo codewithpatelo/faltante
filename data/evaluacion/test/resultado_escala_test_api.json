@@ -1,0 +1,71 @@
+{
+ "llm": {
+  "todo": {
+   "propuestas": 109,
+   "no_descartadas_distintas": 0,
+   "sobreviven": 0,
+   "proporcion": 0.0,
+   "mueren_en": {
+    "C4 hueco": 79,
+    "C1 dolor": 30
+   },
+   "no_descartadas": []
+  },
+  "limpio_productos_nuevos": {
+   "propuestas": 61,
+   "no_descartadas_distintas": 0,
+   "sobreviven": 0,
+   "proporcion": 0.0,
+   "mueren_en": {
+    "C4 hueco": 42,
+    "C1 dolor": 19
+   },
+   "no_descartadas": []
+  }
+ },
+ "B1": {
+  "todo": {
+   "propuestas": 136,
+   "no_descartadas_distintas": 0,
+   "sobreviven": 0,
+   "proporcion": 0.0,
+   "mueren_en": {
+    "C4 hueco": 104,
+    "C1 dolor": 32
+   },
+   "no_descartadas": []
+  },
+  "limpio_productos_nuevos": {
+   "propuestas": 90,
+   "no_descartadas_distintas": 0,
+   "sobreviven": 0,
+   "proporcion": 0.0,
+   "mueren_en": {
+    "C4 hueco": 72,
+    "C1 dolor": 18
+   },
+   "no_descartadas": []
+  }
+ },
+ "B2": {
+  "todo": {
+   "propuestas": 3,
+   "no_descartadas_distintas": 0,
+   "sobreviven": 0,
+   "proporcion": 0.0,
+   "mueren_en": {
+    "C4 hueco": 2,
+    "C1 dolor": 1
+   },
+   "no_descartadas": []
+  },
+  "limpio_productos_nuevos": {
+   "propuestas": 0,
+   "no_descartadas_distintas": 0,
+   "sobreviven": 0,
+   "proporcion": 0.0,
+   "mueren_en": {},
+   "no_descartadas": []
+  }
+ }
+}
