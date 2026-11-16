@@ -73,8 +73,9 @@ regla que detecta pedidos de repuesto.
 
 **La hipótesis se sostiene en test**: el LLM deja 4 veces más oportunidades que el mejor
 baseline, y una proporción mayor de sus propuestas resiste el embudo (15% contra 4%; Fisher
-unilateral, p = 0,002; en el test limpio, p = 0,003). La diferencia es mucho mayor que la
-variación entre corridas medida en dev (desvío de 1,5 oportunidades en 3 corridas). Además, las
+unilateral, p = 0,002; en el test limpio, p = 0,003). Es una sola corrida y el LLM varía bastante
+entre corridas (en el dev chico, la misma versión dejó 14, 3 y 9 en tres corridas), así que el
+número exacto importa menos que la dirección, que se repitió en dev y en test. Además, las
 del LLM son productos concretos (un adaptador digital de torque, barras de techo inflables, un
 andador de empuje para bebés, una soga de saltar sin cable…), y las de B1 no: "una versión que
 resuelva la queja 'algo'" o "'poco'". Si son buenas ideas lo dice el juicio humano a ciegas
