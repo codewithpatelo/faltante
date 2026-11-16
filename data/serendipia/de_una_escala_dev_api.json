@@ -1,0 +1,2834 @@
+{
+ "quien": "deepseek-flash",
+ "metodo": "B4",
+ "costo": {
+  "tokens_entrada": 1263309,
+  "tokens_salida": 286614,
+  "usd": 0.7229,
+  "segundos": 1639.2
+ },
+ "traza": [
+  {
+   "paso": "A F012",
+   "intento": 0,
+   "segundos": 0.74,
+   "tokens": {
+    "entrada": 783,
+    "salida": 6
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "S definir",
+   "intento": 0,
+   "segundos": 75.76,
+   "tokens": {
+    "entrada": 60805,
+    "salida": 14848
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "S asignar",
+   "intento": 0,
+   "segundos": 4.31,
+   "tokens": {
+    "entrada": 7996,
+    "salida": 1352
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "S asignar",
+   "intento": 0,
+   "segundos": 4.38,
+   "tokens": {
+    "entrada": 7909,
+    "salida": 1374
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "S asignar",
+   "intento": 0,
+   "segundos": 4.42,
+   "tokens": {
+    "entrada": 8027,
+    "salida": 1508
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "S asignar",
+   "intento": 0,
+   "segundos": 4.43,
+   "tokens": {
+    "entrada": 7603,
+    "salida": 1308
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "S asignar",
+   "intento": 0,
+   "segundos": 4.51,
+   "tokens": {
+    "entrada": 8187,
+    "salida": 1326
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "S asignar",
+   "intento": 0,
+   "segundos": 4.6,
+   "tokens": {
+    "entrada": 7734,
+    "salida": 1364
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "S asignar",
+   "intento": 0,
+   "segundos": 4.62,
+   "tokens": {
+    "entrada": 7653,
+    "salida": 1458
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "S asignar",
+   "intento": 0,
+   "segundos": 4.65,
+   "tokens": {
+    "entrada": 8478,
+    "salida": 1285
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "S asignar",
+   "intento": 0,
+   "segundos": 3.87,
+   "tokens": {
+    "entrada": 7551,
+    "salida": 1344
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "S asignar",
+   "intento": 0,
+   "segundos": 4.29,
+   "tokens": {
+    "entrada": 8176,
+    "salida": 1302
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "S asignar",
+   "intento": 0,
+   "segundos": 4.24,
+   "tokens": {
+    "entrada": 8405,
+    "salida": 1476
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "S asignar",
+   "intento": 0,
+   "segundos": 4.28,
+   "tokens": {
+    "entrada": 7759,
+    "salida": 1346
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "S asignar",
+   "intento": 0,
+   "segundos": 4.55,
+   "tokens": {
+    "entrada": 8058,
+    "salida": 1444
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "S asignar",
+   "intento": 0,
+   "segundos": 4.61,
+   "tokens": {
+    "entrada": 7746,
+    "salida": 1462
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "S asignar",
+   "intento": 0,
+   "segundos": 4.57,
+   "tokens": {
+    "entrada": 8661,
+    "salida": 1478
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "S asignar",
+   "intento": 0,
+   "segundos": 4.6,
+   "tokens": {
+    "entrada": 8091,
+    "salida": 1500
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "S asignar",
+   "intento": 0,
+   "segundos": 4.38,
+   "tokens": {
+    "entrada": 8300,
+    "salida": 1343
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "S asignar",
+   "intento": 0,
+   "segundos": 4.18,
+   "tokens": {
+    "entrada": 7529,
+    "salida": 1384
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "S asignar",
+   "intento": 0,
+   "segundos": 4.54,
+   "tokens": {
+    "entrada": 8164,
+    "salida": 1472
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "S asignar",
+   "intento": 0,
+   "segundos": 4.14,
+   "tokens": {
+    "entrada": 6919,
+    "salida": 1269
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "S asignar",
+   "intento": 0,
+   "segundos": 4.44,
+   "tokens": {
+    "entrada": 7710,
+    "salida": 1378
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "S asignar",
+   "intento": 0,
+   "segundos": 4.52,
+   "tokens": {
+    "entrada": 7596,
+    "salida": 1402
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "S asignar",
+   "intento": 0,
+   "segundos": 4.49,
+   "tokens": {
+    "entrada": 7627,
+    "salida": 1308
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "S asignar",
+   "intento": 0,
+   "segundos": 4.72,
+   "tokens": {
+    "entrada": 7860,
+    "salida": 1496
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "S asignar",
+   "intento": 0,
+   "segundos": 4.5,
+   "tokens": {
+    "entrada": 8001,
+    "salida": 1384
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "S asignar",
+   "intento": 0,
+   "segundos": 4.22,
+   "tokens": {
+    "entrada": 8530,
+    "salida": 1436
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "S asignar",
+   "intento": 0,
+   "segundos": 4.16,
+   "tokens": {
+    "entrada": 7645,
+    "salida": 1392
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "S asignar",
+   "intento": 0,
+   "segundos": 4.49,
+   "tokens": {
+    "entrada": 8895,
+    "salida": 1498
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "S asignar",
+   "intento": 0,
+   "segundos": 4.51,
+   "tokens": {
+    "entrada": 7819,
+    "salida": 1362
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "S asignar",
+   "intento": 0,
+   "segundos": 4.6,
+   "tokens": {
+    "entrada": 8277,
+    "salida": 1422
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "S asignar",
+   "intento": 0,
+   "segundos": 4.62,
+   "tokens": {
+    "entrada": 7886,
+    "salida": 1476
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "S asignar",
+   "intento": 0,
+   "segundos": 4.46,
+   "tokens": {
+    "entrada": 8535,
+    "salida": 1484
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "S asignar",
+   "intento": 0,
+   "segundos": 3.8,
+   "tokens": {
+    "entrada": 8072,
+    "salida": 1263
+   },
+   "errores": {},
+   "corte": "stop",
+   "respuesta_ilegible": "{\"asignaciones\":[[\"F060.o51\",\"G23\"],[\"F060.o52\",\"G23\"],[\"F060.o57\",\"-\"],[\"F060.o58\",\"-\"],[\"F060.o61\",\"G23\"],[\"F060.o62\",\"G23\"],[\"F060.o64\",\"-\"],[\"F060.o65\",\"G23\"],[\"F060.o66\",\"G23\"],[\"F060.o69\",\"G23\"],[\"F060.o70\",\"G23\"],[\"F060.o78\",\"G23\"],[\"F060.o88\",\"G23\"],[\"F060.o90\",\"-\"],[\"F060.o91\",\"G23\"],[\"F060.o95\",\"G23\"],[\"F060.o96\",\"-\"],[\"F060.o99\",\"G23\"],[\"F060.o101\",\"G23\"],[\"F060.o105\",\"G23\"],[\"F060.o106\",\"G23\"],[\"F060.o107\",\"G23\"],[\"F060.o108\",\"-\"],[\"F060.o110\",\"G23\"],[\"F060.o111\",\"G23\"],[\"F060.o113\",\"-\"],[\"F060.o119\",\"-\"],[\"F060.o120\",\"G23\"],[\"F060.o123\",\"-\"],[\"F060.o124\",\"G23\"],[\"F060.o125\",\"G23\"],[\"F060.o129\",\"-\"],[\"F060.o134\",\"G23\"],[\"F060.o142\",\"G23\"],[\"F060.o143\",\"G23\"],[\"F060.o145\",\"G23\"],[\"F060.o146\",\"G23\"],[\"F060.o150\",\"G23\"],[\"F060.o155\",\"-\"],[\"F060.o158\",\"G23\"],[\"F060.o159\",\"G23\"],[\"F060.o160\",\"G23\"],[\"F060.o162\",\"G23\"],[\"F060.o166\",\"-\"],[\"F060.o169\",\"G23\"],[\"F060.o176\",\"-\"],[\"F060.o178\",\"-\"],[\"F060.o179\",\"G23\"],[\"F060.o181\",\"G23\"],[\"F060.o182\",\"G23\"],[\"F060.o186\",\"G23\"],[\"F060.o193\",\"G23\"],[\"F060.o197\",\"G23\"],[\"F060.o198\",\"G23\"],[\"F061.o1\",\"-\"],[\"F061.o2\",\"-\"],[\"F061.o3\",\"-\"],[\"F061.o4\",\"-\"],[\"F061.o5\",\"-\"],[\"F061.o6\",\"-\"],[\"F061.o7\",\"-\"],[\"F061.o8\",\"-\"],[\"F061.o11\",\"-\"],[\"F061.o12\",\"-\"],[\"F061.o15\",\"-\"],[\"F061.o16\",\"-\"],[\"F061.o17\",\"-\"],[\"F061.o19\",\"-\"],[\"F061.o22\",\"-\"],[\"F061.o23\",\"-\"],[\"F061.o24\",\"-\"],[\"F061.o25\",\"-\"],[\"F061.o62\",\"-\"],[\"F061.o65\",\"-\"],[\"F061.o67\",\"-\"],[\"F061.o69\",\"-\"],[\"F061.o71\",\"-\"],[\"F061.o72\",\"-\"],[\"F061.o83\",\"-\"],[\"F061.o86\",\"-\"],[\"F061.o88\",\"-\""
+  },
+  {
+   "paso": "S asignar",
+   "intento": 0,
+   "segundos": 4.19,
+   "tokens": {
+    "entrada": 7783,
+    "salida": 1330
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "S asignar",
+   "intento": 0,
+   "segundos": 4.03,
+   "tokens": {
+    "entrada": 7500,
+    "salida": 1243
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "S asignar",
+   "intento": 0,
+   "segundos": 3.98,
+   "tokens": {
+    "entrada": 7865,
+    "salida": 1252
+   },
+   "errores": {},
+   "corte": "stop",
+   "respuesta_ilegible": "{\"asignaciones\":[[\"F078.o37\",\"G12\"],[\"F078.o38\",\"-\"],[\"F078.o39\",\"G11\"],[\"F078.o40\",\"G11\"],[\"F078.o42\",\"-\"],[\"F078.o43\",\"-\"],[\"F078.o44\",\"G12\"],[\"F078.o45\",\"-\"],[\"F078.o46\",\"-\"],[\"F078.o47\",\"G12\"],[\"F078.o48\",\"-\"],[\"F078.o49\",\"-\"],[\"F078.o50\",\"-\"],[\"F078.o51\",\"-\"],[\"F078.o53\",\"G12\"],[\"F078.o54\",\"-\"],[\"F078.o55\",\"-\"],[\"F078.o56\",\"-\"],[\"F078.o57\",\"-\"],[\"F078.o59\",\"-\"],[\"F078.o60\",\"G12\"],[\"F078.o61\",\"G12\"],[\"F078.o62\",\"-\"],[\"F078.o66\",\"G10\"],[\"F078.o69\",\"-\"],[\"F078.o70\",\"-\"],[\"F078.o72\",\"-\"],[\"F078.o73\",\"G11\"],[\"F078.o74\",\"G12\"],[\"F078.o75\",\"-\"],[\"F078.o76\",\"G11\"],[\"F078.o78\",\"-\"],[\"F078.o79\",\"-\"],[\"F078.o81\",\"-\"],[\"F078.o83\",\"-\"],[\"F078.o84\",\"-\"],[\"F078.o85\",\"-\"],[\"F078.o88\",\"-\"],[\"F078.o89\",\"G12\"],[\"F078.o90\",\"G12\"],[\"F078.o91\",\"G12\"],[\"F078.o92\",\"G12\"],[\"F078.o93\",\"-\"],[\"F078.o94\",\"-\"],[\"F078.o95\",\"-\"],[\"F078.o96\",\"-\"],[\"F078.o97\",\"-\"],[\"F078.o98\",\"-\"],[\"F078.o99\",\"G10\"],[\"F078.o100\",\"-\"],[\"F078.o101\",\"-\"],[\"F078.o102\",\"-\"],[\"F078.o104\",\"-\"],[\"F078.o105\",\"-\"],[\"F078.o106\",\"-\"],[\"F078.o107\",\"-\"],[\"F078.o108\",\"-\"],[\"F078.o109\",\"-\"],[\"F078.o110\",\"G12\"],[\"F078.o111\",\"-\"],[\"F078.o112\",\"-\"],[\"F078.o114\",\"-\"],[\"F078.o115\",\"-\"],[\"F078.o116\",\"-\"],[\"F078.o117\",\"-\"],[\"F078.o118\",\"-\"],[\"F078.o121\",\"-\"],[\"F078.o122\",\"-\"],[\"F078.o124\",\"-\"],[\"F078.o125\",\"-\"],[\"F078.o129\",\"-\"],[\"F078.o130\",\"-\"],[\"F078.o131\",\"-\"],[\"F078.o133\",\"-\"],[\"F078.o134\",\"-\"],[\"F078.o135\",\"-\"],[\"F078.o136\",\"-\"],[\"F078.o138\",\"-\"],[\"F078.o141\",\"-\"],[\"F078.o145\",\"-\"],[\"F078.o147\",\"-\"],[\"F078.o150\",\"-\"],[\"F078.o151\",\"-\"],[\""
+  },
+  {
+   "paso": "S asignar",
+   "intento": 0,
+   "segundos": 4.47,
+   "tokens": {
+    "entrada": 8089,
+    "salida": 1307
+   },
+   "errores": {},
+   "corte": "stop",
+   "respuesta_ilegible": "{\"asignaciones\":[[\"F069.o171\",\"G10\"],[\"F069.o173\",\"G10\"],[\"F069.o175\",\"G11\"],[\"F069.o176\",\"-\"],[\"F069.o177\",\"-\"],[\"F069.o178\",\"G8\"],[\"F069.o179\",\"G8\"],[\"F069.o181\",\"G10\"],[\"F069.o182\",\"G10\"],[\"F069.o184\",\"G10\"],[\"F069.o187\",\"G10\"],[\"F069.o188\",\"-\"],[\"F069.o189\",\"G10\"],[\"F069.o190\",\"-\"],[\"F069.o191\",\"G12\"],[\"F069.o194\",\"G12\"],[\"F069.o195\",\"-\"],[\"F074.o1\",\"-\"],[\"F074.o4\",\"-\"],[\"F074.o9\",\"-\"],[\"F074.o10\",\"-\"],[\"F074.o18\",\"-\"],[\"F074.o20\",\"-\"],[\"F074.o23\",\"-\"],[\"F074.o24\",\"-\"],[\"F074.o25\",\"-\"],[\"F074.o26\",\"-\"],[\"F074.o28\",\"-\"],[\"F074.o36\",\"-\"],[\"F074.o41\",\"-\"],[\"F074.o48\",\"-\"],[\"F074.o54\",\"-\"],[\"F074.o70\",\"-\"],[\"F074.o71\",\"-\"],[\"F074.o89\",\"-\"],[\"F074.o124\",\"-\"],[\"F074.o136\",\"-\"],[\"F074.o154\",\"-\"],[\"F074.o157\",\"-\"],[\"F074.o173\",\"-\"],[\"F074.o174\",\"-\"],[\"F074.o200\",\"-\"],[\"F075.o2\",\"G24\"],[\"F075.o4\",\"G24\"],[\"F075.o5\",\"G24\"],[\"F075.o6\",\"G24\"],[\"F075.o7\",\"G24\"],[\"F075.o8\",\"G24\"],[\"F075.o9\",\"G24\"],[\"F075.o13\",\"G24\"],[\"F075.o14\",\"G24\"],[\"F075.o16\",\"G24\"],[\"F075.o17\",\"G24\"],[\"F075.o18\",\"G24\"],[\"F075.o19\",\"G24\"],[\"F075.o20\",\"G24\"],[\"F075.o23\",\"G24\"],[\"F075.o24\",\"G24\"],[\"F075.o25\",\"G24\"],[\"F075.o26\",\"G24\"],[\"F075.o27\",\"G24\"],[\"F075.o28\",\"G24\"],[\"F075.o33\",\"G24\"],[\"F075.o35\",\"G24\"],[\"F075.o36\",\"G24\"],[\"F075.o39\",\"G24\"],[\"F075.o42\",\"G24\"],[\"F075.o43\",\"G24\"],[\"F075.o45\",\"G24\"],[\"F075.o47\",\"G24\"],[\"F075.o48\",\"G24\"],[\"F075.o53\",\"G24\"],[\"F075.o57\",\"G24\"],[\"F075.o60\",\"G24\"],[\"F075.o66\",\"G24\"],[\"F075.o67\",\"G24\"],[\"F075.o68\",\"G24\"],[\"F075.o71\",\"G24\"],[\"F075.o74\",\"G24\"],[\"F075.o75\",\"G24\"],[\"F075.o80\""
+  },
+  {
+   "paso": "S asignar",
+   "intento": 0,
+   "segundos": 4.79,
+   "tokens": {
+    "entrada": 7796,
+    "salida": 1320
+   },
+   "errores": {},
+   "corte": "stop",
+   "respuesta_ilegible": "{\"asignaciones\":[[\"F076.o50\",\"-\"],[\"F076.o53\",\"-\"],[\"F076.o54\",\"G8\"],[\"F076.o55\",\"G8\"],[\"F076.o56\",\"G8\"],[\"F076.o59\",\"G8\"],[\"F076.o61\",\"G7\"],[\"F076.o62\",\"-\"],[\"F076.o63\",\"G8\"],[\"F076.o66\",\"G8\"],[\"F076.o67\",\"-\"],[\"F076.o70\",\"G8\"],[\"F076.o71\",\"G8\"],[\"F076.o72\",\"-\"],[\"F076.o75\",\"-\"],[\"F076.o80\",\"G8\"],[\"F076.o81\",\"G8\"],[\"F076.o85\",\"-\"],[\"F076.o91\",\"G8\"],[\"F076.o92\",\"-\"],[\"F076.o95\",\"G8\"],[\"F076.o104\",\"G8\"],[\"F076.o107\",\"G8\"],[\"F076.o110\",\"G8\"],[\"F076.o115\",\"G8\"],[\"F076.o132\",\"G8\"],[\"F076.o133\",\"G8\"],[\"F076.o135\",\"G8\"],[\"F076.o136\",\"-\"],[\"F076.o137\",\"-\"],[\"F076.o140\",\"-\"],[\"F076.o147\",\"G8\"],[\"F076.o161\",\"-\"],[\"F076.o162\",\"-\"],[\"F076.o170\",\"G8\"],[\"F076.o172\",\"G8\"],[\"F076.o175\",\"-\"],[\"F076.o176\",\"G8\"],[\"F076.o178\",\"G8\"],[\"F076.o179\",\"G8\"],[\"F076.o182\",\"G8\"],[\"F076.o190\",\"G8\"],[\"F076.o192\",\"G8\"],[\"F076.o195\",\"G8\"],[\"F076.o196\",\"G8\"],[\"F076.o197\",\"-\"],[\"F076.o198\",\"G8\"],[\"F076.o199\",\"G8\"],[\"F076.o200\",\"G8\"],[\"F077.o1\",\"G11\"],[\"F077.o2\",\"G11\"],[\"F077.o3\",\"G8\"],[\"F077.o7\",\"G11\"],[\"F077.o8\",\"G8\"],[\"F077.o11\",\"G8\"],[\"F077.o12\",\"G11\"],[\"F077.o18\",\"G11\"],[\"F077.o19\",\"G11\"],[\"F077.o29\",\"G11\"],[\"F077.o32\",\"G11\"],[\"F077.o33\",\"G11\"],[\"F077.o35\",\"G11\"],[\"F077.o38\",\"G11\"],[\"F077.o41\",\"G8\"],[\"F077.o47\",\"G11\"],[\"F077.o53\",\"G11\"],[\"F077.o54\",\"G11\"],[\"F077.o56\",\"G11\"],[\"F077.o62\",\"G11\"],[\"F077.o64\",\"G8\"],[\"F077.o65\",\"G11\"],[\"F077.o70\",\"G11\"],[\"F077.o71\",\"G11\"],[\"F077.o76\",\"G11\"],[\"F077.o77\",\"G11\"],[\"F077.o78\",\"-\"],[\"F077.o79\",\"-\"],[\"F077.o80\",\"G8\"],[\"F077.o81\",\"G11\"],[\"F077.o86\",\"G11\"],[\"F077.o87\",\"G"
+  },
+  {
+   "paso": "S asignar",
+   "intento": 0,
+   "segundos": 4.23,
+   "tokens": {
+    "entrada": 8339,
+    "salida": 1354
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "S asignar",
+   "intento": 0,
+   "segundos": 4.19,
+   "tokens": {
+    "entrada": 8387,
+    "salida": 1329
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "S asignar",
+   "intento": 0,
+   "segundos": 4.1,
+   "tokens": {
+    "entrada": 8130,
+    "salida": 1302
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "S asignar",
+   "intento": 0,
+   "segundos": 4.46,
+   "tokens": {
+    "entrada": 8456,
+    "salida": 1420
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "S asignar",
+   "intento": 0,
+   "segundos": 4.31,
+   "tokens": {
+    "entrada": 7579,
+    "salida": 1277
+   },
+   "errores": {},
+   "corte": "stop",
+   "respuesta_ilegible": "{\"asignaciones\":[[\"F089.o166\",\"G29\"],[\"F089.o167\",\"G29\"],[\"F089.o169\",\"G37\"],[\"F089.o174\",\"G29\"],[\"F089.o178\",\"G29\"],[\"F089.o184\",\"G29\"],[\"F089.o185\",\"G29\"],[\"F089.o188\",\"G29\"],[\"F089.o191\",\"G29\"],[\"F090.o2\",\"-\"],[\"F090.o3\",\"-\"],[\"F090.o5\",\"-\"],[\"F090.o6\",\"-\"],[\"F090.o7\",\"-\"],[\"F090.o8\",\"G29\"],[\"F090.o9\",\"-\"],[\"F090.o10\",\"-\"],[\"F090.o11\",\"-\"],[\"F090.o20\",\"-\"],[\"F090.o21\",\"-\"],[\"F090.o22\",\"G29\"],[\"F090.o23\",\"-\"],[\"F090.o27\",\"-\"],[\"F090.o28\",\"-\"],[\"F090.o29\",\"-\"],[\"F090.o31\",\"-\"],[\"F090.o37\",\"-\"],[\"F090.o38\",\"-\"],[\"F090.o43\",\"-\"],[\"F090.o55\",\"-\"],[\"F090.o74\",\"-\"],[\"F090.o77\",\"-\"],[\"F090.o80\",\"-\"],[\"F090.o85\",\"G29\"],[\"F090.o95\",\"-\"],[\"F090.o102\",\"-\"],[\"F090.o103\",\"-\"],[\"F090.o104\",\"-\"],[\"F090.o113\",\"-\"],[\"F090.o116\",\"-\"],[\"F090.o119\",\"-\"],[\"F090.o120\",\"-\"],[\"F090.o126\",\"-\"],[\"F090.o132\",\"-\"],[\"F090.o147\",\"-\"],[\"F090.o148\",\"-\"],[\"F090.o157\",\"-\"],[\"F090.o159\",\"-\"],[\"F090.o171\",\"-\"],[\"F090.o177\",\"-\"],[\"F090.o181\",\"-\"],[\"F090.o183\",\"-\"],[\"F090.o187\",\"-\"],[\"F090.o190\",\"-\"],[\"F090.o193\",\"-\"],[\"F090.o195\",\"-\"],[\"F090.o197\",\"-\"],[\"F090.o199\",\"-\"],[\"F094.o1\",\"G37\"],[\"F094.o2\",\"G37\"],[\"F094.o4\",\"G37\"],[\"F094.o5\",\"G37\"],[\"F094.o8\",\"-\"],[\"F094.o9\",\"G37\"],[\"F094.o12\",\"G37\"],[\"F094.o19\",\"-\"],[\"F094.o20\",\"G37\"],[\"F094.o22\",\"G37\"],[\"F094.o23\",\"G37\"],[\"F094.o24\",\"-\"],[\"F094.o26\",\"-\"],[\"F094.o34\",\"G37\"],[\"F094.o35\",\"-\"],[\"F094.o38\",\"G37\"],[\"F094.o40\",\"G37\"],[\"F094.o42\",\"-\"],[\"F094.o43\",\"-\"],[\"F094.o45\",\"G37\"],[\"F094.o46\",\"G37\"],[\"F094.o58\",\"-\"],[\"F094.o60\",\"G37\"],[\"F094.o63\",\"-\"],[\"F094.o64\",\"-\"]"
+  },
+  {
+   "paso": "S asignar",
+   "intento": 0,
+   "segundos": 4.32,
+   "tokens": {
+    "entrada": 8117,
+    "salida": 1378
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "S asignar",
+   "intento": 0,
+   "segundos": 4.17,
+   "tokens": {
+    "entrada": 7952,
+    "salida": 1440
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "S asignar",
+   "intento": 0,
+   "segundos": 3.82,
+   "tokens": {
+    "entrada": 7417,
+    "salida": 1236
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "S asignar",
+   "intento": 0,
+   "segundos": 4.5,
+   "tokens": {
+    "entrada": 7609,
+    "salida": 1454
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "S asignar",
+   "intento": 0,
+   "segundos": 4.68,
+   "tokens": {
+    "entrada": 7695,
+    "salida": 1470
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "S asignar",
+   "intento": 0,
+   "segundos": 4.1,
+   "tokens": {
+    "entrada": 8039,
+    "salida": 1272
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "S asignar",
+   "intento": 0,
+   "segundos": 4.29,
+   "tokens": {
+    "entrada": 7638,
+    "salida": 1328
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "S asignar",
+   "intento": 0,
+   "segundos": 3.9,
+   "tokens": {
+    "entrada": 7956,
+    "salida": 1353
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "S asignar",
+   "intento": 0,
+   "segundos": 4.8,
+   "tokens": {
+    "entrada": 8117,
+    "salida": 1462
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "S asignar",
+   "intento": 0,
+   "segundos": 4.49,
+   "tokens": {
+    "entrada": 7945,
+    "salida": 1458
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "S asignar",
+   "intento": 0,
+   "segundos": 4.35,
+   "tokens": {
+    "entrada": 7557,
+    "salida": 1352
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "S asignar",
+   "intento": 0,
+   "segundos": 4.48,
+   "tokens": {
+    "entrada": 7550,
+    "salida": 1464
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "S asignar",
+   "intento": 0,
+   "segundos": 5.21,
+   "tokens": {
+    "entrada": 7873,
+    "salida": 1280
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "S asignar",
+   "intento": 0,
+   "segundos": 2.11,
+   "tokens": {
+    "entrada": 5485,
+    "salida": 448
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "S asignar",
+   "intento": 0,
+   "segundos": 4.4,
+   "tokens": {
+    "entrada": 7860,
+    "salida": 1372
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "S asignar",
+   "intento": 0,
+   "segundos": 4.19,
+   "tokens": {
+    "entrada": 7370,
+    "salida": 1230
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "S asignar",
+   "intento": 0,
+   "segundos": 4.35,
+   "tokens": {
+    "entrada": 7718,
+    "salida": 1468
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "S asignar",
+   "intento": 0,
+   "segundos": 4.05,
+   "tokens": {
+    "entrada": 7387,
+    "salida": 1326
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "S asignar",
+   "intento": 0,
+   "segundos": 4.49,
+   "tokens": {
+    "entrada": 7476,
+    "salida": 1468
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 E007",
+   "intento": 0,
+   "segundos": 2.2,
+   "tokens": {
+    "entrada": 3395,
+    "salida": 198
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 E011",
+   "intento": 0,
+   "segundos": 2.45,
+   "tokens": {
+    "entrada": 3035,
+    "salida": 322
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 E014",
+   "intento": 0,
+   "segundos": 4.35,
+   "tokens": {
+    "entrada": 3596,
+    "salida": 708
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 E008",
+   "intento": 0,
+   "segundos": 6.7,
+   "tokens": {
+    "entrada": 3108,
+    "salida": 962
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 E022",
+   "intento": 0,
+   "segundos": 7.74,
+   "tokens": {
+    "entrada": 3493,
+    "salida": 1145
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 E025",
+   "intento": 0,
+   "segundos": 3.51,
+   "tokens": {
+    "entrada": 4716,
+    "salida": 356
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 E026",
+   "intento": 0,
+   "segundos": 3.7,
+   "tokens": {
+    "entrada": 3070,
+    "salida": 499
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 E012",
+   "intento": 0,
+   "segundos": 11.31,
+   "tokens": {
+    "entrada": 4182,
+    "salida": 1707
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 E021",
+   "intento": 0,
+   "segundos": 12.89,
+   "tokens": {
+    "entrada": 4682,
+    "salida": 1954
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 E031",
+   "intento": 0,
+   "segundos": 4.62,
+   "tokens": {
+    "entrada": 5119,
+    "salida": 570
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 E024",
+   "intento": 0,
+   "segundos": 15.7,
+   "tokens": {
+    "entrada": 5839,
+    "salida": 2423
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 E035",
+   "intento": 0,
+   "segundos": 5.59,
+   "tokens": {
+    "entrada": 5476,
+    "salida": 800
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 E034",
+   "intento": 0,
+   "segundos": 8.62,
+   "tokens": {
+    "entrada": 5733,
+    "salida": 1368
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 E030",
+   "intento": 0,
+   "segundos": 12.45,
+   "tokens": {
+    "entrada": 5310,
+    "salida": 2040
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 E023",
+   "intento": 0,
+   "segundos": 18.7,
+   "tokens": {
+    "entrada": 4704,
+    "salida": 3209
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 E053",
+   "intento": 0,
+   "segundos": 3.57,
+   "tokens": {
+    "entrada": 6027,
+    "salida": 381
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 E013",
+   "intento": 0,
+   "segundos": 24.67,
+   "tokens": {
+    "entrada": 4186,
+    "salida": 3997
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 E059",
+   "intento": 0,
+   "segundos": 6.17,
+   "tokens": {
+    "entrada": 4135,
+    "salida": 866
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 E058",
+   "intento": 0,
+   "segundos": 12.37,
+   "tokens": {
+    "entrada": 4872,
+    "salida": 1828
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 E054",
+   "intento": 0,
+   "segundos": 16.84,
+   "tokens": {
+    "entrada": 7077,
+    "salida": 2792
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 E027",
+   "intento": 0,
+   "segundos": 27.72,
+   "tokens": {
+    "entrada": 4796,
+    "salida": 4577
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 E060",
+   "intento": 0,
+   "segundos": 5.51,
+   "tokens": {
+    "entrada": 4112,
+    "salida": 769
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 E057",
+   "intento": 0,
+   "segundos": 16.75,
+   "tokens": {
+    "entrada": 4394,
+    "salida": 2374
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 E064",
+   "intento": 0,
+   "segundos": 4.85,
+   "tokens": {
+    "entrada": 6427,
+    "salida": 641
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 E063",
+   "intento": 0,
+   "segundos": 8.23,
+   "tokens": {
+    "entrada": 6394,
+    "salida": 1258
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 E072",
+   "intento": 0,
+   "segundos": 3.53,
+   "tokens": {
+    "entrada": 5971,
+    "salida": 348
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 E065",
+   "intento": 0,
+   "segundos": 9.02,
+   "tokens": {
+    "entrada": 9982,
+    "salida": 1245
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 E066",
+   "intento": 0,
+   "segundos": 9.33,
+   "tokens": {
+    "entrada": 7983,
+    "salida": 1401
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 E077",
+   "intento": 0,
+   "segundos": 3.02,
+   "tokens": {
+    "entrada": 4815,
+    "salida": 291
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 E074",
+   "intento": 0,
+   "segundos": 5.55,
+   "tokens": {
+    "entrada": 7337,
+    "salida": 844
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 E047",
+   "intento": 0,
+   "segundos": 34.53,
+   "tokens": {
+    "entrada": 6138,
+    "salida": 5800
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 E071",
+   "intento": 0,
+   "segundos": 14.06,
+   "tokens": {
+    "entrada": 4086,
+    "salida": 2169
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 E078",
+   "intento": 0,
+   "segundos": 6.35,
+   "tokens": {
+    "entrada": 5022,
+    "salida": 839
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 E073",
+   "intento": 0,
+   "segundos": 11.03,
+   "tokens": {
+    "entrada": 5712,
+    "salida": 1204
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 E055",
+   "intento": 0,
+   "segundos": 33.64,
+   "tokens": {
+    "entrada": 6602,
+    "salida": 5296
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 E081",
+   "intento": 0,
+   "segundos": 5.23,
+   "tokens": {
+    "entrada": 6506,
+    "salida": 757
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 E056",
+   "intento": 0,
+   "segundos": 34.82,
+   "tokens": {
+    "entrada": 9595,
+    "salida": 5624
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 E080",
+   "intento": 0,
+   "segundos": 6.09,
+   "tokens": {
+    "entrada": 5658,
+    "salida": 789
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F008",
+   "intento": 0,
+   "segundos": 2.09,
+   "tokens": {
+    "entrada": 3571,
+    "salida": 210
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 E079",
+   "intento": 0,
+   "segundos": 9.06,
+   "tokens": {
+    "entrada": 8037,
+    "salida": 1215
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F007",
+   "intento": 0,
+   "segundos": 4.03,
+   "tokens": {
+    "entrada": 3392,
+    "salida": 542
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F012",
+   "intento": 0,
+   "segundos": 1.78,
+   "tokens": {
+    "entrada": 2323,
+    "salida": 184
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F010",
+   "intento": 0,
+   "segundos": 2.51,
+   "tokens": {
+    "entrada": 3920,
+    "salida": 232
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F011",
+   "intento": 0,
+   "segundos": 2.43,
+   "tokens": {
+    "entrada": 3685,
+    "salida": 279
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F013",
+   "intento": 0,
+   "segundos": 1.77,
+   "tokens": {
+    "entrada": 2874,
+    "salida": 128
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 E083",
+   "intento": 0,
+   "segundos": 7.53,
+   "tokens": {
+    "entrada": 5749,
+    "salida": 1125
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F009",
+   "intento": 0,
+   "segundos": 5.13,
+   "tokens": {
+    "entrada": 3410,
+    "salida": 699
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 E082",
+   "intento": 0,
+   "segundos": 8.24,
+   "tokens": {
+    "entrada": 6413,
+    "salida": 1266
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F020",
+   "intento": 0,
+   "segundos": 2.79,
+   "tokens": {
+    "entrada": 3767,
+    "salida": 356
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F016",
+   "intento": 0,
+   "segundos": 4.99,
+   "tokens": {
+    "entrada": 3944,
+    "salida": 713
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F019",
+   "intento": 0,
+   "segundos": 4.89,
+   "tokens": {
+    "entrada": 3859,
+    "salida": 667
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F014",
+   "intento": 0,
+   "segundos": 6.3,
+   "tokens": {
+    "entrada": 2984,
+    "salida": 897
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F025",
+   "intento": 0,
+   "segundos": 3.74,
+   "tokens": {
+    "entrada": 3120,
+    "salida": 464
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F026",
+   "intento": 0,
+   "segundos": 3.28,
+   "tokens": {
+    "entrada": 2345,
+    "salida": 399
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F021",
+   "intento": 0,
+   "segundos": 5.95,
+   "tokens": {
+    "entrada": 6572,
+    "salida": 748
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F038",
+   "intento": 0,
+   "segundos": 2.1,
+   "tokens": {
+    "entrada": 2129,
+    "salida": 230
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F037",
+   "intento": 0,
+   "segundos": 3.36,
+   "tokens": {
+    "entrada": 4603,
+    "salida": 381
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F015",
+   "intento": 0,
+   "segundos": 11.06,
+   "tokens": {
+    "entrada": 3739,
+    "salida": 1509
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F043",
+   "intento": 0,
+   "segundos": 1.85,
+   "tokens": {
+    "entrada": 2828,
+    "salida": 187
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F029",
+   "intento": 0,
+   "segundos": 8.54,
+   "tokens": {
+    "entrada": 3328,
+    "salida": 1164
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F042",
+   "intento": 0,
+   "segundos": 4.24,
+   "tokens": {
+    "entrada": 4170,
+    "salida": 526
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F044",
+   "intento": 0,
+   "segundos": 2.56,
+   "tokens": {
+    "entrada": 3956,
+    "salida": 260
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F032",
+   "intento": 0,
+   "segundos": 9.23,
+   "tokens": {
+    "entrada": 4402,
+    "salida": 1268
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F046",
+   "intento": 0,
+   "segundos": 1.47,
+   "tokens": {
+    "entrada": 5054,
+    "salida": 94
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F041",
+   "intento": 0,
+   "segundos": 6.71,
+   "tokens": {
+    "entrada": 4948,
+    "salida": 929
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F045",
+   "intento": 0,
+   "segundos": 5.15,
+   "tokens": {
+    "entrada": 3900,
+    "salida": 667
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F030",
+   "intento": 0,
+   "segundos": 14.27,
+   "tokens": {
+    "entrada": 2880,
+    "salida": 2029
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F047",
+   "intento": 0,
+   "segundos": 4.45,
+   "tokens": {
+    "entrada": 4152,
+    "salida": 600
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F056",
+   "intento": 0,
+   "segundos": 4.93,
+   "tokens": {
+    "entrada": 4941,
+    "salida": 630
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F059",
+   "intento": 0,
+   "segundos": 6.32,
+   "tokens": {
+    "entrada": 3553,
+    "salida": 888
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F068",
+   "intento": 0,
+   "segundos": 4.92,
+   "tokens": {
+    "entrada": 5151,
+    "salida": 610
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F031",
+   "intento": 0,
+   "segundos": 19.6,
+   "tokens": {
+    "entrada": 4006,
+    "salida": 3090
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F061",
+   "intento": 0,
+   "segundos": 7.09,
+   "tokens": {
+    "entrada": 4558,
+    "salida": 1105
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F057",
+   "intento": 0,
+   "segundos": 11.11,
+   "tokens": {
+    "entrada": 5477,
+    "salida": 1540
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F074",
+   "intento": 0,
+   "segundos": 5.69,
+   "tokens": {
+    "entrada": 3266,
+    "salida": 748
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F076",
+   "intento": 0,
+   "segundos": 7.68,
+   "tokens": {
+    "entrada": 4697,
+    "salida": 890
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F060",
+   "intento": 0,
+   "segundos": 16.0,
+   "tokens": {
+    "entrada": 4820,
+    "salida": 2482
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F082",
+   "intento": 0,
+   "segundos": 3.58,
+   "tokens": {
+    "entrada": 5704,
+    "salida": 374
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F022",
+   "intento": 0,
+   "segundos": 37.33,
+   "tokens": {
+    "entrada": 7090,
+    "salida": 5937
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F079",
+   "intento": 0,
+   "segundos": 5.61,
+   "tokens": {
+    "entrada": 6940,
+    "salida": 797
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F077",
+   "intento": 0,
+   "segundos": 19.07,
+   "tokens": {
+    "entrada": 4569,
+    "salida": 2930
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F069",
+   "intento": 0,
+   "segundos": 23.35,
+   "tokens": {
+    "entrada": 5376,
+    "salida": 3232
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F084",
+   "intento": 0,
+   "segundos": 8.76,
+   "tokens": {
+    "entrada": 6014,
+    "salida": 1142
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F078",
+   "intento": 0,
+   "segundos": 18.55,
+   "tokens": {
+    "entrada": 5672,
+    "salida": 2727
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F058",
+   "intento": 0,
+   "segundos": 32.7,
+   "tokens": {
+    "entrada": 3673,
+    "salida": 5398
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F085",
+   "intento": 0,
+   "segundos": 9.9,
+   "tokens": {
+    "entrada": 4599,
+    "salida": 1419
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F086",
+   "intento": 0,
+   "segundos": 4.48,
+   "tokens": {
+    "entrada": 3475,
+    "salida": 529
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F083",
+   "intento": 0,
+   "segundos": 12.71,
+   "tokens": {
+    "entrada": 7064,
+    "salida": 1893
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F095",
+   "intento": 0,
+   "segundos": 2.52,
+   "tokens": {
+    "entrada": 4623,
+    "salida": 278
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F089",
+   "intento": 0,
+   "segundos": 5.16,
+   "tokens": {
+    "entrada": 4803,
+    "salida": 693
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F097",
+   "intento": 0,
+   "segundos": 3.14,
+   "tokens": {
+    "entrada": 3496,
+    "salida": 386
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F094",
+   "intento": 0,
+   "segundos": 5.64,
+   "tokens": {
+    "entrada": 4219,
+    "salida": 732
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F075",
+   "intento": 0,
+   "segundos": 30.25,
+   "tokens": {
+    "entrada": 4332,
+    "salida": 4439
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F090",
+   "intento": 0,
+   "segundos": 7.88,
+   "tokens": {
+    "entrada": 3987,
+    "salida": 1120
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F099",
+   "intento": 0,
+   "segundos": 6.2,
+   "tokens": {
+    "entrada": 4470,
+    "salida": 868
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F108",
+   "intento": 0,
+   "segundos": 4.52,
+   "tokens": {
+    "entrada": 6808,
+    "salida": 567
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F116",
+   "intento": 0,
+   "segundos": 4.82,
+   "tokens": {
+    "entrada": 3279,
+    "salida": 739
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F115",
+   "intento": 0,
+   "segundos": 6.74,
+   "tokens": {
+    "entrada": 3356,
+    "salida": 905
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F121",
+   "intento": 0,
+   "segundos": 2.13,
+   "tokens": {
+    "entrada": 4711,
+    "salida": 229
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F109",
+   "intento": 0,
+   "segundos": 10.54,
+   "tokens": {
+    "entrada": 6013,
+    "salida": 1571
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F123",
+   "intento": 0,
+   "segundos": 2.71,
+   "tokens": {
+    "entrada": 4979,
+    "salida": 258
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F096",
+   "intento": 0,
+   "segundos": 20.61,
+   "tokens": {
+    "entrada": 3618,
+    "salida": 3215
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F124",
+   "intento": 0,
+   "segundos": 3.09,
+   "tokens": {
+    "entrada": 5362,
+    "salida": 361
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F119",
+   "intento": 0,
+   "segundos": 14.08,
+   "tokens": {
+    "entrada": 5811,
+    "salida": 2161
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F120",
+   "intento": 0,
+   "segundos": 10.39,
+   "tokens": {
+    "entrada": 6501,
+    "salida": 1472
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F122",
+   "intento": 0,
+   "segundos": 8.49,
+   "tokens": {
+    "entrada": 4861,
+    "salida": 1301
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F133",
+   "intento": 0,
+   "segundos": 5.18,
+   "tokens": {
+    "entrada": 3553,
+    "salida": 639
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F125",
+   "intento": 0,
+   "segundos": 7.25,
+   "tokens": {
+    "entrada": 4845,
+    "salida": 1110
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F103",
+   "intento": 0,
+   "segundos": 25.76,
+   "tokens": {
+    "entrada": 4307,
+    "salida": 4085
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F138",
+   "intento": 0,
+   "segundos": 3.9,
+   "tokens": {
+    "entrada": 5420,
+    "salida": 450
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F112",
+   "intento": 0,
+   "segundos": 25.97,
+   "tokens": {
+    "entrada": 4233,
+    "salida": 3881
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F102",
+   "intento": 0,
+   "segundos": 30.09,
+   "tokens": {
+    "entrada": 5613,
+    "salida": 4746
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F137",
+   "intento": 0,
+   "segundos": 9.18,
+   "tokens": {
+    "entrada": 5828,
+    "salida": 1433
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F126",
+   "intento": 0,
+   "segundos": 11.73,
+   "tokens": {
+    "entrada": 5172,
+    "salida": 1885
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F139",
+   "intento": 0,
+   "segundos": 5.78,
+   "tokens": {
+    "entrada": 5089,
+    "salida": 791
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F134",
+   "intento": 0,
+   "segundos": 12.12,
+   "tokens": {
+    "entrada": 3957,
+    "salida": 1843
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F154",
+   "intento": 0,
+   "segundos": 4.98,
+   "tokens": {
+    "entrada": 2644,
+    "salida": 659
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F148",
+   "intento": 0,
+   "segundos": 8.94,
+   "tokens": {
+    "entrada": 6823,
+    "salida": 1255
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F140",
+   "intento": 0,
+   "segundos": 11.74,
+   "tokens": {
+    "entrada": 5898,
+    "salida": 1730
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F151",
+   "intento": 0,
+   "segundos": 9.03,
+   "tokens": {
+    "entrada": 4314,
+    "salida": 1262
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F157",
+   "intento": 0,
+   "segundos": 6.44,
+   "tokens": {
+    "entrada": 4709,
+    "salida": 846
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F147",
+   "intento": 0,
+   "segundos": 11.53,
+   "tokens": {
+    "entrada": 3953,
+    "salida": 1601
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F169",
+   "intento": 0,
+   "segundos": 3.39,
+   "tokens": {
+    "entrada": 4661,
+    "salida": 391
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F170",
+   "intento": 0,
+   "segundos": 3.49,
+   "tokens": {
+    "entrada": 4299,
+    "salida": 429
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F175",
+   "intento": 0,
+   "segundos": 2.35,
+   "tokens": {
+    "entrada": 4137,
+    "salida": 269
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F152",
+   "intento": 0,
+   "segundos": 13.04,
+   "tokens": {
+    "entrada": 4781,
+    "salida": 1917
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F161",
+   "intento": 0,
+   "segundos": 6.58,
+   "tokens": {
+    "entrada": 3983,
+    "salida": 879
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F180",
+   "intento": 0,
+   "segundos": 3.42,
+   "tokens": {
+    "entrada": 3327,
+    "salida": 487
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F176",
+   "intento": 0,
+   "segundos": 5.58,
+   "tokens": {
+    "entrada": 4310,
+    "salida": 793
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F162",
+   "intento": 0,
+   "segundos": 9.57,
+   "tokens": {
+    "entrada": 3822,
+    "salida": 1265
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F179",
+   "intento": 0,
+   "segundos": 7.19,
+   "tokens": {
+    "entrada": 3567,
+    "salida": 1079
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F158",
+   "intento": 0,
+   "segundos": 15.11,
+   "tokens": {
+    "entrada": 3970,
+    "salida": 2285
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F153",
+   "intento": 0,
+   "segundos": 21.31,
+   "tokens": {
+    "entrada": 2632,
+    "salida": 3183
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "medir B4.F075.0",
+   "intento": 0,
+   "segundos": 0.78,
+   "tokens": {
+    "entrada": 3416,
+    "salida": 35
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "medir B4.E047.0",
+   "intento": 0,
+   "segundos": 0.9,
+   "tokens": {
+    "entrada": 1129,
+    "salida": 12
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "medir B4.E071.0",
+   "intento": 0,
+   "segundos": 0.96,
+   "tokens": {
+    "entrada": 2860,
+    "salida": 23
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "medir B4.E047.0",
+   "intento": 0,
+   "segundos": 1.0,
+   "tokens": {
+    "entrada": 3833,
+    "salida": 65
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "medir B4.F058.0",
+   "intento": 0,
+   "segundos": 1.07,
+   "tokens": {
+    "entrada": 1510,
+    "salida": 88
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "medir B4.E013.0",
+   "intento": 0,
+   "segundos": 1.11,
+   "tokens": {
+    "entrada": 1564,
+    "salida": 23
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "medir B4.E055.0",
+   "intento": 0,
+   "segundos": 1.22,
+   "tokens": {
+    "entrada": 3420,
+    "salida": 190
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "medir B4.F022.0",
+   "intento": 0,
+   "segundos": 1.28,
+   "tokens": {
+    "entrada": 5947,
+    "salida": 172
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "medir B4.E055.0",
+   "intento": 0,
+   "segundos": 1.62,
+   "tokens": {
+    "entrada": 3624,
+    "salida": 310
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "medir B4.F022.0",
+   "intento": 0,
+   "segundos": 1.65,
+   "tokens": {
+    "entrada": 3367,
+    "salida": 280
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "medir B4.E047.0",
+   "intento": 0,
+   "segundos": 0.68,
+   "tokens": {
+    "entrada": 733,
+    "salida": 12
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "medir B4.F075.0",
+   "intento": 0,
+   "segundos": 0.9,
+   "tokens": {
+    "entrada": 4084,
+    "salida": 12
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "medir B4.E071.0",
+   "intento": 0,
+   "segundos": 0.81,
+   "tokens": {
+    "entrada": 3854,
+    "salida": 29
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "medir B4.F077.0",
+   "intento": 0,
+   "segundos": 1.87,
+   "tokens": {
+    "entrada": 3228,
+    "salida": 382
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "medir B4.E047.0",
+   "intento": 0,
+   "segundos": 1.02,
+   "tokens": {
+    "entrada": 3760,
+    "salida": 12
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "medir B4.E013.0",
+   "intento": 0,
+   "segundos": 0.9,
+   "tokens": {
+    "entrada": 1574,
+    "salida": 12
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "medir B4.F058.0",
+   "intento": 0,
+   "segundos": 1.05,
+   "tokens": {
+    "entrada": 1860,
+    "salida": 12
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "medir B4.F022.0",
+   "intento": 0,
+   "segundos": 0.66,
+   "tokens": {
+    "entrada": 3832,
+    "salida": 12
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "medir B4.F077.0",
+   "intento": 0,
+   "segundos": 0.69,
+   "tokens": {
+    "entrada": 3891,
+    "salida": 12
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "medir B4.F022.0",
+   "intento": 0,
+   "segundos": 0.94,
+   "tokens": {
+    "entrada": 2549,
+    "salida": 12
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "medir B4.E055.0",
+   "intento": 0,
+   "segundos": 1.06,
+   "tokens": {
+    "entrada": 3958,
+    "salida": 22
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "medir B4.E055.0",
+   "intento": 0,
+   "segundos": 1.2,
+   "tokens": {
+    "entrada": 2649,
+    "salida": 27
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "medir B4.F102.0",
+   "intento": 0,
+   "segundos": 1.24,
+   "tokens": {
+    "entrada": 1433,
+    "salida": 40
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "medir B4.F102.0",
+   "intento": 0,
+   "segundos": 1.32,
+   "tokens": {
+    "entrada": 4455,
+    "salida": 142
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "medir B4.F103.0",
+   "intento": 0,
+   "segundos": 1.41,
+   "tokens": {
+    "entrada": 3179,
+    "salida": 131
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "medir B4.F102.0",
+   "intento": 0,
+   "segundos": 0.73,
+   "tokens": {
+    "entrada": 3565,
+    "salida": 12
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "medir B4.F102.0",
+   "intento": 0,
+   "segundos": 0.75,
+   "tokens": {
+    "entrada": 1845,
+    "salida": 12
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "medir B4.F103.0",
+   "intento": 0,
+   "segundos": 0.91,
+   "tokens": {
+    "entrada": 3458,
+    "salida": 12
+   },
+   "errores": {},
+   "corte": "stop"
+  }
+ ],
+ "oportunidades": [
+  {
+   "que_traer": "Canasto/caja organizadora plegable de tela con estructura metálica en medidas ANGOSTAS (ancho 18-24 cm, manteniendo alto y largo estándar), en pack x3/x4 y en color crudo además del gris",
+   "para_quien": "Gente con placards, cajones y alacenas angostas (deptos chicos, placards de 40-50 cm de profundidad, cajoneras finas) que ya compró o quiere estos canastos pero no le entran en el hueco que tiene",
+   "alivia": "El problema de tener el lugar medido y no encontrar el organizador que entre: hoy terminan desistiendo de la compra o comprando uno que no cierra la puerta del placard / no entra en el cajón",
+   "por_que": "Nadie lo atiende: en toda la búsqueda las publicaciones son de ancho estándar (30-40 cm) y las tres veces que alguien pidió una medida menor la respuesta fue 'lamentablemente no tenemos'. No hay una sola publicación de ancho angosto, ni con +0 vendidos, así que no hay 3 equivalentes que vendan +100. El color crudo tampoco existe en la oferta",
+   "precio_de_venta_ars": 21900,
+   "margen_neto_estimado_pct": 8,
+   "como_podria_fallar": "1) No es obvio del todo: sigue siendo un canasto de tela plegable, así que roza el 'mismo producto pero más angosto'; si el comprador lo percibe como variante de color/medida y no como solución a un hueco que hoy no se cubre, cae en esa regla. 2) La evidencia de demanda son solo 3 preguntas: puede ser un nicho chico y caro de publicitar. 3) Con landed cost de un plegable con varilla metálica, comisión de ML (~13%), envío de un pack voluminoso, impuestos, Ads y devoluciones, el 8% se va a negativo si el precio no se sostiene arriba de $21.000 o si el flete sube por volumen (pagás aire). 4) Un competidor con volumen puede replicarlo en 60 días publicando 'pack x4 angosto' y tirar el precio.",
+   "citas": [
+    "p4",
+    "p8",
+    "p20"
+   ],
+   "busqueda_ml": "organizador plegable angosto para placard 20 cm de ancho",
+   "id": "B4.E013.0",
+   "producto": "E013"
+  },
+  {
+   "que_traer": "Cámara termográfica portátil de entrada (ej. UNI-T UTi120S o equivalente) para detección de fugas de agua caliente y problemas térmicos en pisos/paredes",
+   "para_quien": "Plomeros, técnicos en refrigeración/HVAC y electricistas que hoy compran un termómetro infrarrojo de punto para buscar pérdidas de agua o fallas térmicas",
+   "alivia": "Encontrar una fuga de agua caliente o un caño en el piso sin abrir de más, viendo el gradiente térmico en una imagen; el UT306C solo mide un punto de superficie y el propio vendedor dice que no sirve para fugas",
+   "por_que": "En la búsqueda de 'termometro infrarrojo' solo hay termómetros de punto y de fiebre; no hay cámaras termográficas. Las preguntas por fugas (p13, p19, p6) quedan sin solución y en p16 derivan a pinzas termográficas UTi",
+   "precio_de_venta_ars": 450000,
+   "margen_neto_estimado_pct": 12,
+   "como_podria_fallar": "Si ya hay 3+ cámaras termográficas equivalentes con +100 vendidos en ML, si el ticket alto y la falta de capacitación frenan la conversión, o si las devoluciones suben por expectativas de resolución/precisión",
+   "citas": [
+    "p13",
+    "p19",
+    "p6",
+    "p16"
+   ],
+   "busqueda_ml": "camara termografica fugas de agua",
+   "id": "B4.E047.0",
+   "producto": "E047"
+  },
+  {
+   "que_traer": "Manta o colchón masajeador shiatsu de espalda y cuello con calor, diseñado para recostarse encima y usarse sin sujetarlo con las manos",
+   "para_quien": "Personas con contracturas cervicales y lumbares que ya usan masajeadores manuales, pero necesitan masajearse acostadas o sin sostener el equipo con los brazos",
+   "alivia": "Permite relajar cuello y espalda en posición recostada o sin hacer fuerza con los brazos, y distribuye la presión sin que los rodillos manuales lastimen la columna",
+   "por_que": "La búsqueda está saturada de rodillos manuales, foam rollers y el mismo masajeador de 8 rodillos con +10000 vendidos; no aparece una manta o colchón equivalente que se use debajo del cuerpo y sin manos con volumen suficiente",
+   "precio_de_venta_ars": 119999,
+   "margen_neto_estimado_pct": 16,
+   "como_podria_fallar": "Es voluminoso: el envío y las devoluciones pueden comerse el margen; si el motor no resiste el peso o el calor es débil, se repiten las quejas actuales; además puede competir con sillones masajeadores genéricos y exigir certificación eléctrica",
+   "citas": [
+    "p5",
+    "p6",
+    "p8"
+   ],
+   "busqueda_ml": "manta masajeadora espalda cuello para acostarse",
+   "id": "B4.E055.0",
+   "producto": "E055"
+  },
+  {
+   "que_traer": "Parasol parabrisas metalizado 150x70 con impresión full-color (sublimación/serigrafía) del logo del cliente, en packs de 50+ unidades, con arte aprobado antes de producir",
+   "para_quien": "Empresas, flotas, concesionarios, talleres y agencias que regalan o equipan vehículos y necesitan merchandising con su logo (pedidos de 50 unidades en adelante), no el consumidor final que busca el parasol más barato",
+   "alivia": "Hoy el comprador corporativo no puede tener el parasol con su marca: el proveedor le dice que no hace personalizados y el único branding que aparece es publicidad ajena impresa que el usuario final termina criticando. Le resuelve el regalo/equipamiento de flota sin tener que importar él mismo ni buscar un proveedor de merchandising",
+   "por_que": "Toda la búsqueda de 'parasol auto' está saturada de genéricos (varios con +1000 y hasta +5000 vendidos) peleando por precio entre $5.700 y $24.000, pero ni una sola publicación ofrece personalización con logo: el nicho está vacío porque el vendedor estándar de parasoles no tiene canal de impresión ni quiere manejar pedidos mínimos de 50 unidades",
+   "precio_de_venta_ars": 12000,
+   "margen_neto_estimado_pct": 18,
+   "como_podria_fallar": "El pedido mínimo de fábrica para impresión suele ser 100-500 unidades y el flete aéreo de volumen castiga el unitario: si se compra de a 50 el costo landed se come el margen. Además la venta es B2B, fuera del flujo normal de Mercado Libre (cotización, aprobación de arte, factura A, plazos de 15-30 días), con riesgo de que el logo salga corrido o el color no coincida y haya que reprochar. Si aparece un competidor con stock local ya impreso o el cliente corporativo prefiere merchandising más barato (gorra, vaso), la oportunidad se cae",
+   "citas": [
+    "p6",
+    "p1",
+    "o91"
+   ],
+   "busqueda_ml": "parasol auto personalizado con logo empresa",
+   "id": "B4.E071.0",
+   "producto": "E071"
+  },
+  {
+   "que_traer": "Comedero selectivo por microchip/RFID para gatos o perros pequeños (tapa que abre solo para la mascota autorizada, con bandeja extraíble y capacidad para ración diaria).",
+   "para_quien": "Hogares con dos o más gatos/perros donde uno acapara la comida, y tutores de mascotas con sobrepeso que necesitan controlar la ración sin estar presentes.",
+   "alivia": "Evita que el animal dominante coma la comida del otro o vacíe el comedero; permite alimentar separado y controlar peso sin depender de horarios ni de supervisión.",
+   "por_que": "En la búsqueda de alimentadores automáticos no aparece ningún comedero selectivo por microchip: los resultados son dispensadores programables con cámara, que no impiden que otra mascota coma del plato.",
+   "precio_de_venta_ars": 199000,
+   "margen_neto_estimado_pct": 15,
+   "como_podria_fallar": "Requiere que la mascota use collar con tag o microchip compatible; si el tag se pierde o el lector falla, genera devoluciones. El precio alto puede limitarlo a un nicho, y si el volumen es bajo la publicidad se come el margen.",
+   "citas": [
+    "o14",
+    "o32",
+    "o160",
+    "o174"
+   ],
+   "busqueda_ml": "comedero selectivo microchip gatos",
+   "id": "B4.F022.0",
+   "producto": "F022"
+  },
+  {
+   "que_traer": "Rampa/umbral modular de caucho antideslizante con relieve tipo moneda, 1 m de ancho y 3-5 cm de alto, con bordes biselados para exterior",
+   "para_quien": "Personas con movilidad reducida, edificios y comercios con entradas o rampas, talleres que mueven carros o motos",
+   "alivia": "El riesgo de resbalar en rampas, umbrales y entradas mojadas, y la falta de una transición segura y estable sin hacer obra",
+   "por_que": "En la búsqueda solo aparecen rollos planos de piso, EVA/PVC y baldosas de gimnasio; no hay módulos de rampa/umbral antideslizantes con relieve y borde biselado que resuelvan el acceso",
+   "precio_de_venta_ars": 39900,
+   "margen_neto_estimado_pct": 12,
+   "como_podria_fallar": "El caucho pesa y encarece el flete; si el comprador necesita medidas a medida o certificación de accesibilidad, el módulo estándar no sirve; si aparece competencia con rampas genéricas +100 o si un rollo cortado a medida sale mucho más barato",
+   "citas": [
+    "o11",
+    "o12",
+    "o9",
+    "o70"
+   ],
+   "busqueda_ml": "rampa de goma antideslizante para silla de ruedas umbral",
+   "id": "B4.F058.0",
+   "producto": "F058"
+  },
+  {
+   "que_traer": "Granulado larvicida biológico de Bacillus thuringiensis israelensis (Bti) para aplicar al sustrato/maceta (sobre de 100 g con dosificador), específico para larvas de mosquita del sustrato, mosquita blanca en etapa larval y larvas de dípteros que viven en la tierra de las macetas",
+   "para_quien": "Gente que cultiva en macetas, plantines y huerta chica (tomate cherry, morrón, albahaca, limonero en maceta) y que YA usa jabón potásico con neem y canela pulverizado sobre la hoja: son usuarios de tratamiento recurrente, compran cada 3-4 semanas y ya invierten en productos 'no tóxicos'",
+   "alivia": "El jabón potásico es de contacto y solo mata lo que toca la hoja: las larvas y huevos que están en la tierra sobreviven y la plaga vuelve a salir. El Bti se aplica al sustrato, se come solo por larvas y corta el ciclo en el lugar donde el jabón no llega, sin ser sistémico ni tóxico para la huerta",
+   "por_que": "La búsqueda de este producto está completamente copada por jabones de ropa y de tocador (Ariel, Skip, Dove, Palmolive): no hay una sola publicación de larvicida de sustrato entre los resultados, y las únicas con +100 vendidos son detergentes textiles. El comprador que hoy quiere atacar la etapa larval solo encuentra jabón foliar (que no le sirve para eso) o tiene que ir a tierra de diatomeas, que es otra cosa y ya la usa como complemento",
+   "precio_de_venta_ars": 14900,
+   "margen_neto_estimado_pct": 18,
+   "como_podria_fallar": "1) Registro SENASA: un biolarvicida es un fitosanitario, no un artículo de jardinería; si no se puede inscribir ni importar como producto terminado, la oportunidad se cae entera y no hay forma de venderlo legalmente en ML. 2) Vida útil y cadena de frío/calor: el Bti pierde viabilidad con el calor del depósito y del envío, y las devoluciones por 'no funcionó' pueden comerse el margen. 3) Educación: el comprador de este producto describe el problema como 'bichitos' y 'hongos', no como 'larvas'; si no entiende que es para la tierra y no para la hoja, va a poner una estrella y volver al jabón. 4) Volumen real: es un nicho de jardinería de interior; si el ticket no llega a ~$15.000 y el envío gratis se come $4.000-5.000, el neto baja de 5% y deja de convenir. 5) Competencia reacciona rápido: si funciona, en 60 días aparecen 3 publicaciones equivalentes con +100 vendidos y se cierra el punto 2",
+   "citas": [
+    "o8",
+    "o19",
+    "o160",
+    "o42"
+   ],
+   "busqueda_ml": "larvicida para tierra de plantas mosquita del sustrato",
+   "id": "B4.F075.0",
+   "producto": "F075"
+  },
+  {
+   "que_traer": "Serum/tónico calmante de cuero cabelludo sin perfume (avena coloidal + centella o pantenol), formato gotero 50-60 ml, frasco chico y liviano para importar",
+   "para_quien": "Adultos y niños con cuero cabelludo reactivo: piel atópica, alergias a shampoo convencional, prurito crónico, pacientes oncológicos con cuero cabelludo sensibilizado por quimioterapia y quienes dejaron de usar Aveno por el olor",
+   "alivia": "La picazón, el ardor y la descamación del cuero cabelludo sensible entre lavados, sin tener que pasar por otro shampoo con fragancia fuerte. Hoy la única salida que encuentran es un kit de shampoo y acondicionador que les irrita menos pero no les calma el prurito y encima les deja un olor que varias personas describen como insoportable",
+   "por_que": "La búsqueda está saturada de kits shampoo+acondicionador de marca masiva (Elvive, Fidelite, La Puissance, Lakme, Karseell) y el propio Aveno ya vende +5000 y +10000. No hay ni un solo tónico o serum calmante de cuero cabelludo con tracción: lo más parecido es un 'Pre Shampoo Capilar 10 en 1' por Compra Internacional con +0 vendidos. El segmento 'piel reactiva' está cubierto en formato lavado, pero no en tratamiento leave-in sin perfume",
+   "precio_de_venta_ars": 19900,
+   "margen_neto_estimado_pct": 14,
+   "como_podria_fallar": "1) Que el verificador lo lea como 'el mismo producto pero mejor' (una versión sin perfume de lo que ya compran) y lo descarte por obvio: es el riesgo principal. 2) Que la demanda sea de nicho y no alcance volumen: la gente pide que el shampoo no les irrite, no necesariamente un serum aparte, y varias opiniones dicen que Aveno ya les resolvió el problema en 2 usos. 3) Regulatorio ANMAT para un cosmético con activos calmantes importado de China: fórmula y rotulado pueden demorar la entrada. 4) Que el precio de $19.900 se perciba caro frente a un kit completo de $42.776 que rinde meses. 5) Si el costo landed sube (flete + despacho + IVA de importación), el 14% se come y queda por debajo del 5%.",
+   "citas": [
+    "o99",
+    "o107",
+    "o76",
+    "o2",
+    "o29",
+    "o54"
+   ],
+   "busqueda_ml": "serum calmante cuero cabelludo piel sensible sin perfume",
+   "id": "B4.F077.0",
+   "producto": "F077"
+  },
+  {
+   "que_traer": "Controlador digital higrostato/termostato con relay y sonda externa para encender/apagar humidificador, deshumidificador o calefactor",
+   "para_quien": "Gente que compra un medidor barato para indoor, incubadora, terrario o humedad de casa y termina necesitando actuar sobre el ambiente, no sólo mirar números",
+   "alivia": "Pasar de sólo medir a controlar automáticamente la humedad/temperatura; sirve cuando el medidor ya mostró exceso de humedad o una incubadora inestable y hay que prender/apagar equipos a mano",
+   "por_que": "La búsqueda está dominada por medidores pasivos, wifi y sondas; los +100/+5000 son termohigrómetros, no controladores con relay. No aparecen 3 publicaciones equivalentes con +100 en esta búsqueda",
+   "precio_de_venta_ars": 48000,
+   "margen_neto_estimado_pct": 20,
+   "como_podria_fallar": "Puede haber controladores con +100 fuera de esta búsqueda; el comprador puede preferir una marca conocida; la instalación/uso eléctrico eleva devoluciones; si suben flete o impuestos, el neto puede caer debajo del 5%",
+   "citas": [
+    "o17",
+    "o95",
+    "o163",
+    "o30"
+   ],
+   "busqueda_ml": "controlador de humedad y temperatura con relay higrostato termostato sonda",
+   "id": "B4.F102.0",
+   "producto": "F102"
+  },
+  {
+   "que_traer": "Controlador digital termohigrostato (termostato + higrostato en un solo equipo) con relé 10A, sonda externa de temperatura/humedad y salida 220V para enchufar calefactor, humidificador o el aire acondicionado",
+   "para_quien": "Quien incuba huevos en casa, mantiene un vivero o plantas en un local seco, y quien pelea todos los días con un aire acondicionado o una estufa que no tiene termostato propio y corta cuando quiere",
+   "alivia": "Hoy el aparatito sólo informa: te dice que hay 17,7° o 80% de humedad y te deja mirando. Esto cierra el circuito: lee la sonda y prende/apaga el equipo solo, así la temperatura o la humedad se mantienen en el valor elegido sin que nadie esté pendiente del display.",
+   "por_que": "Toda la búsqueda de hoy son medidores y sensores smart que sólo reportan (WiFi, Zigbee, Bluetooth, data logger). Ningún listado ofrece un controlador con relé que actúe sobre otro equipo. Y la categoría del termohigrómetro común está saturada —Patagonia HTC-1 y HTC-2 con +5.000 vendidos, sonda con +1.000, reloj con +1.000—, así que la única forma de no chocar contra ese muro es vender el actuador, no otra pantallita.",
+   "precio_de_venta_ars": 42000,
+   "margen_neto_estimado_pct": 15,
+   "como_podria_fallar": "El público de las reseñas es hogareño y poco técnico: pedirle que cablee un relé 220V puede asustarlo y disparar devoluciones y preguntas. Además, si en la categoría de termostatos (fuera de esta búsqueda) ya hay 3 publicaciones con +100 vendidos, el punto 2 se cae. Y a 42.000 compite contra el medidor de 8.000 que 'ya cumple' y contra el sensor WiFi de 20.000: hay que argumentar la acción, no la medición.",
+   "citas": [
+    "o13",
+    "o3",
+    "o86",
+    "o33"
+   ],
+   "busqueda_ml": "termostato higrostato controlador temperatura y humedad con relé incubadora",
+   "id": "B4.F103.0",
+   "producto": "F103"
+  }
+ ],
+ "dolor": {
+  "B4.E013.0": {
+   "pasa": false,
+   "significativo": false,
+   "p": 0.24359,
+   "desatendidos": 2,
+   "de": 20,
+   "en_el_control": 0,
+   "productos_con_desatendidos": 1,
+   "hacen_falta": 1,
+   "ejemplos": [
+    "E013.p20",
+    "E013.p4"
+   ]
+  },
+  "B4.E047.0": {
+   "pasa": true,
+   "significativo": true,
+   "p": 0.00155,
+   "desatendidos": 9,
+   "de": 82,
+   "en_el_control": 0,
+   "productos_con_desatendidos": 1,
+   "hacen_falta": 1,
+   "ejemplos": [
+    "E047.o10",
+    "E047.o102",
+    "E047.o105",
+    "E047.o118",
+    "E047.o136"
+   ]
+  },
+  "B4.E055.0": {
+   "pasa": true,
+   "significativo": true,
+   "p": 0.00158,
+   "desatendidos": 16,
+   "de": 129,
+   "en_el_control": 3,
+   "productos_con_desatendidos": 1,
+   "hacen_falta": 1,
+   "ejemplos": [
+    "E055.o100",
+    "E055.o116",
+    "E055.o12",
+    "E055.o18",
+    "E055.o3"
+   ]
+  },
+  "B4.E071.0": {
+   "pasa": false,
+   "significativo": false,
+   "p": 0.81718,
+   "desatendidos": 2,
+   "de": 68,
+   "en_el_control": 3,
+   "productos_con_desatendidos": 1,
+   "hacen_falta": 1,
+   "ejemplos": [
+    "E071.o91",
+    "E071.p6"
+   ]
+  },
+  "B4.F022.0": {
+   "pasa": true,
+   "significativo": true,
+   "p": 0.0,
+   "desatendidos": 26,
+   "de": 119,
+   "en_el_control": 0,
+   "productos_con_desatendidos": 1,
+   "hacen_falta": 1,
+   "ejemplos": [
+    "F022.o115",
+    "F022.o116",
+    "F022.o126",
+    "F022.o127",
+    "F022.o135"
+   ]
+  },
+  "B4.F058.0": {
+   "pasa": false,
+   "significativo": false,
+   "p": 0.5,
+   "desatendidos": 1,
+   "de": 33,
+   "en_el_control": 0,
+   "productos_con_desatendidos": 0,
+   "hacen_falta": 1,
+   "ejemplos": [
+    "F058.o29"
+   ]
+  },
+  "B4.F075.0": {
+   "pasa": false,
+   "significativo": false,
+   "p": 0.05992,
+   "desatendidos": 4,
+   "de": 73,
+   "en_el_control": 0,
+   "productos_con_desatendidos": 1,
+   "hacen_falta": 1,
+   "ejemplos": [
+    "F075.o160",
+    "F075.o188",
+    "F075.o197",
+    "F075.o8"
+   ]
+  },
+  "B4.F077.0": {
+   "pasa": true,
+   "significativo": true,
+   "p": 0.0,
+   "desatendidos": 20,
+   "de": 70,
+   "en_el_control": 0,
+   "productos_con_desatendidos": 1,
+   "hacen_falta": 1,
+   "ejemplos": [
+    "F077.o1",
+    "F077.o104",
+    "F077.o11",
+    "F077.o12",
+    "F077.o147"
+   ]
+  },
+  "B4.F102.0": {
+   "pasa": true,
+   "significativo": true,
+   "p": 2e-05,
+   "desatendidos": 15,
+   "de": 103,
+   "en_el_control": 0,
+   "productos_con_desatendidos": 1,
+   "hacen_falta": 1,
+   "ejemplos": [
+    "F102.o147",
+    "F102.o167",
+    "F102.o17",
+    "F102.o194",
+    "F102.o21"
+   ]
+  },
+  "B4.F103.0": {
+   "pasa": true,
+   "significativo": true,
+   "p": 0.0,
+   "desatendidos": 20,
+   "de": 70,
+   "en_el_control": 0,
+   "productos_con_desatendidos": 1,
+   "hacen_falta": 1,
+   "ejemplos": [
+    "F103.o102",
+    "F103.o104",
+    "F103.o13",
+    "F103.o143",
+    "F103.o155"
+   ]
+  }
+ }
+}
