@@ -378,3 +378,11 @@ entonces una propuesta que falla queda sin juzgar en vez de perder todo; captcha
 Libre al capturar. **Qué no hicimos.** Probamos un B1 más fuerte (log-odds de Monroe et al.)
 y lo descartamos: seguía eligiendo nombres propios, y cambiar el baseline después del
 prerregistro sin validarlo hubiera sido peor.
+
+## 2026-11-16 — Requisitos en el README
+
+**Qué hicimos.** Corrimos `make test` sin leer el README. **Qué esperábamos.** Que pasara.
+**Qué pasó.** Falló con "No module named pytest": faltaba el venv y `make setup`, que el README
+explicaba en los comandos pero sin decir qué se necesitaba. Con un venv nuevo pasaron los 16
+tests. **Qué decidimos.** La sección "Correrlo" del README ahora lista los requisitos (Python,
+`make`, dependencias) y qué comandos piden internet o claves.
