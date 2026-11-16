@@ -121,6 +121,11 @@ queda en la traza con tokens, segundos, errores del guardrail y si se cortó.
 
 ## Correrlo
 
+Requisitos: Python 3 (la imagen de Docker usa 3.12; los tests también pasan con 3.14), `make` y
+las dependencias de `requirements.txt` (`pytest>=8`, `scipy>=1.11`). `make test` y `make todo`
+no necesitan internet ni claves; solo `make serendipia-api` pide `DEEPSEEK_API_KEY`. Sin venv,
+`make test` falla con "No module named pytest".
+
 ```bash
 git clone https://github.com/codewithpatelo/faltante && cd faltante
 python3 -m venv .venv && source .venv/bin/activate
