@@ -67,15 +67,25 @@ regla que detecta pedidos de repuesto.
 
 | Oportunidades distintas no descartadas (sobreviven o quedan condicionales) | LLM | B1 | B2 |
 |---|---|---|---|
-| dev (133 productos) | **13** de 135 propuestas | 7 de 133 | 2 de 7 |
-| test (136 productos, una sola corrida) | pendiente: falta el juez de competencia | | |
+| **test** (136 productos, una sola corrida) | **16** de 109 propuestas | 4 de 136 | 0 de 3 |
+| test limpio (90 productos que ninguna versión leyó antes) | **12** de 61 | 4 de 90 | 0 |
+| dev (133 productos) | 13 de 135 | 7 de 133 | 2 de 7 |
 
-En dev, las 13 del LLM son productos concretos (un extractor con sensor de humedad, un kit de
-detección de fugas con UV, una barra de enchufes con abrazadera, cabezales descartables para la
-escobilla del inodoro…); las 7 de B1 son "una versión que resuelva la queja 'bueno'" o
-"'saludos'": no se pueden cotizar. Ninguna llega a "sobrevive": todas quedan condicionales a una
-cotización o a probar el precio, que es el experimento siguiente. Dónde muere cada una y por qué:
-`data/serendipia/embudo_escala_dev_api.json`.
+**La hipótesis se sostiene en test**: el LLM deja 4 veces más oportunidades que el mejor
+baseline, y una proporción mayor de sus propuestas resiste el embudo (15% contra 4%; Fisher
+unilateral, p = 0,002; en el test limpio, p = 0,003). La diferencia es mucho mayor que la
+variación entre corridas medida en dev (desvío de 1,5 oportunidades en 3 corridas). Además, las
+del LLM son productos concretos (un adaptador digital de torque, barras de techo inflables, un
+andador de empuje para bebés, una soga de saltar sin cable…), y las de B1 no: "una versión que
+resuelva la queja 'algo'" o "'poco'". Si son buenas ideas lo dice el juicio humano a ciegas
+(`data/evaluacion/humano/`).
+
+**Análisis de fallas (test).** De las 109 propuestas del LLM, 30 mueren en C1 (el problema no
+aparece más que en gente al azar, o aparece en un solo producto), 45 en C4 (ya hay 3 o más que
+lo venden) y 18 en C5 (se ofrece y la gente lo deja pasar): el embudo mata el 85%. Ninguna llega
+a "sobrevive": las 16 quedan condicionales porque no hay precio de proveedor o nadie lo compró
+todavía, y el experimento siguiente es cotizar y probar el precio. Cada una con su motivo en
+`data/serendipia/embudo_escala_test_api.json`; el resumen, en `data/evaluacion/test/`.
 
 **Cada pieza se ganó su lugar con evidencia.** Las versiones se compararon en dev con 3 corridas
 y una regla escrita antes (`DECISIONES.md`, `data/evaluacion/`): leer personas en vez de
