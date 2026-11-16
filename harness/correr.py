@@ -20,7 +20,7 @@ from harness.embudo import EMBUDO, Propuesta, recorrer
 from harness.voces import RAIZ, productos, sin_acentos
 
 SERENDIPIA = RAIZ / "data/serendipia"
-METODOS = ["llm", "B1", "B2"]
+METODOS = ["llm", "B1", "B2", "B3"]
 
 
 def propuestas(particion: str) -> list[Propuesta]:
@@ -53,6 +53,15 @@ def propuestas_de_un_archivo(archivo) -> list[Propuesta]:
         anclas = [todos[pid] for pid in dict.fromkeys(s["producto"] for s in citadas)]
         if anclas:
             salida.append(armar("llm", anclas, o, citadas, o["busqueda_ml"], True, o["id"]))   # el precio de proveedor va por búsqueda: el ID cambia entre corridas
+    # B3 (zero-shot, harness/directo.py): si se corrió para esta partición
+    directo = Path(archivo).with_name(Path(archivo).name.replace("divergente_", "directo_"))
+    if directo.exists():
+        d3 = json.loads(directo.read_text(encoding="utf-8"))
+        for o in d3["oportunidades"]:
+            señal = {"id": "B3", "descripcion": o.get("alivia", ""), "producto": o["producto"]}
+            p = armar("B3", [todos[o["producto"]]], o, [señal], o["busqueda_ml"], False, o["id"])
+            p.dolor = d3["dolor"].get(o["id"])
+            salida.append(p)
     # Baselines: una propuesta por producto
     for pid in del_llm["señales"]:
         for metodo, baseline in (("B1", b1_queja_mas_frecuente), ("B2", b2_pedidos_de_repuesto)):

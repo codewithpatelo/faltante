@@ -33,3 +33,14 @@ variabilidad, se dice así. Si queda en 0 o por debajo de un baseline, se inform
 **Lo que no mide.** Si las oportunidades son obvias o si alguien las traería: eso lo da el
 juicio humano a ciegas (`data/evaluacion/humano/`) y, en definitiva, una cotización y una
 preventa.
+
+## Agregado del 16/11, antes de correrlo: baseline B3 (zero-shot)
+
+B1 y B2 resultaron débiles (las de B1 no son productos; B2 casi nunca dispara), así que ganarles
+prueba poco. Se agrega el baseline que la consigna nombra primero: **el mismo modelo con un
+prompt zero-shot** que lee cada producto y propone qué traer en una sola llamada, sin personas ni
+grupos (`harness/directo.py`, `skills/proponer_directo/`). Pasa por el mismo embudo y los mismos
+jueces. Se prueba primero en dev (sin tocar el prompt después de ver el resultado) y se corre una
+sola vez en test. El programa no cambia. **Regla:** la arquitectura aporta si el programa deja
+más oportunidades distintas no descartadas que B3 en test. Si B3 deja tantas o más, se informa
+que alcanza con preguntarle al modelo, y que lo que aporta el programa es el embudo.

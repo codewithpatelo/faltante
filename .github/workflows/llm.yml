@@ -10,7 +10,7 @@ on:
         description: "Qué productos leer: escala_dev o escala_test (test se corre una sola vez)"
         default: "escala_dev"
       tarea:
-        description: "serendipia (todo el programa) o equivalencias (juzga, para las propuestas guardadas en ARCHIVOS, qué publicaciones son equivalentes)"
+        description: "serendipia (todo el programa), directo (baseline B3 zero-shot) o equivalencias (juzga, para las propuestas guardadas en ARCHIVOS, qué publicaciones son equivalentes)"
         default: "serendipia"
       archivos:
         description: "Para equivalencias: las salidas de la divergencia a juzgar (glob)"
@@ -32,8 +32,13 @@ jobs:
         env:
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
         run: python -m harness.equivalencias ${{ inputs.archivos }}
+      - name: Baseline B3 (zero-shot)
+        if: inputs.tarea == 'directo'
+        env:
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+        run: python -m harness.directo ${{ inputs.particion }}
       - name: Personas, segmentos y propuestas con la API, y embudo
-        if: inputs.tarea != 'equivalencias'
+        if: inputs.tarea == 'serendipia'
         env:
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
         run: make serendipia-api PARTICION=${{ inputs.particion }}
