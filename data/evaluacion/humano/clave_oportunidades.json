@@ -1,0 +1,187 @@
+[
+ {
+  "id": "Q000",
+  "metodo": "llm",
+  "particion": "escala_dev_api"
+ },
+ {
+  "id": "Q001",
+  "metodo": "llm",
+  "particion": "escala_test_api"
+ },
+ {
+  "id": "Q002",
+  "metodo": "B2",
+  "particion": "escala_dev_api"
+ },
+ {
+  "id": "Q003",
+  "metodo": "llm",
+  "particion": "escala_dev_api"
+ },
+ {
+  "id": "Q004",
+  "metodo": "B1",
+  "particion": "escala_test_api"
+ },
+ {
+  "id": "Q005",
+  "metodo": "B1",
+  "particion": "escala_test_api"
+ },
+ {
+  "id": "Q006",
+  "metodo": "llm",
+  "particion": "escala_test_api"
+ },
+ {
+  "id": "Q007",
+  "metodo": "llm",
+  "particion": "escala_dev_api"
+ },
+ {
+  "id": "Q008",
+  "metodo": "llm",
+  "particion": "escala_test_api"
+ },
+ {
+  "id": "Q009",
+  "metodo": "llm",
+  "particion": "escala_test_api"
+ },
+ {
+  "id": "Q010",
+  "metodo": "llm",
+  "particion": "escala_dev_api"
+ },
+ {
+  "id": "Q011",
+  "metodo": "B1",
+  "particion": "escala_test_api"
+ },
+ {
+  "id": "Q012",
+  "metodo": "llm",
+  "particion": "escala_test_api"
+ },
+ {
+  "id": "Q013",
+  "metodo": "llm",
+  "particion": "escala_dev_api"
+ },
+ {
+  "id": "Q014",
+  "metodo": "B1",
+  "particion": "escala_dev_api"
+ },
+ {
+  "id": "Q015",
+  "metodo": "B1",
+  "particion": "escala_test_api"
+ },
+ {
+  "id": "Q016",
+  "metodo": "B1",
+  "particion": "escala_test_api"
+ },
+ {
+  "id": "Q017",
+  "metodo": "llm",
+  "particion": "escala_test_api"
+ },
+ {
+  "id": "Q018",
+  "metodo": "llm",
+  "particion": "escala_test_api"
+ },
+ {
+  "id": "Q019",
+  "metodo": "llm",
+  "particion": "escala_test_api"
+ },
+ {
+  "id": "Q020",
+  "metodo": "llm",
+  "particion": "escala_dev_api"
+ },
+ {
+  "id": "Q021",
+  "metodo": "llm",
+  "particion": "escala_test_api"
+ },
+ {
+  "id": "Q022",
+  "metodo": "llm",
+  "particion": "escala_test_api"
+ },
+ {
+  "id": "Q023",
+  "metodo": "B2",
+  "particion": "escala_dev_api"
+ },
+ {
+  "id": "Q024",
+  "metodo": "llm",
+  "particion": "escala_dev_api"
+ },
+ {
+  "id": "Q025",
+  "metodo": "llm",
+  "particion": "escala_test_api"
+ },
+ {
+  "id": "Q026",
+  "metodo": "llm",
+  "particion": "escala_test_api"
+ },
+ {
+  "id": "Q027",
+  "metodo": "llm",
+  "particion": "escala_test_api"
+ },
+ {
+  "id": "Q028",
+  "metodo": "llm",
+  "particion": "escala_dev_api"
+ },
+ {
+  "id": "Q029",
+  "metodo": "llm",
+  "particion": "escala_test_api"
+ },
+ {
+  "id": "Q030",
+  "metodo": "llm",
+  "particion": "escala_dev_api"
+ },
+ {
+  "id": "Q031",
+  "metodo": "llm",
+  "particion": "escala_dev_api"
+ },
+ {
+  "id": "Q032",
+  "metodo": "llm",
+  "particion": "escala_dev_api"
+ },
+ {
+  "id": "Q033",
+  "metodo": "llm",
+  "particion": "escala_dev_api"
+ },
+ {
+  "id": "Q034",
+  "metodo": "llm",
+  "particion": "escala_test_api"
+ },
+ {
+  "id": "Q035",
+  "metodo": "llm",
+  "particion": "escala_dev_api"
+ },
+ {
+  "id": "Q036",
+  "metodo": "llm",
+  "particion": "escala_test_api"
+ }
+]

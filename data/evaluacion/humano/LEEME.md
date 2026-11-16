@@ -19,3 +19,16 @@ el modelo. Guardá como CSV con el mismo nombre y commiteá el archivo.
 Cuando estén las planillas: `python data/evaluacion/humano/calibrar.py` calcula el acuerdo entre
 nosotros (kappa de Fleiss) y del modelo contra la mayoría (acuerdo, kappa de Cohen, precisión,
 exhaustividad). Armado con `armar_planillas.py` (semilla fija).
+
+## Parte 2: calidad de las oportunidades (unos 15 minutos)
+
+`oportunidades_<tu nombre>.csv` tiene las 37 oportunidades que el embudo no descartó en dev y en
+test, del LLM y de los baselines, mezcladas y sin decir de dónde salió cada una. En cada fila,
+`si` o `no` en tres columnas:
+
+- `concreta`: ¿es un producto concreto que se le puede pedir a un proveedor?
+- `obvia`: ¿se le ocurriría a cualquiera que vende en esa categoría?
+- `la_cotizaria`: si fueras importador, ¿pedirías una cotización para probarla?
+
+No mires `clave_oportunidades.json`. Después: `python data/evaluacion/humano/evaluar_oportunidades.py`
+cuenta, por método, cuántas son concretas, no obvias y "la cotizaría" a la vez (mayoría humana).
