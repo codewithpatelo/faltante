@@ -9,6 +9,12 @@ B2, una regla que detecta pedidos de repuesto.
 **Datos.** escala_test: 136 productos de 71 búsquedas, apartados por hash de la búsqueda antes de
 leerlos (`scripts/unir_escala.py`). Nadie miró sus voces mientras se iteraba.
 
+**Declaración.** 46 de esos 136 productos (los del corpus del 05/11) ya pasaron una vez por test
+el 06/11, con una versión vieja (señales por producto): 6 propuestas, ninguna sobrevivió
+(commit `77b8094`). Ese resultado se vio; las voces no. Por eso además del total se informa,
+por separado, el resultado sobre los **90 productos nuevos** (corpus del 06/11, prefijo `F`), que
+ninguna versión leyó nunca: es el test limpio.
+
 **Sistema congelado.** El commit en el que se lanza la corrida. Mismo modelo (DeepSeek Flash),
 mismos skills y umbrales que la última corrida de dev. Se corre **una sola vez**. Las búsquedas
 que proponga se capturan con el mismo script y las equivalencias las juzga el mismo juez.
