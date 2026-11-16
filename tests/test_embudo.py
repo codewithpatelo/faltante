@@ -194,6 +194,6 @@ def test_costo_del_llm_por_tokens():
 # --- De punta a punta --------------------------------------------------------------------
 
 def test_cada_propuesta_de_dev_termina_con_estado_y_motivo():
-    subprocess.run([sys.executable, "-m", "harness.correr", "dev"], cwd=RAIZ, check=True, capture_output=True)
-    for r in json.loads((RAIZ / "data/serendipia/embudo_dev.json").read_text()):
+    subprocess.run([sys.executable, "-m", "harness.correr", "escala_dev_api"], cwd=RAIZ, check=True, capture_output=True)
+    for r in json.loads((RAIZ / "data/serendipia/embudo_escala_dev_api.json").read_text()):
         assert r["estado"] in {"sobrevive", "condicional", "descartada"} and r["motivo"]

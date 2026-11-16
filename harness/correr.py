@@ -109,7 +109,7 @@ def busquedas_capturadas() -> dict:
 
 
 if __name__ == "__main__":
-    particion = sys.argv[1] if len(sys.argv) > 1 else "dev"
+    particion = sys.argv[1] if len(sys.argv) > 1 else "escala_dev_api"
     recorridos = con_confianza([recorrer(p) for p in propuestas(particion)])
     (SERENDIPIA / f"embudo_{particion}.json").write_text(json.dumps(recorridos, ensure_ascii=False, indent=1), encoding="utf-8")
     print(f"## {particion}\n{tabla(recorridos)}\n")
