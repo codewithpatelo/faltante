@@ -280,6 +280,46 @@ def test_quien_juzga_es_el_mismo_cliente_salvo_que_se_pida_otro_modelo(monkeypat
     assert propone.modelo == "deepseek-flash" and juzga.modelo == "claude-sonnet-5-5"
 
 
+def test_el_embudo_lee_los_juicios_del_juez_que_dice_el_nombre_de_la_salida():
+    from harness.equivalencias import archivo_de, juez_de
+    assert juez_de("divergente_escala_dev_api.json") is None
+    assert juez_de("data/serendipia/divergente_escala_dev_api__juez-claude-sonnet-5-5.json") == "claude-sonnet-5-5"
+    assert juez_de("divergente_escala_dev_api__claude-haiku-5-5__juez-claude-sonnet-5-5.json") == "claude-sonnet-5-5"
+    assert archivo_de(None).name == "equivalencias.json" and archivo_de("deepseek-flash").name == "equivalencias.json"
+    assert archivo_de("claude-sonnet-5-5").name == "equivalencias__claude-sonnet-5-5.json"
+
+
+def test_rejuzgar_mide_otra_vez_el_dolor_de_lo_guardado_sin_volver_a_proponer(monkeypatch):
+    from harness import directo, divergente
+    from harness.modelo import costos
+    vistos = []
+    def falso(cliente, dolores, tarjetas, todos, traza):
+        vistos.append((cliente, len(dolores)))
+        traza.append({"tokens": {"entrada": 10, "salida": 5}, "segundos": 1.0})
+        return {d[0]["id"]: {"pasa": False} for d in dolores}
+    monkeypatch.setattr(divergente.D, "medir_y_decidir", falso)
+    juez = SimpleNamespace(modelo="claude-sonnet-5-5")
+    guardado = json.loads((RAIZ / "data/serendipia/divergente_escala_dev_api.json").read_text())
+    r = divergente.rejuzgar(guardado, "escala_dev", juez)
+    assert r["quien"] == guardado["quien"] and r["juez"] == "claude-sonnet-5-5" and r["oportunidades"] == guardado["oportunidades"]
+    assert set(r["dolor"]) == {"llm", "B1", "B2"} and len(r["dolor"]["llm"]) == len(guardado["oportunidades"])
+    assert all(c is juez for c, _ in vistos) and r["costo"] == costos({"claude-sonnet-5-5": r["traza"]})
+    assert r["costo_de_proponer"] == guardado["costo"]
+    b3 = json.loads((RAIZ / "data/serendipia/directo_escala_dev_api.json").read_text())
+    r3 = directo.rejuzgar(b3, "escala_dev", juez)
+    assert len(r3["dolor"]) == len(b3["oportunidades"]) and r3["juez"] == "claude-sonnet-5-5"
+
+
+def test_rejuzgar_no_toca_test_ni_se_hace_sin_juez(monkeypatch):
+    from harness.modelo import juez_para_rejuzgar
+    monkeypatch.setenv("MODELO_JUEZ", "claude-sonnet-5-5")
+    with pytest.raises(SystemExit):
+        juez_para_rejuzgar("escala_test")
+    monkeypatch.delenv("MODELO_JUEZ")
+    with pytest.raises(SystemExit):
+        juez_para_rejuzgar("escala_dev")
+
+
 def test_claude_rechaza_un_modelo_sin_precio():
     from harness.modelo import Claude
     with pytest.raises(ValueError):

@@ -28,9 +28,9 @@ def propuestas(particion: str) -> list[Propuesta]:
 
 
 def propuestas_de_un_archivo(archivo) -> list[Propuesta]:
-    from harness.equivalencias import clave, guardadas
+    from harness.equivalencias import clave, guardadas, juez_de
     del_llm = json.loads(Path(archivo).read_text(encoding="utf-8"))
-    juicios = guardadas()
+    juicios = guardadas(juez_de(archivo))   # el juez que dice el nombre de la salida (__juez-<modelo>), o DeepSeek Flash
     capturas = busquedas_capturadas()
     fobs = precios_de_proveedor()
     todos = productos()

@@ -187,3 +187,12 @@ def clientes():
     propone = cliente_llm()
     juzga = cliente_llm(variable="MODELO_JUEZ") if os.environ.get("MODELO_JUEZ") else propone
     return propone, (propone if juzga.modelo == propone.modelo else juzga)
+
+
+def juez_para_rejuzgar(particion: str):
+    """El juez de `--rejuzgar`: el de MODELO_JUEZ. Test se corre una sola vez, con prerregistro: no se re-juzga."""
+    if "test" in particion:
+        raise SystemExit(f"{particion}: test se corre una sola vez, con un prerregistro escrito antes (data/evaluacion/test/)")
+    if not os.environ.get("MODELO_JUEZ"):
+        raise SystemExit("--rejuzgar necesita MODELO_JUEZ=<modelo> (uno que no haya propuesto)")
+    return cliente_llm(variable="MODELO_JUEZ")

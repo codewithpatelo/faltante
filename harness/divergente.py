@@ -26,11 +26,12 @@ from __future__ import annotations
 import json
 import sys
 from collections import Counter
+from pathlib import Path
 
 from harness import dolor as D
 from harness import personas as P
 from harness.baselines import b1_queja_mas_frecuente, b2_pedidos_de_repuesto
-from harness.modelo import clientes, con_reintento, costos, en_paralelo, sufijo
+from harness.modelo import MODELO, clientes, con_reintento, costos, en_paralelo, juez_para_rejuzgar, sufijo
 from harness.voces import RAIZ, productos
 
 SKILL_B = RAIZ / "skills/proponer_a_un_segmento/SKILL.md"
@@ -128,9 +129,34 @@ def divergir(cliente, particion: str, capturas: dict, juez=None) -> dict:
             **al_formato_del_embudo(oportunidades, tarjetas, particion)}
 
 
+def rejuzgar(guardado: dict, particion: str, juez) -> dict:
+    """Mide de nuevo el dolor (C1) de las propuestas ya guardadas (las del LLM y las de B1 y B2), con otro
+    juez y sin volver a proponer ni a leer personas: salen de lo guardado (personas_<partición>_api.json)."""
+    todos, traza = productos(), []
+    tarjetas = P.tarjetas_guardadas(particion)
+    dolor = {"llm": D.medir_y_decidir(juez, [(D.enunciado(o), {tarjetas[i]["producto"] for i in o["personas"]})
+                                             for o in guardado["oportunidades"]], tarjetas, todos, traza)}
+    for metodo, dolores in dolores_de_los_baselines(particion, tarjetas).items():
+        dolor[metodo] = D.medir_y_decidir(juez, dolores, tarjetas, todos, traza)
+    return {**{k: v for k, v in guardado.items() if k != "traza"}, "juez": juez.modelo, "costo_de_proponer": guardado.get("costo"),
+            "costo": costos({juez.modelo: traza}), "traza": traza, "dolor": dolor}
+
+
 if __name__ == "__main__":
     from harness.correr import busquedas_capturadas
-    particion = sys.argv[1] if len(sys.argv) > 1 else "escala_dev"
+    args = [a for a in sys.argv[1:] if not a.startswith("--")]
+    particion = args[0] if args else "escala_dev"
+    if "--rejuzgar" in sys.argv:       # python -m harness.divergente escala_dev --rejuzgar [archivo]
+        juez = juez_para_rejuzgar(particion)
+        origen = Path(args[1]) if len(args) > 1 else RAIZ / f"data/serendipia/divergente_{particion}_api.json"
+        guardado = json.loads(origen.read_text(encoding="utf-8"))
+        if juez.modelo == guardado.get("quien", MODELO):
+            raise SystemExit(f"{juez.modelo} ya propuso esto: re-juzgar es con otro modelo")
+        salida = rejuzgar(guardado, particion, juez)
+        destino = RAIZ / f"data/serendipia/divergente_{particion}_api{sufijo(guardado.get('quien', MODELO), juez.modelo)}.json"
+        destino.write_text(json.dumps(salida, ensure_ascii=False, indent=1), encoding="utf-8")
+        print(f"{destino.relative_to(RAIZ)}: {salida['costo']}")
+        raise SystemExit(0)
     cliente, juez = clientes()
     salida = divergir(cliente, particion, busquedas_capturadas(), juez)
     destino = RAIZ / f"data/serendipia/divergente_{particion}_api{sufijo(cliente.modelo, juez.modelo)}.json"

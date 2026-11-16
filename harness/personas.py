@@ -111,6 +111,13 @@ def asignar(cliente, segmentos: list[dict], tarjetas: list[dict], traza: list) -
     return {k: v for parte in en_paralelo(una_tanda, tandas) for k, v in parte.items()}
 
 
+def tarjetas_guardadas(particion: str) -> dict[str, dict]:
+    """Las tarjetas ya leídas, por ID, sin llamar a la API (a diferencia de `personas_de_la_particion`, que
+    vuelve a leer los productos que no dejaron ninguna tarjeta)."""
+    archivo = RAIZ / f"data/serendipia/personas_{particion}_api.json"
+    return {t["id"]: t for t in json.loads(archivo.read_text(encoding="utf-8"))["tarjetas"]}
+
+
 def personas_de_la_particion(cliente, particion: str, traza: list) -> dict:
     """Tarjetas, segmentos y asignaciones de la partición; se calculan una vez y se guardan."""
     archivo = RAIZ / f"data/serendipia/personas_{particion}_api.json"

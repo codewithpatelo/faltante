@@ -446,3 +446,17 @@ pasan; ninguna corrida real. **Qué decidimos.** Antes de usar a Claude de juez 
 contra las personas (80 filas), y para comparar contra lo que ya hay hay que volver a juzgar con él
 las propuestas guardadas de DeepSeek, baselines incluidos: son el mismo embudo para todos los
 métodos. Falta un paso que re-juzgue propuestas ya guardadas sin volver a proponer.
+
+## 2026-11-16 — Re-juzgar lo ya propuesto con otro modelo
+
+**Qué hicimos.** `--rejuzgar` en `divergente` y `directo` mide de nuevo el dolor (C1) de lo guardado
+(LLM, B1, B2 y B3) con `MODELO_JUEZ`, sin proponer ni leer personas, y lo guarda con `__juez-<modelo>`.
+`equivalencias` con otro juez juzga todo lo que él no juzgó y lo agrega a
+`equivalencias__<modelo>.json`; `correr` elige ese archivo según el nombre de la salida
+(`..._api__juez-<modelo>`) y el B3 sale por el mismo nombre. No se re-juzga test, ni con el mismo
+modelo que propuso. **Qué esperábamos.** Poder pasar las propuestas de DeepSeek por el embudo con un
+juez de otra familia, y que `equivalencias.json` siga siendo solo el de DeepSeek. **Qué pasó.** Los
+27 tests pasan (con un juez falso); ninguna corrida real. De paso: el producto F012 de dev tiene 7
+textos y ninguna tarjeta, así que `personas_de_la_particion` lo vuelve a leer en cada corrida; el
+re-juicio usa las tarjetas guardadas y no lo toca. **Qué decidimos.** Dejar F012 como está hasta
+mirar por qué no deja tarjetas.
