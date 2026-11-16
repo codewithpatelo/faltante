@@ -183,5 +183,135 @@
   "id": "Q036",
   "metodo": "llm",
   "particion": "escala_test_api"
+ },
+ {
+  "id": "Q037",
+  "metodo": "B4",
+  "particion": "escala_dev_api"
+ },
+ {
+  "id": "Q038",
+  "metodo": "B1",
+  "particion": "escala_dev_api"
+ },
+ {
+  "id": "Q039",
+  "metodo": "B4",
+  "particion": "escala_test_api"
+ },
+ {
+  "id": "Q040",
+  "metodo": "B4",
+  "particion": "escala_dev_api"
+ },
+ {
+  "id": "Q041",
+  "metodo": "B4",
+  "particion": "escala_dev_api"
+ },
+ {
+  "id": "Q042",
+  "metodo": "B4",
+  "particion": "escala_test_api"
+ },
+ {
+  "id": "Q043",
+  "metodo": "B4",
+  "particion": "escala_dev_api"
+ },
+ {
+  "id": "Q044",
+  "metodo": "B4",
+  "particion": "escala_test_api"
+ },
+ {
+  "id": "Q045",
+  "metodo": "B4",
+  "particion": "escala_test_api"
+ },
+ {
+  "id": "Q046",
+  "metodo": "B4",
+  "particion": "escala_test_api"
+ },
+ {
+  "id": "Q047",
+  "metodo": "B4",
+  "particion": "escala_dev_api"
+ },
+ {
+  "id": "Q048",
+  "metodo": "B4",
+  "particion": "escala_test_api"
+ },
+ {
+  "id": "Q049",
+  "metodo": "B4",
+  "particion": "escala_dev_api"
+ },
+ {
+  "id": "Q050",
+  "metodo": "B4",
+  "particion": "escala_test_api"
+ },
+ {
+  "id": "Q051",
+  "metodo": "B1",
+  "particion": "escala_dev_api"
+ },
+ {
+  "id": "Q052",
+  "metodo": "B4",
+  "particion": "escala_dev_api"
+ },
+ {
+  "id": "Q053",
+  "metodo": "B4",
+  "particion": "escala_test_api"
+ },
+ {
+  "id": "Q054",
+  "metodo": "B4",
+  "particion": "escala_dev_api"
+ },
+ {
+  "id": "Q055",
+  "metodo": "B1",
+  "particion": "escala_dev_api"
+ },
+ {
+  "id": "Q056",
+  "metodo": "B4",
+  "particion": "escala_test_api"
+ },
+ {
+  "id": "Q057",
+  "metodo": "B1",
+  "particion": "escala_dev_api"
+ },
+ {
+  "id": "Q058",
+  "metodo": "B1",
+  "particion": "escala_dev_api"
+ },
+ {
+  "id": "Q059",
+  "metodo": "B4",
+  "particion": "escala_test_api"
+ },
+ {
+  "id": "Q060",
+  "metodo": "B4",
+  "particion": "escala_dev_api"
+ },
+ {
+  "id": "Q061",
+  "metodo": "B1",
+  "particion": "escala_dev_api"
+ },
+ {
+  "id": "Q062",
+  "metodo": "B4",
+  "particion": "escala_dev_api"
  }
 ]

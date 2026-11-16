@@ -24637,6 +24637,648 @@
   ]
  },
  {
+  "metodo": "B4",
+  "productos": [
+   "E013"
+  ],
+  "anclas": [
+   "X2 Organizador Canasto Caja De Tela Plegable Estructura Meta"
+  ],
+  "id": "B4.E013.0",
+  "que_traer": "Canasto/caja organizadora plegable de tela con estructura metálica en medidas ANGOSTAS (ancho 18-24 cm, manteniendo alto y largo estándar), en pack x3/x4 y en color crudo además del gris",
+  "busqueda_ml": "organizador plegable angosto para placard 20 cm de ancho",
+  "estado": "descartada",
+  "se_detiene_en": "C1 dolor",
+  "motivo": "no es más frecuente que en gente al azar: 2 de 20 lo tienen sin resolver, contra 0 en el control (p = 0.24359)",
+  "señales": [
+   {
+    "id": "E013.B4",
+    "descripcion": "El problema de tener el lugar medido y no encontrar el organizador que entre: hoy terminan desistiendo de la compra o comprando uno que no cierra la puerta del placard / no entra en el cajón",
+    "errores": []
+   }
+  ],
+  "recorrido": [
+   {
+    "chequeo": "guardrail",
+    "supuesto": "Lo que dice el LLM está en los textos",
+    "pasa": true,
+    "motivo": "los baselines no citan textos"
+   },
+   {
+    "chequeo": "C1 dolor",
+    "supuesto": "El dolor que dice aliviar existe y está mal resuelto",
+    "pasa": false,
+    "motivo": "no es más frecuente que en gente al azar: 2 de 20 lo tienen sin resolver, contra 0 en el control (p = 0.24359)",
+    "datos": {
+     "desatendidos": 2,
+     "de": 20,
+     "en_el_control": 0,
+     "p": 0.24359,
+     "productos_con_desatendidos": 1
+    }
+   }
+  ]
+ },
+ {
+  "metodo": "B4",
+  "productos": [
+   "E047"
+  ],
+  "anclas": [
+   "Uni-t Termómetro Infrarrojo Temperatura Ut306c -50°C a 500°C"
+  ],
+  "id": "B4.E047.0",
+  "que_traer": "Cámara termográfica portátil de entrada (ej. UNI-T UTi120S o equivalente) para detección de fugas de agua caliente y problemas térmicos en pisos/paredes",
+  "busqueda_ml": "camara termografica fugas de agua",
+  "estado": "descartada",
+  "se_detiene_en": "C4 hueco",
+  "motivo": "ya atendido: 8 equivalentes venden +100",
+  "señales": [
+   {
+    "id": "E047.B4",
+    "descripcion": "Encontrar una fuga de agua caliente o un caño en el piso sin abrir de más, viendo el gradiente térmico en una imagen; el UT306C solo mide un punto de superficie y el propio vendedor dice que no sirve para fugas",
+    "errores": []
+   }
+  ],
+  "recorrido": [
+   {
+    "chequeo": "guardrail",
+    "supuesto": "Lo que dice el LLM está en los textos",
+    "pasa": true,
+    "motivo": "los baselines no citan textos"
+   },
+   {
+    "chequeo": "C1 dolor",
+    "supuesto": "El dolor que dice aliviar existe y está mal resuelto",
+    "pasa": true,
+    "motivo": "9 de 82 lo tienen sin resolver, contra 0 en el control (p = 0.00155)",
+    "datos": {
+     "desatendidos": 9,
+     "de": 82,
+     "en_el_control": 0,
+     "p": 0.00155,
+     "productos_con_desatendidos": 1
+    }
+   },
+   {
+    "chequeo": "C3 demanda",
+    "supuesto": "Hay gente eligiendo el producto de origen",
+    "pasa": true,
+    "motivo": "el producto ancla vende +5000 (mínimo 500)"
+   },
+   {
+    "chequeo": "C4 hueco",
+    "supuesto": "Nadie la atiende todavía",
+    "pasa": false,
+    "motivo": "ya atendido: 8 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 60,
+     "venden": 8,
+     "con_alguna_venta": 16,
+     "ventas_visibles": 1500,
+     "ejemplos_que_venden": [
+      "Cámara Termográfica Uni-T UTi712S Digital Precisión 2°C Rango -20°C 40 (+500, $269,000)",
+      "Cámara Térmica Termográfica Uni-t UTI260B Precisa Uso Corporal 15°C-55 (+100, $739,900)",
+      "Cámara Termográfica Habotest Ht821a Infrarroja (+100, $210,504)"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "metodo": "B4",
+  "productos": [
+   "E055"
+  ],
+  "anclas": [
+   "Masajeador Cervical y Lumbar Gadnic 8 Rodillos Bidireccional"
+  ],
+  "id": "B4.E055.0",
+  "que_traer": "Manta o colchón masajeador shiatsu de espalda y cuello con calor, diseñado para recostarse encima y usarse sin sujetarlo con las manos",
+  "busqueda_ml": "manta masajeadora espalda cuello para acostarse",
+  "estado": "descartada",
+  "se_detiene_en": "C5 la eligen",
+  "motivo": "la gente la deja pasar: 2 alternativas con stock local a precio comparable (ventas mediana 12.5) contra 49 publicaciones de la búsqueda de origen (mediana 100), p = 0.0233",
+  "señales": [
+   {
+    "id": "E055.B4",
+    "descripcion": "Permite relajar cuello y espalda en posición recostada o sin hacer fuerza con los brazos, y distribuye la presión sin que los rodillos manuales lastimen la columna",
+    "errores": []
+   }
+  ],
+  "recorrido": [
+   {
+    "chequeo": "guardrail",
+    "supuesto": "Lo que dice el LLM está en los textos",
+    "pasa": true,
+    "motivo": "los baselines no citan textos"
+   },
+   {
+    "chequeo": "C1 dolor",
+    "supuesto": "El dolor que dice aliviar existe y está mal resuelto",
+    "pasa": true,
+    "motivo": "16 de 129 lo tienen sin resolver, contra 3 en el control (p = 0.00158)",
+    "datos": {
+     "desatendidos": 16,
+     "de": 129,
+     "en_el_control": 3,
+     "p": 0.00158,
+     "productos_con_desatendidos": 1
+    }
+   },
+   {
+    "chequeo": "C3 demanda",
+    "supuesto": "Hay gente eligiendo el producto de origen",
+    "pasa": true,
+    "motivo": "el producto ancla vende +10000 (mínimo 500)"
+   },
+   {
+    "chequeo": "C4 hueco",
+    "supuesto": "Nadie la atiende todavía",
+    "pasa": true,
+    "motivo": "2 equivalentes, 0 venden +100",
+    "datos": {
+     "equivalentes": 2,
+     "venden": 0,
+     "con_alguna_venta": 1,
+     "ventas_visibles": 25,
+     "ejemplos_que_venden": []
+    }
+   },
+   {
+    "chequeo": "C5 la eligen",
+    "supuesto": "Si se ofrece, la gente la elige",
+    "pasa": false,
+    "motivo": "la gente la deja pasar: 2 alternativas con stock local a precio comparable (ventas mediana 12.5) contra 49 publicaciones de la búsqueda de origen (mediana 100), p = 0.0233",
+    "datos": {
+     "comparables": 2,
+     "ventas_comparables": [
+      0,
+      25
+     ],
+     "mediana_de_origen": 100,
+     "publicaciones_de_origen": 49,
+     "p": 0.0233
+    }
+   }
+  ]
+ },
+ {
+  "metodo": "B4",
+  "productos": [
+   "E071"
+  ],
+  "anclas": [
+   "Parasol Auto Protector Solar Parabrisas 150x70 Metalizado"
+  ],
+  "id": "B4.E071.0",
+  "que_traer": "Parasol parabrisas metalizado 150x70 con impresión full-color (sublimación/serigrafía) del logo del cliente, en packs de 50+ unidades, con arte aprobado antes de producir",
+  "busqueda_ml": "parasol auto personalizado con logo empresa",
+  "estado": "descartada",
+  "se_detiene_en": "C1 dolor",
+  "motivo": "no es más frecuente que en gente al azar: 2 de 68 lo tienen sin resolver, contra 3 en el control (p = 0.81718)",
+  "señales": [
+   {
+    "id": "E071.B4",
+    "descripcion": "Hoy el comprador corporativo no puede tener el parasol con su marca: el proveedor le dice que no hace personalizados y el único branding que aparece es publicidad ajena impresa que el usuario final termina criticando. Le resuelve el regalo/equipamiento de flota sin tener que importar él mismo ni buscar un proveedor de merchandising",
+    "errores": []
+   }
+  ],
+  "recorrido": [
+   {
+    "chequeo": "guardrail",
+    "supuesto": "Lo que dice el LLM está en los textos",
+    "pasa": true,
+    "motivo": "los baselines no citan textos"
+   },
+   {
+    "chequeo": "C1 dolor",
+    "supuesto": "El dolor que dice aliviar existe y está mal resuelto",
+    "pasa": false,
+    "motivo": "no es más frecuente que en gente al azar: 2 de 68 lo tienen sin resolver, contra 3 en el control (p = 0.81718)",
+    "datos": {
+     "desatendidos": 2,
+     "de": 68,
+     "en_el_control": 3,
+     "p": 0.81718,
+     "productos_con_desatendidos": 1
+    }
+   }
+  ]
+ },
+ {
+  "metodo": "B4",
+  "productos": [
+   "F022"
+  ],
+  "anclas": [
+   "Comedero Automático Smart-Tek PF 200 4L con Cámara Wi-Fi y A"
+  ],
+  "id": "B4.F022.0",
+  "que_traer": "Comedero selectivo por microchip/RFID para gatos o perros pequeños (tapa que abre solo para la mascota autorizada, con bandeja extraíble y capacidad para ración diaria).",
+  "busqueda_ml": "comedero selectivo microchip gatos",
+  "estado": "descartada",
+  "se_detiene_en": "C5 la eligen",
+  "motivo": "la gente la deja pasar: 8 alternativas con stock local a precio comparable (ventas mediana 0.0) contra 57 publicaciones de la búsqueda de origen (mediana 100), p = 0.0001",
+  "señales": [
+   {
+    "id": "F022.B4",
+    "descripcion": "Evita que el animal dominante coma la comida del otro o vacíe el comedero; permite alimentar separado y controlar peso sin depender de horarios ni de supervisión.",
+    "errores": []
+   }
+  ],
+  "recorrido": [
+   {
+    "chequeo": "guardrail",
+    "supuesto": "Lo que dice el LLM está en los textos",
+    "pasa": true,
+    "motivo": "los baselines no citan textos"
+   },
+   {
+    "chequeo": "C1 dolor",
+    "supuesto": "El dolor que dice aliviar existe y está mal resuelto",
+    "pasa": true,
+    "motivo": "26 de 119 lo tienen sin resolver, contra 0 en el control (p = 0.0)",
+    "datos": {
+     "desatendidos": 26,
+     "de": 119,
+     "en_el_control": 0,
+     "p": 0.0,
+     "productos_con_desatendidos": 1
+    }
+   },
+   {
+    "chequeo": "C3 demanda",
+    "supuesto": "Hay gente eligiendo el producto de origen",
+    "pasa": true,
+    "motivo": "el producto ancla vende +1000 (mínimo 500)"
+   },
+   {
+    "chequeo": "C4 hueco",
+    "supuesto": "Nadie la atiende todavía",
+    "pasa": true,
+    "motivo": "14 equivalentes, 0 venden +100",
+    "datos": {
+     "equivalentes": 14,
+     "venden": 0,
+     "con_alguna_venta": 0,
+     "ventas_visibles": 0,
+     "ejemplos_que_venden": []
+    }
+   },
+   {
+    "chequeo": "C5 la eligen",
+    "supuesto": "Si se ofrece, la gente la elige",
+    "pasa": false,
+    "motivo": "la gente la deja pasar: 8 alternativas con stock local a precio comparable (ventas mediana 0.0) contra 57 publicaciones de la búsqueda de origen (mediana 100), p = 0.0001",
+    "datos": {
+     "comparables": 8,
+     "ventas_comparables": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "mediana_de_origen": 100,
+     "publicaciones_de_origen": 57,
+     "p": 0.0001
+    }
+   }
+  ]
+ },
+ {
+  "metodo": "B4",
+  "productos": [
+   "F058"
+  ],
+  "anclas": [
+   "Piso De Goma Moneda Negro Ancho 1 Metro 3mm Espesor (no Pvc)"
+  ],
+  "id": "B4.F058.0",
+  "que_traer": "Rampa/umbral modular de caucho antideslizante con relieve tipo moneda, 1 m de ancho y 3-5 cm de alto, con bordes biselados para exterior",
+  "busqueda_ml": "rampa de goma antideslizante para silla de ruedas umbral",
+  "estado": "descartada",
+  "se_detiene_en": "C1 dolor",
+  "motivo": "no es más frecuente que en gente al azar: 1 de 33 lo tienen sin resolver, contra 0 en el control (p = 0.5)",
+  "señales": [
+   {
+    "id": "F058.B4",
+    "descripcion": "El riesgo de resbalar en rampas, umbrales y entradas mojadas, y la falta de una transición segura y estable sin hacer obra",
+    "errores": []
+   }
+  ],
+  "recorrido": [
+   {
+    "chequeo": "guardrail",
+    "supuesto": "Lo que dice el LLM está en los textos",
+    "pasa": true,
+    "motivo": "los baselines no citan textos"
+   },
+   {
+    "chequeo": "C1 dolor",
+    "supuesto": "El dolor que dice aliviar existe y está mal resuelto",
+    "pasa": false,
+    "motivo": "no es más frecuente que en gente al azar: 1 de 33 lo tienen sin resolver, contra 0 en el control (p = 0.5)",
+    "datos": {
+     "desatendidos": 1,
+     "de": 33,
+     "en_el_control": 0,
+     "p": 0.5,
+     "productos_con_desatendidos": 0
+    }
+   }
+  ]
+ },
+ {
+  "metodo": "B4",
+  "productos": [
+   "F075"
+  ],
+  "anclas": [
+   "Jabon potásico canela y neem 100cc Ecomambo insecticida"
+  ],
+  "id": "B4.F075.0",
+  "que_traer": "Granulado larvicida biológico de Bacillus thuringiensis israelensis (Bti) para aplicar al sustrato/maceta (sobre de 100 g con dosificador), específico para larvas de mosquita del sustrato, mosquita blanca en etapa larval y larvas de dípteros que viven en la tierra de las macetas",
+  "busqueda_ml": "larvicida para tierra de plantas mosquita del sustrato",
+  "estado": "descartada",
+  "se_detiene_en": "C1 dolor",
+  "motivo": "no es más frecuente que en gente al azar: 4 de 73 lo tienen sin resolver, contra 0 en el control (p = 0.05992)",
+  "señales": [
+   {
+    "id": "F075.B4",
+    "descripcion": "El jabón potásico es de contacto y solo mata lo que toca la hoja: las larvas y huevos que están en la tierra sobreviven y la plaga vuelve a salir. El Bti se aplica al sustrato, se come solo por larvas y corta el ciclo en el lugar donde el jabón no llega, sin ser sistémico ni tóxico para la huerta",
+    "errores": []
+   }
+  ],
+  "recorrido": [
+   {
+    "chequeo": "guardrail",
+    "supuesto": "Lo que dice el LLM está en los textos",
+    "pasa": true,
+    "motivo": "los baselines no citan textos"
+   },
+   {
+    "chequeo": "C1 dolor",
+    "supuesto": "El dolor que dice aliviar existe y está mal resuelto",
+    "pasa": false,
+    "motivo": "no es más frecuente que en gente al azar: 4 de 73 lo tienen sin resolver, contra 0 en el control (p = 0.05992)",
+    "datos": {
+     "desatendidos": 4,
+     "de": 73,
+     "en_el_control": 0,
+     "p": 0.05992,
+     "productos_con_desatendidos": 1
+    }
+   }
+  ]
+ },
+ {
+  "metodo": "B4",
+  "productos": [
+   "F077"
+  ],
+  "anclas": [
+   "Aveno Cuidado Completo Capilar Kit Shampoo y Acondicionador "
+  ],
+  "id": "B4.F077.0",
+  "que_traer": "Serum/tónico calmante de cuero cabelludo sin perfume (avena coloidal + centella o pantenol), formato gotero 50-60 ml, frasco chico y liviano para importar",
+  "busqueda_ml": "serum calmante cuero cabelludo piel sensible sin perfume",
+  "estado": "condicional",
+  "se_detiene_en": "C6 margen",
+  "motivo": "sin precio de proveedor: falta cotizarlo",
+  "señales": [
+   {
+    "id": "F077.B4",
+    "descripcion": "La picazón, el ardor y la descamación del cuero cabelludo sensible entre lavados, sin tener que pasar por otro shampoo con fragancia fuerte. Hoy la única salida que encuentran es un kit de shampoo y acondicionador que les irrita menos pero no les calma el prurito y encima les deja un olor que varias personas describen como insoportable",
+    "errores": []
+   }
+  ],
+  "recorrido": [
+   {
+    "chequeo": "guardrail",
+    "supuesto": "Lo que dice el LLM está en los textos",
+    "pasa": true,
+    "motivo": "los baselines no citan textos"
+   },
+   {
+    "chequeo": "C1 dolor",
+    "supuesto": "El dolor que dice aliviar existe y está mal resuelto",
+    "pasa": true,
+    "motivo": "20 de 70 lo tienen sin resolver, contra 0 en el control (p = 0.0)",
+    "datos": {
+     "desatendidos": 20,
+     "de": 70,
+     "en_el_control": 0,
+     "p": 0.0,
+     "productos_con_desatendidos": 1
+    }
+   },
+   {
+    "chequeo": "C3 demanda",
+    "supuesto": "Hay gente eligiendo el producto de origen",
+    "pasa": true,
+    "motivo": "el producto ancla vende +5000 (mínimo 500)"
+   },
+   {
+    "chequeo": "C4 hueco",
+    "supuesto": "Nadie la atiende todavía",
+    "pasa": true,
+    "motivo": "7 equivalentes, 2 venden +100",
+    "datos": {
+     "equivalentes": 7,
+     "venden": 2,
+     "con_alguna_venta": 2,
+     "ventas_visibles": 200,
+     "ejemplos_que_venden": [
+      "Kérastase Symbiose Sérum Cellulaire Nuit Intensif Anticaspa (+100, $137,309)",
+      "Kérastase Specifique Serum Potentialiste Sérum Antirritación | 90ml | (+100, $137,312)"
+     ]
+    }
+   },
+   {
+    "chequeo": "C5 la eligen",
+    "supuesto": "Si se ofrece, la gente la elige",
+    "pasa": true,
+    "motivo": "5 alternativas con stock local a precio comparable (ventas mediana 0) contra 67 publicaciones de la búsqueda de origen (mediana 100), p = 0.16",
+    "datos": {
+     "comparables": 5,
+     "ventas_comparables": [
+      0,
+      0,
+      0,
+      100,
+      100
+     ],
+     "mediana_de_origen": 100,
+     "publicaciones_de_origen": 67,
+     "p": 0.16
+    }
+   },
+   {
+    "chequeo": "C6 margen",
+    "supuesto": "Deja plata al precio que la gente paga",
+    "pasa": false,
+    "motivo": "sin precio de proveedor: falta cotizarlo"
+   }
+  ],
+  "confianza": {
+   "riesgos": [],
+   "evidencia": {
+    "productos": 1,
+    "dolor": {
+     "desatendidos": 20,
+     "de": 70,
+     "en_el_control": 0,
+     "proporcion_ic95": [
+      0.193,
+      0.401
+     ],
+     "p": 0.0
+    },
+    "demanda": {
+     "ventas_de_equivalentes_al_menos": 200,
+     "equivalentes_con_ventas": 2
+    }
+   }
+  }
+ },
+ {
+  "metodo": "B4",
+  "productos": [
+   "F102"
+  ],
+  "anclas": [
+   "Termohigrometro Medidor De Temperatura, Humedad y Reloj HTC-"
+  ],
+  "id": "B4.F102.0",
+  "que_traer": "Controlador digital higrostato/termostato con relay y sonda externa para encender/apagar humidificador, deshumidificador o calefactor",
+  "busqueda_ml": "controlador de humedad y temperatura con relay higrostato termostato sonda",
+  "estado": "descartada",
+  "se_detiene_en": "C4 hueco",
+  "motivo": "ya atendido: 7 equivalentes venden +100",
+  "señales": [
+   {
+    "id": "F102.B4",
+    "descripcion": "Pasar de sólo medir a controlar automáticamente la humedad/temperatura; sirve cuando el medidor ya mostró exceso de humedad o una incubadora inestable y hay que prender/apagar equipos a mano",
+    "errores": []
+   }
+  ],
+  "recorrido": [
+   {
+    "chequeo": "guardrail",
+    "supuesto": "Lo que dice el LLM está en los textos",
+    "pasa": true,
+    "motivo": "los baselines no citan textos"
+   },
+   {
+    "chequeo": "C1 dolor",
+    "supuesto": "El dolor que dice aliviar existe y está mal resuelto",
+    "pasa": true,
+    "motivo": "15 de 103 lo tienen sin resolver, contra 0 en el control (p = 2e-05)",
+    "datos": {
+     "desatendidos": 15,
+     "de": 103,
+     "en_el_control": 0,
+     "p": 2e-05,
+     "productos_con_desatendidos": 1
+    }
+   },
+   {
+    "chequeo": "C3 demanda",
+    "supuesto": "Hay gente eligiendo el producto de origen",
+    "pasa": true,
+    "motivo": "el producto ancla vende +10000 (mínimo 500)"
+   },
+   {
+    "chequeo": "C4 hueco",
+    "supuesto": "Nadie la atiende todavía",
+    "pasa": false,
+    "motivo": "ya atendido: 7 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 38,
+     "venden": 7,
+     "con_alguna_venta": 17,
+     "ventas_visibles": 2400,
+     "ejemplos_que_venden": [
+      "Termostato Digital Stc-3028 Control Temperatura Humedad 220v (+1000, $45,390)",
+      "Termostato Digital Programable HEMMEL W3230 para Incubadoras y Acuario (+500, $11,490)",
+      "Controlador Calor Frio Termostato Combistato (+100, $45,075)"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "metodo": "B4",
+  "productos": [
+   "F103"
+  ],
+  "anclas": [
+   "Termohigrómetro Digital Patagonia Tools HTC-1 Temperatura Hu"
+  ],
+  "id": "B4.F103.0",
+  "que_traer": "Controlador digital termohigrostato (termostato + higrostato en un solo equipo) con relé 10A, sonda externa de temperatura/humedad y salida 220V para enchufar calefactor, humidificador o el aire acondicionado",
+  "busqueda_ml": "termostato higrostato controlador temperatura y humedad con relé incubadora",
+  "estado": "descartada",
+  "se_detiene_en": "C4 hueco",
+  "motivo": "ya atendido: 7 equivalentes venden +100",
+  "señales": [
+   {
+    "id": "F103.B4",
+    "descripcion": "Hoy el aparatito sólo informa: te dice que hay 17,7° o 80% de humedad y te deja mirando. Esto cierra el circuito: lee la sonda y prende/apaga el equipo solo, así la temperatura o la humedad se mantienen en el valor elegido sin que nadie esté pendiente del display.",
+    "errores": []
+   }
+  ],
+  "recorrido": [
+   {
+    "chequeo": "guardrail",
+    "supuesto": "Lo que dice el LLM está en los textos",
+    "pasa": true,
+    "motivo": "los baselines no citan textos"
+   },
+   {
+    "chequeo": "C1 dolor",
+    "supuesto": "El dolor que dice aliviar existe y está mal resuelto",
+    "pasa": true,
+    "motivo": "20 de 70 lo tienen sin resolver, contra 0 en el control (p = 0.0)",
+    "datos": {
+     "desatendidos": 20,
+     "de": 70,
+     "en_el_control": 0,
+     "p": 0.0,
+     "productos_con_desatendidos": 1
+    }
+   },
+   {
+    "chequeo": "C3 demanda",
+    "supuesto": "Hay gente eligiendo el producto de origen",
+    "pasa": true,
+    "motivo": "el producto ancla vende +5000 (mínimo 500)"
+   },
+   {
+    "chequeo": "C4 hueco",
+    "supuesto": "Nadie la atiende todavía",
+    "pasa": false,
+    "motivo": "ya atendido: 7 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 32,
+     "venden": 7,
+     "con_alguna_venta": 10,
+     "ventas_visibles": 2625,
+     "ejemplos_que_venden": [
+      "Termostato Digital E Higrometro Programable Hemmel Stc-3028 Para Contr (+1000, $36,990)",
+      "Termostato Digital Stc-3028 Control Temperatura Humedad 220v (+1000, $45,390)",
+      "Controlador Digital de Temperatura y Humedad para Incubadora Con Panta (+100, $46,990)"
+     ]
+    }
+   }
+  ]
+ },
+ {
   "metodo": "B1",
   "productos": [
    "E007"

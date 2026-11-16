@@ -60,40 +60,60 @@ entonces la competencia la juzga otro modelo.
 
 ## ¿Sirve? Resultados
 
-**Hipótesis** (prerregistrada en `data/evaluacion/test/PRERREGISTRO.md`): con el mismo embudo, el
-LLM deja más oportunidades distintas no descartadas que dos baselines sin LLM: **B1**, mejorar el
-producto por su queja más frecuente (lo que sugieren las herramientas comerciales), y **B2**, una
-regla que detecta pedidos de repuesto.
+Tres comparaciones, prerregistradas antes de correrlas (`data/evaluacion/test/PRERREGISTRO.md`),
+cada una contra un rival distinto:
 
-| Oportunidades distintas no descartadas (sobreviven o quedan condicionales) | LLM | B1 | B2 |
+| Rival | Qué hace | Qué responde |
+|---|---|---|
+| **B1, B2** (sin LLM) | B1 mejora el producto por su queja más frecuente (lo que sugieren las herramientas comerciales); B2 detecta pedidos de repuesto | ¿le gana a las reglas de hoy? |
+| **B4** (one-shot) | el mismo modelo, una llamada por producto: lee las opiniones y lo que se ofrece en la búsqueda, se aplica él mismo los cinco criterios y recomienda | ¿le gana a preguntarle al modelo qué importar? |
+| **B3** (ablación) | el mismo modelo propone directo, sin personas ni grupos, y pasa por **nuestro** embudo | ¿leer personas y grupos genera mejores ideas? |
+
+**1. Contra las reglas sin LLM, el sistema gana.** Mismo embudo para todos; se cuentan las
+oportunidades distintas que no descarta:
+
+| | Programa | B1 | B2 |
 |---|---|---|---|
 | **test** (136 productos, una sola corrida) | **16** de 109 propuestas | 4 de 136 | 0 de 3 |
 | test limpio (90 productos que ninguna versión leyó antes) | **12** de 61 | 4 de 90 | 0 |
 | dev (133 productos) | 13 de 135 | 7 de 133 | 2 de 7 |
 
-**La hipótesis se sostiene en test**: el LLM deja 4 veces más oportunidades que el mejor
-baseline, y una proporción mayor de sus propuestas resiste el embudo (15% contra 4%; Fisher
-unilateral, p = 0,002; en el test limpio, p = 0,003). Es una sola corrida y el LLM varía bastante
-entre corridas (en el dev chico, la misma versión dejó 14, 3 y 9 en tres corridas), así que el
-número exacto importa menos que la dirección, que se repitió en dev y en test. Además, las
-del LLM son productos concretos (un adaptador digital de torque, barras de techo inflables, un
-andador de empuje para bebés, una soga de saltar sin cable…), y las de B1 no: "una versión que
-resuelva la queja 'algo'" o "'poco'". Si son buenas ideas lo dice el juicio humano a ciegas
-(`data/evaluacion/humano/`).
+15% de sus propuestas resiste contra 4% (Fisher unilateral, p = 0,002; en el test limpio,
+p = 0,003). Es una sola corrida de un LLM que varía bastante (en el dev chico, la misma versión
+dejó 14, 3 y 9), pero la dirección se repitió en dev y en test. Las de B1 no son productos ("una
+versión que resuelva la queja 'algo'"); las del programa sí (soga de saltar sin cable, barras de
+techo inflables, adaptador digital de torque…).
 
-**Análisis de fallas (test).** De las 109 propuestas del LLM, 30 mueren en C1 (el problema no
-aparece más que en gente al azar, o aparece en un solo producto), 45 en C4 (ya hay 3 o más que
+**2. Contra preguntarle al modelo (B4), el sistema todavía no tiene veredicto.** B4 es mucho más
+conservador: recomienda 10 productos en test y 10 en dev. Pasadas por el embudo, **los datos del
+mercado refutan 9 de 10 en cada partición**: ya hay 4 a 31 publicaciones equivalentes que venden
+(un probador de tomacorriente, una lámpara de emergencia), la gente deja pasar lo que se ofrece
+parecido, o el problema no aparece más que en gente al azar. Esa auditoría es descriptiva (el
+embudo es nuestro y las del programa lo pasan por construcción). La medida principal es el
+**juicio humano a ciegas** de las recomendaciones finales de los dos, mezcladas
+(`data/evaluacion/humano/`): está en curso. Con la primera de cuatro personas, 12 de las 16 del
+programa en test son concretas, no obvias y las cotizaría; de B1, ninguna.
+
+**3. Leer personas y grupos no genera mejores ideas que pedírselas directo al modelo (B3).**
+Con el mismo embudo, B3 deja más: 44 contra 16 en test (18% contra 15% de sus propuestas,
+p = 0,45) y 31 contra 13 en dev. Por la regla escrita antes de correrlo, **lo que aporta el
+sistema es el embudo que intenta refutar cada idea, no la forma de generarlas**. Juntando 2 y 3:
+el modelo solo recomienda con confianza cosas que el mercado ya resuelve; el mismo modelo, obligado
+a pasar por los datos, deja ideas que resisten.
+
+**Análisis de fallas (test).** De las 109 propuestas del programa, 30 mueren en C1 (el problema
+no aparece más que en gente al azar, o aparece en un solo producto), 45 en C4 (ya hay 3 o más que
 lo venden) y 18 en C5 (se ofrece y la gente lo deja pasar): el embudo mata el 85%. Ninguna llega
 a "sobrevive": las 16 quedan condicionales porque no hay precio de proveedor o nadie lo compró
 todavía, y el experimento siguiente es cotizar y probar el precio. Cada una con su motivo en
 `data/serendipia/embudo_escala_test_api.json`; el resumen, en `data/evaluacion/test/`.
 
-**Cada pieza se ganó su lugar con evidencia.** Las versiones se compararon en dev con 3 corridas
-y una regla escrita antes (`DECISIONES.md`, `data/evaluacion/`): leer personas en vez de
-productos multiplicó por más de 10 las ideas que sobreviven; obligar a los grupos a cruzar búsquedas
-empeoró y se sacó; un filtro de dolor antes de proponer no mejoró y se sacó; el mismo dolor
-medido como chequeo, sí; y el juez de competencia independiente acertó 32 de 40 desacuerdos a
-ciegas contra 8 del criterio viejo.
+**Las piezas del embudo se ganaron su lugar con evidencia.** Se compararon en dev con 3 corridas
+y una regla escrita antes (`DECISIONES.md`, `data/evaluacion/`): el dolor medido como chequeo
+mejoró y como filtro previo no; obligar a los grupos a cruzar búsquedas empeoró y se sacó; el
+juez de competencia independiente acertó 32 de 40 desacuerdos a ciegas contra 8 del criterio
+viejo. Leer personas en vez de productos multiplicó por 10 las ideas que sobreviven frente a la
+versión anterior del programa, pero no frente a B3: esa pieza queda en duda.
 
 **Ningún número está elegido a ojo.** Margen mínimo: la ganancia neta del comercio minorista
 (Damodaran, 5,19%). "Ya atendido": 3 o más competidores que venden (Bresnahan y Reiss, 1991).
@@ -157,6 +177,8 @@ académico.
 Buscamos a propósito los supuestos que, si fallan, invalidan el resultado, y medimos los que se
 podían medir:
 
+- **Rivales débiles.** Ganarle a reglas sin LLM prueba poco: por eso B4 (el modelo solo, de
+  punta a punta) y B3 (la generación sola). B3 sí le ganó a la generación del programa (arriba).
 - **El LLM escribe la búsqueda con la que después se lo juzga.** Una búsqueda rebuscada trae pocos
   competidores y pasa C4 sola. Medido: las que quedan no tienen búsquedas con menos resultados
   que las que mueren (mediana 246 contra 231 en dev, p = 0,89; 167 contra 205 en test, p = 0,32).
@@ -165,7 +187,9 @@ podían medir:
   el LLM citó, las propuestas con dolor significativo bajan de 257 a 238 (7%): pesa poco.
 - **El mismo modelo propone y juzga.** Los jueces son llamadas aparte que no saben qué método
   propuso, así que un sesgo a favor de lo propio (Zheng et al., 2023) favorece igual al programa
-  y a B3. Falta calibrarlos contra personas (`data/evaluacion/humano/`).
+  y a B3. Contra la primera persona que juzgó a ciegas (1 de 4), el juez de competencia coincide
+  en 75% (kappa 0,22); el de dolor, poco (kappa −0,05): ve la mitad del dolor que ve ella, con
+  precisión 0,8. Es conservador, así que mata de más, no de menos (`data/evaluacion/humano/`).
 - **"No descartada" no es "buena".** Ninguna llega a "sobrevive": todas quedan condicionales
   porque el precio de proveedor es estimado y nadie lo pagó todavía. El conteo dice que ningún
   dato la refutó, no que sea rentable; eso lo dicen el juicio humano a ciegas y una cotización.
@@ -179,7 +203,7 @@ podían medir:
 
 `harness/` el programa (`personas.py` pasos de lectura y grupos; `divergente.py` propuestas y
 medición del dolor; `dolor.py` C1; `equivalencias.py` juez de competencia; `chequeos.py` y
-`embudo.py` los supuestos críticos; `baselines.py` B1 y B2; `modelo.py` cliente, reintentos y
+`embudo.py` los supuestos críticos; `baselines.py` B1 y B2; `directo.py` B3 y B4; `modelo.py` cliente, reintentos y
 costo) · `skills/` un skill por paso del LLM · `scripts/` captura desde el navegador ·
 `tests/` · `data/evaluacion/` cada comparación con su prerregistro · `CONSIGNA.md` cumplimiento
 de la consigna, áreas en profundidad y antecedentes · `DECISIONES.md` qué elegimos y con qué

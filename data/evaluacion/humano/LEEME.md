@@ -31,8 +31,10 @@ exhaustividad). Armado con `armar_planillas.py` (semilla fija).
 
 ## Parte 2: calidad de las oportunidades (unos 15 minutos)
 
-`oportunidades_<tu nombre>.csv` tiene las 37 oportunidades que el embudo no descartó en dev y en
-test, del LLM y de los baselines, mezcladas y sin decir de dónde salió cada una. En cada fila,
+`oportunidades_<tu nombre>.csv` tiene 63 recomendaciones finales de dev y test: las que el
+embudo no descartó (del programa y de los baselines) y las que recomienda el modelo solo, de una
+(B4), mezcladas y sin decir de dónde salió cada una. Si ya la completaste, solo faltan las filas
+vacías (26). En cada fila,
 `si` o `no` en tres columnas:
 
 - `concreta`: ¿es un producto concreto que se le puede pedir a un proveedor?

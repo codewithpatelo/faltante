@@ -113,5 +113,133 @@
    "mueren_en": {},
    "no_descartadas": []
   }
+ },
+ "B3": {
+  "todo": {
+   "propuestas": 240,
+   "no_descartadas_distintas": 44,
+   "sobreviven": 0,
+   "proporcion": 0.183,
+   "mueren_en": {
+    "C4 hueco": 42,
+    "C5 la eligen": 41,
+    "C1 dolor": 113
+   },
+   "no_descartadas": [
+    "condicional: Abrigos con molde de cuerpo largo y pecho angosto (estilo salchicha/dachshund/bretón), con",
+    "condicional: Aceite de oliva y girasol en aerosol de aceite puro, sin lecitina, silicona ni propelente ",
+    "condicional: Adaptador de arranque por taladro para motoguadañas 33-52 cc: buje/socket que se calza en ",
+    "condicional: Bandeja/estación de actividades con compartimentos para agua, rejilla de secado y bordes a",
+    "condicional: Bebedero que se acopla directo a la canilla del lavamanos o la cocina, con sensor de movim",
+    "condicional: Borlometro / máquina artesanal para hacer borlas y flecos, con guía de largo regulable y v",
+    "condicional: Botas y botinetas de taco alto con caña ancha y horma ancha (wide calf / wide fit), en tal",
+    "condicional: Calzado plegable de emergencia para cartera (ballerinas o sandalias finas que se pliegan y",
+    "condicional: Cepillo secador inalámbrico recargable (batería de litio, 3 temperaturas, cerdas cerámicas",
+    "condicional: Delantal o pechera impermeable con mangas para niños de 2 a 6 años (talle jardín), con puñ",
+    "condicional: Esquinero rascador con sujeción rígida por abrazadera a tornillo o prensa (sin pines), pen",
+    "condicional: Estuche rígido de transporte con compartimento para la pila y el cepillito, tamaño cartera",
+    "condicional: Fotolibro/álbum de colección de la temporada 2025 de F1 con capítulo Colapinto (fotos de G",
+    "condicional: Gorro/casco secador de pelo iónico manos libres (bonnet hood dryer con manguera o motor pr",
+    "condicional: Guía/checklist impresa de colección con los códigos de surtido de cada caja, para identifi",
+    "condicional: Kit de adaptadores de rosca de latón para garrafas de gas (BSP 1/2\" macho/hembra, CGA-320,",
+    "condicional: Kit de adaptadores y conectores de rosca para cilindros de gas (CGA 320, CGA 580, bullnose",
+    "condicional: Kit de conservación para coleccionistas: fundas transparentes (penny sleeves) tamaño figur",
+    "condicional: Kit de reparación eléctrica para bordeadoras eléctricas chicas: inducido/armadura, carbone",
+    "condicional: Kit limpiador desengrasante para pulverizadores de aceite, con líquido y cepillo fino para",
+    "condicional: Kit para hacer borlas a medida: deviladora/plantilla con discos de varios diámetros (2, 3,",
+    "condicional: Lámina/vinilo transparente autoadhesivo de laminación en frío para stickers, con filtro UV",
+    "condicional: Línea de abrigos con molde propio por morfología, no por peso: corte para lomo largo y pat",
+    "condicional: Mangas y soqueros acolchados anti-latigazo para pantorrilla y antebrazo (par, tela técnica",
+    "condicional: Monitor de bebé con cámara a batería recargable (base con batería de litio o cámara con ba",
+    "condicional: Organizador-exhibidor de peluches con bolsillos transparentes (tipo juguetero colgante o d",
+    "condicional: Pelota antiestrés de silicona maciza, sin relleno ni tapón, con certificación de seguridad",
+    "condicional: Peluche con compartimento de chifle recargable (bolsillo con cierre o velcro y chifles de ",
+    "condicional: Placa base de carga reforzada (aluminio o polímero técnico con insertos metálicos y silent",
+    "condicional: Portabebé de malla transpirable para agua y playa (tipo fular de natación o sling de secad",
+    "condicional: Pulverizador de aceite de niebla continua a presión, tipo aerosol manual recargable (no ga",
+    "condicional: Pulverizador presurizado recargable (bomba de aire + válvula de niebla) para aceite, tipo ",
+    "condicional: Quitamanchas enzimático en espuma para telas y peluches infantiles, sin cloro y apto para ",
+    "condicional: Set de lapiceras escolares de arranque con tanque de tinta visible y sistema anti-goteo, p",
+    "condicional: Sistema de molienda manual con dos cámaras o depósitos intercambiables para café y especia",
+    "condicional: Sistema de retención secundario para baúl: arnés o correa de seguridad con mosquetones y a",
+    "condicional: Soga de saltar 'beaded' (de cuentas o perlas de PVC ensartadas en cable, con mangos girato",
+    "condicional: Spray atrayente de hierba gatera (catnip) para rascadores, en combo con un repelente de cí",
+    "condicional: Suplemento hidratante y atrayente de agua para gatos (líquido o en sobres para mezclar en ",
+    "condicional: Tela blackout tricapa por metro o en rollo para confección a medida",
+    "condicional: Toma corriente embutido/empotrado (tipo \"clock outlet\" o caja de pase recessed) para conec",
+    "condicional: Tratamiento de baño con avena coloidal y emolientes, sin fragancia ni colorante, en sobres",
+    "condicional: Verificador/calibrador digital de torquímetros de banco, económico, para talleres chicos y",
+    "condicional: dragon volador RC de Chimuelo con alas batientes y sonidos reales"
+   ]
+  },
+  "limpio_productos_nuevos": {
+   "propuestas": 160,
+   "no_descartadas_distintas": 28,
+   "sobreviven": 0,
+   "proporcion": 0.175,
+   "mueren_en": {
+    "C5 la eligen": 28,
+    "C1 dolor": 72,
+    "C4 hueco": 32
+   },
+   "no_descartadas": [
+    "condicional: Abrigos con molde de cuerpo largo y pecho angosto (estilo salchicha/dachshund/bretón), con",
+    "condicional: Adaptador de arranque por taladro para motoguadañas 33-52 cc: buje/socket que se calza en ",
+    "condicional: Bandeja/estación de actividades con compartimentos para agua, rejilla de secado y bordes a",
+    "condicional: Borlometro / máquina artesanal para hacer borlas y flecos, con guía de largo regulable y v",
+    "condicional: Botas y botinetas de taco alto con caña ancha y horma ancha (wide calf / wide fit), en tal",
+    "condicional: Calzado plegable de emergencia para cartera (ballerinas o sandalias finas que se pliegan y",
+    "condicional: Cepillo secador inalámbrico recargable (batería de litio, 3 temperaturas, cerdas cerámicas",
+    "condicional: Delantal o pechera impermeable con mangas para niños de 2 a 6 años (talle jardín), con puñ",
+    "condicional: Estuche rígido de transporte con compartimento para la pila y el cepillito, tamaño cartera",
+    "condicional: Fotolibro/álbum de colección de la temporada 2025 de F1 con capítulo Colapinto (fotos de G",
+    "condicional: Gorro/casco secador de pelo iónico manos libres (bonnet hood dryer con manguera o motor pr",
+    "condicional: Guía/checklist impresa de colección con los códigos de surtido de cada caja, para identifi",
+    "condicional: Kit de adaptadores de rosca de latón para garrafas de gas (BSP 1/2\" macho/hembra, CGA-320,",
+    "condicional: Kit de adaptadores y conectores de rosca para cilindros de gas (CGA 320, CGA 580, bullnose",
+    "condicional: Kit de conservación para coleccionistas: fundas transparentes (penny sleeves) tamaño figur",
+    "condicional: Kit de reparación eléctrica para bordeadoras eléctricas chicas: inducido/armadura, carbone",
+    "condicional: Kit para hacer borlas a medida: deviladora/plantilla con discos de varios diámetros (2, 3,",
+    "condicional: Lámina/vinilo transparente autoadhesivo de laminación en frío para stickers, con filtro UV",
+    "condicional: Línea de abrigos con molde propio por morfología, no por peso: corte para lomo largo y pat",
+    "condicional: Organizador-exhibidor de peluches con bolsillos transparentes (tipo juguetero colgante o d",
+    "condicional: Pelota antiestrés de silicona maciza, sin relleno ni tapón, con certificación de seguridad",
+    "condicional: Placa base de carga reforzada (aluminio o polímero técnico con insertos metálicos y silent",
+    "condicional: Quitamanchas enzimático en espuma para telas y peluches infantiles, sin cloro y apto para ",
+    "condicional: Set de lapiceras escolares de arranque con tanque de tinta visible y sistema anti-goteo, p",
+    "condicional: Sistema de retención secundario para baúl: arnés o correa de seguridad con mosquetones y a",
+    "condicional: Tratamiento de baño con avena coloidal y emolientes, sin fragancia ni colorante, en sobres",
+    "condicional: Verificador/calibrador digital de torquímetros de banco, económico, para talleres chicos y",
+    "condicional: dragon volador RC de Chimuelo con alas batientes y sonidos reales"
+   ]
+  }
+ },
+ "B4": {
+  "todo": {
+   "propuestas": 10,
+   "no_descartadas_distintas": 1,
+   "sobreviven": 0,
+   "proporcion": 0.1,
+   "mueren_en": {
+    "C1 dolor": 3,
+    "C4 hueco": 4,
+    "C5 la eligen": 2
+   },
+   "no_descartadas": [
+    "condicional: Rociador de aceite presurizado a bomba (estilo 'mister' / Misto): se carga a presión con u"
+   ]
+  },
+  "limpio_productos_nuevos": {
+   "propuestas": 7,
+   "no_descartadas_distintas": 0,
+   "sobreviven": 0,
+   "proporcion": 0.0,
+   "mueren_en": {
+    "C5 la eligen": 2,
+    "C4 hueco": 3,
+    "C1 dolor": 2
+   },
+   "no_descartadas": []
+  }
  }
 }
