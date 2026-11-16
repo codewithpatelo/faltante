@@ -125,7 +125,7 @@ queda en la traza con tokens, segundos, errores del guardrail y si se cortó.
 git clone https://github.com/codewithpatelo/faltante && cd faltante
 python3 -m venv .venv && source .venv/bin/activate
 make setup     # dependencias
-make todo      # tests + el embudo sobre la última corrida guardada (sin internet ni claves)
+make todo      # tests + el embudo sobre las corridas guardadas de dev y test y el resultado de la hipótesis (sin internet ni claves)
 ```
 
 O con Docker: `docker build -t faltante . && docker run faltante`. Para correr el modelo (la
