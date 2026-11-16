@@ -18,6 +18,7 @@ mal después de un reintento se descarta. Las propuestas salen en el formato del
 con señales por producto, armadas con las voces que cita.
 
     DEEPSEEK_API_KEY=... python -m harness.divergente escala_dev   -> data/serendipia/divergente_escala_dev_api.json
+    MODELO_JUEZ=claude-sonnet-5-5 (con ANTHROPIC_API_KEY): propone el de MODELO_LLM, mide el dolor Claude -> ..._api__juez-claude-sonnet-5-5.json
 """
 
 from __future__ import annotations
@@ -29,7 +30,7 @@ from collections import Counter
 from harness import dolor as D
 from harness import personas as P
 from harness.baselines import b1_queja_mas_frecuente, b2_pedidos_de_repuesto
-from harness.modelo import cliente_llm, con_reintento, costo, en_paralelo, sufijo
+from harness.modelo import clientes, con_reintento, costos, en_paralelo, sufijo
 from harness.voces import RAIZ, productos
 
 SKILL_B = RAIZ / "skills/proponer_a_un_segmento/SKILL.md"
@@ -101,8 +102,11 @@ def dolores_de_los_baselines(particion: str, tarjetas: dict) -> dict[str, list]:
     return salida
 
 
-def divergir(cliente, particion: str, capturas: dict) -> dict:
+def divergir(cliente, particion: str, capturas: dict, juez=None) -> dict:
+    """`cliente` abre y propone; `juez` mide el dolor (C1), también el de los baselines. Sin `juez`, el mismo."""
+    juez = juez or cliente
     todos, traza = productos(), []
+    traza_juez = traza if juez is cliente else []
     gente = P.personas_de_la_particion(cliente, particion, traza)
     tarjetas = {t["id"]: t for t in gente["tarjetas"]}
     mapas, miembros_de = [], {}
@@ -112,11 +116,13 @@ def divergir(cliente, particion: str, capturas: dict) -> dict:
     suficientes = [m for m in mapas if P.es_segmento_suficiente(m)]
     oportunidades = [o for ops in en_paralelo(lambda m: proponer(cliente, m, miembros_de[m["segmento"]], traza), suficientes)
                      for o in ops]
-    dolor = {"llm": D.medir_y_decidir(cliente, [(D.enunciado(o), {tarjetas[i]["producto"] for i in o["personas"]})
-                                                for o in oportunidades], tarjetas, todos, traza)}
+    dolor = {"llm": D.medir_y_decidir(juez, [(D.enunciado(o), {tarjetas[i]["producto"] for i in o["personas"]})
+                                             for o in oportunidades], tarjetas, todos, traza_juez)}
     for metodo, dolores in dolores_de_los_baselines(particion, tarjetas).items():
-        dolor[metodo] = D.medir_y_decidir(cliente, dolores, tarjetas, todos, traza)
-    return {"quien": cliente.modelo, "costo": costo(traza, cliente.modelo), "traza": traza, "dolor": dolor,
+        dolor[metodo] = D.medir_y_decidir(juez, dolores, tarjetas, todos, traza_juez)
+    trazas = {cliente.modelo: traza, **({juez.modelo: traza_juez} if juez is not cliente else {})}
+    return {"quien": cliente.modelo, "juez": juez.modelo, "costo": costos(trazas), "traza": traza + (traza_juez if juez is not cliente else []),
+            "dolor": dolor,
             "personas": len(tarjetas), "asignadas": len(gente["asignaciones"]),
             "segmentos": [{**m, "pasa_al_paso_b": P.es_segmento_suficiente(m)} for m in mapas],
             **al_formato_del_embudo(oportunidades, tarjetas, particion)}
@@ -125,9 +131,9 @@ def divergir(cliente, particion: str, capturas: dict) -> dict:
 if __name__ == "__main__":
     from harness.correr import busquedas_capturadas
     particion = sys.argv[1] if len(sys.argv) > 1 else "escala_dev"
-    cliente = cliente_llm()
-    salida = divergir(cliente, particion, busquedas_capturadas())
-    destino = RAIZ / f"data/serendipia/divergente_{particion}_api{sufijo(cliente.modelo)}.json"
+    cliente, juez = clientes()
+    salida = divergir(cliente, particion, busquedas_capturadas(), juez)
+    destino = RAIZ / f"data/serendipia/divergente_{particion}_api{sufijo(cliente.modelo, juez.modelo)}.json"
     destino.write_text(json.dumps(salida, ensure_ascii=False, indent=1), encoding="utf-8")
     print(f"{destino.relative_to(RAIZ)}: {salida['costo']}, {salida['personas']} personas, "
           f"{sum(m['pasa_al_paso_b'] for m in salida['segmentos'])} segmentos, {len(salida['oportunidades'])} oportunidades")

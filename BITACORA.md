@@ -433,3 +433,16 @@ lee y escribe con ese nombre sin cambios. **Qué decidimos.** `equivalencias.jso
 lee como juicio de competencia) no tiene a quién atribuir cada juicio, así que ese paso con Claude
 escribe aparte y no se lo agrega solo: mezclar juicios de dos modelos ahí cambiaría el embudo sin
 decirlo.
+
+## 2026-11-16 — Quien propone y quien juzga, por separado
+
+**Qué hicimos.** `divergente` y `directo` reciben un cliente para abrir y proponer y otro (`juez`)
+para medir el dolor (C1), también el de los baselines; `equivalencias` usa el que juzga. Se eligen
+con `MODELO_LLM` y `MODELO_JUEZ`; si no hay `MODELO_JUEZ` o es el mismo modelo, es un solo cliente y
+todo queda como antes. El archivo termina en `__juez-<modelo>` si juzgó otro, el costo se calcula
+con el precio de cada uno, y `juez` queda guardado junto a `quien`. **Qué esperábamos.** Poder
+comparar propuestas de distintos modelos con el mismo juez de otra familia. **Qué pasó.** Los tests
+pasan; ninguna corrida real. **Qué decidimos.** Antes de usar a Claude de juez hay que calibrarlo
+contra las personas (80 filas), y para comparar contra lo que ya hay hay que volver a juzgar con él
+las propuestas guardadas de DeepSeek, baselines incluidos: son el mismo embudo para todos los
+métodos. Falta un paso que re-juzgue propuestas ya guardadas sin volver a proponer.

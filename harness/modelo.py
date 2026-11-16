@@ -151,17 +151,39 @@ class Claude:
                                usage=SimpleNamespace(input_tokens=r.usage.input_tokens, output_tokens=r.usage.output_tokens))
 
 
-def sufijo(modelo: str) -> str:
+def sufijo(modelo: str, juez: str | None = None) -> str:
     """Para que una corrida con otro modelo no pise los archivos de DeepSeek: nada para DeepSeek Flash,
-    `__<modelo>` para el resto (`divergente_escala_dev_api__claude-opus-5-5.json`)."""
-    return "" if modelo == MODELO else f"__{modelo}"
+    `__<modelo>` para el resto (`divergente_escala_dev_api__claude-opus-5-5.json`), y `__juez-<modelo>`
+    si quien juzgó no es quien propuso (`..._api__juez-claude-sonnet-5-5.json`)."""
+    s = "" if modelo == MODELO else f"__{modelo}"
+    return s + (f"__juez-{juez}" if juez and juez != modelo else "")
 
 
-def cliente_llm(modelo: str | None = None):
-    """El cliente del modelo pedido, o el de la variable MODELO_LLM, o DeepSeek Flash (con lo que se corrió todo)."""
-    modelo = modelo or os.environ.get("MODELO_LLM", MODELO)
+def costos(trazas: dict[str, list]) -> dict:
+    """El costo de una corrida a partir de la traza de cada modelo. Con un solo modelo es `costo`, igual
+    que siempre; con dos suma y agrega `por_modelo` (el precio de cada uno es el suyo)."""
+    por = {m: costo(t, m) for m, t in trazas.items()}
+    if len(por) == 1:
+        return next(iter(por.values()))
+    return {"tokens_entrada": sum(c["tokens_entrada"] for c in por.values()),
+            "tokens_salida": sum(c["tokens_salida"] for c in por.values()),
+            "usd": round(sum(c["usd"] for c in por.values()), 4),
+            "segundos": round(sum(c["segundos"] for c in por.values()), 1), "por_modelo": por}
+
+
+def cliente_llm(modelo: str | None = None, variable: str = "MODELO_LLM"):
+    """El cliente del modelo pedido, o el de la variable de entorno, o DeepSeek Flash (con lo que se corrió todo)."""
+    modelo = modelo or os.environ.get(variable) or MODELO
     if modelo.startswith("claude-"):
         return Claude(modelo)
     if modelo != MODELO:
         raise ValueError(f"modelo desconocido: {modelo}")
     return DeepSeek(os.environ["DEEPSEEK_API_KEY"])
+
+
+def clientes():
+    """(quien propone, quien juzga). Juzga el de MODELO_JUEZ si está y es otro modelo; si no, el mismo cliente:
+    la regla de fondo del proyecto es que quien propone no mide, así que conviene que sean de familias distintas."""
+    propone = cliente_llm()
+    juzga = cliente_llm(variable="MODELO_JUEZ") if os.environ.get("MODELO_JUEZ") else propone
+    return propone, (propone if juzga.modelo == propone.modelo else juzga)

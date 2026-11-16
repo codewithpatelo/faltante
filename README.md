@@ -133,7 +133,7 @@ make setup     # dependencias
 make todo      # tests + el embudo sobre las corridas guardadas de dev y test y el resultado de la hipótesis (sin internet ni claves)
 ```
 
-O con Docker: `docker build -t faltante . && docker run faltante`. Con `MODELO_LLM=claude-opus-5-5` (y una credencial de Anthropic) los pasos usan Claude en vez de DeepSeek y guardan en archivos con `__<modelo>` al final, sin pisar los de DeepSeek. Para correr el modelo (la
+O con Docker: `docker build -t faltante . && docker run faltante`. Con `MODELO_LLM=claude-opus-5-5` (y una credencial de Anthropic) los pasos usan Claude en vez de DeepSeek y guardan en archivos con `__<modelo>` al final, sin pisar los de DeepSeek. Con `MODELO_JUEZ=claude-sonnet-5-5` propone el de `MODELO_LLM` y mide el dolor (C1) y la competencia (C4 a C6) Claude, que es de otra familia: el archivo termina en `__juez-claude-sonnet-5-5`. Para correr el modelo (la
 clave es un secreto del repo): pestaña Actions → workflow **llm** → tarea `serendipia` con la
 partición; después capturar las búsquedas nuevas (`scripts/captura_ml.js`), correr la tarea
 `equivalencias` y `python -m harness.correr <particion>_api`.

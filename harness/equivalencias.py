@@ -20,7 +20,7 @@ from __future__ import annotations
 import json
 import sys
 
-from harness.modelo import cliente_llm, con_reintento, costo, en_paralelo, sufijo
+from harness.modelo import clientes, con_reintento, costo, en_paralelo, sufijo
 from harness.voces import RAIZ
 
 SKILL = RAIZ / "skills/juzgar_equivalencia/SKILL.md"
@@ -59,7 +59,7 @@ def pendientes(propuestas) -> dict[str, tuple]:
 
 if __name__ == "__main__":
     from harness.correr import propuestas_de_un_archivo
-    cliente, traza = cliente_llm(), []
+    cliente, traza = clientes()[1], []   # el que juzga: MODELO_JUEZ, o MODELO_LLM si no hay
     todas = {k: v for archivo in sys.argv[1:] for k, v in pendientes(propuestas_de_un_archivo(archivo)).items()}
     def juzgar_o_dejar(k):
         """Si la API falla después de los reintentos, esa propuesta queda sin juzgar (se juzga en la

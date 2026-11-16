@@ -248,6 +248,38 @@ def test_una_corrida_con_otro_modelo_no_pisa_los_archivos_de_deepseek():
     assert sufijo(MODELO) == "" and sufijo("claude-opus-5-5") == "__claude-opus-5-5"
 
 
+def test_el_archivo_dice_quien_juzgo_cuando_no_es_quien_propuso():
+    from harness.modelo import MODELO, sufijo
+    assert sufijo(MODELO, MODELO) == "" and sufijo(MODELO, None) == ""
+    assert sufijo(MODELO, "claude-sonnet-5-5") == "__juez-claude-sonnet-5-5"
+    assert sufijo("claude-haiku-5-5", "claude-sonnet-5-5") == "__claude-haiku-5-5__juez-claude-sonnet-5-5"
+
+
+def test_costos_de_dos_modelos_se_suman_cada_uno_a_su_precio():
+    from harness.modelo import MODELO, PRECIOS, costos
+    t = [{"tokens": {"entrada": 1_000_000, "salida": 0}, "segundos": 1.0}]
+    assert costos({MODELO: t}) == costo(t)       # con un solo modelo, igual que siempre
+    r = costos({MODELO: t, "claude-sonnet-5-5": t})
+    assert r["usd"] == round(PRECIOS[MODELO]["entrada"] + PRECIOS["claude-sonnet-5-5"]["entrada"], 4)
+    assert set(r["por_modelo"]) == {MODELO, "claude-sonnet-5-5"} and r["segundos"] == 2.0
+
+
+def test_quien_juzga_es_el_mismo_cliente_salvo_que_se_pida_otro_modelo(monkeypatch):
+    pytest.importorskip("anthropic")
+    from harness.modelo import clientes
+    monkeypatch.setenv("DEEPSEEK_API_KEY", "x")
+    monkeypatch.delenv("MODELO_LLM", raising=False)
+    monkeypatch.delenv("MODELO_JUEZ", raising=False)
+    propone, juzga = clientes()
+    assert propone is juzga and propone.modelo == "deepseek-flash"
+    monkeypatch.setenv("MODELO_JUEZ", "deepseek-flash")
+    propone, juzga = clientes()
+    assert propone is juzga                          # mismo modelo: un solo cliente, una sola traza
+    monkeypatch.setenv("MODELO_JUEZ", "claude-sonnet-5-5")
+    propone, juzga = clientes()
+    assert propone.modelo == "deepseek-flash" and juzga.modelo == "claude-sonnet-5-5"
+
+
 def test_claude_rechaza_un_modelo_sin_precio():
     from harness.modelo import Claude
     with pytest.raises(ValueError):

@@ -13,7 +13,7 @@ import json
 import sys
 
 from harness import dolor as D
-from harness.modelo import cliente_llm, con_reintento, costo, en_paralelo, sufijo
+from harness.modelo import clientes, con_reintento, costos, en_paralelo, sufijo
 from harness.voces import RAIZ, los_mas_informativos, productos, textos_con_id
 
 SKILL = RAIZ / "skills/proponer_directo/SKILL.md"
@@ -36,20 +36,25 @@ def proponer(cliente, pid: str, producto: dict, traza: list) -> list[dict]:
             if len([c for c in o.get("citas", []) if c in textos]) >= MIN_CITAS and o.get("que_traer") and o.get("busqueda_ml")]
 
 
-def correr(cliente, particion: str) -> dict:
+def correr(cliente, particion: str, juez=None) -> dict:
+    """`cliente` lee y propone; `juez` mide el dolor (C1). Sin `juez`, el mismo."""
+    juez = juez or cliente
     traza, todos = [], productos()
+    traza_juez = traza if juez is cliente else []
     from harness.personas import personas_de_la_particion
     tarjetas = {t["id"]: t for t in personas_de_la_particion(cliente, particion, traza)["tarjetas"]}
     ps = productos(particion)
     ops = [o for lista in en_paralelo(lambda pid: proponer(cliente, pid, ps[pid], traza), list(ps)) for o in lista]
-    dolor = D.medir_y_decidir(cliente, [(D.enunciado(o), {o["producto"]}) for o in ops], tarjetas, todos, traza)
-    return {"quien": cliente.modelo, "costo": costo(traza, cliente.modelo), "traza": traza, "oportunidades": ops, "dolor": dolor}
+    dolor = D.medir_y_decidir(juez, [(D.enunciado(o), {o["producto"]}) for o in ops], tarjetas, todos, traza_juez)
+    trazas = {cliente.modelo: traza, **({juez.modelo: traza_juez} if juez is not cliente else {})}
+    return {"quien": cliente.modelo, "juez": juez.modelo, "costo": costos(trazas),
+            "traza": traza + (traza_juez if juez is not cliente else []), "oportunidades": ops, "dolor": dolor}
 
 
 if __name__ == "__main__":
     particion = sys.argv[1] if len(sys.argv) > 1 else "escala_dev"
-    cliente = cliente_llm()
-    salida = correr(cliente, particion)
-    destino = RAIZ / f"data/serendipia/directo_{particion}_api{sufijo(cliente.modelo)}.json"
+    cliente, juez = clientes()
+    salida = correr(cliente, particion, juez)
+    destino = RAIZ / f"data/serendipia/directo_{particion}_api{sufijo(cliente.modelo, juez.modelo)}.json"
     destino.write_text(json.dumps(salida, ensure_ascii=False, indent=1), encoding="utf-8")
     print(f"{destino.relative_to(RAIZ)}: {salida['costo']}, {len(salida['oportunidades'])} oportunidades")
