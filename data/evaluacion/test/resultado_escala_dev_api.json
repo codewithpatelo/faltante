@@ -1,0 +1,76 @@
+{
+ "llm": {
+  "todo": {
+   "propuestas": 135,
+   "no_descartadas_distintas": 0,
+   "sobreviven": 0,
+   "proporcion": 0.0,
+   "mueren_en": {
+    "C1 dolor": 40,
+    "C4 hueco": 95
+   },
+   "no_descartadas": []
+  },
+  "limpio_productos_nuevos": {
+   "propuestas": 82,
+   "no_descartadas_distintas": 0,
+   "sobreviven": 0,
+   "proporcion": 0.0,
+   "mueren_en": {
+    "C1 dolor": 28,
+    "C4 hueco": 54
+   },
+   "no_descartadas": []
+  }
+ },
+ "B1": {
+  "todo": {
+   "propuestas": 133,
+   "no_descartadas_distintas": 1,
+   "sobreviven": 0,
+   "proporcion": 0.008,
+   "mueren_en": {
+    "C1 dolor": 39,
+    "C4 hueco": 93
+   },
+   "no_descartadas": [
+    "condicional: versión del producto ancla que resuelva la queja 'saludos'"
+   ]
+  },
+  "limpio_productos_nuevos": {
+   "propuestas": 92,
+   "no_descartadas_distintas": 0,
+   "sobreviven": 0,
+   "proporcion": 0.0,
+   "mueren_en": {
+    "C1 dolor": 26,
+    "C4 hueco": 66
+   },
+   "no_descartadas": []
+  }
+ },
+ "B2": {
+  "todo": {
+   "propuestas": 7,
+   "no_descartadas_distintas": 1,
+   "sobreviven": 0,
+   "proporcion": 0.143,
+   "mueren_en": {
+    "C5 la eligen": 1,
+    "C4 hueco": 3,
+    "C1 dolor": 2
+   },
+   "no_descartadas": [
+    "condicional: repuesto de aspiradora para auto"
+   ]
+  },
+  "limpio_productos_nuevos": {
+   "propuestas": 0,
+   "no_descartadas_distintas": 0,
+   "sobreviven": 0,
+   "proporcion": 0.0,
+   "mueren_en": {},
+   "no_descartadas": []
+  }
+ }
+}
