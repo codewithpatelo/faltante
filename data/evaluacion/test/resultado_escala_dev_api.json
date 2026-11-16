@@ -2,66 +2,108 @@
  "llm": {
   "todo": {
    "propuestas": 135,
-   "no_descartadas_distintas": 0,
+   "no_descartadas_distintas": 13,
    "sobreviven": 0,
-   "proporcion": 0.0,
+   "proporcion": 0.096,
    "mueren_en": {
     "C1 dolor": 40,
-    "C4 hueco": 95
+    "C5 la eligen": 28,
+    "C4 hueco": 54
    },
-   "no_descartadas": []
+   "no_descartadas": [
+    "condicional: Barra de enchufes de escritorio con abrazadera: 2 tomas de 220V + 1 USB-C PD 65W + 2 USB-A",
+    "condicional: Cortina parasol enrollable de montaje fijo: un tubo con resorte que queda tomado al parabr",
+    "condicional: Estuche tipo billetera/álbum: una carpeta blanda que se abre como libro con cuatro o seis ",
+    "condicional: Extractor de aire para pared o techo con higrostato incorporado (sensor de humedad regulab",
+    "condicional: Kit de ajuste para fundas de sillón: cuñas o tubos de espuma para calzar la ranura entre a",
+    "condicional: Kit de cuarentena para plantas nuevas: solución de inmersión (alumbre/peróxido) y recipien",
+    "condicional: Kit de detección de fugas con luz UV y colorantes trazadores para aceite y refrigerante (l",
+    "condicional: Maletín organizador de manualidades apilable, con divisiones pequeñas y elásticos para agu",
+    "condicional: Mallas de natación y conjuntos de primera piel de tejido seamless (sin costuras) de alta e",
+    "condicional: Muestrario / abanico físico de muestras reales de hilado (color y grosor), tipo carta de c",
+    "condicional: Sistema de escobilla de inodoro con cabezales desechables: mango reutilizable con botón de",
+    "condicional: Sistema de escobilla para inodoro con cabezales descartables: un mango con botón que engan",
+    "condicional: Una estación de pared para el puesto de peinado: brazo o riel fijo con toma de 220V, porta"
+   ]
   },
   "limpio_productos_nuevos": {
    "propuestas": 82,
-   "no_descartadas_distintas": 0,
+   "no_descartadas_distintas": 7,
    "sobreviven": 0,
-   "proporcion": 0.0,
+   "proporcion": 0.085,
    "mueren_en": {
     "C1 dolor": 28,
-    "C4 hueco": 54
+    "C5 la eligen": 16,
+    "C4 hueco": 31
    },
-   "no_descartadas": []
+   "no_descartadas": [
+    "condicional: Estuche tipo billetera/álbum: una carpeta blanda que se abre como libro con cuatro o seis ",
+    "condicional: Extractor de aire para pared o techo con higrostato incorporado (sensor de humedad regulab",
+    "condicional: Kit de ajuste para fundas de sillón: cuñas o tubos de espuma para calzar la ranura entre a",
+    "condicional: Kit de cuarentena para plantas nuevas: solución de inmersión (alumbre/peróxido) y recipien",
+    "condicional: Kit de detección de fugas con luz UV y colorantes trazadores para aceite y refrigerante (l",
+    "condicional: Mallas de natación y conjuntos de primera piel de tejido seamless (sin costuras) de alta e",
+    "condicional: Muestrario / abanico físico de muestras reales de hilado (color y grosor), tipo carta de c"
+   ]
   }
  },
  "B1": {
   "todo": {
    "propuestas": 133,
-   "no_descartadas_distintas": 1,
+   "no_descartadas_distintas": 7,
    "sobreviven": 0,
-   "proporcion": 0.008,
+   "proporcion": 0.06,
    "mueren_en": {
     "C1 dolor": 39,
-    "C4 hueco": 93
+    "C4 hueco": 84,
+    "C5 la eligen": 2
    },
    "no_descartadas": [
+    "condicional: versión del producto ancla que resuelva la queja 'acelerador'",
+    "condicional: versión del producto ancla que resuelva la queja 'ahora'",
+    "condicional: versión del producto ancla que resuelva la queja 'anzuelos'",
+    "condicional: versión del producto ancla que resuelva la queja 'bastante'",
+    "condicional: versión del producto ancla que resuelva la queja 'bueno'",
+    "condicional: versión del producto ancla que resuelva la queja 'calidad'",
+    "condicional: versión del producto ancla que resuelva la queja 'camara'",
     "condicional: versión del producto ancla que resuelva la queja 'saludos'"
    ]
   },
   "limpio_productos_nuevos": {
    "propuestas": 92,
-   "no_descartadas_distintas": 0,
+   "no_descartadas_distintas": 6,
    "sobreviven": 0,
-   "proporcion": 0.0,
+   "proporcion": 0.076,
    "mueren_en": {
     "C1 dolor": 26,
-    "C4 hueco": 66
+    "C4 hueco": 57,
+    "C5 la eligen": 2
    },
-   "no_descartadas": []
+   "no_descartadas": [
+    "condicional: versión del producto ancla que resuelva la queja 'acelerador'",
+    "condicional: versión del producto ancla que resuelva la queja 'ahora'",
+    "condicional: versión del producto ancla que resuelva la queja 'anzuelos'",
+    "condicional: versión del producto ancla que resuelva la queja 'bastante'",
+    "condicional: versión del producto ancla que resuelva la queja 'bueno'",
+    "condicional: versión del producto ancla que resuelva la queja 'calidad'",
+    "condicional: versión del producto ancla que resuelva la queja 'camara'"
+   ]
   }
  },
  "B2": {
   "todo": {
    "propuestas": 7,
-   "no_descartadas_distintas": 1,
+   "no_descartadas_distintas": 2,
    "sobreviven": 0,
-   "proporcion": 0.143,
+   "proporcion": 0.286,
    "mueren_en": {
     "C5 la eligen": 1,
-    "C4 hueco": 3,
+    "C4 hueco": 2,
     "C1 dolor": 2
    },
    "no_descartadas": [
-    "condicional: repuesto de aspiradora para auto"
+    "condicional: repuesto de aspiradora para auto",
+    "condicional: repuesto de rodillo masajeador"
    ]
   },
   "limpio_productos_nuevos": {
