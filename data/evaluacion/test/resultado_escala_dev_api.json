@@ -114,5 +114,87 @@
    "mueren_en": {},
    "no_descartadas": []
   }
+ },
+ "B3": {
+  "todo": {
+   "propuestas": 230,
+   "no_descartadas_distintas": 31,
+   "sobreviven": 0,
+   "proporcion": 0.135,
+   "mueren_en": {
+    "C1 dolor": 116,
+    "C5 la eligen": 28,
+    "C4 hueco": 55
+   },
+   "no_descartadas": [
+    "condicional: Aceite o crema de afeitado sin espuma, formulado para usar con afeitadora eléctrica (no co",
+    "condicional: Alfombra/manta térmica eléctrica de bajo consumo para piso (con termostato y apagado autom",
+    "condicional: Cierre o traba específica para mosquitero corredizo (clip o tope con llave que impide corr",
+    "condicional: Detergente en hojas o láminas concentradas (detergent sheets) para diluir o usar directo, ",
+    "condicional: Dispositivo de alerta antirrobo para moto/bici con notificación push al celular y sirena d",
+    "condicional: Enemigos naturales vivos para huerta y jardín: ácaros predadores (Phytoseiulus persimilis)",
+    "condicional: Escalera de marcha / escalones fijos de rehabilitación, plegable, con peldaños de distinta",
+    "condicional: Funda/manga aislante térmica reflectiva (aluminizado doble, cierre tipo velcro) calzada pa",
+    "condicional: Insertos roscados de latón para reparar o crear rosca en caños y fittings plásticos de 1/2",
+    "condicional: Kit de conectores de compresión/transición mecánica para caño plástico de 1/2 y 3/4 (PPR/P",
+    "condicional: Kit de cuarentena y desinfección para plantas acuáticas (recipiente, dip desinfectante y p",
+    "condicional: Kit de cuidado capilar para piel sensibilizada por tratamiento oncológico: shampoo-gel y a",
+    "condicional: Kit de empaque de regalo neutro: caja rígida con ventana, bolsa de organza o papel seda y ",
+    "condicional: Kit de instalación para fundas elásticas de sillón: espátula/atacador de plástico para met",
+    "condicional: Kit de parasol tipo paraguas para luneta trasera y ventanas laterales (mismo mecanismo ple",
+    "condicional: Kit de protección para manualidades con silicona caliente: dedales y guantes de silicona r",
+    "condicional: Kit de tuercas remachables/insertos roscados para chasis con herramienta de instalación (r",
+    "condicional: Kit/plantilla de medición de sillones (contorno de brazos, ancho, alto y profundidad) con ",
+    "condicional: Lámina-póster de referencia a escala real del rompecabezas (50x70 cm para 1000 piezas), im",
+    "condicional: Línea de parasoles con molde específico por modelo de auto, con recorte para el espejo ret",
+    "condicional: Manguera de silicona de mayor diámetro, antiacodado, con cobertor térmico y clips guía, má",
+    "condicional: Mazo de conversación gradual para primeras citas y grupos nuevos: cartas con niveles de in",
+    "condicional: Medium fijador para tela + base blanca imprimante, presentación para uso escolar y de disf",
+    "condicional: Pack de 8 a 12 autitos chicos (escala 1:64 compatible con pistas y ascensores de juguete),",
+    "condicional: Pata estabilizadora ajustable (con base de goma o mini ventosa) para apoyar el brazo del s",
+    "condicional: Peluche/juguete interactivo resistente a mordidas para perros, con grabador que repite la ",
+    "condicional: Plantas acuáticas in vitro en vasos estériles, libres de caracoles y algas",
+    "condicional: Prolongador corto (1,5-2 m) con ficha hembra giratoria 360° y enchufe plano, para planchit",
+    "condicional: Rack/estante modular de pared o de furgón con guías de encastre para colgar o calzar varia",
+    "condicional: Repuesto de mopa de microfibra con base triangular universal/ajustable, compatible con bal",
+    "condicional: Set de candados de perno horizontal vendidos como 'combinación distinta garantizada': cada"
+   ]
+  },
+  "limpio_productos_nuevos": {
+   "propuestas": 161,
+   "no_descartadas_distintas": 23,
+   "sobreviven": 0,
+   "proporcion": 0.143,
+   "mueren_en": {
+    "C1 dolor": 88,
+    "C4 hueco": 34,
+    "C5 la eligen": 16
+   },
+   "no_descartadas": [
+    "condicional: Aceite o crema de afeitado sin espuma, formulado para usar con afeitadora eléctrica (no co",
+    "condicional: Alfombra/manta térmica eléctrica de bajo consumo para piso (con termostato y apagado autom",
+    "condicional: Cierre o traba específica para mosquitero corredizo (clip o tope con llave que impide corr",
+    "condicional: Detergente en hojas o láminas concentradas (detergent sheets) para diluir o usar directo, ",
+    "condicional: Dispositivo de alerta antirrobo para moto/bici con notificación push al celular y sirena d",
+    "condicional: Enemigos naturales vivos para huerta y jardín: ácaros predadores (Phytoseiulus persimilis)",
+    "condicional: Escalera de marcha / escalones fijos de rehabilitación, plegable, con peldaños de distinta",
+    "condicional: Funda/manga aislante térmica reflectiva (aluminizado doble, cierre tipo velcro) calzada pa",
+    "condicional: Insertos roscados de latón para reparar o crear rosca en caños y fittings plásticos de 1/2",
+    "condicional: Kit de conectores de compresión/transición mecánica para caño plástico de 1/2 y 3/4 (PPR/P",
+    "condicional: Kit de cuarentena y desinfección para plantas acuáticas (recipiente, dip desinfectante y p",
+    "condicional: Kit de cuidado capilar para piel sensibilizada por tratamiento oncológico: shampoo-gel y a",
+    "condicional: Kit de instalación para fundas elásticas de sillón: espátula/atacador de plástico para met",
+    "condicional: Kit de tuercas remachables/insertos roscados para chasis con herramienta de instalación (r",
+    "condicional: Kit/plantilla de medición de sillones (contorno de brazos, ancho, alto y profundidad) con ",
+    "condicional: Lámina-póster de referencia a escala real del rompecabezas (50x70 cm para 1000 piezas), im",
+    "condicional: Manguera de silicona de mayor diámetro, antiacodado, con cobertor térmico y clips guía, má",
+    "condicional: Mazo de conversación gradual para primeras citas y grupos nuevos: cartas con niveles de in",
+    "condicional: Medium fijador para tela + base blanca imprimante, presentación para uso escolar y de disf",
+    "condicional: Pack de 8 a 12 autitos chicos (escala 1:64 compatible con pistas y ascensores de juguete),",
+    "condicional: Peluche/juguete interactivo resistente a mordidas para perros, con grabador que repite la ",
+    "condicional: Plantas acuáticas in vitro en vasos estériles, libres de caracoles y algas",
+    "condicional: Set de candados de perno horizontal vendidos como 'combinación distinta garantizada': cada"
+   ]
+  }
  }
 }
