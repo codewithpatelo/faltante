@@ -147,18 +147,28 @@ Fuente: páginas públicas de Mercado Libre leídas desde un navegador con sesi�
 de búsqueda devuelve 403), noviembre 2026; solo texto visible, sin nombres de usuarios; uso
 académico.
 
-## Limitaciones
+## Qué podría tirar esto abajo
 
-- Los precios de proveedor son estimados; el real lo da una cotización. La logística supone carga
-  consolidada; un importador chico suele traer por courier.
-- "+N vendidos" es un piso del contador de Mercado Libre, no las ventas exactas.
-- C5 deja pasar lo que tiene pocas alternativas ofrecidas: sin alternativas no se puede probar que
-  la gente las deje pasar.
-- Los jueces de dolor y competencia son LLM: se validaron con controles y etiquetado a ciegas; la
-  calibración contra el grupo está en `data/evaluacion/humano/`.
-- B1 cuenta como "no descartadas" propuestas que no son productos ("resolver la queja 'bueno'"):
-  el conteo no mide calidad, y por eso hace falta el juicio humano.
-- Las opiniones del corpus ampliado no incluyen preguntas de indecisos.
+Buscamos a propósito los supuestos que, si fallan, invalidan el resultado, y medimos los que se
+podían medir:
+
+- **El LLM escribe la búsqueda con la que después se lo juzga.** Una búsqueda rebuscada trae pocos
+  competidores y pasa C4 sola. Medido: las que quedan no tienen búsquedas con menos resultados
+  que las que mueren (mediana 246 contra 231 en dev, p = 0,89; 167 contra 205 en test, p = 0,32).
+  Hay casos sueltos (una búsqueda devolvió 5 resultados), y B3 también escribe las suyas.
+- **El dolor se mide con los mismos textos de donde salió la idea.** Si se saca a las personas que
+  el LLM citó, las propuestas con dolor significativo bajan de 257 a 238 (7%): pesa poco.
+- **El mismo modelo propone y juzga.** Los jueces son llamadas aparte que no saben qué método
+  propuso, así que un sesgo a favor de lo propio (Zheng et al., 2023) favorece igual al programa
+  y a B3. Falta calibrarlos contra personas (`data/evaluacion/humano/`).
+- **"No descartada" no es "buena".** Ninguna llega a "sobrevive": todas quedan condicionales
+  porque el precio de proveedor es estimado y nadie lo pagó todavía. El conteo dice que ningún
+  dato la refutó, no que sea rentable; eso lo dicen el juicio humano a ciegas y una cotización.
+- **Una sola corrida en test**, con un LLM que varía entre corridas, y 46 de sus 136 productos ya
+  se habían leído antes (por eso el subconjunto limpio).
+- **Datos:** "+N vendidos" es un piso, no las ventas; C5 no puede descartar lo que casi no tiene
+  alternativas; la logística supone carga consolidada (un importador chico trae por courier); el
+  corpus ampliado no tiene preguntas de indecisos.
 
 ## Mapa del repo
 
