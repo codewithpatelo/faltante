@@ -2,49 +2,95 @@
  "llm": {
   "todo": {
    "propuestas": 109,
-   "no_descartadas_distintas": 0,
+   "no_descartadas_distintas": 16,
    "sobreviven": 0,
-   "proporcion": 0.0,
+   "proporcion": 0.147,
    "mueren_en": {
-    "C4 hueco": 79,
+    "C4 hueco": 45,
+    "C5 la eligen": 18,
     "C1 dolor": 30
    },
-   "no_descartadas": []
+   "no_descartadas": [
+    "condicional: Adaptador digital de torque con encastre 1/2\" y 3/8\" que va entre el torquímetro y el buló",
+    "condicional: Andador de empuje (push-walker) de pie: carrito con mango alto para que el bebé camine apo",
+    "condicional: Arrancador a batería: adaptador de encastre que se monta en el arranque de motoguadañas, d",
+    "condicional: Barra de carga telescópica ajustable (cargo bar): un caño con tope de goma que se expande ",
+    "condicional: Barras de techo inflables (baca blanda universal): dos travesaños inflables que se apoyan ",
+    "condicional: Cargador portátil de baterías 18650/AA con display de porcentaje y salidas USB-C y USB-A: ",
+    "condicional: Cortador de verduras con palanca y cuchillas intercambiables de acero inoxidable, base ant",
+    "condicional: Kit de medición de calce para cuerpos no estándar: calibrador de ancho y largo de pie, cin",
+    "condicional: Máscara / tónico colorante con pigmento (color depositing mask) en tonos rojo, cobrizo y r",
+    "condicional: Pack x3 de medias largas de compresión / liner de pantorrilla ancha (caña 45-55 cm, sin co",
+    "condicional: Plataforma o bandeja rígida plegable con base antideslizante y topes, que se apoya sobre l",
+    "condicional: Probador/verificador digital de torque de mesa con celda de carga y adaptador de encastre ",
+    "condicional: Set de bujes y adaptadores de eje de reducción para cabezal de bordeadora (bujes y arandel",
+    "condicional: Sistema de archivo para colecciones en papel: archivador rígido con 100 divisiones y funda",
+    "condicional: Soga de saltar sin cable (cordless jump rope) con mangos lastrados y largo fijo o ajustabl",
+    "condicional: Tarjeta de regalo con grabación de voz: pieza rígida tipo tarjeta/solapa que al abrirse re"
+   ]
   },
   "limpio_productos_nuevos": {
    "propuestas": 61,
-   "no_descartadas_distintas": 0,
+   "no_descartadas_distintas": 12,
    "sobreviven": 0,
-   "proporcion": 0.0,
+   "proporcion": 0.197,
    "mueren_en": {
-    "C4 hueco": 42,
-    "C1 dolor": 19
+    "C5 la eligen": 6,
+    "C1 dolor": 19,
+    "C4 hueco": 24
    },
-   "no_descartadas": []
+   "no_descartadas": [
+    "condicional: Adaptador digital de torque con encastre 1/2\" y 3/8\" que va entre el torquímetro y el buló",
+    "condicional: Andador de empuje (push-walker) de pie: carrito con mango alto para que el bebé camine apo",
+    "condicional: Arrancador a batería: adaptador de encastre que se monta en el arranque de motoguadañas, d",
+    "condicional: Barra de carga telescópica ajustable (cargo bar): un caño con tope de goma que se expande ",
+    "condicional: Barras de techo inflables (baca blanda universal): dos travesaños inflables que se apoyan ",
+    "condicional: Kit de medición de calce para cuerpos no estándar: calibrador de ancho y largo de pie, cin",
+    "condicional: Máscara / tónico colorante con pigmento (color depositing mask) en tonos rojo, cobrizo y r",
+    "condicional: Pack x3 de medias largas de compresión / liner de pantorrilla ancha (caña 45-55 cm, sin co",
+    "condicional: Plataforma o bandeja rígida plegable con base antideslizante y topes, que se apoya sobre l",
+    "condicional: Probador/verificador digital de torque de mesa con celda de carga y adaptador de encastre ",
+    "condicional: Set de bujes y adaptadores de eje de reducción para cabezal de bordeadora (bujes y arandel",
+    "condicional: Sistema de archivo para colecciones en papel: archivador rígido con 100 divisiones y funda"
+   ]
   }
  },
  "B1": {
   "todo": {
    "propuestas": 136,
-   "no_descartadas_distintas": 0,
+   "no_descartadas_distintas": 4,
    "sobreviven": 0,
-   "proporcion": 0.0,
+   "proporcion": 0.037,
    "mueren_en": {
-    "C4 hueco": 104,
-    "C1 dolor": 32
+    "C4 hueco": 98,
+    "C1 dolor": 32,
+    "C5 la eligen": 1
    },
-   "no_descartadas": []
+   "no_descartadas": [
+    "condicional: versión del producto ancla que resuelva la queja 'algo'",
+    "condicional: versión del producto ancla que resuelva la queja 'calidad'",
+    "condicional: versión del producto ancla que resuelva la queja 'poco'",
+    "condicional: versión del producto ancla que resuelva la queja 'sonido'",
+    "condicional: versión del producto ancla que resuelva la queja 'textura'"
+   ]
   },
   "limpio_productos_nuevos": {
    "propuestas": 90,
-   "no_descartadas_distintas": 0,
+   "no_descartadas_distintas": 4,
    "sobreviven": 0,
-   "proporcion": 0.0,
+   "proporcion": 0.056,
    "mueren_en": {
-    "C4 hueco": 72,
-    "C1 dolor": 18
+    "C4 hueco": 66,
+    "C1 dolor": 18,
+    "C5 la eligen": 1
    },
-   "no_descartadas": []
+   "no_descartadas": [
+    "condicional: versión del producto ancla que resuelva la queja 'algo'",
+    "condicional: versión del producto ancla que resuelva la queja 'calidad'",
+    "condicional: versión del producto ancla que resuelva la queja 'poco'",
+    "condicional: versión del producto ancla que resuelva la queja 'sonido'",
+    "condicional: versión del producto ancla que resuelva la queja 'textura'"
+   ]
   }
  },
  "B2": {
