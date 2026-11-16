@@ -92,8 +92,8 @@ class DeepSeek:
                 with urllib.request.urlopen(pedido, timeout=SEGUNDOS_POR_LLAMADA) as r:
                     d = json.loads(r.read())
                 break
-            except (urllib.error.URLError, http.client.HTTPException, TimeoutError, ConnectionError, json.JSONDecodeError):
-                if intento == INTENTOS_DE_RED - 1:
+            except (urllib.error.URLError, http.client.HTTPException, TimeoutError, ConnectionError, json.JSONDecodeError) as e:
+                if getattr(e, "code", None) in (401, 402) or intento == INTENTOS_DE_RED - 1:   # clave inválida o sin saldo: reintentar no sirve
                     raise
                 time.sleep(30 * (intento + 1))
         eleccion = d["choices"][0]
