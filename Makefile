@@ -8,10 +8,13 @@ setup:
 test:
 	$(PY) -m pytest -q tests
 
-# Pasa por el embudo las propuestas guardadas de la última corrida de escala_dev (LLM y baselines),
-# sin red ni claves. Escribe data/serendipia/embudo_escala_dev_api.json.
+# Pasa por el embudo las propuestas guardadas de las corridas de dev y test (LLM y baselines), sin
+# red ni claves, y calcula el resultado de la hipótesis (data/evaluacion/test/resultado_*.json).
 serendipia:
-	$(PY) -m harness.correr escala_dev_api
+	$(PY) -m harness.correr escala_dev_api > /dev/null
+	$(PY) -m harness.correr escala_test_api > /dev/null
+	$(PY) data/evaluacion/test/resultado.py escala_dev_api
+	$(PY) data/evaluacion/test/resultado.py escala_test_api
 
 # Igual, pero las propuestas las hace DeepSeek por la API (requiere DEEPSEEK_API_KEY): lee a cada
 # persona (mapa de empatía), agrupa a la gente en segmentos y propone qué traer a cada segmento.

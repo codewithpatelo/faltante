@@ -157,7 +157,15 @@ sesión del usuario es lo único que funciona; se guarda solo el texto visible.
 El embudo es una lista de seis supuestos críticos con nombre (`harness/embudo.py`). La defensa
 es individual y cada uno tiene que poder explicarlo por dentro; un framework deja una caja negra.
 
-**DeepSeek Flash.**
-Lo que falta es escala: leer 3.389 personas, armar segmentos y proponer costó USD 1,39 en la
-primera corrida de escala_dev, y rehacer segmentos y propuestas, unos USD 0,95. Leer y asignar
-personas va sin razonamiento (es clasificar); definir segmentos y proponer, con razonamiento.
+**Flujo fijo, no agente libre.**
+Cada paso tiene una sola salida posible y un guardrail que la verifica; un agente que decide su
+próximo paso sería más difícil de auditar y de evaluar, y la tarea no lo necesita: el orden de
+las preguntas (¿existe el problema?, ¿nadie lo vende?, ¿la eligen?, ¿deja plata?) es el de un
+emprendedor y no cambia según el caso.
+
+**DeepSeek V4.1 Flash, no Pro.**
+Lo que pide la tarea es escala (miles de personas por partición). Con Flash, una corrida
+completa sobre ~135 productos cuesta ≈ USD 5,20 y ~50 minutos; Pro cuesta 4,4 veces más por
+token de entrada. Leer y asignar personas va sin razonamiento (es clasificar); proponer y juzgar,
+con razonamiento. No lo comparamos contra Pro: los jueces quedaron validados con Flash
+(controles, placebo, etiquetado a ciegas), y esa comparación es trabajo futuro.

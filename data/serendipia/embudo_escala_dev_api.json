@@ -10385,7 +10385,7 @@
    "Taper Tupper Vidrio Cierre Hermético Con Tapa Recipiente 1.5"
   ],
   "id": "B1",
-  "que_traer": "versión del producto ancla que resuelva la queja 'microondas'",
+  "que_traer": "versión del producto ancla que resuelva la queja 'hola'",
   "busqueda_ml": "tupper vidrio hermetico",
   "estado": "descartada",
   "se_detiene_en": "C1 dolor",
@@ -10393,7 +10393,7 @@
   "señales": [
    {
     "id": "E007.B1",
-    "descripcion": "queja característica: 'microondas'",
+    "descripcion": "queja más frecuente: 'hola'",
     "errores": []
    }
   ],
@@ -10428,7 +10428,7 @@
    "Taper Tupper Vidrio Recipiente Con Tapa Cierre Hermético 1.0"
   ],
   "id": "B1",
-  "que_traer": "versión del producto ancla que resuelva la queja 'leonardo'",
+  "que_traer": "versión del producto ancla que resuelva la queja 'consulta'",
   "busqueda_ml": "tupper vidrio hermetico",
   "estado": "descartada",
   "se_detiene_en": "C1 dolor",
@@ -10436,7 +10436,7 @@
   "señales": [
    {
     "id": "E008.B1",
-    "descripcion": "queja característica: 'leonardo'",
+    "descripcion": "queja más frecuente: 'consulta'",
     "errores": []
    }
   ],
@@ -10471,7 +10471,7 @@
    "Espatula Silicona Lisa 28cm Repostería Pasteleria Profesiona"
   ],
   "id": "B1",
-  "que_traer": "versión del producto ancla que resuelva la queja 'libres'",
+  "que_traer": "versión del producto ancla que resuelva la queja 'hola'",
   "busqueda_ml": "espatula de silicona",
   "estado": "descartada",
   "se_detiene_en": "C1 dolor",
@@ -10479,7 +10479,7 @@
   "señales": [
    {
     "id": "E011.B1",
-    "descripcion": "queja característica: 'libres'",
+    "descripcion": "queja más frecuente: 'hola'",
     "errores": []
    }
   ],
@@ -10514,7 +10514,7 @@
    "Kit de Repostería Levys Bazar con Moldes Antiadherentes y Ac"
   ],
   "id": "B1",
-  "que_traer": "versión del producto ancla que resuelva la queja 'moldes'",
+  "que_traer": "versión del producto ancla que resuelva la queja 'hola'",
   "busqueda_ml": "espatula de silicona",
   "estado": "descartada",
   "se_detiene_en": "C1 dolor",
@@ -10522,7 +10522,7 @@
   "señales": [
    {
     "id": "E012.B1",
-    "descripcion": "queja característica: 'moldes'",
+    "descripcion": "queja más frecuente: 'hola'",
     "errores": []
    }
   ],
@@ -10557,7 +10557,7 @@
    "X2 Organizador Canasto Caja De Tela Plegable Estructura Meta"
   ],
   "id": "B1",
-  "que_traer": "versión del producto ancla que resuelva la queja 'levys'",
+  "que_traer": "versión del producto ancla que resuelva la queja 'hola'",
   "busqueda_ml": "organizador de placard",
   "estado": "descartada",
   "se_detiene_en": "C1 dolor",
@@ -10565,7 +10565,7 @@
   "señales": [
    {
     "id": "E013.B1",
-    "descripcion": "queja característica: 'levys'",
+    "descripcion": "queja más frecuente: 'hola'",
     "errores": []
    }
   ],
@@ -10600,7 +10600,7 @@
    "Set De 4 Organizadores De Placard Beige Medias Ropa Interior"
   ],
   "id": "B1",
-  "que_traer": "versión del producto ancla que resuelva la queja 'kogu'",
+  "que_traer": "versión del producto ancla que resuelva la queja 'equipo'",
   "busqueda_ml": "organizador de placard",
   "estado": "descartada",
   "se_detiene_en": "C1 dolor",
@@ -10608,7 +10608,7 @@
   "señales": [
    {
     "id": "E014.B1",
-    "descripcion": "queja característica: 'kogu'",
+    "descripcion": "queja más frecuente: 'equipo'",
     "errores": []
    }
   ],
@@ -10643,7 +10643,7 @@
    "Almohada Cervical Ortopédica Ergonómica Espuma Viscoelástica"
   ],
   "id": "B1",
-  "que_traer": "versión del producto ancla que resuelva la queja 'contamos'",
+  "que_traer": "versión del producto ancla que resuelva la queja 'hola'",
   "busqueda_ml": "almohada viscoelastica",
   "estado": "descartada",
   "se_detiene_en": "C1 dolor",
@@ -10651,7 +10651,7 @@
   "señales": [
    {
     "id": "E021.B1",
-    "descripcion": "queja característica: 'contamos'",
+    "descripcion": "queja más frecuente: 'hola'",
     "errores": []
    }
   ],
@@ -10765,15 +10765,15 @@
    "Repuesto de mopa giratoria Vileda Easy Wring and Clean | 100"
   ],
   "id": "B1",
-  "que_traer": "versión del producto ancla que resuelva la queja 'glow'",
+  "que_traer": "versión del producto ancla que resuelva la queja 'repuesto'",
   "busqueda_ml": "mopa giratoria con balde",
   "estado": "descartada",
   "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "motivo": "ya atendido: 40 equivalentes venden +100",
   "señales": [
    {
     "id": "E022.B1",
-    "descripcion": "queja característica: 'glow'",
+    "descripcion": "queja más frecuente: 'repuesto'",
     "errores": []
    }
   ],
@@ -10807,7 +10807,18 @@
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "ya atendido: 40 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 50,
+     "venden": 40,
+     "con_alguna_venta": 42,
+     "ventas_visibles": 75975,
+     "ejemplos_que_venden": [
+      "Balde Mopa Centrífuga Escurridor Lampazo Trapeador + 3 Mopas Negro (+10000, $51,499)",
+      "Combo Hogar Actual Balde Mopa Centrifugo + 4 Mopas Repuesto (+10000, $21,436)",
+      "Balde Trapeador Piso Escurridor Resistente + 1 Mopa Mango Regulable LV (+10000, $28,599)"
+     ]
+    }
    }
   ]
  },
@@ -10886,7 +10897,7 @@
    "Balde Easy Wring Vileda Pedal Centrifugo Y Mopa Negro Y Rojo"
   ],
   "id": "B1",
-  "que_traer": "versión del producto ancla que resuelva la queja 'odinroxs'",
+  "que_traer": "versión del producto ancla que resuelva la queja 'hola'",
   "busqueda_ml": "mopa giratoria con balde",
   "estado": "descartada",
   "se_detiene_en": "C1 dolor",
@@ -10894,7 +10905,7 @@
   "señales": [
    {
     "id": "E023.B1",
-    "descripcion": "queja característica: 'odinroxs'",
+    "descripcion": "queja más frecuente: 'hola'",
     "errores": []
    }
   ],
@@ -10972,15 +10983,15 @@
    "Escobilla Silicona Con Base Adhesiva Baño Limpieza Cepillo"
   ],
   "id": "B1",
-  "que_traer": "versión del producto ancla que resuelva la queja 'shop'",
+  "que_traer": "versión del producto ancla que resuelva la queja 'consulta'",
   "busqueda_ml": "escobilla de baño",
   "estado": "descartada",
   "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "motivo": "ya atendido: 34 equivalentes venden +100",
   "señales": [
    {
     "id": "E024.B1",
-    "descripcion": "queja característica: 'shop'",
+    "descripcion": "queja más frecuente: 'consulta'",
     "errores": []
    }
   ],
@@ -11014,7 +11025,18 @@
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "ya atendido: 34 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 48,
+     "venden": 34,
+     "con_alguna_venta": 42,
+     "ventas_visibles": 26300,
+     "ejemplos_que_venden": [
+      "Escobilla Limpia Inodoros Con Depósito Wc (+5000, $5,400)",
+      "Cepillo O Escobilla Para Baño Acero Inoxidable (+5000, $7,454)",
+      "Cepillo Escobilla Inodoro Silicona Flexible Accesorios Baño Raitot (+1000, $9,199)"
+     ]
+    }
    }
   ]
  },
@@ -11027,15 +11049,15 @@
    "Cepillo Escobilla De Baño Inodoro Accesorio Silicona Flexibl"
   ],
   "id": "B1",
-  "que_traer": "versión del producto ancla que resuelva la queja 'escurra'",
+  "que_traer": "versión del producto ancla que resuelva la queja 'poco'",
   "busqueda_ml": "escobilla de baño",
   "estado": "descartada",
   "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "motivo": "ya atendido: 34 equivalentes venden +100",
   "señales": [
    {
     "id": "E025.B1",
-    "descripcion": "queja característica: 'escurra'",
+    "descripcion": "queja más frecuente: 'poco'",
     "errores": []
    }
   ],
@@ -11069,7 +11091,18 @@
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "ya atendido: 34 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 48,
+     "venden": 34,
+     "con_alguna_venta": 42,
+     "ventas_visibles": 26300,
+     "ejemplos_que_venden": [
+      "Escobilla Limpia Inodoros Con Depósito Wc (+5000, $5,400)",
+      "Cepillo O Escobilla Para Baño Acero Inoxidable (+5000, $7,454)",
+      "Cepillo Escobilla Inodoro Silicona Flexible Accesorios Baño Raitot (+1000, $9,199)"
+     ]
+    }
    }
   ]
  },
@@ -11090,7 +11123,7 @@
   "señales": [
    {
     "id": "E026.B1",
-    "descripcion": "queja característica: 'goma'",
+    "descripcion": "queja más frecuente: 'goma'",
     "errores": []
    }
   ],
@@ -11125,15 +11158,15 @@
    "Trapeador Giratorio Pedal-balde Centrifugo-mopa Lampazo 360º"
   ],
   "id": "B1",
-  "que_traer": "versión del producto ancla que resuelva la queja 'estatura'",
+  "que_traer": "versión del producto ancla que resuelva la queja 'bueno'",
   "busqueda_ml": "secador de piso",
   "estado": "descartada",
   "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "motivo": "ya atendido: 21 equivalentes venden +100",
   "señales": [
    {
     "id": "E027.B1",
-    "descripcion": "queja característica: 'estatura'",
+    "descripcion": "queja más frecuente: 'bueno'",
     "errores": []
    }
   ],
@@ -11167,7 +11200,18 @@
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "ya atendido: 21 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 36,
+     "venden": 21,
+     "con_alguna_venta": 24,
+     "ventas_visibles": 7450,
+     "ejemplos_que_venden": [
+      "Secador De Piso Musto 75cm Royco Doble Goma (+1000, $18,999)",
+      "Secador De Piso Virulana Secarapid X 30 Cms Multiuso (+1000, $4,343)",
+      "Secador De Piso Aluminio Profesional 60 Cm Industrial (+1000, $15,015)"
+     ]
+    }
    }
   ]
  },
@@ -11180,7 +11224,7 @@
    "Comedero Alimentador Automático Daza Lwr165008 Dispenser Ali"
   ],
   "id": "B1",
-  "que_traer": "versión del producto ancla que resuelva la queja 'zenok'",
+  "que_traer": "versión del producto ancla que resuelva la queja 'solo'",
   "busqueda_ml": "comedero automatico gato",
   "estado": "descartada",
   "se_detiene_en": "C1 dolor",
@@ -11188,7 +11232,7 @@
   "señales": [
    {
     "id": "E030.B1",
-    "descripcion": "queja característica: 'zenok'",
+    "descripcion": "queja más frecuente: 'solo'",
     "errores": []
    }
   ],
@@ -11223,15 +11267,15 @@
    "Comedero Automático Para Mascotas Con Dispensador De Agua"
   ],
   "id": "B1",
-  "que_traer": "versión del producto ancla que resuelva la queja 'desconozco'",
+  "que_traer": "versión del producto ancla que resuelva la queja 'saludos'",
   "busqueda_ml": "comedero automatico gato",
-  "estado": "descartada",
-  "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "estado": "condicional",
+  "se_detiene_en": "C6 margen",
+  "motivo": "sin precio de referencia: nadie lo ofrece; el experimento es una preventa",
   "señales": [
    {
     "id": "E031.B1",
-    "descripcion": "queja característica: 'desconozco'",
+    "descripcion": "queja más frecuente: 'saludos'",
     "errores": []
    }
   ],
@@ -11264,10 +11308,51 @@
    {
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
+    "pasa": true,
+    "motivo": "0 equivalentes, 0 venden +100",
+    "datos": {
+     "equivalentes": 0,
+     "venden": 0,
+     "con_alguna_venta": 0,
+     "ventas_visibles": 0,
+     "ejemplos_que_venden": []
+    }
+   },
+   {
+    "chequeo": "C5 la eligen",
+    "supuesto": "Si se ofrece, la gente la elige",
+    "pasa": true,
+    "motivo": "no hay alternativas con stock local: nadie la ofreció todavía"
+   },
+   {
+    "chequeo": "C6 margen",
+    "supuesto": "Deja plata al precio que la gente paga",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "sin precio de referencia: nadie lo ofrece; el experimento es una preventa"
    }
-  ]
+  ],
+  "confianza": {
+   "riesgos": [
+    "ningún equivalente vendió: el precio no lo pagó nadie todavía"
+   ],
+   "evidencia": {
+    "productos": 1,
+    "dolor": {
+     "desatendidos": 8,
+     "de": 70,
+     "en_el_control": 0,
+     "proporcion_ic95": [
+      0.059,
+      0.21
+     ],
+     "p": 0.00316
+    },
+    "demanda": {
+     "ventas_de_equivalentes_al_menos": 0,
+     "equivalentes_con_ventas": 0
+    }
+   }
+  }
  },
  {
   "metodo": "B1",
@@ -11278,15 +11363,15 @@
    "Correa Extensible Perro 8 Metros Retractil Automatica Color "
   ],
   "id": "B1",
-  "que_traer": "versión del producto ancla que resuelva la queja 'saluda'",
+  "que_traer": "versión del producto ancla que resuelva la queja 'poco'",
   "busqueda_ml": "correa extensible perro",
   "estado": "descartada",
   "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "motivo": "ya atendido: 25 equivalentes venden +100",
   "señales": [
    {
     "id": "E034.B1",
-    "descripcion": "queja característica: 'saluda'",
+    "descripcion": "queja más frecuente: 'poco'",
     "errores": []
    }
   ],
@@ -11320,7 +11405,18 @@
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "ya atendido: 25 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 57,
+     "venden": 25,
+     "con_alguna_venta": 43,
+     "ventas_visibles": 11025,
+     "ejemplos_que_venden": [
+      "Correa De Perros 5 Metros Larga Reforzada Mosquetón Grande Color Negro (+1000, $16,715)",
+      "Correa Larga Perros 5 Metros Negra Extra Reforzada K9 Dog Trainers (+1000, $16,641)",
+      "Correa Extensible Perro 8 Metros Retractil Automatica Color Azul Marca (+1000, $25,699)"
+     ]
+    }
    }
   ]
  },
@@ -11333,15 +11429,15 @@
    "Correa Extensible Perro 8 Metros Retractil Automatica Color "
   ],
   "id": "B1",
-  "que_traer": "versión del producto ancla que resuelva la queja 'saluda'",
+  "que_traer": "versión del producto ancla que resuelva la queja 'poco'",
   "busqueda_ml": "correa extensible perro",
   "estado": "descartada",
   "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "motivo": "ya atendido: 25 equivalentes venden +100",
   "señales": [
    {
     "id": "E035.B1",
-    "descripcion": "queja característica: 'saluda'",
+    "descripcion": "queja más frecuente: 'poco'",
     "errores": []
    }
   ],
@@ -11375,7 +11471,18 @@
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "ya atendido: 25 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 57,
+     "venden": 25,
+     "con_alguna_venta": 43,
+     "ventas_visibles": 11025,
+     "ejemplos_que_venden": [
+      "Correa De Perros 5 Metros Larga Reforzada Mosquetón Grande Color Negro (+1000, $16,715)",
+      "Correa Larga Perros 5 Metros Negra Extra Reforzada K9 Dog Trainers (+1000, $16,641)",
+      "Correa Extensible Perro 8 Metros Retractil Automatica Color Azul Marca (+1000, $25,699)"
+     ]
+    }
    }
   ]
  },
@@ -11388,7 +11495,7 @@
    "Uni-t Termómetro Infrarrojo Temperatura Ut306c -50°C a 500°C"
   ],
   "id": "B1",
-  "que_traer": "versión del producto ancla que resuelva la queja 'compromiso'",
+  "que_traer": "versión del producto ancla que resuelva la queja 'saludos'",
   "busqueda_ml": "termometro infrarrojo",
   "estado": "descartada",
   "se_detiene_en": "C1 dolor",
@@ -11396,7 +11503,7 @@
   "señales": [
    {
     "id": "E047.B1",
-    "descripcion": "queja característica: 'compromiso'",
+    "descripcion": "queja más frecuente: 'saludos'",
     "errores": []
    }
   ],
@@ -11431,15 +11538,15 @@
    "Kit de Mancuernas Ajustables BS Fit de 20 kg con Discos y Ba"
   ],
   "id": "B1",
-  "que_traer": "versión del producto ancla que resuelva la queja 'emmaarce'",
+  "que_traer": "versión del producto ancla que resuelva la queja 'discos'",
   "busqueda_ml": "mancuernas ajustables",
   "estado": "descartada",
   "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "motivo": "ya atendido: 28 equivalentes venden +100",
   "señales": [
    {
     "id": "E053.B1",
-    "descripcion": "queja característica: 'emmaarce'",
+    "descripcion": "queja más frecuente: 'discos'",
     "errores": []
    }
   ],
@@ -11473,7 +11580,18 @@
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "ya atendido: 28 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 37,
+     "venden": 28,
+     "con_alguna_venta": 34,
+     "ventas_visibles": 17150,
+     "ejemplos_que_venden": [
+      "Mancuernas Sonnos Set Regulable 24 Kg Discos Pvc (+5000, $84,891)",
+      "Par Mancuernas Macizas C/ Tope A Rosca + 20 Kg Discos Macizo Cromadas  (+1000, $207,149)",
+      "Kit Mancuernas de Fundición con Topes a Rosca y 15 kg en Discos DeporA (+1000, $172,272)"
+     ]
+    }
    }
   ]
  },
@@ -11486,15 +11604,15 @@
    "Kit Mancuernas Cromadas A Rosca + 20 Kg En 8 Discos De 2.5 K"
   ],
   "id": "B1",
-  "que_traer": "versión del producto ancla que resuelva la queja 'pablo'",
+  "que_traer": "versión del producto ancla que resuelva la queja 'discos'",
   "busqueda_ml": "mancuernas ajustables",
   "estado": "descartada",
   "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "motivo": "ya atendido: 28 equivalentes venden +100",
   "señales": [
    {
     "id": "E054.B1",
-    "descripcion": "queja característica: 'pablo'",
+    "descripcion": "queja más frecuente: 'discos'",
     "errores": []
    }
   ],
@@ -11528,7 +11646,18 @@
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "ya atendido: 28 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 37,
+     "venden": 28,
+     "con_alguna_venta": 34,
+     "ventas_visibles": 17150,
+     "ejemplos_que_venden": [
+      "Mancuernas Sonnos Set Regulable 24 Kg Discos Pvc (+5000, $84,891)",
+      "Par Mancuernas Macizas C/ Tope A Rosca + 20 Kg Discos Macizo Cromadas  (+1000, $207,149)",
+      "Kit Mancuernas de Fundición con Topes a Rosca y 15 kg en Discos DeporA (+1000, $172,272)"
+     ]
+    }
    }
   ]
  },
@@ -11541,15 +11670,15 @@
    "Masajeador Cervical y Lumbar Gadnic 8 Rodillos Bidireccional"
   ],
   "id": "B1",
-  "que_traer": "versión del producto ancla que resuelva la queja 'masaj'",
+  "que_traer": "versión del producto ancla que resuelva la queja 'hola'",
   "busqueda_ml": "rodillo masajeador",
   "estado": "descartada",
   "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "motivo": "ya atendido: 17 equivalentes venden +100",
   "señales": [
    {
     "id": "E055.B1",
-    "descripcion": "queja característica: 'masaj'",
+    "descripcion": "queja más frecuente: 'hola'",
     "errores": []
    }
   ],
@@ -11583,7 +11712,18 @@
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "ya atendido: 17 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 26,
+     "venden": 17,
+     "con_alguna_venta": 23,
+     "ventas_visibles": 10275,
+     "ejemplos_que_venden": [
+      "Rodillo Rolo Yoga Pilates Rollo Roller Foam Masajes - 33 Cm (+1000, $15,819)",
+      "Rodillo Rolo - Yoga Pilates Masajes Roller Gym (+1000, $12,800)",
+      "Rolo Rodillo Masajeador Elongacion Largo 45cm Cuerpo Entero Color Negr (+1000, $19,200)"
+     ]
+    }
    }
   ]
  },
@@ -11692,15 +11832,15 @@
    "Masajeador Wolke Cervical Lumbar Espalda Calor 8 Rodillos Gt"
   ],
   "id": "B1",
-  "que_traer": "versión del producto ancla que resuelva la queja 'nudos'",
+  "que_traer": "versión del producto ancla que resuelva la queja 'calor'",
   "busqueda_ml": "rodillo masajeador",
   "estado": "descartada",
   "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "motivo": "ya atendido: 19 equivalentes venden +100",
   "señales": [
    {
     "id": "E056.B1",
-    "descripcion": "queja característica: 'nudos'",
+    "descripcion": "queja más frecuente: 'calor'",
     "errores": []
    }
   ],
@@ -11734,7 +11874,18 @@
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "ya atendido: 19 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 28,
+     "venden": 19,
+     "con_alguna_venta": 25,
+     "ventas_visibles": 11375,
+     "ejemplos_que_venden": [
+      "Rodillo Rolo Yoga Pilates Rollo Roller Foam Masajes - 33 Cm (+1000, $15,819)",
+      "Rodillo Rolo - Yoga Pilates Masajes Roller Gym (+1000, $12,800)",
+      "Rolo Rodillo Masajeador Elongacion Largo 45cm Cuerpo Entero Color Negr (+1000, $19,200)"
+     ]
+    }
    }
   ]
  },
@@ -11747,15 +11898,15 @@
    "Cinta Métrica Evel 508 de 8 m con Freno y Diseño Ergonómico"
   ],
   "id": "B1",
-  "que_traer": "versión del producto ancla que resuelva la queja 'carcasa'",
+  "que_traer": "versión del producto ancla que resuelva la queja 'buena'",
   "busqueda_ml": "cinta metrica",
   "estado": "descartada",
   "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "motivo": "ya atendido: 26 equivalentes venden +100",
   "señales": [
    {
     "id": "E057.B1",
-    "descripcion": "queja característica: 'carcasa'",
+    "descripcion": "queja más frecuente: 'buena'",
     "errores": []
    }
   ],
@@ -11789,7 +11940,18 @@
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "ya atendido: 26 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 41,
+     "venden": 26,
+     "con_alguna_venta": 35,
+     "ventas_visibles": 26675,
+     "ejemplos_que_venden": [
+      "Cinta Metrica Evel 3mts Retroblok Profesional Art. 503 (+10000, $9,339)",
+      "Cinta Metrica 8 M Autofrenante Bremen Bre-7614 (+5000, $32,900)",
+      "Cinta Metrica Metalica 3 Metros Engomada Frenos (+1000, $3,786)"
+     ]
+    }
    }
   ]
  },
@@ -11802,15 +11964,15 @@
    "Pistola Encoladora + 10 Barras Silicona"
   ],
   "id": "B1",
-  "que_traer": "versión del producto ancla que resuelva la queja 'pistolita'",
+  "que_traer": "versión del producto ancla que resuelva la queja 'hola'",
   "busqueda_ml": "pistola de silicona",
   "estado": "descartada",
   "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "motivo": "ya atendido: 20 equivalentes venden +100",
   "señales": [
    {
     "id": "E058.B1",
-    "descripcion": "queja característica: 'pistolita'",
+    "descripcion": "queja más frecuente: 'hola'",
     "errores": []
    }
   ],
@@ -11844,7 +12006,18 @@
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "ya atendido: 20 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 39,
+     "venden": 20,
+     "con_alguna_venta": 32,
+     "ventas_visibles": 18650,
+     "ejemplos_que_venden": [
+      "Pistola Encoladora Suprabond Hot Melt Modelo Hx 100 Edición Clásica -  (+10000, $16,679)",
+      "Pistola Encoladora + 10 Barras Silicona 60w 11 Mm (+1000, $19,150)",
+      "Pistola Encoladora Candela 40W Modelo 7443 Con 2 Barras Silicona 11mm (+1000, $5,554)"
+     ]
+    }
    }
   ]
  },
@@ -11923,15 +12096,15 @@
    "Organizador Gavetero Pvc Ideal Tornillos - Pesca"
   ],
   "id": "B1",
-  "que_traer": "versión del producto ancla que resuelva la queja 'roto'",
+  "que_traer": "versión del producto ancla que resuelva la queja 'cierre'",
   "busqueda_ml": "organizador de tornillos",
   "estado": "descartada",
   "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "motivo": "ya atendido: 24 equivalentes venden +100",
   "señales": [
    {
     "id": "E059.B1",
-    "descripcion": "queja característica: 'roto'",
+    "descripcion": "queja más frecuente: 'cierre'",
     "errores": []
    }
   ],
@@ -11965,7 +12138,18 @@
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "ya atendido: 24 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 50,
+     "venden": 24,
+     "con_alguna_venta": 30,
+     "ventas_visibles": 7325,
+     "ejemplos_que_venden": [
+      "Organizador Gavetero Pvc Transparente Ideal Tornillos- Pesca (+1000, $19,500)",
+      "Gavetero Organizador Tornillos Anzuelo Kushiro 18 Divisiones Color Gri (+1000, $9,630)",
+      "Organizador Plastico Herramientas Maletin 12'' Ingco Color Amarillo (+1000, $11,449)"
+     ]
+    }
    }
   ]
  },
@@ -11978,15 +12162,15 @@
    "Caja Organizadora Total Apilable, Tipo Valija, Para Tornillo"
   ],
   "id": "B1",
-  "que_traer": "versión del producto ancla que resuelva la queja 'poco'",
+  "que_traer": "versión del producto ancla que resuelva la queja 'buena'",
   "busqueda_ml": "organizador de tornillos",
   "estado": "descartada",
   "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "motivo": "ya atendido: 24 equivalentes venden +100",
   "señales": [
    {
     "id": "E060.B1",
-    "descripcion": "queja característica: 'poco'",
+    "descripcion": "queja más frecuente: 'buena'",
     "errores": []
    }
   ],
@@ -12020,7 +12204,18 @@
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "ya atendido: 24 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 50,
+     "venden": 24,
+     "con_alguna_venta": 30,
+     "ventas_visibles": 7325,
+     "ejemplos_que_venden": [
+      "Organizador Gavetero Pvc Transparente Ideal Tornillos- Pesca (+1000, $19,500)",
+      "Gavetero Organizador Tornillos Anzuelo Kushiro 18 Divisiones Color Gri (+1000, $9,630)",
+      "Organizador Plastico Herramientas Maletin 12'' Ingco Color Amarillo (+1000, $11,449)"
+     ]
+    }
    }
   ]
  },
@@ -12033,15 +12228,15 @@
    "Soporte Celular Auto Rejilla Giratorio Para iPhone Samsung"
   ],
   "id": "B1",
-  "que_traer": "versión del producto ancla que resuelva la queja 'asesorarlo'",
+  "que_traer": "versión del producto ancla que resuelva la queja 'hola'",
   "busqueda_ml": "soporte celular auto",
   "estado": "descartada",
   "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "motivo": "ya atendido: 38 equivalentes venden +100",
   "señales": [
    {
     "id": "E063.B1",
-    "descripcion": "queja característica: 'asesorarlo'",
+    "descripcion": "queja más frecuente: 'hola'",
     "errores": []
    }
   ],
@@ -12075,7 +12270,18 @@
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "ya atendido: 38 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 57,
+     "venden": 38,
+     "con_alguna_venta": 46,
+     "ventas_visibles": 40950,
+     "ejemplos_que_venden": [
+      "Base Soporte Para Celular Telefono Gps Auto Coche Tablero (+10000, $5,101)",
+      "Soporte Celular Auto Brazo Extensible Vidrio Tablero Sopapa (+5000, $10,999)",
+      "Soporte Celular Auto Gravity Car Mount - Baseus Oficial Color Black (+5000, $10,109)"
+     ]
+    }
    }
   ]
  },
@@ -12088,15 +12294,15 @@
    "Soporte Celular P/ Auto Con Sopapa Brazo Extensible 360°"
   ],
   "id": "B1",
-  "que_traer": "versión del producto ancla que resuelva la queja 'anto'",
+  "que_traer": "versión del producto ancla que resuelva la queja 'celular'",
   "busqueda_ml": "soporte celular auto",
   "estado": "descartada",
   "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "motivo": "ya atendido: 38 equivalentes venden +100",
   "señales": [
    {
     "id": "E064.B1",
-    "descripcion": "queja característica: 'anto'",
+    "descripcion": "queja más frecuente: 'celular'",
     "errores": []
    }
   ],
@@ -12130,7 +12336,18 @@
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "ya atendido: 38 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 57,
+     "venden": 38,
+     "con_alguna_venta": 46,
+     "ventas_visibles": 40950,
+     "ejemplos_que_venden": [
+      "Base Soporte Para Celular Telefono Gps Auto Coche Tablero (+10000, $5,101)",
+      "Soporte Celular Auto Brazo Extensible Vidrio Tablero Sopapa (+5000, $10,999)",
+      "Soporte Celular Auto Gravity Car Mount - Baseus Oficial Color Black (+5000, $10,109)"
+     ]
+    }
    }
   ]
  },
@@ -12151,7 +12368,7 @@
   "señales": [
    {
     "id": "E065.B1",
-    "descripcion": "queja característica: 'aspiradora'",
+    "descripcion": "queja más frecuente: 'aspiradora'",
     "errores": []
    }
   ],
@@ -12252,15 +12469,15 @@
    "Aspiradora De Mano Gadnic Inalambrica 120W Succion 9000Pa Ba"
   ],
   "id": "B1",
-  "que_traer": "versión del producto ancla que resuelva la queja 'especificas'",
+  "que_traer": "versión del producto ancla que resuelva la queja 'potencia'",
   "busqueda_ml": "aspiradora para auto",
   "estado": "descartada",
   "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "motivo": "ya atendido: 30 equivalentes venden +100",
   "señales": [
    {
     "id": "E066.B1",
-    "descripcion": "queja característica: 'especificas'",
+    "descripcion": "queja más frecuente: 'potencia'",
     "errores": []
    }
   ],
@@ -12294,7 +12511,18 @@
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "ya atendido: 30 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 40,
+     "venden": 30,
+     "con_alguna_venta": 33,
+     "ventas_visibles": 35550,
+     "ejemplos_que_venden": [
+      "Aspiradora de mano Laffitte inalámbrica 120W sin bolsa para autos (+10000, $32,099)",
+      "Aspiradora De Mano Para Auto Recargable Inalámbrica + Acc (+5000, $42,399)",
+      "Aspiradora Sopladora Inalámbrica Voltra 3 en 1 Negro Potencia 180W 21k (+5000, $157,425)"
+     ]
+    }
    }
   ]
  },
@@ -12443,15 +12671,15 @@
    "Parasol Auto Protector Solar Parabrisas 150x70 Metalizado"
   ],
   "id": "B1",
-  "que_traer": "versión del producto ancla que resuelva la queja 'ventosas'",
+  "que_traer": "versión del producto ancla que resuelva la queja 'grande'",
   "busqueda_ml": "parasol auto",
   "estado": "descartada",
   "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "motivo": "ya atendido: 21 equivalentes venden +100",
   "señales": [
    {
     "id": "E071.B1",
-    "descripcion": "queja característica: 'ventosas'",
+    "descripcion": "queja más frecuente: 'grande'",
     "errores": []
    }
   ],
@@ -12485,7 +12713,18 @@
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "ya atendido: 21 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 43,
+     "venden": 21,
+     "con_alguna_venta": 27,
+     "ventas_visibles": 10275,
+     "ejemplos_que_venden": [
+      "Parasol Tipo Paraguas Bear Protección Uv Camioneta Auto (+1000, $8,805)",
+      "Sombrilla Parasol Parabrisas Luneta Proteccion Uv Auto (+1000, $17,324)",
+      "Protector Parabrisas Cubre Sol Metalizado Plegable Auto (+1000, $8,729)"
+     ]
+    }
    }
   ]
  },
@@ -12498,15 +12737,15 @@
    "Parasol Tipo Paraguas Gadnic Protección Rayos Uv Auto"
   ],
   "id": "B1",
-  "que_traer": "versión del producto ancla que resuelva la queja 'parasol'",
+  "que_traer": "versión del producto ancla que resuelva la queja 'hola'",
   "busqueda_ml": "parasol auto",
   "estado": "descartada",
   "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "motivo": "ya atendido: 23 equivalentes venden +100",
   "señales": [
    {
     "id": "E072.B1",
-    "descripcion": "queja característica: 'parasol'",
+    "descripcion": "queja más frecuente: 'hola'",
     "errores": []
    }
   ],
@@ -12540,7 +12779,18 @@
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "ya atendido: 23 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 45,
+     "venden": 23,
+     "con_alguna_venta": 29,
+     "ventas_visibles": 10875,
+     "ejemplos_que_venden": [
+      "Parasol Tipo Paraguas Bear Protección Uv Camioneta Auto (+1000, $8,805)",
+      "Sombrilla Parasol Parabrisas Luneta Proteccion Uv Auto (+1000, $17,324)",
+      "Protector Parabrisas Cubre Sol Metalizado Plegable Auto (+1000, $8,729)"
+     ]
+    }
    }
   ]
  },
@@ -12553,15 +12803,15 @@
    "Cepillo Peine Secador Modelador De Pelo Alisador Eléctrico"
   ],
   "id": "B1",
-  "que_traer": "versión del producto ancla que resuelva la queja 'ondas'",
+  "que_traer": "versión del producto ancla que resuelva la queja 'cable'",
   "busqueda_ml": "cepillo alisador",
   "estado": "descartada",
   "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "motivo": "ya atendido: 7 equivalentes venden +100",
   "señales": [
    {
     "id": "E073.B1",
-    "descripcion": "queja característica: 'ondas'",
+    "descripcion": "queja más frecuente: 'cable'",
     "errores": []
    }
   ],
@@ -12595,7 +12845,18 @@
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "ya atendido: 7 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 14,
+     "venden": 7,
+     "con_alguna_venta": 10,
+     "ventas_visibles": 4450,
+     "ejemplos_que_venden": [
+      "Cepillo Alisador Inalámbrico Portátil Recargable USB-C Anti Frizz 160  (+1000, $27,887)",
+      "Cepillo Alisador Inalámbrico Portátil Recargable USB-C Anti Frizz 160  (+1000, $27,887)",
+      "Cepillo Peine Alisador Inalámbrico Recargable Usb Portátil (+1000, $24,744)"
+     ]
+    }
    }
   ]
  },
@@ -12608,15 +12869,15 @@
    "Planchita de pelo BaBylissPRO Nano Titanium BNT4091 BABNT409"
   ],
   "id": "B1",
-  "que_traer": "versión del producto ancla que resuelva la queja 'lasmargaritas'",
+  "que_traer": "versión del producto ancla que resuelva la queja 'gracias'",
   "busqueda_ml": "cepillo alisador",
   "estado": "descartada",
   "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "motivo": "ya atendido: 7 equivalentes venden +100",
   "señales": [
    {
     "id": "E074.B1",
-    "descripcion": "queja característica: 'lasmargaritas'",
+    "descripcion": "queja más frecuente: 'gracias'",
     "errores": []
    }
   ],
@@ -12650,7 +12911,18 @@
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "ya atendido: 7 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 13,
+     "venden": 7,
+     "con_alguna_venta": 9,
+     "ventas_visibles": 4400,
+     "ejemplos_que_venden": [
+      "Cepillo Alisador Inalámbrico Portátil Recargable USB-C Anti Frizz 160  (+1000, $27,887)",
+      "Cepillo Alisador Inalámbrico Portátil Recargable USB-C Anti Frizz 160  (+1000, $27,887)",
+      "Cepillo Peine Alisador Inalámbrico Recargable Usb Portátil (+1000, $24,744)"
+     ]
+    }
    }
   ]
  },
@@ -12663,15 +12935,15 @@
    "Organizador Neceser Estuche Para Viajes Portacosméticos"
   ],
   "id": "B1",
-  "que_traer": "versión del producto ancla que resuelva la queja 'plastica'",
+  "que_traer": "versión del producto ancla que resuelva la queja 'chico'",
   "busqueda_ml": "neceser de viaje",
   "estado": "descartada",
   "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "motivo": "ya atendido: 37 equivalentes venden +100",
   "señales": [
    {
     "id": "E077.B1",
-    "descripcion": "queja característica: 'plastica'",
+    "descripcion": "queja más frecuente: 'chico'",
     "errores": []
    }
   ],
@@ -12705,7 +12977,18 @@
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "ya atendido: 37 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 50,
+     "venden": 37,
+     "con_alguna_venta": 42,
+     "ventas_visibles": 24075,
+     "ejemplos_que_venden": [
+      "Neceser Hombre Viaje Para Valija O Baño Lookmy | Portacosméticos O Maq (+1000, $11,193)",
+      "Neceser De Colgar Con Percha Negro Lookmy | Organizador De Cosméticos  (+1000, $11,815)",
+      "Neceser Lookmy Trento Rosa de Poliéster Impermeable para Viaje y Maqui (+1000, $7,116)"
+     ]
+    }
    }
   ]
  },
@@ -12726,7 +13009,7 @@
   "señales": [
    {
     "id": "E078.B1",
-    "descripcion": "queja característica: 'olor'",
+    "descripcion": "queja más frecuente: 'olor'",
     "errores": []
    }
   ],
@@ -12761,15 +13044,15 @@
    "Maquina De Cortar Pelo Wahl Quickcut Clipper + Acc Color Neg"
   ],
   "id": "B1",
-  "que_traer": "versión del producto ancla que resuelva la queja 'wahl'",
+  "que_traer": "versión del producto ancla que resuelva la queja 'maquina'",
   "busqueda_ml": "cortapelo recargable",
   "estado": "descartada",
   "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "motivo": "ya atendido: 34 equivalentes venden +100",
   "señales": [
    {
     "id": "E079.B1",
-    "descripcion": "queja característica: 'wahl'",
+    "descripcion": "queja más frecuente: 'maquina'",
     "errores": []
    }
   ],
@@ -12803,7 +13086,18 @@
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "ya atendido: 34 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 49,
+     "venden": 34,
+     "con_alguna_venta": 37,
+     "ventas_visibles": 126825,
+     "ejemplos_que_venden": [
+      "Cortadora De Pelo Care By Gadnic t900 Patillera Recargable Inalámbrica (+10000, $17,599)",
+      "Cortapelo Philips HC5610/15 28 Posiciones Lavable Gris (+10000, $60,299)",
+      "Máquina De Acabado Profesional Kemei Km-2299 Negro (+10000, $36,122)"
+     ]
+    }
    }
   ]
  },
@@ -12816,15 +13110,15 @@
    "Soporte Notebook Base Eleva Aluminio Computadora Home Office"
   ],
   "id": "B1",
-  "que_traer": "versión del producto ancla que resuelva la queja 'elevacion'",
+  "que_traer": "versión del producto ancla que resuelva la queja 'precio'",
   "busqueda_ml": "soporte para notebook",
   "estado": "descartada",
   "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "motivo": "ya atendido: 33 equivalentes venden +100",
   "señales": [
    {
     "id": "E080.B1",
-    "descripcion": "queja característica: 'elevacion'",
+    "descripcion": "queja más frecuente: 'precio'",
     "errores": []
    }
   ],
@@ -12858,7 +13152,18 @@
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "ya atendido: 33 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 40,
+     "venden": 33,
+     "con_alguna_venta": 35,
+     "ventas_visibles": 51450,
+     "ejemplos_que_venden": [
+      "Soporte Notebook Aluminio Regulable Tablet Celular Plegable Premium An (+10000, $10,691)",
+      "Soporte Ergonómico Ajustable para Portátil de Aluminio Hibo con 6 Posi (+10000, $7,671)",
+      "Base Soporte Portátil para notebook Negra tecnoarg (+5000, $9,699)"
+     ]
+    }
    }
   ]
  },
@@ -12871,15 +13176,15 @@
    "Soporte Notebook Base Eleva Aluminio Computadora Home Office"
   ],
   "id": "B1",
-  "que_traer": "versión del producto ancla que resuelva la queja 'concretadas'",
+  "que_traer": "versión del producto ancla que resuelva la queja 'compra'",
   "busqueda_ml": "soporte para notebook",
   "estado": "descartada",
   "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "motivo": "ya atendido: 35 equivalentes venden +100",
   "señales": [
    {
     "id": "E081.B1",
-    "descripcion": "queja característica: 'concretadas'",
+    "descripcion": "queja más frecuente: 'compra'",
     "errores": []
    }
   ],
@@ -12913,7 +13218,18 @@
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "ya atendido: 35 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 44,
+     "venden": 35,
+     "con_alguna_venta": 38,
+     "ventas_visibles": 52575,
+     "ejemplos_que_venden": [
+      "Soporte Notebook Aluminio Regulable Tablet Celular Plegable Premium An (+10000, $10,691)",
+      "Soporte Ergonómico Ajustable para Portátil de Aluminio Hibo con 6 Posi (+10000, $7,671)",
+      "Base Soporte Portátil para notebook Negra tecnoarg (+5000, $9,699)"
+     ]
+    }
    }
   ]
  },
@@ -12926,15 +13242,15 @@
    "Velador Lampara De Mesa Escritorio Luz Moderno Articulado Ne"
   ],
   "id": "B1",
-  "que_traer": "versión del producto ancla que resuelva la queja 'articular'",
+  "que_traer": "versión del producto ancla que resuelva la queja 'buena'",
   "busqueda_ml": "lampara de escritorio led",
   "estado": "descartada",
   "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "motivo": "ya atendido: 25 equivalentes venden +100",
   "señales": [
    {
     "id": "E082.B1",
-    "descripcion": "queja característica: 'articular'",
+    "descripcion": "queja más frecuente: 'buena'",
     "errores": []
    }
   ],
@@ -12968,7 +13284,18 @@
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "ya atendido: 25 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 40,
+     "venden": 25,
+     "con_alguna_venta": 33,
+     "ventas_visibles": 32475,
+     "ejemplos_que_venden": [
+      "Lámpara Táctil LED Inalámbrica Electroland Escritorio Blanco USB Plega (+5000, $11,639)",
+      "Lampara Escritorio Gadnic LedMax 10 W 990 lumenes 3 Temperaturas 9 Niv (+5000, $29,007)",
+      "Velador Lampara De Mesa Escritorio Luz Moderno Articulado Blanco (+5000, $28,990)"
+     ]
+    }
    }
   ]
  },
@@ -12981,7 +13308,7 @@
    "Lámpara Led Escritorio Velador 3w Dimerizable Ledvance"
   ],
   "id": "B1",
-  "que_traer": "versión del producto ancla que resuelva la queja 'fernandez'",
+  "que_traer": "versión del producto ancla que resuelva la queja 'hola'",
   "busqueda_ml": "lampara de escritorio led",
   "estado": "descartada",
   "se_detiene_en": "C1 dolor",
@@ -12989,7 +13316,7 @@
   "señales": [
    {
     "id": "E083.B1",
-    "descripcion": "queja característica: 'fernandez'",
+    "descripcion": "queja más frecuente: 'hola'",
     "errores": []
    }
   ],
@@ -13024,7 +13351,7 @@
    "Kit Service Aceite 15w40 + 3 Filtros Gol Power Gol 1.6 1.4"
   ],
   "id": "B1",
-  "que_traer": "versión del producto ancla que resuelva la queja ''",
+  "que_traer": "versión del producto ancla que resuelva la queja 'aceite'",
   "busqueda_ml": "filtros de aceite",
   "estado": "descartada",
   "se_detiene_en": "C1 dolor",
@@ -13032,7 +13359,7 @@
   "señales": [
    {
     "id": "F007.B1",
-    "descripcion": "queja característica: ''",
+    "descripcion": "queja más frecuente: 'aceite'",
     "errores": []
    }
   ],
@@ -13067,15 +13394,15 @@
    "Kit 3 Filtros Aceite + Aire + Combust Ford Focus 1.6 - 2.0"
   ],
   "id": "B1",
-  "que_traer": "versión del producto ancla que resuelva la queja 'vino'",
+  "que_traer": "versión del producto ancla que resuelva la queja 'aire'",
   "busqueda_ml": "filtros de aceite",
   "estado": "descartada",
   "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "motivo": "ya atendido: 16 equivalentes venden +100",
   "señales": [
    {
     "id": "F008.B1",
-    "descripcion": "queja característica: 'vino'",
+    "descripcion": "queja más frecuente: 'aire'",
     "errores": []
    }
   ],
@@ -13109,7 +13436,18 @@
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "ya atendido: 16 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 26,
+     "venden": 16,
+     "con_alguna_venta": 20,
+     "ventas_visibles": 4375,
+     "ejemplos_que_venden": [
+      "Filtro Aceite Original Honda Accord Civic Fit Cr V Performan (+1000, $18,995)",
+      "Filtro De Aceite Ford Focus Motor Sigma 1.6 Original (+1000, $13,445)",
+      "Filtro Aceite Para Hyundai Tucson Kia Sportage Naftera Orig. (+500, $36,000)"
+     ]
+    }
    }
   ]
  },
@@ -13122,15 +13460,15 @@
    "Kit Juntas Reparacion Carburador Desmalezadora China 43 52cc"
   ],
   "id": "B1",
-  "que_traer": "versión del producto ancla que resuelva la queja 'juego'",
+  "que_traer": "versión del producto ancla que resuelva la queja 'calidad'",
   "busqueda_ml": "carburadores accesorios para vehiculos",
-  "estado": "descartada",
-  "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "estado": "condicional",
+  "se_detiene_en": "C6 margen",
+  "motivo": "sin precio de proveedor: falta cotizarlo",
   "señales": [
    {
     "id": "F009.B1",
-    "descripcion": "queja característica: 'juego'",
+    "descripcion": "queja más frecuente: 'calidad'",
     "errores": []
    }
   ],
@@ -13163,10 +13501,62 @@
    {
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
+    "pasa": true,
+    "motivo": "1 equivalentes, 1 venden +100",
+    "datos": {
+     "equivalentes": 1,
+     "venden": 1,
+     "con_alguna_venta": 1,
+     "ventas_visibles": 500,
+     "ejemplos_que_venden": [
+      "Carburador Vw Gacel Gol Senda Saveiro 1.6 2 Bocas Oe (+500, $155,483)"
+     ]
+    }
+   },
+   {
+    "chequeo": "C5 la eligen",
+    "supuesto": "Si se ofrece, la gente la elige",
+    "pasa": true,
+    "motivo": "1 alternativas con stock local a precio comparable (ventas mediana 500) contra 36 publicaciones de la búsqueda de origen (mediana 75.0), p = 0.9261",
+    "datos": {
+     "comparables": 1,
+     "ventas_comparables": [
+      500
+     ],
+     "mediana_de_origen": 75.0,
+     "publicaciones_de_origen": 36,
+     "p": 0.9261
+    }
+   },
+   {
+    "chequeo": "C6 margen",
+    "supuesto": "Deja plata al precio que la gente paga",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "sin precio de proveedor: falta cotizarlo"
    }
-  ]
+  ],
+  "confianza": {
+   "riesgos": [
+    "el precio sale de una sola publicación con ventas"
+   ],
+   "evidencia": {
+    "productos": 1,
+    "dolor": {
+     "desatendidos": 5,
+     "de": 12,
+     "en_el_control": 0,
+     "proporcion_ic95": [
+      0.193,
+      0.68
+     ],
+     "p": 0.01863
+    },
+    "demanda": {
+     "ventas_de_equivalentes_al_menos": 500,
+     "equivalentes_con_ventas": 1
+    }
+   }
+  }
  },
  {
   "metodo": "B1",
@@ -13177,7 +13567,7 @@
    "Carburador Para Motor Briggs Stratton 450 500 Nafta 799583"
   ],
   "id": "B1",
-  "que_traer": "versión del producto ancla que resuelva la queja 'cumple'",
+  "que_traer": "versión del producto ancla que resuelva la queja 'maquina'",
   "busqueda_ml": "carburadores accesorios para vehiculos",
   "estado": "descartada",
   "se_detiene_en": "C1 dolor",
@@ -13185,7 +13575,7 @@
   "señales": [
    {
     "id": "F010.B1",
-    "descripcion": "queja característica: 'cumple'",
+    "descripcion": "queja más frecuente: 'maquina'",
     "errores": []
    }
   ],
@@ -13220,15 +13610,15 @@
    "Valvula Pcv Original Vw Fox Gol Trend Suran Voyage 1.6 8v"
   ],
   "id": "B1",
-  "que_traer": "versión del producto ancla que resuelva la queja 'todavia'",
+  "que_traer": "versión del producto ancla que resuelva la queja 'coloque'",
   "busqueda_ml": "valvulas accesorios para vehiculos",
   "estado": "descartada",
-  "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "se_detiene_en": "C5 la eligen",
+  "motivo": "la gente la deja pasar: 14 alternativas con stock local a precio comparable (ventas mediana 0.0) contra 65 publicaciones de la búsqueda de origen (mediana 25), p = 0.0011",
   "señales": [
    {
     "id": "F011.B1",
-    "descripcion": "queja característica: 'todavia'",
+    "descripcion": "queja más frecuente: 'coloque'",
     "errores": []
    }
   ],
@@ -13261,8 +13651,43 @@
    {
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
+    "pasa": true,
+    "motivo": "14 equivalentes, 0 venden +100",
+    "datos": {
+     "equivalentes": 14,
+     "venden": 0,
+     "con_alguna_venta": 4,
+     "ventas_visibles": 100,
+     "ejemplos_que_venden": []
+    }
+   },
+   {
+    "chequeo": "C5 la eligen",
+    "supuesto": "Si se ofrece, la gente la elige",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "la gente la deja pasar: 14 alternativas con stock local a precio comparable (ventas mediana 0.0) contra 65 publicaciones de la búsqueda de origen (mediana 25), p = 0.0011",
+    "datos": {
+     "comparables": 14,
+     "ventas_comparables": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      25,
+      25,
+      25,
+      25
+     ],
+     "mediana_de_origen": 25,
+     "publicaciones_de_origen": 65,
+     "p": 0.0011
+    }
    }
   ]
  },
@@ -13283,7 +13708,7 @@
   "señales": [
    {
     "id": "F012.B1",
-    "descripcion": "queja característica: ''",
+    "descripcion": "queja más frecuente: ''",
     "errores": []
    }
   ],
@@ -13319,7 +13744,7 @@
   "señales": [
    {
     "id": "F013.B1",
-    "descripcion": "queja característica: ''",
+    "descripcion": "queja más frecuente: ''",
     "errores": []
    }
   ],
@@ -13362,7 +13787,7 @@
   "señales": [
    {
     "id": "F014.B1",
-    "descripcion": "queja característica: 'acelerador'",
+    "descripcion": "queja más frecuente: 'acelerador'",
     "errores": []
    }
   ],
@@ -13450,15 +13875,15 @@
    "Refrigerante TotalEnergies Supra Red Concentrado 1L"
   ],
   "id": "B1",
-  "que_traer": "versión del producto ancla que resuelva la queja 'creo'",
+  "que_traer": "versión del producto ancla que resuelva la queja 'buen'",
   "busqueda_ml": "deposito liquido refrigerante",
   "estado": "descartada",
   "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "motivo": "ya atendido: 26 equivalentes venden +100",
   "señales": [
    {
     "id": "F015.B1",
-    "descripcion": "queja característica: 'creo'",
+    "descripcion": "queja más frecuente: 'buen'",
     "errores": []
    }
   ],
@@ -13492,7 +13917,18 @@
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "ya atendido: 26 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 52,
+     "venden": 26,
+     "con_alguna_venta": 41,
+     "ventas_visibles": 5600,
+     "ejemplos_que_venden": [
+      "Depósito Refrigerante Original Fiat Palio 1368 12/17 (+500, $43,100)",
+      "Deposito Liquido Refrigerante Ford Ka 1997 Al 2014 + Tapa (+500, $24,000)",
+      "Depósito Agua Refrig Prisma Spin Onix Cobalt + Tapa Original (+500, $39,300)"
+     ]
+    }
    }
   ]
  },
@@ -13505,15 +13941,15 @@
    "Refrigerante TotalEnergies Glacelf Supra Concentrado 1L"
   ],
   "id": "B1",
-  "que_traer": "versión del producto ancla que resuelva la queja 'organico'",
+  "que_traer": "versión del producto ancla que resuelva la queja 'probe'",
   "busqueda_ml": "deposito liquido refrigerante",
   "estado": "descartada",
   "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "motivo": "ya atendido: 26 equivalentes venden +100",
   "señales": [
    {
     "id": "F016.B1",
-    "descripcion": "queja característica: 'organico'",
+    "descripcion": "queja más frecuente: 'probe'",
     "errores": []
    }
   ],
@@ -13547,7 +13983,18 @@
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "ya atendido: 26 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 52,
+     "venden": 26,
+     "con_alguna_venta": 41,
+     "ventas_visibles": 5600,
+     "ejemplos_que_venden": [
+      "Depósito Refrigerante Original Fiat Palio 1368 12/17 (+500, $43,100)",
+      "Deposito Liquido Refrigerante Ford Ka 1997 Al 2014 + Tapa (+500, $24,000)",
+      "Depósito Agua Refrig Prisma Spin Onix Cobalt + Tapa Original (+500, $39,300)"
+     ]
+    }
    }
   ]
  },
@@ -13560,15 +14007,15 @@
    "Chapon Cubre Carter Fox Suran Gol Trend Voyage Saveiro"
   ],
   "id": "B1",
-  "que_traer": "versión del producto ancla que resuelva la queja 'mana'",
+  "que_traer": "versión del producto ancla que resuelva la queja 'bastante'",
   "busqueda_ml": "cubre carter",
-  "estado": "descartada",
-  "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "estado": "condicional",
+  "se_detiene_en": "C6 margen",
+  "motivo": "sin precio de referencia: nadie lo ofrece; el experimento es una preventa",
   "señales": [
    {
     "id": "F019.B1",
-    "descripcion": "queja característica: 'mana'",
+    "descripcion": "queja más frecuente: 'bastante'",
     "errores": []
    }
   ],
@@ -13601,10 +14048,51 @@
    {
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
+    "pasa": true,
+    "motivo": "0 equivalentes, 0 venden +100",
+    "datos": {
+     "equivalentes": 0,
+     "venden": 0,
+     "con_alguna_venta": 0,
+     "ventas_visibles": 0,
+     "ejemplos_que_venden": []
+    }
+   },
+   {
+    "chequeo": "C5 la eligen",
+    "supuesto": "Si se ofrece, la gente la elige",
+    "pasa": true,
+    "motivo": "no hay alternativas con stock local: nadie la ofreció todavía"
+   },
+   {
+    "chequeo": "C6 margen",
+    "supuesto": "Deja plata al precio que la gente paga",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "sin precio de referencia: nadie lo ofrece; el experimento es una preventa"
    }
-  ]
+  ],
+  "confianza": {
+   "riesgos": [
+    "ningún equivalente vendió: el precio no lo pagó nadie todavía"
+   ],
+   "evidencia": {
+    "productos": 1,
+    "dolor": {
+     "desatendidos": 16,
+     "de": 29,
+     "en_el_control": 0,
+     "proporcion_ic95": [
+      0.375,
+      0.716
+     ],
+     "p": 0.0
+    },
+    "demanda": {
+     "ventas_de_equivalentes_al_menos": 0,
+     "equivalentes_con_ventas": 0
+    }
+   }
+  }
  },
  {
   "metodo": "B1",
@@ -13615,15 +14103,15 @@
    "Cubre Carter Honda Tornado Xr 250 - Xre300 - Peaklight"
   ],
   "id": "B1",
-  "que_traer": "versión del producto ancla que resuelva la queja 'pintura'",
+  "que_traer": "versión del producto ancla que resuelva la queja 'calidad'",
   "busqueda_ml": "cubre carter",
   "estado": "descartada",
   "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "motivo": "ya atendido: 17 equivalentes venden +100",
   "señales": [
    {
     "id": "F020.B1",
-    "descripcion": "queja característica: 'pintura'",
+    "descripcion": "queja más frecuente: 'calidad'",
     "errores": []
    }
   ],
@@ -13657,7 +14145,18 @@
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "ya atendido: 17 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 58,
+     "venden": 17,
+     "con_alguna_venta": 36,
+     "ventas_visibles": 4100,
+     "ejemplos_que_venden": [
+      "Chapon Cubre Carter Fiat Cronos 1.3 / 1.8 Reforzado (+1000, $110,000)",
+      "Cubre Carter Moto Honda Xr250 Tornado - Cospor (+500, $78,850)",
+      "Chapón Cubre Carter Reforzado Nuevo Toyota Yaris 2023+ (+500, $105,000)"
+     ]
+    }
    }
   ]
  },
@@ -13670,15 +14169,15 @@
    "Fuente De Agua Recirculante Gadnic 2.4 L 5v Tres Modos Bomba"
   ],
   "id": "B1",
-  "que_traer": "versión del producto ancla que resuelva la queja 'tomaba'",
+  "que_traer": "versión del producto ancla que resuelva la queja 'agua'",
   "busqueda_ml": "alimentadores automaticos",
   "estado": "descartada",
   "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "motivo": "ya atendido: 9 equivalentes venden +100",
   "señales": [
    {
     "id": "F021.B1",
-    "descripcion": "queja característica: 'tomaba'",
+    "descripcion": "queja más frecuente: 'agua'",
     "errores": []
    }
   ],
@@ -13712,7 +14211,18 @@
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "ya atendido: 9 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 20,
+     "venden": 9,
+     "con_alguna_venta": 16,
+     "ventas_visibles": 5025,
+     "ejemplos_que_venden": [
+      "Comedero Bebedero Automatico Doble Perro Gato Uso Diario (+1000, $26,892)",
+      "Comedero Y Bebedero Dispensador Automatico Waggs Perro Gato (+1000, $22,322)",
+      "Alimentadores Comederos Dispenser Mascotas Perros Gatos Bebederos 2 En (+1000, $26,342)"
+     ]
+    }
    }
   ]
  },
@@ -13725,15 +14235,15 @@
    "Comedero Automático Smart-Tek PF 200 4L con Cámara Wi-Fi y A"
   ],
   "id": "B1",
-  "que_traer": "versión del producto ancla que resuelva la queja 'intuitiva'",
+  "que_traer": "versión del producto ancla que resuelva la queja 'camara'",
   "busqueda_ml": "alimentadores automaticos",
-  "estado": "descartada",
-  "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "estado": "condicional",
+  "se_detiene_en": "C6 margen",
+  "motivo": "sin precio de proveedor: falta cotizarlo",
   "señales": [
    {
     "id": "F022.B1",
-    "descripcion": "queja característica: 'intuitiva'",
+    "descripcion": "queja más frecuente: 'camara'",
     "errores": []
    }
   ],
@@ -13766,10 +14276,63 @@
    {
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
+    "pasa": true,
+    "motivo": "2 equivalentes, 1 venden +100",
+    "datos": {
+     "equivalentes": 2,
+     "venden": 1,
+     "con_alguna_venta": 1,
+     "ventas_visibles": 500,
+     "ejemplos_que_venden": [
+      "Comedero Y Bebedero Dispenser Para Mascotas Suono Alimentador Automáti (+500, $142,319)"
+     ]
+    }
+   },
+   {
+    "chequeo": "C5 la eligen",
+    "supuesto": "Si se ofrece, la gente la elige",
+    "pasa": true,
+    "motivo": "2 alternativas con stock local a precio comparable (ventas mediana 250.0) contra 57 publicaciones de la búsqueda de origen (mediana 100), p = 0.3051",
+    "datos": {
+     "comparables": 2,
+     "ventas_comparables": [
+      0,
+      500
+     ],
+     "mediana_de_origen": 100,
+     "publicaciones_de_origen": 57,
+     "p": 0.3051
+    }
+   },
+   {
+    "chequeo": "C6 margen",
+    "supuesto": "Deja plata al precio que la gente paga",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "sin precio de proveedor: falta cotizarlo"
    }
-  ]
+  ],
+  "confianza": {
+   "riesgos": [
+    "el precio sale de una sola publicación con ventas"
+   ],
+   "evidencia": {
+    "productos": 1,
+    "dolor": {
+     "desatendidos": 25,
+     "de": 119,
+     "en_el_control": 0,
+     "proporcion_ic95": [
+      0.147,
+      0.292
+     ],
+     "p": 0.0
+    },
+    "demanda": {
+     "ventas_de_equivalentes_al_menos": 500,
+     "equivalentes_con_ventas": 1
+    }
+   }
+  }
  },
  {
   "metodo": "B1",
@@ -13788,7 +14351,7 @@
   "señales": [
    {
     "id": "F025.B1",
-    "descripcion": "queja característica: 'brillos'",
+    "descripcion": "queja más frecuente: 'brillos'",
     "errores": []
    }
   ],
@@ -13823,7 +14386,7 @@
    "Vincha Charleston Cotillon Disfraz"
   ],
   "id": "B1",
-  "que_traer": "versión del producto ancla que resuelva la queja ''",
+  "que_traer": "versión del producto ancla que resuelva la queja 'cabeza'",
   "busqueda_ml": "disfraces indumentaria y accesorios",
   "estado": "descartada",
   "se_detiene_en": "C1 dolor",
@@ -13831,7 +14394,7 @@
   "señales": [
    {
     "id": "F026.B1",
-    "descripcion": "queja característica: ''",
+    "descripcion": "queja más frecuente: 'cabeza'",
     "errores": []
    }
   ],
@@ -13866,7 +14429,7 @@
    "Plantas Acuáticas Elodea Peceras  X Paquete De 5 Tallos!!!!"
   ],
   "id": "B1",
-  "que_traer": "versión del producto ancla que resuelva la queja 'elodea'",
+  "que_traer": "versión del producto ancla que resuelva la queja 'poco'",
   "busqueda_ml": "adornos decoracion para acuarios",
   "estado": "descartada",
   "se_detiene_en": "C1 dolor",
@@ -13874,7 +14437,7 @@
   "señales": [
    {
     "id": "F029.B1",
-    "descripcion": "queja característica: 'elodea'",
+    "descripcion": "queja más frecuente: 'poco'",
     "errores": []
    }
   ],
@@ -13909,15 +14472,15 @@
    "Plantas Acuáticas Vallisnerias  X Paq De 2 Plantas!!!!!!"
   ],
   "id": "B1",
-  "que_traer": "versión del producto ancla que resuelva la queja 'tallos'",
+  "que_traer": "versión del producto ancla que resuelva la queja 'algunas'",
   "busqueda_ml": "adornos decoracion para acuarios",
   "estado": "descartada",
-  "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "se_detiene_en": "C5 la eligen",
+  "motivo": "la gente la deja pasar: 3 alternativas con stock local a precio comparable (ventas mediana 0) contra 52 publicaciones de la búsqueda de origen (mediana 50.0), p = 0.04",
   "señales": [
    {
     "id": "F030.B1",
-    "descripcion": "queja característica: 'tallos'",
+    "descripcion": "queja más frecuente: 'algunas'",
     "errores": []
    }
   ],
@@ -13950,8 +14513,32 @@
    {
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
+    "pasa": true,
+    "motivo": "3 equivalentes, 0 venden +100",
+    "datos": {
+     "equivalentes": 3,
+     "venden": 0,
+     "con_alguna_venta": 1,
+     "ventas_visibles": 25,
+     "ejemplos_que_venden": []
+    }
+   },
+   {
+    "chequeo": "C5 la eligen",
+    "supuesto": "Si se ofrece, la gente la elige",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "la gente la deja pasar: 3 alternativas con stock local a precio comparable (ventas mediana 0) contra 52 publicaciones de la búsqueda de origen (mediana 50.0), p = 0.04",
+    "datos": {
+     "comparables": 3,
+     "ventas_comparables": [
+      0,
+      0,
+      25
+     ],
+     "mediana_de_origen": 50.0,
+     "publicaciones_de_origen": 52,
+     "p": 0.04
+    }
    }
   ]
  },
@@ -13964,15 +14551,15 @@
    "Cherimoya Alicate Corta Uñas Profesional Acero Manicura Colo"
   ],
   "id": "B1",
-  "que_traer": "versión del producto ancla que resuelva la queja 'poco'",
+  "que_traer": "versión del producto ancla que resuelva la queja 'calidad'",
   "busqueda_ml": "cortaunas articulos de peluqueria",
   "estado": "descartada",
   "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "motivo": "ya atendido: 19 equivalentes venden +100",
   "señales": [
    {
     "id": "F031.B1",
-    "descripcion": "queja característica: 'poco'",
+    "descripcion": "queja más frecuente: 'calidad'",
     "errores": []
    }
   ],
@@ -14006,7 +14593,18 @@
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "ya atendido: 19 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 38,
+     "venden": 19,
+     "con_alguna_venta": 29,
+     "ventas_visibles": 5125,
+     "ejemplos_que_venden": [
+      "Lima Eléctrica Uñas Mascotas Silencioso Recargable Usb Perro (+1000, $41,224)",
+      "Alicate Cortauñas Perros Y Gatos Harley Queen Clipproled (+500, $29,655)",
+      "Cortauñas Eléctrico Mascotas Silencioso Recargable Usb Perro (+500, $47,044)"
+     ]
+    }
    }
   ]
  },
@@ -14019,15 +14617,15 @@
    "Corta Uñas Alicate Para Perros Y Gatos + Lima Metálica"
   ],
   "id": "B1",
-  "que_traer": "versión del producto ancla que resuelva la queja 'cortarle'",
+  "que_traer": "versión del producto ancla que resuelva la queja 'unas'",
   "busqueda_ml": "cortaunas articulos de peluqueria",
   "estado": "descartada",
   "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "motivo": "ya atendido: 19 equivalentes venden +100",
   "señales": [
    {
     "id": "F032.B1",
-    "descripcion": "queja característica: 'cortarle'",
+    "descripcion": "queja más frecuente: 'unas'",
     "errores": []
    }
   ],
@@ -14061,7 +14659,18 @@
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "ya atendido: 19 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 38,
+     "venden": 19,
+     "con_alguna_venta": 29,
+     "ventas_visibles": 5125,
+     "ejemplos_que_venden": [
+      "Lima Eléctrica Uñas Mascotas Silencioso Recargable Usb Perro (+1000, $41,224)",
+      "Alicate Cortauñas Perros Y Gatos Harley Queen Clipproled (+500, $29,655)",
+      "Cortauñas Eléctrico Mascotas Silencioso Recargable Usb Perro (+500, $47,044)"
+     ]
+    }
    }
   ]
  },
@@ -14074,7 +14683,7 @@
    "Peluche Cactus Bailarin Con Canciones Graba Y Te Imita"
   ],
   "id": "B1",
-  "que_traer": "versión del producto ancla que resuelva la queja 'boton'",
+  "que_traer": "versión del producto ancla que resuelva la queja 'bueno'",
   "busqueda_ml": "peluches juguetes",
   "estado": "descartada",
   "se_detiene_en": "C1 dolor",
@@ -14082,7 +14691,7 @@
   "señales": [
    {
     "id": "F037.B1",
-    "descripcion": "queja característica: 'boton'",
+    "descripcion": "queja más frecuente: 'bueno'",
     "errores": []
    }
   ],
@@ -14125,7 +14734,7 @@
   "señales": [
    {
     "id": "F038.B1",
-    "descripcion": "queja característica: ''",
+    "descripcion": "queja más frecuente: ''",
     "errores": []
    }
   ],
@@ -14160,15 +14769,15 @@
    "Cubo Rubik 3x3 Moyu Meilong 3x3x3 De Velocidad"
   ],
   "id": "B1",
-  "que_traer": "versión del producto ancla que resuelva la queja 'speedcubing'",
+  "que_traer": "versión del producto ancla que resuelva la queja 'precio'",
   "busqueda_ml": "laberintos y cubos didacticos",
   "estado": "descartada",
   "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "motivo": "ya atendido: 4 equivalentes venden +100",
   "señales": [
    {
     "id": "F041.B1",
-    "descripcion": "queja característica: 'speedcubing'",
+    "descripcion": "queja más frecuente: 'precio'",
     "errores": []
    }
   ],
@@ -14202,7 +14811,18 @@
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "ya atendido: 4 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 21,
+     "venden": 4,
+     "con_alguna_venta": 7,
+     "ventas_visibles": 3625,
+     "ejemplos_que_venden": [
+      "Juego Didáctico Madera Prono Laberinto + Torre De Encastre Color Verde (+1000, $22,127)",
+      "Juego Cubo De Madera Didáctico 5 En 1 Prono Reloj Abaco Juguete Color  (+1000, $41,399)",
+      "Laberinto Magnético Madera Juego Didáctico Montessori Niños (+1000, $18,337)"
+     ]
+    }
    }
   ]
  },
@@ -14215,15 +14835,15 @@
    "Prono Laberinto + Busca Caminos Madera 3 Vias Didáctico 2en1"
   ],
   "id": "B1",
-  "que_traer": "versión del producto ancla que resuelva la queja 'chiquito'",
+  "que_traer": "versión del producto ancla que resuelva la queja 'lindo'",
   "busqueda_ml": "laberintos y cubos didacticos",
   "estado": "descartada",
   "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "motivo": "ya atendido: 4 equivalentes venden +100",
   "señales": [
    {
     "id": "F042.B1",
-    "descripcion": "queja característica: 'chiquito'",
+    "descripcion": "queja más frecuente: 'lindo'",
     "errores": []
    }
   ],
@@ -14257,7 +14877,18 @@
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "ya atendido: 4 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 21,
+     "venden": 4,
+     "con_alguna_venta": 7,
+     "ventas_visibles": 3625,
+     "ejemplos_que_venden": [
+      "Juego Didáctico Madera Prono Laberinto + Torre De Encastre Color Verde (+1000, $22,127)",
+      "Juego Cubo De Madera Didáctico 5 En 1 Prono Reloj Abaco Juguete Color  (+1000, $41,399)",
+      "Laberinto Magnético Madera Juego Didáctico Montessori Niños (+1000, $18,337)"
+     ]
+    }
    }
   ]
  },
@@ -14270,7 +14901,7 @@
    "Cochecito Cuna Bebé Travel System Avanti Con Huevito"
   ],
   "id": "B1",
-  "que_traer": "versión del producto ancla que resuelva la queja ''",
+  "que_traer": "versión del producto ancla que resuelva la queja 'arme'",
   "busqueda_ml": "cochecitos para bebes",
   "estado": "descartada",
   "se_detiene_en": "C1 dolor",
@@ -14278,7 +14909,7 @@
   "señales": [
    {
     "id": "F043.B1",
-    "descripcion": "queja característica: ''",
+    "descripcion": "queja más frecuente: 'arme'",
     "errores": []
    }
   ],
@@ -14321,7 +14952,7 @@
   "señales": [
    {
     "id": "F044.B1",
-    "descripcion": "queja característica: 'excelente'",
+    "descripcion": "queja más frecuente: 'excelente'",
     "errores": []
    }
   ],
@@ -14356,15 +14987,15 @@
    "Conjunto Termico Calza- Remera Para Niños Niñas Primera Piel"
   ],
   "id": "B1",
-  "que_traer": "versión del producto ancla que resuelva la queja 'remeras'",
+  "que_traer": "versión del producto ancla que resuelva la queja 'calidad'",
   "busqueda_ml": "vestidos ropa y calzado para bebes",
   "estado": "descartada",
   "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "motivo": "ya atendido: 4 equivalentes venden +100",
   "señales": [
    {
     "id": "F045.B1",
-    "descripcion": "queja característica: 'remeras'",
+    "descripcion": "queja más frecuente: 'calidad'",
     "errores": []
    }
   ],
@@ -14398,7 +15029,18 @@
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "ya atendido: 4 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 42,
+     "venden": 4,
+     "con_alguna_venta": 8,
+     "ventas_visibles": 525,
+     "ejemplos_que_venden": [
+      "Conjunto Bebe De Piel Buzo Mas Pantalón (+100, $20,000)",
+      "Conjunto 2 / 3 Piezas Vestido/remera + Calza Y Vincha  Bebe (+100, $21,096)",
+      "Conjunto Beba Pantalón Oxford Con Buzo 8 M A 4 Años Premium (+100, $23,280)"
+     ]
+    }
    }
   ]
  },
@@ -14411,15 +15053,15 @@
    "Set Alimentacion Bebe Silicona Plato Bowlvaso Cubiertobabero"
   ],
   "id": "B1",
-  "que_traer": "versión del producto ancla que resuelva la queja 'cucharas'",
+  "que_traer": "versión del producto ancla que resuelva la queja 'bebe'",
   "busqueda_ml": "set de alimentacion",
   "estado": "descartada",
   "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "motivo": "ya atendido: 16 equivalentes venden +100",
   "señales": [
    {
     "id": "F046.B1",
-    "descripcion": "queja característica: 'cucharas'",
+    "descripcion": "queja más frecuente: 'bebe'",
     "errores": []
    }
   ],
@@ -14453,7 +15095,18 @@
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "ya atendido: 16 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 41,
+     "venden": 16,
+     "con_alguna_venta": 27,
+     "ventas_visibles": 8100,
+     "ejemplos_que_venden": [
+      "Set Alimentacion Comida Bebe Silicona Plato Vaso Bowl Babero (+1000, $27,405)",
+      "Set Alimentacion Bebe Plato Antideslizante Silicona Completo Color Ver (+1000, $26,700)",
+      "Set Alimentación Bebé Silicona Baby Pops 6-12 Meses 4 Piezas (+1000, $17,969)"
+     ]
+    }
    }
   ]
  },
@@ -14466,15 +15119,15 @@
    "Set Alimentacion Bebe Plato Antideslizante Silicona Completo"
   ],
   "id": "B1",
-  "que_traer": "versión del producto ancla que resuelva la queja 'blandito'",
+  "que_traer": "versión del producto ancla que resuelva la queja 'lindo'",
   "busqueda_ml": "set de alimentacion",
   "estado": "descartada",
   "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "motivo": "ya atendido: 16 equivalentes venden +100",
   "señales": [
    {
     "id": "F047.B1",
-    "descripcion": "queja característica: 'blandito'",
+    "descripcion": "queja más frecuente: 'lindo'",
     "errores": []
    }
   ],
@@ -14508,7 +15161,18 @@
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "ya atendido: 16 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 41,
+     "venden": 16,
+     "con_alguna_venta": 27,
+     "ventas_visibles": 8100,
+     "ejemplos_que_venden": [
+      "Set Alimentacion Comida Bebe Silicona Plato Vaso Bowl Babero (+1000, $27,405)",
+      "Set Alimentacion Bebe Plato Antideslizante Silicona Completo Color Ver (+1000, $26,700)",
+      "Set Alimentación Bebé Silicona Baby Pops 6-12 Meses 4 Piezas (+1000, $17,969)"
+     ]
+    }
    }
   ]
  },
@@ -14521,15 +15185,15 @@
    "Vaso Con Sorbete Philips Avent Scf796/02 200ml Color Violeta"
   ],
   "id": "B1",
-  "que_traer": "versión del producto ancla que resuelva la queja 'gotee'",
+  "que_traer": "versión del producto ancla que resuelva la queja 'agua'",
   "busqueda_ml": "vasos bebes",
   "estado": "descartada",
   "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "motivo": "ya atendido: 30 equivalentes venden +100",
   "señales": [
    {
     "id": "F056.B1",
-    "descripcion": "queja característica: 'gotee'",
+    "descripcion": "queja más frecuente: 'agua'",
     "errores": []
    }
   ],
@@ -14563,7 +15227,18 @@
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "ya atendido: 30 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 45,
+     "venden": 30,
+     "con_alguna_venta": 39,
+     "ventas_visibles": 20000,
+     "ejemplos_que_venden": [
+      "Vaso Straw Cup Con Sorbete Philips Avent 300 Ml (+5000, $26,020)",
+      "Vaso Avent Bebe Entrenamiento Easy Sip X 200m Con Asas (+1000, $20,639)",
+      "Vaso Bebe Mini Magic Nuk 360 Cup 6+ 160 Ml Asas Y Antivuelco (+1000, $24,935)"
+     ]
+    }
    }
   ]
  },
@@ -14576,15 +15251,15 @@
    "Vaso Con Sorbete Philips Avent 300 Ml Scf798/01 Color Verde "
   ],
   "id": "B1",
-  "que_traer": "versión del producto ancla que resuelva la queja 'sorbete'",
+  "que_traer": "versión del producto ancla que resuelva la queja 'agua'",
   "busqueda_ml": "vasos bebes",
   "estado": "descartada",
   "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "motivo": "ya atendido: 30 equivalentes venden +100",
   "señales": [
    {
     "id": "F057.B1",
-    "descripcion": "queja característica: 'sorbete'",
+    "descripcion": "queja más frecuente: 'agua'",
     "errores": []
    }
   ],
@@ -14618,7 +15293,18 @@
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "ya atendido: 30 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 45,
+     "venden": 30,
+     "con_alguna_venta": 39,
+     "ventas_visibles": 20000,
+     "ejemplos_que_venden": [
+      "Vaso Straw Cup Con Sorbete Philips Avent 300 Ml (+5000, $26,020)",
+      "Vaso Avent Bebe Entrenamiento Easy Sip X 200m Con Asas (+1000, $20,639)",
+      "Vaso Bebe Mini Magic Nuk 360 Cup 6+ 160 Ml Asas Y Antivuelco (+1000, $24,935)"
+     ]
+    }
    }
   ]
  },
@@ -14631,7 +15317,7 @@
    "Piso De Goma Moneda Negro Ancho 1 Metro 3mm Espesor (no Pvc)"
   ],
   "id": "B1",
-  "que_traer": "versión del producto ancla que resuelva la queja 'falta'",
+  "que_traer": "versión del producto ancla que resuelva la queja 'piso'",
   "busqueda_ml": "pisos de goma",
   "estado": "descartada",
   "se_detiene_en": "C1 dolor",
@@ -14639,7 +15325,7 @@
   "señales": [
    {
     "id": "F058.B1",
-    "descripcion": "queja característica: 'falta'",
+    "descripcion": "queja más frecuente: 'piso'",
     "errores": []
    }
   ],
@@ -14682,7 +15368,7 @@
   "señales": [
    {
     "id": "F059.B1",
-    "descripcion": "queja característica: 'compre'",
+    "descripcion": "queja más frecuente: 'compre'",
     "errores": []
    }
   ],
@@ -14717,15 +15403,15 @@
    "Traba De Seguridad Para Ventanas Y Puertas Corredizas | Fáci"
   ],
   "id": "B1",
-  "que_traer": "versión del producto ancla que resuelva la queja 'inviolable'",
+  "que_traer": "versión del producto ancla que resuelva la queja 'traba'",
   "busqueda_ml": "puertas de seguridad",
   "estado": "descartada",
   "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "motivo": "ya atendido: 5 equivalentes venden +100",
   "señales": [
    {
     "id": "F060.B1",
-    "descripcion": "queja característica: 'inviolable'",
+    "descripcion": "queja más frecuente: 'traba'",
     "errores": []
    }
   ],
@@ -14759,7 +15445,18 @@
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "ya atendido: 5 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 7,
+     "venden": 5,
+     "con_alguna_venta": 7,
+     "ventas_visibles": 1900,
+     "ejemplos_que_venden": [
+      "Puerta de Seguridad Retráctil Mawe Gate 140 Con Bloqueo (+1000, $58,899)",
+      "Puerta de Seguridad Gadnic Ajustable sin Perforar para Bebés y Mascota (+500, $66,749)",
+      "Puerta De Seguridad Escalera Bebe Niños Metalica Extensible Azul (+100, $58,691)"
+     ]
+    }
    }
   ]
  },
@@ -14772,15 +15469,15 @@
    "Timbre inalámbrico exterior Candela 7278 38 tonos"
   ],
   "id": "B1",
-  "que_traer": "versión del producto ancla que resuelva la queja 'demasiado'",
+  "que_traer": "versión del producto ancla que resuelva la queja 'funciona'",
   "busqueda_ml": "puertas de seguridad",
   "estado": "descartada",
   "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "motivo": "ya atendido: 5 equivalentes venden +100",
   "señales": [
    {
     "id": "F061.B1",
-    "descripcion": "queja característica: 'demasiado'",
+    "descripcion": "queja más frecuente: 'funciona'",
     "errores": []
    }
   ],
@@ -14814,7 +15511,18 @@
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "ya atendido: 5 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 7,
+     "venden": 5,
+     "con_alguna_venta": 7,
+     "ventas_visibles": 1900,
+     "ejemplos_que_venden": [
+      "Puerta de Seguridad Retráctil Mawe Gate 140 Con Bloqueo (+1000, $58,899)",
+      "Puerta de Seguridad Gadnic Ajustable sin Perforar para Bebés y Mascota (+500, $66,749)",
+      "Puerta De Seguridad Escalera Bebe Niños Metalica Extensible Azul (+100, $58,691)"
+     ]
+    }
    }
   ]
  },
@@ -14827,15 +15535,15 @@
    "Serum Lidherma Hyaluronic 4d Para Todo Tipo De Piel De 30ml"
   ],
   "id": "B1",
-  "que_traer": "versión del producto ancla que resuelva la queja 'espeso'",
+  "que_traer": "versión del producto ancla que resuelva la queja 'piel'",
   "busqueda_ml": "kits de cuidado de la piel",
   "estado": "descartada",
   "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "motivo": "ya atendido: 29 equivalentes venden +100",
   "señales": [
    {
     "id": "F068.B1",
-    "descripcion": "queja característica: 'espeso'",
+    "descripcion": "queja más frecuente: 'piel'",
     "errores": []
    }
   ],
@@ -14869,7 +15577,18 @@
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "ya atendido: 29 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 46,
+     "venden": 29,
+     "con_alguna_venta": 36,
+     "ventas_visibles": 23825,
+     "ejemplos_que_venden": [
+      "Kit Skincare Rutina Facial Completa Crema Hidratante Con Protector Sol (+5000, $58,941)",
+      "Kit Hidratante Vichy Mineral 89 con Ácido Hialurónico para Rostro de 5 (+5000, $95,410)",
+      "Kit Rutina Skincare Piel Mixta Hialuronico Vitamina  E Libra (+1000, $39,809)"
+     ]
+    }
    }
   ]
  },
@@ -14882,15 +15601,15 @@
    "Kit Dermaglós Serum Acido Hialuronico Vitamina C Niacinamida"
   ],
   "id": "B1",
-  "que_traer": "versión del producto ancla que resuelva la queja 'pegajosa'",
+  "que_traer": "versión del producto ancla que resuelva la queja 'piel'",
   "busqueda_ml": "kits de cuidado de la piel",
   "estado": "descartada",
   "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "motivo": "ya atendido: 29 equivalentes venden +100",
   "señales": [
    {
     "id": "F069.B1",
-    "descripcion": "queja característica: 'pegajosa'",
+    "descripcion": "queja más frecuente: 'piel'",
     "errores": []
    }
   ],
@@ -14924,7 +15643,18 @@
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "ya atendido: 29 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 46,
+     "venden": 29,
+     "con_alguna_venta": 36,
+     "ventas_visibles": 23825,
+     "ejemplos_que_venden": [
+      "Kit Skincare Rutina Facial Completa Crema Hidratante Con Protector Sol (+5000, $58,941)",
+      "Kit Hidratante Vichy Mineral 89 con Ácido Hialurónico para Rostro de 5 (+5000, $95,410)",
+      "Kit Rutina Skincare Piel Mixta Hialuronico Vitamina  E Libra (+1000, $39,809)"
+     ]
+    }
    }
   ]
  },
@@ -14937,7 +15667,7 @@
    "Detergente Bioactive Lima Cif Recarga Economica 450ml"
   ],
   "id": "B1",
-  "que_traer": "versión del producto ancla que resuelva la queja 'super'",
+  "que_traer": "versión del producto ancla que resuelva la queja 'detergente'",
   "busqueda_ml": "liquido jabones",
   "estado": "descartada",
   "se_detiene_en": "C1 dolor",
@@ -14945,7 +15675,7 @@
   "señales": [
    {
     "id": "F074.B1",
-    "descripcion": "queja característica: 'super'",
+    "descripcion": "queja más frecuente: 'detergente'",
     "errores": []
    }
   ],
@@ -14980,15 +15710,15 @@
    "Jabon potásico canela y neem 100cc Ecomambo insecticida"
   ],
   "id": "B1",
-  "que_traer": "versión del producto ancla que resuelva la queja 'pasarlo'",
+  "que_traer": "versión del producto ancla que resuelva la queja 'ahora'",
   "busqueda_ml": "liquido jabones",
-  "estado": "descartada",
-  "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "estado": "condicional",
+  "se_detiene_en": "C6 margen",
+  "motivo": "sin precio de proveedor: falta cotizarlo",
   "señales": [
    {
     "id": "F075.B1",
-    "descripcion": "queja característica: 'pasarlo'",
+    "descripcion": "queja más frecuente: 'ahora'",
     "errores": []
    }
   ],
@@ -15021,10 +15751,80 @@
    {
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
+    "pasa": true,
+    "motivo": "22 equivalentes, 1 venden +100",
+    "datos": {
+     "equivalentes": 22,
+     "venden": 1,
+     "con_alguna_venta": 2,
+     "ventas_visibles": 10050,
+     "ejemplos_que_venden": [
+      "Jabón Líquido Tri-Clor Baja Espuma 5L Fragancia Tipo ARIEL (+10000, $9,239)"
+     ]
+    }
+   },
+   {
+    "chequeo": "C5 la eligen",
+    "supuesto": "Si se ofrece, la gente la elige",
+    "pasa": true,
+    "motivo": "21 alternativas con stock local a precio comparable (ventas mediana 0) contra 50 publicaciones de la búsqueda de origen (mediana 0.0), p = 0.5777",
+    "datos": {
+     "comparables": 21,
+     "ventas_comparables": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      50,
+      10000
+     ],
+     "mediana_de_origen": 0.0,
+     "publicaciones_de_origen": 50,
+     "p": 0.5777
+    }
+   },
+   {
+    "chequeo": "C6 margen",
+    "supuesto": "Deja plata al precio que la gente paga",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "sin precio de proveedor: falta cotizarlo"
    }
-  ]
+  ],
+  "confianza": {
+   "riesgos": [],
+   "evidencia": {
+    "productos": 1,
+    "dolor": {
+     "desatendidos": 25,
+     "de": 73,
+     "en_el_control": 0,
+     "proporcion_ic95": [
+      0.244,
+      0.457
+     ],
+     "p": 0.0
+    },
+    "demanda": {
+     "ventas_de_equivalentes_al_menos": 10050,
+     "equivalentes_con_ventas": 2
+    }
+   }
+  }
  },
  {
   "metodo": "B1",
@@ -15035,7 +15835,7 @@
    "Shampoo Absolut Repair 300ml L´Oreal Professionnel"
   ],
   "id": "B1",
-  "que_traer": "versión del producto ancla que resuelva la queja 'devuelve'",
+  "que_traer": "versión del producto ancla que resuelva la queja 'pelo'",
   "busqueda_ml": "shampoos y acondicionadores",
   "estado": "descartada",
   "se_detiene_en": "C1 dolor",
@@ -15043,7 +15843,7 @@
   "señales": [
    {
     "id": "F076.B1",
-    "descripcion": "queja característica: 'devuelve'",
+    "descripcion": "queja más frecuente: 'pelo'",
     "errores": []
    }
   ],
@@ -15078,15 +15878,15 @@
    "Aveno Cuidado Completo Capilar Kit Shampoo y Acondicionador "
   ],
   "id": "B1",
-  "que_traer": "versión del producto ancla que resuelva la queja 'produce'",
+  "que_traer": "versión del producto ancla que resuelva la queja 'aroma'",
   "busqueda_ml": "shampoos y acondicionadores",
   "estado": "descartada",
   "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "motivo": "ya atendido: 13 equivalentes venden +100",
   "señales": [
    {
     "id": "F077.B1",
-    "descripcion": "queja característica: 'produce'",
+    "descripcion": "queja más frecuente: 'aroma'",
     "errores": []
    }
   ],
@@ -15120,7 +15920,18 @@
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "ya atendido: 13 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 28,
+     "venden": 13,
+     "con_alguna_venta": 15,
+     "ventas_visibles": 10675,
+     "ejemplos_que_venden": [
+      "Combo Aveno Shampoo + Acondicionador (+5000, $42,746)",
+      "Karseell Maca Power Kit Travel Set Mini Mascarilla Colágeno 100ml Sham (+1000, $16,116)",
+      "Kit Mythical Argan Shampoo Y Acondicionador 900ml C/u (+1000, $28,056)"
+     ]
+    }
    }
   ]
  },
@@ -15133,15 +15944,15 @@
    "Sérum Rostro Revitalift Ácido Hialurónico L&amp;amp;quotOréa"
   ],
   "id": "B1",
-  "que_traer": "versión del producto ancla que resuelva la queja 'aplicarlo'",
+  "que_traer": "versión del producto ancla que resuelva la queja 'piel'",
   "busqueda_ml": "cuidado facial",
   "estado": "descartada",
   "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "motivo": "ya atendido: 4 equivalentes venden +100",
   "señales": [
    {
     "id": "F078.B1",
-    "descripcion": "queja característica: 'aplicarlo'",
+    "descripcion": "queja más frecuente: 'piel'",
     "errores": []
    }
   ],
@@ -15175,7 +15986,18 @@
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "ya atendido: 4 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 5,
+     "venden": 4,
+     "con_alguna_venta": 4,
+     "ventas_visibles": 320000,
+     "ejemplos_que_venden": [
+      "Sérum Rostro Revitalift Ácido Hialurónico L'Oréal Paris 30ml (+250000, $24,995)",
+      "Sérum Facial nocturno Revitalift Con Retinol Puro Antirrugas Com 30ml  (+50000, $49,294)",
+      "Sérum Láser Triple Acción L'oréal Paris Revitalift Anti-Edad con Tripé (+10000, $33,940)"
+     ]
+    }
    }
   ]
  },
@@ -15188,15 +16010,15 @@
    "Eucerin Sun Oil Control Protector solar facial Toque Seco FP"
   ],
   "id": "B1",
-  "que_traer": "versión del producto ancla que resuelva la queja 'roche'",
+  "que_traer": "versión del producto ancla que resuelva la queja 'piel'",
   "busqueda_ml": "cuidado facial",
   "estado": "descartada",
   "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "motivo": "ya atendido: 4 equivalentes venden +100",
   "señales": [
    {
     "id": "F079.B1",
-    "descripcion": "queja característica: 'roche'",
+    "descripcion": "queja más frecuente: 'piel'",
     "errores": []
    }
   ],
@@ -15230,7 +16052,18 @@
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "ya atendido: 4 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 5,
+     "venden": 4,
+     "con_alguna_venta": 4,
+     "ventas_visibles": 320000,
+     "ejemplos_que_venden": [
+      "Sérum Rostro Revitalift Ácido Hialurónico L'Oréal Paris 30ml (+250000, $24,995)",
+      "Sérum Facial nocturno Revitalift Con Retinol Puro Antirrugas Com 30ml  (+50000, $49,294)",
+      "Sérum Láser Triple Acción L'oréal Paris Revitalift Anti-Edad con Tripé (+10000, $33,940)"
+     ]
+    }
    }
   ]
  },
@@ -15243,7 +16076,7 @@
    "Afeitadora Eléctrica Hombre Shaver VGR V-325 Recargable Inal"
   ],
   "id": "B1",
-  "que_traer": "versión del producto ancla que resuelva la queja 'padre'",
+  "que_traer": "versión del producto ancla que resuelva la queja 'bateria'",
   "busqueda_ml": "afeitadoras electricas",
   "estado": "descartada",
   "se_detiene_en": "C1 dolor",
@@ -15251,7 +16084,7 @@
   "señales": [
    {
     "id": "F082.B1",
-    "descripcion": "queja característica: 'padre'",
+    "descripcion": "queja más frecuente: 'bateria'",
     "errores": []
    }
   ],
@@ -15286,15 +16119,15 @@
    "Afeitadora Philips QP2724/10 Oneblade Recorta Modela y Afeit"
   ],
   "id": "B1",
-  "que_traer": "versión del producto ancla que resuelva la queja 'gillette'",
+  "que_traer": "versión del producto ancla que resuelva la queja 'bateria'",
   "busqueda_ml": "afeitadoras electricas",
   "estado": "descartada",
   "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "motivo": "ya atendido: 26 equivalentes venden +100",
   "señales": [
    {
     "id": "F083.B1",
-    "descripcion": "queja característica: 'gillette'",
+    "descripcion": "queja más frecuente: 'bateria'",
     "errores": []
    }
   ],
@@ -15328,7 +16161,18 @@
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "ya atendido: 26 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 27,
+     "venden": 26,
+     "con_alguna_venta": 26,
+     "ventas_visibles": 84500,
+     "ejemplos_que_venden": [
+      "Afeitadora Eléctrica Hombre Shaver Vgr V-353 Portatil Usb Color Negro (+10000, $27,890)",
+      "Afeitadora Kemei KM-1102 negra (+10000, $24,133)",
+      "Wahl Travel Shaver negra (+10000, $33,000)"
+     ]
+    }
    }
   ]
  },
@@ -15341,15 +16185,15 @@
    "Alarma Sonora Sensor Bicicletas Motos Antirrobo Inalambrica"
   ],
   "id": "B1",
-  "que_traer": "versión del producto ancla que resuelva la queja 'sonara'",
+  "que_traer": "versión del producto ancla que resuelva la queja 'fuerte'",
   "busqueda_ml": "alarmas accesorios para bicicletas",
   "estado": "descartada",
   "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "motivo": "ya atendido: 9 equivalentes venden +100",
   "señales": [
    {
     "id": "F084.B1",
-    "descripcion": "queja característica: 'sonara'",
+    "descripcion": "queja más frecuente: 'fuerte'",
     "errores": []
    }
   ],
@@ -15383,7 +16227,18 @@
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "ya atendido: 9 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 14,
+     "venden": 9,
+     "con_alguna_venta": 11,
+     "ventas_visibles": 11750,
+     "ejemplos_que_venden": [
+      "Alarma para Moto X-28 con Antiasalto por Presencia M20 (+10000, $157,605)",
+      "Alarma Universal Gadnic X105 Para Motos con Sirena Antirrobo con Contr (+1000, $27,999)",
+      "Alarma Sonora Antusi A2 Norcel Bici Moto Recargable Usb-c Antirrobo 11 (+100, $32,550)"
+     ]
+    }
    }
   ]
  },
@@ -15396,15 +16251,15 @@
    "Kit Tactico De Supervivencia Emergencia 9 En 1 SPICA SUP-60 "
   ],
   "id": "B1",
-  "que_traer": "versión del producto ancla que resuelva la queja 'brujula'",
+  "que_traer": "versión del producto ancla que resuelva la queja 'linterna'",
   "busqueda_ml": "cortaplumas accesorios de camping",
   "estado": "descartada",
   "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "motivo": "ya atendido: 6 equivalentes venden +100",
   "señales": [
    {
     "id": "F085.B1",
-    "descripcion": "queja característica: 'brujula'",
+    "descripcion": "queja más frecuente: 'linterna'",
     "errores": []
    }
   ],
@@ -15438,7 +16293,18 @@
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "ya atendido: 6 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 36,
+     "venden": 6,
+     "con_alguna_venta": 16,
+     "ventas_visibles": 1375,
+     "ejemplos_que_venden": [
+      "Navaja Multiuso Bolsillo Herramientas 9en1 Acero Inoxidable Color Negr (+500, $12,645)",
+      "Cortaplumas Navaja Origami Con Cubierto 7 Funciones Camping Color Verd (+100, $12,900)",
+      "Multiherramienta Cortaplumas Odisey Alpheus Multiuso (+100, $65,475)"
+     ]
+    }
    }
   ]
  },
@@ -15451,15 +16317,15 @@
    "Corta Pluma Navaja Acero Multiusos 13 En 1 Calidad Premium"
   ],
   "id": "B1",
-  "que_traer": "versión del producto ancla que resuelva la queja 'sacarlas'",
+  "que_traer": "versión del producto ancla que resuelva la queja 'precio'",
   "busqueda_ml": "cortaplumas accesorios de camping",
   "estado": "descartada",
   "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "motivo": "ya atendido: 6 equivalentes venden +100",
   "señales": [
    {
     "id": "F086.B1",
-    "descripcion": "queja característica: 'sacarlas'",
+    "descripcion": "queja más frecuente: 'precio'",
     "errores": []
    }
   ],
@@ -15493,7 +16359,18 @@
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "ya atendido: 6 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 37,
+     "venden": 6,
+     "con_alguna_venta": 16,
+     "ventas_visibles": 1375,
+     "ejemplos_que_venden": [
+      "Navaja Multiuso Bolsillo Herramientas 9en1 Acero Inoxidable Color Negr (+500, $12,645)",
+      "Cortaplumas Navaja Origami Con Cubierto 7 Funciones Camping Color Verd (+100, $12,900)",
+      "Multiherramienta Cortaplumas Odisey Alpheus Multiuso (+100, $65,475)"
+     ]
+    }
    }
   ]
  },
@@ -15506,15 +16383,15 @@
    "Pouch Estuche Molle Edc Cinturón Riñonera Porta Celular"
   ],
   "id": "B1",
-  "que_traer": "versión del producto ancla que resuelva la queja 'pongan'",
+  "que_traer": "versión del producto ancla que resuelva la queja 'bueno'",
   "busqueda_ml": "pouchs accesorios de camping",
-  "estado": "descartada",
-  "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "estado": "condicional",
+  "se_detiene_en": "C6 margen",
+  "motivo": "sin precio de proveedor: falta cotizarlo",
   "señales": [
    {
     "id": "F089.B1",
-    "descripcion": "queja característica: 'pongan'",
+    "descripcion": "queja más frecuente: 'bueno'",
     "errores": []
    }
   ],
@@ -15547,10 +16424,67 @@
    {
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
+    "pasa": true,
+    "motivo": "9 equivalentes, 1 venden +100",
+    "datos": {
+     "equivalentes": 9,
+     "venden": 1,
+     "con_alguna_venta": 3,
+     "ventas_visibles": 150,
+     "ejemplos_que_venden": [
+      "Pouch Porta Elementos Molle Funda Táctica Objetos C/cierre (+100, $18,814)"
+     ]
+    }
+   },
+   {
+    "chequeo": "C5 la eligen",
+    "supuesto": "Si se ofrece, la gente la elige",
+    "pasa": true,
+    "motivo": "8 alternativas con stock local a precio comparable (ventas mediana 0.0) contra 42 publicaciones de la búsqueda de origen (mediana 0.0), p = 0.4875",
+    "datos": {
+     "comparables": 8,
+     "ventas_comparables": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      25,
+      25,
+      100
+     ],
+     "mediana_de_origen": 0.0,
+     "publicaciones_de_origen": 42,
+     "p": 0.4875
+    }
+   },
+   {
+    "chequeo": "C6 margen",
+    "supuesto": "Deja plata al precio que la gente paga",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "sin precio de proveedor: falta cotizarlo"
    }
-  ]
+  ],
+  "confianza": {
+   "riesgos": [],
+   "evidencia": {
+    "productos": 2,
+    "dolor": {
+     "desatendidos": 22,
+     "de": 78,
+     "en_el_control": 0,
+     "proporcion_ic95": [
+      0.194,
+      0.39
+     ],
+     "p": 0.0
+    },
+    "demanda": {
+     "ventas_de_equivalentes_al_menos": 150,
+     "equivalentes_con_ventas": 3
+    }
+   }
+  }
  },
  {
   "metodo": "B1",
@@ -15561,15 +16495,15 @@
    "Kit Caja De Pesca Completa Gadnic FISH0003 177 Unidades Acer"
   ],
   "id": "B1",
-  "que_traer": "versión del producto ancla que resuelva la queja 'generales'",
+  "que_traer": "versión del producto ancla que resuelva la queja 'anzuelos'",
   "busqueda_ml": "pouchs accesorios de camping",
-  "estado": "descartada",
-  "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "estado": "condicional",
+  "se_detiene_en": "C6 margen",
+  "motivo": "sin precio de proveedor: falta cotizarlo",
   "señales": [
    {
     "id": "F090.B1",
-    "descripcion": "queja característica: 'generales'",
+    "descripcion": "queja más frecuente: 'anzuelos'",
     "errores": []
    }
   ],
@@ -15602,10 +16536,58 @@
    {
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
+    "pasa": true,
+    "motivo": "4 equivalentes, 0 venden +100",
+    "datos": {
+     "equivalentes": 4,
+     "venden": 0,
+     "con_alguna_venta": 0,
+     "ventas_visibles": 0,
+     "ejemplos_que_venden": []
+    }
+   },
+   {
+    "chequeo": "C5 la eligen",
+    "supuesto": "Si se ofrece, la gente la elige",
+    "pasa": true,
+    "motivo": "1 alternativas con stock local a precio comparable (ventas mediana 0) contra 42 publicaciones de la búsqueda de origen (mediana 0.0), p = 0.2643",
+    "datos": {
+     "comparables": 1,
+     "ventas_comparables": [
+      0
+     ],
+     "mediana_de_origen": 0.0,
+     "publicaciones_de_origen": 42,
+     "p": 0.2643
+    }
+   },
+   {
+    "chequeo": "C6 margen",
+    "supuesto": "Deja plata al precio que la gente paga",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "sin precio de proveedor: falta cotizarlo"
    }
-  ]
+  ],
+  "confianza": {
+   "riesgos": [],
+   "evidencia": {
+    "productos": 2,
+    "dolor": {
+     "desatendidos": 22,
+     "de": 78,
+     "en_el_control": 0,
+     "proporcion_ic95": [
+      0.194,
+      0.39
+     ],
+     "p": 0.0
+    },
+    "demanda": {
+     "ventas_de_equivalentes_al_menos": 150,
+     "equivalentes_con_ventas": 3
+    }
+   }
+  }
  },
  {
   "metodo": "B1",
@@ -15616,15 +16598,15 @@
    "Bolsa Hidratación 2 Lts Aonijie Trail Running Mochila"
   ],
   "id": "B1",
-  "que_traer": "versión del producto ancla que resuelva la queja 'perdio'",
+  "que_traer": "versión del producto ancla que resuelva la queja 'calidad'",
   "busqueda_ml": "bolsas de hidratacion",
   "estado": "descartada",
   "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "motivo": "ya atendido: 11 equivalentes venden +100",
   "señales": [
    {
     "id": "F094.B1",
-    "descripcion": "queja característica: 'perdio'",
+    "descripcion": "queja más frecuente: 'calidad'",
     "errores": []
    }
   ],
@@ -15658,7 +16640,18 @@
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "ya atendido: 11 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 17,
+     "venden": 11,
+     "con_alguna_venta": 11,
+     "ventas_visibles": 5000,
+     "ejemplos_que_venden": [
+      "Bolsa Hidratación 1,5 Lts Aonijie Trail Running Mochila (+1000, $26,999)",
+      "Bolsa Hidratacion Waterdog Camel 2 Litros Running Trekking (+1000, $38,000)",
+      "Bolsa De Hidratación Weis 2 Lts Running Trail Camelbag (+1000, $31,230)"
+     ]
+    }
    }
   ]
  },
@@ -15671,15 +16664,15 @@
    "Mochila Hidratante Camelback Gadnic 2L Bolsa Hidratacion Mul"
   ],
   "id": "B1",
-  "que_traer": "versión del producto ancla que resuelva la queja 'pincho'",
+  "que_traer": "versión del producto ancla que resuelva la queja 'calidad'",
   "busqueda_ml": "bolsas de hidratacion",
   "estado": "descartada",
   "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "motivo": "ya atendido: 11 equivalentes venden +100",
   "señales": [
    {
     "id": "F095.B1",
-    "descripcion": "queja característica: 'pincho'",
+    "descripcion": "queja más frecuente: 'calidad'",
     "errores": []
    }
   ],
@@ -15713,7 +16706,18 @@
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "ya atendido: 11 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 17,
+     "venden": 11,
+     "con_alguna_venta": 11,
+     "ventas_visibles": 5000,
+     "ejemplos_que_venden": [
+      "Bolsa Hidratación 1,5 Lts Aonijie Trail Running Mochila (+1000, $26,999)",
+      "Bolsa Hidratacion Waterdog Camel 2 Litros Running Trekking (+1000, $38,000)",
+      "Bolsa De Hidratación Weis 2 Lts Running Trail Camelbag (+1000, $31,230)"
+     ]
+    }
    }
   ]
  },
@@ -15734,7 +16738,7 @@
   "señales": [
    {
     "id": "F096.B1",
-    "descripcion": "queja característica: 'buena'",
+    "descripcion": "queja más frecuente: 'buena'",
     "errores": []
    }
   ],
@@ -15800,7 +16804,7 @@
   "señales": [
    {
     "id": "F097.B1",
-    "descripcion": "queja característica: 'conforme'",
+    "descripcion": "queja más frecuente: 'conforme'",
     "errores": []
    }
   ],
@@ -15858,15 +16862,15 @@
    "Malla Natacion Mujer Cloro Friendly® Aquagym Resistente"
   ],
   "id": "B1",
-  "que_traer": "versión del producto ancla que resuelva la queja 'mallas'",
+  "que_traer": "versión del producto ancla que resuelva la queja 'buena'",
   "busqueda_ml": "trajes de bano deportivos",
   "estado": "descartada",
   "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "motivo": "ya atendido: 20 equivalentes venden +100",
   "señales": [
    {
     "id": "F099.B1",
-    "descripcion": "queja característica: 'mallas'",
+    "descripcion": "queja más frecuente: 'buena'",
     "errores": []
    }
   ],
@@ -15900,7 +16904,18 @@
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "ya atendido: 20 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 36,
+     "venden": 20,
+     "con_alguna_venta": 26,
+     "ventas_visibles": 10850,
+     "ejemplos_que_venden": [
+      "Malla Natacion Enteriza Dama Quickly Con Short Art 1190 (+1000, $47,900)",
+      "Malla Traje De Baño Natacion Mujer Safit Cloro Friendly (+1000, $36,948)",
+      "Malla Natacion Mujer Enteriza Deportiva Bretel Cruzado (+1000, $32,900)"
+     ]
+    }
    }
   ]
  },
@@ -15913,15 +16928,15 @@
    "Termohigrometro Medidor De Temperatura, Humedad y Reloj HTC-"
   ],
   "id": "B1",
-  "que_traer": "versión del producto ancla que resuelva la queja 'indoor'",
+  "que_traer": "versión del producto ancla que resuelva la queja 'humedad'",
   "busqueda_ml": "higrometros medidores ambientales",
   "estado": "descartada",
   "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "motivo": "ya atendido: 24 equivalentes venden +100",
   "señales": [
    {
     "id": "F102.B1",
-    "descripcion": "queja característica: 'indoor'",
+    "descripcion": "queja más frecuente: 'humedad'",
     "errores": []
    }
   ],
@@ -15955,7 +16970,18 @@
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "ya atendido: 24 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 43,
+     "venden": 24,
+     "con_alguna_venta": 31,
+     "ventas_visibles": 19425,
+     "ejemplos_que_venden": [
+      "Termohigrómetro Digital Patagonia Tools HTC-2 Interior Exterior Precis (+5000, $4,527)",
+      "Termometro Digital Humedad Temperatura Higrometro Int/ Ext (+5000, $6,749)",
+      "Termohigrometro Sonda Digital Humedad Y Temperatura (+1000, $15,938)"
+     ]
+    }
    }
   ]
  },
@@ -15968,15 +16994,15 @@
    "Termohigrómetro Digital Patagonia Tools HTC-1 Temperatura Hu"
   ],
   "id": "B1",
-  "que_traer": "versión del producto ancla que resuelva la queja 'aparato'",
+  "que_traer": "versión del producto ancla que resuelva la queja 'humedad'",
   "busqueda_ml": "higrometros medidores ambientales",
   "estado": "descartada",
   "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "motivo": "ya atendido: 24 equivalentes venden +100",
   "señales": [
    {
     "id": "F103.B1",
-    "descripcion": "queja característica: 'aparato'",
+    "descripcion": "queja más frecuente: 'humedad'",
     "errores": []
    }
   ],
@@ -16010,7 +17036,18 @@
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "ya atendido: 24 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 43,
+     "venden": 24,
+     "con_alguna_venta": 31,
+     "ventas_visibles": 19425,
+     "ejemplos_que_venden": [
+      "Termohigrómetro Digital Patagonia Tools HTC-2 Interior Exterior Precis (+5000, $4,527)",
+      "Termometro Digital Humedad Temperatura Higrometro Int/ Ext (+5000, $6,749)",
+      "Termohigrometro Sonda Digital Humedad Y Temperatura (+1000, $15,938)"
+     ]
+    }
    }
   ]
  },
@@ -16023,15 +17060,15 @@
    "Hidrolavadora Electrica Alta presion Trent HLT307 1400W 1600"
   ],
   "id": "B1",
-  "que_traer": "versión del producto ancla que resuelva la queja 'mtrs'",
+  "que_traer": "versión del producto ancla que resuelva la queja 'potencia'",
   "busqueda_ml": "hidrolavadoras limpieza",
   "estado": "descartada",
   "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "motivo": "ya atendido: 23 equivalentes venden +100",
   "señales": [
    {
     "id": "F108.B1",
-    "descripcion": "queja característica: 'mtrs'",
+    "descripcion": "queja más frecuente: 'potencia'",
     "errores": []
    }
   ],
@@ -16065,7 +17102,18 @@
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "ya atendido: 23 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 30,
+     "venden": 23,
+     "con_alguna_venta": 26,
+     "ventas_visibles": 60325,
+     "ejemplos_que_venden": [
+      "Hidrolavadora Electrica Alta Presion Profesional Trent 2000w 2175 Psi  (+10000, $199,999)",
+      "HIDROLAVADORA TODO EN UNO DE Lüsqtoff HL-120 (+10000, $126,144)",
+      "Hidrolavadora Kärcher Compacta (+10000, $145,009)"
+     ]
+    }
    }
   ]
  },
@@ -16078,15 +17126,15 @@
    "Hidrolavadora Electrica Alta Presion Trent Hlt203 1600 Psi 1"
   ],
   "id": "B1",
-  "que_traer": "versión del producto ancla que resuelva la queja 'poderosa'",
+  "que_traer": "versión del producto ancla que resuelva la queja 'potencia'",
   "busqueda_ml": "hidrolavadoras limpieza",
   "estado": "descartada",
   "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "motivo": "ya atendido: 23 equivalentes venden +100",
   "señales": [
    {
     "id": "F109.B1",
-    "descripcion": "queja característica: 'poderosa'",
+    "descripcion": "queja más frecuente: 'potencia'",
     "errores": []
    }
   ],
@@ -16120,7 +17168,18 @@
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "ya atendido: 23 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 30,
+     "venden": 23,
+     "con_alguna_venta": 26,
+     "ventas_visibles": 60325,
+     "ejemplos_que_venden": [
+      "Hidrolavadora Electrica Alta Presion Profesional Trent 2000w 2175 Psi  (+10000, $199,999)",
+      "HIDROLAVADORA TODO EN UNO DE Lüsqtoff HL-120 (+10000, $126,144)",
+      "Hidrolavadora Kärcher Compacta (+10000, $145,009)"
+     ]
+    }
    }
   ]
  },
@@ -16133,15 +17192,15 @@
    "Terraja Macho Roscar Ext. Int. 1/2 Modelo RU56515 Ruhlmann R"
   ],
   "id": "B1",
-  "que_traer": "versión del producto ancla que resuelva la queja 'externa'",
+  "que_traer": "versión del producto ancla que resuelva la queja 'rompio'",
   "busqueda_ml": "machos de roscar y tarrajas",
   "estado": "descartada",
   "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "motivo": "ya atendido: 3 equivalentes venden +100",
   "señales": [
    {
     "id": "F112.B1",
-    "descripcion": "queja característica: 'externa'",
+    "descripcion": "queja más frecuente: 'rompio'",
     "errores": []
    }
   ],
@@ -16175,7 +17234,18 @@
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "ya atendido: 3 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 29,
+     "venden": 3,
+     "con_alguna_venta": 11,
+     "ventas_visibles": 600,
+     "ejemplos_que_venden": [
+      "Macho De Roscar Acero Rapido Recto M12 X 1,75mm Harden (+100, $5,330)",
+      "Macho De Roscar M6 x 1mm Acero Rápido Harden 610464 Recto (+100, $3,800)",
+      "Macho De Roscar Acero Rápido M10x1.5mm Harden Recto (+100, $3,860)"
+     ]
+    }
    }
   ]
  },
@@ -16188,15 +17258,15 @@
    "Cerrojo Bronzen Portón 359 Niquelado Corredizo D/i Simil 212"
   ],
   "id": "B1",
-  "que_traer": "versión del producto ancla que resuelva la queja 'cerrajero'",
+  "que_traer": "versión del producto ancla que resuelva la queja 'buena'",
   "busqueda_ml": "maquinas copiadoras de llaves",
   "estado": "descartada",
   "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "motivo": "ya atendido: 4 equivalentes venden +100",
   "señales": [
    {
     "id": "F115.B1",
-    "descripcion": "queja característica: 'cerrajero'",
+    "descripcion": "queja más frecuente: 'buena'",
     "errores": []
    }
   ],
@@ -16230,7 +17300,18 @@
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "ya atendido: 4 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 23,
+     "venden": 4,
+     "con_alguna_venta": 9,
+     "ventas_visibles": 925,
+     "ejemplos_que_venden": [
+      "Duplicadora Copiadora De Llaves Yale Autos Cruz Automatica (+500, $339,999)",
+      "Copiadora Llaves Duplicadora Multipunto Computada Mapa 368a (+100, $398,900)",
+      "Maquina Duplicadora De Llaves Yale, Automotor Dentada Ipc (+100, $297,000)"
+     ]
+    }
    }
   ]
  },
@@ -16243,7 +17324,7 @@
    "Duplicadora Copiadora Llaves Multipunto Computada Mapa 368a"
   ],
   "id": "B1",
-  "que_traer": "versión del producto ancla que resuelva la queja 'parece'",
+  "que_traer": "versión del producto ancla que resuelva la queja 'buena'",
   "busqueda_ml": "maquinas copiadoras de llaves",
   "estado": "descartada",
   "se_detiene_en": "C1 dolor",
@@ -16251,7 +17332,7 @@
   "señales": [
    {
     "id": "F116.B1",
-    "descripcion": "queja característica: 'parece'",
+    "descripcion": "queja más frecuente: 'buena'",
     "errores": []
    }
   ],
@@ -16286,15 +17367,15 @@
    "Taladro Atornillador Inalámbrico Branx Bateria 20v Litio Col"
   ],
   "id": "B1",
-  "que_traer": "versión del producto ancla que resuelva la queja 'mandril'",
+  "que_traer": "versión del producto ancla que resuelva la queja 'buena'",
   "busqueda_ml": "para taladros y atornilladores",
   "estado": "descartada",
   "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "motivo": "ya atendido: 43 equivalentes venden +100",
   "señales": [
    {
     "id": "F119.B1",
-    "descripcion": "queja característica: 'mandril'",
+    "descripcion": "queja más frecuente: 'buena'",
     "errores": []
    }
   ],
@@ -16328,7 +17409,18 @@
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "ya atendido: 43 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 47,
+     "venden": 43,
+     "con_alguna_venta": 44,
+     "ventas_visibles": 101850,
+     "ejemplos_que_venden": [
+      "Taladro Percutor Black Decker Hd650k 13mm 650w Maletín Color Naranja F (+10000, $74,913)",
+      "Taladro Percutor Atornillador Inalambrico 18v Maletin (+10000, $84,999)",
+      "Taladro Atornillador Inalámbrico 18V 10mm Pektra (+10000, $58,993)"
+     ]
+    }
    }
   ]
  },
@@ -16341,15 +17433,15 @@
    "Taladro atornillador inalámbrico GSR 1000 Smart con Maletin "
   ],
   "id": "B1",
-  "que_traer": "versión del producto ancla que resuelva la queja 'desgastan'",
+  "que_traer": "versión del producto ancla que resuelva la queja 'bateria'",
   "busqueda_ml": "para taladros y atornilladores",
   "estado": "descartada",
   "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "motivo": "ya atendido: 38 equivalentes venden +100",
   "señales": [
    {
     "id": "F120.B1",
-    "descripcion": "queja característica: 'desgastan'",
+    "descripcion": "queja más frecuente: 'bateria'",
     "errores": []
    }
   ],
@@ -16383,7 +17475,18 @@
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "ya atendido: 38 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 41,
+     "venden": 38,
+     "con_alguna_venta": 39,
+     "ventas_visibles": 84350,
+     "ejemplos_que_venden": [
+      "Taladro Percutor Atornillador Inalambrico 18v Maletin (+10000, $84,999)",
+      "Taladro Atornillador Inalámbrico 18V 10mm Pektra (+10000, $58,993)",
+      "Taladro Atornillador 13 Mm Percutor 2 Baterias 21v + 24 Pcs (+10000, $82,999)"
+     ]
+    }
    }
   ]
  },
@@ -16396,15 +17499,15 @@
    "Almohadón Morena Tapa Tapa 40x40 Cm Para Silla Clásico"
   ],
   "id": "B1",
-  "que_traer": "versión del producto ancla que resuelva la queja 'atar'",
+  "que_traer": "versión del producto ancla que resuelva la queja 'calidad'",
   "busqueda_ml": "fundas para almohadones",
   "estado": "descartada",
   "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "motivo": "ya atendido: 34 equivalentes venden +100",
   "señales": [
    {
     "id": "F121.B1",
-    "descripcion": "queja característica: 'atar'",
+    "descripcion": "queja más frecuente: 'calidad'",
     "errores": []
    }
   ],
@@ -16438,7 +17541,18 @@
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "ya atendido: 34 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 35,
+     "venden": 34,
+     "con_alguna_venta": 35,
+     "ventas_visibles": 26450,
+     "ejemplos_que_venden": [
+      "Funda Para Almohada Decorativa Jacquard 50x70cm | Ganga Home (+5000, $12,990)",
+      "Funda Almohadon Pana 40x40 Cm 2 Unidades (+5000, $9,496)",
+      "Funda De Almohadon 50x70 Tusor + 100% Algodon (+1000, $9,955)"
+     ]
+    }
    }
   ]
  },
@@ -16451,15 +17565,15 @@
    "Funda Almohadon 60x60 Cm Antidesgarro Chenille"
   ],
   "id": "B1",
-  "que_traer": "versión del producto ancla que resuelva la queja 'difiere'",
+  "que_traer": "versión del producto ancla que resuelva la queja 'color'",
   "busqueda_ml": "fundas para almohadones",
   "estado": "descartada",
   "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "motivo": "ya atendido: 34 equivalentes venden +100",
   "señales": [
    {
     "id": "F122.B1",
-    "descripcion": "queja característica: 'difiere'",
+    "descripcion": "queja más frecuente: 'color'",
     "errores": []
    }
   ],
@@ -16493,7 +17607,18 @@
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "ya atendido: 34 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 35,
+     "venden": 34,
+     "con_alguna_venta": 35,
+     "ventas_visibles": 26450,
+     "ejemplos_que_venden": [
+      "Funda Para Almohada Decorativa Jacquard 50x70cm | Ganga Home (+5000, $12,990)",
+      "Funda Almohadon Pana 40x40 Cm 2 Unidades (+5000, $9,496)",
+      "Funda De Almohadon 50x70 Tusor + 100% Algodon (+1000, $9,955)"
+     ]
+    }
    }
   ]
  },
@@ -16506,7 +17631,7 @@
    "Rack de TV con módulos combinables hasta 55&amp;quot; MT6000"
   ],
   "id": "B1",
-  "que_traer": "versión del producto ancla que resuelva la queja 'tele'",
+  "que_traer": "versión del producto ancla que resuelva la queja 'facil'",
   "busqueda_ml": "muebles para tv",
   "estado": "descartada",
   "se_detiene_en": "C1 dolor",
@@ -16514,7 +17639,7 @@
   "señales": [
    {
     "id": "F123.B1",
-    "descripcion": "queja característica: 'tele'",
+    "descripcion": "queja más frecuente: 'facil'",
     "errores": []
    }
   ],
@@ -16549,15 +17674,15 @@
    "Rack De Tv De 160cm Moderno Para Tv De Hasta 75 Pulgadas Rtv"
   ],
   "id": "B1",
-  "que_traer": "versión del producto ancla que resuelva la queja 'cajon'",
+  "que_traer": "versión del producto ancla que resuelva la queja 'armado'",
   "busqueda_ml": "muebles para tv",
   "estado": "descartada",
   "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "motivo": "ya atendido: 34 equivalentes venden +100",
   "señales": [
    {
     "id": "F124.B1",
-    "descripcion": "queja característica: 'cajon'",
+    "descripcion": "queja más frecuente: 'armado'",
     "errores": []
    }
   ],
@@ -16591,7 +17716,18 @@
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "ya atendido: 34 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 44,
+     "venden": 34,
+     "con_alguna_venta": 43,
+     "ventas_visibles": 19400,
+     "ejemplos_que_venden": [
+      "Mueble De Tv Rack Mesa Para Tv Hasta 80'' Con 2 Puertas 1 Cajón Melami (+1000, $223,487)",
+      "Rack de TV con módulos combinables hasta 55\" MT6000 Centro Estant blan (+1000, $113,677)",
+      "Rack De Tv Con Módulos Combinables Centro Estant Ancho 145 X Alto 116  (+1000, $111,999)"
+     ]
+    }
    }
   ]
  },
@@ -16604,15 +17740,15 @@
    "Funda Cubre Sillón De 2 Cuerpos Sw Home Tela Madrás Oferta!"
   ],
   "id": "B1",
-  "que_traer": "versión del producto ancla que resuelva la queja 'grande'",
+  "que_traer": "versión del producto ancla que resuelva la queja 'sillon'",
   "busqueda_ml": "fundas para sillones",
   "estado": "descartada",
   "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "motivo": "ya atendido: 34 equivalentes venden +100",
   "señales": [
    {
     "id": "F125.B1",
-    "descripcion": "queja característica: 'grande'",
+    "descripcion": "queja más frecuente: 'sillon'",
     "errores": []
    }
   ],
@@ -16646,7 +17782,18 @@
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "ya atendido: 34 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 48,
+     "venden": 34,
+     "con_alguna_venta": 41,
+     "ventas_visibles": 15300,
+     "ejemplos_que_venden": [
+      "Funda De Sofá Sillón Elastizada Volado Decorativa 2 Cuerpos (+1000, $46,999)",
+      "Funda De Sofá Sillón 3 Cuerpo Elastizada Ajustable Calidad (+1000, $46,294)",
+      "Funda De Sofá Sillón 1 Cuerpo Elastizada Ajustable Calidad (+1000, $32,490)"
+     ]
+    }
    }
   ]
  },
@@ -16659,15 +17806,15 @@
    "Funda De Sillon Elastizada Pana 3 Cuerpos Largo 2,00 Mts Gri"
   ],
   "id": "B1",
-  "que_traer": "versión del producto ancla que resuelva la queja 'encontrarle'",
+  "que_traer": "versión del producto ancla que resuelva la queja 'poco'",
   "busqueda_ml": "fundas para sillones",
   "estado": "descartada",
   "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "motivo": "ya atendido: 34 equivalentes venden +100",
   "señales": [
    {
     "id": "F126.B1",
-    "descripcion": "queja característica: 'encontrarle'",
+    "descripcion": "queja más frecuente: 'poco'",
     "errores": []
    }
   ],
@@ -16701,7 +17848,18 @@
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "ya atendido: 34 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 47,
+     "venden": 34,
+     "con_alguna_venta": 41,
+     "ventas_visibles": 15300,
+     "ejemplos_que_venden": [
+      "Funda De Sofá Sillón Elastizada Volado Decorativa 2 Cuerpos (+1000, $46,999)",
+      "Funda De Sofá Sillón 3 Cuerpo Elastizada Ajustable Calidad (+1000, $46,294)",
+      "Funda De Sofá Sillón 1 Cuerpo Elastizada Ajustable Calidad (+1000, $32,490)"
+     ]
+    }
    }
   ]
  },
@@ -16714,15 +17872,15 @@
    "Candado X2 Perno Horizontal 80mm Blindado Inviolable Inomax "
   ],
   "id": "B1",
-  "que_traer": "versión del producto ancla que resuelva la queja 'mala'",
+  "que_traer": "versión del producto ancla que resuelva la queja 'buenos'",
   "busqueda_ml": "candados herrajes de seguridad",
   "estado": "descartada",
   "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "motivo": "ya atendido: 30 equivalentes venden +100",
   "señales": [
    {
     "id": "F133.B1",
-    "descripcion": "queja característica: 'mala'",
+    "descripcion": "queja más frecuente: 'buenos'",
     "errores": []
    }
   ],
@@ -16756,7 +17914,18 @@
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "ya atendido: 30 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 37,
+     "venden": 30,
+     "con_alguna_venta": 34,
+     "ventas_visibles": 14200,
+     "ejemplos_que_venden": [
+      "Candado Bulit Doble Traba Resistente Al Agua - Intemperie 50 Azul (+1000, $15,400)",
+      "Candado Largo Acero Bronceado 63mm Doble Traba Hard Inomax Color Plate (+1000, $6,761)",
+      "Candado Acero Bronceado 38mm Reforzado Doble Traba Inomax Dorado (+1000, $4,493)"
+     ]
+    }
    }
   ]
  },
@@ -16769,15 +17938,15 @@
    "Candado Acero Bronceado 63mm Reforzado Doble Traba Inomax Co"
   ],
   "id": "B1",
-  "que_traer": "versión del producto ancla que resuelva la queja 'abrirlo'",
+  "que_traer": "versión del producto ancla que resuelva la queja 'calidad'",
   "busqueda_ml": "candados herrajes de seguridad",
   "estado": "descartada",
   "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "motivo": "ya atendido: 31 equivalentes venden +100",
   "señales": [
    {
     "id": "F134.B1",
-    "descripcion": "queja característica: 'abrirlo'",
+    "descripcion": "queja más frecuente: 'calidad'",
     "errores": []
    }
   ],
@@ -16811,7 +17980,18 @@
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "ya atendido: 31 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 39,
+     "venden": 31,
+     "con_alguna_venta": 35,
+     "ventas_visibles": 15200,
+     "ejemplos_que_venden": [
+      "Candado Bulit Doble Traba Resistente Al Agua - Intemperie 50 Azul (+1000, $15,400)",
+      "Candado Largo Acero Bronceado 63mm Doble Traba Hard Inomax Color Plate (+1000, $6,761)",
+      "Candado Tsa Combinación Inteligente Cable Acero Color Plateado (+1000, $5,948)"
+     ]
+    }
    }
   ]
  },
@@ -16824,15 +18004,15 @@
    "Alfombra 100x60 Cm Peluda Pie / Costado De Cama Dormitorio"
   ],
   "id": "B1",
-  "que_traer": "versión del producto ancla que resuelva la queja 'pisas'",
+  "que_traer": "versión del producto ancla que resuelva la queja 'calidad'",
   "busqueda_ml": "alfombras y carpetas",
   "estado": "descartada",
   "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "motivo": "ya atendido: 25 equivalentes venden +100",
   "señales": [
    {
     "id": "F137.B1",
-    "descripcion": "queja característica: 'pisas'",
+    "descripcion": "queja más frecuente: 'calidad'",
     "errores": []
    }
   ],
@@ -16866,7 +18046,18 @@
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "ya atendido: 25 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 48,
+     "venden": 25,
+     "con_alguna_venta": 32,
+     "ventas_visibles": 43325,
+     "ejemplos_que_venden": [
+      "Alfombra 3x2 Mts Nórdica Living Peluda Grande Pelo Largo (+10000, $91,516)",
+      "Alfombra 2x1,40 Mts Living Peluda Nórdica Pelo Largo (+10000, $54,815)",
+      "Alfombra 2x2,40 Mts Nórdica Living Peluda Grande Pelo Largo (+10000, $77,075)"
+     ]
+    }
    }
   ]
  },
@@ -16879,7 +18070,7 @@
    "Alfombra 1x1,50 Mts Peluda Pelo Moderna, Dormitorio / Living"
   ],
   "id": "B1",
-  "que_traer": "versión del producto ancla que resuelva la queja 'tupido'",
+  "que_traer": "versión del producto ancla que resuelva la queja 'calidad'",
   "busqueda_ml": "alfombras y carpetas",
   "estado": "descartada",
   "se_detiene_en": "C1 dolor",
@@ -16887,7 +18078,7 @@
   "señales": [
    {
     "id": "F138.B1",
-    "descripcion": "queja característica: 'tupido'",
+    "descripcion": "queja más frecuente: 'calidad'",
     "errores": []
    }
   ],
@@ -16922,15 +18113,15 @@
    "Toallon Y Toalla Juego Franco Valente 400 Grs Colores Varios"
   ],
   "id": "B1",
-  "que_traer": "versión del producto ancla que resuelva la queja 'poco'",
+  "que_traer": "versión del producto ancla que resuelva la queja 'calidad'",
   "busqueda_ml": "estatuas figuras decorativas",
   "estado": "descartada",
   "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "motivo": "ya atendido: 9 equivalentes venden +100",
   "señales": [
    {
     "id": "F139.B1",
-    "descripcion": "queja característica: 'poco'",
+    "descripcion": "queja más frecuente: 'calidad'",
     "errores": []
    }
   ],
@@ -16964,7 +18155,18 @@
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "ya atendido: 9 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 9,
+     "venden": 9,
+     "con_alguna_venta": 9,
+     "ventas_visibles": 2100,
+     "ejemplos_que_venden": [
+      "Trio Budas Sabios Bebes Ciego/sordo/mudo Decorativo Hogar (+500, $25,802)",
+      "Buda Iluminación Con Porta Vela+buda Protector Combo X 2 U. (+500, $31,255)",
+      "Combo X3 Adorno Figura Pensante Deco Estatua Buda Moderno (+500, $13,968)"
+     ]
+    }
    }
   ]
  },
@@ -16977,7 +18179,7 @@
    "Cortina Blackout Textil 2 Paños 1,40 X 2,20 Presilla Oculta"
   ],
   "id": "B1",
-  "que_traer": "versión del producto ancla que resuelva la queja 'oscurecer'",
+  "que_traer": "versión del producto ancla que resuelva la queja 'calidad'",
   "busqueda_ml": "estatuas figuras decorativas",
   "estado": "descartada",
   "se_detiene_en": "C1 dolor",
@@ -16985,7 +18187,7 @@
   "señales": [
    {
     "id": "F140.B1",
-    "descripcion": "queja característica: 'oscurecer'",
+    "descripcion": "queja más frecuente: 'calidad'",
     "errores": []
    }
   ],
@@ -17020,7 +18222,7 @@
    "Juego de mesa Taco Gato Cabra Queso Pizza Bureau de Juegos"
   ],
   "id": "B1",
-  "que_traer": "versión del producto ancla que resuelva la queja 'jugamos'",
+  "que_traer": "versión del producto ancla que resuelva la queja 'juego'",
   "busqueda_ml": "juegos de mesa y cartas",
   "estado": "descartada",
   "se_detiene_en": "C1 dolor",
@@ -17028,7 +18230,7 @@
   "señales": [
    {
     "id": "F147.B1",
-    "descripcion": "queja característica: 'jugamos'",
+    "descripcion": "queja más frecuente: 'juego'",
     "errores": []
    }
   ],
@@ -17063,7 +18265,7 @@
    "Desconectados En Palabras- Juego de Cartas Preguntas de Conv"
   ],
   "id": "B1",
-  "que_traer": "versión del producto ancla que resuelva la queja 'compartiendo'",
+  "que_traer": "versión del producto ancla que resuelva la queja 'juego'",
   "busqueda_ml": "juegos de mesa y cartas",
   "estado": "descartada",
   "se_detiene_en": "C1 dolor",
@@ -17071,7 +18273,7 @@
   "señales": [
    {
     "id": "F148.B1",
-    "descripcion": "queja característica: 'compartiendo'",
+    "descripcion": "queja más frecuente: 'juego'",
     "errores": []
    }
   ],
@@ -17106,15 +18308,15 @@
    "Puzzle Rompecabezas 1000 Pzs Varios Modelos Paisaje Lelab"
   ],
   "id": "B1",
-  "que_traer": "versión del producto ancla que resuelva la queja 'cortada'",
+  "que_traer": "versión del producto ancla que resuelva la queja 'piezas'",
   "busqueda_ml": "rompecabezas y puzzles",
   "estado": "descartada",
   "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "motivo": "ya atendido: 11 equivalentes venden +100",
   "señales": [
    {
     "id": "F151.B1",
-    "descripcion": "queja característica: 'cortada'",
+    "descripcion": "queja más frecuente: 'piezas'",
     "errores": []
    }
   ],
@@ -17148,7 +18350,18 @@
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "ya atendido: 11 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 11,
+     "venden": 11,
+     "con_alguna_venta": 11,
+     "ventas_visibles": 4600,
+     "ejemplos_que_venden": [
+      "Puzzle Casse Tete Rompecabezas Landscape Braies Lake 1000... (+1000, $9,312)",
+      "Puzzle Rompecabezas Viajero Espacial 1000 Piezas (+1000, $12,999)",
+      "Rompecabezas De 1000 Pzs Puzzle La Noche Estrellada Van Gogh (+1000, $18,000)"
+     ]
+    }
    }
   ]
  },
@@ -17161,15 +18374,15 @@
    "Rompecabezas Puzzles 1000 Piezas Funny Land Noche Estrellada"
   ],
   "id": "B1",
-  "que_traer": "versión del producto ancla que resuelva la queja 'piecitas'",
+  "que_traer": "versión del producto ancla que resuelva la queja 'calidad'",
   "busqueda_ml": "rompecabezas y puzzles",
   "estado": "descartada",
   "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "motivo": "ya atendido: 10 equivalentes venden +100",
   "señales": [
    {
     "id": "F152.B1",
-    "descripcion": "queja característica: 'piecitas'",
+    "descripcion": "queja más frecuente: 'calidad'",
     "errores": []
    }
   ],
@@ -17203,7 +18416,18 @@
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "ya atendido: 10 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 10,
+     "venden": 10,
+     "con_alguna_venta": 10,
+     "ventas_visibles": 4100,
+     "ejemplos_que_venden": [
+      "Puzzle Casse Tete Rompecabezas Landscape Braies Lake 1000... (+1000, $9,312)",
+      "Puzzle Rompecabezas Viajero Espacial 1000 Piezas (+1000, $12,999)",
+      "Rompecabezas De 1000 Pzs Puzzle La Noche Estrellada Van Gogh (+1000, $18,000)"
+     ]
+    }
    }
   ]
  },
@@ -17224,7 +18448,7 @@
   "señales": [
    {
     "id": "F153.B1",
-    "descripcion": "queja característica: 'alitas'",
+    "descripcion": "queja más frecuente: 'alitas'",
     "errores": []
    }
   ],
@@ -17267,7 +18491,7 @@
   "señales": [
    {
     "id": "F154.B1",
-    "descripcion": "queja característica: 'estan'",
+    "descripcion": "queja más frecuente: 'estan'",
     "errores": []
    }
   ],
@@ -17310,7 +18534,7 @@
   "señales": [
    {
     "id": "F157.B1",
-    "descripcion": "queja característica: 'autitos'",
+    "descripcion": "queja más frecuente: 'autitos'",
     "errores": []
    }
   ],
@@ -17376,7 +18600,7 @@
   "señales": [
    {
     "id": "F158.B1",
-    "descripcion": "queja característica: 'pequeno'",
+    "descripcion": "queja más frecuente: 'pequeno'",
     "errores": []
    }
   ],
@@ -17434,15 +18658,15 @@
    "Hilado Cashmilon Semigrueso 4/7 Ovillos X 100 Gs"
   ],
   "id": "B1",
-  "que_traer": "versión del producto ancla que resuelva la queja 'tejiendo'",
+  "que_traer": "versión del producto ancla que resuelva la queja 'calidad'",
   "busqueda_ml": "lanas merceria",
   "estado": "descartada",
   "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "motivo": "ya atendido: 9 equivalentes venden +100",
   "señales": [
    {
     "id": "F161.B1",
-    "descripcion": "queja característica: 'tejiendo'",
+    "descripcion": "queja más frecuente: 'calidad'",
     "errores": []
    }
   ],
@@ -17476,7 +18700,18 @@
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "ya atendido: 9 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 12,
+     "venden": 9,
+     "con_alguna_venta": 9,
+     "ventas_visibles": 1300,
+     "ejemplos_que_venden": [
+      "Vellón 1 Kg Lana Merino Eco Friendly Cruza Fina 27 Micras (+500, $21,840)",
+      "Vellón 3 Kg Lana Merino Manta Nordica (+100, $63,900)",
+      "Vellón 5 Kg Lana Merino Natural Para Manta Nordica (+100, $88,095)"
+     ]
+    }
    }
   ]
  },
@@ -17489,15 +18724,15 @@
    "Hilado Cashmilon Rendimax Marca Mia Semigrueso Ovillo 100 Gs"
   ],
   "id": "B1",
-  "que_traer": "versión del producto ancla que resuelva la queja 'viene'",
+  "que_traer": "versión del producto ancla que resuelva la queja 'calidad'",
   "busqueda_ml": "lanas merceria",
   "estado": "descartada",
   "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "motivo": "ya atendido: 9 equivalentes venden +100",
   "señales": [
    {
     "id": "F162.B1",
-    "descripcion": "queja característica: 'viene'",
+    "descripcion": "queja más frecuente: 'calidad'",
     "errores": []
    }
   ],
@@ -17531,7 +18766,18 @@
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "ya atendido: 9 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 12,
+     "venden": 9,
+     "con_alguna_venta": 9,
+     "ventas_visibles": 1300,
+     "ejemplos_que_venden": [
+      "Vellón 1 Kg Lana Merino Eco Friendly Cruza Fina 27 Micras (+500, $21,840)",
+      "Vellón 3 Kg Lana Merino Manta Nordica (+100, $63,900)",
+      "Vellón 5 Kg Lana Merino Natural Para Manta Nordica (+100, $88,095)"
+     ]
+    }
    }
   ]
  },
@@ -17544,15 +18790,15 @@
    "Cartuchera Escolar Gadnic Con Gran Capacidad Multifuncional "
   ],
   "id": "B1",
-  "que_traer": "versión del producto ancla que resuelva la queja 'compartimento'",
+  "que_traer": "versión del producto ancla que resuelva la queja 'bueno'",
   "busqueda_ml": "cartucheras escolar",
   "estado": "descartada",
   "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "motivo": "ya atendido: 25 equivalentes venden +100",
   "señales": [
    {
     "id": "F169.B1",
-    "descripcion": "queja característica: 'compartimento'",
+    "descripcion": "queja más frecuente: 'bueno'",
     "errores": []
    }
   ],
@@ -17586,7 +18832,18 @@
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "ya atendido: 25 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 62,
+     "venden": 25,
+     "con_alguna_venta": 39,
+     "ventas_visibles": 11900,
+     "ejemplos_que_venden": [
+      "Cartuchera Escolar Gadnic 2 Pisos Poliester Gran Capacidad Bolsillos I (+1000, $11,699)",
+      "Cartuchera Escolar Gadnic Gran Capacidad Multifuncional Con Multiples  (+1000, $21,999)",
+      "Cartuchera Canopla Organizador Utiles Multifuncional Con Cremallera De (+1000, $14,199)"
+     ]
+    }
    }
   ]
  },
@@ -17599,15 +18856,15 @@
    "Cartuchera Desplegable Canopla Escolar Gadnic Gran Capacidad"
   ],
   "id": "B1",
-  "que_traer": "versión del producto ancla que resuelva la queja 'normal'",
+  "que_traer": "versión del producto ancla que resuelva la queja 'calidad'",
   "busqueda_ml": "cartucheras escolar",
   "estado": "descartada",
   "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "motivo": "ya atendido: 25 equivalentes venden +100",
   "señales": [
    {
     "id": "F170.B1",
-    "descripcion": "queja característica: 'normal'",
+    "descripcion": "queja más frecuente: 'calidad'",
     "errores": []
    }
   ],
@@ -17641,7 +18898,18 @@
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "ya atendido: 25 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 62,
+     "venden": 25,
+     "con_alguna_venta": 39,
+     "ventas_visibles": 11900,
+     "ejemplos_que_venden": [
+      "Cartuchera Escolar Gadnic 2 Pisos Poliester Gran Capacidad Bolsillos I (+1000, $11,699)",
+      "Cartuchera Escolar Gadnic Gran Capacidad Multifuncional Con Multiples  (+1000, $21,999)",
+      "Cartuchera Canopla Organizador Utiles Multifuncional Con Cremallera De (+1000, $14,199)"
+     ]
+    }
    }
   ]
  },
@@ -17654,7 +18922,7 @@
    "Acrilico Eq Arte 50 Cc X 12 Colores Surtidos"
   ],
   "id": "B1",
-  "que_traer": "versión del producto ancla que resuelva la queja 'probe'",
+  "que_traer": "versión del producto ancla que resuelva la queja 'colores'",
   "busqueda_ml": "acrilicos artistica y pintura",
   "estado": "descartada",
   "se_detiene_en": "C1 dolor",
@@ -17662,7 +18930,7 @@
   "señales": [
    {
     "id": "F175.B1",
-    "descripcion": "queja característica: 'probe'",
+    "descripcion": "queja más frecuente: 'colores'",
     "errores": []
    }
   ],
@@ -17697,15 +18965,15 @@
    "Pintura Acrílica Neón Fluorescente: Brilla en la Oscuridad ("
   ],
   "id": "B1",
-  "que_traer": "versión del producto ancla que resuelva la queja 'pintado'",
+  "que_traer": "versión del producto ancla que resuelva la queja 'colores'",
   "busqueda_ml": "acrilicos artistica y pintura",
   "estado": "descartada",
   "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "motivo": "ya atendido: 13 equivalentes venden +100",
   "señales": [
    {
     "id": "F176.B1",
-    "descripcion": "queja característica: 'pintado'",
+    "descripcion": "queja más frecuente: 'colores'",
     "errores": []
    }
   ],
@@ -17739,7 +19007,18 @@
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "ya atendido: 13 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 21,
+     "venden": 13,
+     "con_alguna_venta": 16,
+     "ventas_visibles": 5300,
+     "ejemplos_que_venden": [
+      "Set Pintura Acrílica Eq Arte 50 Cc Artística X 10 Unidades (+1000, $22,000)",
+      "Pote Base Acrilica X200cc Eq Arte Colores Acrilico Eleccion (+1000, $5,000)",
+      "Set De Pintura Base Acrilica Eq X 10 Colores Surtidos (+1000, $31,000)"
+     ]
+    }
    }
   ]
  },
@@ -17752,7 +19031,7 @@
    "10 Metros Cierre Nº5 Mas 20 Deslizadores Min Nº5/combo "
   ],
   "id": "B1",
-  "que_traer": "versión del producto ancla que resuelva la queja ''",
+  "que_traer": "versión del producto ancla que resuelva la queja 'foto'",
   "busqueda_ml": "cierres articulos para bijouterie",
   "estado": "descartada",
   "se_detiene_en": "C1 dolor",
@@ -17760,7 +19039,7 @@
   "señales": [
    {
     "id": "F179.B1",
-    "descripcion": "queja característica: ''",
+    "descripcion": "queja más frecuente: 'foto'",
     "errores": []
    }
   ],
@@ -17795,15 +19074,15 @@
    "Deslizadores Para Cierre Reforzado N°5 X 50 Unidades"
   ],
   "id": "B1",
-  "que_traer": "versión del producto ancla que resuelva la queja 'cierre'",
+  "que_traer": "versión del producto ancla que resuelva la queja 'buena'",
   "busqueda_ml": "cierres articulos para bijouterie",
   "estado": "descartada",
   "se_detiene_en": "C4 hueco",
-  "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)",
+  "motivo": "ya atendido: 5 equivalentes venden +100",
   "señales": [
    {
     "id": "F180.B1",
-    "descripcion": "queja característica: 'cierre'",
+    "descripcion": "queja más frecuente: 'buena'",
     "errores": []
    }
   ],
@@ -17837,7 +19116,18 @@
     "chequeo": "C4 hueco",
     "supuesto": "Nadie la atiende todavía",
     "pasa": false,
-    "motivo": "falta juzgar qué publicaciones son equivalentes (python -m harness.equivalencias)"
+    "motivo": "ya atendido: 5 equivalentes venden +100",
+    "datos": {
+     "equivalentes": 9,
+     "venden": 5,
+     "con_alguna_venta": 8,
+     "ventas_visibles": 1925,
+     "ejemplos_que_venden": [
+      "Mosqueton Aleación De Zinc - 12mm X 100 Uni (+1000, $4,212)",
+      "Mosquetones Gancho Cierres 16mm X 100u Armado Bijou Collar (+500, $7,588)",
+      "50 Mosquetones Para Pulseras Y Collar (insumos Para Bijou) Dijes (+100, $8,750)"
+     ]
+    }
    }
   ]
  }

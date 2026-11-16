@@ -7,8 +7,9 @@
   se reescribe la sección afectada; no se agregan parches ni párrafos al final, y no se
   pierde información vigente.
 - No tocar `data/capturas/` ni `data/voces/`: son datos crudos; se agregan, no se editan.
-- No mirar los productos de test (`data/voces/productos_2026-11-05.json`, `"particion": "test"`)
-  mientras se iteran el skill, los criterios o los umbrales: test se corre una sola vez.
+- No mirar los productos de test (`"particion": "escala_test"` en `data/escala/corpus_*.json`)
+  mientras se iteran los skills, los criterios o los umbrales: test se corre una sola vez, con un
+  prerregistro escrito antes (`data/evaluacion/test/`).
 - Umbrales a la vista (arriba de cada archivo), nunca enterrados en el código.
 - Al terminar una sesión: una entrada en `BITACORA.md` (qué probamos, qué esperábamos, qué
   pasó, qué decidimos). La bitácora es el único documento que crece por agregado.
