@@ -65,7 +65,17 @@ LLM deja más oportunidades distintas no descartadas que dos baselines sin LLM: 
 producto por su queja más frecuente (lo que sugieren las herramientas comerciales), y **B2**, una
 regla que detecta pedidos de repuesto.
 
-RESULTADOS_TEST
+| Oportunidades distintas no descartadas (sobreviven o quedan condicionales) | LLM | B1 | B2 |
+|---|---|---|---|
+| dev (133 productos) | **13** de 135 propuestas | 7 de 133 | 2 de 7 |
+| test (136 productos, una sola corrida) | pendiente: falta el juez de competencia | | |
+
+En dev, las 13 del LLM son productos concretos (un extractor con sensor de humedad, un kit de
+detección de fugas con UV, una barra de enchufes con abrazadera, cabezales descartables para la
+escobilla del inodoro…); las 7 de B1 son "una versión que resuelva la queja 'bueno'" o
+"'saludos'": no se pueden cotizar. Ninguna llega a "sobrevive": todas quedan condicionales a una
+cotización o a probar el precio, que es el experimento siguiente. Dónde muere cada una y por qué:
+`data/serendipia/embudo_escala_dev_api.json`.
 
 **Cada pieza se ganó su lugar con evidencia.** Las versiones se compararon en dev con 3 corridas
 y una regla escrita antes (`DECISIONES.md`, `data/evaluacion/`): leer personas en vez de
