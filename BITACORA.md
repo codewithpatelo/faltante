@@ -397,3 +397,12 @@ las de dolor. Con el criterio releído (¿B sirve de reemplazo de A?) se rehicie
 Nilo, Patricio y Victoria antes de correr `calibrar.py` y `evaluar_oportunidades.py`. Para que no
 se repita, conviene que el LEEME de `data/evaluacion/humano/` aclare mejor la diferencia entre las
 dos preguntas.
+
+## 2026-11-16 — El LEEME del juicio humano separa las dos preguntas
+
+**Qué hicimos.** Reescribimos la parte de `data/evaluacion/humano/LEEME.md` que explica la
+planilla. **Qué esperábamos.** Que las otras tres personas no repitan el error de leer
+equivalencia como dolor. **Qué pasó.** Todavía nadie más la usó: no sabemos si alcanza. **Qué
+decidimos.** El LEEME avisa que hay dos tipos de fila con preguntas distintas, dice que en
+equivalencia no se busca ningún problema y da un ejemplo de `si` y otro de `no`, inventados para
+no condicionar las respuestas con filas reales.
