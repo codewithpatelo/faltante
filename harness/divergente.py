@@ -23,14 +23,13 @@ con señales por producto, armadas con las voces que cita.
 from __future__ import annotations
 
 import json
-import os
 import sys
 from collections import Counter
 
 from harness import dolor as D
 from harness import personas as P
 from harness.baselines import b1_queja_mas_frecuente, b2_pedidos_de_repuesto
-from harness.modelo import MODELO, DeepSeek, con_reintento, costo, en_paralelo
+from harness.modelo import cliente_llm, con_reintento, costo, en_paralelo, sufijo
 from harness.voces import RAIZ, productos
 
 SKILL_B = RAIZ / "skills/proponer_a_un_segmento/SKILL.md"
@@ -117,7 +116,7 @@ def divergir(cliente, particion: str, capturas: dict) -> dict:
                                                 for o in oportunidades], tarjetas, todos, traza)}
     for metodo, dolores in dolores_de_los_baselines(particion, tarjetas).items():
         dolor[metodo] = D.medir_y_decidir(cliente, dolores, tarjetas, todos, traza)
-    return {"quien": MODELO, "costo": costo(traza), "traza": traza, "dolor": dolor,
+    return {"quien": cliente.modelo, "costo": costo(traza, cliente.modelo), "traza": traza, "dolor": dolor,
             "personas": len(tarjetas), "asignadas": len(gente["asignaciones"]),
             "segmentos": [{**m, "pasa_al_paso_b": P.es_segmento_suficiente(m)} for m in mapas],
             **al_formato_del_embudo(oportunidades, tarjetas, particion)}
@@ -126,8 +125,9 @@ def divergir(cliente, particion: str, capturas: dict) -> dict:
 if __name__ == "__main__":
     from harness.correr import busquedas_capturadas
     particion = sys.argv[1] if len(sys.argv) > 1 else "escala_dev"
-    salida = divergir(DeepSeek(os.environ["DEEPSEEK_API_KEY"]), particion, busquedas_capturadas())
-    destino = RAIZ / f"data/serendipia/divergente_{particion}_api.json"
+    cliente = cliente_llm()
+    salida = divergir(cliente, particion, busquedas_capturadas())
+    destino = RAIZ / f"data/serendipia/divergente_{particion}_api{sufijo(cliente.modelo)}.json"
     destino.write_text(json.dumps(salida, ensure_ascii=False, indent=1), encoding="utf-8")
     print(f"{destino.relative_to(RAIZ)}: {salida['costo']}, {salida['personas']} personas, "
           f"{sum(m['pasa_al_paso_b'] for m in salida['segmentos'])} segmentos, {len(salida['oportunidades'])} oportunidades")

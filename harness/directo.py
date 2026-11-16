@@ -4,16 +4,16 @@ segmentos → propuestas) aporta algo frente a preguntarle directamente al LLM. 
 embudo: el dolor se mide igual que para los demás baselines (en la gente de su producto).
 
     DEEPSEEK_API_KEY=... python -m harness.directo escala_dev   -> data/serendipia/directo_escala_dev_api.json
+    MODELO_LLM=claude-opus-5-5 python -m harness.directo escala_dev   -> ..._api__claude-opus-5-5.json (no pisa el de DeepSeek)
 """
 
 from __future__ import annotations
 
 import json
-import os
 import sys
 
 from harness import dolor as D
-from harness.modelo import MODELO, DeepSeek, con_reintento, costo, en_paralelo
+from harness.modelo import cliente_llm, con_reintento, costo, en_paralelo, sufijo
 from harness.voces import RAIZ, los_mas_informativos, productos, textos_con_id
 
 SKILL = RAIZ / "skills/proponer_directo/SKILL.md"
@@ -43,12 +43,13 @@ def correr(cliente, particion: str) -> dict:
     ps = productos(particion)
     ops = [o for lista in en_paralelo(lambda pid: proponer(cliente, pid, ps[pid], traza), list(ps)) for o in lista]
     dolor = D.medir_y_decidir(cliente, [(D.enunciado(o), {o["producto"]}) for o in ops], tarjetas, todos, traza)
-    return {"quien": MODELO, "costo": costo(traza), "traza": traza, "oportunidades": ops, "dolor": dolor}
+    return {"quien": cliente.modelo, "costo": costo(traza, cliente.modelo), "traza": traza, "oportunidades": ops, "dolor": dolor}
 
 
 if __name__ == "__main__":
     particion = sys.argv[1] if len(sys.argv) > 1 else "escala_dev"
-    salida = correr(DeepSeek(os.environ["DEEPSEEK_API_KEY"]), particion)
-    destino = RAIZ / f"data/serendipia/directo_{particion}_api.json"
+    cliente = cliente_llm()
+    salida = correr(cliente, particion)
+    destino = RAIZ / f"data/serendipia/directo_{particion}_api{sufijo(cliente.modelo)}.json"
     destino.write_text(json.dumps(salida, ensure_ascii=False, indent=1), encoding="utf-8")
     print(f"{destino.relative_to(RAIZ)}: {salida['costo']}, {len(salida['oportunidades'])} oportunidades")

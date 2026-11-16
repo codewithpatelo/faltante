@@ -1,10 +1,12 @@
-"""La llamada al LLM, igual para todos los pasos: DeepSeek Flash por la API, el guardrail con un
-reintento (el modelo recibe los errores y corrige una vez) y el costo de cada llamada."""
+"""La llamada al LLM, igual para todos los pasos: DeepSeek Flash por la API (o Claude, con el SDK de
+Anthropic), el guardrail con un reintento (el modelo recibe los errores y corrige una vez) y el costo
+de cada llamada."""
 
 from __future__ import annotations
 
 import http.client
 import json
+import os
 import re
 import time
 import urllib.error
@@ -12,8 +14,19 @@ import urllib.request
 from concurrent.futures import ThreadPoolExecutor
 from types import SimpleNamespace
 
-MODELO = "deepseek-flash"                                     # DeepSeek-V4.1-Flash
-USD_POR_MILLON_DE_TOKENS = {"entrada": 0.30, "salida": 1.20}  # precio en hora pico (fuera de pico, la mitad); api-docs.deepseek.com
+MODELO = "deepseek-flash"                                     # DeepSeek-V4.1-Flash: el modelo con el que se corrió todo
+# USD por millón de tokens de entrada y de salida. DeepSeek: precio en hora pico (fuera de pico, la
+# mitad), api-docs.deepseek.com. Claude: lista de precios de Anthropic al 2026-11-03; Haiku 5.5 cobra
+# 0,50 / 2,50 en las llamadas de más de 100.000 tokens de entrada (acá no pasan de eso).
+PRECIOS = {
+    "deepseek-flash": {"entrada": 0.30, "salida": 1.20},
+    "claude-opus-5-5": {"entrada": 4.00, "salida": 20.00},
+    "claude-sonnet-5-5": {"entrada": 2.00, "salida": 10.00},
+    "claude-haiku-5-5": {"entrada": 0.10, "salida": 0.50},
+}
+USD_POR_MILLON_DE_TOKENS = PRECIOS[MODELO]
+MODELO_CLAUDE = "claude-opus-5-5"  # el modelo por defecto de Claude si no se pide otro (variable MODELO_LLM)
+ESFUERZO_CLAUDE = {True: "high", False: "low"}  # razonar o no: Claude no deja apagar el razonamiento, se baja el esfuerzo
 URL_API = "https://api.deepseek.com/chat/completions"
 MAX_TOKENS_DE_SALIDA = 128000     # razonando, un paso con cientos de líneas gastó 32.000 sin llegar a responder (el modelo admite 384.000)
 REINTENTOS = 1                    # devolver los errores del guardrail al modelo una vez
@@ -26,6 +39,10 @@ class RespuestaCortada(RuntimeError):
     """Una respuesta cortada por el tope de tokens no es "no encontré nada": la corrida se detiene."""
 
 
+class RespuestaRechazada(RuntimeError):
+    """Claude puede negarse a responder (stop_reason "refusal"): tampoco es "no encontré nada"."""
+
+
 def con_reintento(cliente, prompt: str, validar, traza: list, etiqueta: str, pensar: bool = True) -> dict:
     """Pide un JSON; si `validar` devuelve errores, se los manda al modelo una vez para que corrija.
     `pensar`: razonar antes de responder (para leer y clasificar textos no hace falta)."""
@@ -33,9 +50,12 @@ def con_reintento(cliente, prompt: str, validar, traza: list, etiqueta: str, pen
     salida = {}
     for intento in range(REINTENTOS + 1):
         inicio = time.time()
-        respuesta = cliente.messages.create(model=MODELO, max_tokens=MAX_TOKENS_DE_SALIDA, messages=mensajes, pensar=pensar)
+        respuesta = cliente.messages.create(model=getattr(cliente, "modelo", MODELO), max_tokens=MAX_TOKENS_DE_SALIDA,
+                                            messages=mensajes, pensar=pensar)
         if getattr(respuesta, "stop_reason", None) == "length":
             raise RespuestaCortada(f"{etiqueta}: el modelo usó los {MAX_TOKENS_DE_SALIDA} tokens de salida sin terminar de responder")
+        if getattr(respuesta, "stop_reason", None) == "refusal":
+            raise RespuestaRechazada(f"{etiqueta}: el modelo se negó a responder")
         texto = respuesta.content[0].text
         salida = _json(texto)
         errores = validar(salida)
@@ -57,10 +77,12 @@ def en_paralelo(funcion, elementos: list) -> list:
         return list(hilos.map(funcion, elementos))
 
 
-def costo(traza: list) -> dict:
+def costo(traza: list, modelo: str = MODELO) -> dict:
+    """USD de una traza; `modelo` es con el que se hicieron las llamadas (para Claude, `cliente.modelo`)."""
+    precio = PRECIOS[modelo]
     entrada = sum(t["tokens"]["entrada"] for t in traza)
     salida = sum(t["tokens"]["salida"] for t in traza)
-    usd = entrada / 1e6 * USD_POR_MILLON_DE_TOKENS["entrada"] + salida / 1e6 * USD_POR_MILLON_DE_TOKENS["salida"]
+    usd = entrada / 1e6 * precio["entrada"] + salida / 1e6 * precio["salida"]
     return {"tokens_entrada": entrada, "tokens_salida": salida, "usd": round(usd, 4),
             "segundos": round(sum(t["segundos"] for t in traza), 1)}
 
@@ -76,6 +98,8 @@ def _json(texto: str) -> dict:
 class DeepSeek:
     """Cliente mínimo de la API de DeepSeek (formato OpenAI). Devuelve la respuesta con la
     misma forma que usa el resto del programa (texto, tokens, motivo de corte)."""
+
+    modelo = MODELO
 
     def __init__(self, clave: str):
         self.clave = clave
@@ -101,3 +125,43 @@ class DeepSeek:
                                stop_reason=eleccion.get("finish_reason"),
                                usage=SimpleNamespace(input_tokens=d["usage"]["prompt_tokens"],
                                                      output_tokens=d["usage"]["completion_tokens"]))
+
+
+class Claude:
+    """Cliente de Claude con el SDK oficial de Anthropic, con la misma forma que `DeepSeek`.
+    La credencial la resuelve el SDK (ANTHROPIC_API_KEY, o el perfil de `ant auth login`).
+    Claude no deja apagar el razonamiento ni fijar la temperatura: `pensar` se traduce en el
+    esfuerzo (ESFUERZO_CLAUDE). Va por streaming porque el tope de salida es muy grande."""
+
+    def __init__(self, modelo: str = MODELO_CLAUDE, api=None):
+        if modelo not in PRECIOS or not modelo.startswith("claude-"):
+            raise ValueError(f"modelo de Claude desconocido: {modelo} (los que tienen precio: {[m for m in PRECIOS if m.startswith('claude-')]})")
+        if api is None:
+            import anthropic   # acá y no arriba: correr el embudo y los tests no necesita el SDK
+            api = anthropic.Anthropic(max_retries=INTENTOS_DE_RED, timeout=SEGUNDOS_POR_LLAMADA)
+        self.modelo, self.api, self.messages = modelo, api, self
+
+    def create(self, model: str, max_tokens: int, messages: list[dict], pensar: bool = True):
+        with self.api.messages.stream(model=self.modelo, max_tokens=max_tokens, messages=messages,
+                                      output_config={"effort": ESFUERZO_CLAUDE[pensar]}) as flujo:
+            r = flujo.get_final_message()
+        texto = "".join(b.text for b in r.content if b.type == "text")   # antes del texto puede venir un bloque de razonamiento
+        return SimpleNamespace(content=[SimpleNamespace(text=texto)],
+                               stop_reason={"max_tokens": "length"}.get(r.stop_reason, r.stop_reason),
+                               usage=SimpleNamespace(input_tokens=r.usage.input_tokens, output_tokens=r.usage.output_tokens))
+
+
+def sufijo(modelo: str) -> str:
+    """Para que una corrida con otro modelo no pise los archivos de DeepSeek: nada para DeepSeek Flash,
+    `__<modelo>` para el resto (`divergente_escala_dev_api__claude-opus-5-5.json`)."""
+    return "" if modelo == MODELO else f"__{modelo}"
+
+
+def cliente_llm(modelo: str | None = None):
+    """El cliente del modelo pedido, o el de la variable MODELO_LLM, o DeepSeek Flash (con lo que se corrió todo)."""
+    modelo = modelo or os.environ.get("MODELO_LLM", MODELO)
+    if modelo.startswith("claude-"):
+        return Claude(modelo)
+    if modelo != MODELO:
+        raise ValueError(f"modelo desconocido: {modelo}")
+    return DeepSeek(os.environ["DEEPSEEK_API_KEY"])

@@ -11,15 +11,16 @@ Se corre después de capturar las búsquedas y queda guardado (data/serendipia/e
 solo se agrega): el embudo lo lee y no llama a la API.
 
     DEEPSEEK_API_KEY=... python -m harness.equivalencias data/serendipia/divergente_escala_dev_api.json
+    (con MODELO_LLM=claude-..., lo nuevo va a resultados/equivalencias_nuevas__<modelo>.json; este paso no lo agrega
+    solo a equivalencias.json, que el embudo lee sin saber quién juzgó)
 """
 
 from __future__ import annotations
 
 import json
-import os
 import sys
 
-from harness.modelo import DeepSeek, con_reintento, costo, en_paralelo
+from harness.modelo import cliente_llm, con_reintento, costo, en_paralelo, sufijo
 from harness.voces import RAIZ
 
 SKILL = RAIZ / "skills/juzgar_equivalencia/SKILL.md"
@@ -58,7 +59,7 @@ def pendientes(propuestas) -> dict[str, tuple]:
 
 if __name__ == "__main__":
     from harness.correr import propuestas_de_un_archivo
-    cliente, traza = DeepSeek(os.environ["DEEPSEEK_API_KEY"]), []
+    cliente, traza = cliente_llm(), []
     todas = {k: v for archivo in sys.argv[1:] for k, v in pendientes(propuestas_de_un_archivo(archivo)).items()}
     def juzgar_o_dejar(k):
         """Si la API falla después de los reintentos, esa propuesta queda sin juzgar (se juzga en la
@@ -69,7 +70,7 @@ if __name__ == "__main__":
             print(f"sin juzgar ({type(e).__name__}): {k}", file=sys.stderr)
             return None
     juicios = {k: v for k, v in zip(todas, en_paralelo(juzgar_o_dejar, list(todas))) if v is not None}
-    destino = RAIZ / "resultados" / "equivalencias_nuevas.json"
+    destino = RAIZ / "resultados" / f"equivalencias_nuevas{sufijo(cliente.modelo)}.json"
     destino.parent.mkdir(exist_ok=True)
     destino.write_text(json.dumps(juicios, ensure_ascii=False), encoding="utf-8")
-    print(f"{len(juicios)} de {len(todas)} propuestas juzgadas, {costo(traza)}")
+    print(f"{len(juicios)} de {len(todas)} propuestas juzgadas, {costo(traza, cliente.modelo)}")

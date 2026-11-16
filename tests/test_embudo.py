@@ -5,6 +5,8 @@ import subprocess
 import sys
 from types import SimpleNamespace
 
+import pytest
+
 from harness import chequeos as c
 from harness import dolor as D
 from harness import umbrales as U
@@ -189,6 +191,67 @@ def test_costo_del_llm_por_tokens():
     from harness.modelo import USD_POR_MILLON_DE_TOKENS as P
     r = costo([{"tokens": {"entrada": 1_000_000, "salida": 200_000}, "segundos": 2.0}])
     assert r["usd"] == round(P["entrada"] + 0.2 * P["salida"], 4) and r["segundos"] == 2.0
+
+
+def test_costo_de_claude_usa_el_precio_de_su_modelo():
+    from harness.modelo import PRECIOS
+    traza = [{"tokens": {"entrada": 1_000_000, "salida": 200_000}, "segundos": 1.0}]
+    p = PRECIOS["claude-opus-5-5"]
+    assert costo(traza, "claude-opus-5-5")["usd"] == round(p["entrada"] + 0.2 * p["salida"], 4)
+    assert costo(traza)["usd"] != costo(traza, "claude-opus-5-5")["usd"]   # sin modelo, sigue siendo DeepSeek
+
+
+class _ClaudeFalso:
+    """Imita al SDK de Anthropic: razonamiento antes del texto, y guarda con qué se lo llamó."""
+    def __init__(self, stop_reason="end_turn", texto='{"ok": 1}'):
+        self.llamadas, self.messages = [], self
+        self._r = SimpleNamespace(
+            content=[SimpleNamespace(type="thinking", thinking=""), SimpleNamespace(type="text", text=texto)],
+            stop_reason=stop_reason, usage=SimpleNamespace(input_tokens=11, output_tokens=7))
+
+    def stream(self, **pedido):
+        self.llamadas.append(pedido)
+        r = self._r
+        class Flujo:
+            def __enter__(self): return self
+            def __exit__(self, *a): return False
+            def get_final_message(self): return r
+        return Flujo()
+
+
+def test_claude_devuelve_la_misma_forma_que_deepseek_y_baja_el_esfuerzo_en_vez_de_apagar_el_razonamiento():
+    from harness.modelo import Claude
+    api = _ClaudeFalso()
+    c = Claude("claude-haiku-5-5", api=api)
+    r = c.messages.create(model="otro", max_tokens=100, messages=[{"role": "user", "content": "x"}], pensar=False)
+    assert r.content[0].text == '{"ok": 1}' and r.usage.input_tokens == 11 and r.usage.output_tokens == 7
+    assert api.llamadas[0]["model"] == "claude-haiku-5-5" and api.llamadas[0]["output_config"] == {"effort": "low"}
+    assert "thinking" not in api.llamadas[0] and "temperature" not in api.llamadas[0]
+    c.messages.create(model="x", max_tokens=100, messages=[], pensar=True)
+    assert api.llamadas[1]["output_config"] == {"effort": "high"}
+
+
+def test_con_reintento_usa_el_modelo_del_cliente_y_se_detiene_si_claude_corta_o_se_niega():
+    from harness.modelo import Claude, RespuestaCortada, RespuestaRechazada, con_reintento
+    traza = []
+    api = _ClaudeFalso()
+    assert con_reintento(Claude("claude-opus-5-5", api=api), "p", lambda s: [], traza, "paso") == {"ok": 1}
+    assert api.llamadas[0]["model"] == "claude-opus-5-5" and traza[0]["tokens"] == {"entrada": 11, "salida": 7}
+    with pytest.raises(RespuestaCortada):
+        con_reintento(Claude("claude-opus-5-5", api=_ClaudeFalso("max_tokens")), "p", lambda s: [], [], "paso")
+    with pytest.raises(RespuestaRechazada):
+        con_reintento(Claude("claude-opus-5-5", api=_ClaudeFalso("refusal", "")), "p", lambda s: [], [], "paso")
+
+
+def test_una_corrida_con_otro_modelo_no_pisa_los_archivos_de_deepseek():
+    from harness.modelo import MODELO, sufijo
+    assert sufijo(MODELO) == "" and sufijo("claude-opus-5-5") == "__claude-opus-5-5"
+
+
+def test_claude_rechaza_un_modelo_sin_precio():
+    from harness.modelo import Claude
+    with pytest.raises(ValueError):
+        Claude("claude-inventado", api=object())
 
 
 # --- De punta a punta --------------------------------------------------------------------

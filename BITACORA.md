@@ -406,3 +406,30 @@ equivalencia como dolor. **Qué pasó.** Todavía nadie más la usó: no sabemos
 decidimos.** El LEEME avisa que hay dos tipos de fila con preguntas distintas, dice que en
 equivalencia no se busca ningún problema y da un ejemplo de `si` y otro de `no`, inventados para
 no condicionar las respuestas con filas reales.
+
+## 2026-11-16 — Cliente de Claude en `harness/modelo.py`
+
+**Qué hicimos.** Agregamos `Claude` (SDK oficial de Anthropic, misma forma que `DeepSeek`) y
+`cliente_llm()`, que elige el cliente por la variable `MODELO_LLM` (por defecto, DeepSeek Flash).
+`con_reintento` usa el modelo del cliente y `costo` recibe el modelo; los precios pasaron a una
+tabla (`PRECIOS`). **Qué esperábamos.** Poder juzgar con otra familia de modelos sin tocar nada de
+lo que ya corre. **Qué pasó.** Los 20 tests pasan (4 nuevos, sin red ni clave, con un SDK falso);
+todavía no se llamó a la API de verdad. **Qué decidimos.** Claude no deja apagar el razonamiento
+ni fijar la temperatura: `pensar` se traduce en el esfuerzo (alto o bajo). Una negativa de Claude
+detiene la corrida, como un corte por tokens. No activamos los `fallbacks` del lado del servidor:
+cambiarían a mitad de corrida qué modelo juzgó y cobrarían a otro precio. Ningún paso usa todavía
+`cliente_llm()`: `divergente`, `equivalencias` y `directo` siguen creando `DeepSeek` y escriben
+`..._api.json`, así que una corrida con Claude pisaría los resultados de DeepSeek hasta que cada
+una tenga su propio nombre de salida.
+
+## 2026-11-16 — Los pasos eligen modelo y no se pisan
+
+**Qué hicimos.** `divergente`, `directo` y `equivalencias` crean el cliente con `cliente_llm()`
+(variable `MODELO_LLM`), guardan `quien` y el costo con el modelo que corrió, y ponen `__<modelo>`
+al final del nombre de salida cuando no es DeepSeek Flash. **Qué esperábamos.** Que sin la variable
+todo quede igual y que una corrida con Claude no pise ningún resultado de DeepSeek. **Qué pasó.**
+Los tests pasan; ninguna corrida real. `python -m harness.correr escala_dev_api__claude-opus-5-5`
+lee y escribe con ese nombre sin cambios. **Qué decidimos.** `equivalencias.json` (lo que el embudo
+lee como juicio de competencia) no tiene a quién atribuir cada juicio, así que ese paso con Claude
+escribe aparte y no se lo agrega solo: mezclar juicios de dos modelos ahí cambiaría el embudo sin
+decirlo.
