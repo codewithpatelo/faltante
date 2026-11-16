@@ -336,3 +336,28 @@ convergencia funciona; la divergencia trajo ideas triviales (repuestos, accesori
 LLM lee cada producto por separado; y 21 productos es una muestra insignificante. Lo
 siguiente es escala (cientos o miles de productos) y una divergencia que cruce productos y
 vea lo que se deja pasar.
+
+## 2026-11-06 — Personas en vez de productos, cada pieza con evidencia, ningún número a ojo
+
+**Qué probamos.** Pasar de leer productos a leer personas: cada voz es un mapa de empatía chico,
+la gente se agrupa por situación (no por lo que compró) y a cada grupo se le propone qué traer.
+Cada versión se comparó en escala_dev (41 productos, 3.389 personas) con 3 corridas y la misma
+medida: propuestas distintas que pasan C4 y C5. **Qué pasó.** Señales por producto: 0,7 por
+corrida; personas con segmentos libres: 13,3. Obligar a los segmentos a cruzar búsquedas empeoró
+(3,0) y se sacó. Un paso de dolor *antes* de proponer recortó volumen sin elegir mejor (9,0) y no
+entró; el mismo dolor medido *como chequeo* de la propuesta, en lugar del conteo de palabras de
+C1 y C2, sí entró por la regla prerregistrada. Después apareció un problema de medición: el
+criterio de qué es competencia lo escribía el mismo LLM que proponía. Un juez independiente
+acertó 32 de 40 desacuerdos a ciegas contra 8 del criterio viejo, y con él los sobrevivientes
+bajaron de 16,7 a 8,7 por corrida: el resto era humo. **Qué decidimos.** Quien propone nunca
+mide. Ningún umbral queda a ojo: margen contra la ganancia del comercio minorista (Damodaran),
+costos con fuente en tres escenarios, "ya atendido" con Bresnahan y Reiss, "la dejan pasar" con
+Mann-Whitney, el tamaño de la muestra de C1 con un análisis de potencia, IIBB con la Ley 6948.
+C6 dejaba sin salida a un hueco de verdad (nadie lo compró, entonces no hay precio): ahora queda
+condicional al precio que se pide. El precio de proveedor se arma como compra un importador
+(Alibaba para orientarse, 1688 por agente). Se amplió el corpus a 269 productos con búsquedas
+sorteadas del árbol de categorías de Mercado Libre, no elegidas a mano. **Bloqueos.** Captchas
+de Mercado Libre y Alibaba (los resolvió Patricio), 1688 pide cuenta china, la pestaña que
+recolectaba se cerró y hubo que repetir (desde entonces se guarda a medida que avanza), y los
+temporizadores del navegador en segundo plano: las opiniones pasaron a pedirse al servicio JSON
+que usa la propia página, 10 veces más rápido.
