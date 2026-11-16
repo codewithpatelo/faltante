@@ -361,3 +361,20 @@ de Mercado Libre y Alibaba (los resolvió Patricio), 1688 pide cuenta china, la 
 recolectaba se cerró y hubo que repetir (desde entonces se guarda a medida que avanza), y los
 temporizadores del navegador en segundo plano: las opiniones pasaron a pedirse al servicio JSON
 que usa la propia página, 10 veces más rápido.
+
+## 2026-11-16 — Test, una sola vez
+
+**Qué hicimos.** Corrimos la versión congelada sobre el dev ampliado (133 productos, 9.205
+personas) y después, una sola vez, sobre test (136 productos), con un prerregistro escrito antes
+(`data/evaluacion/test/`). Declaramos que 46 de los productos de test ya habían pasado por una
+versión vieja el 6/11, y por eso informamos aparte los 90 que ninguna versión leyó. **Qué
+esperábamos.** Que el LLM dejara más oportunidades no descartadas que los baselines. **Qué pasó.**
+Test: LLM 16, B1 4, B2 0 (test limpio: 12, 4, 0); el embudo mató el 85% de lo que propuso el LLM.
+Las de B1 no son productos ("resolver la queja 'algo'"): el conteo no mide calidad, así que
+armamos planillas a ciegas para que el grupo juzgue calidad y calibre los dos jueces LLM.
+**Bloqueos.** Se acabaron los minutos de Actions del repo privado (lo hicimos público); una
+llamada a la API cortada a mitad de respuesta tumbó una corrida entera del juez, y desde
+entonces una propuesta que falla queda sin juzgar en vez de perder todo; captchas de Mercado
+Libre al capturar. **Qué no hicimos.** Probamos un B1 más fuerte (log-odds de Monroe et al.)
+y lo descartamos: seguía eligiendo nombres propios, y cambiar el baseline después del
+prerregistro sin validarlo hubiera sido peor.

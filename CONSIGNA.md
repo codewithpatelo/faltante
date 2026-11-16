@@ -7,7 +7,7 @@ repo y qué falta. ✅ cumplido · 🟡 parcial · ❌ falta.
 |---|---|---|
 | **Utilidad real**: usuario identificable | Importadores y vendedores chicos de Mercado Libre que deciden qué traer (README, "Qué hace") | 🟡 falta mostrárselo a 1 o 2 importadores |
 | **IA generativa en el núcleo** | Cuatro pasos con LLM: leer personas, armar segmentos, proponer, y dos jueces (dolor y equivalencias) | ✅ |
-| **Hipótesis medible contra baseline, partición fija** | `data/evaluacion/test/PRERREGISTRO.md`; resultado en el README, "¿Sirve?" | RESULTADO_TEST |
+| **Hipótesis medible contra baseline, partición fija** | `data/evaluacion/test/PRERREGISTRO.md`; resultado en el README, "¿Sirve?" | ✅ test corrido una vez: LLM 16, B1 4, B2 0 (p = 0,002); 🟡 falta el juicio humano de calidad |
 | **Datos verificados** | README, "Datos": fuente, volumen, fecha, cómo se eligieron | ✅ |
 | **Economía**: costo por tarea, latencia, elección de modelo | README, "Costo y modelo"; cada corrida guarda tokens, USD y segundos por llamada (`traza`) | ✅ |
 | **Git con trabajo distribuido** | `git log` | ❌ casi todo es de Patricio; el juicio humano (`data/evaluacion/humano/`) es la tarea de cada integrante |
