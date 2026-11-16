@@ -60,8 +60,16 @@ if __name__ == "__main__":
     from harness.correr import propuestas_de_un_archivo
     cliente, traza = DeepSeek(os.environ["DEEPSEEK_API_KEY"]), []
     todas = {k: v for archivo in sys.argv[1:] for k, v in pendientes(propuestas_de_un_archivo(archivo)).items()}
-    juicios = dict(zip(todas, en_paralelo(lambda k: juzgar(cliente, *todas[k], traza), list(todas))))
+    def juzgar_o_dejar(k):
+        """Si la API falla después de los reintentos, esa propuesta queda sin juzgar (se juzga en la
+        corrida siguiente) en vez de perder todo lo juzgado."""
+        try:
+            return juzgar(cliente, *todas[k], traza)
+        except Exception as e:  # noqa: BLE001
+            print(f"sin juzgar ({type(e).__name__}): {k}", file=sys.stderr)
+            return None
+    juicios = {k: v for k, v in zip(todas, en_paralelo(juzgar_o_dejar, list(todas))) if v is not None}
     destino = RAIZ / "resultados" / "equivalencias_nuevas.json"
     destino.parent.mkdir(exist_ok=True)
     destino.write_text(json.dumps(juicios, ensure_ascii=False), encoding="utf-8")
-    print(f"{len(juicios)} propuestas juzgadas, {costo(traza)}")
+    print(f"{len(juicios)} de {len(todas)} propuestas juzgadas, {costo(traza)}")
