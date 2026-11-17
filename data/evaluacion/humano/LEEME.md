@@ -29,6 +29,11 @@ Cuando estén las planillas: `python data/evaluacion/humano/calibrar.py` calcula
 nosotros (kappa de Fleiss) y del modelo contra la mayoría (acuerdo, kappa de Cohen, precisión,
 exhaustividad). Armado con `armar_planillas.py` (semilla fija).
 
+Para comparar a otro LLM con las personas sobre las mismas 80 filas (cuesta unas decenas de llamadas):
+`MODELO_JUEZ=claude-sonnet-5-5 python data/evaluacion/humano/juzgar_con_llm.py` deja su veredicto en
+`jueces_llm.json` y `calibrar.py` lo suma a la tabla. Usa los prompts del programa, pero agrupa las
+filas por dolor o por propuesta y no ve la búsqueda entera (detalle en el docstring del script).
+
 ## Parte 2: calidad de las oportunidades (unos 15 minutos)
 
 `oportunidades_<tu nombre>.csv` tiene las 37 oportunidades que el embudo no descartó en dev y en

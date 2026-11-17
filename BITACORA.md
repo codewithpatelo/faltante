@@ -460,3 +460,28 @@ juez de otra familia, y que `equivalencias.json` siga siendo solo el de DeepSeek
 textos y ninguna tarjeta, así que `personas_de_la_particion` lo vuelve a leer en cada corrida; el
 re-juicio usa las tarjetas guardadas y no lo toca. **Qué decidimos.** Dejar F012 como está hasta
 mirar por qué no deja tarjetas.
+
+## 2026-11-16 — Un LLM juzga las filas humanas
+
+**Qué hicimos.** `data/evaluacion/humano/juzgar_con_llm.py` hace juzgar a `MODELO_JUEZ` las 80 filas
+de las planillas con los prompts del programa (para eso, la llamada de `dolor.py` que lee una tanda
+de textos quedó en `leer_textos`, sin cambiar el prompt) y guarda el veredicto en `jueces_llm.json`;
+`calibrar.py` lo suma. **Qué esperábamos.** Poder medir a Claude contra las personas con el mismo
+código que a DeepSeek. **Qué pasó.** El script y `calibrar.py` andan con un juez falso (28 tests);
+ninguna corrida real. Con solo las respuestas de Darío, el juez de dolor de DeepSeek coincide en
+0,475 (kappa −0,05) y el de equivalencia en 0,75 (kappa 0,22): una sola persona, no concluye nada.
+**Qué decidimos.** Esperar las otras tres planillas antes de leer esos números. El juez ve las filas
+agrupadas por dolor o propuesta y no la búsqueda completa: si Claude difiere de DeepSeek, puede ser
+en parte por eso.
+
+## 2026-11-16 — Claude Sonnet 5.5 como juez, contra Darío
+
+**Qué hicimos.** Corrimos `juzgar_con_llm.py` con `claude-sonnet-5-5` sobre las 80 filas (80 filas,
+USD 0,20, 2,7 minutos) y calibramos contra las respuestas de Darío, única planilla completa.
+**Qué esperábamos.** Un primer dato de si Claude como juez se acerca más a las personas que DeepSeek.
+**Qué pasó.** Equivalencia: Claude 0,775 de acuerdo (kappa 0,33) contra 0,75 (0,22) de DeepSeek, casi
+igual. Dolor: Claude 0,20 (kappa −0,08; precisión 0,60, exhaustividad 0,09) contra 0,475 (−0,05) de
+DeepSeek: Claude marca muy pocas filas como "desatendido" y Darío marcó 33 de 40. **Qué decidimos.**
+No sacar conclusiones con una sola persona; el dolor es donde más se separan y donde más pesa que el
+juez vea las filas agrupadas y sin "qué hace mal lo que usan hoy". Con las otras tres planillas se ve
+si es el juez o el criterio humano.

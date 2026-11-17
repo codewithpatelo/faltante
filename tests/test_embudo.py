@@ -320,6 +320,39 @@ def test_rejuzgar_no_toca_test_ni_se_hace_sin_juez(monkeypatch):
         juez_para_rejuzgar("escala_dev")
 
 
+def test_un_llm_juzga_las_filas_humanas_con_los_prompts_del_programa():
+    import importlib.util
+    import re
+    espec = importlib.util.spec_from_file_location("juzgar_con_llm", RAIZ / "data/evaluacion/humano/juzgar_con_llm.py")
+    J = importlib.util.module_from_spec(espec)
+    espec.loader.exec_module(J)
+
+    class Falso:
+        modelo, messages = "falso", None
+        def __init__(self): self.messages, self.prompts = self, []
+        def create(self, model, max_tokens, messages, pensar=True):
+            p = messages[0]["content"]
+            self.prompts.append(p)
+            if "TEXTOS\n" in p:                          # dolor: todos lo tienen y el primero ya lo resolvió
+                ids = re.findall(r"^\[(H\d+)\]", p, re.M)
+                salida = {"tienen": ids, "resuelto": ids[:1]}
+            else:                                         # equivalencia: solo la primera publicación
+                salida = {"equivalentes": [0]}
+            return SimpleNamespace(content=[SimpleNamespace(text=json.dumps(salida))], stop_reason="end_turn",
+                                   usage=SimpleNamespace(input_tokens=1, output_tokens=1))
+    c = Falso()
+    dolor = [{"id": "H001", "tipo": "dolor", "a": "gente con X / no puede Y", "b": "texto uno"},
+             {"id": "H002", "tipo": "dolor", "a": "gente con X / no puede Y", "b": "texto dos"},
+             {"id": "H003", "tipo": "dolor", "a": "otra gente / otro obstáculo", "b": "texto tres"}]
+    r = J.juzgar_dolor(c, dolor, [])
+    assert r == {"H001": False, "H002": True, "H003": False}      # sin resolver = sí; los de un mismo dolor van en una llamada
+    assert len(c.prompts) == 2 and "Trabajo: gente con X" in c.prompts[0] or "Trabajo: gente con X" in c.prompts[1]
+    eq = [{"id": "H010", "tipo": "equivalencia", "a": "Una pava eléctrica (para: calentar agua rápido)", "b": "Pava Eléctrica 1,7 L"},
+          {"id": "H011", "tipo": "equivalencia", "a": "Una pava eléctrica (para: calentar agua rápido)", "b": "Filtro de repuesto"}]
+    assert J.juzgar_equivalencia(c, eq, []) == {"H010": True, "H011": False}
+    assert "PROPUESTA: Una pava eléctrica" in c.prompts[-1] and "PARA QUÉ: calentar agua rápido" in c.prompts[-1]
+
+
 def test_claude_rechaza_un_modelo_sin_precio():
     from harness.modelo import Claude
     with pytest.raises(ValueError):

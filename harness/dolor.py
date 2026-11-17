@@ -44,20 +44,24 @@ def texto_original(t: dict, todos: dict) -> str:
     return textos_con_id(todos[t["producto"]]).get(t["texto"], "")[:400]
 
 
-def medir(cliente, dolor: dict, gente: list[dict], todos: dict, traza: list) -> dict:
-    """Quién de `gente` tiene el dolor y quién lo resolvió, leyendo sus textos originales."""
+def leer_textos(cliente, dolor: dict, textos: dict[str, str], traza: list) -> tuple[set, set]:
+    """Una llamada: de `textos` (id -> texto), quiénes tienen el dolor y, de ellos, quiénes ya lo resolvieron."""
     enunciado = (f"Trabajo: {dolor['trabajo']}\nObstáculo: {dolor['obstaculo']}\n"
                  f"Qué hace mal lo que usan hoy: {dolor.get('que_hace_mal', '')}")
+    lineas = "\n".join(f"[{i}] {t}" for i, t in textos.items())
+    prompt = (f"{SKILL_MEDIR.read_text(encoding='utf-8')}\n\n---\n\nDOLOR\n{enunciado}\n\nTEXTOS\n{lineas}\n\n"
+              "Respondé SOLO con el JSON de la salida.")
+    d = con_reintento(cliente, prompt, lambda d: {}, traza, f"medir {dolor['id']}", pensar=False)
+    tienen = {i for i in d.get("tienen", []) if i in textos}
+    return tienen, {i for i in d.get("resuelto", []) if i in tienen}
+
+
+def medir(cliente, dolor: dict, gente: list[dict], todos: dict, traza: list) -> dict:
+    """Quién de `gente` tiene el dolor y quién lo resolvió, leyendo sus textos originales."""
     tandas = [gente[i:i + PERSONAS_POR_LLAMADA_AL_MEDIR] for i in range(0, len(gente), PERSONAS_POR_LLAMADA_AL_MEDIR)]
 
     def una_tanda(tanda):
-        ids = {t["id"] for t in tanda}
-        lineas = "\n".join(f"[{t['id']}] {texto_original(t, todos)}" for t in tanda)
-        prompt = (f"{SKILL_MEDIR.read_text(encoding='utf-8')}\n\n---\n\nDOLOR\n{enunciado}\n\nTEXTOS\n{lineas}\n\n"
-                  "Respondé SOLO con el JSON de la salida.")
-        d = con_reintento(cliente, prompt, lambda d: {}, traza, f"medir {dolor['id']}", pensar=False)
-        tienen = {i for i in d.get("tienen", []) if i in ids}
-        return tienen, {i for i in d.get("resuelto", []) if i in tienen}
+        return leer_textos(cliente, dolor, {t["id"]: texto_original(t, todos) for t in tanda}, traza)
 
     partes = en_paralelo(una_tanda, tandas)
     return {"medidas": len(gente), "tienen": sorted(set().union(*[p[0] for p in partes])) if partes else [],
