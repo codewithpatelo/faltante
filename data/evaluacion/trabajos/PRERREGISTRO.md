@@ -34,3 +34,17 @@ embudo). Los trabajos están bien formulados en general, pero aparecieron dos pr
 
 Los trabajos ya formulados se reusan. La primera corrida no se mide. La regla y la medida son las
 mismas.
+
+## Resultado (dev, una corrida)
+
+| | Propuestas | Oportunidades distintas no descartadas | Proporción |
+|---|---|---|---|
+| Agrupar por trabajo (nueva) | 231 | **30** | 13,0% |
+| Agrupar por situación (vieja) | 135 | 13 | 9,6% |
+| B3, proponer directo | 230 | 31 | 13,5% |
+
+Dónde mueren las nuevas: 74 en C1, 88 en C4, 34 en C5, 5 en el guardrail. **Por la regla, la nueva
+reemplaza a la vieja.** No le gana a B3. Varias de las 30 repiten una idea con otra búsqueda
+(cuatro de bebederos que van a la canilla o por gravedad, tres de gotas para que el gato tome agua),
+así que el conteo de "distintas" está inflado para los dos métodos que escriben su búsqueda.
+Costo: USD 4,69 la divergencia y USD 1,56 el juez.
