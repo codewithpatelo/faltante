@@ -428,6 +428,18 @@ avanza). **Qué decidimos.** El README dice que el aporte es el embudo, no la ge
 humano a ciegas decide contra B4: las recomendaciones de B4 se sumaron a las planillas sin perder
 lo ya cargado.
 
+## 2026-11-16 — Darío completa las 63 oportunidades, con B4
+
+**Qué hicimos.** Darío completó las 26 filas que faltaban de `oportunidades_dario.csv` (las 37
+anteriores seguían cargadas): son las recomendaciones de B4 y las que sumó la planilla nueva.
+**Qué esperábamos.** Poder calcular la regla del prerregistro contra B4. **Qué pasó.** Con un solo
+juez de cuatro, el programa deja 17 recomendaciones buenas (concretas, no obvias y que cotizaría) de 29
+y B4, 9 de 20: 59% contra 45%, Fisher unilateral p = 0,26, que no cumple la regla (p < 0,05). Por
+partición: programa 5 de 13 en dev y 12 de 16 en test; B4, 3 de 10 y 6 de 10; B1, 0 de 12. **Qué
+decidimos.** No sacar conclusión: la regla pide la mayoría de los jueces y hay uno, y con 29 y 20
+recomendaciones solo una diferencia grande sería significativa. El README sigue diciendo "en curso".
+Faltan las planillas de Nilo, Patricio y Victoria.
+
 ## 2026-11-16 — Cliente de Claude en `harness/modelo.py`
 
 **Qué hicimos.** Agregamos `Claude` (SDK oficial de Anthropic, misma forma que `DeepSeek`) y

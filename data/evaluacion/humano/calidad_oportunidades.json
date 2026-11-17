@@ -3,7 +3,7 @@
   "dario"
  ],
  "B1 escala_dev_api": {
-  "oportunidades": 1,
+  "oportunidades": 7,
   "concreta": 0,
   "obvia": 0,
   "la_cotizaria": 0,
@@ -23,6 +23,20 @@
   "la_cotizaria": 1,
   "concreta_no_obvia_y_la_cotizaria": 0
  },
+ "B4 escala_dev_api": {
+  "oportunidades": 10,
+  "concreta": 10,
+  "obvia": 5,
+  "la_cotizaria": 7,
+  "concreta_no_obvia_y_la_cotizaria": 3
+ },
+ "B4 escala_test_api": {
+  "oportunidades": 10,
+  "concreta": 10,
+  "obvia": 4,
+  "la_cotizaria": 9,
+  "concreta_no_obvia_y_la_cotizaria": 6
+ },
  "llm escala_dev_api": {
   "oportunidades": 13,
   "concreta": 12,
@@ -36,5 +50,16 @@
   "obvia": 2,
   "la_cotizaria": 14,
   "concreta_no_obvia_y_la_cotizaria": 12
+ },
+ "programa_contra_B4": {
+  "programa": [
+   17,
+   29
+  ],
+  "B4": [
+   9,
+   20
+  ],
+  "p_unilateral": 0.2586
  }
 }
