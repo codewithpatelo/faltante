@@ -407,6 +407,27 @@ decidimos.** El LEEME avisa que hay dos tipos de fila con preguntas distintas, d
 equivalencia no se busca ningún problema y da un ejemplo de `si` y otro de `no`, inventados para
 no condicionar las respuestas con filas reales.
 
+## 2026-11-16 — Rivales con el mismo modelo: el valor está en el embudo
+
+**Qué hicimos.** B1 y B2 eran rivales débiles, así que sumamos dos con el mismo modelo, cada
+uno prerregistrado antes de correrlo y corrido una sola vez en test. B3 propone directo por
+producto, sin personas ni grupos, y pasa por nuestro embudo. B4 es el one-shot de punta a punta:
+lee las opiniones y lo que se ofrece en la búsqueda, se aplica él mismo los cinco criterios y
+recomienda. B3 empezó como "el baseline zero-shot", pero Patricio marcó que no era el rival
+justo, porque usaba nuestro embudo; quedó como ablación de la generación y el rival pasó a ser B4.
+**Qué esperábamos.** Que el programa les ganara a los dos. **Qué pasó.** Con el mismo embudo,
+B3 deja más oportunidades que el programa (44 contra 16 en test, 31 contra 13 en dev; por
+propuesta, 18% contra 15%, p = 0,45): leer personas y grupos no genera mejores ideas que
+pedírselas directo al modelo. B4 recomienda solo 10 productos por partición, y los datos del
+mercado refutan 9 de 10 en cada una (casi siempre porque ya se venden). Darío completó la primera
+planilla a ciegas: el juez de dolor coincide poco con él (kappa −0,05, conservador) y el de
+competencia, bastante (75%). **Bloqueos.** La cuenta de DeepSeek se quedó sin saldo a mitad de
+camino (HTTP 402): el cliente lo ocultaba y reintentaba; ahora no reintenta sin saldo y el juez
+dice el código. Una pestaña de captura se colgó y hubo que repetirla (ahora guarda a medida que
+avanza). **Qué decidimos.** El README dice que el aporte es el embudo, no la generación. El juicio
+humano a ciegas decide contra B4: las recomendaciones de B4 se sumaron a las planillas sin perder
+lo ya cargado.
+
 ## 2026-11-16 — Cliente de Claude en `harness/modelo.py`
 
 **Qué hicimos.** Agregamos `Claude` (SDK oficial de Anthropic, misma forma que `DeepSeek`) y

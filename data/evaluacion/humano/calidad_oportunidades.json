@@ -1,3 +1,40 @@
 {
- "jueces": []
+ "jueces": [
+  "dario"
+ ],
+ "B1 escala_dev_api": {
+  "oportunidades": 1,
+  "concreta": 0,
+  "obvia": 0,
+  "la_cotizaria": 0,
+  "concreta_no_obvia_y_la_cotizaria": 0
+ },
+ "B1 escala_test_api": {
+  "oportunidades": 5,
+  "concreta": 0,
+  "obvia": 0,
+  "la_cotizaria": 0,
+  "concreta_no_obvia_y_la_cotizaria": 0
+ },
+ "B2 escala_dev_api": {
+  "oportunidades": 2,
+  "concreta": 1,
+  "obvia": 1,
+  "la_cotizaria": 1,
+  "concreta_no_obvia_y_la_cotizaria": 0
+ },
+ "llm escala_dev_api": {
+  "oportunidades": 13,
+  "concreta": 12,
+  "obvia": 6,
+  "la_cotizaria": 10,
+  "concreta_no_obvia_y_la_cotizaria": 5
+ },
+ "llm escala_test_api": {
+  "oportunidades": 16,
+  "concreta": 14,
+  "obvia": 2,
+  "la_cotizaria": 14,
+  "concreta_no_obvia_y_la_cotizaria": 12
+ }
 }

@@ -27,7 +27,7 @@ def resumen(rs: list[dict]) -> dict:
 
 
 salida = {}
-for metodo in ("llm", "B1", "B2", "B3"):
+for metodo in ("llm", "B1", "B2", "B3", "B4"):
     rs = [r for r in filas if r["metodo"] == metodo]
     limpias = [r for r in rs if all(p.startswith("F") for p in r["productos"])]
     salida[metodo] = {"todo": resumen(rs), "limpio_productos_nuevos": resumen(limpias)}

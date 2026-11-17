@@ -1,0 +1,2234 @@
+{
+ "quien": "deepseek-flash",
+ "metodo": "B4",
+ "costo": {
+  "tokens_entrada": 727061,
+  "tokens_salida": 182838,
+  "usd": 0.4375,
+  "segundos": 1277.9
+ },
+ "traza": [
+  {
+   "paso": "B4 E010",
+   "intento": 0,
+   "segundos": 2.3,
+   "tokens": {
+    "entrada": 3157,
+    "salida": 179
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 E005",
+   "intento": 0,
+   "segundos": 3.83,
+   "tokens": {
+    "entrada": 3928,
+    "salida": 383
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 E006",
+   "intento": 0,
+   "segundos": 3.94,
+   "tokens": {
+    "entrada": 3601,
+    "salida": 387
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 E009",
+   "intento": 0,
+   "segundos": 5.37,
+   "tokens": {
+    "entrada": 4523,
+    "salida": 796
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 E016",
+   "intento": 0,
+   "segundos": 2.43,
+   "tokens": {
+    "entrada": 3970,
+    "salida": 279
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 E001",
+   "intento": 0,
+   "segundos": 7.27,
+   "tokens": {
+    "entrada": 6517,
+    "salida": 1035
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 E002",
+   "intento": 0,
+   "segundos": 7.78,
+   "tokens": {
+    "entrada": 5197,
+    "salida": 1134
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 E004",
+   "intento": 0,
+   "segundos": 7.94,
+   "tokens": {
+    "entrada": 6982,
+    "salida": 1131
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 E019",
+   "intento": 0,
+   "segundos": 1.85,
+   "tokens": {
+    "entrada": 3367,
+    "salida": 181
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 E020",
+   "intento": 0,
+   "segundos": 1.55,
+   "tokens": {
+    "entrada": 3904,
+    "salida": 128
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 E017",
+   "intento": 0,
+   "segundos": 5.26,
+   "tokens": {
+    "entrada": 3017,
+    "salida": 618
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 E018",
+   "intento": 0,
+   "segundos": 4.9,
+   "tokens": {
+    "entrada": 3227,
+    "salida": 570
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 E032",
+   "intento": 0,
+   "segundos": 4.38,
+   "tokens": {
+    "entrada": 5782,
+    "salida": 598
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 E028",
+   "intento": 0,
+   "segundos": 4.8,
+   "tokens": {
+    "entrada": 4548,
+    "salida": 688
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 E015",
+   "intento": 0,
+   "segundos": 10.86,
+   "tokens": {
+    "entrada": 5796,
+    "salida": 1494
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 E037",
+   "intento": 0,
+   "segundos": 3.29,
+   "tokens": {
+    "entrada": 6778,
+    "salida": 373
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 E036",
+   "intento": 0,
+   "segundos": 5.32,
+   "tokens": {
+    "entrada": 8059,
+    "salida": 581
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 E003",
+   "intento": 0,
+   "segundos": 16.51,
+   "tokens": {
+    "entrada": 6824,
+    "salida": 2358
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 E033",
+   "intento": 0,
+   "segundos": 9.48,
+   "tokens": {
+    "entrada": 6447,
+    "salida": 1408
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 E043",
+   "intento": 0,
+   "segundos": 2.7,
+   "tokens": {
+    "entrada": 3776,
+    "salida": 260
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 E039",
+   "intento": 0,
+   "segundos": 9.43,
+   "tokens": {
+    "entrada": 5011,
+    "salida": 1401
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 E044",
+   "intento": 0,
+   "segundos": 9.13,
+   "tokens": {
+    "entrada": 5637,
+    "salida": 1265
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 E040",
+   "intento": 0,
+   "segundos": 15.29,
+   "tokens": {
+    "entrada": 5968,
+    "salida": 2307
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 E046",
+   "intento": 0,
+   "segundos": 8.09,
+   "tokens": {
+    "entrada": 5680,
+    "salida": 1243
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 E048",
+   "intento": 0,
+   "segundos": 6.95,
+   "tokens": {
+    "entrada": 6321,
+    "salida": 930
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 E045",
+   "intento": 0,
+   "segundos": 15.18,
+   "tokens": {
+    "entrada": 7321,
+    "salida": 2076
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 E050",
+   "intento": 0,
+   "segundos": 5.25,
+   "tokens": {
+    "entrada": 6432,
+    "salida": 579
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 E029",
+   "intento": 0,
+   "segundos": 29.14,
+   "tokens": {
+    "entrada": 6020,
+    "salida": 4444
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 E051",
+   "intento": 0,
+   "segundos": 4.41,
+   "tokens": {
+    "entrada": 5348,
+    "salida": 562
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 E042",
+   "intento": 0,
+   "segundos": 25.06,
+   "tokens": {
+    "entrada": 4063,
+    "salida": 3705
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 E062",
+   "intento": 0,
+   "segundos": 3.0,
+   "tokens": {
+    "entrada": 7608,
+    "salida": 274
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 E052",
+   "intento": 0,
+   "segundos": 6.22,
+   "tokens": {
+    "entrada": 4632,
+    "salida": 728
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 E068",
+   "intento": 0,
+   "segundos": 4.68,
+   "tokens": {
+    "entrada": 5754,
+    "salida": 557
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 E041",
+   "intento": 0,
+   "segundos": 30.92,
+   "tokens": {
+    "entrada": 7571,
+    "salida": 5213
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 E069",
+   "intento": 0,
+   "segundos": 5.43,
+   "tokens": {
+    "entrada": 5436,
+    "salida": 686
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 E070",
+   "intento": 0,
+   "segundos": 6.83,
+   "tokens": {
+    "entrada": 4895,
+    "salida": 981
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 E085",
+   "intento": 0,
+   "segundos": 2.3,
+   "tokens": {
+    "entrada": 4538,
+    "salida": 187
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 E084",
+   "intento": 0,
+   "segundos": 6.23,
+   "tokens": {
+    "entrada": 5612,
+    "salida": 935
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 E049",
+   "intento": 0,
+   "segundos": 24.61,
+   "tokens": {
+    "entrada": 5678,
+    "salida": 3826
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 E087",
+   "intento": 0,
+   "segundos": 2.26,
+   "tokens": {
+    "entrada": 3592,
+    "salida": 183
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 E086",
+   "intento": 0,
+   "segundos": 4.68,
+   "tokens": {
+    "entrada": 2888,
+    "salida": 623
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 E076",
+   "intento": 0,
+   "segundos": 10.37,
+   "tokens": {
+    "entrada": 4322,
+    "salida": 1673
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 E067",
+   "intento": 0,
+   "segundos": 19.28,
+   "tokens": {
+    "entrada": 6051,
+    "salida": 3314
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F004",
+   "intento": 0,
+   "segundos": 3.24,
+   "tokens": {
+    "entrada": 3649,
+    "salida": 383
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F001",
+   "intento": 0,
+   "segundos": 5.1,
+   "tokens": {
+    "entrada": 4174,
+    "salida": 620
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F003",
+   "intento": 0,
+   "segundos": 4.96,
+   "tokens": {
+    "entrada": 3908,
+    "salida": 672
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F005",
+   "intento": 0,
+   "segundos": 2.08,
+   "tokens": {
+    "entrada": 4169,
+    "salida": 216
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F017",
+   "intento": 0,
+   "segundos": 2.14,
+   "tokens": {
+    "entrada": 3418,
+    "salida": 265
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F006",
+   "intento": 0,
+   "segundos": 2.22,
+   "tokens": {
+    "entrada": 3540,
+    "salida": 235
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F018",
+   "intento": 0,
+   "segundos": 1.88,
+   "tokens": {
+    "entrada": 3106,
+    "salida": 192
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 E075",
+   "intento": 0,
+   "segundos": 17.81,
+   "tokens": {
+    "entrada": 5753,
+    "salida": 2959
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F023",
+   "intento": 0,
+   "segundos": 4.16,
+   "tokens": {
+    "entrada": 6501,
+    "salida": 524
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 E038",
+   "intento": 0,
+   "segundos": 53.73,
+   "tokens": {
+    "entrada": 4861,
+    "salida": 9173
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F024",
+   "intento": 0,
+   "segundos": 6.38,
+   "tokens": {
+    "entrada": 5381,
+    "salida": 930
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F033",
+   "intento": 0,
+   "segundos": 4.8,
+   "tokens": {
+    "entrada": 3787,
+    "salida": 593
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 E061",
+   "intento": 0,
+   "segundos": 31.72,
+   "tokens": {
+    "entrada": 6399,
+    "salida": 5388
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F039",
+   "intento": 0,
+   "segundos": 1.89,
+   "tokens": {
+    "entrada": 3767,
+    "salida": 205
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F036",
+   "intento": 0,
+   "segundos": 3.29,
+   "tokens": {
+    "entrada": 4470,
+    "salida": 409
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F027",
+   "intento": 0,
+   "segundos": 11.64,
+   "tokens": {
+    "entrada": 4912,
+    "salida": 1849
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F040",
+   "intento": 0,
+   "segundos": 5.14,
+   "tokens": {
+    "entrada": 3530,
+    "salida": 639
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F034",
+   "intento": 0,
+   "segundos": 9.11,
+   "tokens": {
+    "entrada": 3377,
+    "salida": 1344
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F050",
+   "intento": 0,
+   "segundos": 3.13,
+   "tokens": {
+    "entrada": 4732,
+    "salida": 324
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F002",
+   "intento": 0,
+   "segundos": 21.79,
+   "tokens": {
+    "entrada": 5613,
+    "salida": 3196
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F051",
+   "intento": 0,
+   "segundos": 3.67,
+   "tokens": {
+    "entrada": 4619,
+    "salida": 424
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F049",
+   "intento": 0,
+   "segundos": 7.89,
+   "tokens": {
+    "entrada": 4349,
+    "salida": 1056
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F054",
+   "intento": 0,
+   "segundos": 2.78,
+   "tokens": {
+    "entrada": 4612,
+    "salida": 280
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F062",
+   "intento": 0,
+   "segundos": 1.8,
+   "tokens": {
+    "entrada": 2177,
+    "salida": 150
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F063",
+   "intento": 0,
+   "segundos": 3.41,
+   "tokens": {
+    "entrada": 4491,
+    "salida": 360
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F028",
+   "intento": 0,
+   "segundos": 22.6,
+   "tokens": {
+    "entrada": 4729,
+    "salida": 3327
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F053",
+   "intento": 0,
+   "segundos": 9.65,
+   "tokens": {
+    "entrada": 3781,
+    "salida": 1426
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F048",
+   "intento": 0,
+   "segundos": 17.98,
+   "tokens": {
+    "entrada": 4449,
+    "salida": 2886
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F055",
+   "intento": 0,
+   "segundos": 14.27,
+   "tokens": {
+    "entrada": 4341,
+    "salida": 2085
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F067",
+   "intento": 0,
+   "segundos": 5.4,
+   "tokens": {
+    "entrada": 5125,
+    "salida": 739
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F035",
+   "intento": 0,
+   "segundos": 25.13,
+   "tokens": {
+    "entrada": 6278,
+    "salida": 3918
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F070",
+   "intento": 0,
+   "segundos": 6.46,
+   "tokens": {
+    "entrada": 4576,
+    "salida": 949
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F064",
+   "intento": 0,
+   "segundos": 13.69,
+   "tokens": {
+    "entrada": 4661,
+    "salida": 2240
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F073",
+   "intento": 0,
+   "segundos": 2.83,
+   "tokens": {
+    "entrada": 3071,
+    "salida": 307
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F081",
+   "intento": 0,
+   "segundos": 1.45,
+   "tokens": {
+    "entrada": 3895,
+    "salida": 137
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F072",
+   "intento": 0,
+   "segundos": 6.06,
+   "tokens": {
+    "entrada": 3295,
+    "salida": 901
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F066",
+   "intento": 0,
+   "segundos": 13.67,
+   "tokens": {
+    "entrada": 5228,
+    "salida": 1918
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F088",
+   "intento": 0,
+   "segundos": 3.34,
+   "tokens": {
+    "entrada": 3842,
+    "salida": 378
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F093",
+   "intento": 0,
+   "segundos": 2.37,
+   "tokens": {
+    "entrada": 3264,
+    "salida": 234
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F071",
+   "intento": 0,
+   "segundos": 12.02,
+   "tokens": {
+    "entrada": 4954,
+    "salida": 1869
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F091",
+   "intento": 0,
+   "segundos": 6.7,
+   "tokens": {
+    "entrada": 4959,
+    "salida": 902
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F087",
+   "intento": 0,
+   "segundos": 9.48,
+   "tokens": {
+    "entrada": 4498,
+    "salida": 1438
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F101",
+   "intento": 0,
+   "segundos": 1.83,
+   "tokens": {
+    "entrada": 3748,
+    "salida": 106
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F100",
+   "intento": 0,
+   "segundos": 2.71,
+   "tokens": {
+    "entrada": 3326,
+    "salida": 321
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F098",
+   "intento": 0,
+   "segundos": 5.14,
+   "tokens": {
+    "entrada": 3872,
+    "salida": 697
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F065",
+   "intento": 0,
+   "segundos": 26.23,
+   "tokens": {
+    "entrada": 5307,
+    "salida": 4024
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F080",
+   "intento": 0,
+   "segundos": 15.52,
+   "tokens": {
+    "entrada": 5103,
+    "salida": 2426
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F104",
+   "intento": 0,
+   "segundos": 5.24,
+   "tokens": {
+    "entrada": 4876,
+    "salida": 584
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F052",
+   "intento": 0,
+   "segundos": 36.22,
+   "tokens": {
+    "entrada": 4813,
+    "salida": 5807
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F106",
+   "intento": 0,
+   "segundos": 5.4,
+   "tokens": {
+    "entrada": 4295,
+    "salida": 684
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F092",
+   "intento": 0,
+   "segundos": 13.29,
+   "tokens": {
+    "entrada": 4428,
+    "salida": 1966
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F107",
+   "intento": 0,
+   "segundos": 5.15,
+   "tokens": {
+    "entrada": 4098,
+    "salida": 671
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F110",
+   "intento": 0,
+   "segundos": 2.75,
+   "tokens": {
+    "entrada": 3778,
+    "salida": 297
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F105",
+   "intento": 0,
+   "segundos": 6.43,
+   "tokens": {
+    "entrada": 5539,
+    "salida": 794
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F111",
+   "intento": 0,
+   "segundos": 3.07,
+   "tokens": {
+    "entrada": 3805,
+    "salida": 351
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F114",
+   "intento": 0,
+   "segundos": 8.91,
+   "tokens": {
+    "entrada": 4476,
+    "salida": 1238
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F131",
+   "intento": 0,
+   "segundos": 2.44,
+   "tokens": {
+    "entrada": 4562,
+    "salida": 301
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F129",
+   "intento": 0,
+   "segundos": 10.06,
+   "tokens": {
+    "entrada": 5614,
+    "salida": 1384
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F128",
+   "intento": 0,
+   "segundos": 10.31,
+   "tokens": {
+    "entrada": 5798,
+    "salida": 1602
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F130",
+   "intento": 0,
+   "segundos": 11.0,
+   "tokens": {
+    "entrada": 5008,
+    "salida": 1553
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F127",
+   "intento": 0,
+   "segundos": 12.4,
+   "tokens": {
+    "entrada": 6051,
+    "salida": 1812
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F113",
+   "intento": 0,
+   "segundos": 14.37,
+   "tokens": {
+    "entrada": 4324,
+    "salida": 2127
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F136",
+   "intento": 0,
+   "segundos": 2.36,
+   "tokens": {
+    "entrada": 4199,
+    "salida": 318
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F135",
+   "intento": 0,
+   "segundos": 3.52,
+   "tokens": {
+    "entrada": 3852,
+    "salida": 587
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F117",
+   "intento": 0,
+   "segundos": 14.5,
+   "tokens": {
+    "entrada": 4929,
+    "salida": 2244
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F132",
+   "intento": 0,
+   "segundos": 3.94,
+   "tokens": {
+    "entrada": 4261,
+    "salida": 474
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F141",
+   "intento": 0,
+   "segundos": 3.02,
+   "tokens": {
+    "entrada": 3096,
+    "salida": 333
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F142",
+   "intento": 0,
+   "segundos": 3.89,
+   "tokens": {
+    "entrada": 3652,
+    "salida": 492
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F145",
+   "intento": 0,
+   "segundos": 6.49,
+   "tokens": {
+    "entrada": 4876,
+    "salida": 931
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F143",
+   "intento": 0,
+   "segundos": 8.99,
+   "tokens": {
+    "entrada": 3637,
+    "salida": 1281
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F144",
+   "intento": 0,
+   "segundos": 11.69,
+   "tokens": {
+    "entrada": 3571,
+    "salida": 1704
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F149",
+   "intento": 0,
+   "segundos": 11.25,
+   "tokens": {
+    "entrada": 3647,
+    "salida": 1600
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F150",
+   "intento": 0,
+   "segundos": 10.82,
+   "tokens": {
+    "entrada": 4227,
+    "salida": 1829
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F156",
+   "intento": 0,
+   "segundos": 6.05,
+   "tokens": {
+    "entrada": 3989,
+    "salida": 741
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F159",
+   "intento": 0,
+   "segundos": 7.54,
+   "tokens": {
+    "entrada": 4487,
+    "salida": 1094
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F160",
+   "intento": 0,
+   "segundos": 4.73,
+   "tokens": {
+    "entrada": 5046,
+    "salida": 587
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F163",
+   "intento": 0,
+   "segundos": 4.19,
+   "tokens": {
+    "entrada": 2786,
+    "salida": 548
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F166",
+   "intento": 0,
+   "segundos": 2.63,
+   "tokens": {
+    "entrada": 5119,
+    "salida": 193
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F165",
+   "intento": 0,
+   "segundos": 5.19,
+   "tokens": {
+    "entrada": 5087,
+    "salida": 656
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F168",
+   "intento": 0,
+   "segundos": 2.48,
+   "tokens": {
+    "entrada": 2602,
+    "salida": 227
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F118",
+   "intento": 0,
+   "segundos": 32.13,
+   "tokens": {
+    "entrada": 5245,
+    "salida": 5152
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F164",
+   "intento": 0,
+   "segundos": 6.47,
+   "tokens": {
+    "entrada": 3039,
+    "salida": 872
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F155",
+   "intento": 0,
+   "segundos": 17.48,
+   "tokens": {
+    "entrada": 2603,
+    "salida": 2572
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F172",
+   "intento": 0,
+   "segundos": 3.56,
+   "tokens": {
+    "entrada": 4334,
+    "salida": 387
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F177",
+   "intento": 0,
+   "segundos": 3.38,
+   "tokens": {
+    "entrada": 2789,
+    "salida": 403
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F167",
+   "intento": 0,
+   "segundos": 6.71,
+   "tokens": {
+    "entrada": 4546,
+    "salida": 1039
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F181",
+   "intento": 0,
+   "segundos": 1.96,
+   "tokens": {
+    "entrada": 3277,
+    "salida": 246
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F146",
+   "intento": 0,
+   "segundos": 23.96,
+   "tokens": {
+    "entrada": 3887,
+    "salida": 3666
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F171",
+   "intento": 0,
+   "segundos": 6.5,
+   "tokens": {
+    "entrada": 4189,
+    "salida": 769
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F174",
+   "intento": 0,
+   "segundos": 6.61,
+   "tokens": {
+    "entrada": 3270,
+    "salida": 902
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F173",
+   "intento": 0,
+   "segundos": 6.92,
+   "tokens": {
+    "entrada": 3568,
+    "salida": 1018
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F178",
+   "intento": 0,
+   "segundos": 28.29,
+   "tokens": {
+    "entrada": 6586,
+    "salida": 4208
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "B4 F182",
+   "intento": 0,
+   "segundos": 26.54,
+   "tokens": {
+    "entrada": 3659,
+    "salida": 4090
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "medir B4.F065.0",
+   "intento": 0,
+   "segundos": 0.74,
+   "tokens": {
+    "entrada": 709,
+    "salida": 12
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "medir B4.F048.0",
+   "intento": 0,
+   "segundos": 0.79,
+   "tokens": {
+    "entrada": 725,
+    "salida": 40
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "medir B4.E061.0",
+   "intento": 0,
+   "segundos": 0.82,
+   "tokens": {
+    "entrada": 4000,
+    "salida": 35
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "medir B4.F080.0",
+   "intento": 0,
+   "segundos": 0.83,
+   "tokens": {
+    "entrada": 1198,
+    "salida": 46
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "medir B4.F052.0",
+   "intento": 0,
+   "segundos": 0.94,
+   "tokens": {
+    "entrada": 1034,
+    "salida": 52
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "medir B4.F065.0",
+   "intento": 0,
+   "segundos": 0.99,
+   "tokens": {
+    "entrada": 4348,
+    "salida": 95
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "medir B4.F080.0",
+   "intento": 0,
+   "segundos": 1.12,
+   "tokens": {
+    "entrada": 3779,
+    "salida": 72
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "medir B4.E061.0",
+   "intento": 0,
+   "segundos": 1.21,
+   "tokens": {
+    "entrada": 4018,
+    "salida": 12
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "medir B4.E061.1",
+   "intento": 0,
+   "segundos": 1.23,
+   "tokens": {
+    "entrada": 3934,
+    "salida": 67
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "medir B4.F052.0",
+   "intento": 0,
+   "segundos": 1.22,
+   "tokens": {
+    "entrada": 3551,
+    "salida": 112
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "medir B4.E061.1",
+   "intento": 0,
+   "segundos": 1.25,
+   "tokens": {
+    "entrada": 4054,
+    "salida": 64
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "medir B4.E029.0",
+   "intento": 0,
+   "segundos": 1.47,
+   "tokens": {
+    "entrada": 2438,
+    "salida": 47
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "medir B4.F080.0",
+   "intento": 0,
+   "segundos": 0.75,
+   "tokens": {
+    "entrada": 3851,
+    "salida": 12
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "medir B4.F052.0",
+   "intento": 0,
+   "segundos": 0.66,
+   "tokens": {
+    "entrada": 1162,
+    "salida": 12
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "medir B4.E061.1",
+   "intento": 0,
+   "segundos": 0.7,
+   "tokens": {
+    "entrada": 3533,
+    "salida": 12
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "medir B4.F028.0",
+   "intento": 0,
+   "segundos": 2.01,
+   "tokens": {
+    "entrada": 3620,
+    "salida": 452
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "medir B4.E061.0",
+   "intento": 0,
+   "segundos": 0.94,
+   "tokens": {
+    "entrada": 3483,
+    "salida": 12
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "medir B4.F065.0",
+   "intento": 0,
+   "segundos": 1.14,
+   "tokens": {
+    "entrada": 813,
+    "salida": 12
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "medir B4.F065.0",
+   "intento": 0,
+   "segundos": 1.27,
+   "tokens": {
+    "entrada": 3567,
+    "salida": 12
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "medir B4.F080.0",
+   "intento": 0,
+   "segundos": 1.18,
+   "tokens": {
+    "entrada": 1297,
+    "salida": 12
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "medir B4.E029.0",
+   "intento": 0,
+   "segundos": 2.34,
+   "tokens": {
+    "entrada": 3779,
+    "salida": 592
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "medir B4.E061.0",
+   "intento": 0,
+   "segundos": 1.25,
+   "tokens": {
+    "entrada": 3940,
+    "salida": 12
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "medir B4.F048.0",
+   "intento": 0,
+   "segundos": 2.51,
+   "tokens": {
+    "entrada": 3244,
+    "salida": 622
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "medir B4.E061.1",
+   "intento": 0,
+   "segundos": 1.34,
+   "tokens": {
+    "entrada": 4142,
+    "salida": 12
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "medir B4.F052.0",
+   "intento": 0,
+   "segundos": 1.37,
+   "tokens": {
+    "entrada": 4352,
+    "salida": 12
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "medir B4.F028.0",
+   "intento": 0,
+   "segundos": 1.09,
+   "tokens": {
+    "entrada": 3890,
+    "salida": 12
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "medir B4.E029.0",
+   "intento": 0,
+   "segundos": 0.94,
+   "tokens": {
+    "entrada": 2298,
+    "salida": 12
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "medir B4.F048.0",
+   "intento": 0,
+   "segundos": 0.82,
+   "tokens": {
+    "entrada": 3769,
+    "salida": 12
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "medir B4.F182.0",
+   "intento": 0,
+   "segundos": 1.2,
+   "tokens": {
+    "entrada": 1528,
+    "salida": 29
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "medir B4.F118.0",
+   "intento": 0,
+   "segundos": 1.33,
+   "tokens": {
+    "entrada": 4127,
+    "salida": 59
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "medir B4.F048.0",
+   "intento": 0,
+   "segundos": 1.13,
+   "tokens": {
+    "entrada": 669,
+    "salida": 12
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "medir B4.E029.0",
+   "intento": 0,
+   "segundos": 1.37,
+   "tokens": {
+    "entrada": 3977,
+    "salida": 17
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "medir B4.F182.0",
+   "intento": 0,
+   "segundos": 1.17,
+   "tokens": {
+    "entrada": 1702,
+    "salida": 12
+   },
+   "errores": {},
+   "corte": "stop"
+  },
+  {
+   "paso": "medir B4.F118.0",
+   "intento": 0,
+   "segundos": 1.17,
+   "tokens": {
+    "entrada": 3635,
+    "salida": 12
+   },
+   "errores": {},
+   "corte": "stop"
+  }
+ ],
+ "oportunidades": [
+  {
+   "que_traer": "Rociador de aceite presurizado a bomba (estilo 'mister' / Misto): se carga a presión con un pompazo y libera niebla continua y fina con solo presionar la válvula, sin gatillo de émbolo ni tubito sifón. Botella de vidrio, boquilla de 0,2-0,3 mm y filtro antipartículas para aceite viscoso.",
+   "para_quien": "Gente que cocina liviano y ya migró del fritolim: air fryer, ensaladas, sartén, moldes de torta, milanesas vuelta y vuelta, y quien quiere dosificar aceite de oliva sin bañar la comida.",
+   "alivia": "El problema central que estos textos repiten: el producto actual no pulveriza, tira chorro. Obliga a 'gatillar rápido y alejar' para lograr algo parecido a spray, mancha los costados, deja gotas grandes y arruina el ahorro que justifica la compra. Un presurizado entrega niebla pareja y dosificable sin técnica.",
+   "por_que": "Hoy hay 1.289 resultados y varios con +5000, +1000 y +100 vendidos, pero todos son el mismo mecanismo de gatillo/sifón (Veoquiero, Doble Pico, Oh My Shop, Levys Bazar, etc.): el mercado está saturado de una solución que falla exactamente en lo que el comprador pide. No aparece en la búsqueda ninguna propuesta presurizada de niebla continua, que es un mecanismo distinto, no un gatillo con otra boquilla.",
+   "precio_de_venta_ars": 21900,
+   "margen_neto_estimado_pct": 16,
+   "como_podria_fallar": "(1) Criterio 5: un revisor puede leerlo como 'el mismo rociador pero mejor' porque compite en la misma búsqueda y contra el pack x2 del líder a $14.999; hay que diferenciarlo por mecanismo (niebla continua vs chorro), no por calidad. (2) Precio unitario más alto que el x2 del líder puede frenar la conversión. (3) El aceite viscoso igual puede obstruir la boquilla fina (p17, o103) y el mecanismo suma válvula y juntas: más piezas para romperse o venir mal (o12 menciona el aro suelto; o5 la manguerita salida; p7 rotura en envío). (4) Vidrio + presión = riesgo de rotura en logística y devoluciones que se comen el margen. (5) Si un competidor trae el mismo presurizado, se satura en 2-3 meses como el resto de la categoría.",
+   "citas": [
+    "p10",
+    "o20",
+    "o200",
+    "o33",
+    "o92",
+    "o21"
+   ],
+   "busqueda_ml": "rociador de aceite a presión tipo mister",
+   "id": "B4.E029.0",
+   "producto": "E029"
+  },
+  {
+   "que_traer": "Lámpara/linterna de trabajo LED recargable tipo barra plegable, con base magnética, gancho giratorio y batería 18650 reemplazable (carga USB-C), 400-800 lm reales",
+   "para_quien": "Electricistas, mecánicos, gasistas, gente de taller y depósito que trabaja dentro de tableros, bajo el capó, en caños o chapas y necesita las dos manos libres apuntando la luz a donde está el trabajo",
+   "alivia": "Tener que iluminar con una mano mientras la otra hace fuerza en un lugar incómodo: con la linterna de bolsillo la luz se va para cualquier lado, se cae o se apaga justo cuando estás metido en el tablero",
+   "por_que": "En la búsqueda solo hay linternas de bolsillo y vinchas frontales; no aparece ninguna barra magnética de trabajo con volumen de ventas (la única magnética es una Motoma de 300 lm con +100 y el foco de trabajo 20V tiene 0 vendidos)",
+   "precio_de_venta_ars": 24999,
+   "margen_neto_estimado_pct": 18,
+   "como_podria_fallar": "Si el verificador agrupa las vinchas frontales manos libres (+10000, +1000, +500 y una con punta imán +10000) como equivalentes, el punto 2 se cae; también si el imán es débil y las devoluciones por despegue se comen el 18%",
+   "citas": [
+    "o51",
+    "o4",
+    "o10",
+    "o29"
+   ],
+   "busqueda_ml": "lampara led trabajo recargable magnetica",
+   "id": "B4.E061.0",
+   "producto": "E061"
+  },
+  {
+   "que_traer": "Foco/lámpara LED de emergencia recargable que se enciende solo al cortarse la luz, con batería 18650 reemplazable y modo linterna portátil",
+   "para_quien": "Hogares argentinos con cortes frecuentes, los mismos que compran esta linternita para la cartera, la guantera o la mochila",
+   "alivia": "Quedarse a oscuras y tener que buscar a tientas la linterna de bolsillo, que además a alta potencia dura 20-40 minutos y siempre está descargada cuando hace falta",
+   "por_que": "En la búsqueda de linterna recargable no hay ningún foco de emergencia con encendido automático: todos los resultados son linternas de mano, frontales o faroles de camping que hay que prender a mano",
+   "precio_de_venta_ars": 16999,
+   "margen_neto_estimado_pct": 15,
+   "como_podria_fallar": "Es otra categoría y el programa verifica contra la búsqueda de linternas, así que la falta de equivalentes puede ser un artefacto y no una oportunidad real; además el comprador de linterna barata es muy sensible al precio y las devoluciones por batería berreta o encendido que falla pueden dejar el neto por debajo del 5%",
+   "citas": [
+    "o59",
+    "o102",
+    "o11",
+    "o172",
+    "o51"
+   ],
+   "busqueda_ml": "lampara led emergencia recargable se enciende sola corte de luz",
+   "id": "B4.E061.1",
+   "producto": "E061"
+  },
+  {
+   "que_traer": "Chaleco/banda de compresión corporal para perros (tipo ThunderShirt) en 4-5 talles, tela liviana con cierre velcro regulable, para ansiedad por separación, viajes, mudanzas y miedo a ruidos/pirotecnia",
+   "para_quien": "Dueños de perros con ansiedad por separación, apego, miedo a ruidos fuertes, tormentas, pirotecnia y estrés por mudanzas o viajes largos; típicamente gente que ya probó el collar de feromonas y le funcionó a medias o nada y busca algo físico, sin medicación",
+   "alivia": "La angustia y el desborde del perro cuando queda solo o se expone a ruidos fuertes: llanto, destrozos, agitación, no dormir, no comer. El chaleco ejerce presión sostenida sobre el torso, que es el mecanismo que esta gente asocia con 'calmar en el momento' y no depende de que el perro tenga el collar en contacto con la piel ni de esperar 7 días a que largue feromonas",
+   "por_que": "Nadie lo atiende hoy: en toda la búsqueda de collares no hay una sola publicación de chaleco o banda de compresión (solo arneses de paseo y collares isabelinos, funciones distintas), ninguna con +100 vendidos. La única solución de ansiedad ofrecida es el collar de feromonas, que ya está saturado (la propia publicación tiene +1000 vendidos) y que en los propios textos aparece como insuficiente en un tercio de los casos, por lo que hay demanda comprobada de una alternativa no-farmacológica y no hay oferta equivalente",
+   "precio_de_venta_ars": 29900,
+   "margen_neto_estimado_pct": 18,
+   "como_podria_fallar": "(1) Talle: 4-5 curvas de talle implican inventario fragmentado y devoluciones por calce, que es el principal destructor de margen en indumentaria canina. (2) Rechazo del perro a la prenda: varios compradores ya son escépticos ('no es mágico', 'dinero tirado'), y si el perro no tolera llevarlo puesto el producto muere en la primera puesta. (3) Expectativa: no resuelve pirotecnia severa ni miedos crónicos sin entrenamiento, y las reseñas negativas del collar muestran que la gente castiga con 1 estrella cuando no hay resultado inmediato. (4) Riesgo de encuadre: si el título lo posiciona como complemento del collar puede leerse como accesorio y quedar atado al dolor de un producto ya saturado. (5) Costo: es voluminoso y liviano, el flete internacional por volumen y el envío local de un talle L pueden comerse el margen; con devoluciones al 8% el neto cae por debajo del 10%.",
+   "citas": [
+    "o13",
+    "o31",
+    "o93",
+    "o129",
+    "o8",
+    "o149"
+   ],
+   "busqueda_ml": "chaleco calmante para perros ansiedad",
+   "id": "B4.F028.0",
+   "producto": "F028"
+  },
+  {
+   "que_traer": "Proyector/luz LED sumergible recargable para bañera, RGB, con ventosa e IPX7",
+   "para_quien": "Padres de niños de 2 a 6 años que pelean la hora del baño, y también casas con piel sensible o baño/toallas blancas",
+   "alivia": "Convierte el agua en una experiencia visual divertida sin usar colorantes que manchen la bañera, la piel o las toallas; ayuda a que el chico entre al agua sin discutir",
+   "por_que": "La búsqueda está saturada de pastillas Arrugadedos y combos con +5000, +500 y +100 vendidos, pero las luces de baño aparecen recién con +0 o +25. No hay 3 publicaciones equivalentes con +100, y no es repuesto, accesorio ni la misma pastilla 'pero mejor'",
+   "precio_de_venta_ars": 19900,
+   "margen_neto_estimado_pct": 15,
+   "como_podria_fallar": "Que el proveedor no garantice buena estanqueidad, que la batería dure poco o falle y genere devoluciones; que el brillo no sea suficientemente atractivo frente a la pastilla barata; o que el precio quede alto para el hábito de compra actual",
+   "citas": [
+    "o162",
+    "o118",
+    "o195",
+    "o197"
+   ],
+   "busqueda_ml": "luz led sumergible para bañera niños",
+   "id": "B4.F048.0",
+   "producto": "F048"
+  },
+  {
+   "que_traer": "Traba/seguro para mosquitero corredizo de aluminio: pieza de presión o de riel, sin perforar, con ajuste para perfiles finos de mosquitero (no para la hoja de vidrio), con goma para no marcar el marco",
+   "para_quien": "Dueños de ventanas y puertas balcón corredizas con mosquitero, especialmente con gatos o chicos: quieren dejar la hoja abierta para ventilar sin que el animal corra el mosquitero y se escape, y hoy no encuentran un herraje pensado para el marco del mosquitero",
+   "alivia": "Que el gato (o el chico) corra el mosquitero y se escape o entre a la casa: hoy compran la traba de ventana común y les entra justa, se cae o no agarra en el perfil del mosquitero; con una traba específica para mosquitero la hoja queda frenada sin romper nada ni perforar",
+   "por_que": "En la búsqueda de 'trabas para puertas' todo lo que traba hojas corredizas es para la hoja de vidrio (cuñas de presión Inomax y clones con +10.000, +5.000 y +500 vendidos) o pasadores/candados que se atornillan; no aparece ninguna publicación de traba pensada para el mosquitero, y las que hay de seguridad corrediza sin perforación están en +25 vendidos. Es una pieza distinta, no una versión mejorada de la cuña, y hoy la gente la suple comprando la traba de ventana que le entra mal",
+   "precio_de_venta_ars": 7900,
+   "margen_neto_estimado_pct": 20,
+   "como_podria_fallar": "Que el mercado sea chico (no todos los mosquiteros son corredizos ni todos tienen mascota) y que el volumen no alcance para sostener publicidad; que los perfiles de mosquitero varíen tanto que repita el problema de medidas de la traba original y suban las devoluciones; que el costo landed y el envío se coman el margen si el precio percibido no pasa de $8.000 porque 'es un cosito de plástico'; que al ser una pieza barata y fácil de copiar aparezcan 3 o más publicaciones con +100 en pocos meses",
+   "citas": [
+    "o125",
+    "o181",
+    "o34"
+   ],
+   "busqueda_ml": "traba para mosquitero corredizo sin perforar",
+   "id": "B4.F052.0",
+   "producto": "F052"
+  },
+  {
+   "que_traer": "Kit de luz LED recargable a batería (aro 26-30 cm + panel chico) con trípode y pinza de mesa, todo USB-C sin necesidad de enchufe permanente",
+   "para_quien": "Esteticistas, manicuras, lashistas, tatuadores y emprendedoras que dan servicio a domicilio o trabajan en mesas sin tomacorrientes cerca y hoy dependen de dos cargadores de celular + zapatilla para que el combo prenda",
+   "alivia": "La dependencia total del enchufe y el cable corto: hoy no pueden moverse del toma, necesitan dos fuentes USB simultáneas y el cable no llega al trípode estirado. Con batería trabajan donde están la clienta o el producto, sin zapatilla ni adaptadores extra",
+   "por_que": "En la búsqueda solo hay combos y aros cableados (los +10.000 vendidos son justamente los combos enchufados) y las únicas cosas inalámbricas son cabinas UV de uñas. No hay ninguna publicación de iluminación de estudio/estética recargable con volumen: el nicho de 'me lo llevo a domicilio y no dependo del enchufe' está vacío",
+   "precio_de_venta_ars": 54900,
+   "margen_neto_estimado_pct": 12,
+   "como_podria_fallar": "1) Que se lea como 'el mismo combo pero con batería' y caiga en el punto 5: hay que plantearlo como luz de trabajo portátil, no como upgrade del combo. 2) La autonomía real de un LED+batería barato suele ser 1-2 h a plena potencia y genera devoluciones. 3) El envío de litio encarece el flete y suma costo de certificación. 4) El comprador está anclado a $33.000 del combo; arriba de $55.000 con batería mediocre el volumen se cae y el margen con comisión ML + envío + ads + devoluciones queda al filo del 5%",
+   "citas": [
+    "o7",
+    "o92",
+    "o65",
+    "o3",
+    "o80"
+   ],
+   "busqueda_ml": "aro de luz led recargable inalambrico estetica",
+   "id": "B4.F065.0",
+   "producto": "F065"
+  },
+  {
+   "que_traer": "Mascarilla capilar pigmentada cobriza/rojiza para mantenimiento del color entre tinturas",
+   "para_quien": "Personas que usan Igora Royal 8-77/7-77 y ven el cobrizo o rojo desvanecerse rápido, opacarse o perder brillo a los pocos lavados",
+   "alivia": "La pérdida rápida de intensidad y brillo del cobrizo/rojo, permitiendo mantener el tono sin retocar con tintura tan seguido",
+   "por_que": "La búsqueda está saturada de tinturas, oxidantes y decolorantes con +100 vendidos, pero no aparece una solución específica de mantenimiento del color; las opciones actuales obligan a teñir o decolorar de nuevo en vez de matizar entre aplicaciones",
+   "precio_de_venta_ars": 15900,
+   "margen_neto_estimado_pct": 22,
+   "como_podria_fallar": "Puede requerir registros/etiquetado cosmético para importación; si Mercado Libre ya tiene mascarillas colorantes equivalentes con +100 fuera de esta búsqueda, dejaría de cumplir 'nadie lo atiende'; si el pigmento no funciona sobre tonos 8-77/7-77 o mancha cuero cabelludo, aumentarían devoluciones y publicidad",
+   "citas": [
+    "o135",
+    "o9",
+    "o38",
+    "o27"
+   ],
+   "busqueda_ml": "mascarilla colorante cobrizo para cabello teñido",
+   "id": "B4.F080.0",
+   "producto": "F080"
+  },
+  {
+   "que_traer": "Probador de tomacorriente con LEDs para verificar fase, neutro y tierra (socket tester)",
+   "para_quien": "Principiantes y electricistas domiciliarios que compran el kit Brinna y usan el buscapolo para diagnósticos rápidos en instalaciones de casa",
+   "alivia": "Evita depender del lápiz detector que solo marca fase, es demasiado sensible o se rompe: muestra de forma directa si el tomacorriente está bien cableado, si falta tierra o si fase/neutro están invertidos",
+   "por_que": "En la búsqueda hay muchos multímetros, pinzas y buscapolos, pero no aparece un probador de tomacorriente dedicado; los buscapolos existentes no resuelven la verificación de neutro/tierra en enchufes",
+   "precio_de_venta_ars": 17900,
+   "margen_neto_estimado_pct": 18,
+   "como_podria_fallar": "Que se lo perciba como un accesorio innecesario frente al kit barato, que los buscapolos genéricos se consideren equivalentes, o que el precio bajo no cubra envío, publicidad y devoluciones",
+   "citas": [
+    "o116",
+    "o32",
+    "o1"
+   ],
+   "busqueda_ml": "probador de tomacorriente fase neutro tierra",
+   "id": "B4.F118.0",
+   "producto": "F118"
+  },
+  {
+   "que_traer": "Derretidor / calentador de cera eléctrico con termostato regulable (olla térmica de 500-600 ml con pico vertedor y asa fría), 220V",
+   "para_quien": "Gente que hace velas y obleas aromáticas (wax melts) en moldes de silicona chicos y hoy derrite cera a baño maría en ollas de cocina, con riesgo de arruinarlas (o18)",
+   "alivia": "Saca el problema central de estas reseñas: la cera se endurece antes de llegar al molde y la mezcla se vuelca o se desperdicia por trabajar con recipientes chicos y sin control de temperatura (o148, o156). El equipo mantiene la cera a temperatura de vertido constante, permite llenar moldes de 100 ml gota a gota sin grumos ni pérdidas y libera la cocina de la casa.",
+   "por_que": "La búsqueda está saturada de moldes (339 resultados, decenas con +100 y +1000 vendidos: llaveros, portavelas, floreros, macetas), pero ningún equipo de derretido con termostato. Todos venden el insumo (el molde); nadie atiende la etapa anterior, que es donde estas personas fracasan.",
+   "precio_de_venta_ars": 45000,
+   "margen_neto_estimado_pct": 18,
+   "como_podria_fallar": "1) Que el nicho de velas sea chico frente al de resina y no sostenga +100 ventas por publicación. 2) Que en el catálogo completo de ML ya existan 3 o más derretidores con +100 vendidos aunque no aparezcan en esta búsqueda: en ese caso cae el punto 2. 3) Que el flete por volumen/peso y la certificación eléctrica 220V suban el landed cost y el margen quede por debajo del 5%. 4) Que el comprador lo perciba como 'electrodoméstico de cocina' y no como insumo de manualidades, y lo deje pasar.",
+   "citas": [
+    "o148",
+    "o156",
+    "o70"
+   ],
+   "busqueda_ml": "derretidor de cera para velas electrico",
+   "id": "B4.F182.0",
+   "producto": "F182"
+  }
+ ],
+ "dolor": {
+  "B4.E029.0": {
+   "pasa": true,
+   "significativo": true,
+   "p": 0.0,
+   "desatendidos": 41,
+   "de": 115,
+   "en_el_control": 1,
+   "productos_con_desatendidos": 1,
+   "hacen_falta": 1,
+   "ejemplos": [
+    "E029.o103",
+    "E029.o106",
+    "E029.o112",
+    "E029.o114",
+    "E029.o117"
+   ]
+  },
+  "B4.E061.0": {
+   "pasa": false,
+   "significativo": false,
+   "p": 0.06125,
+   "desatendidos": 4,
+   "de": 150,
+   "en_el_control": 0,
+   "productos_con_desatendidos": 1,
+   "hacen_falta": 1,
+   "ejemplos": [
+    "E061.o142",
+    "E061.o29",
+    "E061.o4",
+    "E061.o51"
+   ]
+  },
+  "B4.E061.1": {
+   "pasa": true,
+   "significativo": true,
+   "p": 0.01485,
+   "desatendidos": 6,
+   "de": 150,
+   "en_el_control": 0,
+   "productos_con_desatendidos": 1,
+   "hacen_falta": 1,
+   "ejemplos": [
+    "E061.o11",
+    "E061.o13",
+    "E061.o173",
+    "E061.o190",
+    "E061.o65"
+   ]
+  },
+  "B4.F028.0": {
+   "pasa": true,
+   "significativo": true,
+   "p": 0.0,
+   "desatendidos": 38,
+   "de": 72,
+   "en_el_control": 0,
+   "productos_con_desatendidos": 1,
+   "hacen_falta": 1,
+   "ejemplos": [
+    "F028.o10",
+    "F028.o107",
+    "F028.o11",
+    "F028.o125",
+    "F028.o128"
+   ]
+  },
+  "B4.F048.0": {
+   "pasa": true,
+   "significativo": true,
+   "p": 0.0,
+   "desatendidos": 51,
+   "de": 80,
+   "en_el_control": 0,
+   "productos_con_desatendidos": 1,
+   "hacen_falta": 1,
+   "ejemplos": [
+    "F048.o1",
+    "F048.o10",
+    "F048.o101",
+    "F048.o106",
+    "F048.o109"
+   ]
+  },
+  "B4.F052.0": {
+   "pasa": false,
+   "significativo": false,
+   "p": 0.12281,
+   "desatendidos": 3,
+   "de": 86,
+   "en_el_control": 0,
+   "productos_con_desatendidos": 1,
+   "hacen_falta": 1,
+   "ejemplos": [
+    "F052.o176",
+    "F052.o181",
+    "F052.o186"
+   ]
+  },
+  "B4.F065.0": {
+   "pasa": true,
+   "significativo": true,
+   "p": 3e-05,
+   "desatendidos": 14,
+   "de": 80,
+   "en_el_control": 0,
+   "productos_con_desatendidos": 1,
+   "hacen_falta": 1,
+   "ejemplos": [
+    "F065.o1",
+    "F065.o109",
+    "F065.o123",
+    "F065.o126",
+    "F065.o18"
+   ]
+  },
+  "B4.F080.0": {
+   "pasa": true,
+   "significativo": true,
+   "p": 0.00334,
+   "desatendidos": 8,
+   "de": 93,
+   "en_el_control": 0,
+   "productos_con_desatendidos": 1,
+   "hacen_falta": 1,
+   "ejemplos": [
+    "F080.o110",
+    "F080.o117",
+    "F080.o135",
+    "F080.o27",
+    "F080.o38"
+   ]
+  },
+  "B4.F118.0": {
+   "pasa": true,
+   "significativo": true,
+   "p": 0.0032,
+   "desatendidos": 8,
+   "de": 74,
+   "en_el_control": 0,
+   "productos_con_desatendidos": 1,
+   "hacen_falta": 1,
+   "ejemplos": [
+    "F118.o116",
+    "F118.o171",
+    "F118.o27",
+    "F118.o32",
+    "F118.o45"
+   ]
+  },
+  "B4.F182.0": {
+   "pasa": false,
+   "significativo": false,
+   "p": 0.11842,
+   "desatendidos": 3,
+   "de": 29,
+   "en_el_control": 0,
+   "productos_con_desatendidos": 1,
+   "hacen_falta": 1,
+   "ejemplos": [
+    "F182.o148",
+    "F182.o156",
+    "F182.o18"
+   ]
+  }
+ }
+}

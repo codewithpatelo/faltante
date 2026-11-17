@@ -1,3 +1,39 @@
 {
- "jueces_humanos": []
+ "jueces_humanos": [
+  "dario"
+ ],
+ "dolor": {
+  "items": 40,
+  "empates_humanos": 0,
+  "fleiss_humanos": null,
+  "modelo": {
+   "acuerdo": 0.475,
+   "kappa": -0.05,
+   "precision": 0.8,
+   "exhaustividad": 0.485
+  }
+ },
+ "equivalencia": {
+  "items": 40,
+  "empates_humanos": 0,
+  "fleiss_humanos": null,
+  "modelo": {
+   "acuerdo": 0.75,
+   "kappa": 0.219,
+   "precision": 0.844,
+   "exhaustividad": 0.844
+  },
+  "criterio_viejo": {
+   "acuerdo": 0.25,
+   "kappa": -0.103,
+   "precision": 0.625,
+   "exhaustividad": 0.156
+  },
+  "claude": {
+   "acuerdo": 0.75,
+   "kappa": 0.286,
+   "precision": 0.867,
+   "exhaustividad": 0.812
+  }
+ }
 }

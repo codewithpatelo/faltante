@@ -87,7 +87,7 @@ if __name__ == "__main__":
         try:
             return juzgar(cliente, *todas[k], traza)
         except Exception as e:  # noqa: BLE001
-            print(f"sin juzgar ({type(e).__name__}): {k}", file=sys.stderr)
+            print(f"sin juzgar ({type(e).__name__} {getattr(e, 'code', None) or getattr(e, 'status_code', '')}): {k}", file=sys.stderr)
             return None
     juicios = {k: v for k, v in zip(todas, en_paralelo(juzgar_o_dejar, list(todas))) if v is not None}
     if aparte:    # otro juez: su propio archivo, solo se agrega; el de DeepSeek no se toca

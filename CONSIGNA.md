@@ -7,10 +7,10 @@ repo y qué falta. ✅ cumplido · 🟡 parcial · ❌ falta.
 |---|---|---|
 | **Utilidad real**: usuario identificable | Importadores y vendedores chicos de Mercado Libre que deciden qué traer (README, "Qué hace") | 🟡 falta mostrárselo a 1 o 2 importadores |
 | **IA generativa en el núcleo** | Cuatro pasos con LLM: leer personas, armar segmentos, proponer, y dos jueces (dolor y equivalencias) | ✅ |
-| **Hipótesis medible contra baseline, partición fija** | `data/evaluacion/test/PRERREGISTRO.md`; resultado en el README, "¿Sirve?" | ✅ test corrido una vez: LLM 16, B1 4, B2 0 (p = 0,002); 🟡 falta el juicio humano de calidad |
+| **Hipótesis medible contra baseline, partición fija** | `data/evaluacion/test/PRERREGISTRO.md`; resultado en el README, "¿Sirve?" | ✅ contra reglas sin LLM: 16, 4, 0 en test (p = 0,002). 🟡 contra el modelo solo de una (B4): los datos refutan 9 de sus 10 recomendaciones, falta el juicio humano a ciegas. ❌ la generación con personas no le gana a proponer directo (B3: 44 contra 16) |
 | **Datos verificados** | README, "Datos": fuente, volumen, fecha, cómo se eligieron | ✅ |
 | **Economía**: costo por tarea, latencia, elección de modelo | README, "Costo y modelo"; cada corrida guarda tokens, USD y segundos por llamada (`traza`) | ✅ |
-| **Git con trabajo distribuido** | `git log` | ❌ casi todo es de Patricio; el juicio humano (`data/evaluacion/humano/`) es la tarea de cada integrante |
+| **Git con trabajo distribuido** | `git log` | 🟡 Darío: requisitos del README, su planilla a ciegas y el LEEME; faltan Nilo y Victoria (su planilla en `data/evaluacion/humano/`) |
 | **Antecedentes** (mercado y literatura) | Abajo | ✅ |
 | **≥ 2 áreas en profundidad** | Abajo | ✅ |
 | **Repo replicable** con README, Makefile, skills y reglas | `make todo` desde un clon limpio (o `docker build` + `docker run`); `skills/`, `AGENTS.md` | ✅ |
@@ -25,8 +25,8 @@ repo y qué falta. ✅ cumplido · 🟡 parcial · ❌ falta.
    fragmento está en el texto, la propuesta cruza productos); si falla, el error vuelve al modelo
    una vez y lo que sigue mal se descarta. `harness/personas.py`, `harness/divergente.py`,
    `harness/embudo.py`, `harness/modelo.py`.
-2. **Evaluación.** Benchmark propio con partición fija por búsqueda, dos baselines sin LLM por el
-   mismo embudo, prerregistro de cada comparación, 3 corridas por versión en dev y una sola en
+2. **Evaluación.** Benchmark propio con partición fija por búsqueda, dos baselines sin LLM y dos con el mismo modelo (B3, la generación sola; B4,
+   todo de una) por el mismo embudo, prerregistro de cada comparación, 3 corridas por versión en dev y una sola en
    test. Los dos jueces LLM se validan aparte: el de dolor con un control al azar y un placebo
    (0 falsos positivos), el de equivalencias con 40 desacuerdos etiquetados a ciegas (32 aciertos
    contra 8 del criterio viejo), y los dos contra juicio humano (`data/evaluacion/humano/`).

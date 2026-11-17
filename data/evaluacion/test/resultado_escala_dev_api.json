@@ -196,5 +196,35 @@
     "condicional: Set de candados de perno horizontal vendidos como 'combinación distinta garantizada': cada"
    ]
   }
+ },
+ "B4": {
+  "todo": {
+   "propuestas": 10,
+   "no_descartadas_distintas": 1,
+   "sobreviven": 0,
+   "proporcion": 0.1,
+   "mueren_en": {
+    "C1 dolor": 4,
+    "C4 hueco": 3,
+    "C5 la eligen": 2
+   },
+   "no_descartadas": [
+    "condicional: Serum/tónico calmante de cuero cabelludo sin perfume (avena coloidal + centella o pantenol"
+   ]
+  },
+  "limpio_productos_nuevos": {
+   "propuestas": 6,
+   "no_descartadas_distintas": 1,
+   "sobreviven": 0,
+   "proporcion": 0.167,
+   "mueren_en": {
+    "C5 la eligen": 1,
+    "C1 dolor": 2,
+    "C4 hueco": 2
+   },
+   "no_descartadas": [
+    "condicional: Serum/tónico calmante de cuero cabelludo sin perfume (avena coloidal + centella o pantenol"
+   ]
+  }
  }
 }
