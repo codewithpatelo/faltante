@@ -11,7 +11,7 @@ from harness import umbrales as U
 from harness.costo_puesto import EMBALAJE, LOGISTICA_M3, TIPO_CAMBIO, costo_puesto_usd, ingreso_neto_ars
 from harness.divergente import al_formato_del_embudo, errores_de_propuesta, proponer
 from harness.modelo import costo
-from harness.personas import errores_de_tarjeta, mapa_de_empatia, tarjetas_de_una_tanda
+from harness.personas import cruza_productos, errores_de_tarjeta, es_segmento_suficiente, mapa_de_empatia, tarjetas_de_una_tanda
 from harness.embudo import Propuesta, recorrer
 from harness.voces import RAIZ, textos_con_id
 
@@ -178,11 +178,17 @@ def test_cada_propuesta_deja_una_señal_por_producto_con_las_citas_de_su_gente()
     assert c.errores_de_citas(señal_px, TEXTOS) == []   # 2 personas de PX: pasa el guardrail del embudo
 
 
-def test_el_mapa_de_empatia_cuenta_y_lee_primero_a_quien_tiene_dolor_o_miedo():
+def test_el_mapa_de_empatia_cuenta_y_lee_primero_a_quien_algo_le_sale_mal():
     todos = {"PX": AFILADOR, "PY": {**AFILADOR, "id": "PY", "busqueda": "afilador"}}
-    m = mapa_de_empatia({"id": "G1", "nombre": "talleres", "quien": "q"}, list(MIEMBROS.values()), todos, {})
+    trabajos_ = {"PX.o1": {"trabajo": "afilar cuchillos en casa", "le_sale_mal": "pierde el ángulo"}}
+    m = mapa_de_empatia({"id": "G1", "nombre": "afilar cuchillos en casa", "quien": "q"}, list(MIEMBROS.values()), todos, {}, trabajos_)
     assert m["personas"] == 4 and m["compraron"] == 2 and m["dudan"] == 2 and set(m["productos"]) == {"PX", "PY"}
-    assert m["cuentan"]["dolor"] == 1 and m["voces"][0]["id"] == "PX.o1" and len(m["voces"]) == 4
+    assert m["les_sale_mal"] >= 1 and m["voces"][0]["id"] == "PX.o1" and m["voces"][0]["trabajo"] == "afilar cuchillos en casa"
+    assert es_segmento_suficiente(m)   # 2 personas de PX y 2 de PY
+
+
+def test_los_grupos_cruzan_productos_solo_con_dos_personas_en_cada_uno():
+    assert cruza_productos(["PX", "PX", "PY", "PY"]) and not cruza_productos(["PX", "PX", "PX", "PY"])
 
 
 def test_costo_del_llm_por_tokens():

@@ -1,10 +1,11 @@
 """La divergencia: perfilar a la gente y buscar desfasajes de mercado.
 
     A · personas   (skills/leer_personas)          de cada voz, un mapa de empatía chico citando su texto
-    S · segmentos  (skills/agrupar_personas)       personas en la misma situación, aunque hayan
-                                                    comprado cosas distintas; de cada segmento, su
-                                                    mapa de empatía (harness/personas.py)
-    B · propuestas (skills/proponer_a_un_segmento) por segmento, qué traer que ese grupo necesita y
+    J · trabajos   (skills/formular_trabajos)       el trabajo que cada persona intenta hacer, sin el producto
+    S · grupos     (código: Ward)                   gente que intenta el mismo trabajo con productos
+                                                    distintos; de cada grupo, su mapa de empatía
+                                                    (harness/personas.py)
+    B · propuestas (skills/proponer_a_un_segmento) por grupo, qué traer que ese grupo necesita y
                                                     no ve en su góndola, como propuesta de valor; dos
                                                     tandas, la segunda distinta de la primera
 
@@ -109,8 +110,12 @@ def divergir(cliente, particion: str, capturas: dict) -> dict:
     mapas, miembros_de = [], {}
     for s in gente["segmentos"]:
         miembros_de[s["id"]] = {i: tarjetas[i] for i, g in gente["asignaciones"].items() if g == s["id"]}
-        mapas.append(P.mapa_de_empatia(s, list(miembros_de[s["id"]].values()), todos, capturas))
-    suficientes = [m for m in mapas if P.es_segmento_suficiente(m)]
+        mapas.append(P.mapa_de_empatia(s, list(miembros_de[s["id"]].values()), todos, capturas, gente["trabajos"]))
+    # Primero los trabajos que a más gente le salen mal (lo desatendido, como en Ulwick), y tantas
+    # llamadas al paso B como productos tiene la partición: el mismo esfuerzo que B3.
+    llamadas_por_grupo = 2 if REPREGUNTAR else 1
+    suficientes = sorted((m for m in mapas if P.es_segmento_suficiente(m)), key=lambda m: -m["les_sale_mal"])
+    suficientes = suficientes[:max(1, len(productos(particion)) // llamadas_por_grupo)]
     oportunidades = [o for ops in en_paralelo(lambda m: proponer(cliente, m, miembros_de[m["segmento"]], traza), suficientes)
                      for o in ops]
     dolor = {"llm": D.medir_y_decidir(cliente, [(D.enunciado(o), {tarjetas[i]["producto"] for i in o["personas"]})
@@ -119,7 +124,7 @@ def divergir(cliente, particion: str, capturas: dict) -> dict:
         dolor[metodo] = D.medir_y_decidir(cliente, dolores, tarjetas, todos, traza)
     return {"quien": MODELO, "costo": costo(traza), "traza": traza, "dolor": dolor,
             "personas": len(tarjetas), "asignadas": len(gente["asignaciones"]),
-            "segmentos": [{**m, "pasa_al_paso_b": P.es_segmento_suficiente(m)} for m in mapas],
+            "segmentos": [{**m, "pasa_al_paso_b": m["segmento"] in {x["segmento"] for x in suficientes}} for m in mapas],
             **al_formato_del_embudo(oportunidades, tarjetas, particion)}
 
 

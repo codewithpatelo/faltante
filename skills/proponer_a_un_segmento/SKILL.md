@@ -1,6 +1,6 @@
 ---
 name: proponer_a_un_segmento
-description: Paso B de la divergencia. Recibe el mapa de empatía de un segmento de gente (quiénes son, qué eligen y qué dejan pasar, qué ven en el mercado, qué dicen y qué temen) y busca un desfasaje de mercado - algo que ese grupo necesita, que el mercado local no ofrece y que se puede importar. Lo escribe como propuesta de valor.
+description: Paso B de la divergencia. Recibe el mapa de empatía de un grupo de gente que intenta hacer el mismo trabajo con productos distintos (el trabajo, qué les sale mal, qué eligen y qué dejan pasar, qué ven en el mercado) y busca un desfasaje de mercado - algo que ese grupo necesita, que el mercado local no ofrece y que se puede importar. Lo escribe como propuesta de valor.
 toca_datos: true
 ---
 
@@ -13,15 +13,17 @@ el programa después trata de refutarlo con datos.
 
 ## Entrada: el mapa de empatía del segmento
 
-- **Quiénes son:** la situación que comparten y cuántas personas son, de qué productos y búsquedas.
+- **El trabajo que comparten:** lo que todos intentan hacer (`trabajo`, con ejemplos en `quien`),
+  cuántas personas son, a cuántas les sale mal, y con qué productos lo intentan hoy.
 - **Qué hacen (voto con los pies):** qué eligieron y qué dejaron pasar en sus búsquedas.
 - **Qué ven:** lo que el mercado les ofrece hoy.
 - **Qué dicen y qué temen (voto con las manos):** una línea por persona, con su ID
-  (`E012.o34`): situación, qué quiere lograr, dolor, ganancia, miedo, con qué compara.
+  (`E012.o34`): su trabajo, qué le sale mal, situación, dolor, ganancia, miedo, con qué compara.
 
 ## Procedimiento
 
-1. Buscá lo que no cierra: lo que eligen pese a un defecto, lo que dejan pasar pese a una
+1. Mirá el trabajo, no los productos: esta gente lo intenta con cosas distintas y a muchos les
+   sale mal. Buscá lo que no cierra: lo que eligen pese a un defecto, lo que dejan pasar pese a una
    ventaja, lo que improvisan, lo que temen y nadie les resuelve.
 2. Formulá la necesidad de fondo del grupo: qué trabajo quieren hacer y qué se los impide.
 3. Preguntate qué producto, que hoy no ven en su góndola, haría ese trabajo. Buscalo en otras

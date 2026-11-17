@@ -42,7 +42,10 @@ jobs:
         env:
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
         run: python -m harness.directo ${{ inputs.particion }} B4
-      - name: Personas, segmentos y propuestas con la API, y embudo
+      - name: Vectores de palabras para agrupar trabajos
+        if: inputs.tarea == 'serendipia'
+        run: pip install -r requirements-llm.txt
+      - name: Personas, trabajos, grupos y propuestas con la API, y embudo
         if: inputs.tarea == 'serendipia'
         env:
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
