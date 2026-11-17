@@ -18,3 +18,19 @@ hasta 720 personas, cada uno con unas 4 propuestas. Ahora, como se hace en la li
 Se informa también contra B3 en dev (31 de 230). Una sola corrida: el plazo de entrega no da
 para tres, y se declara. Test no se vuelve a correr: ya se usó con la versión vieja, y su
 resultado queda como está.
+
+## Agregado del 17/11, después de revisar la primera corrida y antes de medirla
+
+Antes de pasarla por el embudo revisamos a mano lo que salió (sin mirar ningún resultado del
+embudo). Los trabajos están bien formulados en general, pero aparecieron dos problemas:
+
+- **Una trampa en la regla de "cruzar productos".** Los 2 productos ancla de cada búsqueda son de
+  la misma categoría, así que "2 personas de 2 productos" se cumplía sin salir de una búsqueda:
+  133 de las 235 propuestas citaban gente de una sola búsqueda. La regla pasa a contar
+  **búsquedas**, en los grupos y en el guardrail de las propuestas.
+- **Vectores de palabras promediados agrupan por palabras sueltas** ("calentar la comida" junto a
+  comederos automáticos). Se cambian por un modelo de oraciones multilingüe
+  (paraphrase-multilingual-mpnet-base-v2).
+
+Los trabajos ya formulados se reusan. La primera corrida no se mide. La regla y la medida son las
+mismas.

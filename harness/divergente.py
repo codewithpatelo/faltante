@@ -35,8 +35,8 @@ from harness.modelo import MODELO, DeepSeek, con_reintento, costo, en_paralelo
 from harness.voces import RAIZ, productos
 
 SKILL_B = RAIZ / "skills/proponer_a_un_segmento/SKILL.md"
-MIN_PERSONAS_POR_PRODUCTO = 2     # en cada producto, la necesidad la dicen al menos 2 personas (como toda señal del embudo)
-MIN_PRODUCTOS_CITADOS = 2         # en al menos 2 productos distintos: la necesidad cruza productos
+MIN_PERSONAS_POR_PRODUCTO = 2     # en cada búsqueda, la necesidad la dicen al menos 2 personas (como toda señal del embudo)
+MIN_PRODUCTOS_CITADOS = 2         # en al menos 2 búsquedas distintas: la necesidad cruza categorías, no solo los 2 productos ancla de una
 REPREGUNTAR = True                # pedir una segunda tanda distinta: lo que más rindió al comparar prompts (DECISIONES.md)
 
 
@@ -49,10 +49,11 @@ def errores_de_propuesta(o: dict, miembros: dict[str, dict]) -> list[str]:
     """Guardrail del paso B: las personas citadas son del segmento, alcanzan y cruzan productos."""
     citadas = o.get("personas") or []
     errores = [f"cita a alguien que no es del segmento: {i}" for i in citadas if i not in miembros]
-    por_producto = Counter(miembros[i]["producto"] for i in dict.fromkeys(citadas) if i in miembros)
-    if sum(n >= MIN_PERSONAS_POR_PRODUCTO for n in por_producto.values()) < MIN_PRODUCTOS_CITADOS:
-        errores.append(f"tiene que citar al menos {MIN_PERSONAS_POR_PRODUCTO} personas de cada uno de al menos "
-                       f"{MIN_PRODUCTOS_CITADOS} productos distintos")
+    todos = productos()
+    por_busqueda = Counter(todos.get(miembros[i]["producto"], {}).get("busqueda", miembros[i]["producto"]) for i in dict.fromkeys(citadas) if i in miembros)
+    if sum(n >= MIN_PERSONAS_POR_PRODUCTO for n in por_busqueda.values()) < MIN_PRODUCTOS_CITADOS:
+        errores.append(f"tiene que citar al menos {MIN_PERSONAS_POR_PRODUCTO} personas de cada una de al menos "
+                       f"{MIN_PRODUCTOS_CITADOS} búsquedas distintas")
     if not o.get("alivia") or not o.get("busqueda_ml"):
         errores.append("faltan alivia o busqueda_ml")
     return errores

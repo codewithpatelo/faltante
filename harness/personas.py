@@ -8,11 +8,12 @@
                                              producto y sin nombrarlo, y lo que le sale mal
                                              (Ulwick, Jobs-to-be-Done; etapa de resumen orientado
                                              al uso de TnT-LLM, Wan et al. 2024).
-    S  grupos    (código, sin LLM)          los trabajos se agrupan por significado: promedio de
-                                             vectores de palabras y clustering jerárquico de Ward,
-                                             como Timoshenko y Hauser (2019) con las necesidades.
-                                             El corte del árbol es el que deja más grupos que
-                                             cruzan productos con la evidencia que pide el paso B.
+    S  grupos    (código, sin LLM)          los trabajos se agrupan por significado: un modelo de
+                                             oraciones multilingüe (sentence-transformers) y
+                                             clustering jerárquico de Ward, como Timoshenko y
+                                             Hauser (2019) con las necesidades. El corte del árbol
+                                             es el que deja más grupos que cruzan búsquedas con la
+                                             evidencia que pide el paso B.
 
 Antes los grupos los definía el LLM en una sola llamada a partir de la "situación" de cada
 persona; como el 70% de las reseñas no cuenta la situación, salían por categoría de producto
@@ -35,13 +36,14 @@ SKILL_J = RAIZ / "skills/formular_trabajos/SKILL.md"
 MIN_PALABRAS_OPINION = 8          # decisión: "Excelente, llegó rápido" no cuenta nada de quien lo escribe; las preguntas se leen todas
 VOCES_POR_LLAMADA = 50
 TARJETAS_POR_LLAMADA_J = 80
-MIN_PERSONAS_POR_PRODUCTO = 2     # lo que el paso B necesita para proponer: 2 personas de cada uno de 2 productos
-MIN_PRODUCTOS_POR_GRUPO = 2       # el grupo cruza productos: si no, es "los compradores de X"
+MIN_PERSONAS_POR_BUSQUEDA = 2    # lo que el paso B necesita para proponer: 2 personas de cada una de 2 búsquedas
+MIN_BUSQUEDAS_POR_GRUPO = 2       # el grupo cruza búsquedas: los 2 productos ancla de una misma búsqueda son la misma categoría
+MODELO_DE_ORACIONES = "sentence-transformers/paraphrase-multilingual-mpnet-base-v2"
 PASO_DEL_CORTE = 10               # cortes del árbol que se prueban: 10, 20, 30... grupos
 PERSONAS_EN_EL_MAPA = 60          # las que lee el paso B de cada grupo (primero aquellas a las que algo les sale mal)
 ALTERNATIVAS_QUE_VE = 4           # de cada búsqueda: las más elegidas y las que se dejaron pasar
 CAMPOS = ("situacion", "quiere_lograr", "dolor", "ganancia", "teme", "compara_con")
-AGRUPACION = "trabajos_ward"      # versión de los grupos guardados: si cambia, se recalculan
+AGRUPACION = "trabajos_mpnet_ward_busquedas"      # versión de los grupos guardados: si cambia, se recalculan
 
 
 # --- A · Una tarjeta por persona -----------------------------------------------------------
@@ -115,44 +117,35 @@ def trabajos(cliente, tarjetas: list[dict], traza: list) -> dict[str, dict]:
 # --- S · Grupos por trabajo (código) ---------------------------------------------------------
 
 def vectores(textos: list[str]):
-    """Promedio normalizado de los vectores de las palabras con contenido (es_core_news_md, 300
-    dimensiones). Timoshenko y Hauser (2019) representan cada oración así antes de Ward."""
-    import numpy as np
-    import spacy
-    nlp = spacy.load("es_core_news_md", disable=["parser", "ner"])
-    salida = []
-    for doc in nlp.pipe(textos, batch_size=256):
-        ws = [w.vector for w in doc if w.is_alpha and not w.is_stop and w.has_vector]
-        v = np.mean(ws, axis=0) if ws else np.zeros(nlp.vocab.vectors_length)
-        n = np.linalg.norm(v)
-        salida.append(v / n if n else v)
-    return np.array(salida)
+    """Un vector por trabajo, normalizado, con un modelo de oraciones multilingüe. Corre en el
+    workflow (requirements-llm.txt); los grupos quedan guardados y no hace falta para reproducir."""
+    from sentence_transformers import SentenceTransformer
+    return SentenceTransformer(MODELO_DE_ORACIONES).encode(textos, batch_size=64, normalize_embeddings=True)
 
 
-def cruza_productos(productos_de_miembros: list[str]) -> bool:
-    por_producto = Counter(productos_de_miembros)
-    return sum(n >= MIN_PERSONAS_POR_PRODUCTO for n in por_producto.values()) >= MIN_PRODUCTOS_POR_GRUPO
+def cruza_busquedas(busquedas_de_miembros: list[str]) -> bool:
+    por_busqueda = Counter(busquedas_de_miembros)
+    return sum(n >= MIN_PERSONAS_POR_BUSQUEDA for n in por_busqueda.values()) >= MIN_BUSQUEDAS_POR_GRUPO
 
 
 def agrupar_por_trabajo(tarjetas: dict[str, dict], trabajos_: dict[str, dict]) -> tuple[list[dict], dict[str, str]]:
     """Ward sobre los trabajos. De los cortes del árbol, el que deja más grupos que cruzan
-    productos (a igualdad, el de menos grupos): la granularidad más fina que todavía tiene la
+    búsquedas (a igualdad, el de menos grupos): la granularidad más fina que todavía tiene la
     evidencia que el paso B necesita para proponer."""
     import numpy as np
     from scipy.cluster.hierarchy import fcluster, linkage
+    todos = productos()
     ids = [i for i in trabajos_ if i in tarjetas]
-    V = vectores([trabajos_[i]["trabajo"] for i in ids])
-    con_vector = [k for k in range(len(ids)) if V[k].any()]
-    ids, V = [ids[k] for k in con_vector], V[con_vector]
+    V = np.asarray(vectores([trabajos_[i]["trabajo"] for i in ids]))
     arbol = linkage(V, method="ward")
-    prod = [tarjetas[i]["producto"] for i in ids]
+    busq = [todos[tarjetas[i]["producto"]]["busqueda"] for i in ids]
     mejor = None
-    for k in range(PASO_DEL_CORTE, len(ids) // (MIN_PERSONAS_POR_PRODUCTO * MIN_PRODUCTOS_POR_GRUPO) + 1, PASO_DEL_CORTE):
+    for k in range(PASO_DEL_CORTE, len(ids) // (MIN_PERSONAS_POR_BUSQUEDA * MIN_BUSQUEDAS_POR_GRUPO) + 1, PASO_DEL_CORTE):
         etiquetas = fcluster(arbol, k, criterion="maxclust")
         grupos = {}
-        for p, e in zip(prod, etiquetas):
-            grupos.setdefault(e, []).append(p)
-        n = sum(cruza_productos(g) for g in grupos.values())
+        for b, e in zip(busq, etiquetas):
+            grupos.setdefault(e, []).append(b)
+        n = sum(cruza_busquedas(g) for g in grupos.values())
         if mejor is None or n > mejor[0]:
             mejor = (n, k, etiquetas)
     _, k, etiquetas = mejor
@@ -229,9 +222,10 @@ def mapa_de_empatia(segmento: dict, miembros: list[dict], todos: dict, capturas:
             "productos": {pid: {"titulo": todos[pid]["titulo"][:70], "vendidos": todos[pid]["vendidos"],
                                 "precio": todos[pid]["precio"], "personas": n} for pid, n in por_producto.most_common()},
             "busquedas": {b: eleccion_en_la_busqueda(capturas.get(b)) for b in busquedas},
+            "personas_por_busqueda": dict(Counter(todos[t["producto"]]["busqueda"] for t in miembros)),
             "voces": [{"id": t["id"], **trabajos_.get(t["id"], {}), **{c: t[c] for c in CAMPOS if t[c]}} for t in vistas]}
 
 
 def es_segmento_suficiente(mapa: dict) -> bool:
-    """Tiene la evidencia que el paso B necesita: 2 personas en cada uno de 2 productos."""
-    return sum(p["personas"] >= MIN_PERSONAS_POR_PRODUCTO for p in mapa["productos"].values()) >= MIN_PRODUCTOS_POR_GRUPO
+    """Tiene la evidencia que el paso B necesita: 2 personas en cada una de 2 búsquedas."""
+    return sum(n >= MIN_PERSONAS_POR_BUSQUEDA for n in mapa["personas_por_busqueda"].values()) >= MIN_BUSQUEDAS_POR_GRUPO
