@@ -1,109 +1,130 @@
 {
  "llm": {
   "todo": {
-   "propuestas": 135,
-   "no_descartadas_distintas": 13,
+   "propuestas": 231,
+   "no_descartadas_distintas": 30,
    "sobreviven": 0,
-   "proporcion": 0.096,
+   "proporcion": 0.13,
    "mueren_en": {
-    "C1 dolor": 40,
-    "C5 la eligen": 28,
-    "C4 hueco": 54
+    "C1 dolor": 74,
+    "C4 hueco": 88,
+    "C5 la eligen": 34,
+    "guardrail": 5
    },
    "no_descartadas": [
-    "condicional: Barra de enchufes de escritorio con abrazadera: 2 tomas de 220V + 1 USB-C PD 65W + 2 USB-A",
-    "condicional: Cortina parasol enrollable de montaje fijo: un tubo con resorte que queda tomado al parabr",
-    "condicional: Estuche tipo billetera/álbum: una carpeta blanda que se abre como libro con cuatro o seis ",
-    "condicional: Extractor de aire para pared o techo con higrostato incorporado (sensor de humedad regulab",
-    "condicional: Kit de ajuste para fundas de sillón: cuñas o tubos de espuma para calzar la ranura entre a",
-    "condicional: Kit de cuarentena para plantas nuevas: solución de inmersión (alumbre/peróxido) y recipien",
-    "condicional: Kit de detección de fugas con luz UV y colorantes trazadores para aceite y refrigerante (l",
-    "condicional: Maletín organizador de manualidades apilable, con divisiones pequeñas y elásticos para agu",
-    "condicional: Mallas de natación y conjuntos de primera piel de tejido seamless (sin costuras) de alta e",
-    "condicional: Muestrario / abanico físico de muestras reales de hilado (color y grosor), tipo carta de c",
-    "condicional: Sistema de escobilla de inodoro con cabezales desechables: mango reutilizable con botón de",
-    "condicional: Sistema de escobilla para inodoro con cabezales descartables: un mango con botón que engan",
-    "condicional: Una estación de pared para el puesto de peinado: brazo o riel fijo con toma de 220V, porta"
+    "condicional: Alimentador de bandeja rotativa con 5 a 6 compartimentos pre-servidos (una semana de comid",
+    "condicional: Atrayente saborizante para el agua de mascotas: gotas concentradas (pack de 2 frascos de 2",
+    "condicional: Aviso de nivel y de entrega para comederos: un sensor a pila (boya o ultrasónico) que se a",
+    "condicional: Bajo-alfombra técnico (rug pad) acolchado y antideslizante, de 8-10 mm, en rollo cortable ",
+    "condicional: Base-balanza de agua para gatos: una bandeja de poca altura que se apoya debajo de cualqui",
+    "condicional: Bebedero que se acopla a la canilla (rosca estándar) con filtro de carbón y flujo continuo",
+    "condicional: Bebedero-fuente de agua por gravedad para gatos: cerámica o plástico duro, depósito grande",
+    "condicional: Bebedero/fuente para gatos que se conecta directo a la canilla (o a un bidón con válvula d",
+    "condicional: Comedero automático con balanza integrada: sirve la ración pesada en gramos exactos (no po",
+    "condicional: Comedero automático con bandejas refrigeradas y tapa rotativa para servir latas y sobres a",
+    "condicional: Comedero automático para comida húmeda: compartimentos con refrigeración/ice pack y tapa t",
+    "condicional: Cuadro o vitrina de pared con tira LED UV incorporada, fondo negro mate y encendido por co",
+    "condicional: Dispensador de alimento seco hermético con cierre de goma y palanca dosificadora de porcio",
+    "condicional: Gotas / saborizante atrayente de agua para gatos: un líquido (o polvo) que se agrega al ag",
+    "condicional: Gotas saborizantes/atrayentes sin calorías para el agua del gato (sabor pollo, atún o cald",
+    "condicional: Kit de anclaje universal para proteger la moto sin perforar: abrazaderas de caño de 22 a 3",
+    "condicional: Kit de control preventivo del motor: tinte fluorescente UV para aceite y refrigerante + li",
+    "condicional: Kit de diagnóstico capilar y del agua: tiras de pH y de dureza, test de porosidad y elasti",
+    "condicional: Kit de pletinas y perfiles de aluminio ranurados (20x20 y 30x30 en cortes de 20 cm) con es",
+    "condicional: Kit de prueba de presión para el motor: bomba manual con manómetro, manguera y juego de ad",
+    "condicional: Medidor de consumo de agua para gatos: sensor de nivel/flujo con aviso (pantalla o app) qu",
+    "condicional: Muestrario físico de colores: tarjetas con muestra real de hilado, tela y pelo de alfombra",
+    "condicional: Nebulizador ultrasónico de niebla fría con flotador y temporizador (mist maker) para bande",
+    "condicional: Organizador de pared para baño con fijación por vacío (ventosa con bomba de vacío y palanc",
+    "condicional: Pista de canicas (marble run) de gran formato: 80-120 piezas de madera maciza o ABS grueso",
+    "condicional: Remachadora manual de tuercas remachables con juego surtido de tuercas M6 y M8 en acero in",
+    "condicional: Secador de aire forzado con manguera flexible y dos boquillas (el que se usa en deportes d",
+    "condicional: Set de 6 a 8 animales de goma maciza (TPR) de 12 a 20 cm, pintados en masa, sin piezas des",
+    "condicional: Sistema modular de almacenaje de pared (línea de garaje/taller: rieles, ganchos de acero d",
+    "condicional: Sérum facial en barra sólida (solid serum stick) con ácido hialurónico, de un solo gesto y"
    ]
   },
   "limpio_productos_nuevos": {
-   "propuestas": 82,
-   "no_descartadas_distintas": 7,
+   "propuestas": 66,
+   "no_descartadas_distintas": 10,
    "sobreviven": 0,
-   "proporcion": 0.085,
+   "proporcion": 0.152,
    "mueren_en": {
-    "C1 dolor": 28,
-    "C5 la eligen": 16,
-    "C4 hueco": 31
+    "C1 dolor": 22,
+    "C4 hueco": 24,
+    "C5 la eligen": 8,
+    "guardrail": 2
    },
    "no_descartadas": [
-    "condicional: Estuche tipo billetera/álbum: una carpeta blanda que se abre como libro con cuatro o seis ",
-    "condicional: Extractor de aire para pared o techo con higrostato incorporado (sensor de humedad regulab",
-    "condicional: Kit de ajuste para fundas de sillón: cuñas o tubos de espuma para calzar la ranura entre a",
-    "condicional: Kit de cuarentena para plantas nuevas: solución de inmersión (alumbre/peróxido) y recipien",
-    "condicional: Kit de detección de fugas con luz UV y colorantes trazadores para aceite y refrigerante (l",
-    "condicional: Mallas de natación y conjuntos de primera piel de tejido seamless (sin costuras) de alta e",
-    "condicional: Muestrario / abanico físico de muestras reales de hilado (color y grosor), tipo carta de c"
+    "condicional: Bajo-alfombra técnico (rug pad) acolchado y antideslizante, de 8-10 mm, en rollo cortable ",
+    "condicional: Kit de anclaje universal para proteger la moto sin perforar: abrazaderas de caño de 22 a 3",
+    "condicional: Kit de control preventivo del motor: tinte fluorescente UV para aceite y refrigerante + li",
+    "condicional: Kit de pletinas y perfiles de aluminio ranurados (20x20 y 30x30 en cortes de 20 cm) con es",
+    "condicional: Kit de prueba de presión para el motor: bomba manual con manómetro, manguera y juego de ad",
+    "condicional: Nebulizador ultrasónico de niebla fría con flotador y temporizador (mist maker) para bande",
+    "condicional: Pista de canicas (marble run) de gran formato: 80-120 piezas de madera maciza o ABS grueso",
+    "condicional: Remachadora manual de tuercas remachables con juego surtido de tuercas M6 y M8 en acero in",
+    "condicional: Set de 6 a 8 animales de goma maciza (TPR) de 12 a 20 cm, pintados en masa, sin piezas des",
+    "condicional: Sérum facial en barra sólida (solid serum stick) con ácido hialurónico, de un solo gesto y"
    ]
   }
  },
  "B1": {
   "todo": {
    "propuestas": 133,
-   "no_descartadas_distintas": 7,
+   "no_descartadas_distintas": 8,
    "sobreviven": 0,
-   "proporcion": 0.06,
+   "proporcion": 0.068,
    "mueren_en": {
-    "C1 dolor": 39,
-    "C4 hueco": 84,
-    "C5 la eligen": 2
+    "C1 dolor": 29,
+    "C4 hueco": 92,
+    "C5 la eligen": 3
    },
    "no_descartadas": [
-    "condicional: versión del producto ancla que resuelva la queja 'acelerador'",
     "condicional: versión del producto ancla que resuelva la queja 'ahora'",
     "condicional: versión del producto ancla que resuelva la queja 'anzuelos'",
     "condicional: versión del producto ancla que resuelva la queja 'bastante'",
     "condicional: versión del producto ancla que resuelva la queja 'bueno'",
     "condicional: versión del producto ancla que resuelva la queja 'calidad'",
     "condicional: versión del producto ancla que resuelva la queja 'camara'",
-    "condicional: versión del producto ancla que resuelva la queja 'saludos'"
+    "condicional: versión del producto ancla que resuelva la queja 'juego'",
+    "condicional: versión del producto ancla que resuelva la queja 'piso'"
    ]
   },
   "limpio_productos_nuevos": {
    "propuestas": 92,
-   "no_descartadas_distintas": 6,
+   "no_descartadas_distintas": 8,
    "sobreviven": 0,
-   "proporcion": 0.076,
+   "proporcion": 0.098,
    "mueren_en": {
-    "C1 dolor": 26,
-    "C4 hueco": 57,
-    "C5 la eligen": 2
+    "C1 dolor": 19,
+    "C4 hueco": 61,
+    "C5 la eligen": 3
    },
    "no_descartadas": [
-    "condicional: versión del producto ancla que resuelva la queja 'acelerador'",
     "condicional: versión del producto ancla que resuelva la queja 'ahora'",
     "condicional: versión del producto ancla que resuelva la queja 'anzuelos'",
     "condicional: versión del producto ancla que resuelva la queja 'bastante'",
     "condicional: versión del producto ancla que resuelva la queja 'bueno'",
     "condicional: versión del producto ancla que resuelva la queja 'calidad'",
-    "condicional: versión del producto ancla que resuelva la queja 'camara'"
+    "condicional: versión del producto ancla que resuelva la queja 'camara'",
+    "condicional: versión del producto ancla que resuelva la queja 'juego'",
+    "condicional: versión del producto ancla que resuelva la queja 'piso'"
    ]
   }
  },
  "B2": {
   "todo": {
    "propuestas": 7,
-   "no_descartadas_distintas": 2,
+   "no_descartadas_distintas": 1,
    "sobreviven": 0,
    "proporcion": 0.286,
    "mueren_en": {
-    "C5 la eligen": 1,
-    "C4 hueco": 2,
-    "C1 dolor": 2
+    "C1 dolor": 3,
+    "C4 hueco": 2
    },
    "no_descartadas": [
-    "condicional: repuesto de aspiradora para auto",
-    "condicional: repuesto de rodillo masajeador"
+    "condicional: repuesto de aspiradora para auto"
    ]
   },
   "limpio_productos_nuevos": {

@@ -1,10 +1,11 @@
 """La divergencia: perfilar a la gente y buscar desfasajes de mercado.
 
     A · personas   (skills/leer_personas)          de cada voz, un mapa de empatía chico citando su texto
-    S · segmentos  (skills/agrupar_personas)       personas en la misma situación, aunque hayan
-                                                    comprado cosas distintas; de cada segmento, su
-                                                    mapa de empatía (harness/personas.py)
-    B · propuestas (skills/proponer_a_un_segmento) por segmento, qué traer que ese grupo necesita y
+    J · trabajos   (skills/formular_trabajos)       el trabajo que cada persona intenta hacer, sin el producto
+    S · grupos     (código: Ward)                   gente que intenta el mismo trabajo con productos
+                                                    distintos; de cada grupo, su mapa de empatía
+                                                    (harness/personas.py)
+    B · propuestas (skills/proponer_a_un_segmento) por grupo, qué traer que ese grupo necesita y
                                                     no ve en su góndola, como propuesta de valor; dos
                                                     tandas, la segunda distinta de la primera
 
@@ -35,8 +36,8 @@ from harness.modelo import MODELO, clientes, con_reintento, costos, en_paralelo,
 from harness.voces import RAIZ, productos
 
 SKILL_B = RAIZ / "skills/proponer_a_un_segmento/SKILL.md"
-MIN_PERSONAS_POR_PRODUCTO = 2     # en cada producto, la necesidad la dicen al menos 2 personas (como toda señal del embudo)
-MIN_PRODUCTOS_CITADOS = 2         # en al menos 2 productos distintos: la necesidad cruza productos
+MIN_PERSONAS_POR_PRODUCTO = 2     # en cada búsqueda, la necesidad la dicen al menos 2 personas (como toda señal del embudo)
+MIN_PRODUCTOS_CITADOS = 2         # en al menos 2 búsquedas distintas: la necesidad cruza categorías, no solo los 2 productos ancla de una
 REPREGUNTAR = True                # pedir una segunda tanda distinta: lo que más rindió al comparar prompts (DECISIONES.md)
 
 
@@ -49,10 +50,11 @@ def errores_de_propuesta(o: dict, miembros: dict[str, dict]) -> list[str]:
     """Guardrail del paso B: las personas citadas son del segmento, alcanzan y cruzan productos."""
     citadas = o.get("personas") or []
     errores = [f"cita a alguien que no es del segmento: {i}" for i in citadas if i not in miembros]
-    por_producto = Counter(miembros[i]["producto"] for i in dict.fromkeys(citadas) if i in miembros)
-    if sum(n >= MIN_PERSONAS_POR_PRODUCTO for n in por_producto.values()) < MIN_PRODUCTOS_CITADOS:
-        errores.append(f"tiene que citar al menos {MIN_PERSONAS_POR_PRODUCTO} personas de cada uno de al menos "
-                       f"{MIN_PRODUCTOS_CITADOS} productos distintos")
+    todos = productos()
+    por_busqueda = Counter(todos.get(miembros[i]["producto"], {}).get("busqueda", miembros[i]["producto"]) for i in dict.fromkeys(citadas) if i in miembros)
+    if sum(n >= MIN_PERSONAS_POR_PRODUCTO for n in por_busqueda.values()) < MIN_PRODUCTOS_CITADOS:
+        errores.append(f"tiene que citar al menos {MIN_PERSONAS_POR_PRODUCTO} personas de cada una de al menos "
+                       f"{MIN_PRODUCTOS_CITADOS} búsquedas distintas")
     if not o.get("alivia") or not o.get("busqueda_ml"):
         errores.append("faltan alivia o busqueda_ml")
     return errores
@@ -113,8 +115,12 @@ def divergir(cliente, particion: str, capturas: dict, juez=None) -> dict:
     mapas, miembros_de = [], {}
     for s in gente["segmentos"]:
         miembros_de[s["id"]] = {i: tarjetas[i] for i, g in gente["asignaciones"].items() if g == s["id"]}
-        mapas.append(P.mapa_de_empatia(s, list(miembros_de[s["id"]].values()), todos, capturas))
-    suficientes = [m for m in mapas if P.es_segmento_suficiente(m)]
+        mapas.append(P.mapa_de_empatia(s, list(miembros_de[s["id"]].values()), todos, capturas, gente["trabajos"]))
+    # Primero los trabajos que a más gente le salen mal (lo desatendido, como en Ulwick), y tantas
+    # llamadas al paso B como productos tiene la partición: el mismo esfuerzo que B3.
+    llamadas_por_grupo = 2 if REPREGUNTAR else 1
+    suficientes = sorted((m for m in mapas if P.es_segmento_suficiente(m)), key=lambda m: -m["les_sale_mal"])
+    suficientes = suficientes[:max(1, len(productos(particion)) // llamadas_por_grupo)]
     oportunidades = [o for ops in en_paralelo(lambda m: proponer(cliente, m, miembros_de[m["segmento"]], traza), suficientes)
                      for o in ops]
     dolor = {"llm": D.medir_y_decidir(juez, [(D.enunciado(o), {tarjetas[i]["producto"] for i in o["personas"]})
@@ -125,7 +131,7 @@ def divergir(cliente, particion: str, capturas: dict, juez=None) -> dict:
     return {"quien": cliente.modelo, "juez": juez.modelo, "costo": costos(trazas), "traza": traza + (traza_juez if juez is not cliente else []),
             "dolor": dolor,
             "personas": len(tarjetas), "asignadas": len(gente["asignaciones"]),
-            "segmentos": [{**m, "pasa_al_paso_b": P.es_segmento_suficiente(m)} for m in mapas],
+            "segmentos": [{**m, "pasa_al_paso_b": m["segmento"] in {x["segmento"] for x in suficientes}} for m in mapas],
             **al_formato_del_embudo(oportunidades, tarjetas, particion)}
 
 

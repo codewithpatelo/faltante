@@ -17,10 +17,12 @@ TP de IA Agéntica, Maestría en Explotación de Datos (UBA), 2026.
 Parte de dos cosas que la gente muestra en Mercado Libre: **lo que hace** (en cada búsqueda, qué
 elige y qué deja pasar) y **lo que dice** (opiniones de compradores y preguntas de indecisos).
 
-1. **Abrir ideas.** Un LLM lee cada opinión como una persona (situación, qué quiere lograr, qué le
-   molesta, con qué compara), junta a la gente que está en la misma situación aunque haya
-   comprado cosas distintas ("corta el pelo en casa a sus hijos") y propone qué traerle a cada
-   grupo.
+1. **Abrir ideas.** Un LLM lee cada opinión como una persona (qué quiere lograr, qué le molesta,
+   qué teme) y escribe el **trabajo** que intenta hacer, sin nombrar el producto ("tomar agua
+   fresca en salidas con calor"; Ulwick, Jobs-to-be-Done). El código agrupa los trabajos por
+   significado (modelo de oraciones y Ward, como Timoshenko y Hauser 2019) y se queda con los
+   grupos que juntan gente de búsquedas distintas a la que el trabajo le sale mal. Para cada
+   grupo, el LLM propone qué traer.
 2. **Intentar matarlas.** Cada propuesta tiene que pasar cuatro preguntas, y en cada una hay un
    dato que puede tirarla abajo:
    - **C1** ¿Ese problema le pasa de verdad a esa gente, más que a gente al azar?
@@ -36,7 +38,7 @@ flowchart TD
     V["🗣️ Lo que dice la gente<br/>opiniones y preguntas"] --> A
     P["👣 Lo que hace<br/>qué elige y qué deja pasar"] --> C4
     subgraph abrir["💡 Abrir ideas (LLM)"]
-        A["Personas<br/>cada texto → mapa de empatía"] --> S["Grupos por situación"] --> B["Propuestas por grupo"]
+        A["Personas<br/>cada texto → mapa de empatía"] --> J["Trabajo de cada persona<br/>sin nombrar el producto"] --> S["Grupos por trabajo<br/>(Ward, cruzan búsquedas)"] --> B["Propuestas por grupo"]
     end
     subgraph matar["🔪 Intentar matarlas"]
         C1{"C1 ¿el problema existe?<br/>otro LLM + prueba de Fisher"} --> C4{"C4 ¿nadie lo vende?<br/>otro LLM juzga la competencia"}
@@ -94,12 +96,16 @@ embudo es nuestro y las del programa lo pasan por construcción). La medida prin
 (`data/evaluacion/humano/`): está en curso. Con la primera de cuatro personas, 12 de las 16 del
 programa en test son concretas, no obvias y las cotizaría; de B1, ninguna.
 
-**3. Leer personas y grupos no genera mejores ideas que pedírselas directo al modelo (B3).**
-Con el mismo embudo, B3 deja más: 44 contra 16 en test (18% contra 15% de sus propuestas,
-p = 0,45) y 31 contra 13 en dev. Por la regla escrita antes de correrlo, **lo que aporta el
-sistema es el embudo que intenta refutar cada idea, no la forma de generarlas**. Juntando 2 y 3:
-el modelo solo recomienda con confianza cosas que el mercado ya resuelve; el mismo modelo, obligado
-a pasar por los datos, deja ideas que resisten.
+**3. La forma de generar ideas: la primera versión era trivial; la nueva empata con proponer
+directo (B3).** La versión que corrió en test agrupaba por "situación", pero el 70% de las
+reseñas no la cuenta, y los grupos salieron por categoría de producto; con el mismo embudo, B3
+dejó más (44 contra 16 en test, 31 contra 13 en dev). La rehicimos agrupando por **trabajo** y
+exigiendo que cada grupo cruce búsquedas (`data/evaluacion/trabajos/`): en dev deja **30**
+oportunidades de 231 propuestas (13%), contra 13 de la versión vieja y 31 de B3 (13,5%). Pasa la
+regla escrita antes (le gana a la vieja) pero no le gana a B3, y varias de las 30 son la misma
+idea con otra búsqueda (bebederos a canilla, gotas para que el gato tome agua). Test no se volvió
+a correr. Juntando 2 y 3: **lo que más aporta el sistema es el embudo que refuta**; el modelo solo
+recomienda con confianza cosas que el mercado ya resuelve.
 
 **Análisis de fallas (test).** De las 109 propuestas del programa, 30 mueren en C1 (el problema
 no aparece más que en gente al azar, o aparece en un solo producto), 45 en C4 (ya hay 3 o más que
@@ -112,8 +118,8 @@ todavía, y el experimento siguiente es cotizar y probar el precio. Cada una con
 y una regla escrita antes (`DECISIONES.md`, `data/evaluacion/`): el dolor medido como chequeo
 mejoró y como filtro previo no; obligar a los grupos a cruzar búsquedas empeoró y se sacó; el
 juez de competencia independiente acertó 32 de 40 desacuerdos a ciegas contra 8 del criterio
-viejo. Leer personas en vez de productos multiplicó por 10 las ideas que sobreviven frente a la
-versión anterior del programa, pero no frente a B3: esa pieza queda en duda.
+viejo. Leer personas y agruparlas por trabajo duplicó las ideas que resisten
+frente a agruparlas por situación (dev, 30 contra 13), pero no superó a proponer directo.
 
 **Ningún número está elegido a ojo.** Margen mínimo: la ganancia neta del comercio minorista
 (Damodaran, 5,19%). "Ya atendido": 3 o más competidores que venden (Bresnahan y Reiss, 1991).
@@ -178,7 +184,7 @@ Buscamos a propósito los supuestos que, si fallan, invalidan el resultado, y me
 podían medir:
 
 - **Rivales débiles.** Ganarle a reglas sin LLM prueba poco: por eso B4 (el modelo solo, de
-  punta a punta) y B3 (la generación sola). B3 sí le ganó a la generación del programa (arriba).
+  punta a punta) y B3 (la generación sola). B3 desnudó que la primera generación era trivial (arriba).
 - **El LLM escribe la búsqueda con la que después se lo juzga.** Una búsqueda rebuscada trae pocos
   competidores y pasa C4 sola. Medido: las que quedan no tienen búsquedas con menos resultados
   que las que mueren (mediana 246 contra 231 en dev, p = 0,89; 167 contra 205 en test, p = 0,32).

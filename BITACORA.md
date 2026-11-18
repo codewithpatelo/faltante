@@ -440,6 +440,25 @@ decidimos.** No sacar conclusión: la regla pide la mayoría de los jueces y hay
 recomendaciones solo una diferencia grande sería significativa. El README sigue diciendo "en curso".
 Faltan las planillas de Nilo, Patricio y Victoria.
 
+## 2026-11-17 — La divergencia era trivial: agrupar por trabajo
+
+**Qué vimos.** B3 (proponer directo) le ganaba al programa, y Patricio marcó que eso solo podía
+significar que la divergencia estaba mal hecha. Revisando los datos: el 70% de las tarjetas no
+tiene "situación", así que el LLM armaba ~30 grupos por categoría de producto en una sola llamada
+("Convivencia con gatos", "Bebés de 0 a 12 meses"), de hasta 720 personas, y proponía unas 4 ideas
+por grupo leyendo 60 voces. **Qué hicimos, siguiendo la literatura en vez de inventar.** El LLM
+reescribe cada tarjeta como el trabajo que la persona intenta hacer, sin nombrar el producto
+(Ulwick; etapa de resumen de TnT-LLM); el código agrupa los trabajos con un modelo de oraciones y
+Ward (Timoshenko y Hauser) y propone primero para los grupos donde a más gente le sale mal.
+Probamos antes agrupar las quejas directo con vectores: salían temas genéricos ("no dura", "no lo
+probé"), y lo descartamos. Al revisar la primera corrida encontramos una trampa vieja: "cruzar 2
+productos" se cumplía con los 2 productos ancla de una misma búsqueda (133 de 235 propuestas); la
+regla pasó a contar búsquedas. **Qué pasó.** En dev, 30 oportunidades contra 13 de la versión vieja
+y 31 de B3. **Qué decidimos.** La versión nueva reemplaza a la vieja (regla escrita antes). Test no
+se vuelve a correr ni se rehacen las planillas humanas: test y planillas quedan con la versión
+vieja, y el README lo dice. Pendiente: el conteo de "distintas" cuenta la misma idea con otra
+búsqueda.
+
 ## 2026-11-16 — Cliente de Claude en `harness/modelo.py`
 
 **Qué hicimos.** Agregamos `Claude` (SDK oficial de Anthropic, misma forma que `DeepSeek`) y

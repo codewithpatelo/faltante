@@ -1,39 +1,49 @@
-"""Perfilar a la gente: de cada voz, un mapa de empatía chico; de todas, segmentos de personas
-en la misma situación aunque hayan comprado cosas distintas; de cada segmento, su mapa de
-empatía con conteos y citas.
+"""Perfilar a la gente y agruparla por el trabajo que intenta hacer, no por lo que compró.
 
-    A  tarjetas   (skills/leer_personas)    el LLM lee las voces de cada producto y anota, por
+    A  tarjetas  (skills/leer_personas)     el LLM lee las voces de cada producto y anota, por
                                              persona: situación, qué quiere lograr, dolor,
                                              ganancia, qué teme, con qué compara y una cita.
-    S  segmentos  (skills/agrupar_personas)  el LLM define segmentos por situación y asigna a
-                                             cada persona; el programa arma el mapa de empatía
-                                             de cada segmento (código, sin LLM).
+    J  trabajos  (skills/formular_trabajos) el LLM reescribe cada tarjeta como el trabajo que la
+                                             persona intenta hacer, un nivel por encima del
+                                             producto y sin nombrarlo, y lo que le sale mal
+                                             (Ulwick, Jobs-to-be-Done; etapa de resumen orientado
+                                             al uso de TnT-LLM, Wan et al. 2024).
+    S  grupos    (código, sin LLM)          los trabajos se agrupan por significado: un modelo de
+                                             oraciones multilingüe (sentence-transformers) y
+                                             clustering jerárquico de Ward, como Timoshenko y
+                                             Hauser (2019) con las necesidades. El corte del árbol
+                                             es el que deja más grupos que cruzan búsquedas con la
+                                             evidencia que pide el paso B.
 
-Las tarjetas y los segmentos se guardan en data/serendipia/personas_<particion>_api.json y se
-reusan: si el paso B falla o se cambia, no se vuelve a leer todo.
+Antes los grupos los definía el LLM en una sola llamada a partir de la "situación" de cada
+persona; como el 70% de las reseñas no cuenta la situación, salían por categoría de producto
+("convivencia con gatos"). El trabajo, en cambio, está en casi todas.
+
+Tarjetas, trabajos y grupos se guardan en data/serendipia/personas_<particion>_api.json y se
+reusan.
 """
 
 from __future__ import annotations
 
 import json
-import random
 from collections import Counter
 
 from harness.modelo import con_reintento, en_paralelo
 from harness.voces import RAIZ, productos, sin_acentos, textos_con_id
 
 SKILL_A = RAIZ / "skills/leer_personas/SKILL.md"
-SKILL_S = RAIZ / "skills/agrupar_personas/SKILL.md"
+SKILL_J = RAIZ / "skills/formular_trabajos/SKILL.md"
 MIN_PALABRAS_OPINION = 8          # decisión: "Excelente, llegó rápido" no cuenta nada de quien lo escribe; las preguntas se leen todas
 VOCES_POR_LLAMADA = 50
-PERSONAS_PARA_DEFINIR = 2500      # las que lee el LLM para definir segmentos (al azar, con semilla fija)
-PERSONAS_POR_LLAMADA_AL_ASIGNAR = 150
-SEMILLA = 7
-MIN_PERSONAS_POR_SEGMENTO = 15    # decisión: un grupo más chico no sostiene un negocio de importación
-MIN_PRODUCTOS_POR_SEGMENTO = 2    # el segmento tiene que cruzar productos: si no, es "los compradores de X"
-PERSONAS_EN_EL_MAPA = 60          # las que lee el paso B de cada segmento (primero las que tienen dolor o miedo)
+TARJETAS_POR_LLAMADA_J = 80
+MIN_PERSONAS_POR_BUSQUEDA = 2    # lo que el paso B necesita para proponer: 2 personas de cada una de 2 búsquedas
+MIN_BUSQUEDAS_POR_GRUPO = 2       # el grupo cruza búsquedas: los 2 productos ancla de una misma búsqueda son la misma categoría
+MODELO_DE_ORACIONES = "sentence-transformers/paraphrase-multilingual-mpnet-base-v2"
+PASO_DEL_CORTE = 10               # cortes del árbol que se prueban: 10, 20, 30... grupos
+PERSONAS_EN_EL_MAPA = 60          # las que lee el paso B de cada grupo (primero aquellas a las que algo les sale mal)
 ALTERNATIVAS_QUE_VE = 4           # de cada búsqueda: las más elegidas y las que se dejaron pasar
 CAMPOS = ("situacion", "quiere_lograr", "dolor", "ganancia", "teme", "compara_con")
+AGRUPACION = "trabajos_mpnet_ward_busquedas"      # versión de los grupos guardados: si cambia, se recalculan
 
 
 # --- A · Una tarjeta por persona -----------------------------------------------------------
@@ -79,34 +89,27 @@ def tarjetas_de_la_particion(cliente, particion: str, traza: list, saltear: set 
     return list(vistas.values())
 
 
-# --- S · Segmentos ---------------------------------------------------------------------------
+# --- J · El trabajo de cada persona --------------------------------------------------------
 
-def linea(t: dict) -> str:
-    return f"[{t['id']}] {t['situacion']} | {t['quiere_lograr']} | {t['dolor']}"
-
-
-def definir_segmentos(cliente, tarjetas: list[dict], traza: list) -> list[dict]:
-    muestra = random.Random(SEMILLA).sample(tarjetas, min(PERSONAS_PARA_DEFINIR, len(tarjetas)))
-    prompt = (f"{SKILL_S.read_text(encoding='utf-8')}\n\n---\n\nTAREA: definir\n\nPERSONAS\n"
-              + "\n".join(map(linea, muestra)) + "\n\nRespondé SOLO con el JSON de la tarea \"definir\".")
-    validar = lambda d: {} if d.get("segmentos") else {"segmentos": ["no hay segmentos"]}
-    return con_reintento(cliente, prompt, validar, traza, "S definir").get("segmentos", [])
+def linea_j(t: dict, todos: dict) -> str:
+    return (f"[{t['id']}] {todos[t['producto']]['titulo'][:60]} | "
+            + " | ".join(t[c] for c in ("situacion", "quiere_lograr", "dolor", "teme", "compara_con")))
 
 
-def asignar(cliente, segmentos: list[dict], tarjetas: list[dict], traza: list) -> dict[str, str]:
-    """{id de persona: id de segmento}. Las que el modelo no asigna, o asigna a un segmento que
-    no existe, quedan afuera."""
-    ids = {s["id"] for s in segmentos}
-    definiciones = "\n".join(f"{s['id']} · {s['nombre']}: {s['quien']} (entra si: {s['criterio']})" for s in segmentos)
-    tandas = [tarjetas[i:i + PERSONAS_POR_LLAMADA_AL_ASIGNAR] for i in range(0, len(tarjetas), PERSONAS_POR_LLAMADA_AL_ASIGNAR)]
+def trabajos(cliente, tarjetas: list[dict], traza: list) -> dict[str, dict]:
+    """{id de persona: {trabajo, le_sale_mal}}. La que no se puede formular queda afuera."""
+    todos = productos()
+    tandas = [tarjetas[i:i + TARJETAS_POR_LLAMADA_J] for i in range(0, len(tarjetas), TARJETAS_POR_LLAMADA_J)]
 
     def una_tanda(tanda):
-        prompt = (f"{SKILL_S.read_text(encoding='utf-8')}\n\n---\n\nTAREA: asignar\n\nSEGMENTOS\n{definiciones}\n\n"
-                  "PERSONAS\n" + "\n".join(map(linea, tanda)) + "\n\nRespondé SOLO con el JSON de la tarea \"asignar\".")
-        d = con_reintento(cliente, prompt, lambda d: {}, traza, "S asignar", pensar=False)
+        prompt = (f"{SKILL_J.read_text(encoding='utf-8')}\n\n---\n\nPERSONAS\n" + "\n".join(linea_j(t, todos) for t in tanda)
+                  + "\n\nRespondé SOLO con el JSON de la salida.")
         de_la_tanda = {t["id"] for t in tanda}
-        return {a[0]: a[1] for a in d.get("asignaciones", [])
-                if isinstance(a, list) and len(a) == 2 and a[0] in de_la_tanda and a[1] in ids}
+        validar = lambda d: {str(x.get("id")): ["no es de esta tanda o no tiene trabajo"] for x in d.get("trabajos", [])
+                             if x.get("id") not in de_la_tanda or not x.get("trabajo")}
+        d = con_reintento(cliente, prompt, validar, traza, "J trabajos", pensar=False)
+        return {x["id"]: {"trabajo": x["trabajo"], "le_sale_mal": x.get("le_sale_mal", "")}
+                for x in d.get("trabajos", []) if x.get("id") in de_la_tanda and x.get("trabajo")}
 
     return {k: v for parte in en_paralelo(una_tanda, tandas) for k, v in parte.items()}
 
@@ -118,24 +121,81 @@ def tarjetas_guardadas(particion: str) -> dict[str, dict]:
     return {t["id"]: t for t in json.loads(archivo.read_text(encoding="utf-8"))["tarjetas"]}
 
 
+# --- S · Grupos por trabajo (código) ---------------------------------------------------------
+
+def vectores(textos: list[str]):
+    """Un vector por trabajo, normalizado, con un modelo de oraciones multilingüe. Corre en el
+    workflow (requirements-llm.txt); los grupos quedan guardados y no hace falta para reproducir."""
+    from sentence_transformers import SentenceTransformer
+    return SentenceTransformer(MODELO_DE_ORACIONES).encode(textos, batch_size=64, normalize_embeddings=True)
+
+
+def cruza_busquedas(busquedas_de_miembros: list[str]) -> bool:
+    por_busqueda = Counter(busquedas_de_miembros)
+    return sum(n >= MIN_PERSONAS_POR_BUSQUEDA for n in por_busqueda.values()) >= MIN_BUSQUEDAS_POR_GRUPO
+
+
+def agrupar_por_trabajo(tarjetas: dict[str, dict], trabajos_: dict[str, dict]) -> tuple[list[dict], dict[str, str]]:
+    """Ward sobre los trabajos. De los cortes del árbol, el que deja más grupos que cruzan
+    búsquedas (a igualdad, el de menos grupos): la granularidad más fina que todavía tiene la
+    evidencia que el paso B necesita para proponer."""
+    import numpy as np
+    from scipy.cluster.hierarchy import fcluster, linkage
+    todos = productos()
+    ids = [i for i in trabajos_ if i in tarjetas]
+    V = np.asarray(vectores([trabajos_[i]["trabajo"] for i in ids]))
+    arbol = linkage(V, method="ward")
+    busq = [todos[tarjetas[i]["producto"]]["busqueda"] for i in ids]
+    mejor = None
+    for k in range(PASO_DEL_CORTE, len(ids) // (MIN_PERSONAS_POR_BUSQUEDA * MIN_BUSQUEDAS_POR_GRUPO) + 1, PASO_DEL_CORTE):
+        etiquetas = fcluster(arbol, k, criterion="maxclust")
+        grupos = {}
+        for b, e in zip(busq, etiquetas):
+            grupos.setdefault(e, []).append(b)
+        n = sum(cruza_busquedas(g) for g in grupos.values())
+        if mejor is None or n > mejor[0]:
+            mejor = (n, k, etiquetas)
+    _, k, etiquetas = mejor
+    miembros = {}
+    for i, e, v in zip(ids, etiquetas, V):
+        miembros.setdefault(int(e), []).append((i, v))
+    segmentos, asignaciones = [], {}
+    for n, (_, ms) in enumerate(sorted(miembros.items(), key=lambda x: -len(x[1])), start=1):
+        centro = np.mean([v for _, v in ms], axis=0)
+        orden = sorted(ms, key=lambda m: -float(m[1] @ centro))      # el más típico primero
+        sid = f"T{n:03d}"
+        segmentos.append({"id": sid, "nombre": trabajos_[orden[0][0]]["trabajo"],
+                          "quien": "; ".join(dict.fromkeys(trabajos_[i]["trabajo"] for i, _ in orden[:5])),
+                          "corte": k})
+        asignaciones |= {i: sid for i, _ in ms}
+    return segmentos, asignaciones
+
+
 def personas_de_la_particion(cliente, particion: str, traza: list) -> dict:
-    """Tarjetas, segmentos y asignaciones de la partición; se calculan una vez y se guardan."""
+    """Tarjetas, trabajos y grupos de la partición; se calculan una vez y se guardan."""
     archivo = RAIZ / f"data/serendipia/personas_{particion}_api.json"
     guardado = json.loads(archivo.read_text(encoding="utf-8")) if archivo.exists() else {}
+    guardar = lambda: archivo.write_text(json.dumps(guardado, ensure_ascii=False, indent=1), encoding="utf-8")
     leidos = {t["producto"] for t in guardado.get("tarjetas", [])}
     if "tarjetas" not in guardado or set(productos(particion)) - leidos:
         # Solo se leen los productos nuevos (la partición creció); los ya leídos no se repiten.
         guardado["tarjetas"] = guardado.get("tarjetas", []) + tarjetas_de_la_particion(cliente, particion, traza, saltear=leidos)
-        guardado.pop("segmentos", None)
-        archivo.write_text(json.dumps(guardado, ensure_ascii=False, indent=1), encoding="utf-8")
-    if "segmentos" not in guardado:
-        segmentos = definir_segmentos(cliente, guardado["tarjetas"], traza)
-        guardado |= {"segmentos": segmentos, "asignaciones": asignar(cliente, segmentos, guardado["tarjetas"], traza)}
-        archivo.write_text(json.dumps(guardado, ensure_ascii=False, indent=1), encoding="utf-8")
+        guardado.pop("trabajos", None)
+        guardado.pop("agrupacion", None)
+        guardar()
+    if "trabajos" not in guardado:
+        guardado["trabajos"] = trabajos(cliente, guardado["tarjetas"], traza)
+        guardado.pop("agrupacion", None)
+        guardar()
+    if guardado.get("agrupacion") != AGRUPACION:
+        tarjetas = {t["id"]: t for t in guardado["tarjetas"]}
+        segmentos, asignaciones = agrupar_por_trabajo(tarjetas, guardado["trabajos"])
+        guardado |= {"agrupacion": AGRUPACION, "segmentos": segmentos, "asignaciones": asignaciones}
+        guardar()
     return guardado
 
 
-# --- El mapa de empatía de un segmento (código) ----------------------------------------------
+# --- El mapa de empatía de un grupo (código) -------------------------------------------------
 
 def eleccion_en_la_busqueda(captura: dict | None) -> dict:
     """Voto con los pies en una búsqueda: lo que se elige y lo que se ofrece y se deja pasar."""
@@ -147,12 +207,15 @@ def eleccion_en_la_busqueda(captura: dict | None) -> dict:
             "dejadas": [fila(p) for p in pubs if p["vendidos"] <= 25 and not p["internacional"]][:ALTERNATIVAS_QUE_VE]}
 
 
-def mapa_de_empatia(segmento: dict, miembros: list[dict], todos: dict, capturas: dict) -> dict:
-    """Lo que el paso B lee del segmento: quiénes son, qué hacen, qué ven, qué dicen y qué temen."""
+def mapa_de_empatia(segmento: dict, miembros: list[dict], todos: dict, capturas: dict, trabajos_: dict | None = None) -> dict:
+    """Lo que el paso B lee del grupo: el trabajo que comparten, quiénes son, qué eligen y qué
+    dejan pasar, qué ven, qué dicen y qué les sale mal."""
+    trabajos_ = trabajos_ or {}
+    le_sale_mal = lambda t: bool(trabajos_.get(t["id"], {}).get("le_sale_mal") or t["dolor"] or t["teme"])
     por_producto = Counter(t["producto"] for t in miembros)
     busquedas = sorted({todos[pid]["busqueda"] for pid in por_producto})
-    # primero las personas con dolor o miedo, repartidas entre productos
-    orden = sorted(miembros, key=lambda t: (not (t["dolor"] or t["teme"]), t["id"]))
+    # primero aquellas a las que algo les sale mal, repartidas entre productos
+    orden = sorted(miembros, key=lambda t: (not le_sale_mal(t), t["id"]))
     rondas, vistas = {}, []
     for t in orden:
         rondas.setdefault(t["producto"], []).append(t)
@@ -160,15 +223,16 @@ def mapa_de_empatia(segmento: dict, miembros: list[dict], todos: dict, capturas:
         for pid in list(rondas):
             if rondas[pid] and len(vistas) < PERSONAS_EN_EL_MAPA:
                 vistas.append(rondas[pid].pop(0))
-    return {"segmento": segmento["id"], "nombre": segmento["nombre"], "quien": segmento["quien"],
-            "personas": len(miembros), "compraron": sum(t["eligio"] for t in miembros),
-            "dudan": sum(not t["eligio"] for t in miembros),
+    return {"segmento": segmento["id"], "trabajo": segmento["nombre"], "quien": segmento["quien"],
+            "personas": len(miembros), "les_sale_mal": sum(map(le_sale_mal, miembros)),
+            "compraron": sum(t["eligio"] for t in miembros), "dudan": sum(not t["eligio"] for t in miembros),
             "productos": {pid: {"titulo": todos[pid]["titulo"][:70], "vendidos": todos[pid]["vendidos"],
                                 "precio": todos[pid]["precio"], "personas": n} for pid, n in por_producto.most_common()},
             "busquedas": {b: eleccion_en_la_busqueda(capturas.get(b)) for b in busquedas},
-            "cuentan": {c: sum(1 for t in miembros if t[c]) for c in CAMPOS},
-            "voces": [{"id": t["id"], **{c: t[c] for c in CAMPOS if t[c]}} for t in vistas]}
+            "personas_por_busqueda": dict(Counter(todos[t["producto"]]["busqueda"] for t in miembros)),
+            "voces": [{"id": t["id"], **trabajos_.get(t["id"], {}), **{c: t[c] for c in CAMPOS if t[c]}} for t in vistas]}
 
 
 def es_segmento_suficiente(mapa: dict) -> bool:
-    return mapa["personas"] >= MIN_PERSONAS_POR_SEGMENTO and len(mapa["productos"]) >= MIN_PRODUCTOS_POR_SEGMENTO
+    """Tiene la evidencia que el paso B necesita: 2 personas en cada una de 2 búsquedas."""
+    return sum(n >= MIN_PERSONAS_POR_BUSQUEDA for n in mapa["personas_por_busqueda"].values()) >= MIN_BUSQUEDAS_POR_GRUPO

@@ -1,0 +1,4 @@
+# Solo para correr la divergencia con la API (workflow llm): agrupar trabajos por significado.
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch
+sentence-transformers>=3,<6
