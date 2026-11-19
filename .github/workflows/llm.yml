@@ -45,6 +45,11 @@ jobs:
       - name: Exploración sin LLM de cómo agrupar a la gente (dev)
         if: inputs.tarea == 'explorar'
         run: pip install -r requirements-llm.txt && python scripts/explorar_segmentos.py
+      - name: Exploración con LLM (TnT-LLM contra parecido) de cómo agrupar a la gente (dev)
+        if: inputs.tarea == 'explorar_llm'
+        env:
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+        run: pip install -r requirements-llm.txt && python scripts/explorar_taxonomia.py
       - name: Baseline B4 (one-shot de punta a punta)
         if: inputs.tarea == 'de_una'
         env:
