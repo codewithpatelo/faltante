@@ -57,7 +57,10 @@ resolver comprando cosas distintas y no pueden por trabas parecidas:
   seguir siendo un problema concreto que un producto podría resolver (no "personas que quieren
   que las cosas funcionen", no "que cumpla su función").
 - Z es una traba concreta (algo que les impide resolver X), no una queja genérica de calidad,
-  envío o precio."""
+  envío o precio.
+- Z es una traba del PROBLEMA, no de la COMPRA online: no vale "la foto o el color no coinciden",
+  "la publicación no informa la medida", "no pueden comprobar antes de pagar", "llegó roto o
+  incompleto". Esas trabas las resuelve el vendedor, no un producto que se pueda importar."""
 
 LINEA = lambda t, todos: (f"[{t['id']}] {todos[t['producto']]['busqueda']} | situación: {t['situacion']} | quiere: "
                           f"{t['quiere_lograr']} | dolor: {t['dolor']} | teme: {t['teme']}")
