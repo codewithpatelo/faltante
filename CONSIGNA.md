@@ -10,7 +10,7 @@ repo y qué falta. ✅ cumplido · 🟡 parcial · ❌ falta.
 | **Hipótesis medible contra baseline, partición fija** | `data/evaluacion/test/PRERREGISTRO.md`; resultado en el README, "¿Sirve?" | ✅ contra reglas sin LLM: 16, 4, 0 en test (p = 0,002). 🟡 contra el modelo solo de una (B4): los datos refutan 9 de sus 10 recomendaciones, falta el juicio humano a ciegas. 🟡 generar: la versión por situación perdía con proponer directo (B3); rehecha por trabajo, en dev empata (30 contra 31) |
 | **Datos verificados** | README, "Datos": fuente, volumen, fecha, cómo se eligieron | ✅ |
 | **Economía**: costo por tarea, latencia, elección de modelo | README, "Costo y modelo"; cada corrida guarda tokens, USD y segundos por llamada (`traza`) | ✅ |
-| **Git con trabajo distribuido** | `git log` | 🟡 Darío: requisitos del README, su planilla a ciegas y el LEEME; faltan Nilo y Victoria (su planilla en `data/evaluacion/humano/`) |
+| **Git con trabajo distribuido** | `git log` | 🟡 Darío: requisitos del README, LEEME, planillas y el cliente de Claude como juez de otra familia (`cliente-claude`, ya en main); Nilo: sus planillas (PR #1); falta Victoria |
 | **Antecedentes** (mercado y literatura) | Abajo | ✅ |
 | **≥ 2 áreas en profundidad** | Abajo | ✅ |
 | **Repo replicable** con README, Makefile, skills y reglas | `make todo` desde un clon limpio (o `docker build` + `docker run`); `skills/`, `AGENTS.md` | ✅ |
