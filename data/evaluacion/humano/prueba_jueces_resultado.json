@@ -51,6 +51,32 @@
    ]
   }
  },
+ "claude-sonnet-5-5": {
+  "dolor": {
+   "acierta": 14,
+   "de": 20,
+   "dice_si_y_es_si": [
+    2,
+    3
+   ],
+   "dice_no_y_es_no": [
+    12,
+    17
+   ]
+  },
+  "equivalencia": {
+   "acierta": 11,
+   "de": 20,
+   "dice_si_y_es_si": [
+    11,
+    14
+   ],
+   "dice_no_y_es_no": [
+    0,
+    6
+   ]
+  }
+ },
  "dolor": {
   "filas": 20,
   "juez_acierta": 11,

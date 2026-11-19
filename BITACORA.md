@@ -576,3 +576,14 @@ que le gana, aunque la referencia es débil (kappa de Fleiss entre personas −0
 89%, y "siempre sí" acierta 100%: no dice nada de ningún juez. **Qué decidimos.** No mandar las
 planillas a un evaluador externo (están armadas sobre las filas viejas); el siguiente paso útil es
 juzgar con Claude lo que sí discrimina: la prueba de casos difíciles y las oportunidades.
+
+## 2026-11-19 (tarde) — Sonnet 5.5 en la prueba de casos difíciles
+
+**Qué probamos.** Si un juez de otra familia pasa la prueba donde DeepSeek falló (`prueba_jueces.py
+rejuzgar` con `MODELO_JUEZ`, prompt actual, juicio de Patricio; USD 0,97). **Qué pasó.** Dolor:
+acierta 14 de 20, la regla tonta 13: no le gana de forma que se note. Equivalencia: 11 de 20 contra
+17 de la regla tonta; cuando dice que no compite, compite en 6 de 6, y cuando dice que sí, es sí en
+11 de 14. **Qué decidimos.** El hallazgo no depende del modelo: Claude también deja pasar
+competidores, así que lo no descartado inflado no se explica solo por haber juzgado con DeepSeek.
+El juez, de la familia que sea, no está validado contra personas. Con una sola referencia humana
+(Patricio) la prueba es angosta.

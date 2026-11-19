@@ -21,6 +21,7 @@ tonta (responder siempre "sí" o siempre "no"); se informa también con interval
     python data/evaluacion/humano/prueba_jueces.py          -> prueba_jueces.csv y clave_prueba_jueces.json
     python data/evaluacion/humano/prueba_jueces.py evaluar  -> prueba_jueces_resultado.json
     DEEPSEEK_API_KEY=... python data/evaluacion/humano/prueba_jueces.py rejuzgar  -> prueba_jueces_llm.json
+    MODELO_JUEZ=claude-sonnet-5-5 python data/evaluacion/humano/prueba_jueces.py rejuzgar  (agrega a ese archivo a Claude, con el prompt actual)
 
 `rejuzgar` vuelve a juzgar las 40 filas con el prompt viejo (prompts_viejos/) y con el actual
 (skills/), en las mismas condiciones: equivalencia sobre la página completa de la búsqueda, como en
@@ -28,6 +29,7 @@ el embudo; dolor por tandas de los textos de cada problema. Así se separa el ef
 """
 import csv
 import json
+import os
 import random
 import re
 import sys
@@ -156,14 +158,18 @@ def rejuzgar():
     from harness import equivalencias as E
     from harness.correr import busquedas_capturadas
     from harness.modelo import cliente_llm, costo, en_paralelo
-    cliente, traza = cliente_llm(), []
+    otro = os.environ.get("MODELO_JUEZ")    # otro juez: solo el prompt actual, agregado a lo guardado bajo su nombre
+    cliente, traza = cliente_llm(variable="MODELO_JUEZ" if otro else "MODELO_LLM"), []
     filas = list(csv.DictReader(open(AQUI / "prueba_jueces.csv", encoding="utf-8")))
     capturas = busquedas_capturadas()
     claves = {k.partition(" || ")[2]: k.partition(" || ")[0] for k in json.loads((RAIZ / "data/serendipia/equivalencias.json").read_text(encoding="utf-8"))}
     para_que = {o["busqueda_ml"]: o.get("alivia", "") for o in json.loads((RAIZ / "data/serendipia/divergente_escala_dev_api.json").read_text(encoding="utf-8"))["oportunidades"]}
     versiones = {"prompt_viejo": (AQUI / "prompts_viejos/juzgar_equivalencia.md", AQUI / "prompts_viejos/medir_dolor.md"),
                  "prompt_nuevo": (E.SKILL, D.SKILL_MEDIR)}
-    salida = {}
+    if otro:
+        versiones = {cliente.modelo: versiones["prompt_nuevo"]}
+    destino = AQUI / "prueba_jueces_llm.json"
+    salida = json.loads(destino.read_text(encoding="utf-8")) if otro and destino.exists() else {}
     for nombre, (skill_e, skill_d) in versiones.items():
         def equivalencia(f):
             busqueda = claves[f["a"]]
@@ -181,8 +187,8 @@ def rejuzgar():
         juicios = dict(en_paralelo(equivalencia, [f for f in filas if f["tipo"] == "equivalencia"]))
         juicios |= {i: v for parte in en_paralelo(dolor, list(por_problema.values())) for i, v in parte}
         salida[nombre] = dict(sorted(juicios.items()))
-    (AQUI / "prueba_jueces_llm.json").write_text(json.dumps(salida, ensure_ascii=False, indent=1), encoding="utf-8")
-    print(f"prueba_jueces_llm.json: {costo(traza)}")
+    destino.write_text(json.dumps(salida, ensure_ascii=False, indent=1), encoding="utf-8")
+    print(f"prueba_jueces_llm.json: {costo(traza, cliente.modelo)}")
 
 
 if __name__ == "__main__":
