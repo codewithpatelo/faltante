@@ -42,6 +42,9 @@ jobs:
         env:
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
         run: python data/evaluacion/humano/prueba_jueces.py rejuzgar
+      - name: Exploración sin LLM de cómo agrupar a la gente (dev)
+        if: inputs.tarea == 'explorar'
+        run: pip install -r requirements-llm.txt && python scripts/explorar_segmentos.py
       - name: Baseline B4 (one-shot de punta a punta)
         if: inputs.tarea == 'de_una'
         env:
