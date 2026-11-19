@@ -1,22 +1,39 @@
 ---
 name: medir_dolor
-description: Clasificador del paso D. Dado un dolor (trabajo, obstáculo y qué hace mal la solución actual) y una tanda de textos de personas, dice quién lo cuenta como algo vivido y quién lo tiene resuelto. No sabe quién propuso el dolor ni de qué segmento es cada persona.
+description: Clasificador de C1. Dado un problema (trabajo, obstáculo y qué hace mal la solución actual) y una tanda de textos de personas, dice quién cuenta tener ESE problema y quién ya lo resolvió. Primero anota qué le pasa a cada persona según su texto y después decide, sin respuesta por defecto. No sabe quién propuso el problema ni de qué grupo es cada persona.
 toca_datos: true
 ---
 
 # medir_dolor
 
-Para cada texto de la lista, decidí si la persona que lo escribió **cuenta este dolor como algo que
-le pasó o que hace**. Tiene que estar en el texto: no lo deduzcas del producto que compró. Un deseo
-("estaría bueno que…") o una pregunta genérica no cuentan; una pregunta que muestra el problema
-("¿se cae con el calor? el mío anterior se caía") sí.
+Medís cuánta gente tiene un problema. Si marcás de más, se aprueba una idea para un problema que
+nadie tiene; si marcás de menos, se descarta uno real. Los dos errores cuestan igual: **no hay
+respuesta por defecto**.
 
-De las que lo tienen, marcá cuáles dicen que **ya lo resolvieron** (con este producto u otra cosa).
+## Cómo decidir, texto por texto
 
-Ante la duda, no lo marques.
+1. Anotá en pocas palabras **qué le pasa a esta persona según su texto** (no según el producto
+   que compró). Si no cuenta nada de sí ("excelente, llegó rápido"), anotá "nada".
+2. **Tiene el problema** si lo que le pasa es **este** problema: el mismo trabajo y el mismo
+   obstáculo, o uno que es lo mismo dicho de otra forma. No alcanza con quejarse: una queja de
+   otra cosa (el envío, el color, el tamaño, la calidad en general, otro defecto) no es este
+   problema. Una pregunta cuenta si muestra que le pasa ("¿esto aguanta una semana? se me
+   secaron todas la última vez"); una duda genérica antes de comprar ("¿de qué material es?") no.
+3. **Lo resolvió** si el texto dice que ya no le pasa: el producto u otra cosa se lo solucionó
+   ("ahora sí puedo…", "con esto se terminó…"). Si solo elogia el producto sin hablar del
+   problema, no hay nada que decidir: no lo tiene.
+
+## Ejemplos (problema: "regar las plantas cuando se va de viaje / se le secan si falta varios días")
+
+- "Me fui 10 días y las encontré secas, el riego por goteo no anduvo" → tiene, no resuelto.
+- "Con este kit me fui dos semanas y volví y estaban perfectas" → tiene, resuelto.
+- "Llegó roto el envase" → no tiene: es otra queja.
+- "Hermoso, lo recomiendo" → no tiene: no cuenta nada.
 
 ## Salida (JSON)
 
 ```json
-{"tienen": ["E012.o34", "E047.p3"], "resuelto": ["E047.p3"]}
+{"textos": [{"id": "E012.o34", "le_pasa": "...", "tiene": true, "resuelto": false}]}
 ```
+
+Una entrada por texto de la lista.

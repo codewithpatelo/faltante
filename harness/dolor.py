@@ -44,14 +44,18 @@ def texto_original(t: dict, todos: dict) -> str:
     return textos_con_id(todos[t["producto"]]).get(t["texto"], "")[:400]
 
 
-def leer_textos(cliente, dolor: dict, textos: dict[str, str], traza: list) -> tuple[set, set]:
+def leer_textos(cliente, dolor: dict, textos: dict[str, str], traza: list, skill=None) -> tuple[set, set]:
     """Una llamada: de `textos` (id -> texto), quiénes tienen el dolor y, de ellos, quiénes ya lo resolvieron."""
+    skill = skill or SKILL_MEDIR
     enunciado = (f"Trabajo: {dolor['trabajo']}\nObstáculo: {dolor['obstaculo']}\n"
                  f"Qué hace mal lo que usan hoy: {dolor.get('que_hace_mal', '')}")
     lineas = "\n".join(f"[{i}] {t}" for i, t in textos.items())
-    prompt = (f"{SKILL_MEDIR.read_text(encoding='utf-8')}\n\n---\n\nDOLOR\n{enunciado}\n\nTEXTOS\n{lineas}\n\n"
+    prompt = (f"{skill.read_text(encoding='utf-8')}\n\n---\n\nDOLOR\n{enunciado}\n\nTEXTOS\n{lineas}\n\n"
               "Respondé SOLO con el JSON de la salida.")
     d = con_reintento(cliente, prompt, lambda d: {}, traza, f"medir {dolor['id']}", pensar=False)
+    if "textos" in d:          # una entrada por texto, con lo que le pasa antes del veredicto
+        tienen = {x.get("id") for x in d["textos"] if x.get("tiene") is True and x.get("id") in textos}
+        return tienen, {x.get("id") for x in d["textos"] if x.get("resuelto") is True and x.get("id") in tienen}
     tienen = {i for i in d.get("tienen", []) if i in textos}
     return tienen, {i for i in d.get("resuelto", []) if i in tienen}
 

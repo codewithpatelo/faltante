@@ -37,6 +37,11 @@ jobs:
         env:
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
         run: python -m harness.directo ${{ inputs.particion }} B3
+      - name: Volver a juzgar la prueba de los jueces (prompt viejo y nuevo)
+        if: inputs.tarea == 'prueba_jueces'
+        env:
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+        run: python data/evaluacion/humano/prueba_jueces.py rejuzgar
       - name: Baseline B4 (one-shot de punta a punta)
         if: inputs.tarea == 'de_una'
         env:
@@ -55,6 +60,7 @@ jobs:
         run: |
           mkdir -p resultados
           cp data/serendipia/*_${{ inputs.particion }}_api.json resultados/ 2>/dev/null || true
+          cp data/evaluacion/humano/prueba_jueces_llm.json resultados/ 2>/dev/null || true
       - name: Copiar los resultados completos al registro
         if: always()
         run: |

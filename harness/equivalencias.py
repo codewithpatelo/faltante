@@ -50,15 +50,27 @@ def guardadas(juez: str | None = None) -> dict[str, list[str]]:
     return json.loads(archivo.read_text(encoding="utf-8")) if archivo.exists() else {}
 
 
-def juzgar(cliente, que_traer: str, para_que: str, publicaciones: list[dict], traza: list) -> list[str]:
-    """Los títulos de `publicaciones` que reemplazan a lo propuesto."""
+def indices_que_compiten(d: dict) -> list:
+    """La salida del juez: una entrada por publicación con su función y si compite (o, en la versión
+    vieja del prompt, la lista de índices equivalentes)."""
+    if "publicaciones" in d:
+        return [x.get("i") for x in d["publicaciones"] if x.get("compite") is True]
+    return d.get("equivalentes", [])
+
+
+def juzgar(cliente, que_traer: str, para_que: str, publicaciones: list[dict], traza: list, skill: Path = SKILL) -> list[str]:
+    """Los títulos de `publicaciones` que compiten con lo propuesto."""
     lineas = "\n".join(f"[{i}] {x['titulo']} | ${x.get('precio') or '?'}" for i, x in enumerate(publicaciones))
-    prompt = (f"{SKILL.read_text(encoding='utf-8')}\n\n---\n\nPROPUESTA: {que_traer}\nPARA QUÉ: {para_que}\n\n"
+    prompt = (f"{skill.read_text(encoding='utf-8')}\n\n---\n\nPROPUESTA: {que_traer}\nPARA QUÉ: {para_que}\n\n"
               f"PUBLICACIONES\n{lineas}\n\nRespondé SOLO con el JSON de la salida.")
-    validar = lambda d: {} if all(isinstance(i, int) and 0 <= i < len(publicaciones) for i in d.get("equivalentes", [])) \
-        else {"equivalentes": ["índices fuera de la lista"]}
+    def validar(d):
+        if any(not (isinstance(i, int) and 0 <= i < len(publicaciones)) for i in indices_que_compiten(d)):
+            return {"publicaciones": ["índices fuera de la lista"]}
+        if "publicaciones" in d and len(d["publicaciones"]) != len(publicaciones):
+            return {"publicaciones": [f"tiene que haber una entrada por cada una de las {len(publicaciones)} publicaciones"]}
+        return {}
     d = con_reintento(cliente, prompt, validar, traza, f"equivalencia {que_traer[:30]}")
-    return sorted({publicaciones[i]["titulo"] for i in d.get("equivalentes", []) if isinstance(i, int) and 0 <= i < len(publicaciones)})
+    return sorted({publicaciones[i]["titulo"] for i in indices_que_compiten(d) if isinstance(i, int) and 0 <= i < len(publicaciones)})
 
 
 def pendientes(propuestas, juez: str | None = None) -> dict[str, tuple]:

@@ -20,6 +20,11 @@ tonta (responder siempre "sí" o siempre "no"); se informa también con interval
 
     python data/evaluacion/humano/prueba_jueces.py          -> prueba_jueces.csv y clave_prueba_jueces.json
     python data/evaluacion/humano/prueba_jueces.py evaluar  -> prueba_jueces_resultado.json
+    DEEPSEEK_API_KEY=... python data/evaluacion/humano/prueba_jueces.py rejuzgar  -> prueba_jueces_llm.json
+
+`rejuzgar` vuelve a juzgar las 40 filas con el prompt viejo (prompts_viejos/) y con el actual
+(skills/), en las mismas condiciones: equivalencia sobre la página completa de la búsqueda, como en
+el embudo; dolor por tandas de los textos de cada problema. Así se separa el efecto del prompt.
 """
 import csv
 import json
@@ -121,8 +126,15 @@ def wilson(k: int, n: int) -> list:
 def evaluar():
     clave = {k["id"]: k["juez"] for k in json.loads((AQUI / "clave_prueba_jueces.json").read_text(encoding="utf-8"))}
     filas = [r for r in csv.DictReader(open(AQUI / "prueba_jueces.csv", encoding="utf-8")) if r["respuesta"].strip()]
+    llm = json.loads((AQUI / "prueba_jueces_llm.json").read_text(encoding="utf-8")) if (AQUI / "prueba_jueces_llm.json").exists() else {}
     salida = {}
     for t in ("dolor", "equivalencia"):
+        humano = {r["id"]: r["respuesta"].strip().lower() in SI for r in filas if r["tipo"] == t}
+        for nombre, juicios in llm.items():
+            ids = [i for i in humano if i in juicios]
+            salida.setdefault(nombre, {})[t] = {"acierta": sum(juicios[i] == humano[i] for i in ids), "de": len(ids),
+                                                "dice_si_y_es_si": [sum(juicios[i] and humano[i] for i in ids), sum(juicios[i] for i in ids)],
+                                                "dice_no_y_es_no": [sum(not juicios[i] and not humano[i] for i in ids), sum(not juicios[i] for i in ids)]}
         rs = [(clave[r["id"]], r["respuesta"].strip().lower() in SI) for r in filas if r["tipo"] == t]
         n = len(rs)
         if not n:
@@ -140,5 +152,38 @@ def evaluar():
     print(json.dumps(salida, ensure_ascii=False, indent=1))
 
 
+def rejuzgar():
+    from harness import equivalencias as E
+    from harness.correr import busquedas_capturadas
+    from harness.modelo import cliente_llm, costo, en_paralelo
+    cliente, traza = cliente_llm(), []
+    filas = list(csv.DictReader(open(AQUI / "prueba_jueces.csv", encoding="utf-8")))
+    capturas = busquedas_capturadas()
+    claves = {k.partition(" || ")[2]: k.partition(" || ")[0] for k in json.loads((RAIZ / "data/serendipia/equivalencias.json").read_text(encoding="utf-8"))}
+    para_que = {o["busqueda_ml"]: o.get("alivia", "") for o in json.loads((RAIZ / "data/serendipia/divergente_escala_dev_api.json").read_text(encoding="utf-8"))["oportunidades"]}
+    versiones = {"prompt_viejo": (AQUI / "prompts_viejos/juzgar_equivalencia.md", AQUI / "prompts_viejos/medir_dolor.md"),
+                 "prompt_nuevo": (E.SKILL, D.SKILL_MEDIR)}
+    salida = {}
+    for nombre, (skill_e, skill_d) in versiones.items():
+        def equivalencia(f):
+            busqueda = claves[f["a"]]
+            pubs = (capturas.get(busqueda) or {}).get("publicaciones", [])
+            return f["id"], f["b"] in set(E.juzgar(cliente, f["a"], para_que.get(busqueda, ""), pubs, traza, skill_e))
+        def dolor(grupo):
+            trabajo, _, obstaculo = grupo[0]["a"].partition(" / ")
+            tienen, resuelto = D.leer_textos(cliente, {"id": f"prueba.{grupo[0]['id']}", "trabajo": trabajo, "obstaculo": obstaculo},
+                                             {f["id"]: f["b"] for f in grupo}, traza, skill_d)
+            return [(f["id"], f["id"] in tienen and f["id"] not in resuelto) for f in grupo]
+        por_problema = {}
+        for f in filas:
+            if f["tipo"] == "dolor":
+                por_problema.setdefault(f["a"], []).append(f)
+        juicios = dict(en_paralelo(equivalencia, [f for f in filas if f["tipo"] == "equivalencia"]))
+        juicios |= {i: v for parte in en_paralelo(dolor, list(por_problema.values())) for i, v in parte}
+        salida[nombre] = dict(sorted(juicios.items()))
+    (AQUI / "prueba_jueces_llm.json").write_text(json.dumps(salida, ensure_ascii=False, indent=1), encoding="utf-8")
+    print(f"prueba_jueces_llm.json: {costo(traza)}")
+
+
 if __name__ == "__main__":
-    evaluar() if sys.argv[1:] == ["evaluar"] else armar()
+    {"evaluar": evaluar, "rejuzgar": rejuzgar}.get(sys.argv[1] if sys.argv[1:] else "", armar)()
