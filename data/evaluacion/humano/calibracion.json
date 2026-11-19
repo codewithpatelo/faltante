@@ -59,10 +59,10 @@
    "exhaustividad": 0.829
   },
   "claude-sonnet-5-5": {
-   "acuerdo": 0.857,
+   "acuerdo": 0.886,
    "kappa": 0.0,
    "precision": 1.0,
-   "exhaustividad": 0.857
+   "exhaustividad": 0.886
   }
  }
 }

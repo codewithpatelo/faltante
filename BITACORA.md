@@ -566,3 +566,13 @@ prueba igual le resultó fácil en general: fácil para una persona, y aun así 
 **Qué decidimos.** El README pone esto como el hallazgo principal de la validación: lo no
 descartado está inflado. Con la planilla de Victoria (PR #2) cerró también la calidad contra B4:
 12 de 29 contra 7 de 20 (p = 0,44), la regla prerregistrada no se cumple.
+
+## 2026-11-19 — Sonnet 5.5 como juez, con los prompts nuevos
+
+**Qué probamos.** Volver a juzgar las 80 filas humanas con Claude Sonnet 5.5 (`juzgar_con_llm.py`)
+después de que main cambiara los prompts de los jueces; USD 0,31. **Qué pasó.** Dolor: acuerdo 71%
+con la mayoría humana (kappa 0,36), contra 57% de la regla tonta y 43% de DeepSeek: el único juez
+que le gana, aunque la referencia es débil (kappa de Fleiss entre personas −0,25). Equivalencia:
+89%, y "siempre sí" acierta 100%: no dice nada de ningún juez. **Qué decidimos.** No mandar las
+planillas a un evaluador externo (están armadas sobre las filas viejas); el siguiente paso útil es
+juzgar con Claude lo que sí discrimina: la prueba de casos difíciles y las oportunidades.
