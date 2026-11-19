@@ -78,7 +78,7 @@ oportunidades distintas que no descarta:
 |---|---|---|---|
 | **test** (136 productos, una sola corrida) | **16** de 109 propuestas | 4 de 136 | 0 de 3 |
 | test limpio (90 productos que ninguna versión leyó antes) | **12** de 61 | 4 de 90 | 0 |
-| dev (133 productos) | 13 de 135 | 7 de 133 | 2 de 7 |
+| dev (133 productos; versión nueva, agrupada por trabajo) | 30 de 231 | 8 de 133 | 1 de 7 |
 
 15% de sus propuestas resiste contra 4% (Fisher unilateral, p = 0,002; en el test limpio,
 p = 0,003). Es una sola corrida de un LLM que varía bastante (en el dev chico, la misma versión
@@ -128,20 +128,27 @@ dónde sale en `harness/umbrales.py`, `harness/costo_puesto.py` y `harness/dolor
 
 ## Costo y modelo
 
-Una corrida completa sobre ~135 productos (≈9.000 personas):
+Lo medido en las corridas de dev (~135 productos, ≈9.000 personas), sacado de la traza o del
+registro de GitHub Actions de cada una:
 
-| Paso | Llamadas | USD | Tiempo |
-|---|---|---|---|
-| Leer personas, agrupar, proponer, medir el dolor (C1) | ~1.300 | 3,40 | 22 min |
-| Juez de competencia (C4 a C6) | ~180 | 1,79 | 16 min |
-| Capturar las búsquedas nuevas en el navegador | ~90 páginas | 0 | ~10 min |
-| **Total** | | **≈ 5,20** (≈ USD 0,04 por propuesta) | **≈ 50 min** |
+| Paso | USD | Tiempo de la corrida |
+|---|---|---|
+| Trabajos, grupos, propuestas y dolor (C1), versión nueva (reusa las personas ya leídas) | 4,69 | 34 min |
+| Juez de competencia sobre esas propuestas (C4 a C6) | 1,56 | — |
+| Capturar las búsquedas nuevas en el navegador | 0 | 154 páginas, ≈ 15 min |
+| B3, proponer directo (incluye C1) | 1,47 | — |
+| B4, el modelo solo de una (incluye C1) | 0,72 | — |
+
+Leer las personas (paso A) se hace una vez por partición y se reusa; con la versión anterior,
+la corrida completa desde cero costó USD 3,40 en 22 min más 1,79 del juez. Por propuesta, la
+versión nueva cuesta ≈ USD 0,03.
 
 Modelo: **DeepSeek V4.1 Flash** (USD 0,30 / 1,20 por millón de tokens de entrada / salida; la
 mitad fuera de hora pico). La versión Pro cuesta 4,4 veces más por token de entrada. Leer y
-asignar personas va sin razonamiento (es clasificar); proponer y juzgar, con razonamiento.
-Elegimos Flash porque la tarea pide escala (miles de personas) y los dos jueces quedaron
-validados con controles; no lo comparamos contra Pro (queda como trabajo futuro). Cada llamada
+asignar va sin razonamiento (es clasificar); proponer y juzgar, con razonamiento. Elegimos Flash
+por escala (miles de personas). Como juez probamos además Claude Sonnet 5.5 (otra familia): no
+pasa la prueba de casos difíciles mejor que DeepSeek (`data/evaluacion/humano/`), así que el
+problema de los jueces no es el modelo. Cada llamada
 queda en la traza con tokens, segundos, errores del guardrail y si se cortó.
 
 ## Correrlo
