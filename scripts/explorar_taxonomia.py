@@ -18,7 +18,8 @@ Métricas (código): segmentos que cruzan búsquedas (2 personas en cada una de 
 segmento mediano y personas que quedan en segmentos que cruzan. La calidad la juzga una persona a
 ciegas con los ejemplos que se imprimen.
 
-    DEEPSEEK_API_KEY=... python scripts/explorar_taxonomia.py
+    DEEPSEEK_API_KEY=... python scripts/explorar_taxonomia.py            (los dos brazos)
+    DEEPSEEK_API_KEY=... python scripts/explorar_taxonomia.py 100 200    (solo parecido, con esos cortes)
 """
 
 from __future__ import annotations
@@ -168,6 +169,14 @@ def main():
     gente = [t for t in tarjetas if t["dolor"] or t["teme"]]
     por_id = {t["id"]: t for t in gente}
     cliente = cliente_llm()
+    if len(sys.argv) > 1:
+        salida = {"personas": len(gente)}
+        for k in map(int, sys.argv[1:]):
+            traza = []
+            segs, asign = por_parecido(cliente, gente, k, todos, traza)
+            salida[f"parecido_{k}"] = {**medir(segs, asign, por_id, todos), "grupos": k, "costo": costo(traza)}
+        print("RESULTADO explorar_parecido.json " + json.dumps(salida, ensure_ascii=False))
+        return
     traza_l, traza_p = [], []
     segs_l = generar(cliente, gente, todos, traza_l)
     asign_l = clasificar(cliente, gente, segs_l, todos, traza_l)

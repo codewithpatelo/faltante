@@ -14,7 +14,7 @@ on:
         default: "serendipia"
       archivos:
         description: "Para equivalencias: las salidas de la divergencia a juzgar (glob)"
-        default: "data/serendipia/divergente_escala_dev_api.json"
+        default: "data/serendipia/divergente_escala_dev_api.json"   # para explorar_llm: los cortes del árbol ("100 200"), o "" para los dos brazos
 permissions:
   contents: write
 jobs:
@@ -49,7 +49,7 @@ jobs:
         if: inputs.tarea == 'explorar_llm'
         env:
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
-        run: pip install -r requirements-llm.txt && python scripts/explorar_taxonomia.py
+        run: pip install -r requirements-llm.txt && python scripts/explorar_taxonomia.py ${{ inputs.archivos }}
       - name: Baseline B4 (one-shot de punta a punta)
         if: inputs.tarea == 'de_una'
         env:
