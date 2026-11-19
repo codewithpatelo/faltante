@@ -1,0 +1,44 @@
+{
+ "claude-sonnet-5-5": {
+  "contra_la_mayoria_humana": {
+   "concreta": {
+    "filas_con_mayoria": 63,
+    "acierta": 56,
+    "regla_tonta": 49,
+    "dice_si_y_es_si": [
+     47,
+     52
+    ]
+   },
+   "obvia": {
+    "filas_con_mayoria": 63,
+    "acierta": 32,
+    "regla_tonta": 42,
+    "dice_si_y_es_si": [
+     3,
+     16
+    ]
+   },
+   "la_cotizaria": {
+    "filas_con_mayoria": 63,
+    "acierta": 47,
+    "regla_tonta": 36,
+    "dice_si_y_es_si": [
+     33,
+     46
+    ]
+   }
+  },
+  "programa_contra_B4": {
+   "programa": [
+    22,
+    29
+   ],
+   "B4": [
+    16,
+    20
+   ],
+   "p_unilateral": 0.7518
+  }
+ }
+}

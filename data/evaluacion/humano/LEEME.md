@@ -48,3 +48,8 @@ vacías (26). En cada fila,
 
 No mires `clave_oportunidades.json`. Después: `python data/evaluacion/humano/evaluar_oportunidades.py`
 cuenta, por método, cuántas son concretas, no obvias y "la cotizaría" a la vez (mayoría humana).
+
+Para comparar a un LLM con las personas en estas 63 (unos USD 0,12):
+`MODELO_JUEZ=claude-sonnet-5-5 python data/evaluacion/humano/juzgar_oportunidades_con_llm.py` deja sus
+veredictos en `oportunidades_llm.json` y, en `oportunidades_llm_resultado.json`, el acuerdo con la
+mayoría humana de cada pregunta contra la regla tonta, y la comparación programa contra B4 con sus veredictos.

@@ -587,3 +587,15 @@ acierta 14 de 20, la regla tonta 13: no le gana de forma que se note. Equivalenc
 competidores, así que lo no descartado inflado no se explica solo por haber juzgado con DeepSeek.
 El juez, de la familia que sea, no está validado contra personas. Con una sola referencia humana
 (Patricio) la prueba es angosta.
+
+## 2026-11-19 (noche) — Sonnet 5.5 juzga las oportunidades
+
+**Qué probamos.** Que Sonnet 5.5 conteste, sobre las 63 oportunidades, las tres preguntas de las
+personas (`juzgar_oportunidades_con_llm.py`; USD 0,12), y compararlo con la mayoría de Darío, Nilo y
+Victoria. **Qué pasó.** Acuerdo con la mayoría contra la regla tonta: `concreta` 56 de 63 contra 49,
+`la_cotizaria` 47 contra 36, `obvia` 32 contra 42 (pierde). Las personas marcan "obvia" en 42 de 63;
+Sonnet, en 16. Con sus veredictos, buenas (concreta, no obvia y la cotizaría): programa 22 de 29,
+B4 16 de 20, p = 0,75 (con las personas: 12 de 29 contra 7 de 20, p = 0,44). **Qué decidimos.** Sonnet
+sirve para `concreta` y `la_cotizaria`, no para `obvia`, que es la pregunta que decide la medida de
+calidad: no sustituye a las personas. De todos modos, ni con el juez más generoso el programa le
+gana a B4.

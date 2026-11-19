@@ -1,0 +1,319 @@
+{
+ "claude-sonnet-5-5": {
+  "Q045": {
+   "concreta": true,
+   "obvia": false,
+   "la_cotizaria": true
+  },
+  "Q018": {
+   "concreta": true,
+   "obvia": true,
+   "la_cotizaria": true
+  },
+  "Q040": {
+   "concreta": true,
+   "obvia": true,
+   "la_cotizaria": true
+  },
+  "Q048": {
+   "concreta": true,
+   "obvia": false,
+   "la_cotizaria": true
+  },
+  "Q032": {
+   "concreta": true,
+   "obvia": false,
+   "la_cotizaria": true
+  },
+  "Q002": {
+   "concreta": false,
+   "obvia": true,
+   "la_cotizaria": false
+  },
+  "Q052": {
+   "concreta": true,
+   "obvia": false,
+   "la_cotizaria": true
+  },
+  "Q021": {
+   "concreta": true,
+   "obvia": false,
+   "la_cotizaria": true
+  },
+  "Q014": {
+   "concreta": false,
+   "obvia": true,
+   "la_cotizaria": false
+  },
+  "Q036": {
+   "concreta": true,
+   "obvia": false,
+   "la_cotizaria": true
+  },
+  "Q034": {
+   "concreta": true,
+   "obvia": false,
+   "la_cotizaria": true
+  },
+  "Q033": {
+   "concreta": true,
+   "obvia": false,
+   "la_cotizaria": true
+  },
+  "Q047": {
+   "concreta": true,
+   "obvia": false,
+   "la_cotizaria": true
+  },
+  "Q013": {
+   "concreta": true,
+   "obvia": false,
+   "la_cotizaria": false
+  },
+  "Q029": {
+   "concreta": true,
+   "obvia": false,
+   "la_cotizaria": true
+  },
+  "Q000": {
+   "concreta": true,
+   "obvia": false,
+   "la_cotizaria": true
+  },
+  "Q028": {
+   "concreta": true,
+   "obvia": false,
+   "la_cotizaria": true
+  },
+  "Q011": {
+   "concreta": false,
+   "obvia": true,
+   "la_cotizaria": false
+  },
+  "Q046": {
+   "concreta": true,
+   "obvia": true,
+   "la_cotizaria": true
+  },
+  "Q008": {
+   "concreta": true,
+   "obvia": false,
+   "la_cotizaria": true
+  },
+  "Q035": {
+   "concreta": true,
+   "obvia": false,
+   "la_cotizaria": true
+  },
+  "Q056": {
+   "concreta": true,
+   "obvia": false,
+   "la_cotizaria": true
+  },
+  "Q006": {
+   "concreta": true,
+   "obvia": false,
+   "la_cotizaria": true
+  },
+  "Q057": {
+   "concreta": true,
+   "obvia": true,
+   "la_cotizaria": true
+  },
+  "Q012": {
+   "concreta": true,
+   "obvia": false,
+   "la_cotizaria": true
+  },
+  "Q001": {
+   "concreta": true,
+   "obvia": false,
+   "la_cotizaria": false
+  },
+  "Q010": {
+   "concreta": true,
+   "obvia": false,
+   "la_cotizaria": true
+  },
+  "Q062": {
+   "concreta": true,
+   "obvia": false,
+   "la_cotizaria": true
+  },
+  "Q020": {
+   "concreta": true,
+   "obvia": false,
+   "la_cotizaria": true
+  },
+  "Q037": {
+   "concreta": true,
+   "obvia": false,
+   "la_cotizaria": true
+  },
+  "Q003": {
+   "concreta": true,
+   "obvia": false,
+   "la_cotizaria": true
+  },
+  "Q024": {
+   "concreta": true,
+   "obvia": false,
+   "la_cotizaria": true
+  },
+  "Q026": {
+   "concreta": true,
+   "obvia": false,
+   "la_cotizaria": true
+  },
+  "Q027": {
+   "concreta": true,
+   "obvia": true,
+   "la_cotizaria": true
+  },
+  "Q038": {
+   "concreta": true,
+   "obvia": true,
+   "la_cotizaria": true
+  },
+  "Q022": {
+   "concreta": true,
+   "obvia": false,
+   "la_cotizaria": true
+  },
+  "Q004": {
+   "concreta": false,
+   "obvia": true,
+   "la_cotizaria": false
+  },
+  "Q007": {
+   "concreta": true,
+   "obvia": false,
+   "la_cotizaria": true
+  },
+  "Q049": {
+   "concreta": true,
+   "obvia": false,
+   "la_cotizaria": true
+  },
+  "Q051": {
+   "concreta": false,
+   "obvia": false,
+   "la_cotizaria": false
+  },
+  "Q016": {
+   "concreta": false,
+   "obvia": true,
+   "la_cotizaria": false
+  },
+  "Q031": {
+   "concreta": true,
+   "obvia": false,
+   "la_cotizaria": false
+  },
+  "Q061": {
+   "concreta": false,
+   "obvia": true,
+   "la_cotizaria": false
+  },
+  "Q059": {
+   "concreta": true,
+   "obvia": false,
+   "la_cotizaria": true
+  },
+  "Q042": {
+   "concreta": true,
+   "obvia": true,
+   "la_cotizaria": true
+  },
+  "Q050": {
+   "concreta": true,
+   "obvia": false,
+   "la_cotizaria": true
+  },
+  "Q025": {
+   "concreta": true,
+   "obvia": false,
+   "la_cotizaria": false
+  },
+  "Q005": {
+   "concreta": false,
+   "obvia": false,
+   "la_cotizaria": false
+  },
+  "Q015": {
+   "concreta": true,
+   "obvia": true,
+   "la_cotizaria": false
+  },
+  "Q058": {
+   "concreta": false,
+   "obvia": false,
+   "la_cotizaria": false
+  },
+  "Q041": {
+   "concreta": true,
+   "obvia": false,
+   "la_cotizaria": true
+  },
+  "Q043": {
+   "concreta": true,
+   "obvia": false,
+   "la_cotizaria": true
+  },
+  "Q039": {
+   "concreta": true,
+   "obvia": false,
+   "la_cotizaria": true
+  },
+  "Q055": {
+   "concreta": false,
+   "obvia": true,
+   "la_cotizaria": false
+  },
+  "Q060": {
+   "concreta": true,
+   "obvia": false,
+   "la_cotizaria": false
+  },
+  "Q053": {
+   "concreta": true,
+   "obvia": false,
+   "la_cotizaria": true
+  },
+  "Q030": {
+   "concreta": true,
+   "obvia": false,
+   "la_cotizaria": true
+  },
+  "Q017": {
+   "concreta": true,
+   "obvia": false,
+   "la_cotizaria": true
+  },
+  "Q023": {
+   "concreta": false,
+   "obvia": false,
+   "la_cotizaria": false
+  },
+  "Q054": {
+   "concreta": true,
+   "obvia": false,
+   "la_cotizaria": true
+  },
+  "Q044": {
+   "concreta": true,
+   "obvia": false,
+   "la_cotizaria": true
+  },
+  "Q019": {
+   "concreta": true,
+   "obvia": true,
+   "la_cotizaria": true
+  },
+  "Q009": {
+   "concreta": true,
+   "obvia": false,
+   "la_cotizaria": true
+  }
+ }
+}
