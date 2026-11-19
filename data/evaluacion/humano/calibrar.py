@@ -4,7 +4,8 @@
 
 Para cada juez (dolor, equivalencia): acuerdo entre humanos (kappa de Fleiss), y contra la
 mayoría humana: acuerdo, kappa de Cohen, precisión y exhaustividad del modelo. En equivalencias
-también el criterio viejo (lo escribía quien proponía) y el etiquetado de Claude.
+también el criterio viejo (lo escribía quien proponía) y el etiquetado de Claude. Si hay
+jueces_llm.json (juzgar_con_llm.py), también cada modelo que juzgó las mismas filas.
 """
 import csv
 import json
@@ -37,6 +38,10 @@ def fleiss(tablas: list[list[bool]]) -> float | None:
 
 
 clave = {k["id"]: k for k in json.loads((AQUI / "clave.json").read_text(encoding="utf-8"))}
+jueces_llm = json.loads((AQUI / "jueces_llm.json").read_text(encoding="utf-8")) if (AQUI / "jueces_llm.json").exists() else {}
+for nombre, juicios in jueces_llm.items():         # otros modelos que juzgaron las mismas filas (juzgar_con_llm.py)
+    for i, v in juicios.items():
+        clave[i][nombre] = v
 respuestas, tipo = {}, {}
 for f in sorted(AQUI.glob("planilla_*.csv")):
     filas = list(csv.DictReader(open(f, encoding="utf-8")))
@@ -54,7 +59,7 @@ for t in ("dolor", "equivalencia"):
     validos = [(i, m) for i, m in zip(ids, mayoria) if m is not None]
     humano = [m for _, m in validos]
     res = {"items": len(ids), "empates_humanos": mayoria.count(None), "fleiss_humanos": fleiss(tabla)}
-    for quien in ("modelo", "criterio_viejo", "claude"):
+    for quien in ("modelo", "criterio_viejo", "claude", *jueces_llm):
         if quien not in clave[ids[0]]:
             continue
         juez = [clave[i][quien] for i, _ in validos]

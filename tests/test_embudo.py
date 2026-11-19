@@ -5,6 +5,8 @@ import subprocess
 import sys
 from types import SimpleNamespace
 
+import pytest
+
 from harness import chequeos as c
 from harness import dolor as D
 from harness import umbrales as U
@@ -195,6 +197,172 @@ def test_costo_del_llm_por_tokens():
     from harness.modelo import USD_POR_MILLON_DE_TOKENS as P
     r = costo([{"tokens": {"entrada": 1_000_000, "salida": 200_000}, "segundos": 2.0}])
     assert r["usd"] == round(P["entrada"] + 0.2 * P["salida"], 4) and r["segundos"] == 2.0
+
+
+def test_costo_de_claude_usa_el_precio_de_su_modelo():
+    from harness.modelo import PRECIOS
+    traza = [{"tokens": {"entrada": 1_000_000, "salida": 200_000}, "segundos": 1.0}]
+    p = PRECIOS["claude-opus-5-5"]
+    assert costo(traza, "claude-opus-5-5")["usd"] == round(p["entrada"] + 0.2 * p["salida"], 4)
+    assert costo(traza)["usd"] != costo(traza, "claude-opus-5-5")["usd"]   # sin modelo, sigue siendo DeepSeek
+
+
+class _ClaudeFalso:
+    """Imita al SDK de Anthropic: razonamiento antes del texto, y guarda con qué se lo llamó."""
+    def __init__(self, stop_reason="end_turn", texto='{"ok": 1}'):
+        self.llamadas, self.messages = [], self
+        self._r = SimpleNamespace(
+            content=[SimpleNamespace(type="thinking", thinking=""), SimpleNamespace(type="text", text=texto)],
+            stop_reason=stop_reason, usage=SimpleNamespace(input_tokens=11, output_tokens=7))
+
+    def stream(self, **pedido):
+        self.llamadas.append(pedido)
+        r = self._r
+        class Flujo:
+            def __enter__(self): return self
+            def __exit__(self, *a): return False
+            def get_final_message(self): return r
+        return Flujo()
+
+
+def test_claude_devuelve_la_misma_forma_que_deepseek_y_baja_el_esfuerzo_en_vez_de_apagar_el_razonamiento():
+    from harness.modelo import Claude
+    api = _ClaudeFalso()
+    c = Claude("claude-haiku-5-5", api=api)
+    r = c.messages.create(model="otro", max_tokens=100, messages=[{"role": "user", "content": "x"}], pensar=False)
+    assert r.content[0].text == '{"ok": 1}' and r.usage.input_tokens == 11 and r.usage.output_tokens == 7
+    assert api.llamadas[0]["model"] == "claude-haiku-5-5" and api.llamadas[0]["output_config"] == {"effort": "low"}
+    assert "thinking" not in api.llamadas[0] and "temperature" not in api.llamadas[0]
+    c.messages.create(model="x", max_tokens=100, messages=[], pensar=True)
+    assert api.llamadas[1]["output_config"] == {"effort": "high"}
+
+
+def test_con_reintento_usa_el_modelo_del_cliente_y_se_detiene_si_claude_corta_o_se_niega():
+    from harness.modelo import Claude, RespuestaCortada, RespuestaRechazada, con_reintento
+    traza = []
+    api = _ClaudeFalso()
+    assert con_reintento(Claude("claude-opus-5-5", api=api), "p", lambda s: [], traza, "paso") == {"ok": 1}
+    assert api.llamadas[0]["model"] == "claude-opus-5-5" and traza[0]["tokens"] == {"entrada": 11, "salida": 7}
+    with pytest.raises(RespuestaCortada):
+        con_reintento(Claude("claude-opus-5-5", api=_ClaudeFalso("max_tokens")), "p", lambda s: [], [], "paso")
+    with pytest.raises(RespuestaRechazada):
+        con_reintento(Claude("claude-opus-5-5", api=_ClaudeFalso("refusal", "")), "p", lambda s: [], [], "paso")
+
+
+def test_una_corrida_con_otro_modelo_no_pisa_los_archivos_de_deepseek():
+    from harness.modelo import MODELO, sufijo
+    assert sufijo(MODELO) == "" and sufijo("claude-opus-5-5") == "__claude-opus-5-5"
+
+
+def test_el_archivo_dice_quien_juzgo_cuando_no_es_quien_propuso():
+    from harness.modelo import MODELO, sufijo
+    assert sufijo(MODELO, MODELO) == "" and sufijo(MODELO, None) == ""
+    assert sufijo(MODELO, "claude-sonnet-5-5") == "__juez-claude-sonnet-5-5"
+    assert sufijo("claude-haiku-5-5", "claude-sonnet-5-5") == "__claude-haiku-5-5__juez-claude-sonnet-5-5"
+
+
+def test_costos_de_dos_modelos_se_suman_cada_uno_a_su_precio():
+    from harness.modelo import MODELO, PRECIOS, costos
+    t = [{"tokens": {"entrada": 1_000_000, "salida": 0}, "segundos": 1.0}]
+    assert costos({MODELO: t}) == costo(t)       # con un solo modelo, igual que siempre
+    r = costos({MODELO: t, "claude-sonnet-5-5": t})
+    assert r["usd"] == round(PRECIOS[MODELO]["entrada"] + PRECIOS["claude-sonnet-5-5"]["entrada"], 4)
+    assert set(r["por_modelo"]) == {MODELO, "claude-sonnet-5-5"} and r["segundos"] == 2.0
+
+
+def test_quien_juzga_es_el_mismo_cliente_salvo_que_se_pida_otro_modelo(monkeypatch):
+    pytest.importorskip("anthropic")
+    from harness.modelo import clientes
+    monkeypatch.setenv("DEEPSEEK_API_KEY", "x")
+    monkeypatch.delenv("MODELO_LLM", raising=False)
+    monkeypatch.delenv("MODELO_JUEZ", raising=False)
+    propone, juzga = clientes()
+    assert propone is juzga and propone.modelo == "deepseek-flash"
+    monkeypatch.setenv("MODELO_JUEZ", "deepseek-flash")
+    propone, juzga = clientes()
+    assert propone is juzga                          # mismo modelo: un solo cliente, una sola traza
+    monkeypatch.setenv("MODELO_JUEZ", "claude-sonnet-5-5")
+    propone, juzga = clientes()
+    assert propone.modelo == "deepseek-flash" and juzga.modelo == "claude-sonnet-5-5"
+
+
+def test_el_embudo_lee_los_juicios_del_juez_que_dice_el_nombre_de_la_salida():
+    from harness.equivalencias import archivo_de, juez_de
+    assert juez_de("divergente_escala_dev_api.json") is None
+    assert juez_de("data/serendipia/divergente_escala_dev_api__juez-claude-sonnet-5-5.json") == "claude-sonnet-5-5"
+    assert juez_de("divergente_escala_dev_api__claude-haiku-5-5__juez-claude-sonnet-5-5.json") == "claude-sonnet-5-5"
+    assert archivo_de(None).name == "equivalencias.json" and archivo_de("deepseek-flash").name == "equivalencias.json"
+    assert archivo_de("claude-sonnet-5-5").name == "equivalencias__claude-sonnet-5-5.json"
+
+
+def test_rejuzgar_mide_otra_vez_el_dolor_de_lo_guardado_sin_volver_a_proponer(monkeypatch):
+    from harness import directo, divergente
+    from harness.modelo import costos
+    vistos = []
+    def falso(cliente, dolores, tarjetas, todos, traza):
+        vistos.append((cliente, len(dolores)))
+        traza.append({"tokens": {"entrada": 10, "salida": 5}, "segundos": 1.0})
+        return {d[0]["id"]: {"pasa": False} for d in dolores}
+    monkeypatch.setattr(divergente.D, "medir_y_decidir", falso)
+    juez = SimpleNamespace(modelo="claude-sonnet-5-5")
+    guardado = json.loads((RAIZ / "data/serendipia/divergente_escala_dev_api.json").read_text())
+    r = divergente.rejuzgar(guardado, "escala_dev", juez)
+    assert r["quien"] == guardado["quien"] and r["juez"] == "claude-sonnet-5-5" and r["oportunidades"] == guardado["oportunidades"]
+    assert set(r["dolor"]) == {"llm", "B1", "B2"} and len(r["dolor"]["llm"]) == len(guardado["oportunidades"])
+    assert all(c is juez for c, _ in vistos) and r["costo"] == costos({"claude-sonnet-5-5": r["traza"]})
+    assert r["costo_de_proponer"] == guardado["costo"]
+    b3 = json.loads((RAIZ / "data/serendipia/directo_escala_dev_api.json").read_text())
+    r3 = directo.rejuzgar(b3, "escala_dev", juez)
+    assert len(r3["dolor"]) == len(b3["oportunidades"]) and r3["juez"] == "claude-sonnet-5-5"
+
+
+def test_rejuzgar_no_toca_test_ni_se_hace_sin_juez(monkeypatch):
+    from harness.modelo import juez_para_rejuzgar
+    monkeypatch.setenv("MODELO_JUEZ", "claude-sonnet-5-5")
+    with pytest.raises(SystemExit):
+        juez_para_rejuzgar("escala_test")
+    monkeypatch.delenv("MODELO_JUEZ")
+    with pytest.raises(SystemExit):
+        juez_para_rejuzgar("escala_dev")
+
+
+def test_un_llm_juzga_las_filas_humanas_con_los_prompts_del_programa():
+    import importlib.util
+    import re
+    espec = importlib.util.spec_from_file_location("juzgar_con_llm", RAIZ / "data/evaluacion/humano/juzgar_con_llm.py")
+    J = importlib.util.module_from_spec(espec)
+    espec.loader.exec_module(J)
+
+    class Falso:
+        modelo, messages = "falso", None
+        def __init__(self): self.messages, self.prompts = self, []
+        def create(self, model, max_tokens, messages, pensar=True):
+            p = messages[0]["content"]
+            self.prompts.append(p)
+            if "TEXTOS\n" in p:                          # dolor: todos lo tienen y el primero ya lo resolvió
+                ids = re.findall(r"^\[(H\d+)\]", p, re.M)
+                salida = {"tienen": ids, "resuelto": ids[:1]}
+            else:                                         # equivalencia: solo la primera publicación
+                salida = {"equivalentes": [0]}
+            return SimpleNamespace(content=[SimpleNamespace(text=json.dumps(salida))], stop_reason="end_turn",
+                                   usage=SimpleNamespace(input_tokens=1, output_tokens=1))
+    c = Falso()
+    dolor = [{"id": "H001", "tipo": "dolor", "a": "gente con X / no puede Y", "b": "texto uno"},
+             {"id": "H002", "tipo": "dolor", "a": "gente con X / no puede Y", "b": "texto dos"},
+             {"id": "H003", "tipo": "dolor", "a": "otra gente / otro obstáculo", "b": "texto tres"}]
+    r = J.juzgar_dolor(c, dolor, [])
+    assert r == {"H001": False, "H002": True, "H003": False}      # sin resolver = sí; los de un mismo dolor van en una llamada
+    assert len(c.prompts) == 2 and "Trabajo: gente con X" in c.prompts[0] or "Trabajo: gente con X" in c.prompts[1]
+    eq = [{"id": "H010", "tipo": "equivalencia", "a": "Una pava eléctrica (para: calentar agua rápido)", "b": "Pava Eléctrica 1,7 L"},
+          {"id": "H011", "tipo": "equivalencia", "a": "Una pava eléctrica (para: calentar agua rápido)", "b": "Filtro de repuesto"}]
+    assert J.juzgar_equivalencia(c, eq, []) == {"H010": True, "H011": False}
+    assert "PROPUESTA: Una pava eléctrica" in c.prompts[-1] and "PARA QUÉ: calentar agua rápido" in c.prompts[-1]
+
+
+def test_claude_rechaza_un_modelo_sin_precio():
+    from harness.modelo import Claude
+    with pytest.raises(ValueError):
+        Claude("claude-inventado", api=object())
 
 
 # --- De punta a punta --------------------------------------------------------------------

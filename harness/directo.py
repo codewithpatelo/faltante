@@ -13,16 +13,17 @@ auditarlos con el embudo.
 
     DEEPSEEK_API_KEY=... python -m harness.directo escala_dev [B3|B4]
         -> data/serendipia/directo_escala_dev_api.json (B3) o de_una_escala_dev_api.json (B4)
+    MODELO_LLM=claude-opus-5-5 ... -> ..._api__claude-opus-5-5.json (no pisa el de DeepSeek); con MODELO_JUEZ otro
+    modelo mide el dolor (..._api__juez-<modelo>.json); con --rejuzgar mide de nuevo el dolor de lo ya guardado
 """
 
 from __future__ import annotations
 
 import json
-import os
 import sys
 
 from harness import dolor as D
-from harness.modelo import MODELO, DeepSeek, con_reintento, costo, en_paralelo
+from harness.modelo import MODELO, clientes, con_reintento, costos, en_paralelo, juez_para_rejuzgar, sufijo
 from harness.voces import RAIZ, los_mas_informativos, productos, textos_con_id
 
 SKILLS = {"B3": RAIZ / "skills/proponer_directo/SKILL.md", "B4": RAIZ / "skills/recomendar_de_una/SKILL.md"}
@@ -59,21 +60,49 @@ def proponer(cliente, pid: str, producto: dict, traza: list, metodo: str = "B3",
     return [{**o, "id": f"{metodo}.{pid}.{k}", "producto": pid} for k, o in enumerate(ops) if valida(o)]
 
 
-def correr(cliente, particion: str, metodo: str = "B3") -> dict:
+def correr(cliente, particion: str, metodo: str = "B3", juez=None) -> dict:
+    """`cliente` lee y propone; `juez` mide el dolor (C1). Sin `juez`, el mismo."""
+    juez = juez or cliente
     traza, todos = [], productos()
+    traza_juez = traza if juez is cliente else []
     from harness.correr import busquedas_capturadas
     from harness.personas import personas_de_la_particion
     tarjetas = {t["id"]: t for t in personas_de_la_particion(cliente, particion, traza)["tarjetas"]}
     ps, capturas = productos(particion), busquedas_capturadas()
     ops = [o for lista in en_paralelo(lambda pid: proponer(cliente, pid, ps[pid], traza, metodo, capturas), list(ps)) for o in lista]
-    dolor = D.medir_y_decidir(cliente, [(D.enunciado(o), {o["producto"]}) for o in ops], tarjetas, todos, traza)
-    return {"quien": MODELO, "metodo": metodo, "costo": costo(traza), "traza": traza, "oportunidades": ops, "dolor": dolor}
+    dolor = D.medir_y_decidir(juez, [(D.enunciado(o), {o["producto"]}) for o in ops], tarjetas, todos, traza_juez)
+    trazas = {cliente.modelo: traza, **({juez.modelo: traza_juez} if juez is not cliente else {})}
+    return {"quien": cliente.modelo, "juez": juez.modelo, "metodo": metodo, "costo": costos(trazas),
+            "traza": traza + (traza_juez if juez is not cliente else []), "oportunidades": ops, "dolor": dolor}
+
+
+def rejuzgar(guardado: dict, particion: str, juez) -> dict:
+    """Mide de nuevo el dolor (C1) de las propuestas de B3 o B4 ya guardadas, con otro juez y sin volver a proponer."""
+    from harness.personas import tarjetas_guardadas
+    todos, traza = productos(), []
+    dolor = D.medir_y_decidir(juez, [(D.enunciado(o), {o["producto"]}) for o in guardado["oportunidades"]],
+                              tarjetas_guardadas(particion), todos, traza)
+    return {**{k: v for k, v in guardado.items() if k != "traza"}, "juez": juez.modelo, "costo_de_proponer": guardado.get("costo"),
+            "costo": costos({juez.modelo: traza}), "traza": traza, "dolor": dolor}
 
 
 if __name__ == "__main__":
-    particion = sys.argv[1] if len(sys.argv) > 1 else "escala_dev"
-    metodo = sys.argv[2] if len(sys.argv) > 2 else "B3"
-    salida = correr(DeepSeek(os.environ["DEEPSEEK_API_KEY"]), particion, metodo)
-    destino = RAIZ / f"data/serendipia/{ARCHIVO[metodo]}_{particion}_api.json"
+    args = [a for a in sys.argv[1:] if not a.startswith("--")]
+    particion = args[0] if args else "escala_dev"
+    metodo = args[1] if len(args) > 1 else "B3"
+    if "--rejuzgar" in sys.argv:       # python -m harness.directo escala_dev [B3|B4] --rejuzgar
+        juez = juez_para_rejuzgar(particion)
+        origen = RAIZ / f"data/serendipia/{ARCHIVO[metodo]}_{particion}_api.json"
+        guardado = json.loads(origen.read_text(encoding="utf-8"))
+        if juez.modelo == guardado.get("quien", MODELO):
+            raise SystemExit(f"{juez.modelo} ya propuso esto: re-juzgar es con otro modelo")
+        salida = rejuzgar(guardado, particion, juez)
+        destino = RAIZ / f"data/serendipia/{ARCHIVO[metodo]}_{particion}_api{sufijo(guardado.get('quien', MODELO), juez.modelo)}.json"
+        destino.write_text(json.dumps(salida, ensure_ascii=False, indent=1), encoding="utf-8")
+        print(f"{destino.relative_to(RAIZ)}: {salida['costo']}")
+        raise SystemExit(0)
+    cliente, juez = clientes()
+    salida = correr(cliente, particion, metodo, juez)
+    destino = RAIZ / f"data/serendipia/{ARCHIVO[metodo]}_{particion}_api{sufijo(cliente.modelo, juez.modelo)}.json"
     destino.write_text(json.dumps(salida, ensure_ascii=False, indent=1), encoding="utf-8")
     print(f"{destino.relative_to(RAIZ)}: {salida['costo']}, {len(salida['oportunidades'])} oportunidades")

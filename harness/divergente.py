@@ -19,19 +19,20 @@ mal después de un reintento se descarta. Las propuestas salen en el formato del
 con señales por producto, armadas con las voces que cita.
 
     DEEPSEEK_API_KEY=... python -m harness.divergente escala_dev   -> data/serendipia/divergente_escala_dev_api.json
+    MODELO_JUEZ=claude-sonnet-5-5 (con ANTHROPIC_API_KEY): propone el de MODELO_LLM, mide el dolor Claude -> ..._api__juez-claude-sonnet-5-5.json
 """
 
 from __future__ import annotations
 
 import json
-import os
 import sys
 from collections import Counter
+from pathlib import Path
 
 from harness import dolor as D
 from harness import personas as P
 from harness.baselines import b1_queja_mas_frecuente, b2_pedidos_de_repuesto
-from harness.modelo import MODELO, DeepSeek, con_reintento, costo, en_paralelo
+from harness.modelo import MODELO, clientes, con_reintento, costos, en_paralelo, juez_para_rejuzgar, sufijo
 from harness.voces import RAIZ, productos
 
 SKILL_B = RAIZ / "skills/proponer_a_un_segmento/SKILL.md"
@@ -104,8 +105,11 @@ def dolores_de_los_baselines(particion: str, tarjetas: dict) -> dict[str, list]:
     return salida
 
 
-def divergir(cliente, particion: str, capturas: dict) -> dict:
+def divergir(cliente, particion: str, capturas: dict, juez=None) -> dict:
+    """`cliente` abre y propone; `juez` mide el dolor (C1), también el de los baselines. Sin `juez`, el mismo."""
+    juez = juez or cliente
     todos, traza = productos(), []
+    traza_juez = traza if juez is cliente else []
     gente = P.personas_de_la_particion(cliente, particion, traza)
     tarjetas = {t["id"]: t for t in gente["tarjetas"]}
     mapas, miembros_de = [], {}
@@ -119,21 +123,49 @@ def divergir(cliente, particion: str, capturas: dict) -> dict:
     suficientes = suficientes[:max(1, len(productos(particion)) // llamadas_por_grupo)]
     oportunidades = [o for ops in en_paralelo(lambda m: proponer(cliente, m, miembros_de[m["segmento"]], traza), suficientes)
                      for o in ops]
-    dolor = {"llm": D.medir_y_decidir(cliente, [(D.enunciado(o), {tarjetas[i]["producto"] for i in o["personas"]})
-                                                for o in oportunidades], tarjetas, todos, traza)}
+    dolor = {"llm": D.medir_y_decidir(juez, [(D.enunciado(o), {tarjetas[i]["producto"] for i in o["personas"]})
+                                             for o in oportunidades], tarjetas, todos, traza_juez)}
     for metodo, dolores in dolores_de_los_baselines(particion, tarjetas).items():
-        dolor[metodo] = D.medir_y_decidir(cliente, dolores, tarjetas, todos, traza)
-    return {"quien": MODELO, "costo": costo(traza), "traza": traza, "dolor": dolor,
+        dolor[metodo] = D.medir_y_decidir(juez, dolores, tarjetas, todos, traza_juez)
+    trazas = {cliente.modelo: traza, **({juez.modelo: traza_juez} if juez is not cliente else {})}
+    return {"quien": cliente.modelo, "juez": juez.modelo, "costo": costos(trazas), "traza": traza + (traza_juez if juez is not cliente else []),
+            "dolor": dolor,
             "personas": len(tarjetas), "asignadas": len(gente["asignaciones"]),
             "segmentos": [{**m, "pasa_al_paso_b": m["segmento"] in {x["segmento"] for x in suficientes}} for m in mapas],
             **al_formato_del_embudo(oportunidades, tarjetas, particion)}
 
 
+def rejuzgar(guardado: dict, particion: str, juez) -> dict:
+    """Mide de nuevo el dolor (C1) de las propuestas ya guardadas (las del LLM y las de B1 y B2), con otro
+    juez y sin volver a proponer ni a leer personas: salen de lo guardado (personas_<partición>_api.json)."""
+    todos, traza = productos(), []
+    tarjetas = P.tarjetas_guardadas(particion)
+    dolor = {"llm": D.medir_y_decidir(juez, [(D.enunciado(o), {tarjetas[i]["producto"] for i in o["personas"]})
+                                             for o in guardado["oportunidades"]], tarjetas, todos, traza)}
+    for metodo, dolores in dolores_de_los_baselines(particion, tarjetas).items():
+        dolor[metodo] = D.medir_y_decidir(juez, dolores, tarjetas, todos, traza)
+    return {**{k: v for k, v in guardado.items() if k != "traza"}, "juez": juez.modelo, "costo_de_proponer": guardado.get("costo"),
+            "costo": costos({juez.modelo: traza}), "traza": traza, "dolor": dolor}
+
+
 if __name__ == "__main__":
     from harness.correr import busquedas_capturadas
-    particion = sys.argv[1] if len(sys.argv) > 1 else "escala_dev"
-    salida = divergir(DeepSeek(os.environ["DEEPSEEK_API_KEY"]), particion, busquedas_capturadas())
-    destino = RAIZ / f"data/serendipia/divergente_{particion}_api.json"
+    args = [a for a in sys.argv[1:] if not a.startswith("--")]
+    particion = args[0] if args else "escala_dev"
+    if "--rejuzgar" in sys.argv:       # python -m harness.divergente escala_dev --rejuzgar [archivo]
+        juez = juez_para_rejuzgar(particion)
+        origen = Path(args[1]) if len(args) > 1 else RAIZ / f"data/serendipia/divergente_{particion}_api.json"
+        guardado = json.loads(origen.read_text(encoding="utf-8"))
+        if juez.modelo == guardado.get("quien", MODELO):
+            raise SystemExit(f"{juez.modelo} ya propuso esto: re-juzgar es con otro modelo")
+        salida = rejuzgar(guardado, particion, juez)
+        destino = RAIZ / f"data/serendipia/divergente_{particion}_api{sufijo(guardado.get('quien', MODELO), juez.modelo)}.json"
+        destino.write_text(json.dumps(salida, ensure_ascii=False, indent=1), encoding="utf-8")
+        print(f"{destino.relative_to(RAIZ)}: {salida['costo']}")
+        raise SystemExit(0)
+    cliente, juez = clientes()
+    salida = divergir(cliente, particion, busquedas_capturadas(), juez)
+    destino = RAIZ / f"data/serendipia/divergente_{particion}_api{sufijo(cliente.modelo, juez.modelo)}.json"
     destino.write_text(json.dumps(salida, ensure_ascii=False, indent=1), encoding="utf-8")
     print(f"{destino.relative_to(RAIZ)}: {salida['costo']}, {salida['personas']} personas, "
           f"{sum(m['pasa_al_paso_b'] for m in salida['segmentos'])} segmentos, {len(salida['oportunidades'])} oportunidades")

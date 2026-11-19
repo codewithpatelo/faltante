@@ -148,7 +148,7 @@ queda en la traza con tokens, segundos, errores del guardrail y si se cortó.
 ## Correrlo
 
 Requisitos: Python 3 (la imagen de Docker usa 3.12; los tests también pasan con 3.14), `make` y
-las dependencias de `requirements.txt` (`pytest>=8`, `scipy>=1.11`). `make test` y `make todo`
+las dependencias de `requirements.txt` (`pytest>=8`, `scipy>=1.11`, `anthropic>=1`; el SDK solo se usa si se corre con Claude). `make test` y `make todo`
 no necesitan internet ni claves; solo `make serendipia-api` pide `DEEPSEEK_API_KEY`. Sin venv,
 `make test` falla con "No module named pytest".
 
@@ -159,7 +159,7 @@ make setup     # dependencias
 make todo      # tests + el embudo sobre las corridas guardadas de dev y test y el resultado de la hipótesis (sin internet ni claves)
 ```
 
-O con Docker: `docker build -t faltante . && docker run faltante`. Para correr el modelo (la
+O con Docker: `docker build -t faltante . && docker run faltante`. Con `MODELO_LLM=claude-opus-5-5` (y una credencial de Anthropic) los pasos usan Claude en vez de DeepSeek y guardan en archivos con `__<modelo>` al final, sin pisar los de DeepSeek. Con `MODELO_JUEZ=claude-sonnet-5-5` propone el de `MODELO_LLM` y mide el dolor (C1) y la competencia (C4 a C6) Claude, que es de otra familia: el archivo termina en `__juez-claude-sonnet-5-5`. Para juzgar con otro modelo lo que ya está propuesto, sin volver a proponer (solo dev): `MODELO_JUEZ=claude-sonnet-5-5 python -m harness.divergente escala_dev --rejuzgar`, lo mismo con `harness.directo` y `harness.equivalencias <salida>`, y `python -m harness.correr escala_dev_api__juez-claude-sonnet-5-5`; los juicios de competencia de ese juez quedan en `data/serendipia/equivalencias__<modelo>.json`. Para correr el modelo (la
 clave es un secreto del repo): pestaña Actions → workflow **llm** → tarea `serendipia` con la
 partición; después capturar las búsquedas nuevas (`scripts/captura_ml.js`), correr la tarea
 `equivalencias` y `python -m harness.correr <particion>_api`.

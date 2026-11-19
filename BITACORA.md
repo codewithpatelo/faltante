@@ -458,3 +458,82 @@ y 31 de B3. **Qué decidimos.** La versión nueva reemplaza a la vieja (regla es
 se vuelve a correr ni se rehacen las planillas humanas: test y planillas quedan con la versión
 vieja, y el README lo dice. Pendiente: el conteo de "distintas" cuenta la misma idea con otra
 búsqueda.
+
+## 2026-11-16 — Cliente de Claude en `harness/modelo.py`
+
+**Qué hicimos.** Agregamos `Claude` (SDK oficial de Anthropic, misma forma que `DeepSeek`) y
+`cliente_llm()`, que elige el cliente por la variable `MODELO_LLM` (por defecto, DeepSeek Flash).
+`con_reintento` usa el modelo del cliente y `costo` recibe el modelo; los precios pasaron a una
+tabla (`PRECIOS`). **Qué esperábamos.** Poder juzgar con otra familia de modelos sin tocar nada de
+lo que ya corre. **Qué pasó.** Los 20 tests pasan (4 nuevos, sin red ni clave, con un SDK falso);
+todavía no se llamó a la API de verdad. **Qué decidimos.** Claude no deja apagar el razonamiento
+ni fijar la temperatura: `pensar` se traduce en el esfuerzo (alto o bajo). Una negativa de Claude
+detiene la corrida, como un corte por tokens. No activamos los `fallbacks` del lado del servidor:
+cambiarían a mitad de corrida qué modelo juzgó y cobrarían a otro precio. Ningún paso usa todavía
+`cliente_llm()`: `divergente`, `equivalencias` y `directo` siguen creando `DeepSeek` y escriben
+`..._api.json`, así que una corrida con Claude pisaría los resultados de DeepSeek hasta que cada
+una tenga su propio nombre de salida.
+
+## 2026-11-16 — Los pasos eligen modelo y no se pisan
+
+**Qué hicimos.** `divergente`, `directo` y `equivalencias` crean el cliente con `cliente_llm()`
+(variable `MODELO_LLM`), guardan `quien` y el costo con el modelo que corrió, y ponen `__<modelo>`
+al final del nombre de salida cuando no es DeepSeek Flash. **Qué esperábamos.** Que sin la variable
+todo quede igual y que una corrida con Claude no pise ningún resultado de DeepSeek. **Qué pasó.**
+Los tests pasan; ninguna corrida real. `python -m harness.correr escala_dev_api__claude-opus-5-5`
+lee y escribe con ese nombre sin cambios. **Qué decidimos.** `equivalencias.json` (lo que el embudo
+lee como juicio de competencia) no tiene a quién atribuir cada juicio, así que ese paso con Claude
+escribe aparte y no se lo agrega solo: mezclar juicios de dos modelos ahí cambiaría el embudo sin
+decirlo.
+
+## 2026-11-16 — Quien propone y quien juzga, por separado
+
+**Qué hicimos.** `divergente` y `directo` reciben un cliente para abrir y proponer y otro (`juez`)
+para medir el dolor (C1), también el de los baselines; `equivalencias` usa el que juzga. Se eligen
+con `MODELO_LLM` y `MODELO_JUEZ`; si no hay `MODELO_JUEZ` o es el mismo modelo, es un solo cliente y
+todo queda como antes. El archivo termina en `__juez-<modelo>` si juzgó otro, el costo se calcula
+con el precio de cada uno, y `juez` queda guardado junto a `quien`. **Qué esperábamos.** Poder
+comparar propuestas de distintos modelos con el mismo juez de otra familia. **Qué pasó.** Los tests
+pasan; ninguna corrida real. **Qué decidimos.** Antes de usar a Claude de juez hay que calibrarlo
+contra las personas (80 filas), y para comparar contra lo que ya hay hay que volver a juzgar con él
+las propuestas guardadas de DeepSeek, baselines incluidos: son el mismo embudo para todos los
+métodos. Falta un paso que re-juzgue propuestas ya guardadas sin volver a proponer.
+
+## 2026-11-16 — Re-juzgar lo ya propuesto con otro modelo
+
+**Qué hicimos.** `--rejuzgar` en `divergente` y `directo` mide de nuevo el dolor (C1) de lo guardado
+(LLM, B1, B2 y B3) con `MODELO_JUEZ`, sin proponer ni leer personas, y lo guarda con `__juez-<modelo>`.
+`equivalencias` con otro juez juzga todo lo que él no juzgó y lo agrega a
+`equivalencias__<modelo>.json`; `correr` elige ese archivo según el nombre de la salida
+(`..._api__juez-<modelo>`) y el B3 sale por el mismo nombre. No se re-juzga test, ni con el mismo
+modelo que propuso. **Qué esperábamos.** Poder pasar las propuestas de DeepSeek por el embudo con un
+juez de otra familia, y que `equivalencias.json` siga siendo solo el de DeepSeek. **Qué pasó.** Los
+27 tests pasan (con un juez falso); ninguna corrida real. De paso: el producto F012 de dev tiene 7
+textos y ninguna tarjeta, así que `personas_de_la_particion` lo vuelve a leer en cada corrida; el
+re-juicio usa las tarjetas guardadas y no lo toca. **Qué decidimos.** Dejar F012 como está hasta
+mirar por qué no deja tarjetas.
+
+## 2026-11-16 — Un LLM juzga las filas humanas
+
+**Qué hicimos.** `data/evaluacion/humano/juzgar_con_llm.py` hace juzgar a `MODELO_JUEZ` las 80 filas
+de las planillas con los prompts del programa (para eso, la llamada de `dolor.py` que lee una tanda
+de textos quedó en `leer_textos`, sin cambiar el prompt) y guarda el veredicto en `jueces_llm.json`;
+`calibrar.py` lo suma. **Qué esperábamos.** Poder medir a Claude contra las personas con el mismo
+código que a DeepSeek. **Qué pasó.** El script y `calibrar.py` andan con un juez falso (28 tests);
+ninguna corrida real. Con solo las respuestas de Darío, el juez de dolor de DeepSeek coincide en
+0,475 (kappa −0,05) y el de equivalencia en 0,75 (kappa 0,22): una sola persona, no concluye nada.
+**Qué decidimos.** Esperar las otras tres planillas antes de leer esos números. El juez ve las filas
+agrupadas por dolor o propuesta y no la búsqueda completa: si Claude difiere de DeepSeek, puede ser
+en parte por eso.
+
+## 2026-11-16 — Claude Sonnet 5.5 como juez, contra Darío
+
+**Qué hicimos.** Corrimos `juzgar_con_llm.py` con `claude-sonnet-5-5` sobre las 80 filas (80 filas,
+USD 0,20, 2,7 minutos) y calibramos contra las respuestas de Darío, única planilla completa.
+**Qué esperábamos.** Un primer dato de si Claude como juez se acerca más a las personas que DeepSeek.
+**Qué pasó.** Equivalencia: Claude 0,775 de acuerdo (kappa 0,33) contra 0,75 (0,22) de DeepSeek, casi
+igual. Dolor: Claude 0,20 (kappa −0,08; precisión 0,60, exhaustividad 0,09) contra 0,475 (−0,05) de
+DeepSeek: Claude marca muy pocas filas como "desatendido" y Darío marcó 33 de 40. **Qué decidimos.**
+No sacar conclusiones con una sola persona; el dolor es donde más se separan y donde más pesa que el
+juez vea las filas agrupadas y sin "qué hace mal lo que usan hoy". Con las otras tres planillas se ve
+si es el juez o el criterio humano.

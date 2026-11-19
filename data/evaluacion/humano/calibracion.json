@@ -11,6 +11,12 @@
    "kappa": -0.05,
    "precision": 0.8,
    "exhaustividad": 0.485
+  },
+  "claude-sonnet-5-5": {
+   "acuerdo": 0.2,
+   "kappa": -0.076,
+   "precision": 0.6,
+   "exhaustividad": 0.091
   }
  },
  "equivalencia": {
@@ -34,6 +40,12 @@
    "kappa": 0.286,
    "precision": 0.867,
    "exhaustividad": 0.812
+  },
+  "claude-sonnet-5-5": {
+   "acuerdo": 0.775,
+   "kappa": 0.328,
+   "precision": 0.871,
+   "exhaustividad": 0.844
   }
  }
 }
