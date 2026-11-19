@@ -174,8 +174,11 @@ def main():
         for k in map(int, sys.argv[1:]):
             traza = []
             segs, asign = por_parecido(cliente, gente, k, todos, traza)
-            salida[f"parecido_{k}"] = {**medir(segs, asign, por_id, todos), "grupos": k, "costo": costo(traza)}
-        print("RESULTADO explorar_parecido.json " + json.dumps(salida, ensure_ascii=False))
+            m = medir(segs, asign, por_id, todos)
+            # una línea por segmento: el registro de Actions no muestra líneas demasiado largas
+            for f in m.pop("detalle"):
+                print(f"SEGMENTO {k} " + json.dumps(f, ensure_ascii=False), flush=True)
+            print(f"RESUMEN {k} " + json.dumps({**m, "grupos": k, "costo": costo(traza)}, ensure_ascii=False), flush=True)
         return
     traza_l, traza_p = [], []
     segs_l = generar(cliente, gente, todos, traza_l)
