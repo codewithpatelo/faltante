@@ -1,4 +1,56 @@
 {
+ "prompt_viejo": {
+  "dolor": {
+   "acierta": 10,
+   "de": 20,
+   "dice_si_y_es_si": [
+    0,
+    3
+   ],
+   "dice_no_y_es_no": [
+    10,
+    17
+   ]
+  },
+  "equivalencia": {
+   "acierta": 11,
+   "de": 20,
+   "dice_si_y_es_si": [
+    9,
+    10
+   ],
+   "dice_no_y_es_no": [
+    2,
+    10
+   ]
+  }
+ },
+ "prompt_nuevo": {
+  "dolor": {
+   "acierta": 13,
+   "de": 20,
+   "dice_si_y_es_si": [
+    1,
+    2
+   ],
+   "dice_no_y_es_no": [
+    12,
+    18
+   ]
+  },
+  "equivalencia": {
+   "acierta": 10,
+   "de": 20,
+   "dice_si_y_es_si": [
+    10,
+    13
+   ],
+   "dice_no_y_es_no": [
+    0,
+    7
+   ]
+  }
+ },
  "dolor": {
   "filas": 20,
   "juez_acierta": 11,
