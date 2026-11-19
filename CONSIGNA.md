@@ -7,7 +7,7 @@ repo y qué falta. ✅ cumplido · 🟡 parcial · ❌ falta.
 |---|---|---|
 | **Utilidad real**: usuario identificable | Importadores y vendedores chicos de Mercado Libre que deciden qué traer (README, "Qué hace") | 🟡 falta mostrárselo a 1 o 2 importadores |
 | **IA generativa en el núcleo** | Cuatro pasos con LLM: leer personas, armar segmentos, proponer, y dos jueces (dolor y equivalencias) | ✅ |
-| **Hipótesis medible contra baseline, partición fija** | `data/evaluacion/test/PRERREGISTRO.md`; resultado en el README, "¿Sirve?" | ✅ contra reglas sin LLM: 16, 4, 0 en test (p = 0,002). 🟡 contra el modelo solo de una (B4): los datos refutan 9 de sus 10 recomendaciones, falta el juicio humano a ciegas. 🟡 generar: la versión por situación perdía con proponer directo (B3); rehecha por trabajo, en dev empata (30 contra 31) |
+| **Hipótesis medible contra baseline, partición fija** | `data/evaluacion/test/PRERREGISTRO.md`; resultado en el README, "¿Sirve?" | ✅ contra reglas sin LLM (16, 4, 0 en test, p = 0,002). ❌ contra el modelo solo (B4): juicio humano 12 de 29 contra 7 de 20, p = 0,44. ❌ los jueces del embudo no pasan una prueba con casos difíciles: los resultados no descartados están inflados |
 | **Datos verificados** | README, "Datos": fuente, volumen, fecha, cómo se eligieron | ✅ |
 | **Economía**: costo por tarea, latencia, elección de modelo | README, "Costo y modelo"; cada corrida guarda tokens, USD y segundos por llamada (`traza`) | ✅ |
 | **Git con trabajo distribuido** | `git log` | 🟡 Darío: requisitos del README, LEEME, planillas y el cliente de Claude como juez de otra familia (`cliente-claude`, ya en main); Nilo: sus planillas (PR #1); falta Victoria |

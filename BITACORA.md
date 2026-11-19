@@ -553,3 +553,16 @@ lado de cada juez, y AGENTS.md prohíbe desde ahora las pruebas triviales: toda 
 compara con responder siempre lo mismo, y las muestras se arman con casos dudosos. También
 recontamos las ideas distintas juntando las que comparten resultados en Mercado Libre: con las
 repetidas juntas, B3 deja más que el programa en dev.
+
+## 2026-11-18 (noche) — Prueba de los jueces con casos difíciles
+
+**Qué probamos.** Si la ronda 1 fallaba por trivial o porque los jueces son malos. Armamos 40 casos
+del borde (`prueba_jueces.py`, escrito y subido antes de contestar): equivalencia, 10 "sí" del juez
+al azar y 10 "no" del juez entre publicaciones parecidas a lo propuesto; dolor, 10 "sí" del juez y
+10 "no" entre gente que se queja de algo. **Qué pasó (juicio de Patricio).** Equivalencia: cuando el
+juez dice que no compite, compite en 8 de 10. Dolor: cuando el juez dice que hay dolor sin
+resolver, no lo hay en 6 de 10. Ninguno supera a responder siempre lo mismo. Patricio dice que la
+prueba igual le resultó fácil en general: fácil para una persona, y aun así el juez falla.
+**Qué decidimos.** El README pone esto como el hallazgo principal de la validación: lo no
+descartado está inflado. Con la planilla de Victoria (PR #2) cerró también la calidad contra B4:
+12 de 29 contra 7 de 20 (p = 0,44), la regla prerregistrada no se cumple.

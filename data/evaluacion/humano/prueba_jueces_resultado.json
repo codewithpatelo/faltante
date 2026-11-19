@@ -1,0 +1,38 @@
+{
+ "dolor": {
+  "filas": 20,
+  "juez_acierta": 11,
+  "juez_acierta_ic95": [
+   0.342,
+   0.742
+  ],
+  "regla_tonta_acierta": 13,
+  "cuando_el_juez_dice_si_es_si": [
+   4,
+   10
+  ],
+  "cuando_el_juez_dice_no_es_no": [
+   7,
+   10
+  ],
+  "el_juez_supera_a_la_regla_tonta": false
+ },
+ "equivalencia": {
+  "filas": 20,
+  "juez_acierta": 11,
+  "juez_acierta_ic95": [
+   0.342,
+   0.742
+  ],
+  "regla_tonta_acierta": 17,
+  "cuando_el_juez_dice_si_es_si": [
+   9,
+   10
+  ],
+  "cuando_el_juez_dice_no_es_no": [
+   2,
+   10
+  ],
+  "el_juez_supera_a_la_regla_tonta": false
+ }
+}

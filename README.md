@@ -86,15 +86,13 @@ dejó 14, 3 y 9), pero la dirección se repitió en dev y en test. Las de B1 no 
 versión que resuelva la queja 'algo'"); las del programa sí (soga de saltar sin cable, barras de
 techo inflables, adaptador digital de torque…).
 
-**2. Contra preguntarle al modelo (B4), el sistema todavía no tiene veredicto.** B4 es mucho más
-conservador: recomienda 10 productos en test y 10 en dev. Pasadas por el embudo, **los datos del
-mercado refutan 9 de 10 en cada partición**: ya hay 4 a 31 publicaciones equivalentes que venden
-(un probador de tomacorriente, una lámpara de emergencia), la gente deja pasar lo que se ofrece
-parecido, o el problema no aparece más que en gente al azar. Esa auditoría es descriptiva (el
-embudo es nuestro y las del programa lo pasan por construcción). La medida principal es el
-**juicio humano a ciegas** de las recomendaciones finales de los dos, mezcladas
-(`data/evaluacion/humano/`), y con dos de cuatro personas no decide: Darío marca buenas 17 de 29
-del programa y 9 de 20 de B4; Nilo, 3 de 29 y 3 de 20. Las de B1 y B2, ninguna, para los dos.
+**2. Contra preguntarle al modelo (B4), el sistema no gana.** B4 es mucho más conservador:
+recomienda 10 productos en test y 10 en dev. La medida prerregistrada es el **juicio humano a
+ciegas** de las recomendaciones finales de los dos, mezcladas (`data/evaluacion/humano/`): con la
+mayoría de tres personas, son concretas, no obvias y las cotizarían 12 de 29 del programa (41%) y
+7 de 20 de B4 (35%); Fisher unilateral, p = 0,44. **La regla no se cumple.** Las de B1 y B2,
+ninguna. El embudo refuta 9 de las 10 de B4 en cada partición, pero con jueces que no pasaron la
+prueba de abajo, ese dato no prueba nada.
 
 **3. La forma de generar ideas: la primera versión era trivial; la nueva empata con proponer
 directo (B3).** La versión que corrió en test agrupaba por "situación", pero el 70% de las
@@ -195,14 +193,17 @@ podían medir:
 - **El mismo modelo propone y juzga.** Los jueces son llamadas aparte que no saben qué método
   propuso, así que un sesgo a favor de lo propio (Zheng et al., 2023) favorece igual al programa
   y a B3.
-- **Los jueces no quedaron validados contra personas** (`data/evaluacion/humano/calibracion.json`,
-  tres de cuatro planillas). En **equivalencia**, las 40 filas eran a propósito los desacuerdos
-  entre el juez y el criterio viejo: la mayoría humana le da la razón al juez (82,5% contra
-  17,5%), pero en 37 de 40 la respuesta es "sí", y responder siempre "sí" acierta 92,5%, más que el
-  juez. La planilla muestra que el juez es mejor que el criterio viejo, no que sepa decir "no". En
-  **dolor**, las personas no coinciden entre sí (kappa de Fleiss −0,33): dos marcan "sí" en 33 y
-  32 de 40, la otra en 11. La pregunta se entendió de dos maneras, y sin acuerdo humano no hay
-  contra qué medir al juez. Lo que queda: un control al azar y un placebo (0 falsos positivos).
+- **Los dos jueces del embudo fallan donde importa** (`data/evaluacion/humano/prueba_jueces.py`).
+  La primera planilla no servía para medirlos (casi todas las filas se contestaban con "dolor no,
+  equivalencia sí"), así que armamos una prueba con casos dudosos, mitad sí y mitad no según cada
+  juez, escrita antes de contestarla. Con el juicio de una persona (Patricio): cuando el juez de
+  competencia dice que una publicación **no** compite, en 8 de 10 sí compite; cuando el juez de
+  dolor dice que alguien tiene el problema sin resolver, en 6 de 10 no lo tiene. Ninguno acierta
+  más que responder siempre lo mismo (11 de 20 contra 17 y 13). Los dos errores inflan lo que
+  sobrevive: C4 cuenta menos competidores de los que hay y C1 ve dolor que no está. Por eso las
+  oportunidades "no descartadas" (del programa y de los baselines) no se pueden leer como
+  oportunidades reales, y la comparación entre métodos vale solo en la medida en que el error
+  sea parejo para todos.
 - **"No descartada" no es "buena".** Ninguna llega a "sobrevive": todas quedan condicionales
   porque el precio de proveedor es estimado y nadie lo pagó todavía. El conteo dice que ningún
   dato la refutó, no que sea rentable; eso lo dicen el juicio humano a ciegas y una cotización.
