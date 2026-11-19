@@ -1,52 +1,65 @@
 {
  "jueces_humanos": [
   "dario",
-  "nilo"
+  "nilo",
+  "patricio"
  ],
  "dolor": {
   "items": 40,
-  "empates_humanos": 3,
-  "fleiss_humanos": 0.754,
+  "empates_humanos": 0,
+  "fleiss_humanos": -0.328,
+  "regla_tonta_acuerdo": 0.175,
+  "si_por_juez_humano": {
+   "dario": 33,
+   "nilo": 32,
+   "patricio": 11
+  },
   "modelo": {
-   "acuerdo": 0.432,
-   "kappa": -0.115,
-   "precision": 0.778,
-   "exhaustividad": 0.452
+   "acuerdo": 0.475,
+   "kappa": -0.05,
+   "precision": 0.8,
+   "exhaustividad": 0.485
   },
   "claude-sonnet-5-5": {
-   "acuerdo": 0.162,
-   "kappa": -0.096,
-   "precision": 0.5,
-   "exhaustividad": 0.065
+   "acuerdo": 0.2,
+   "kappa": -0.076,
+   "precision": 0.6,
+   "exhaustividad": 0.091
   }
  },
  "equivalencia": {
   "items": 40,
-  "empates_humanos": 9,
-  "fleiss_humanos": 0.262,
+  "empates_humanos": 0,
+  "fleiss_humanos": 0.062,
+  "regla_tonta_acuerdo": 0.925,
+  "si_por_juez_humano": {
+   "dario": 32,
+   "nilo": 33,
+   "patricio": 39
+  },
   "modelo": {
-   "acuerdo": 0.839,
-   "kappa": 0.362,
-   "precision": 0.96,
-   "exhaustividad": 0.857
+   "acuerdo": 0.825,
+   "kappa": 0.286,
+   "precision": 0.969,
+   "exhaustividad": 0.838
   },
   "criterio_viejo": {
-   "acuerdo": 0.161,
-   "kappa": -0.123,
-   "precision": 0.667,
-   "exhaustividad": 0.143
+   "acuerdo": 0.175,
+   "kappa": -0.093,
+   "precision": 0.75,
+   "exhaustividad": 0.162
   },
   "claude": {
-   "acuerdo": 0.871,
-   "kappa": 0.537,
+   "acuerdo": 0.825,
+   "kappa": 0.391,
    "precision": 1.0,
-   "exhaustividad": 0.857
+   "exhaustividad": 0.811
   },
   "claude-sonnet-5-5": {
-   "acuerdo": 0.871,
-   "kappa": 0.537,
+   "acuerdo": 0.85,
+   "kappa": 0.437,
    "precision": 1.0,
-   "exhaustividad": 0.857
+   "exhaustividad": 0.838
   }
  }
 }

@@ -537,3 +537,19 @@ DeepSeek: Claude marca muy pocas filas como "desatendido" y Darío marcó 33 de 
 No sacar conclusiones con una sola persona; el dolor es donde más se separan y donde más pesa que el
 juez vea las filas agrupadas y sin "qué hace mal lo que usan hoy". Con las otras tres planillas se ve
 si es el juez o el criterio humano.
+
+## 2026-11-18 — Las planillas humanas eran triviales
+
+**Qué pasó.** Al completar su planilla, Patricio notó que se podía contestar sin leer: "dolor no,
+equivalencia sí". Lo medimos y es cierto: en equivalencia, responder siempre "sí" acierta 92,5%,
+más que el juez (82,5%), porque las 40 filas eran los desacuerdos entre el juez y el criterio
+viejo, muchas con el mismo producto de los dos lados; en dolor, los textos eran casi todos
+elogios y la pregunta se entendió de dos maneras (Darío y Nilo marcan "sí" en 33 y 32 de 40,
+Patricio en 11; kappa de Fleiss −0,33). Patricio dice que contestó las últimas filas con esa
+regla, porque eran obvias. **Qué decidimos.** No se rehacen planillas (no hay tiempo de pedirle
+más al equipo): el README dice qué muestran (el juez de competencia es mejor que el criterio viejo)
+y qué no (que los jueces estén validados contra personas). `calibrar.py` informa la regla tonta al
+lado de cada juez, y AGENTS.md prohíbe desde ahora las pruebas triviales: toda verificación se
+compara con responder siempre lo mismo, y las muestras se arman con casos dudosos. También
+recontamos las ideas distintas juntando las que comparten resultados en Mercado Libre: con las
+repetidas juntas, B3 deja más que el programa en dev.

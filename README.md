@@ -93,8 +93,8 @@ mercado refutan 9 de 10 en cada partición**: ya hay 4 a 31 publicaciones equiva
 parecido, o el problema no aparece más que en gente al azar. Esa auditoría es descriptiva (el
 embudo es nuestro y las del programa lo pasan por construcción). La medida principal es el
 **juicio humano a ciegas** de las recomendaciones finales de los dos, mezcladas
-(`data/evaluacion/humano/`): está en curso. Con la primera de cuatro personas, 12 de las 16 del
-programa en test son concretas, no obvias y las cotizaría; de B1, ninguna.
+(`data/evaluacion/humano/`), y con dos de cuatro personas no decide: Darío marca buenas 17 de 29
+del programa y 9 de 20 de B4; Nilo, 3 de 29 y 3 de 20. Las de B1 y B2, ninguna, para los dos.
 
 **3. La forma de generar ideas: la primera versión era trivial; la nueva empata con proponer
 directo (B3).** La versión que corrió en test agrupaba por "situación", pero el 70% de las
@@ -102,8 +102,9 @@ reseñas no la cuenta, y los grupos salieron por categoría de producto; con el 
 dejó más (44 contra 16 en test, 31 contra 13 en dev). La rehicimos agrupando por **trabajo** y
 exigiendo que cada grupo cruce búsquedas (`data/evaluacion/trabajos/`): en dev deja **30**
 oportunidades de 231 propuestas (13%), contra 13 de la versión vieja y 31 de B3 (13,5%). Pasa la
-regla escrita antes (le gana a la vieja) pero no le gana a B3, y varias de las 30 son la misma
-idea con otra búsqueda (bebederos a canilla, gotas para que el gato tome agua). Test no se volvió
+regla escrita antes (le gana a la vieja) pero no le gana a B3. Contando como una sola idea las
+que comparten la mayor parte de la primera página de resultados, el programa baja a 23-30 según
+el corte y B3 queda en 30-31: con las repetidas juntas, B3 deja más. Test no se volvió
 a correr. Juntando 2 y 3: **lo que más aporta el sistema es el embudo que refuta**; el modelo solo
 recomienda con confianza cosas que el mercado ya resuelve.
 
@@ -193,9 +194,15 @@ podían medir:
   el LLM citó, las propuestas con dolor significativo bajan de 257 a 238 (7%): pesa poco.
 - **El mismo modelo propone y juzga.** Los jueces son llamadas aparte que no saben qué método
   propuso, así que un sesgo a favor de lo propio (Zheng et al., 2023) favorece igual al programa
-  y a B3. Contra la primera persona que juzgó a ciegas (1 de 4), el juez de competencia coincide
-  en 75% (kappa 0,22); el de dolor, poco (kappa −0,05): ve la mitad del dolor que ve ella, con
-  precisión 0,8. Es conservador, así que mata de más, no de menos (`data/evaluacion/humano/`).
+  y a B3.
+- **Los jueces no quedaron validados contra personas** (`data/evaluacion/humano/calibracion.json`,
+  tres de cuatro planillas). En **equivalencia**, las 40 filas eran a propósito los desacuerdos
+  entre el juez y el criterio viejo: la mayoría humana le da la razón al juez (82,5% contra
+  17,5%), pero en 37 de 40 la respuesta es "sí", y responder siempre "sí" acierta 92,5%, más que el
+  juez. La planilla muestra que el juez es mejor que el criterio viejo, no que sepa decir "no". En
+  **dolor**, las personas no coinciden entre sí (kappa de Fleiss −0,33): dos marcan "sí" en 33 y
+  32 de 40, la otra en 11. La pregunta se entendió de dos maneras, y sin acuerdo humano no hay
+  contra qué medir al juez. Lo que queda: un control al azar y un placebo (0 falsos positivos).
 - **"No descartada" no es "buena".** Ninguna llega a "sobrevive": todas quedan condicionales
   porque el precio de proveedor es estimado y nadie lo pagó todavía. El conteo dice que ningún
   dato la refutó, no que sea rentable; eso lo dicen el juicio humano a ciegas y una cotización.

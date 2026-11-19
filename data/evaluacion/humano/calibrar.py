@@ -2,8 +2,9 @@
 
     python data/evaluacion/humano/calibrar.py  -> data/evaluacion/humano/calibracion.json
 
-Para cada juez (dolor, equivalencia): acuerdo entre humanos (kappa de Fleiss), y contra la
-mayoría humana: acuerdo, kappa de Cohen, precisión y exhaustividad del modelo. En equivalencias
+Para cada juez (dolor, equivalencia): acuerdo entre humanos (kappa de Fleiss), cuántos "sí" dio
+cada persona, el acuerdo de la regla tonta (responder siempre lo mismo) y, contra la mayoría
+humana: acuerdo, kappa de Cohen, precisión y exhaustividad del modelo. En equivalencias
 también el criterio viejo (lo escribía quien proponía) y el etiquetado de Claude. Si hay
 jueces_llm.json (juzgar_con_llm.py), también cada modelo que juzgó las mismas filas.
 """
@@ -58,7 +59,10 @@ for t in ("dolor", "equivalencia"):
     mayoria = [Counter(r).most_common(1)[0][0] if len(set(r)) == 1 or r.count(True) != r.count(False) else None for r in tabla]
     validos = [(i, m) for i, m in zip(ids, mayoria) if m is not None]
     humano = [m for _, m in validos]
-    res = {"items": len(ids), "empates_humanos": mayoria.count(None), "fleiss_humanos": fleiss(tabla)}
+    res = {"items": len(ids), "empates_humanos": mayoria.count(None), "fleiss_humanos": fleiss(tabla),
+           # la vara mínima: responder siempre lo mismo ("dolor no", "equivalencia sí"). Si el juez no la supera, la planilla no lo distingue de adivinar.
+           "regla_tonta_acuerdo": round(sum(h == (t == "equivalencia") for h in humano) / max(1, len(humano)), 3),
+           "si_por_juez_humano": {q: sum(respuestas[q][i] for i in ids) for q in respuestas}}
     for quien in ("modelo", "criterio_viejo", "claude", *jueces_llm):
         if quien not in clave[ids[0]]:
             continue
